@@ -307,14 +307,14 @@ public final class ExadataInfrastructureComputeState extends com.pulumi.resource
     }
 
     /**
-     * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -1138,7 +1138,7 @@ public final class ExadataInfrastructureComputeState extends com.pulumi.resource
         }
 
         /**
-         * @param displayName The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+         * @param displayName The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
          * 
          * @return builder
          * 
@@ -1149,7 +1149,7 @@ public final class ExadataInfrastructureComputeState extends com.pulumi.resource
         }
 
         /**
-         * @param displayName The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+         * @param displayName The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
          * 
          * @return builder
          * 

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testObjectLifecyclePolicy = new ObjectLifecyclePolicy(&#34;testObjectLifecyclePolicy&#34;, ObjectLifecyclePolicyArgs.builder()        
+ *         var testObjectLifecyclePolicy = new ObjectLifecyclePolicy("testObjectLifecyclePolicy", ObjectLifecyclePolicyArgs.builder()        
  *             .bucket(objectLifecyclePolicyBucket)
  *             .namespace(objectLifecyclePolicyNamespace)
  *             .rules(ObjectLifecyclePolicyRuleArgs.builder()
@@ -66,7 +67,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

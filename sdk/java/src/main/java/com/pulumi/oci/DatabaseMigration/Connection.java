@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnection = new Connection(&#34;testConnection&#34;, ConnectionArgs.builder()        
+ *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()        
  *             .adminCredentials(ConnectionAdminCredentialsArgs.builder()
  *                 .password(connectionAdminCredentialsPassword)
  *                 .username(connectionAdminCredentialsUsername)
@@ -78,9 +79,9 @@ import javax.annotation.Nullable;
  *                 .port(connectionConnectDescriptorPort)
  *                 .build())
  *             .databaseId(testDatabase.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(connectionDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(connectionNsgIds)
  *             .privateEndpoint(ConnectionPrivateEndpointArgs.builder()
  *                 .compartmentId(compartmentId)
@@ -103,7 +104,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

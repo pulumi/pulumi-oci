@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,14 +48,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testQueue = new Queue(&#34;testQueue&#34;, QueueArgs.builder()        
+ *         var testQueue = new Queue("testQueue", QueueArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(queueDisplayName)
  *             .channelConsumptionLimit(queueChannelConsumptionLimit)
  *             .customEncryptionKeyId(testKey.id())
  *             .deadLetterQueueDeliveryCount(queueDeadLetterQueueDeliveryCount)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .retentionInSeconds(queueRetentionInSeconds)
  *             .timeoutInSeconds(queueTimeoutInSeconds)
  *             .visibilityInSeconds(queueVisibilityInSeconds)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalNonContainerDatabaseManagement = new ExternalNonContainerDatabaseManagement(&#34;testExternalNonContainerDatabaseManagement&#34;, ExternalNonContainerDatabaseManagementArgs.builder()        
+ *         var testExternalNonContainerDatabaseManagement = new ExternalNonContainerDatabaseManagement("testExternalNonContainerDatabaseManagement", ExternalNonContainerDatabaseManagementArgs.builder()        
  *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
  *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
  *             .licenseMode(externalNonContainerDatabaseManagementLicenseModel)
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

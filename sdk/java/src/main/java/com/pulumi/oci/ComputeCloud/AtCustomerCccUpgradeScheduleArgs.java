@@ -21,14 +21,14 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
     public static final AtCustomerCccUpgradeScheduleArgs Empty = new AtCustomerCccUpgradeScheduleArgs();
 
     /**
-     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     public Output<String> compartmentId() {
@@ -51,14 +51,14 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public Optional<Output<String>> description() {
@@ -66,14 +66,14 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -81,14 +81,14 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     @Import(name="events", required=true)
     private Output<List<AtCustomerCccUpgradeScheduleEventArgs>> events;
 
     /**
-     * @return (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * @return (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     public Output<List<AtCustomerCccUpgradeScheduleEventArgs>> events() {
@@ -146,7 +146,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+         * @param displayName (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+         * @param displayName (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class AtCustomerCccUpgradeScheduleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 

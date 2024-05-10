@@ -52,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  * ### Create image from instance in tenancy
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -73,23 +74,25 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .instanceId(testInstance.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ### Create image from exported image via direct access to object store
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -111,12 +114,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)
  *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
- *                 .sourceType(&#34;objectStorageTuple&#34;)
+ *                 .sourceType("objectStorageTuple")
  *                 .bucketName(bucketName)
  *                 .namespaceName(namespace)
  *                 .objectName(objectName)
@@ -128,12 +131,14 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ### Create image from exported image at publicly accessible uri
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -155,12 +160,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)
  *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
- *                 .sourceType(&#34;objectStorageUri&#34;)
+ *                 .sourceType("objectStorageUri")
  *                 .sourceUri(sourceUri)
  *                 .operatingSystem(imageImageSourceDetailsOperatingSystem)
  *                 .operatingSystemVersion(imageImageSourceDetailsOperatingSystemVersion)
@@ -170,7 +175,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

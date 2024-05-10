@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutoScalingConfiguration = new AutoScalingConfiguration(&#34;testAutoScalingConfiguration&#34;, AutoScalingConfigurationArgs.builder()        
+ *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()        
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(autoScalingConfigurationClusterAdminPassword)
  *             .isEnabled(autoScalingConfigurationIsEnabled)
@@ -94,7 +95,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

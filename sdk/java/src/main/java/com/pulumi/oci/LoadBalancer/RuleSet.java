@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRuleSet = new RuleSet(&#34;testRuleSet&#34;, RuleSetArgs.builder()        
+ *         var testRuleSet = new RuleSet("testRuleSet", RuleSetArgs.builder()        
  *             .items(RuleSetItemArgs.builder()
  *                 .action(ruleSetItemsAction)
  *                 .allowedMethods(ruleSetItemsAllowedMethods)
@@ -79,7 +80,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalPluggableDatabaseOperationsInsightsManagement = new ExternalPluggableDatabaseOperationsInsightsManagement(&#34;testExternalPluggableDatabaseOperationsInsightsManagement&#34;, ExternalPluggableDatabaseOperationsInsightsManagementArgs.builder()        
+ *         var testExternalPluggableDatabaseOperationsInsightsManagement = new ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement", ExternalPluggableDatabaseOperationsInsightsManagementArgs.builder()        
  *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
  *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
  *             .enableOperationsInsights(true)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

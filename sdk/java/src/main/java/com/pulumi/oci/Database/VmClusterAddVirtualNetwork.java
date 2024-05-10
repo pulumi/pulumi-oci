@@ -24,12 +24,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Vm Cluster Add Virtual Machine resource in Oracle Cloud Infrastructure Database service.
  * 
- * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
+ * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmClusterAddVirtualMachine = new VmClusterAddVirtualNetwork(&#34;testVmClusterAddVirtualMachine&#34;, VmClusterAddVirtualNetworkArgs.builder()        
+ *         var testVmClusterAddVirtualMachine = new VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine", VmClusterAddVirtualNetworkArgs.builder()        
  *             .dbServers(VmClusterAddVirtualNetworkDbServerArgs.builder()
  *                 .dbServerId(testDbServer.id())
  *                 .build())
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
@@ -203,14 +205,14 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
         return this.definedTags;
     }
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     public Output<String> displayName() {

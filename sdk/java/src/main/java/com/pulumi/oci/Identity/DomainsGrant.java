@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -59,25 +60,25 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGrant = new DomainsGrant(&#34;testGrant&#34;, DomainsGrantArgs.builder()        
+ *         var testGrant = new DomainsGrant("testGrant", DomainsGrantArgs.builder()        
  *             .grantMechanism(grantGrantMechanism)
  *             .grantee(DomainsGrantGranteeArgs.builder()
  *                 .type(grantGranteeType)
  *                 .value(grantGranteeValue)
  *                 .build())
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Grant&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Grant")
  *             .app(DomainsGrantAppArgs.builder()
  *                 .value(grantAppValue)
  *                 .build())
  *             .appEntitlementCollection(DomainsGrantAppEntitlementCollectionArgs.builder()
  *                 .value(grantAppEntitlementCollectionValue)
  *                 .build())
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(grantAuthorization)
  *             .entitlement(DomainsGrantEntitlementArgs.builder()
- *                 .attributeName(&#34;appRoles&#34;)
+ *                 .attributeName("appRoles")
  *                 .attributeValue(grantEntitlementAttributeValue)
  *                 .build())
  *             .grantedAttributeValuesJson(grantGrantedAttributeValuesJson)
@@ -92,7 +93,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

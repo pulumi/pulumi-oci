@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJob = new Job(&#34;testJob&#34;, JobArgs.builder()        
+ *         var testJob = new Job("testJob", JobArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .jobConfigurationDetails(JobJobConfigurationDetailsArgs.builder()
  *                 .jobType(jobJobConfigurationDetailsJobType)
@@ -77,10 +78,10 @@ import javax.annotation.Nullable;
  *                 .subnetId(testSubnet.id())
  *                 .build())
  *             .projectId(testProject.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(jobDescription)
  *             .displayName(jobDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .jobEnvironmentConfigurationDetails(JobJobEnvironmentConfigurationDetailsArgs.builder()
  *                 .image(jobJobEnvironmentConfigurationDetailsImage)
  *                 .jobEnvironmentType(jobJobEnvironmentConfigurationDetailsJobEnvironmentType)
@@ -109,7 +110,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

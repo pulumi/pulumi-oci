@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,14 +45,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentRefreshActivity = new FusionEnvironmentRefreshActivity(&#34;testFusionEnvironmentRefreshActivity&#34;, FusionEnvironmentRefreshActivityArgs.builder()        
+ *         var testFusionEnvironmentRefreshActivity = new FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", FusionEnvironmentRefreshActivityArgs.builder()        
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .sourceFusionEnvironmentId(testFusionEnvironment.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

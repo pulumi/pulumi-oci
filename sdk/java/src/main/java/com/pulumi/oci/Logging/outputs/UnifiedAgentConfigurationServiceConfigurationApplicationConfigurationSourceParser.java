@@ -166,7 +166,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      */
     private @Nullable Integer timeoutInMilliseconds;
     /**
-     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt;{@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 
@@ -382,7 +382,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         return Optional.ofNullable(this.timeoutInMilliseconds);
     }
     /**
-     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt;{@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 

@@ -40,7 +40,8 @@ import javax.annotation.Nullable;
  * ### VCN Local with Internet
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -62,16 +63,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDhcpOptions = new DhcpOptions(&#34;testDhcpOptions&#34;, DhcpOptionsArgs.builder()        
+ *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .options(            
  *                 DhcpOptionsOptionArgs.builder()
- *                     .type(&#34;DomainNameServer&#34;)
- *                     .serverType(&#34;VcnLocalPlusInternet&#34;)
+ *                     .type("DomainNameServer")
+ *                     .serverType("VcnLocalPlusInternet")
  *                     .build(),
  *                 DhcpOptionsOptionArgs.builder()
- *                     .type(&#34;SearchDomain&#34;)
- *                     .searchDomainNames(&#34;test.com&#34;)
+ *                     .type("SearchDomain")
+ *                     .searchDomainNames("test.com")
  *                     .build())
  *             .vcnId(testVcn.id())
  *             .displayName(dhcpOptionsDisplayName)
@@ -79,13 +80,15 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ### Custom DNS Server
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -107,31 +110,32 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDhcpOptions = new DhcpOptions(&#34;testDhcpOptions&#34;, DhcpOptionsArgs.builder()        
+ *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .options(            
  *                 DhcpOptionsOptionArgs.builder()
- *                     .type(&#34;DomainNameServer&#34;)
- *                     .serverType(&#34;CustomDnsServer&#34;)
+ *                     .type("DomainNameServer")
+ *                     .serverType("CustomDnsServer")
  *                     .customDnsServers(                    
- *                         &#34;192.168.0.2&#34;,
- *                         &#34;192.168.0.11&#34;,
- *                         &#34;192.168.0.19&#34;)
+ *                         "192.168.0.2",
+ *                         "192.168.0.11",
+ *                         "192.168.0.19")
  *                     .build(),
  *                 DhcpOptionsOptionArgs.builder()
- *                     .type(&#34;SearchDomain&#34;)
- *                     .searchDomainNames(&#34;test.com&#34;)
+ *                     .type("SearchDomain")
+ *                     .searchDomainNames("test.com")
  *                     .build())
  *             .vcnId(testVcn.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(dhcpOptionsDisplayName)
  *             .domainNameType(dhcpOptionsDomainNameType)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -32,7 +32,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -57,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPipelineRun = new PipelineRun(&#34;testPipelineRun&#34;, PipelineRunArgs.builder()        
+ *         var testPipelineRun = new PipelineRun("testPipelineRun", PipelineRunArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .pipelineId(testPipeline.id())
  *             .configurationOverrideDetails(PipelineRunConfigurationOverrideDetailsArgs.builder()
@@ -66,9 +67,9 @@ import javax.annotation.Nullable;
  *                 .environmentVariables(pipelineRunConfigurationOverrideDetailsEnvironmentVariables)
  *                 .maximumRuntimeInMinutes(pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(pipelineRunDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .logConfigurationOverrideDetails(PipelineRunLogConfigurationOverrideDetailsArgs.builder()
  *                 .enableAutoLogCreation(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation)
  *                 .enableLogging(pipelineRunLogConfigurationOverrideDetailsEnableLogging)
@@ -89,7 +90,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

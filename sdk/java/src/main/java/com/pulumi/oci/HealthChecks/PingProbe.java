@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPingProbe = new PingProbe(&#34;testPingProbe&#34;, PingProbeArgs.builder()        
+ *         var testPingProbe = new PingProbe("testPingProbe", PingProbeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .protocol(pingProbeProtocol)
  *             .targets(pingProbeTargets)
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstancePatchAction = new BdsInstancePatchAction(&#34;testBdsInstancePatchAction&#34;, BdsInstancePatchActionArgs.builder()        
+ *         var testBdsInstancePatchAction = new BdsInstancePatchAction("testBdsInstancePatchAction", BdsInstancePatchActionArgs.builder()        
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(bdsInstancePatchActionClusterAdminPassword)
  *             .version(bdsInstancePatchActionVersion)
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

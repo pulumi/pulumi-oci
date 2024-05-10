@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGeneratedKey = new GeneratedKey(&#34;testGeneratedKey&#34;, GeneratedKeyArgs.builder()        
+ *         var testGeneratedKey = new GeneratedKey("testGeneratedKey", GeneratedKeyArgs.builder()        
  *             .cryptoEndpoint(generatedKeyCryptoEndpoint)
  *             .includePlaintextKey(generatedKeyIncludePlaintextKey)
  *             .keyId(testKey.id())
@@ -63,7 +64,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

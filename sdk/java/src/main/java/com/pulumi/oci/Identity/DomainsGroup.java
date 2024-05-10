@@ -35,7 +35,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -63,14 +64,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGroup = new DomainsGroup(&#34;testGroup&#34;, DomainsGroupArgs.builder()        
+ *         var testGroup = new DomainsGroup("testGroup", DomainsGroupArgs.builder()        
  *             .displayName(groupDisplayName)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:core:2.0:Group&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:core:2.0:Group")
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authorization(groupAuthorization)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .id(groupId)
  *             .members(DomainsGroupMemberArgs.builder()
  *                 .type(groupMembersType)
@@ -117,7 +118,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

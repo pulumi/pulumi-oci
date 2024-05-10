@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,11 +53,11 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfig = new Config(&#34;testConfig&#34;, ConfigArgs.builder()        
+ *         var testConfig = new Config("testConfig", ConfigArgs.builder()        
  *             .apmDomainId(testApmDomain.id())
  *             .configType(configConfigType)
  *             .displayName(configDisplayName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(configDescription)
  *             .dimensions(ConfigDimensionArgs.builder()
  *                 .name(configDimensionsName)
@@ -64,7 +65,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .filterId(testFilter.id())
  *             .filterText(configFilterText)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .group(configGroup)
  *             .metrics(ConfigMetricArgs.builder()
  *                 .description(configMetricsDescription)
@@ -88,7 +89,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,20 +45,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppAcceleration = new AppAcceleration(&#34;testWebAppAcceleration&#34;, AppAccelerationArgs.builder()        
+ *         var testWebAppAcceleration = new AppAcceleration("testWebAppAcceleration", AppAccelerationArgs.builder()        
  *             .backendType(webAppAccelerationBackendType)
  *             .compartmentId(compartmentId)
  *             .loadBalancerId(testLoadBalancer.id())
  *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(webAppAccelerationDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .systemTags(webAppAccelerationSystemTags)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

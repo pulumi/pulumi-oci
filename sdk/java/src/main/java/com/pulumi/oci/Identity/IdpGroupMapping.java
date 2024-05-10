@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIdpGroupMapping = new IdpGroupMapping(&#34;testIdpGroupMapping&#34;, IdpGroupMappingArgs.builder()        
+ *         var testIdpGroupMapping = new IdpGroupMapping("testIdpGroupMapping", IdpGroupMappingArgs.builder()        
  *             .groupId(testGroup.id())
  *             .identityProviderId(testIdentityProvider.id())
  *             .idpGroupName(idpGroupMappingIdpGroupName)
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

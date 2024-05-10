@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamCdnConfig = new StreamCdnConfig(&#34;testStreamCdnConfig&#34;, StreamCdnConfigArgs.builder()        
+ *         var testStreamCdnConfig = new StreamCdnConfig("testStreamCdnConfig", StreamCdnConfigArgs.builder()        
  *             .config(StreamCdnConfigConfigArgs.builder()
  *                 .type(streamCdnConfigConfigType)
  *                 .edgeHostname(streamCdnConfigConfigEdgeHostname)
@@ -67,8 +68,8 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .displayName(streamCdnConfigDisplayName)
  *             .distributionChannelId(testChannel.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEnabled(streamCdnConfigIsEnabled)
  *             .locks(StreamCdnConfigLockArgs.builder()
  *                 .compartmentId(compartmentId)
@@ -81,7 +82,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

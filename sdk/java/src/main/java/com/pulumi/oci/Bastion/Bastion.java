@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,14 +47,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBastion = new Bastion(&#34;testBastion&#34;, BastionArgs.builder()        
+ *         var testBastion = new Bastion("testBastion", BastionArgs.builder()        
  *             .bastionType(bastionBastionType)
  *             .compartmentId(compartmentId)
  *             .targetSubnetId(testSubnet.id())
  *             .clientCidrBlockAllowLists(bastionClientCidrBlockAllowList)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .dnsProxyStatus(bastionDnsProxyStatus)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .maxSessionTtlInSeconds(bastionMaxSessionTtlInSeconds)
  *             .name(bastionName)
  *             .phoneBookEntry(bastionPhoneBookEntry)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

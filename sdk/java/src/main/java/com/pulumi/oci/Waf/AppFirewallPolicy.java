@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppFirewallPolicy = new AppFirewallPolicy(&#34;testWebAppFirewallPolicy&#34;, AppFirewallPolicyArgs.builder()        
+ *         var testWebAppFirewallPolicy = new AppFirewallPolicy("testWebAppFirewallPolicy", AppFirewallPolicyArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .actions(AppFirewallPolicyActionArgs.builder()
  *                 .name(webAppFirewallPolicyActionsName)
@@ -73,9 +74,9 @@ import javax.annotation.Nullable;
  *                     .value(webAppFirewallPolicyActionsHeadersValue)
  *                     .build())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(webAppFirewallPolicyDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .requestAccessControl(AppFirewallPolicyRequestAccessControlArgs.builder()
  *                 .defaultActionName(webAppFirewallPolicyRequestAccessControlDefaultActionName)
  *                 .rules(AppFirewallPolicyRequestAccessControlRuleArgs.builder()
@@ -180,7 +181,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

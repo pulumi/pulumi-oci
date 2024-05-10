@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,8 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         final var config = ctx.config();
- *         final var disassociateTrigger = config.get(&#34;disassociateTrigger&#34;).orElse(0);
- *         var testDrProtectionGroup = new DrProtectionGroup(&#34;testDrProtectionGroup&#34;, DrProtectionGroupArgs.builder()        
+ *         final var disassociateTrigger = config.get("disassociateTrigger").orElse(0);
+ *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(drProtectionGroupDisplayName)
  *             .logLocation(DrProtectionGroupLogLocationArgs.builder()
@@ -67,8 +68,8 @@ import javax.annotation.Nullable;
  *                 .peerId(drProtectionGroupAssociationPeerId)
  *                 .peerRegion(drProtectionGroupAssociationPeerRegion)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .disassociateTrigger(disassociateTrigger)
  *             .members(DrProtectionGroupMemberArgs.builder()
  *                 .memberId(drProtectionGroupMembersMemberId)
@@ -132,7 +133,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Create

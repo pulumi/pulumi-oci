@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,14 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTarget = new Target(&#34;testTarget&#34;, TargetArgs.builder()        
+ *         var testTarget = new Target("testTarget", TargetArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(targetDisplayName)
  *             .targetResourceId(testTargetResource.id())
  *             .targetResourceType(targetTargetResourceType)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(targetDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .state(targetState)
  *             .targetDetectorRecipes(TargetTargetDetectorRecipeArgs.builder()
  *                 .detectorRecipeId(testDetectorRecipe.id())
@@ -91,7 +92,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

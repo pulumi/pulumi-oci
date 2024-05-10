@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAssetSource = new AssetSource(&#34;testAssetSource&#34;, AssetSourceArgs.builder()        
+ *         var testAssetSource = new AssetSource("testAssetSource", AssetSourceArgs.builder()        
  *             .assetsCompartmentId(testCompartment.id())
  *             .compartmentId(compartmentId)
  *             .discoveryCredentials(AssetSourceDiscoveryCredentialsArgs.builder()
@@ -62,10 +63,10 @@ import javax.annotation.Nullable;
  *             .vcenterEndpoint(assetSourceVcenterEndpoint)
  *             .areHistoricalMetricsCollected(assetSourceAreHistoricalMetricsCollected)
  *             .areRealtimeMetricsCollected(assetSourceAreRealtimeMetricsCollected)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .discoveryScheduleId(testDiscoverySchedule.id())
  *             .displayName(assetSourceDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .replicationCredentials(AssetSourceReplicationCredentialsArgs.builder()
  *                 .secretId(testSecret.id())
  *                 .type(assetSourceReplicationCredentialsType)
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

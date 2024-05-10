@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,14 +45,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackupCancelManagement = new BackupCancelManagement(&#34;testBackupCancelManagement&#34;, BackupCancelManagementArgs.builder()        
+ *         var testBackupCancelManagement = new BackupCancelManagement("testBackupCancelManagement", BackupCancelManagementArgs.builder()        
  *             .backupId(testBackup.id())
  *             .cancelBackupTrigger(1)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

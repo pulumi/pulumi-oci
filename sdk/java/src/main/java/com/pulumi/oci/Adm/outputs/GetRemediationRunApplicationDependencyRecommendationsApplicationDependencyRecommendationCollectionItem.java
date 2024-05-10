@@ -37,7 +37,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      */
     private String recommendedGav;
     /**
-     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.2.0
      * 
      */
     private String recommendedPurl;
@@ -79,7 +79,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         return this.recommendedGav;
     }
     /**
-     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+     * @return Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.2.0
      * 
      */
     public String recommendedPurl() {

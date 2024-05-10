@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBuildPipelineStage = new BuildPipelineStage(&#34;testBuildPipelineStage&#34;, BuildPipelineStageArgs.builder()        
+ *         var testBuildPipelineStage = new BuildPipelineStage("testBuildPipelineStage", BuildPipelineStageArgs.builder()        
  *             .buildPipelineId(testBuildPipeline.id())
  *             .buildPipelineStagePredecessorCollection(BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs.builder()
  *                 .items(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs.builder()
@@ -82,7 +83,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .buildSpecFile(buildPipelineStageBuildSpecFile)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deliverArtifactCollection(BuildPipelineStageDeliverArtifactCollectionArgs.builder()
  *                 .items(BuildPipelineStageDeliverArtifactCollectionItemArgs.builder()
  *                     .artifactId(testArtifact.id())
@@ -92,7 +93,7 @@ import javax.annotation.Nullable;
  *             .deployPipelineId(testDeployPipeline.id())
  *             .description(buildPipelineStageDescription)
  *             .displayName(buildPipelineStageDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .image(buildPipelineStageImage)
  *             .isPassAllParametersEnabled(buildPipelineStageIsPassAllParametersEnabled)
  *             .primaryBuildSource(buildPipelineStagePrimaryBuildSource)
@@ -110,7 +111,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

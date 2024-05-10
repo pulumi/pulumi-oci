@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport(&#34;testJavaDownloadReport&#34;, JavaDownloadsJavaDownloadReportArgs.builder()        
+ *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport("testJavaDownloadReport", JavaDownloadsJavaDownloadReportArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .format(javaDownloadReportFormat)
  *             .timeEnd(javaDownloadReportTimeEnd)
@@ -56,7 +57,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

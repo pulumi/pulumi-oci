@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,22 +49,23 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEndpoint = new Endpoint(&#34;testEndpoint&#34;, EndpointArgs.builder()        
+ *         var testEndpoint = new Endpoint("testEndpoint", EndpointArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .dedicatedAiClusterId(testDedicatedAiCluster.id())
  *             .modelId(testModel.id())
  *             .contentModerationConfig(EndpointContentModerationConfigArgs.builder()
  *                 .isEnabled(endpointContentModerationConfigIsEnabled)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(endpointDescription)
  *             .displayName(endpointDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone(&#34;testPluggableDatabasesLocalClone&#34;, PluggableDatabasesLocalCloneArgs.builder()        
+ *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", PluggableDatabasesLocalCloneArgs.builder()        
  *             .clonedPdbName(pluggableDatabasesLocalCloneClonedPdbName)
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .pdbAdminPassword(pluggableDatabasesLocalClonePdbAdminPassword)
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

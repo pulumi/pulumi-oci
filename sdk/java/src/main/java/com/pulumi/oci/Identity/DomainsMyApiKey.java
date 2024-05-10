@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,10 +53,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyApiKey = new DomainsMyApiKey(&#34;testMyApiKey&#34;, DomainsMyApiKeyArgs.builder()        
+ *         var testMyApiKey = new DomainsMyApiKey("testMyApiKey", DomainsMyApiKeyArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .key(myApiKeyKey)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:apikey&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
  *             .authorization(myApiKeyAuthorization)
  *             .description(myApiKeyDescription)
  *             .id(myApiKeyId)
@@ -73,7 +74,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

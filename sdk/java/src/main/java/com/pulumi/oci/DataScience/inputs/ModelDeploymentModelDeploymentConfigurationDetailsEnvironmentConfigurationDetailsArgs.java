@@ -96,14 +96,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     }
 
     /**
-     * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+     * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     @Import(name="image")
     private @Nullable Output<String> image;
 
     /**
-     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     public Optional<Output<String>> image() {
@@ -297,7 +297,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
 
         /**
-         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
 
         /**
-         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
          * 
          * @return builder
          * 

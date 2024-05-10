@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy(&#34;testLoadBalancerRoutingPolicy&#34;, LoadBalancerRoutingPolicyArgs.builder()        
+ *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()        
  *             .conditionLanguageVersion(loadBalancerRoutingPolicyConditionLanguageVersion)
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(loadBalancerRoutingPolicyName)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

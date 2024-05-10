@@ -34,7 +34,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -62,14 +63,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIdentityProvider = new DomainsIdentityProvider(&#34;testIdentityProvider&#34;, DomainsIdentityProviderArgs.builder()        
+ *         var testIdentityProvider = new DomainsIdentityProvider("testIdentityProvider", DomainsIdentityProviderArgs.builder()        
  *             .enabled(false)
  *             .idcsEndpoint(testDomain.url())
  *             .partnerName(identityProviderPartnerName)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityProvider")
  *             .assertionAttribute(identityProviderAssertionAttribute)
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authnRequestBinding(identityProviderAuthnRequestBinding)
  *             .authorization(identityProviderAuthorization)
  *             .correlationPolicy(DomainsIdentityProviderCorrelationPolicyArgs.builder()
@@ -79,7 +80,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .description(identityProviderDescription)
  *             .encryptionCertificate(identityProviderEncryptionCertificate)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .iconUrl(identityProviderIconUrl)
  *             .id(identityProviderId)
  *             .idpSsoUrl(identityProviderIdpSsoUrl)
@@ -120,7 +121,7 @@ import javax.annotation.Nullable;
  *             .shownOnLoginPage(identityProviderShownOnLoginPage)
  *             .signatureHashAlgorithm(identityProviderSignatureHashAlgorithm)
  *             .signingCertificate(identityProviderSigningCertificate)
- *             .succinctId(&#34;succinctId&#34;)
+ *             .succinctId("succinctId")
  *             .tags(DomainsIdentityProviderTagArgs.builder()
  *                 .key(identityProviderTagsKey)
  *                 .value(identityProviderTagsValue)
@@ -146,7 +147,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .urnietfparamsscimschemasoracleidcsextensionx509identityProvider(DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs.builder()
  *                 .certMatchAttribute(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCertMatchAttribute)
- *                 .signingCertificateChains(&#34;signingCertificateChain&#34;)
+ *                 .signingCertificateChains("signingCertificateChain")
  *                 .userMatchAttribute(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderUserMatchAttribute)
  *                 .crlCheckOnOcspFailureEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlCheckOnOcspFailureEnabled)
  *                 .crlEnabled(identityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderCrlEnabled)
@@ -169,7 +170,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

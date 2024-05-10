@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
+ *         var testConfiguration = new Configuration("testConfiguration", ConfigurationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .dbConfigurationOverrides(ConfigurationDbConfigurationOverridesArgs.builder()
  *                 .items(ConfigurationDbConfigurationOverridesItemArgs.builder()
@@ -62,15 +63,16 @@ import javax.annotation.Nullable;
  *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
  *             .instanceOcpuCount(configurationInstanceOcpuCount)
  *             .shape(configurationShape)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(configurationDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .systemTags(configurationSystemTags)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

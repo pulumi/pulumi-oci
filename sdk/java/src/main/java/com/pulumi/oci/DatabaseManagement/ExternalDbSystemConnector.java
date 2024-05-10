@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDbSystemConnector = new ExternalDbSystemConnector(&#34;testExternalDbSystemConnector&#34;, ExternalDbSystemConnectorArgs.builder()        
+ *         var testExternalDbSystemConnector = new ExternalDbSystemConnector("testExternalDbSystemConnector", ExternalDbSystemConnectorArgs.builder()        
  *             .connectorType(externalDbSystemConnectorConnectorType)
  *             .externalDbSystemId(testExternalDbSystem.id())
  *             .displayName(externalDbSystemConnectorDisplayName)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

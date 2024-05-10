@@ -20,12 +20,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
  * 
- * Creates a new Compute Cloud@Customer upgrade schedule.
+ * Creates a new Compute Cloud{@literal @}Customer upgrade schedule.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCccUpgradeSchedule = new AtCustomerCccUpgradeSchedule(&#34;testCccUpgradeSchedule&#34;, AtCustomerCccUpgradeScheduleArgs.builder()        
+ *         var testCccUpgradeSchedule = new AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule", AtCustomerCccUpgradeScheduleArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(cccUpgradeScheduleDisplayName)
  *             .events(AtCustomerCccUpgradeScheduleEventArgs.builder()
@@ -56,14 +57,15 @@ import javax.annotation.Nullable;
  *                 .timeStart(cccUpgradeScheduleEventsTimeStart)
  *                 .scheduleEventRecurrences(cccUpgradeScheduleEventsScheduleEventRecurrences)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(cccUpgradeScheduleDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -78,14 +80,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule")
 public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     public Output<String> compartmentId() {
@@ -106,42 +108,42 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
         return this.definedTags;
     }
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     @Export(name="events", refs={List.class,AtCustomerCccUpgradeScheduleEvent.class}, tree="[0,1]")
     private Output<List<AtCustomerCccUpgradeScheduleEvent>> events;
 
     /**
-     * @return (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * @return (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     public Output<List<AtCustomerCccUpgradeScheduleEvent>> events() {
@@ -168,14 +170,14 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
         return this.freeformTags;
     }
     /**
-     * List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     @Export(name="infrastructureIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> infrastructureIds;
 
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     public Output<List<String>> infrastructureIds() {

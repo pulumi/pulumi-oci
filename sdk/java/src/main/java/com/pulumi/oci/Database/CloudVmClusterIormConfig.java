@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,18 +48,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig(&#34;testCloudVmClusterIormConfig&#34;, CloudVmClusterIormConfigArgs.builder()        
+ *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig("testCloudVmClusterIormConfig", CloudVmClusterIormConfigArgs.builder()        
  *             .dbPlans(CloudVmClusterIormConfigDbPlanArgs.builder()
  *                 .dbName(cloudVmClusterIormConfigDbPlansDbName)
  *                 .share(cloudVmClusterIormConfigDbPlansShare)
  *                 .build())
  *             .cloudVmClusterId(testCloudVmCluster.id())
- *             .objective(&#34;AUTO&#34;)
+ *             .objective("AUTO")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

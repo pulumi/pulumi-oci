@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testQuery = new Query(&#34;testQuery&#34;, QueryArgs.builder()        
+ *         var testQuery = new Query("testQuery", QueryArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .queryDefinition(QueryQueryDefinitionArgs.builder()
  *                 .costAnalysisUi(QueryQueryDefinitionCostAnalysisUiArgs.builder()
@@ -83,7 +84,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

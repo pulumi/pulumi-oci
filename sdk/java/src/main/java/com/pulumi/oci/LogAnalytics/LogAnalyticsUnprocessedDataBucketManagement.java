@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsUnprocessedDataBucketManagement = new LogAnalyticsUnprocessedDataBucketManagement(&#34;testLogAnalyticsUnprocessedDataBucketManagement&#34;, LogAnalyticsUnprocessedDataBucketManagementArgs.builder()        
+ *         var testLogAnalyticsUnprocessedDataBucketManagement = new LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement", LogAnalyticsUnprocessedDataBucketManagementArgs.builder()        
  *             .bucket(logAnalyticsUnprocessedDataBucketManagementBucket)
  *             .namespace(logAnalyticsUnprocessedDataBucketManagementNamespace)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

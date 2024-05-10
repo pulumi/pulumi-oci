@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,12 +52,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTable = new Table(&#34;testTable&#34;, TableArgs.builder()        
+ *         var testTable = new Table("testTable", TableArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .ddlStatement(tableDdlStatement)
  *             .name(tableName)
  *             .definedTags(tableDefinedTags)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isAutoReclaimable(tableIsAutoReclaimable)
  *             .tableLimits(TableTableLimitsArgs.builder()
  *                 .maxReadUnits(tableTableLimitsMaxReadUnits)
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

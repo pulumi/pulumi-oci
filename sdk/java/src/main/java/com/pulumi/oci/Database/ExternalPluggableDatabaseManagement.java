@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalPluggableDatabaseManagement = new ExternalPluggableDatabaseManagement(&#34;testExternalPluggableDatabaseManagement&#34;, ExternalPluggableDatabaseManagementArgs.builder()        
+ *         var testExternalPluggableDatabaseManagement = new ExternalPluggableDatabaseManagement("testExternalPluggableDatabaseManagement", ExternalPluggableDatabaseManagementArgs.builder()        
  *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
  *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

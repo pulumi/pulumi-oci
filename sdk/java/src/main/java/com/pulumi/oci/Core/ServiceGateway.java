@@ -34,7 +34,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,21 +57,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceGateway = new ServiceGateway(&#34;testServiceGateway&#34;, ServiceGatewayArgs.builder()        
+ *         var testServiceGateway = new ServiceGateway("testServiceGateway", ServiceGatewayArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .services(ServiceGatewayServiceArgs.builder()
  *                 .serviceId(testServices.services()[0].id())
  *                 .build())
  *             .vcnId(testVcn.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(serviceGatewayDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

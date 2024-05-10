@@ -25,7 +25,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
      */
     private Map<String,Object> definedTags;
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     private String description;
@@ -35,7 +35,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
      */
     private String displayName;
     /**
-     * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
+     * @return List of preferred times for Compute Cloud{@literal @}Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
     private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events;
@@ -50,7 +50,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
      */
     private String id;
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     private List<String> infrastructureIds;
@@ -96,7 +96,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
         return this.definedTags;
     }
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public String description() {
@@ -110,7 +110,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
         return this.displayName;
     }
     /**
-     * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
+     * @return List of preferred times for Compute Cloud{@literal @}Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
     public List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events() {
@@ -131,7 +131,7 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
         return this.id;
     }
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     public List<String> infrastructureIds() {

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
     /**
-     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Integer uplinkHsrpGroup;
@@ -23,7 +23,7 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
 
     private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic() {}
     /**
-     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Integer uplinkHsrpGroup() {

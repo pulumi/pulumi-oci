@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,19 +50,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceGroup = new ManagedInstanceGroup(&#34;testManagedInstanceGroup&#34;, ManagedInstanceGroupArgs.builder()        
+ *         var testManagedInstanceGroup = new ManagedInstanceGroup("testManagedInstanceGroup", ManagedInstanceGroupArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(managedInstanceGroupDisplayName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(managedInstanceGroupDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .osFamily(managedInstanceGroupOsFamily)
  *             .managedInstanceIds(managedInstanceGroupManagedInstanceIds)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetDatabasePeerTargetDatabase = new TargetDatabasePeerTargetDatabase(&#34;testTargetDatabasePeerTargetDatabase&#34;, TargetDatabasePeerTargetDatabaseArgs.builder()        
+ *         var testTargetDatabasePeerTargetDatabase = new TargetDatabasePeerTargetDatabase("testTargetDatabasePeerTargetDatabase", TargetDatabasePeerTargetDatabaseArgs.builder()        
  *             .databaseDetails(TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs.builder()
  *                 .databaseType(targetDatabasePeerTargetDatabaseDatabaseDetailsDatabaseType)
  *                 .infrastructureType(targetDatabasePeerTargetDatabaseDatabaseDetailsInfrastructureType)
@@ -74,7 +75,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -22,7 +22,7 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
     private List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters;
     private @Nullable List<String> dbServers;
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     private String displayName;
@@ -65,7 +65,7 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
         return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     public String displayName() {

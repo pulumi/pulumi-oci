@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaPrivateEndpointScanProxy = new OdaPrivateEndpointScanProxy(&#34;testOdaPrivateEndpointScanProxy&#34;, OdaPrivateEndpointScanProxyArgs.builder()        
+ *         var testOdaPrivateEndpointScanProxy = new OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy", OdaPrivateEndpointScanProxyArgs.builder()        
  *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
  *             .protocol(odaPrivateEndpointScanProxyProtocol)
  *             .scanListenerInfos(OdaPrivateEndpointScanProxyScanListenerInfoArgs.builder()
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

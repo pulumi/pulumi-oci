@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testObject = new StorageObject(&#34;testObject&#34;, StorageObjectArgs.builder()        
+ *         var testObject = new StorageObject("testObject", StorageObjectArgs.builder()        
  *             .bucket(objectBucket)
  *             .content(objectContent)
  *             .namespace(objectNamespace)
@@ -72,7 +73,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

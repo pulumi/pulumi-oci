@@ -43,12 +43,12 @@ public final class GetAtCustomerCccInfrastructureResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * @return A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     private String description;
     /**
-     * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -58,17 +58,17 @@ public final class GetAtCustomerCccInfrastructureResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
+     * @return The Compute Cloud{@literal @}Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
     private String id;
     /**
-     * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     private List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories;
     /**
-     * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations;
@@ -78,27 +78,27 @@ public final class GetAtCustomerCccInfrastructureResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * @return Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     private String provisioningFingerprint;
     /**
-     * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * @return Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     private String provisioningPin;
     /**
-     * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * @return The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     private String shortName;
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private String state;
     /**
-     * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private String subnetId;
@@ -108,17 +108,17 @@ public final class GetAtCustomerCccInfrastructureResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * @return Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     private List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations;
@@ -163,14 +163,14 @@ public final class GetAtCustomerCccInfrastructureResult {
         return this.definedTags;
     }
     /**
-     * @return A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * @return A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -184,21 +184,21 @@ public final class GetAtCustomerCccInfrastructureResult {
         return this.freeformTags;
     }
     /**
-     * @return The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
+     * @return The Compute Cloud{@literal @}Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureInventory> infrastructureInventories() {
         return this.infrastructureInventories;
     }
     /**
-     * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration> infrastructureNetworkConfigurations() {
@@ -212,35 +212,35 @@ public final class GetAtCustomerCccInfrastructureResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * @return Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     public String provisioningFingerprint() {
         return this.provisioningFingerprint;
     }
     /**
-     * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * @return Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     public String provisioningPin() {
         return this.provisioningPin;
     }
     /**
-     * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * @return The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     public String shortName() {
         return this.shortName;
     }
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public String subnetId() {
@@ -254,21 +254,21 @@ public final class GetAtCustomerCccInfrastructureResult {
         return this.systemTags;
     }
     /**
-     * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * @return Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     public List<GetAtCustomerCccInfrastructureUpgradeInformation> upgradeInformations() {

@@ -32,7 +32,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
      */
     private String id;
     /**
-     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
      * 
      */
     private @Nullable String purl;
@@ -64,7 +64,7 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
         return this.id;
     }
     /**
-     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+     * @return Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm{@literal @}21.1.0
      * 
      */
     public Optional<String> purl() {

@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,18 +47,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMetastore = new Metastore(&#34;testMetastore&#34;, MetastoreArgs.builder()        
+ *         var testMetastore = new Metastore("testMetastore", MetastoreArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .defaultExternalTableLocation(metastoreDefaultExternalTableLocation)
  *             .defaultManagedTableLocation(metastoreDefaultManagedTableLocation)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(metastoreDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -86,28 +88,28 @@ public class Metastore extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     @Export(name="defaultExternalTableLocation", refs={String.class}, tree="[0]")
     private Output<String> defaultExternalTableLocation;
 
     /**
-     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public Output<String> defaultExternalTableLocation() {
         return this.defaultExternalTableLocation;
     }
     /**
-     * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     @Export(name="defaultManagedTableLocation", refs={String.class}, tree="[0]")
     private Output<String> defaultManagedTableLocation;
 
     /**
-     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public Output<String> defaultManagedTableLocation() {

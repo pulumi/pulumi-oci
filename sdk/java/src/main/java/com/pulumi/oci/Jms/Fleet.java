@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,16 +57,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFleet = new Fleet(&#34;testFleet&#34;, FleetArgs.builder()        
+ *         var testFleet = new Fleet("testFleet", FleetArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(fleetDisplayName)
  *             .inventoryLog(FleetInventoryLogArgs.builder()
  *                 .logGroupId(testLogGroup.id())
  *                 .logId(testLog.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(fleetDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isAdvancedFeaturesEnabled(fleetIsAdvancedFeaturesEnabled)
  *             .operationLog(FleetOperationLogArgs.builder()
  *                 .logGroupId(testLogGroup.id())
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

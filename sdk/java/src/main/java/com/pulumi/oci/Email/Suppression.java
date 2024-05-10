@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSuppression = new Suppression(&#34;testSuppression&#34;, SuppressionArgs.builder()        
+ *         var testSuppression = new Suppression("testSuppression", SuppressionArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .emailAddress(suppressionEmailAddress)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

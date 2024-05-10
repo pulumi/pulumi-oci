@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualNodePool = new VirtualNodePool(&#34;testVirtualNodePool&#34;, VirtualNodePoolArgs.builder()        
+ *         var testVirtualNodePool = new VirtualNodePool("testVirtualNodePool", VirtualNodePoolArgs.builder()        
  *             .clusterId(testCluster.id())
  *             .compartmentId(compartmentId)
  *             .displayName(virtualNodePoolDisplayName)
@@ -65,8 +66,8 @@ import javax.annotation.Nullable;
  *                 .faultDomains(virtualNodePoolPlacementConfigurationsFaultDomain)
  *                 .subnetId(testSubnet.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .initialVirtualNodeLabels(VirtualNodePoolInitialVirtualNodeLabelArgs.builder()
  *                 .key(virtualNodePoolInitialVirtualNodeLabelsKey)
  *                 .value(virtualNodePoolInitialVirtualNodeLabelsValue)
@@ -84,14 +85,15 @@ import javax.annotation.Nullable;
  *                 .value(virtualNodePoolTaintsValue)
  *                 .build())
  *             .virtualNodeTags(VirtualNodePoolVirtualNodeTagsArgs.builder()
- *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                 .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                 .freeformTags(Map.of("Department", "Finance"))
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

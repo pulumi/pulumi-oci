@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testActionCreateZoneFromZoneFile = new ActionCreateZoneFromZoneFile(&#34;testActionCreateZoneFromZoneFile&#34;, ActionCreateZoneFromZoneFileArgs.builder()        
+ *         var testActionCreateZoneFromZoneFile = new ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile", ActionCreateZoneFromZoneFileArgs.builder()        
  *             .createZoneFromZoneFileDetails(actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails)
  *             .compartmentId(compartmentId)
  *             .scope(actionCreateZoneFromZoneFileScope)
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

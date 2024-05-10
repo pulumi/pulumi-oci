@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,19 +51,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCondition = new DomainsCondition(&#34;testCondition&#34;, DomainsConditionArgs.builder()        
+ *         var testCondition = new DomainsCondition("testCondition", DomainsConditionArgs.builder()        
  *             .attributeName(conditionAttributeName)
  *             .attributeValue(conditionAttributeValue)
  *             .idcsEndpoint(testDomain.url())
  *             .name(conditionName)
  *             .operator(conditionOperator)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Condition&#34;)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Condition")
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(conditionAuthorization)
  *             .description(conditionDescription)
  *             .evaluateConditionIf(conditionEvaluateConditionIf)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .ocid(conditionOcid)
  *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
  *             .tags(DomainsConditionTagArgs.builder()
@@ -73,7 +74,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

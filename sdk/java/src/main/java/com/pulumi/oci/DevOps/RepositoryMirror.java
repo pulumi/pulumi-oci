@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,13 +43,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRepositoryMirror = new RepositoryMirror(&#34;testRepositoryMirror&#34;, RepositoryMirrorArgs.builder()        
+ *         var testRepositoryMirror = new RepositoryMirror("testRepositoryMirror", RepositoryMirrorArgs.builder()        
  *             .repositoryId(testRepository.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

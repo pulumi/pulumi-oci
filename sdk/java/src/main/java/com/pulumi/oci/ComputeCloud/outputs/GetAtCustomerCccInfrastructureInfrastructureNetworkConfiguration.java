@@ -16,12 +16,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
     /**
-     * @return The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+     * @return The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
      * 
      */
     private List<String> dnsIps;
     /**
-     * @return Dynamic routing information for the Compute Cloud@Customer infrastructure.
+     * @return Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics;
@@ -31,7 +31,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
      */
     private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic> infrastructureRoutingStatics;
     /**
-     * @return Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+     * @return Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode> managementNodes;
@@ -51,7 +51,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
      */
     private List<String> spineIps;
     /**
-     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
     private String spineVip;
@@ -61,12 +61,12 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
      */
     private String uplinkDomain;
     /**
-     * @return Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+     * @return Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
      * 
      */
     private String uplinkGatewayIp;
     /**
-     * @return Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+     * @return Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
      * 
      */
     private String uplinkNetmask;
@@ -76,7 +76,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
      */
     private Integer uplinkPortCount;
     /**
-     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private String uplinkPortForwardErrorCorrection;
@@ -93,14 +93,14 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
 
     private GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration() {}
     /**
-     * @return The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+     * @return The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
      * 
      */
     public List<String> dnsIps() {
         return this.dnsIps;
     }
     /**
-     * @return Dynamic routing information for the Compute Cloud@Customer infrastructure.
+     * @return Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic> infrastructureRoutingDynamics() {
@@ -114,7 +114,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         return this.infrastructureRoutingStatics;
     }
     /**
-     * @return Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+     * @return Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public List<GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode> managementNodes() {
@@ -142,7 +142,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         return this.spineIps;
     }
     /**
-     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
     public String spineVip() {
@@ -156,14 +156,14 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         return this.uplinkDomain;
     }
     /**
-     * @return Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+     * @return Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
      * 
      */
     public String uplinkGatewayIp() {
         return this.uplinkGatewayIp;
     }
     /**
-     * @return Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+     * @return Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
      * 
      */
     public String uplinkNetmask() {
@@ -177,7 +177,7 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
         return this.uplinkPortCount;
     }
     /**
-     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public String uplinkPortForwardErrorCorrection() {

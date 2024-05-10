@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule(&#34;testNetworkSecurityGroupSecurityRule&#34;, NetworkSecurityGroupSecurityRuleArgs.builder()        
+ *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", NetworkSecurityGroupSecurityRuleArgs.builder()        
  *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
  *             .direction(networkSecurityGroupSecurityRuleDirection)
  *             .protocol(networkSecurityGroupSecurityRuleProtocol)
@@ -92,7 +93,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

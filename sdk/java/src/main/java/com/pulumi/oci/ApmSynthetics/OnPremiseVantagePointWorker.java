@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,15 +50,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOnPremiseVantagePointWorker = new OnPremiseVantagePointWorker(&#34;testOnPremiseVantagePointWorker&#34;, OnPremiseVantagePointWorkerArgs.builder()        
+ *         var testOnPremiseVantagePointWorker = new OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker", OnPremiseVantagePointWorkerArgs.builder()        
  *             .apmDomainId(testApmDomain.id())
  *             .name(onPremiseVantagePointWorkerName)
  *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
  *             .resourcePrincipalTokenPublicKey(onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey)
  *             .version(onPremiseVantagePointWorkerVersion)
  *             .configurationDetails(onPremiseVantagePointWorkerConfigurationDetails)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .priority(onPremiseVantagePointWorkerPriority)
  *             .status(onPremiseVantagePointWorkerStatus)
  *             .workerType(onPremiseVantagePointWorkerWorkerType)
@@ -65,7 +66,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

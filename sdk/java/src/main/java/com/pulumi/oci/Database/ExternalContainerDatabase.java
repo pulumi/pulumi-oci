@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,16 +48,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalContainerDatabase = new ExternalContainerDatabase(&#34;testExternalContainerDatabase&#34;, ExternalContainerDatabaseArgs.builder()        
+ *         var testExternalContainerDatabase = new ExternalContainerDatabase("testExternalContainerDatabase", ExternalContainerDatabaseArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(externalContainerDatabaseDisplayName)
  *             .definedTags(externalContainerDatabaseDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

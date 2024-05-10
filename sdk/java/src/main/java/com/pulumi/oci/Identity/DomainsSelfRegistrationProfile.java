@@ -37,7 +37,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -67,7 +68,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSelfRegistrationProfile = new DomainsSelfRegistrationProfile(&#34;testSelfRegistrationProfile&#34;, DomainsSelfRegistrationProfileArgs.builder()        
+ *         var testSelfRegistrationProfile = new DomainsSelfRegistrationProfile("testSelfRegistrationProfile", DomainsSelfRegistrationProfileArgs.builder()        
  *             .activationEmailRequired(selfRegistrationProfileActivationEmailRequired)
  *             .consentTextPresent(selfRegistrationProfileConsentTextPresent)
  *             .displayNames(DomainsSelfRegistrationProfileDisplayNameArgs.builder()
@@ -82,7 +83,7 @@ import javax.annotation.Nullable;
  *             .name(selfRegistrationProfileName)
  *             .numberOfDaysRedirectUrlIsValid(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid)
  *             .redirectUrl(selfRegistrationProfileRedirectUrl)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile")
  *             .showOnLoginPage(selfRegistrationProfileShowOnLoginPage)
  *             .active(selfRegistrationProfileActive)
  *             .afterSubmitTexts(DomainsSelfRegistrationProfileAfterSubmitTextArgs.builder()
@@ -91,8 +92,8 @@ import javax.annotation.Nullable;
  *                 .default_(selfRegistrationProfileAfterSubmitTextDefault)
  *                 .build())
  *             .allowedEmailDomains(selfRegistrationProfileAllowedEmailDomains)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(selfRegistrationProfileAuthorization)
  *             .consentTexts(DomainsSelfRegistrationProfileConsentTextArgs.builder()
  *                 .locale(selfRegistrationProfileConsentTextLocale)
@@ -103,7 +104,7 @@ import javax.annotation.Nullable;
  *                 .value(selfRegistrationProfileDefaultGroupsValue)
  *                 .build())
  *             .disallowedEmailDomains(selfRegistrationProfileDisallowedEmailDomains)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .footerLogo(selfRegistrationProfileFooterLogo)
  *             .footerTexts(DomainsSelfRegistrationProfileFooterTextArgs.builder()
  *                 .locale(selfRegistrationProfileFooterTextLocale)
@@ -132,7 +133,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

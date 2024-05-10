@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,13 +55,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDynamicResourceGroup = new DomainsDynamicResourceGroup(&#34;testDynamicResourceGroup&#34;, DomainsDynamicResourceGroupArgs.builder()        
+ *         var testDynamicResourceGroup = new DomainsDynamicResourceGroup("testDynamicResourceGroup", DomainsDynamicResourceGroupArgs.builder()        
  *             .displayName(dynamicResourceGroupDisplayName)
  *             .idcsEndpoint(testDomain.url())
  *             .matchingRule(dynamicResourceGroupMatchingRule)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup")
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authorization(dynamicResourceGroupAuthorization)
  *             .description(dynamicResourceGroupDescription)
  *             .id(dynamicResourceGroupId)
@@ -85,7 +86,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

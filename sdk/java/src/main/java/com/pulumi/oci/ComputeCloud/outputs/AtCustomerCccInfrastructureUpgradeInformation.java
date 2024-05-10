@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AtCustomerCccInfrastructureUpgradeInformation {
     /**
-     * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * @return The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private @Nullable String currentVersion;
     /**
-     * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * @return Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     private @Nullable Boolean isActive;
     /**
-     * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * @return Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     private @Nullable String scheduledUpgradeDuration;
     /**
-     * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * @return Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     private @Nullable String timeOfScheduledUpgrade;
 
     private AtCustomerCccInfrastructureUpgradeInformation() {}
     /**
-     * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * @return The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<String> currentVersion() {
         return Optional.ofNullable(this.currentVersion);
     }
     /**
-     * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * @return Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     public Optional<Boolean> isActive() {
         return Optional.ofNullable(this.isActive);
     }
     /**
-     * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * @return Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     public Optional<String> scheduledUpgradeDuration() {
         return Optional.ofNullable(this.scheduledUpgradeDuration);
     }
     /**
-     * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * @return Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     public Optional<String> timeOfScheduledUpgrade() {

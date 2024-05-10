@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,10 +53,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyUserDbCredential = new DomainsMyUserDbCredential(&#34;testMyUserDbCredential&#34;, DomainsMyUserDbCredentialArgs.builder()        
+ *         var testMyUserDbCredential = new DomainsMyUserDbCredential("testMyUserDbCredential", DomainsMyUserDbCredentialArgs.builder()        
  *             .dbPassword(myUserDbCredentialDbPassword)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials")
  *             .authorization(myUserDbCredentialAuthorization)
  *             .description(myUserDbCredentialDescription)
  *             .expiresOn(myUserDbCredentialExpiresOn)
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

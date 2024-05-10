@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsageCarbonEmissionsQuery = new UsageCarbonEmissionsQuery(&#34;testUsageCarbonEmissionsQuery&#34;, UsageCarbonEmissionsQueryArgs.builder()        
+ *         var testUsageCarbonEmissionsQuery = new UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery", UsageCarbonEmissionsQueryArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .queryDefinition(UsageCarbonEmissionsQueryQueryDefinitionArgs.builder()
  *                 .costAnalysisUi(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs.builder()
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

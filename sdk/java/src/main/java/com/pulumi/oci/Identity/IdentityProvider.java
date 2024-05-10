@@ -38,7 +38,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -59,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIdentityProvider = new IdentityProvider(&#34;testIdentityProvider&#34;, IdentityProviderArgs.builder()        
+ *         var testIdentityProvider = new IdentityProvider("testIdentityProvider", IdentityProviderArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .description(identityProviderDescription)
  *             .metadata(identityProviderMetadata)
@@ -67,14 +68,15 @@ import javax.annotation.Nullable;
  *             .name(identityProviderName)
  *             .productType(identityProviderProductType)
  *             .protocol(identityProviderProtocol)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformAttributes(identityProviderFreeformAttributes)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

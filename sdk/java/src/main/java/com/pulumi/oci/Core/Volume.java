@@ -42,7 +42,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -66,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolume = new Volume(&#34;testVolume&#34;, VolumeArgs.builder()        
+ *         var testVolume = new Volume("testVolume", VolumeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .autotunePolicies(VolumeAutotunePolicyArgs.builder()
  *                 .autotuneType(volumeAutotunePoliciesAutotuneType)
@@ -79,9 +80,9 @@ import javax.annotation.Nullable;
  *                 .displayName(volumeBlockVolumeReplicasDisplayName)
  *                 .build())
  *             .clusterPlacementGroupId(testGroup.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAutoTuneEnabled(volumeIsAutoTuneEnabled)
  *             .kmsKeyId(testKey.id())
  *             .sizeInGbs(volumeSizeInGbs)
@@ -96,7 +97,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

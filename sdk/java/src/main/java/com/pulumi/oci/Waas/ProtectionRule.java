@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,19 +47,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProtectionRule = new ProtectionRule(&#34;testProtectionRule&#34;, ProtectionRuleArgs.builder()        
+ *         var testProtectionRule = new ProtectionRule("testProtectionRule", ProtectionRuleArgs.builder()        
  *             .waasPolicyId(testWaasPolicy.id())
  *             .key(key)
- *             .action(&#34;DETECT&#34;)
+ *             .action("DETECT")
  *             .exclusions(ProtectionRuleExclusionArgs.builder()
- *                 .exclusions(&#34;example.com&#34;)
- *                 .target(&#34;REQUEST_COOKIES&#34;)
+ *                 .exclusions("example.com")
+ *                 .target("REQUEST_COOKIES")
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

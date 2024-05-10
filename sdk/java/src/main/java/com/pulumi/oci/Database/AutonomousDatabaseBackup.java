@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup(&#34;testAutonomousDatabaseBackup&#34;, AutonomousDatabaseBackupArgs.builder()        
+ *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()        
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .displayName(autonomousDatabaseBackupDisplayName)
  *             .isLongTermBackup(autonomousDatabaseBackupIsLongTermBackup)
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

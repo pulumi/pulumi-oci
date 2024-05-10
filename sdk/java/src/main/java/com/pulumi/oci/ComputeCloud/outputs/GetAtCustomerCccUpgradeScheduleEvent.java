@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAtCustomerCccUpgradeScheduleEvent {
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     private String description;
@@ -31,14 +31,14 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
      */
     private String scheduleEventRecurrences;
     /**
-     * @return The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+     * @return The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
     private String timeStart;
 
     private GetAtCustomerCccUpgradeScheduleEvent() {}
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public String description() {
@@ -66,7 +66,7 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
         return this.scheduleEventRecurrences;
     }
     /**
-     * @return The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+     * @return The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
     public String timeStart() {

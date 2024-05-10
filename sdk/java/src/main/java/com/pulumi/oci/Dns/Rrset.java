@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRrset = new Rrset(&#34;testRrset&#34;, RrsetArgs.builder()        
+ *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()        
  *             .domain(rrsetDomain)
  *             .rtype(rrsetRtype)
  *             .zoneNameOrId(testZone.id())
@@ -64,7 +65,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

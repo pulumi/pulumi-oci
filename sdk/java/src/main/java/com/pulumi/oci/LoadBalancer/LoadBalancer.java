@@ -56,7 +56,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -79,13 +80,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLoadBalancer = new LoadBalancer(&#34;testLoadBalancer&#34;, LoadBalancerArgs.builder()        
+ *         var testLoadBalancer = new LoadBalancer("testLoadBalancer", LoadBalancerArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(loadBalancerDisplayName)
  *             .shape(loadBalancerShape)
  *             .subnetIds(loadBalancerSubnetIds)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipMode(loadBalancerIpMode)
  *             .isPrivate(loadBalancerIsPrivate)
  *             .networkSecurityGroupIds(loadBalancerNetworkSecurityGroupIds)
@@ -100,7 +101,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

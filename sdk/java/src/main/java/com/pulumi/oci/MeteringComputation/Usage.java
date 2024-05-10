@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsage = new Usage(&#34;testUsage&#34;, UsageArgs.builder()        
+ *         var testUsage = new Usage("testUsage", UsageArgs.builder()        
  *             .granularity(usageGranularity)
  *             .tenantId(testTenant.id())
  *             .timeUsageEnded(usageTimeUsageEnded)
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

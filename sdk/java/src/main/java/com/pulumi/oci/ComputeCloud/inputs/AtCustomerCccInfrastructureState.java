@@ -67,14 +67,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     @Import(name="connectionState")
     private @Nullable Output<String> connectionState;
 
     /**
-     * @return (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * @return (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     public Optional<Output<String>> connectionState() {
@@ -97,14 +97,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -112,14 +112,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -142,14 +142,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Import(name="infrastructureInventories")
     private @Nullable Output<List<AtCustomerCccInfrastructureInfrastructureInventoryArgs>> infrastructureInventories;
 
     /**
-     * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public Optional<Output<List<AtCustomerCccInfrastructureInfrastructureInventoryArgs>>> infrastructureInventories() {
@@ -157,14 +157,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Import(name="infrastructureNetworkConfigurations")
     private @Nullable Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs>> infrastructureNetworkConfigurations;
 
     /**
-     * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public Optional<Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs>>> infrastructureNetworkConfigurations() {
@@ -187,14 +187,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     @Import(name="provisioningFingerprint")
     private @Nullable Output<String> provisioningFingerprint;
 
     /**
-     * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * @return Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     public Optional<Output<String>> provisioningFingerprint() {
@@ -202,14 +202,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     @Import(name="provisioningPin")
     private @Nullable Output<String> provisioningPin;
 
     /**
-     * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * @return Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     public Optional<Output<String>> provisioningPin() {
@@ -217,14 +217,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     @Import(name="shortName")
     private @Nullable Output<String> shortName;
 
     /**
-     * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * @return The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     public Optional<Output<String>> shortName() {
@@ -232,14 +232,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * The current state of the Compute Cloud@Customer infrastructure.
+     * The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<String>> state() {
@@ -247,7 +247,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,7 +257,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,14 +283,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -298,14 +298,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -313,14 +313,14 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
     }
 
     /**
-     * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     @Import(name="upgradeInformations")
     private @Nullable Output<List<AtCustomerCccInfrastructureUpgradeInformationArgs>> upgradeInformations;
 
     /**
-     * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * @return Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     public Optional<Output<List<AtCustomerCccInfrastructureUpgradeInformationArgs>>> upgradeInformations() {
@@ -434,7 +434,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param connectionState (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+         * @param connectionState (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param connectionState (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+         * @param connectionState (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+         * @param displayName (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+         * @param displayName (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureInventories Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureInventories Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureInventories Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureInventories Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureInventories Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureInventories Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -570,7 +570,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+         * @param infrastructureNetworkConfigurations Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param provisioningFingerprint Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+         * @param provisioningFingerprint Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
          * 
          * @return builder
          * 
@@ -633,7 +633,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param provisioningFingerprint Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+         * @param provisioningFingerprint Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
          * 
          * @return builder
          * 
@@ -643,7 +643,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param provisioningPin Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+         * @param provisioningPin Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
          * 
          * @return builder
          * 
@@ -654,7 +654,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param provisioningPin Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+         * @param provisioningPin Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
          * 
          * @return builder
          * 
@@ -664,7 +664,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param shortName The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+         * @param shortName The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
          * 
          * @return builder
          * 
@@ -675,7 +675,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param shortName The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+         * @param shortName The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
          * 
          * @return builder
          * 
@@ -685,7 +685,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param state The current state of the Compute Cloud@Customer infrastructure.
+         * @param state The current state of the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -696,7 +696,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param state The current state of the Compute Cloud@Customer infrastructure.
+         * @param state The current state of the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -706,7 +706,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -720,7 +720,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -754,7 +754,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param timeCreated Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+         * @param timeCreated Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -765,7 +765,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param timeCreated Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+         * @param timeCreated Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -775,7 +775,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+         * @param timeUpdated Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+         * @param timeUpdated Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -796,7 +796,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param upgradeInformations Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+         * @param upgradeInformations Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
          * 
          * @return builder
          * 
@@ -807,7 +807,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param upgradeInformations Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+         * @param upgradeInformations Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
          * 
          * @return builder
          * 
@@ -817,7 +817,7 @@ public final class AtCustomerCccInfrastructureState extends com.pulumi.resources
         }
 
         /**
-         * @param upgradeInformations Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+         * @param upgradeInformations Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
          * 
          * @return builder
          * 

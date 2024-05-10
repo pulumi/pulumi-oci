@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstanceApiKey = new BdsInstanceApiKey(&#34;testBdsInstanceApiKey&#34;, BdsInstanceApiKeyArgs.builder()        
+ *         var testBdsInstanceApiKey = new BdsInstanceApiKey("testBdsInstanceApiKey", BdsInstanceApiKeyArgs.builder()        
  *             .bdsInstanceId(testBdsInstance.id())
  *             .keyAlias(bdsInstanceApiKeyKeyAlias)
  *             .passphrase(bdsInstanceApiKeyPassphrase)
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

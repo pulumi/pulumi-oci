@@ -26,13 +26,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer infrastructure using the infrastructure
+     * Gets a Compute Cloud{@literal @}Customer infrastructure using the infrastructure
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -59,7 +60,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -69,13 +71,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer infrastructure using the infrastructure
+     * Gets a Compute Cloud{@literal @}Customer infrastructure using the infrastructure
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -102,7 +105,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -112,13 +116,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer infrastructure using the infrastructure
+     * Gets a Compute Cloud{@literal @}Customer infrastructure using the infrastructure
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -145,7 +150,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -155,13 +161,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer infrastructure using the infrastructure
+     * Gets a Compute Cloud{@literal @}Customer infrastructure using the infrastructure
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -188,7 +195,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -198,12 +206,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -236,7 +245,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -246,12 +256,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -284,7 +295,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -294,12 +306,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -332,7 +345,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -342,12 +356,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -380,7 +395,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -390,12 +406,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -428,7 +445,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -438,12 +456,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer infrastructures.
+     * Returns a list of Compute Cloud{@literal @}Customer infrastructures.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -476,7 +495,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -486,13 +506,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer upgrade schedule by the specified
+     * Gets a Compute Cloud{@literal @}Customer upgrade schedule by the specified
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -519,7 +540,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -529,13 +551,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer upgrade schedule by the specified
+     * Gets a Compute Cloud{@literal @}Customer upgrade schedule by the specified
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -562,7 +585,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -572,13 +596,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer upgrade schedule by the specified
+     * Gets a Compute Cloud{@literal @}Customer upgrade schedule by the specified
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -605,7 +630,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -615,13 +641,14 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Gets a Compute Cloud@Customer upgrade schedule by the specified
+     * Gets a Compute Cloud{@literal @}Customer upgrade schedule by the specified
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -648,7 +675,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -658,12 +686,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -696,7 +725,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -706,12 +736,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -744,7 +775,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -754,12 +786,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -792,7 +825,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -802,12 +836,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -840,7 +875,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -850,12 +886,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -888,7 +925,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -898,12 +936,13 @@ public final class ComputeCloudFunctions {
     /**
      * This data source provides the list of Ccc Upgrade Schedules in Oracle Cloud Infrastructure Compute Cloud At Customer service.
      * 
-     * Returns a list of Compute Cloud@Customer upgrade schedules.
+     * Returns a list of Compute Cloud{@literal @}Customer upgrade schedules.
      * 
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -936,7 +975,8 @@ public final class ComputeCloudFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

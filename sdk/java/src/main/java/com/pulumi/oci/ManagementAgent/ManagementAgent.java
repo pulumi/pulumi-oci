@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,13 +50,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementAgent = new ManagementAgent(&#34;testManagementAgent&#34;, ManagementAgentArgs.builder()        
+ *         var testManagementAgent = new ManagementAgent("testManagementAgent", ManagementAgentArgs.builder()        
  *             .managedAgentId(testManagedAgent.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * ***
  * Add plugin to Management Agent created via OCI Compute instance.

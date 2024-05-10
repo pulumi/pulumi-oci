@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceExportRequest = new WorkspaceExportRequest(&#34;testWorkspaceExportRequest&#34;, WorkspaceExportRequestArgs.builder()        
+ *         var testWorkspaceExportRequest = new WorkspaceExportRequest("testWorkspaceExportRequest", WorkspaceExportRequestArgs.builder()        
  *             .bucket(workspaceExportRequestBucket)
  *             .workspaceId(testWorkspace.id())
  *             .areReferencesIncluded(workspaceExportRequestAreReferencesIncluded)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

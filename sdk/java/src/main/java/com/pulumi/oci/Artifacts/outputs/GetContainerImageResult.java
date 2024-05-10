@@ -37,7 +37,7 @@ public final class GetContainerImageResult {
      */
     private String digest;
     /**
-     * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
+     * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest{@literal @}sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
     private String displayName;
@@ -143,7 +143,7 @@ public final class GetContainerImageResult {
         return this.digest;
     }
     /**
-     * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
+     * @return The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then &#39;unknown&#39; is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest{@literal @}sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      * 
      */
     public String displayName() {

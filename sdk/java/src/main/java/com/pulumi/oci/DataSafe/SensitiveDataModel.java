@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,14 +49,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSensitiveDataModel = new SensitiveDataModel(&#34;testSensitiveDataModel&#34;, SensitiveDataModelArgs.builder()        
+ *         var testSensitiveDataModel = new SensitiveDataModel("testSensitiveDataModel", SensitiveDataModelArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .targetId(testTarget.id())
  *             .appSuiteName(sensitiveDataModelAppSuiteName)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(sensitiveDataModelDescription)
  *             .displayName(sensitiveDataModelDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAppDefinedRelationDiscoveryEnabled(sensitiveDataModelIsAppDefinedRelationDiscoveryEnabled)
  *             .isIncludeAllSchemas(sensitiveDataModelIsIncludeAllSchemas)
  *             .isIncludeAllSensitiveTypes(sensitiveDataModelIsIncludeAllSensitiveTypes)
@@ -66,7 +67,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

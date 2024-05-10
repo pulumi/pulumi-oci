@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -57,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIntegrationInstance = new IntegrationInstance(&#34;testIntegrationInstance&#34;, IntegrationInstanceArgs.builder()        
+ *         var testIntegrationInstance = new IntegrationInstance("testIntegrationInstance", IntegrationInstanceArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(integrationInstanceDisplayName)
  *             .integrationInstanceType(integrationInstanceIntegrationInstanceType)
@@ -72,9 +73,9 @@ import javax.annotation.Nullable;
  *                 .hostname(integrationInstanceCustomEndpointHostname)
  *                 .certificateSecretId(testSecret.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .domainId(testDomain.id())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .idcsAt(integrationInstanceIdcsAt)
  *             .isFileServerEnabled(integrationInstanceIsFileServerEnabled)
  *             .isVisualBuilderEnabled(integrationInstanceIsVisualBuilderEnabled)
@@ -93,7 +94,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

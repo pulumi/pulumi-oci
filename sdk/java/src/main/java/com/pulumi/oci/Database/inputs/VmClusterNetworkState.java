@@ -60,14 +60,14 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -345,7 +345,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+         * @param displayName The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+         * @param displayName The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
          * 
          * @return builder
          * 

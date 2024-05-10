@@ -25,12 +25,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see [CreateAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/CreateAutonomousVmCluster).
+ * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud{@literal @}Customer systems, see [CreateAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/CreateAutonomousVmCluster).
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudAutonomousVmCluster = new CloudAutonomousVmCluster(&#34;testCloudAutonomousVmCluster&#34;, CloudAutonomousVmClusterArgs.builder()        
+ *         var testCloudAutonomousVmCluster = new CloudAutonomousVmCluster("testCloudAutonomousVmCluster", CloudAutonomousVmClusterArgs.builder()        
  *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
  *             .compartmentId(compartmentId)
  *             .displayName(cloudAutonomousVmClusterDisplayName)
@@ -64,7 +65,7 @@ import javax.annotation.Nullable;
  *             .dbServers(cloudAutonomousVmClusterDbServers)
  *             .definedTags(cloudAutonomousVmClusterDefinedTags)
  *             .description(cloudAutonomousVmClusterDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isMtlsEnabledVmCluster(cloudAutonomousVmClusterIsMtlsEnabledVmCluster)
  *             .licenseModel(cloudAutonomousVmClusterLicenseModel)
  *             .maintenanceWindowDetails(CloudAutonomousVmClusterMaintenanceWindowDetailsArgs.builder()
@@ -92,7 +93,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

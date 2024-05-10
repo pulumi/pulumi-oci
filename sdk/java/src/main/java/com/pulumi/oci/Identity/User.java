@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * 
  * You must also specify a *name* for the user, which must be unique across all users in your tenancy
  * and cannot be changed. Allowed characters: No spaces. Only letters, numerals, hyphens, periods,
- * underscores, +, and @. If you specify a name that&#39;s already in use, you&#39;ll get a 409 error.
+ * underscores, +, and{@literal @}. If you specify a name that&#39;s already in use, you&#39;ll get a 409 error.
  * This name will be the user&#39;s login to the Console. You might want to pick a
  * name that your company&#39;s own identity system (e.g., Active Directory, LDAP, etc.) already uses.
  * If you delete a user and then create a new user with the same name, they&#39;ll be considered different
@@ -56,7 +56,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -77,18 +78,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUser = new User(&#34;testUser&#34;, UserArgs.builder()        
+ *         var testUser = new User("testUser", UserArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .description(userDescription)
  *             .name(userName)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .email(userEmail)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

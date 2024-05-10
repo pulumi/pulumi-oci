@@ -17,7 +17,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
      * The special pattern characters have the following meanings:
      * 
      * \           Escapes the following character
-     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
+     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9{@literal @}]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
      * 
      */
     private @Nullable List<String> exclusionPatterns;
@@ -27,7 +27,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
      * The special pattern characters have the following meanings:
      * 
      * \           Escapes the following character
-     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
+     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9{@literal @}]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
      * 
      */
     private @Nullable List<String> inclusionPatterns;
@@ -44,7 +44,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
      * The special pattern characters have the following meanings:
      * 
      * \           Escapes the following character
-     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
+     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9{@literal @}]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
      * 
      */
     public List<String> exclusionPatterns() {
@@ -56,7 +56,7 @@ public final class ObjectLifecyclePolicyRuleObjectNameFilter {
      * The special pattern characters have the following meanings:
      * 
      * \           Escapes the following character
-     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
+     * *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9{@literal @}]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a &#39;-&#39; in the range, make it the first or last character.
      * 
      */
     public List<String> inclusionPatterns() {

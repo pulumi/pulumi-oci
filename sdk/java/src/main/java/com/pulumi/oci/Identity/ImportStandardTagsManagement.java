@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImportStandardTagsManagement = new ImportStandardTagsManagement(&#34;testImportStandardTagsManagement&#34;, ImportStandardTagsManagementArgs.builder()        
+ *         var testImportStandardTagsManagement = new ImportStandardTagsManagement("testImportStandardTagsManagement", ImportStandardTagsManagementArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .standardTagNamespaceName(testTagNamespace.name())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

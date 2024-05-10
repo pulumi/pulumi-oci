@@ -30,7 +30,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
     private @Nullable String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -42,7 +42,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
      */
     private String id;
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private @Nullable String state;
@@ -72,7 +72,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -92,7 +92,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
         return this.id;
     }
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<String> state() {

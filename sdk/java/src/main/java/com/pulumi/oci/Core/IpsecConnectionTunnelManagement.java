@@ -43,7 +43,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -66,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement(&#34;testIpSecConnectionTunnel&#34;, IpsecConnectionTunnelManagementArgs.builder()        
+ *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()        
  *             .ipsecId(testIpsec.id())
  *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
  *             .routing(ipSecConnectionTunnelManagementRouting)
@@ -81,12 +82,13 @@ import javax.annotation.Nullable;
  *                 .oracleTrafficSelectors(ipSecConnectionTunnelManagementEncryptionDomainConfigOracleTrafficSelector)
  *                 .build())
  *             .sharedSecret(ipSecConnectionTunnelManagementSharedSecret)
- *             .ikeVersion(&#34;V1&#34;)
+ *             .ikeVersion("V1")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,14 +48,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSafeConfiguration = new DataSafeConfiguration(&#34;testDataSafeConfiguration&#34;, DataSafeConfigurationArgs.builder()        
+ *         var testDataSafeConfiguration = new DataSafeConfiguration("testDataSafeConfiguration", DataSafeConfigurationArgs.builder()        
  *             .isEnabled(dataSafeConfigurationIsEnabled)
  *             .compartmentId(compartmentId)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

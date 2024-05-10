@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceImportRequest = new WorkspaceImportRequest(&#34;testWorkspaceImportRequest&#34;, WorkspaceImportRequestArgs.builder()        
+ *         var testWorkspaceImportRequest = new WorkspaceImportRequest("testWorkspaceImportRequest", WorkspaceImportRequestArgs.builder()        
  *             .bucket(workspaceImportRequestBucket)
  *             .fileName(workspaceImportRequestFileName)
  *             .workspaceId(testWorkspace.id())
@@ -67,7 +68,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

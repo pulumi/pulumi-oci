@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentDataMaskingActivity = new FusionEnvironmentDataMaskingActivity(&#34;testFusionEnvironmentDataMaskingActivity&#34;, FusionEnvironmentDataMaskingActivityArgs.builder()        
+ *         var testFusionEnvironmentDataMaskingActivity = new FusionEnvironmentDataMaskingActivity("testFusionEnvironmentDataMaskingActivity", FusionEnvironmentDataMaskingActivityArgs.builder()        
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .isResumeDataMasking(fusionEnvironmentDataMaskingActivityIsResumeDataMasking)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

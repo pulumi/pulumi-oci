@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,16 +47,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnectHarness = new ConnectHarness(&#34;testConnectHarness&#34;, ConnectHarnessArgs.builder()        
+ *         var testConnectHarness = new ConnectHarness("testConnectHarness", ConnectHarnessArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(connectHarnessName)
  *             .definedTags(connectHarnessDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

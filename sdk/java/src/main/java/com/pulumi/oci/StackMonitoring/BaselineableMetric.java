@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBaselineableMetric = new BaselineableMetric(&#34;testBaselineableMetric&#34;, BaselineableMetricArgs.builder()        
+ *         var testBaselineableMetric = new BaselineableMetric("testBaselineableMetric", BaselineableMetricArgs.builder()        
  *             .column(baselineableMetricColumn)
  *             .compartmentId(compartmentId)
  *             .name(baselineableMetricName)
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

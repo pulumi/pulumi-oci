@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,17 +51,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseWallet = new AutonomousDatabaseWallet(&#34;testAutonomousDatabaseWallet&#34;, AutonomousDatabaseWalletArgs.builder()        
+ *         var testAutonomousDatabaseWallet = new AutonomousDatabaseWallet("testAutonomousDatabaseWallet", AutonomousDatabaseWalletArgs.builder()        
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .password(autonomousDatabaseWalletPassword)
- *             .base64EncodeContent(&#34;false&#34;)
+ *             .base64EncodeContent("false")
  *             .generateType(autonomousDatabaseWalletGenerateType)
  *             .isRegional(autonomousDatabaseWalletIsRegional)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,9 +53,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMySupportAccount = new DomainsMySupportAccount(&#34;testMySupportAccount&#34;, DomainsMySupportAccountArgs.builder()        
+ *         var testMySupportAccount = new DomainsMySupportAccount("testMySupportAccount", DomainsMySupportAccountArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:supportAccount&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:supportAccount")
  *             .token(mySupportAccountToken)
  *             .authorization(mySupportAccountAuthorization)
  *             .id(mySupportAccountId)
@@ -72,7 +73,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,15 +51,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousExadataInfrastructure = new AutonomousExadataInfrastructure(&#34;testAutonomousExadataInfrastructure&#34;, AutonomousExadataInfrastructureArgs.builder()        
+ *         var testAutonomousExadataInfrastructure = new AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", AutonomousExadataInfrastructureArgs.builder()        
  *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shape(autonomousExadataInfrastructureShape)
  *             .subnetId(testSubnet.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(autonomousExadataInfrastructureDisplayName)
  *             .domain(autonomousExadataInfrastructureDomain)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .licenseModel(autonomousExadataInfrastructureLicenseModel)
  *             .maintenanceWindowDetails(AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs.builder()
  *                 .customActionTimeoutInMins(autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins)
@@ -81,7 +82,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

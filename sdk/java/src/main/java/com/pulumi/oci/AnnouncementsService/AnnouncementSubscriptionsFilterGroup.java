@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup(&#34;testAnnouncementSubscriptionsFilterGroup&#34;, AnnouncementSubscriptionsFilterGroupArgs.builder()        
+ *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", AnnouncementSubscriptionsFilterGroupArgs.builder()        
  *             .announcementSubscriptionId(testAnnouncementSubscription.id())
  *             .filters(AnnouncementSubscriptionsFilterGroupFilterArgs.builder()
  *                 .type(announcementSubscriptionsFilterGroupFiltersType)
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

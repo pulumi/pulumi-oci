@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,12 +49,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedDatabaseGroup = new ManagedDatabaseGroup(&#34;testManagedDatabaseGroup&#34;, ManagedDatabaseGroupArgs.builder()        
+ *         var testManagedDatabaseGroup = new ManagedDatabaseGroup("testManagedDatabaseGroup", ManagedDatabaseGroupArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(managedDatabaseGroupName)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(managedDatabaseGroupDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .managedDatabases(ManagedDatabaseGroupManagedDatabaseArgs.builder()
  *                 .id(managedDatabaseId)
  *                 .build())
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

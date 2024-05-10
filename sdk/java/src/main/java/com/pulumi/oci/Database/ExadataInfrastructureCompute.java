@@ -25,13 +25,14 @@ import javax.annotation.Nullable;
 /**
  * This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
  * 
- * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+ * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud{@literal @}Customer instances only.
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
@@ -327,14 +329,14 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
         return this.definedTags;
     }
     /**
-     * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     public Output<String> displayName() {

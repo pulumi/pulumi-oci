@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsResourceCategoriesManagement = new LogAnalyticsResourceCategoriesManagement(&#34;testLogAnalyticsResourceCategoriesManagement&#34;, LogAnalyticsResourceCategoriesManagementArgs.builder()        
+ *         var testLogAnalyticsResourceCategoriesManagement = new LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", LogAnalyticsResourceCategoriesManagementArgs.builder()        
  *             .namespace(logAnalyticsResourceCategoriesManagementNamespace)
  *             .resourceId(ociLogAnalyticsResourceCategoriesManagementResourceId)
  *             .resourceType(logAnalyticsResourceCategoriesManagementResourceType)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

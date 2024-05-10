@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceFolder = new WorkspaceFolder(&#34;testWorkspaceFolder&#34;, WorkspaceFolderArgs.builder()        
+ *         var testWorkspaceFolder = new WorkspaceFolder("testWorkspaceFolder", WorkspaceFolderArgs.builder()        
  *             .identifier(workspaceFolderIdentifier)
  *             .name(workspaceFolderName)
  *             .registryMetadata(WorkspaceFolderRegistryMetadataArgs.builder()
@@ -71,7 +72,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

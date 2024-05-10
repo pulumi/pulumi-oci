@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,19 +50,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStream = new Stream(&#34;testStream&#34;, StreamArgs.builder()        
+ *         var testStream = new Stream("testStream", StreamArgs.builder()        
  *             .name(streamName)
  *             .partitions(streamPartitions)
  *             .compartmentId(compartmentId)
  *             .definedTags(streamDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .retentionInHours(streamRetentionInHours)
  *             .streamPoolId(testStreamPool.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

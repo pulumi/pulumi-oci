@@ -15,14 +15,14 @@ public final class GetAtCustomerCccInfrastructureArgs extends com.pulumi.resourc
     public static final GetAtCustomerCccInfrastructureArgs Empty = new GetAtCustomerCccInfrastructureArgs();
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     @Import(name="cccInfrastructureId", required=true)
     private Output<String> cccInfrastructureId;
 
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     public Output<String> cccInfrastructureId() {
@@ -54,7 +54,7 @@ public final class GetAtCustomerCccInfrastructureArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetAtCustomerCccInfrastructureArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
          * 
          * @return builder
          * 

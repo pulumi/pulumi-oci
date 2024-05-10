@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new Rule(&#34;testRule&#34;, RuleArgs.builder()        
+ *         var testRule = new Rule("testRule", RuleArgs.builder()        
  *             .actions(RuleActionsArgs.builder()
  *                 .actions(RuleActionsActionArgs.builder()
  *                     .actionType(ruleActionsActionsActionType)
@@ -62,14 +63,15 @@ import javax.annotation.Nullable;
  *             .condition(ruleCondition)
  *             .displayName(ruleDisplayName)
  *             .isEnabled(ruleIsEnabled)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(ruleDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

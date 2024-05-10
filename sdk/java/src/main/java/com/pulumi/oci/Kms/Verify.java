@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVerify = new Verify(&#34;testVerify&#34;, VerifyArgs.builder()        
+ *         var testVerify = new Verify("testVerify", VerifyArgs.builder()        
  *             .cryptoEndpoint(verifyMessageCryptoEndpoint)
  *             .keyId(testKey.id())
  *             .keyVersionId(testKeyVersion.id())
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

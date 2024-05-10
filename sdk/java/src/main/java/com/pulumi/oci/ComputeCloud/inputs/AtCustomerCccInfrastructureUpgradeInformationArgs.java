@@ -17,14 +17,14 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
     public static final AtCustomerCccInfrastructureUpgradeInformationArgs Empty = new AtCustomerCccInfrastructureUpgradeInformationArgs();
 
     /**
-     * The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="currentVersion")
     private @Nullable Output<String> currentVersion;
 
     /**
-     * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * @return The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<String>> currentVersion() {
@@ -32,14 +32,14 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
     }
 
     /**
-     * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     @Import(name="isActive")
     private @Nullable Output<Boolean> isActive;
 
     /**
-     * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * @return Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     public Optional<Output<Boolean>> isActive() {
@@ -47,14 +47,14 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
     }
 
     /**
-     * Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     @Import(name="scheduledUpgradeDuration")
     private @Nullable Output<String> scheduledUpgradeDuration;
 
     /**
-     * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * @return Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     public Optional<Output<String>> scheduledUpgradeDuration() {
@@ -62,14 +62,14 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
     }
 
     /**
-     * Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     @Import(name="timeOfScheduledUpgrade")
     private @Nullable Output<String> timeOfScheduledUpgrade;
 
     /**
-     * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * @return Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     public Optional<Output<String>> timeOfScheduledUpgrade() {
@@ -104,7 +104,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param currentVersion The current version of software installed on the Compute Cloud@Customer infrastructure.
+         * @param currentVersion The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param currentVersion The current version of software installed on the Compute Cloud@Customer infrastructure.
+         * @param currentVersion The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param isActive Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+         * @param isActive Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param isActive Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+         * @param isActive Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param scheduledUpgradeDuration Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+         * @param scheduledUpgradeDuration Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param scheduledUpgradeDuration Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+         * @param scheduledUpgradeDuration Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param timeOfScheduledUpgrade Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+         * @param timeOfScheduledUpgrade Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class AtCustomerCccInfrastructureUpgradeInformationArgs extends com
         }
 
         /**
-         * @param timeOfScheduledUpgrade Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+         * @param timeOfScheduledUpgrade Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
          * 
          * @return builder
          * 

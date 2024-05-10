@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement(&#34;testLogAnalyticsPreferencesManagement&#34;, LogAnalyticsPreferencesManagementArgs.builder()        
+ *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", LogAnalyticsPreferencesManagementArgs.builder()        
  *             .namespace(logAnalyticsPreferencesManagementNamespace)
  *             .items(LogAnalyticsPreferencesManagementItemArgs.builder()
  *                 .name(logAnalyticsPreferencesManagementItemsName)
@@ -56,7 +57,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

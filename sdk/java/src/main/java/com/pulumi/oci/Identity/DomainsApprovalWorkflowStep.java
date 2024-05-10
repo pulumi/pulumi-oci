@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,10 +54,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApprovalWorkflowStep = new DomainsApprovalWorkflowStep(&#34;testApprovalWorkflowStep&#34;, DomainsApprovalWorkflowStepArgs.builder()        
+ *         var testApprovalWorkflowStep = new DomainsApprovalWorkflowStep("testApprovalWorkflowStep", DomainsApprovalWorkflowStepArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .order(approvalWorkflowStepOrder)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep")
  *             .type(approvalWorkflowStepType)
  *             .approvers(DomainsApprovalWorkflowStepApproverArgs.builder()
  *                 .type(approvalWorkflowStepApproversType)
@@ -64,8 +65,8 @@ import javax.annotation.Nullable;
  *                 .ocid(approvalWorkflowStepApproversOcid)
  *                 .build())
  *             .approversExpressions(approvalWorkflowStepApproversExpressions)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(approvalWorkflowStepAuthorization)
  *             .id(approvalWorkflowStepId)
  *             .minimumApprovals(approvalWorkflowStepMinimumApprovals)
@@ -79,7 +80,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

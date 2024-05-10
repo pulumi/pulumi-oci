@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch(&#34;testWorkspaceApplicationPatch&#34;, WorkspaceApplicationPatchArgs.builder()        
+ *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch("testWorkspaceApplicationPatch", WorkspaceApplicationPatchArgs.builder()        
  *             .applicationKey(workspaceApplicationPatchApplicationKey)
  *             .identifier(workspaceApplicationPatchIdentifier)
  *             .name(workspaceApplicationPatchName)
@@ -74,7 +75,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

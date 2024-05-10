@@ -39,7 +39,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -61,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseUpgrade = new DatabaseUpgrade(&#34;testDatabaseUpgrade&#34;, DatabaseUpgradeArgs.builder()        
+ *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()        
  *             .action(databaseUpgradeAction)
  *             .databaseId(testDatabase.id())
  *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -254,14 +256,14 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
         return this.dbUniqueName;
     }
     /**
-     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+     * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud{@literal @}Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
     @Export(name="dbWorkload", refs={String.class}, tree="[0]")
     private Output<String> dbWorkload;
 
     /**
-     * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+     * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud{@literal @}Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
     public Output<String> dbWorkload() {

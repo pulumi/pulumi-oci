@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,14 +43,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRouteTableAttachment = new RouteTableAttachment(&#34;testRouteTableAttachment&#34;, RouteTableAttachmentArgs.builder()        
+ *         var testRouteTableAttachment = new RouteTableAttachment("testRouteTableAttachment", RouteTableAttachmentArgs.builder()        
  *             .subnetId(testSubnet.id())
  *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

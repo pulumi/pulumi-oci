@@ -58,7 +58,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -114,10 +115,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUser = new DomainsUser(&#34;testUser&#34;, DomainsUserArgs.builder()        
+ *         var testUser = new DomainsUser("testUser", DomainsUserArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:core:2.0:User&#34;)
- *             .userName(&#34;userName&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:core:2.0:User")
+ *             .userName("userName")
  *             .active(userActive)
  *             .addresses(DomainsUserAddressArgs.builder()
  *                 .type(userAddressesType)
@@ -130,7 +131,7 @@ import javax.annotation.Nullable;
  *                 .streetAddress(userAddressesStreetAddress)
  *                 .build())
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authorization(userAuthorization)
  *             .description(userDescription)
  *             .displayName(userDisplayName)
@@ -143,7 +144,7 @@ import javax.annotation.Nullable;
  *                     .verified(userEmailsVerified)
  *                     .build(),
  *                 DomainsUserEmailArgs.builder()
- *                     .type(&#34;recovery&#34;)
+ *                     .type("recovery")
  *                     .value(userEmailsValue)
  *                     .build())
  *             .entitlements(DomainsUserEntitlementArgs.builder()
@@ -152,7 +153,7 @@ import javax.annotation.Nullable;
  *                 .display(userEntitlementsDisplay)
  *                 .primary(userEntitlementsPrimary)
  *                 .build())
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .id(userId)
  *             .ims(DomainsUserImArgs.builder()
  *                 .type(userImsType)
@@ -240,7 +241,7 @@ import javax.annotation.Nullable;
  *                 .canUseSmtpCredentials(true)
  *                 .build())
  *             .urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser(DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs.builder()
- *                 .dbUserName(&#34;dbUserName&#34;)
+ *                 .dbUserName("dbUserName")
  *                 .build())
  *             .urnietfparamsscimschemasoracleidcsextensionkerberosUserUser(DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs.builder()
  *                 .realmUsers(DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs.builder()
@@ -375,7 +376,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

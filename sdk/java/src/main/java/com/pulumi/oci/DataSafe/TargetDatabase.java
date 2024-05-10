@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetDatabase = new TargetDatabase(&#34;testTargetDatabase&#34;, TargetDatabaseArgs.builder()        
+ *         var testTargetDatabase = new TargetDatabase("testTargetDatabase", TargetDatabaseArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .databaseDetails(TargetDatabaseDatabaseDetailsArgs.builder()
  *                 .databaseType(targetDatabaseDatabaseDetailsDatabaseType)
@@ -80,10 +81,10 @@ import javax.annotation.Nullable;
  *                 .password(targetDatabaseCredentialsPassword)
  *                 .userName(testUser.name())
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(targetDatabaseDescription)
  *             .displayName(targetDatabaseDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .peerTargetDatabaseDetails(TargetDatabasePeerTargetDatabaseDetailArgs.builder()
  *                 .databaseDetails(TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs.builder()
  *                     .databaseType(targetDatabasePeerTargetDatabaseDetailsDatabaseDetailsDatabaseType)
@@ -118,7 +119,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,18 +47,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOnPremiseVantagePoint = new OnPremiseVantagePoint(&#34;testOnPremiseVantagePoint&#34;, OnPremiseVantagePointArgs.builder()        
+ *         var testOnPremiseVantagePoint = new OnPremiseVantagePoint("testOnPremiseVantagePoint", OnPremiseVantagePointArgs.builder()        
  *             .apmDomainId(testApmDomain.id())
  *             .name(onPremiseVantagePointName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(onPremiseVantagePointDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .type(onPremiseVantagePointType)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

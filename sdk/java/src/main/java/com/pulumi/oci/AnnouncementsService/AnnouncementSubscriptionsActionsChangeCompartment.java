@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,14 +45,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnnouncementSubscriptionsActionsChangeCompartment = new AnnouncementSubscriptionsActionsChangeCompartment(&#34;testAnnouncementSubscriptionsActionsChangeCompartment&#34;, AnnouncementSubscriptionsActionsChangeCompartmentArgs.builder()        
+ *         var testAnnouncementSubscriptionsActionsChangeCompartment = new AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment", AnnouncementSubscriptionsActionsChangeCompartmentArgs.builder()        
  *             .announcementSubscriptionId(testAnnouncementSubscription.id())
  *             .compartmentId(compartmentId)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

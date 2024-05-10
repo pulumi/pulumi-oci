@@ -40,7 +40,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -77,13 +78,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWaasPolicy = new Policy(&#34;testWaasPolicy&#34;, PolicyArgs.builder()        
+ *         var testWaasPolicy = new Policy("testWaasPolicy", PolicyArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .domain(waasPolicyDomain)
  *             .additionalDomains(waasPolicyAdditionalDomains)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(waasPolicyDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .originGroups(PolicyOriginGroupArgs.builder()
  *                 .origins(waasPolicyOriginGroupsOrigins)
  *                 .build())
@@ -291,7 +292,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

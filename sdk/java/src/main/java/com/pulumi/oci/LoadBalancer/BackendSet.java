@@ -32,7 +32,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -57,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackendSet = new BackendSet(&#34;testBackendSet&#34;, BackendSetArgs.builder()        
+ *         var testBackendSet = new BackendSet("testBackendSet", BackendSetArgs.builder()        
  *             .healthChecker(BackendSetHealthCheckerArgs.builder()
  *                 .protocol(backendSetHealthCheckerProtocol)
  *                 .intervalMs(backendSetHealthCheckerIntervalMs)
@@ -99,7 +100,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
  *       (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two

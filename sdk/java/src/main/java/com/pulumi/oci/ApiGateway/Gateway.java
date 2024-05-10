@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGateway = new Gateway(&#34;testGateway&#34;, GatewayArgs.builder()        
+ *         var testGateway = new Gateway("testGateway", GatewayArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .endpointType(gatewayEndpointType)
  *             .subnetId(testSubnet.id())
@@ -60,9 +61,9 @@ import javax.annotation.Nullable;
  *                 .caBundleId(testCaBundle.id())
  *                 .certificateAuthorityId(testCertificateAuthority.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(gatewayDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .networkSecurityGroupIds(gatewayNetworkSecurityGroupIds)
  *             .responseCacheDetails(GatewayResponseCacheDetailsArgs.builder()
  *                 .type(gatewayResponseCacheDetailsType)
@@ -82,7 +83,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

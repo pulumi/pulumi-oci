@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser(&#34;testAutonomousDatabaseSaasAdminUser&#34;, AutonomousDatabaseSaasAdminUserArgs.builder()        
+ *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", AutonomousDatabaseSaasAdminUserArgs.builder()        
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .password(autonomousDatabaseSaasAdminUserPassword)
  *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicyService = new NetworkFirewallPolicyService(&#34;testNetworkFirewallPolicyService&#34;, NetworkFirewallPolicyServiceArgs.builder()        
+ *         var testNetworkFirewallPolicyService = new NetworkFirewallPolicyService("testNetworkFirewallPolicyService", NetworkFirewallPolicyServiceArgs.builder()        
  *             .name(networkFirewallPolicyServiceName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .portRanges(NetworkFirewallPolicyServicePortRangeArgs.builder()
@@ -57,7 +58,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAgentPlugin = new AgentPlugin(&#34;testAgentPlugin&#34;, AgentPluginArgs.builder()        
+ *         var testAgentPlugin = new AgentPlugin("testAgentPlugin", AgentPluginArgs.builder()        
  *             .agentId(testAgent.id())
  *             .pluginName(agentPluginPluginName)
  *             .desiredState(agentPluginDesiredState)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

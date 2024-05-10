@@ -21,14 +21,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     public static final AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs Empty = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs();
 
     /**
-     * The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+     * The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
      * 
      */
     @Import(name="dnsIps")
     private @Nullable Output<List<String>> dnsIps;
 
     /**
-     * @return The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+     * @return The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
      * 
      */
     public Optional<Output<List<String>>> dnsIps() {
@@ -36,14 +36,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * Dynamic routing information for the Compute Cloud@Customer infrastructure.
+     * Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="infrastructureRoutingDynamics")
     private @Nullable Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs>> infrastructureRoutingDynamics;
 
     /**
-     * @return Dynamic routing information for the Compute Cloud@Customer infrastructure.
+     * @return Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs>>> infrastructureRoutingDynamics() {
@@ -66,14 +66,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+     * Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="managementNodes")
     private @Nullable Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs>> managementNodes;
 
     /**
-     * @return Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+     * @return Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs>>> managementNodes() {
@@ -126,14 +126,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+     * The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
     @Import(name="spineVip")
     private @Nullable Output<String> spineVip;
 
     /**
-     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+     * @return The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
      * 
      */
     public Optional<Output<String>> spineVip() {
@@ -156,14 +156,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+     * Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
      * 
      */
     @Import(name="uplinkGatewayIp")
     private @Nullable Output<String> uplinkGatewayIp;
 
     /**
-     * @return Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+     * @return Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
      * 
      */
     public Optional<Output<String>> uplinkGatewayIp() {
@@ -171,14 +171,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+     * Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
      * 
      */
     @Import(name="uplinkNetmask")
     private @Nullable Output<String> uplinkNetmask;
 
     /**
-     * @return Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+     * @return Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
      * 
      */
     public Optional<Output<String>> uplinkNetmask() {
@@ -201,14 +201,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     }
 
     /**
-     * The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+     * The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="uplinkPortForwardErrorCorrection")
     private @Nullable Output<String> uplinkPortForwardErrorCorrection;
 
     /**
-     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+     * @return The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<String>> uplinkPortForwardErrorCorrection() {
@@ -284,7 +284,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+         * @param dnsIps The domain name system (DNS) addresses that the Compute Cloud{@literal @}Customer infrastructure uses for the data center network.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud@Customer infrastructure.
+         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud@Customer infrastructure.
+         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud@Customer infrastructure.
+         * @param infrastructureRoutingDynamics Dynamic routing information for the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+         * @param managementNodes Information about the management nodes that are provisioned in the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param spineVip The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+         * @param spineVip The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param spineVip The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+         * @param spineVip The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud{@literal @}Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkGatewayIp Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+         * @param uplinkGatewayIp Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkGatewayIp Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+         * @param uplinkGatewayIp Uplink gateway in the datacenter network that the Compute Cloud{@literal @}Customer connects to.
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkNetmask Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+         * @param uplinkNetmask Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkNetmask Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+         * @param uplinkNetmask Netmask of the subnet that the Compute Cloud{@literal @}Customer infrastructure is connected to.
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkPortForwardErrorCorrection The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+         * @param uplinkPortForwardErrorCorrection The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkPortForwardErrorCorrection The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+         * @param uplinkPortForwardErrorCorrection The port forward error correction (FEC) setting for the uplink port on the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 

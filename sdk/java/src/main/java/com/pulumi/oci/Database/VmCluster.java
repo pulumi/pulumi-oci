@@ -23,12 +23,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates an Exadata Cloud@Customer VM cluster.
+ * Creates an Exadata Cloud{@literal @}Customer VM cluster.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmCluster = new VmCluster(&#34;testVmCluster&#34;, VmClusterArgs.builder()        
+ *         var testVmCluster = new VmCluster("testVmCluster", VmClusterArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .cpuCoreCount(vmClusterCpuCoreCount)
  *             .displayName(vmClusterDisplayName)
@@ -67,7 +68,7 @@ import javax.annotation.Nullable;
  *             .dbNodeStorageSizeInGbs(vmClusterDbNodeStorageSizeInGbs)
  *             .dbServers(vmClusterDbServers)
  *             .definedTags(vmClusterDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isLocalBackupEnabled(vmClusterIsLocalBackupEnabled)
  *             .isSparseDiskgroupEnabled(vmClusterIsSparseDiskgroupEnabled)
  *             .licenseModel(vmClusterLicenseModel)
@@ -78,7 +79,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudVmCluster = new CloudVmCluster(&#34;testCloudVmCluster&#34;, CloudVmClusterArgs.builder()        
+ *         var testCloudVmCluster = new CloudVmCluster("testCloudVmCluster", CloudVmClusterArgs.builder()        
  *             .backupSubnetId(testSubnet.id())
  *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
  *             .compartmentId(compartmentId)
@@ -75,7 +76,7 @@ import javax.annotation.Nullable;
  *             .dbServers(cloudVmClusterDbServers)
  *             .definedTags(cloudVmClusterDefinedTags)
  *             .domain(cloudVmClusterDomain)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isLocalBackupEnabled(cloudVmClusterIsLocalBackupEnabled)
  *             .isSparseDiskgroupEnabled(cloudVmClusterIsSparseDiskgroupEnabled)
  *             .licenseModel(cloudVmClusterLicenseModel)
@@ -91,7 +92,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

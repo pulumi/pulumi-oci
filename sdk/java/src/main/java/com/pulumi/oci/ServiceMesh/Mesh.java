@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,15 +50,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMesh = new Mesh(&#34;testMesh&#34;, MeshArgs.builder()        
+ *         var testMesh = new Mesh("testMesh", MeshArgs.builder()        
  *             .certificateAuthorities(MeshCertificateAuthorityArgs.builder()
  *                 .id(meshCertificateAuthoritiesId)
  *                 .build())
  *             .compartmentId(compartmentId)
  *             .displayName(meshDisplayName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(meshDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .mtls(MeshMtlsArgs.builder()
  *                 .minimum(meshMtlsMinimum)
  *                 .build())
@@ -65,7 +66,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

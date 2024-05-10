@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCustomTable = new CustomTable(&#34;testCustomTable&#34;, CustomTableArgs.builder()        
+ *         var testCustomTable = new CustomTable("testCustomTable", CustomTableArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .savedCustomTable(CustomTableSavedCustomTableArgs.builder()
  *                 .displayName(customTableSavedCustomTableDisplayName)
@@ -63,7 +64,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

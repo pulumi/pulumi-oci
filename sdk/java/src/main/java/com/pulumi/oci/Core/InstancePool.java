@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -55,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstancePool = new InstancePool(&#34;testInstancePool&#34;, InstancePoolArgs.builder()        
+ *         var testInstancePool = new InstancePool("testInstancePool", InstancePoolArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .instanceConfigurationId(testInstanceConfiguration.id())
  *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()
@@ -79,9 +80,9 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .size(instancePoolSize)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(instancePoolDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .instanceDisplayNameFormatter(instancePoolInstanceDisplayNameFormatter)
  *             .instanceHostnameFormatter(instancePoolInstanceHostnameFormatter)
  *             .loadBalancers(InstancePoolLoadBalancerArgs.builder()
@@ -94,7 +95,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

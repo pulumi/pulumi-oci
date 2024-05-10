@@ -16,7 +16,7 @@ import java.util.Objects;
 public final class GetAtCustomerCccUpgradeScheduleResult {
     private String cccUpgradeScheduleId;
     /**
-     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
+     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer upgrade schedule.
      * 
      */
     private String compartmentId;
@@ -26,17 +26,17 @@ public final class GetAtCustomerCccUpgradeScheduleResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     private String description;
     /**
-     * @return Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     private String displayName;
     /**
-     * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
+     * @return List of preferred times for Compute Cloud{@literal @}Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
     private List<GetAtCustomerCccUpgradeScheduleEvent> events;
@@ -51,7 +51,7 @@ public final class GetAtCustomerCccUpgradeScheduleResult {
      */
     private String id;
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     private List<String> infrastructureIds;
@@ -86,7 +86,7 @@ public final class GetAtCustomerCccUpgradeScheduleResult {
         return this.cccUpgradeScheduleId;
     }
     /**
-     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
+     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer upgrade schedule.
      * 
      */
     public String compartmentId() {
@@ -100,21 +100,21 @@ public final class GetAtCustomerCccUpgradeScheduleResult {
         return this.definedTags;
     }
     /**
-     * @return A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
+     * @return List of preferred times for Compute Cloud{@literal @}Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
     public List<GetAtCustomerCccUpgradeScheduleEvent> events() {
@@ -135,7 +135,7 @@ public final class GetAtCustomerCccUpgradeScheduleResult {
         return this.id;
     }
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     public List<String> infrastructureIds() {

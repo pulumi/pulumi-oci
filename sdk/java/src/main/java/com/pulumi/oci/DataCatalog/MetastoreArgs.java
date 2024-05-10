@@ -34,14 +34,14 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     @Import(name="defaultExternalTableLocation", required=true)
     private Output<String> defaultExternalTableLocation;
 
     /**
-     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public Output<String> defaultExternalTableLocation() {
@@ -49,14 +49,14 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     @Import(name="defaultManagedTableLocation", required=true)
     private Output<String> defaultManagedTableLocation;
 
     /**
-     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public Output<String> defaultManagedTableLocation() {
@@ -165,7 +165,7 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultExternalTableLocation Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         * @param defaultExternalTableLocation Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultExternalTableLocation Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         * @param defaultExternalTableLocation Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultManagedTableLocation Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         * @param defaultManagedTableLocation Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class MetastoreArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultManagedTableLocation Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+         * @param defaultManagedTableLocation Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
          * 
          * @return builder
          * 

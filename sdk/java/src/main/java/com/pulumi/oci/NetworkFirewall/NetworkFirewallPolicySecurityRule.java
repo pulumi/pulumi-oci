@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicySecurityRule = new NetworkFirewallPolicySecurityRule(&#34;testNetworkFirewallPolicySecurityRule&#34;, NetworkFirewallPolicySecurityRuleArgs.builder()        
+ *         var testNetworkFirewallPolicySecurityRule = new NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule", NetworkFirewallPolicySecurityRuleArgs.builder()        
  *             .action(networkFirewallPolicySecurityRuleAction)
  *             .name(networkFirewallPolicySecurityRuleName)
  *             .condition(NetworkFirewallPolicySecurityRuleConditionArgs.builder()
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

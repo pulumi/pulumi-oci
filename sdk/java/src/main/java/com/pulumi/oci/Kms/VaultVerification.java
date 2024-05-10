@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,14 +47,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplication = new VaultVerification(&#34;testReplication&#34;, VaultVerificationArgs.builder()        
+ *         var testReplication = new VaultVerification("testReplication", VaultVerificationArgs.builder()        
  *             .vaultId(testVault.id())
  *             .replicaRegion(replicaRegion)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

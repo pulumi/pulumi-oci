@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,13 +49,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMysqlConfiguration = new MysqlConfiguration(&#34;testMysqlConfiguration&#34;, MysqlConfigurationArgs.builder()        
+ *         var testMysqlConfiguration = new MysqlConfiguration("testMysqlConfiguration", MysqlConfigurationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .shapeName(testShape.name())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(mysqlConfigurationDescription)
  *             .displayName(mysqlConfigurationDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .initVariables(MysqlConfigurationInitVariablesArgs.builder()
  *                 .lowerCaseTableNames(mysqlConfigurationInitVariablesLowerCaseTableNames)
  *                 .build())
@@ -144,7 +145,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

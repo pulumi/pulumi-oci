@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOccCapacityRequest = new OccCapacityRequest(&#34;testOccCapacityRequest&#34;, OccCapacityRequestArgs.builder()        
+ *         var testOccCapacityRequest = new OccCapacityRequest("testOccCapacityRequest", OccCapacityRequestArgs.builder()        
  *             .availabilityDomain(occCapacityRequestAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .dateExpectedCapacityHandover(occCapacityRequestDateExpectedCapacityHandover)
@@ -70,9 +71,9 @@ import javax.annotation.Nullable;
  *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
  *             .occCapacityRequestId(occCapacityRequestOccCapacityRequestId)
  *             .region(occCapacityRequestRegion)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(occCapacityRequestDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .lifecycleDetails(occCapacityRequestLifecycleDetails)
  *             .patchOperations(OccCapacityRequestPatchOperationArgs.builder()
  *                 .operation(occCapacityRequestPatchOperationsOperation)
@@ -88,7 +89,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

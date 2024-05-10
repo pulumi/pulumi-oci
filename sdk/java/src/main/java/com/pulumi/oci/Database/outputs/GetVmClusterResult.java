@@ -64,7 +64,7 @@ public final class GetVmClusterResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     private String displayName;
@@ -225,7 +225,7 @@ public final class GetVmClusterResult {
         return this.definedTags;
     }
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     public String displayName() {

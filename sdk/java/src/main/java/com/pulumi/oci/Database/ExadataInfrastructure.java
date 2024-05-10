@@ -26,13 +26,14 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+ * Creates an Exadata infrastructure resource. Applies to Exadata Cloud{@literal @}Customer instances only.
  * To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataInfrastructure = new ExadataInfrastructure(&#34;testExadataInfrastructure&#34;, ExadataInfrastructureArgs.builder()        
+ *         var testExadataInfrastructure = new ExadataInfrastructure("testExadataInfrastructure", ExadataInfrastructureArgs.builder()        
  *             .adminNetworkCidr(exadataInfrastructureAdminNetworkCidr)
  *             .cloudControlPlaneServer1(exadataInfrastructureCloudControlPlaneServer1)
  *             .cloudControlPlaneServer2(exadataInfrastructureCloudControlPlaneServer2)
@@ -80,7 +81,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .corporateProxy(exadataInfrastructureCorporateProxy)
  *             .definedTags(exadataInfrastructureDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCpsOfflineReportEnabled(exadataInfrastructureIsCpsOfflineReportEnabled)
  *             .isMultiRackDeployment(exadataInfrastructureIsMultiRackDeployment)
  *             .maintenanceWindow(ExadataInfrastructureMaintenanceWindowArgs.builder()
@@ -110,7 +111,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

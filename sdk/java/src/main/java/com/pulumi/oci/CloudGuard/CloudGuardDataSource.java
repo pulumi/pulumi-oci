@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSource = new CloudGuardDataSource(&#34;testDataSource&#34;, CloudGuardDataSourceArgs.builder()        
+ *         var testDataSource = new CloudGuardDataSource("testDataSource", CloudGuardDataSourceArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .dataSourceFeedProvider(dataSourceDataSourceFeedProvider)
  *             .displayName(dataSourceDisplayName)
@@ -73,14 +74,15 @@ import javax.annotation.Nullable;
  *                 .regions(dataSourceDataSourceDetailsRegions)
  *                 .threshold(dataSourceDataSourceDetailsThreshold)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .status(dataSourceStatus)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

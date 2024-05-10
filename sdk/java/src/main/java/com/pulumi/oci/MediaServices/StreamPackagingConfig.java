@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,17 +52,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamPackagingConfig = new StreamPackagingConfig(&#34;testStreamPackagingConfig&#34;, StreamPackagingConfigArgs.builder()        
+ *         var testStreamPackagingConfig = new StreamPackagingConfig("testStreamPackagingConfig", StreamPackagingConfigArgs.builder()        
  *             .displayName(streamPackagingConfigDisplayName)
  *             .distributionChannelId(testChannel.id())
  *             .segmentTimeInSeconds(streamPackagingConfigSegmentTimeInSeconds)
  *             .streamPackagingFormat(streamPackagingConfigStreamPackagingFormat)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .encryption(StreamPackagingConfigEncryptionArgs.builder()
  *                 .algorithm(streamPackagingConfigEncryptionAlgorithm)
  *                 .kmsKeyId(testKey.id())
  *                 .build())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .locks(StreamPackagingConfigLockArgs.builder()
  *                 .compartmentId(compartmentId)
  *                 .type(streamPackagingConfigLocksType)
@@ -73,7 +74,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,14 +52,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProfile = new Profile(&#34;testProfile&#34;, ProfileArgs.builder()        
+ *         var testProfile = new Profile("testProfile", ProfileArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(profileDisplayName)
  *             .profileType(profileProfileType)
  *             .archType(profileArchType)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(profileDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .lifecycleStageId(testLifecycleStage.id())
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .managementStationId(testManagementStation.id())
@@ -69,7 +70,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

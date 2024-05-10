@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRecord = new Record(&#34;testRecord&#34;, RecordArgs.builder()        
+ *         var testRecord = new Record("testRecord", RecordArgs.builder()        
  *             .zoneNameOrId(testZoneNameOr.id())
  *             .domain(recordItemsDomain)
  *             .rtype(recordItemsRtype)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch(&#34;testMonitoredResourcesSearch&#34;, MonitoredResourcesSearchArgs.builder()        
+ *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch("testMonitoredResourcesSearch", MonitoredResourcesSearchArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .compartmentIds(monitoredResourcesSearchCompartmentIds)
  *             .excludeFields(monitoredResourcesSearchExcludeFields)
@@ -74,7 +75,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

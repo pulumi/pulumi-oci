@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,29 +57,29 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new DomainsRule(&#34;testRule&#34;, DomainsRuleArgs.builder()        
+ *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()        
  *             .condition(ruleCondition)
  *             .idcsEndpoint(testDomain.url())
  *             .name(ruleName)
  *             .policyType(DomainsRulePolicyTypeArgs.builder()
- *                 .value(&#34;SignOn&#34;)
+ *                 .value("SignOn")
  *                 .build())
  *             .returns(DomainsRuleReturnArgs.builder()
  *                 .name(ruleReturnName)
  *                 .value(ruleReturnValue)
  *                 .returnGroovy(ruleReturnReturnGroovy)
  *                 .build())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Rule&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Rule")
  *             .active(ruleActive)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(ruleAuthorization)
  *             .conditionGroup(DomainsRuleConditionGroupArgs.builder()
- *                 .type(&#34;Condition&#34;)
+ *                 .type("Condition")
  *                 .value(ruleConditionGroupValue)
  *                 .build())
  *             .description(ruleDescription)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .locked(ruleLocked)
  *             .ocid(ruleOcid)
  *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
@@ -91,7 +92,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

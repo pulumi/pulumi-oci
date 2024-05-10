@@ -21,7 +21,7 @@ public final class GetExadataInfrastructuresResult {
      */
     private String compartmentId;
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -51,7 +51,7 @@ public final class GetExadataInfrastructuresResult {
         return this.compartmentId;
     }
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     public Optional<String> displayName() {

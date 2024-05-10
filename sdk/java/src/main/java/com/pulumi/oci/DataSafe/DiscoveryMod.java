@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,13 +51,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDiscoveryJob = new DiscoveryMod(&#34;testDiscoveryJob&#34;, DiscoveryModArgs.builder()        
+ *         var testDiscoveryJob = new DiscoveryMod("testDiscoveryJob", DiscoveryModArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .sensitiveDataModelId(testSensitiveDataModel.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .discoveryType(discoveryJobDiscoveryType)
  *             .displayName(discoveryJobDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAppDefinedRelationDiscoveryEnabled(discoveryJobIsAppDefinedRelationDiscoveryEnabled)
  *             .isIncludeAllSchemas(discoveryJobIsIncludeAllSchemas)
  *             .isIncludeAllSensitiveTypes(discoveryJobIsIncludeAllSensitiveTypes)
@@ -67,7 +68,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

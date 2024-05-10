@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,14 +48,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOpaInstance = new OpaInstance(&#34;testOpaInstance&#34;, OpaInstanceArgs.builder()        
+ *         var testOpaInstance = new OpaInstance("testOpaInstance", OpaInstanceArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(opaInstanceDisplayName)
  *             .shapeName(testShape.name())
  *             .consumptionModel(opaInstanceConsumptionModel)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(opaInstanceDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .idcsAt(opaInstanceIdcsAt)
  *             .isBreakglassEnabled(opaInstanceIsBreakglassEnabled)
  *             .meteringType(opaInstanceMeteringType)
@@ -62,7 +63,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

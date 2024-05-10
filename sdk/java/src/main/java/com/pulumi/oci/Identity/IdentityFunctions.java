@@ -455,8 +455,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -465,7 +465,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -492,7 +493,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -502,8 +504,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -512,7 +514,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -539,7 +542,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -549,8 +553,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -559,7 +563,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -586,7 +591,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -596,8 +602,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -606,7 +612,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -633,7 +640,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -643,8 +651,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -653,7 +661,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -680,7 +689,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -690,8 +700,8 @@ public final class IdentityFunctions {
     /**
      * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
      * 
-     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * List the allowed domain license types supported by Oracle Cloud Infrastructure If {{@literal @}code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {{@literal @}code name} is provided, it filters and returns resources that match the given license type name.
      * Otherwise, returns all valid license types that are currently supported.
      * 
      * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
@@ -700,7 +710,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -727,7 +738,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -745,7 +757,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -772,7 +785,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -790,7 +804,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -817,7 +832,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -835,7 +851,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -862,7 +879,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -880,7 +898,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -907,7 +926,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -923,7 +943,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -950,7 +971,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -966,7 +988,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -993,7 +1016,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1009,7 +1033,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1036,7 +1061,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1052,7 +1078,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1079,7 +1106,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1095,7 +1123,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1122,7 +1151,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1138,7 +1168,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1165,7 +1196,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1181,7 +1213,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1208,7 +1241,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1224,7 +1258,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1251,7 +1286,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1264,7 +1300,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1293,7 +1330,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1306,7 +1344,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1335,7 +1374,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1348,7 +1388,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1377,7 +1418,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1390,7 +1432,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1419,7 +1462,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1438,7 +1482,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1465,7 +1510,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1484,7 +1530,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1511,7 +1558,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1530,7 +1578,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1557,7 +1606,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1576,7 +1626,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1603,7 +1654,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1625,7 +1677,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1652,7 +1705,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1674,7 +1728,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1701,7 +1756,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1723,7 +1779,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1750,7 +1807,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1772,7 +1830,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1799,7 +1858,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1831,7 +1891,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1862,7 +1923,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1894,7 +1956,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1925,7 +1988,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1957,7 +2021,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1988,7 +2053,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2020,7 +2086,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2051,7 +2118,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2067,7 +2135,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2094,7 +2163,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2110,7 +2180,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2137,7 +2208,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2153,7 +2225,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2180,7 +2253,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2196,7 +2270,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2223,7 +2298,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2239,7 +2315,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2266,7 +2343,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2282,7 +2360,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2309,7 +2388,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2325,7 +2405,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2352,7 +2433,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2368,7 +2450,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2395,7 +2478,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2410,7 +2494,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2439,7 +2524,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2454,7 +2540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2483,7 +2570,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2498,7 +2586,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2527,7 +2616,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2542,7 +2632,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2571,7 +2662,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2589,7 +2681,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2616,7 +2709,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2634,7 +2728,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2661,7 +2756,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2679,7 +2775,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2706,7 +2803,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2724,7 +2822,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2751,7 +2850,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2767,7 +2867,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2802,7 +2903,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2818,7 +2920,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2853,7 +2956,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2869,7 +2973,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2904,7 +3009,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2920,7 +3026,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2955,7 +3062,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2970,7 +3078,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2994,15 +3103,16 @@ public final class IdentityFunctions {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
      *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3017,7 +3127,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3041,15 +3152,16 @@ public final class IdentityFunctions {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
      *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3064,7 +3176,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3088,15 +3201,16 @@ public final class IdentityFunctions {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
      *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3111,7 +3225,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3135,15 +3250,16 @@ public final class IdentityFunctions {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
      *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3158,7 +3274,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3183,8 +3300,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .startIndex(accountMgmtInfoStartIndex)
@@ -3192,7 +3309,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3207,7 +3325,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3232,8 +3351,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .startIndex(accountMgmtInfoStartIndex)
@@ -3241,7 +3360,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3256,7 +3376,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3281,8 +3402,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .startIndex(accountMgmtInfoStartIndex)
@@ -3290,7 +3411,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3305,7 +3427,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3330,8 +3453,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
      *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountMgmtInfoAuthorization)
      *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .startIndex(accountMgmtInfoStartIndex)
@@ -3339,7 +3462,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3354,7 +3478,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3378,15 +3503,16 @@ public final class IdentityFunctions {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
      *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3401,7 +3527,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3425,15 +3552,16 @@ public final class IdentityFunctions {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
      *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3448,7 +3576,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3472,15 +3601,16 @@ public final class IdentityFunctions {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
      *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3495,7 +3625,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3519,15 +3650,16 @@ public final class IdentityFunctions {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
      *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3542,7 +3674,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3565,15 +3698,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3588,7 +3722,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3611,15 +3746,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3634,7 +3770,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3657,15 +3794,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3680,7 +3818,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3703,15 +3842,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(accountRecoverySettingAuthorization)
      *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3726,7 +3866,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3751,14 +3892,15 @@ public final class IdentityFunctions {
      *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3773,7 +3915,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3798,14 +3941,15 @@ public final class IdentityFunctions {
      *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3820,7 +3964,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3845,14 +3990,15 @@ public final class IdentityFunctions {
      *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3867,7 +4013,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3892,14 +4039,15 @@ public final class IdentityFunctions {
      *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3914,7 +4062,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3940,7 +4089,7 @@ public final class IdentityFunctions {
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .startIndex(apiKeyStartIndex)
@@ -3948,7 +4097,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3963,7 +4113,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3989,7 +4140,7 @@ public final class IdentityFunctions {
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .startIndex(apiKeyStartIndex)
@@ -3997,7 +4148,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4012,7 +4164,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4038,7 +4191,7 @@ public final class IdentityFunctions {
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .startIndex(apiKeyStartIndex)
@@ -4046,7 +4199,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4061,7 +4215,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4087,7 +4242,7 @@ public final class IdentityFunctions {
      *             .apiKeyCount(apiKeyApiKeyCount)
      *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(apiKeyAuthorization)
      *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .startIndex(apiKeyStartIndex)
@@ -4095,7 +4250,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4110,7 +4266,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4134,15 +4291,16 @@ public final class IdentityFunctions {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
      *             .appId(testAppOciIdentityDomainsApp.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4157,7 +4315,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4181,15 +4340,16 @@ public final class IdentityFunctions {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
      *             .appId(testAppOciIdentityDomainsApp.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4204,7 +4364,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4228,15 +4389,16 @@ public final class IdentityFunctions {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
      *             .appId(testAppOciIdentityDomainsApp.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4251,7 +4413,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4275,15 +4438,16 @@ public final class IdentityFunctions {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
      *             .appId(testAppOciIdentityDomainsApp.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4298,7 +4462,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4322,15 +4487,16 @@ public final class IdentityFunctions {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
      *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4345,7 +4511,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4369,15 +4536,16 @@ public final class IdentityFunctions {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
      *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4392,7 +4560,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4416,15 +4585,16 @@ public final class IdentityFunctions {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
      *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4439,7 +4609,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4463,15 +4634,16 @@ public final class IdentityFunctions {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
      *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4486,7 +4658,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4511,8 +4684,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .startIndex(appRoleStartIndex)
@@ -4520,7 +4693,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4535,7 +4709,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4560,8 +4735,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .startIndex(appRoleStartIndex)
@@ -4569,7 +4744,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4584,7 +4760,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4609,8 +4786,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .startIndex(appRoleStartIndex)
@@ -4618,7 +4795,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4633,7 +4811,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4658,8 +4837,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appRoleCount(appRoleAppRoleCount)
      *             .appRoleFilter(appRoleAppRoleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appRoleAuthorization)
      *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .startIndex(appRoleStartIndex)
@@ -4667,7 +4846,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4682,7 +4862,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4706,15 +4887,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
      *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4729,7 +4911,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4753,15 +4936,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
      *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4776,7 +4960,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4800,15 +4985,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
      *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4823,7 +5009,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4847,15 +5034,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
      *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4870,7 +5058,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4894,15 +5083,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
      *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4917,7 +5107,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4941,15 +5132,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
      *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -4964,7 +5156,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -4988,15 +5181,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
      *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5011,7 +5205,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5035,15 +5230,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
      *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5058,7 +5254,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5083,8 +5280,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowAssignmentStartIndex)
@@ -5092,7 +5289,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5107,7 +5305,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5132,8 +5331,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowAssignmentStartIndex)
@@ -5141,7 +5340,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5156,7 +5356,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5181,8 +5382,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowAssignmentStartIndex)
@@ -5190,7 +5391,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5205,7 +5407,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5230,8 +5433,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
      *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAssignmentAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowAssignmentStartIndex)
@@ -5239,7 +5442,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5254,7 +5458,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5278,15 +5483,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
      *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5301,7 +5507,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5325,15 +5532,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
      *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5348,7 +5556,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5372,15 +5581,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
      *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5395,7 +5605,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5419,15 +5630,16 @@ public final class IdentityFunctions {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
      *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5442,7 +5654,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5467,8 +5680,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStepStartIndex)
@@ -5476,7 +5689,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5491,7 +5705,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5516,8 +5731,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStepStartIndex)
@@ -5525,7 +5740,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5540,7 +5756,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5565,8 +5782,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStepStartIndex)
@@ -5574,7 +5791,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5589,7 +5807,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5614,8 +5833,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
      *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowStepAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStepStartIndex)
@@ -5623,7 +5842,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5638,7 +5858,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5663,8 +5884,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStartIndex)
@@ -5672,7 +5893,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5687,7 +5909,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5712,8 +5935,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStartIndex)
@@ -5721,7 +5944,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5736,7 +5960,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5761,8 +5986,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStartIndex)
@@ -5770,7 +5995,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5785,7 +6011,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5810,8 +6037,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
      *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(approvalWorkflowAuthorization)
      *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .startIndex(approvalWorkflowStartIndex)
@@ -5819,7 +6046,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5834,7 +6062,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5859,8 +6088,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .startIndex(appStartIndex)
@@ -5868,7 +6097,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5883,7 +6113,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5908,8 +6139,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .startIndex(appStartIndex)
@@ -5917,7 +6148,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5932,7 +6164,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -5957,8 +6190,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .startIndex(appStartIndex)
@@ -5966,7 +6199,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -5981,7 +6215,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6006,8 +6241,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .appCount(appAppCount)
      *             .appFilter(appAppFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(appAuthorization)
      *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .startIndex(appStartIndex)
@@ -6015,7 +6250,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6030,7 +6266,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6055,14 +6292,15 @@ public final class IdentityFunctions {
      *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6077,7 +6315,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6102,14 +6341,15 @@ public final class IdentityFunctions {
      *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6124,7 +6364,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6149,14 +6390,15 @@ public final class IdentityFunctions {
      *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6171,7 +6413,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6196,14 +6439,15 @@ public final class IdentityFunctions {
      *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6218,7 +6462,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6244,7 +6489,7 @@ public final class IdentityFunctions {
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .startIndex(authTokenStartIndex)
@@ -6252,7 +6497,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6267,7 +6513,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6293,7 +6540,7 @@ public final class IdentityFunctions {
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .startIndex(authTokenStartIndex)
@@ -6301,7 +6548,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6316,7 +6564,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6342,7 +6591,7 @@ public final class IdentityFunctions {
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .startIndex(authTokenStartIndex)
@@ -6350,7 +6599,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6365,7 +6615,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6391,7 +6642,7 @@ public final class IdentityFunctions {
      *             .authTokenCount(authTokenAuthTokenCount)
      *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authTokenAuthorization)
      *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .startIndex(authTokenStartIndex)
@@ -6399,7 +6650,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6414,7 +6666,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6439,14 +6692,15 @@ public final class IdentityFunctions {
      *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6461,7 +6715,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6486,14 +6741,15 @@ public final class IdentityFunctions {
      *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6508,7 +6764,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6533,14 +6790,15 @@ public final class IdentityFunctions {
      *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6555,7 +6813,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6580,14 +6839,15 @@ public final class IdentityFunctions {
      *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6602,7 +6862,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6626,14 +6887,15 @@ public final class IdentityFunctions {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6648,7 +6910,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6672,14 +6935,15 @@ public final class IdentityFunctions {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6694,7 +6958,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6718,14 +6983,15 @@ public final class IdentityFunctions {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6740,7 +7006,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6764,14 +7031,15 @@ public final class IdentityFunctions {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(authenticationFactorSettingAuthorization)
      *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6786,7 +7054,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6808,17 +7077,18 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
-     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .brandingSettingId("BrandingSettings")
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6833,7 +7103,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6855,17 +7126,18 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
-     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .brandingSettingId("BrandingSettings")
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6880,7 +7152,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6902,17 +7175,18 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
-     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .brandingSettingId("BrandingSettings")
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6927,7 +7201,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6949,17 +7224,18 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
-     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .brandingSettingId("BrandingSettings")
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -6974,7 +7250,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -6997,15 +7274,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7020,7 +7298,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7043,15 +7322,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7066,7 +7346,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7089,15 +7370,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7112,7 +7394,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7135,15 +7418,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(brandingSettingAuthorization)
      *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7158,7 +7442,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7182,15 +7467,16 @@ public final class IdentityFunctions {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
      *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7205,7 +7491,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7229,15 +7516,16 @@ public final class IdentityFunctions {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
      *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7252,7 +7540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7276,15 +7565,16 @@ public final class IdentityFunctions {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
      *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7299,7 +7589,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7323,15 +7614,16 @@ public final class IdentityFunctions {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
      *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7346,7 +7638,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7370,15 +7663,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
      *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7393,7 +7687,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7417,15 +7712,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
      *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7440,7 +7736,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7464,15 +7761,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
      *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7487,7 +7785,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7511,15 +7810,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
      *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7534,7 +7834,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7559,8 +7860,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .startIndex(cloudGateMappingStartIndex)
@@ -7568,7 +7869,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7583,7 +7885,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7608,8 +7911,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .startIndex(cloudGateMappingStartIndex)
@@ -7617,7 +7920,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7632,7 +7936,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7657,8 +7962,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .startIndex(cloudGateMappingStartIndex)
@@ -7666,7 +7971,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7681,7 +7987,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7706,8 +8013,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
      *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateMappingAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .startIndex(cloudGateMappingStartIndex)
@@ -7715,7 +8022,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7730,7 +8038,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7754,15 +8063,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
      *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7777,7 +8087,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7801,15 +8112,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
      *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7824,7 +8136,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7848,15 +8161,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
      *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7871,7 +8185,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7895,15 +8210,16 @@ public final class IdentityFunctions {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
      *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7918,7 +8234,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7943,8 +8260,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .startIndex(cloudGateServerStartIndex)
@@ -7952,7 +8269,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -7967,7 +8285,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -7992,8 +8311,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .startIndex(cloudGateServerStartIndex)
@@ -8001,7 +8320,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8016,7 +8336,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8041,8 +8362,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .startIndex(cloudGateServerStartIndex)
@@ -8050,7 +8371,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8065,7 +8387,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8090,8 +8413,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
      *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateServerAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .startIndex(cloudGateServerStartIndex)
@@ -8099,7 +8422,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8114,7 +8438,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8139,8 +8464,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .startIndex(cloudGateStartIndex)
@@ -8148,7 +8473,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8163,7 +8489,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8188,8 +8515,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .startIndex(cloudGateStartIndex)
@@ -8197,7 +8524,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8212,7 +8540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8237,8 +8566,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .startIndex(cloudGateStartIndex)
@@ -8246,7 +8575,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8261,7 +8591,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8286,8 +8617,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .cloudGateCount(cloudGateCloudGateCount)
      *             .cloudGateFilter(cloudGateCloudGateFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(cloudGateAuthorization)
      *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .startIndex(cloudGateStartIndex)
@@ -8295,7 +8626,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8310,7 +8642,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8334,15 +8667,16 @@ public final class IdentityFunctions {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
      *             .conditionId(testConditionOciIdentityDomainsCondition.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8357,7 +8691,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8381,15 +8716,16 @@ public final class IdentityFunctions {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
      *             .conditionId(testConditionOciIdentityDomainsCondition.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8404,7 +8740,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8428,15 +8765,16 @@ public final class IdentityFunctions {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
      *             .conditionId(testConditionOciIdentityDomainsCondition.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8451,7 +8789,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8475,15 +8814,16 @@ public final class IdentityFunctions {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
      *             .conditionId(testConditionOciIdentityDomainsCondition.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8498,7 +8838,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8523,8 +8864,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .startIndex(conditionStartIndex)
@@ -8532,7 +8873,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8547,7 +8889,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8572,8 +8915,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .startIndex(conditionStartIndex)
@@ -8581,7 +8924,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8596,7 +8940,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8621,8 +8966,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .startIndex(conditionStartIndex)
@@ -8630,7 +8975,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8645,7 +8991,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8670,8 +9017,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .conditionCount(conditionConditionCount)
      *             .conditionFilter(conditionConditionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(conditionAuthorization)
      *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .startIndex(conditionStartIndex)
@@ -8679,7 +9026,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8694,7 +9042,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8719,14 +9068,15 @@ public final class IdentityFunctions {
      *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8741,7 +9091,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8766,14 +9117,15 @@ public final class IdentityFunctions {
      *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8788,7 +9140,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8813,14 +9166,15 @@ public final class IdentityFunctions {
      *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8835,7 +9189,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8860,14 +9215,15 @@ public final class IdentityFunctions {
      *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8882,7 +9238,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8908,7 +9265,7 @@ public final class IdentityFunctions {
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .startIndex(customerSecretKeyStartIndex)
@@ -8916,7 +9273,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8931,7 +9289,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -8957,7 +9316,7 @@ public final class IdentityFunctions {
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .startIndex(customerSecretKeyStartIndex)
@@ -8965,7 +9324,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -8980,7 +9340,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9006,7 +9367,7 @@ public final class IdentityFunctions {
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .startIndex(customerSecretKeyStartIndex)
@@ -9014,7 +9375,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9029,7 +9391,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9055,7 +9418,7 @@ public final class IdentityFunctions {
      *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
      *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(customerSecretKeyAuthorization)
      *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .startIndex(customerSecretKeyStartIndex)
@@ -9063,7 +9426,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9078,7 +9442,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9103,14 +9468,15 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupId(testGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9125,7 +9491,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9150,14 +9517,15 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupId(testGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9172,7 +9540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9197,14 +9566,15 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupId(testGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9219,7 +9589,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9244,14 +9615,15 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupId(testGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9266,7 +9638,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9292,7 +9665,7 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .startIndex(dynamicResourceGroupStartIndex)
@@ -9300,7 +9673,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9315,7 +9689,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9341,7 +9716,7 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .startIndex(dynamicResourceGroupStartIndex)
@@ -9349,7 +9724,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9364,7 +9740,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9390,7 +9767,7 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .startIndex(dynamicResourceGroupStartIndex)
@@ -9398,7 +9775,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9413,7 +9791,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9439,7 +9818,7 @@ public final class IdentityFunctions {
      *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
      *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(dynamicResourceGroupAuthorization)
      *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .startIndex(dynamicResourceGroupStartIndex)
@@ -9447,7 +9826,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9462,7 +9842,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9486,15 +9867,16 @@ public final class IdentityFunctions {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
      *             .grantId(testGrantOciIdentityDomainsGrant.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9509,7 +9891,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9533,15 +9916,16 @@ public final class IdentityFunctions {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
      *             .grantId(testGrantOciIdentityDomainsGrant.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9556,7 +9940,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9580,15 +9965,16 @@ public final class IdentityFunctions {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
      *             .grantId(testGrantOciIdentityDomainsGrant.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9603,7 +9989,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9627,15 +10014,16 @@ public final class IdentityFunctions {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
      *             .grantId(testGrantOciIdentityDomainsGrant.id())
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9650,7 +10038,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9675,8 +10064,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .startIndex(grantStartIndex)
@@ -9684,7 +10073,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9699,7 +10089,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9724,8 +10115,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .startIndex(grantStartIndex)
@@ -9733,7 +10124,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9748,7 +10140,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9773,8 +10166,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .startIndex(grantStartIndex)
@@ -9782,7 +10175,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9797,7 +10191,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9822,8 +10217,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .grantCount(grantGrantCount)
      *             .grantFilter(grantGrantFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(grantAuthorization)
      *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .startIndex(grantStartIndex)
@@ -9831,7 +10226,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9846,7 +10242,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9871,14 +10268,15 @@ public final class IdentityFunctions {
      *             .groupId(testGroupOciIdentityGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9893,7 +10291,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9918,14 +10317,15 @@ public final class IdentityFunctions {
      *             .groupId(testGroupOciIdentityGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9940,7 +10340,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -9965,14 +10366,15 @@ public final class IdentityFunctions {
      *             .groupId(testGroupOciIdentityGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -9987,7 +10389,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10012,14 +10415,15 @@ public final class IdentityFunctions {
      *             .groupId(testGroupOciIdentityGroup.id())
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10034,7 +10438,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10060,7 +10465,7 @@ public final class IdentityFunctions {
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .startIndex(groupStartIndex)
@@ -10068,7 +10473,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10083,7 +10489,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10109,7 +10516,7 @@ public final class IdentityFunctions {
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .startIndex(groupStartIndex)
@@ -10117,7 +10524,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10132,7 +10540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10158,7 +10567,7 @@ public final class IdentityFunctions {
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .startIndex(groupStartIndex)
@@ -10166,7 +10575,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10181,7 +10591,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10207,7 +10618,7 @@ public final class IdentityFunctions {
      *             .groupCount(groupGroupCount)
      *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(groupAuthorization)
      *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .startIndex(groupStartIndex)
@@ -10215,7 +10626,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10230,7 +10642,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10254,15 +10667,16 @@ public final class IdentityFunctions {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10277,7 +10691,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10301,15 +10716,16 @@ public final class IdentityFunctions {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10324,7 +10740,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10348,15 +10765,16 @@ public final class IdentityFunctions {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10371,7 +10789,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10395,15 +10814,16 @@ public final class IdentityFunctions {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10418,7 +10838,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10443,8 +10864,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .startIndex(identityPropagationTrustStartIndex)
@@ -10452,7 +10873,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10467,7 +10889,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10492,8 +10915,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .startIndex(identityPropagationTrustStartIndex)
@@ -10501,7 +10924,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10516,7 +10940,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10541,8 +10966,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .startIndex(identityPropagationTrustStartIndex)
@@ -10550,7 +10975,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10565,7 +10991,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10590,8 +11017,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
      *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identityPropagationTrustAuthorization)
      *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .startIndex(identityPropagationTrustStartIndex)
@@ -10599,7 +11026,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10614,7 +11042,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10639,14 +11068,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10661,7 +11091,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10686,14 +11117,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10708,7 +11140,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10733,14 +11166,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10755,7 +11189,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10780,14 +11215,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10802,7 +11238,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10828,7 +11265,7 @@ public final class IdentityFunctions {
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .startIndex(identityProviderStartIndex)
@@ -10836,7 +11273,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10851,7 +11289,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10877,7 +11316,7 @@ public final class IdentityFunctions {
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .startIndex(identityProviderStartIndex)
@@ -10885,7 +11324,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10900,7 +11340,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10926,7 +11367,7 @@ public final class IdentityFunctions {
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .startIndex(identityProviderStartIndex)
@@ -10934,7 +11375,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10949,7 +11391,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -10975,7 +11418,7 @@ public final class IdentityFunctions {
      *             .identityProviderCount(identityProviderIdentityProviderCount)
      *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(identityProviderAuthorization)
      *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .startIndex(identityProviderStartIndex)
@@ -10983,7 +11426,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -10998,7 +11442,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11022,15 +11467,16 @@ public final class IdentityFunctions {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11045,7 +11491,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11069,15 +11516,16 @@ public final class IdentityFunctions {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11092,7 +11540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11116,15 +11565,16 @@ public final class IdentityFunctions {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11139,7 +11589,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11163,15 +11614,16 @@ public final class IdentityFunctions {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11186,7 +11638,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11209,15 +11662,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11232,7 +11686,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11255,15 +11710,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11278,7 +11734,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11301,15 +11758,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11324,7 +11782,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11347,15 +11806,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(identitySettingAuthorization)
      *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11370,7 +11830,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11395,14 +11856,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11417,7 +11879,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11442,14 +11905,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11464,7 +11928,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11489,14 +11954,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11511,7 +11977,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11536,14 +12003,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11558,7 +12026,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11582,14 +12051,15 @@ public final class IdentityFunctions {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11604,7 +12074,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11628,14 +12099,15 @@ public final class IdentityFunctions {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11650,7 +12122,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11674,14 +12147,15 @@ public final class IdentityFunctions {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11696,7 +12170,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11720,14 +12195,15 @@ public final class IdentityFunctions {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(kmsiSettingAuthorization)
      *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11742,7 +12218,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11772,7 +12249,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11787,7 +12265,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11817,7 +12296,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11832,7 +12312,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11862,7 +12343,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11877,7 +12359,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11907,7 +12390,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11922,7 +12406,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -11954,7 +12439,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -11969,7 +12455,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12001,7 +12488,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12016,7 +12504,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12048,7 +12537,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12063,7 +12553,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12095,7 +12586,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12110,7 +12602,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12142,7 +12635,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12157,7 +12651,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12189,7 +12684,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12204,7 +12700,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12236,7 +12733,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12251,7 +12749,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12283,7 +12782,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12298,7 +12798,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12328,7 +12829,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12343,7 +12845,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12373,7 +12876,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12388,7 +12892,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12418,7 +12923,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12433,7 +12939,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12463,7 +12970,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12478,7 +12986,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12510,7 +13019,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12525,7 +13035,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12557,7 +13068,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12572,7 +13084,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12604,7 +13117,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12619,7 +13133,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12651,7 +13166,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12666,7 +13182,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12696,7 +13213,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12711,7 +13229,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12741,7 +13260,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12756,7 +13276,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12786,7 +13307,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12801,7 +13323,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12831,7 +13354,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12846,7 +13370,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12878,7 +13403,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12893,7 +13419,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12925,7 +13452,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12940,7 +13468,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -12972,7 +13501,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -12987,7 +13517,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13019,7 +13550,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13034,7 +13566,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13064,7 +13597,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13079,7 +13613,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13109,7 +13644,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13124,7 +13660,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13154,7 +13691,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13169,7 +13707,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13199,7 +13738,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13214,7 +13754,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13246,7 +13787,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13261,7 +13803,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13293,7 +13836,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13308,7 +13852,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13340,7 +13885,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13355,7 +13901,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13387,7 +13934,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13402,7 +13950,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13427,14 +13976,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13449,7 +13999,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13474,14 +14025,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13496,7 +14048,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13521,14 +14074,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13543,7 +14097,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13568,14 +14123,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13590,7 +14146,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13616,7 +14173,7 @@ public final class IdentityFunctions {
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .startIndex(myDeviceStartIndex)
@@ -13624,7 +14181,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13639,7 +14197,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13665,7 +14224,7 @@ public final class IdentityFunctions {
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .startIndex(myDeviceStartIndex)
@@ -13673,7 +14232,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13688,7 +14248,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13714,7 +14275,7 @@ public final class IdentityFunctions {
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .startIndex(myDeviceStartIndex)
@@ -13722,7 +14283,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13737,7 +14299,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13763,7 +14326,7 @@ public final class IdentityFunctions {
      *             .myDeviceCount(myDeviceMyDeviceCount)
      *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myDeviceAuthorization)
      *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .startIndex(myDeviceStartIndex)
@@ -13771,7 +14334,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13786,7 +14350,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13812,7 +14377,7 @@ public final class IdentityFunctions {
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myGroupAuthorization)
      *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
      *             .startIndex(myGroupStartIndex)
@@ -13820,7 +14385,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13835,7 +14401,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13861,7 +14428,7 @@ public final class IdentityFunctions {
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myGroupAuthorization)
      *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
      *             .startIndex(myGroupStartIndex)
@@ -13869,7 +14436,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13884,7 +14452,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13910,7 +14479,7 @@ public final class IdentityFunctions {
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myGroupAuthorization)
      *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
      *             .startIndex(myGroupStartIndex)
@@ -13918,7 +14487,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13933,7 +14503,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -13959,7 +14530,7 @@ public final class IdentityFunctions {
      *             .myGroupCount(myGroupMyGroupCount)
      *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myGroupAuthorization)
      *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
      *             .startIndex(myGroupStartIndex)
@@ -13967,7 +14538,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -13982,7 +14554,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14012,7 +14585,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14027,7 +14601,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14057,7 +14632,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14072,7 +14648,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14102,7 +14679,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14117,7 +14695,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14147,7 +14726,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14162,7 +14742,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14194,7 +14775,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14209,7 +14791,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14241,7 +14824,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14256,7 +14840,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14288,7 +14873,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14303,7 +14889,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14335,7 +14922,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14350,7 +14938,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14380,7 +14969,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14395,7 +14985,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14425,7 +15016,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14440,7 +15032,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14470,7 +15063,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14485,7 +15079,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14515,7 +15110,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14530,7 +15126,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14562,7 +15159,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14577,7 +15175,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14609,7 +15208,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14624,7 +15224,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14656,7 +15257,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14671,7 +15273,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14703,7 +15306,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14718,7 +15322,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14750,7 +15355,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14765,7 +15371,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14797,7 +15404,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14812,7 +15420,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14844,7 +15453,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14859,7 +15469,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14891,7 +15502,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14906,7 +15518,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14932,7 +15545,7 @@ public final class IdentityFunctions {
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myRequestAuthorization)
      *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
      *             .startIndex(myRequestStartIndex)
@@ -14940,7 +15553,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -14955,7 +15569,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -14981,7 +15596,7 @@ public final class IdentityFunctions {
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myRequestAuthorization)
      *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
      *             .startIndex(myRequestStartIndex)
@@ -14989,7 +15604,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15004,7 +15620,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15030,7 +15647,7 @@ public final class IdentityFunctions {
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myRequestAuthorization)
      *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
      *             .startIndex(myRequestStartIndex)
@@ -15038,7 +15655,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15053,7 +15671,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15079,7 +15698,7 @@ public final class IdentityFunctions {
      *             .myRequestCount(myRequestMyRequestCount)
      *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myRequestAuthorization)
      *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
      *             .startIndex(myRequestStartIndex)
@@ -15087,7 +15706,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15102,7 +15722,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15132,7 +15753,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15147,7 +15769,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15177,7 +15800,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15192,7 +15816,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15222,7 +15847,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15237,7 +15863,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15267,7 +15894,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15282,7 +15910,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15314,7 +15943,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15329,7 +15959,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15361,7 +15992,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15376,7 +16008,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15408,7 +16041,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15423,7 +16057,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15455,7 +16090,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15470,7 +16106,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15500,7 +16137,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15515,7 +16153,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15545,7 +16184,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15560,7 +16200,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15590,7 +16231,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15605,7 +16247,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15635,7 +16278,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15650,7 +16294,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15682,7 +16327,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15697,7 +16343,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15729,7 +16376,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15744,7 +16392,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15776,7 +16425,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15791,7 +16441,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15823,7 +16474,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15838,7 +16490,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15863,14 +16516,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15885,7 +16539,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15910,14 +16565,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15932,7 +16588,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -15957,14 +16614,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -15979,7 +16637,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16004,14 +16663,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16026,7 +16686,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16052,7 +16713,7 @@ public final class IdentityFunctions {
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .startIndex(myTrustedUserAgentStartIndex)
@@ -16060,7 +16721,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16075,7 +16737,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16101,7 +16764,7 @@ public final class IdentityFunctions {
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .startIndex(myTrustedUserAgentStartIndex)
@@ -16109,7 +16772,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16124,7 +16788,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16150,7 +16815,7 @@ public final class IdentityFunctions {
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .startIndex(myTrustedUserAgentStartIndex)
@@ -16158,7 +16823,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16173,7 +16839,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16199,7 +16866,7 @@ public final class IdentityFunctions {
      *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
      *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(myTrustedUserAgentAuthorization)
      *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .startIndex(myTrustedUserAgentStartIndex)
@@ -16207,7 +16874,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16222,7 +16890,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16252,7 +16921,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16267,7 +16937,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16297,7 +16968,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16312,7 +16984,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16342,7 +17015,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16357,7 +17031,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16387,7 +17062,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16402,7 +17078,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16434,7 +17111,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16449,7 +17127,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16481,7 +17160,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16496,7 +17176,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16528,7 +17209,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16543,7 +17225,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16575,7 +17258,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16590,7 +17274,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16614,15 +17299,16 @@ public final class IdentityFunctions {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16637,7 +17323,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16661,15 +17348,16 @@ public final class IdentityFunctions {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16684,7 +17372,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16708,15 +17397,16 @@ public final class IdentityFunctions {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16731,7 +17421,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16755,15 +17446,16 @@ public final class IdentityFunctions {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16778,7 +17470,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16803,8 +17496,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .startIndex(networkPerimeterStartIndex)
@@ -16812,7 +17505,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16827,7 +17521,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16852,8 +17547,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .startIndex(networkPerimeterStartIndex)
@@ -16861,7 +17556,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16876,7 +17572,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16901,8 +17598,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .startIndex(networkPerimeterStartIndex)
@@ -16910,7 +17607,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16925,7 +17623,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16950,8 +17649,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
      *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(networkPerimeterAuthorization)
      *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .startIndex(networkPerimeterStartIndex)
@@ -16959,7 +17658,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -16974,7 +17674,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -16998,15 +17699,16 @@ public final class IdentityFunctions {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17021,7 +17723,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17045,15 +17748,16 @@ public final class IdentityFunctions {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17068,7 +17772,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17092,15 +17797,16 @@ public final class IdentityFunctions {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17115,7 +17821,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17139,15 +17846,16 @@ public final class IdentityFunctions {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17162,7 +17870,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17185,15 +17894,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17208,7 +17918,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17231,15 +17942,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17254,7 +17966,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17277,15 +17990,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17300,7 +18014,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17323,15 +18038,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(notificationSettingAuthorization)
      *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17346,7 +18062,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17371,14 +18088,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17393,7 +18111,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17418,14 +18137,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17440,7 +18160,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17465,14 +18186,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17487,7 +18209,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17512,14 +18235,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17534,7 +18258,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17560,7 +18285,7 @@ public final class IdentityFunctions {
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .startIndex(oauth2clientCredentialStartIndex)
@@ -17568,7 +18293,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17583,7 +18309,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17609,7 +18336,7 @@ public final class IdentityFunctions {
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .startIndex(oauth2clientCredentialStartIndex)
@@ -17617,7 +18344,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17632,7 +18360,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17658,7 +18387,7 @@ public final class IdentityFunctions {
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .startIndex(oauth2clientCredentialStartIndex)
@@ -17666,7 +18395,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17681,7 +18411,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17707,7 +18438,7 @@ public final class IdentityFunctions {
      *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
      *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(oauth2clientCredentialAuthorization)
      *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .startIndex(oauth2clientCredentialStartIndex)
@@ -17715,7 +18446,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17730,7 +18462,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17760,7 +18493,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17775,7 +18509,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17805,7 +18540,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17820,7 +18556,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17850,7 +18587,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17865,7 +18603,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17895,7 +18634,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17910,7 +18650,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17942,7 +18683,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -17957,7 +18699,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -17989,7 +18732,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18004,7 +18748,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18036,7 +18781,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18051,7 +18797,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18083,7 +18830,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18098,7 +18846,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18128,7 +18877,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18143,7 +18893,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18173,7 +18924,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18188,7 +18940,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18218,7 +18971,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18233,7 +18987,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18263,7 +19018,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18278,7 +19034,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18310,7 +19067,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18325,7 +19083,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18357,7 +19116,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18372,7 +19132,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18404,7 +19165,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18419,7 +19181,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18451,7 +19214,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18466,7 +19230,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18492,7 +19257,7 @@ public final class IdentityFunctions {
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .startIndex(passwordPolicyStartIndex)
@@ -18500,7 +19265,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18515,7 +19281,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18541,7 +19308,7 @@ public final class IdentityFunctions {
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .startIndex(passwordPolicyStartIndex)
@@ -18549,7 +19316,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18564,7 +19332,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18590,7 +19359,7 @@ public final class IdentityFunctions {
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .startIndex(passwordPolicyStartIndex)
@@ -18598,7 +19367,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18613,7 +19383,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18639,7 +19410,7 @@ public final class IdentityFunctions {
      *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
      *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .startIndex(passwordPolicyStartIndex)
@@ -18647,7 +19418,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18662,7 +19434,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18687,14 +19460,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18709,7 +19483,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18734,14 +19509,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18756,7 +19532,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18781,14 +19558,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18803,7 +19581,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18828,14 +19607,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(passwordPolicyAuthorization)
      *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18850,7 +19630,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18875,8 +19656,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .startIndex(policyStartIndex)
@@ -18884,7 +19665,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18899,7 +19681,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18924,8 +19707,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .startIndex(policyStartIndex)
@@ -18933,7 +19716,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18948,7 +19732,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -18973,8 +19758,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .startIndex(policyStartIndex)
@@ -18982,7 +19767,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -18997,7 +19783,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19022,8 +19809,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .policyCount(policyPolicyCount)
      *             .policyFilter(policyPolicyFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .startIndex(policyStartIndex)
@@ -19031,7 +19818,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19046,7 +19834,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19070,15 +19859,16 @@ public final class IdentityFunctions {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .policyId(testPolicyOciIdentityPolicy.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19093,7 +19883,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19117,15 +19908,16 @@ public final class IdentityFunctions {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .policyId(testPolicyOciIdentityPolicy.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19140,7 +19932,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19164,15 +19957,16 @@ public final class IdentityFunctions {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .policyId(testPolicyOciIdentityPolicy.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19187,7 +19981,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19211,15 +20006,16 @@ public final class IdentityFunctions {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .policyId(testPolicyOciIdentityPolicy.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(policyAuthorization)
      *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19234,7 +20030,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19259,8 +20056,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(resourceTypeSchemaAttributeAuthorization)
      *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
      *             .startIndex(resourceTypeSchemaAttributeStartIndex)
@@ -19268,7 +20065,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19283,7 +20081,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19308,8 +20107,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(resourceTypeSchemaAttributeAuthorization)
      *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
      *             .startIndex(resourceTypeSchemaAttributeStartIndex)
@@ -19317,7 +20116,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19332,7 +20132,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19357,8 +20158,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(resourceTypeSchemaAttributeAuthorization)
      *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
      *             .startIndex(resourceTypeSchemaAttributeStartIndex)
@@ -19366,7 +20167,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19381,7 +20183,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19406,8 +20209,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
      *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(resourceTypeSchemaAttributeAuthorization)
      *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
      *             .startIndex(resourceTypeSchemaAttributeStartIndex)
@@ -19415,7 +20218,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19430,7 +20234,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19454,15 +20259,16 @@ public final class IdentityFunctions {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .ruleId(testRuleOciEventsRule.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19477,7 +20283,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19501,15 +20308,16 @@ public final class IdentityFunctions {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .ruleId(testRuleOciEventsRule.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19524,7 +20332,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19548,15 +20357,16 @@ public final class IdentityFunctions {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .ruleId(testRuleOciEventsRule.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19571,7 +20381,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19595,15 +20406,16 @@ public final class IdentityFunctions {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .ruleId(testRuleOciEventsRule.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19618,7 +20430,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19643,8 +20456,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .startIndex(ruleStartIndex)
@@ -19652,7 +20465,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19667,7 +20481,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19692,8 +20507,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .startIndex(ruleStartIndex)
@@ -19701,7 +20516,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19716,7 +20532,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19741,8 +20558,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .startIndex(ruleStartIndex)
@@ -19750,7 +20567,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19765,7 +20583,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19790,8 +20609,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .ruleCount(ruleRuleCount)
      *             .ruleFilter(ruleRuleFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(ruleAuthorization)
      *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .startIndex(ruleStartIndex)
@@ -19799,7 +20618,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19814,7 +20634,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19838,15 +20659,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19861,7 +20683,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19885,15 +20708,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19908,7 +20732,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19932,15 +20757,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19955,7 +20781,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -19979,15 +20806,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20002,7 +20830,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20026,15 +20855,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20049,7 +20879,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20073,15 +20904,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20096,7 +20928,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20120,15 +20953,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20143,7 +20977,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20167,15 +21002,16 @@ public final class IdentityFunctions {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20190,7 +21026,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20213,15 +21050,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20236,7 +21074,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20259,15 +21098,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20282,7 +21122,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20305,15 +21146,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20328,7 +21170,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20351,15 +21194,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionSettingAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20374,7 +21218,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20399,8 +21244,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .startIndex(securityQuestionStartIndex)
@@ -20408,7 +21253,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20423,7 +21269,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20448,8 +21295,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .startIndex(securityQuestionStartIndex)
@@ -20457,7 +21304,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20472,7 +21320,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20497,8 +21346,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .startIndex(securityQuestionStartIndex)
@@ -20506,7 +21355,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20521,7 +21371,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20546,8 +21397,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
      *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(securityQuestionAuthorization)
      *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .startIndex(securityQuestionStartIndex)
@@ -20555,7 +21406,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20570,7 +21422,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20594,15 +21447,16 @@ public final class IdentityFunctions {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileId(testProfile.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20617,7 +21471,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20641,15 +21496,16 @@ public final class IdentityFunctions {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileId(testProfile.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20664,7 +21520,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20688,15 +21545,16 @@ public final class IdentityFunctions {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileId(testProfile.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20711,7 +21569,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20735,15 +21594,16 @@ public final class IdentityFunctions {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileId(testProfile.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20758,7 +21618,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20783,8 +21644,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .startIndex(selfRegistrationProfileStartIndex)
@@ -20792,7 +21653,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20807,7 +21669,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20832,8 +21695,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .startIndex(selfRegistrationProfileStartIndex)
@@ -20841,7 +21704,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20856,7 +21720,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20881,8 +21746,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .startIndex(selfRegistrationProfileStartIndex)
@@ -20890,7 +21755,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20905,7 +21771,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20930,8 +21797,8 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
      *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(selfRegistrationProfileAuthorization)
      *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .startIndex(selfRegistrationProfileStartIndex)
@@ -20939,7 +21806,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -20954,7 +21822,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -20977,16 +21846,17 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .settingId(&#34;Settings&#34;)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .settingId("Settings")
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21001,7 +21871,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21024,16 +21895,17 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .settingId(&#34;Settings&#34;)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .settingId("Settings")
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21048,7 +21920,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21071,16 +21944,17 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .settingId(&#34;Settings&#34;)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .settingId("Settings")
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21095,7 +21969,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21118,16 +21993,17 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .settingId(&#34;Settings&#34;)
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .settingId("Settings")
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21142,7 +22018,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21165,15 +22042,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21188,7 +22066,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21211,15 +22090,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21234,7 +22114,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21257,15 +22138,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21280,7 +22162,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21303,15 +22186,16 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(settingAuthorization)
      *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21326,7 +22210,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21351,14 +22236,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21373,7 +22259,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21398,14 +22285,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21420,7 +22308,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21445,14 +22334,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21467,7 +22357,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21492,14 +22383,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21514,7 +22406,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21540,7 +22433,7 @@ public final class IdentityFunctions {
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .startIndex(smtpCredentialStartIndex)
@@ -21548,7 +22441,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21563,7 +22457,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21589,7 +22484,7 @@ public final class IdentityFunctions {
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .startIndex(smtpCredentialStartIndex)
@@ -21597,7 +22492,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21612,7 +22508,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21638,7 +22535,7 @@ public final class IdentityFunctions {
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .startIndex(smtpCredentialStartIndex)
@@ -21646,7 +22543,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21661,7 +22559,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21687,7 +22586,7 @@ public final class IdentityFunctions {
      *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
      *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(smtpCredentialAuthorization)
      *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .startIndex(smtpCredentialStartIndex)
@@ -21695,7 +22594,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21710,7 +22610,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21735,14 +22636,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21757,7 +22659,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21782,14 +22685,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21804,7 +22708,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21829,14 +22734,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21851,7 +22757,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21876,14 +22783,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21898,7 +22806,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21922,15 +22831,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21945,7 +22855,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -21969,15 +22880,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -21992,7 +22904,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22016,15 +22929,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22039,7 +22953,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22063,15 +22978,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22086,7 +23002,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22110,15 +23027,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22133,7 +23051,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22157,15 +23076,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22180,7 +23100,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22204,15 +23125,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22227,7 +23149,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22251,15 +23174,16 @@ public final class IdentityFunctions {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
      *             .idcsEndpoint(testDomain.url())
      *             .userAttributesSettingId(testUserAttributesSetting.id())
-     *             .attributeSets(&#34;all&#34;)
-     *             .attributes(&#34;&#34;)
+     *             .attributeSets("all")
+     *             .attributes("")
      *             .authorization(userAttributesSettingAuthorization)
      *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22274,7 +23198,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22299,14 +23224,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22321,7 +23247,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22346,14 +23273,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22368,7 +23296,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22393,14 +23322,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22415,7 +23345,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22440,14 +23371,15 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(testDomain.url())
      *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22462,7 +23394,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22488,7 +23421,7 @@ public final class IdentityFunctions {
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .startIndex(userDbCredentialStartIndex)
@@ -22496,7 +23429,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22511,7 +23445,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22537,7 +23472,7 @@ public final class IdentityFunctions {
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .startIndex(userDbCredentialStartIndex)
@@ -22545,7 +23480,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22560,7 +23496,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22586,7 +23523,7 @@ public final class IdentityFunctions {
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .startIndex(userDbCredentialStartIndex)
@@ -22594,7 +23531,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22609,7 +23547,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22635,7 +23574,7 @@ public final class IdentityFunctions {
      *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
      *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userDbCredentialAuthorization)
      *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .startIndex(userDbCredentialStartIndex)
@@ -22643,7 +23582,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22658,7 +23598,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22684,7 +23625,7 @@ public final class IdentityFunctions {
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .startIndex(userStartIndex)
@@ -22692,7 +23633,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22707,7 +23649,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22733,7 +23676,7 @@ public final class IdentityFunctions {
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .startIndex(userStartIndex)
@@ -22741,7 +23684,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22756,7 +23700,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22782,7 +23727,7 @@ public final class IdentityFunctions {
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .startIndex(userStartIndex)
@@ -22790,7 +23735,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22805,7 +23751,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22831,7 +23778,7 @@ public final class IdentityFunctions {
      *             .userCount(userUserCount)
      *             .userFilter(userUserFilter)
      *             .attributeSets()
-     *             .attributes(&#34;&#34;)
+     *             .attributes("")
      *             .authorization(userAuthorization)
      *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .startIndex(userStartIndex)
@@ -22839,7 +23786,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22856,7 +23804,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22885,7 +23834,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22902,7 +23852,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22931,7 +23882,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22948,7 +23900,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -22977,7 +23930,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -22994,7 +23948,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23023,7 +23978,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23040,7 +23996,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23068,7 +24025,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23085,7 +24043,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23113,7 +24072,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23130,7 +24090,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23158,7 +24119,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23175,7 +24137,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23203,7 +24166,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23222,7 +24186,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23249,7 +24214,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23268,7 +24234,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23295,7 +24262,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23314,7 +24282,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23341,7 +24310,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23360,7 +24330,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23387,7 +24358,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23404,7 +24376,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23433,7 +24406,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23450,7 +24424,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23479,7 +24454,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23496,7 +24472,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23525,7 +24502,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23542,7 +24520,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23571,7 +24550,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23590,7 +24570,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23617,7 +24598,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23636,7 +24618,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23663,7 +24646,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23682,7 +24666,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23709,7 +24694,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23728,7 +24714,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23755,7 +24742,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23774,7 +24762,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23801,7 +24790,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23820,7 +24810,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23847,7 +24838,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23866,7 +24858,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23893,7 +24886,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23912,7 +24906,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23939,7 +24934,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -23958,7 +24954,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -23985,7 +24982,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24004,7 +25002,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24031,7 +25030,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24050,7 +25050,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24077,7 +25078,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24096,7 +25098,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24123,7 +25126,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24141,7 +25145,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24169,7 +25174,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24187,7 +25193,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24215,7 +25222,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24233,7 +25241,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24261,7 +25270,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24279,7 +25289,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24307,7 +25318,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24324,7 +25336,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24353,7 +25366,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24370,7 +25384,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24399,7 +25414,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24416,7 +25432,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24445,7 +25462,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24462,7 +25480,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24491,7 +25510,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24511,7 +25531,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24541,7 +25562,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24561,7 +25583,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24591,7 +25614,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24611,7 +25635,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24641,7 +25666,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24661,7 +25687,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24691,7 +25718,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24708,7 +25736,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24735,7 +25764,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24752,7 +25782,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24779,7 +25810,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24796,7 +25828,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24823,7 +25856,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24840,7 +25874,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24867,7 +25902,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24882,7 +25918,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24909,7 +25946,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24924,7 +25962,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24951,7 +25990,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -24966,7 +26006,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -24993,7 +26034,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25008,7 +26050,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25035,7 +26078,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25052,7 +26096,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25081,7 +26126,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25098,7 +26144,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25127,7 +26174,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25144,7 +26192,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25173,7 +26222,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25190,7 +26240,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25219,7 +26270,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25238,7 +26290,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25267,7 +26320,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25286,7 +26340,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25315,7 +26370,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25334,7 +26390,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25363,7 +26420,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25382,7 +26440,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25411,7 +26470,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25426,7 +26486,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25453,7 +26514,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25468,7 +26530,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25495,7 +26558,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25510,7 +26574,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25537,7 +26602,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25552,7 +26618,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25579,7 +26646,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25594,7 +26662,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25619,7 +26688,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25634,7 +26704,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25659,7 +26730,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25674,7 +26746,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25699,7 +26772,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25714,7 +26788,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25739,7 +26814,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25754,7 +26830,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25779,7 +26856,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25794,7 +26872,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25819,7 +26898,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25835,7 +26915,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25862,7 +26943,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25878,7 +26960,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25905,7 +26988,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25921,7 +27005,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25948,7 +27033,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -25964,7 +27050,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -25991,7 +27078,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26006,7 +27094,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26034,7 +27123,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26049,7 +27139,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26077,7 +27168,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26092,7 +27184,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26120,7 +27213,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26135,7 +27229,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26163,7 +27258,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26178,7 +27274,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26205,7 +27302,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26220,7 +27318,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26247,7 +27346,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26262,7 +27362,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26289,7 +27390,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26304,7 +27406,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26331,7 +27434,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26346,7 +27450,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26376,7 +27481,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26391,7 +27497,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26421,7 +27528,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26436,7 +27544,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26466,7 +27575,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26481,7 +27591,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26511,7 +27622,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26526,7 +27638,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26556,7 +27669,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26571,7 +27685,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26601,7 +27716,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26616,7 +27732,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26645,7 +27762,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26660,7 +27778,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26689,7 +27808,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26704,7 +27824,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26733,7 +27854,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26748,7 +27870,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26777,7 +27900,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26792,7 +27916,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26820,7 +27945,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26835,7 +27961,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26863,7 +27990,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26878,7 +28006,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26906,7 +28035,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26921,7 +28051,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26949,7 +28080,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -26964,7 +28096,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -26991,7 +28124,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27006,7 +28140,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27033,7 +28168,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27048,7 +28184,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27075,7 +28212,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27090,7 +28228,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27117,7 +28256,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27132,7 +28272,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27160,7 +28301,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27175,7 +28317,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27203,7 +28346,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27218,7 +28362,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27246,7 +28391,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27261,7 +28407,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27289,7 +28436,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27304,7 +28452,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27331,7 +28480,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27346,7 +28496,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27373,7 +28524,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27388,7 +28540,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27415,7 +28568,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27430,7 +28584,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27457,7 +28612,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27473,7 +28629,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27500,7 +28657,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27516,7 +28674,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27543,7 +28702,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27559,7 +28719,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27586,7 +28747,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27602,7 +28764,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27629,7 +28792,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27644,7 +28808,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27671,7 +28836,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27686,7 +28852,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27713,7 +28880,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27728,7 +28896,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27755,7 +28924,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27770,7 +28940,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27797,7 +28968,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27821,7 +28993,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27850,7 +29023,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27874,7 +29048,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27903,7 +29078,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27927,7 +29103,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -27956,7 +29133,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -27980,7 +29158,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -28009,7 +29188,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -28026,7 +29206,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -28057,7 +29238,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -28074,7 +29256,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -28105,7 +29288,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -28122,7 +29306,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -28153,7 +29338,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -28170,7 +29356,8 @@ public final class IdentityFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -28201,7 +29388,8 @@ public final class IdentityFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

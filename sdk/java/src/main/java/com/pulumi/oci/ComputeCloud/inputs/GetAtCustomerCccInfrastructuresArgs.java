@@ -34,14 +34,14 @@ public final class GetAtCustomerCccInfrastructuresArgs extends com.pulumi.resour
     }
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     @Import(name="cccInfrastructureId")
     private @Nullable Output<String> cccInfrastructureId;
 
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     public Optional<Output<String>> cccInfrastructureId() {
@@ -183,7 +183,7 @@ public final class GetAtCustomerCccInfrastructuresArgs extends com.pulumi.resour
         }
 
         /**
-         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class GetAtCustomerCccInfrastructuresArgs extends com.pulumi.resour
         }
 
         /**
-         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
          * 
          * @return builder
          * 

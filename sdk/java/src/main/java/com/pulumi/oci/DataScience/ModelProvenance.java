@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModelProvenance = new ModelProvenance(&#34;testModelProvenance&#34;, ModelProvenanceArgs.builder()        
+ *         var testModelProvenance = new ModelProvenance("testModelProvenance", ModelProvenanceArgs.builder()        
  *             .modelId(testModel.id())
  *             .gitBranch(modelProvenanceGitBranch)
  *             .gitCommit(modelProvenanceGitCommit)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

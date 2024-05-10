@@ -37,7 +37,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -71,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstance = new BdsInstance(&#34;testBdsInstance&#34;, BdsInstanceArgs.builder()        
+ *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()        
  *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterPublicKey(bdsInstanceClusterPublicKey)
  *             .clusterVersion(bdsInstanceClusterVersion)
@@ -159,7 +160,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable(&#34;testIngressGatewayRouteTable&#34;, IngressGatewayRouteTableArgs.builder()        
+ *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable("testIngressGatewayRouteTable", IngressGatewayRouteTableArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .ingressGatewayId(testIngressGateway.id())
  *             .name(ingressGatewayRouteTableName)
@@ -71,15 +72,16 @@ import javax.annotation.Nullable;
  *                 .pathType(ingressGatewayRouteTableRouteRulesPathType)
  *                 .requestTimeoutInMs(ingressGatewayRouteTableRouteRulesRequestTimeoutInMs)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(ingressGatewayRouteTableDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .priority(ingressGatewayRouteTablePriority)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

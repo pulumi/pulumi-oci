@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousVmClusterOrdsCertificateManagement = new AutonomousVmClusterOrdsCertificateManagement(&#34;testAutonomousVmClusterOrdsCertificateManagement&#34;, AutonomousVmClusterOrdsCertificateManagementArgs.builder()        
+ *         var testAutonomousVmClusterOrdsCertificateManagement = new AutonomousVmClusterOrdsCertificateManagement("testAutonomousVmClusterOrdsCertificateManagement", AutonomousVmClusterOrdsCertificateManagementArgs.builder()        
  *             .autonomousVmClusterId(testAutonomousVmCluster.id())
  *             .certificateGenerationType(autonomousVmClusterOrdsCertificateManagementCertificateGenerationType)
  *             .caBundleId(testCaBundle.id())
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

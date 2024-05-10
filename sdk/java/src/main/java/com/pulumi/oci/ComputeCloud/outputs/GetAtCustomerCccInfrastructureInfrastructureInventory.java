@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetAtCustomerCccInfrastructureInfrastructureInventory {
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     private Integer capacityStorageTrayCount;
     /**
-     * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * @return The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     private Integer computeNodeCount;
     /**
-     * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * @return The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     private Integer managementNodeCount;
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     private Integer performanceStorageTrayCount;
     /**
-     * @return The serial number of the Compute Cloud@Customer infrastructure rack.
+     * @return The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     private String serialNumber;
 
     private GetAtCustomerCccInfrastructureInfrastructureInventory() {}
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     public Integer capacityStorageTrayCount() {
         return this.capacityStorageTrayCount;
     }
     /**
-     * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * @return The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     public Integer computeNodeCount() {
         return this.computeNodeCount;
     }
     /**
-     * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * @return The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public Integer managementNodeCount() {
         return this.managementNodeCount;
     }
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     public Integer performanceStorageTrayCount() {
         return this.performanceStorageTrayCount;
     }
     /**
-     * @return The serial number of the Compute Cloud@Customer infrastructure rack.
+     * @return The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public String serialNumber() {

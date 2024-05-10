@@ -26,12 +26,13 @@ import javax.annotation.Nullable;
  * 
  * **Deprecated.** Use [CreatePluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/CreatePluggableDatabase) for Pluggable Database RemoteClone Operation.
  * Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
- * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
+ * For Exadata Cloud{@literal @}Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone(&#34;testPluggableDatabasesRemoteClone&#34;, PluggableDatabasesRemoteCloneArgs.builder()        
+ *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", PluggableDatabasesRemoteCloneArgs.builder()        
  *             .clonedPdbName(pluggableDatabasesRemoteCloneClonedPdbName)
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .sourceContainerDbAdminPassword(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword)
@@ -64,7 +65,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

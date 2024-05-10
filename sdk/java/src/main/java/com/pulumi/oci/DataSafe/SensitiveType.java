@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,16 +48,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSensitiveType = new SensitiveType(&#34;testSensitiveType&#34;, SensitiveTypeArgs.builder()        
+ *         var testSensitiveType = new SensitiveType("testSensitiveType", SensitiveTypeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .entityType(sensitiveTypeEntityType)
  *             .commentPattern(sensitiveTypeCommentPattern)
  *             .dataPattern(sensitiveTypeDataPattern)
  *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(sensitiveTypeDescription)
  *             .displayName(sensitiveTypeDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .namePattern(sensitiveTypeNamePattern)
  *             .parentCategoryId(testCategory.id())
  *             .searchType(sensitiveTypeSearchType)
@@ -65,7 +66,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,11 +51,11 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMediaWorkflow = new MediaWorkflow(&#34;testMediaWorkflow&#34;, MediaWorkflowArgs.builder()        
+ *         var testMediaWorkflow = new MediaWorkflow("testMediaWorkflow", MediaWorkflowArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(mediaWorkflowDisplayName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .locks(MediaWorkflowLockArgs.builder()
  *                 .compartmentId(compartmentId)
  *                 .type(mediaWorkflowLocksType)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

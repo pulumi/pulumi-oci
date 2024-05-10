@@ -68,7 +68,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -128,14 +129,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApp = new DomainsApp(&#34;testApp&#34;, DomainsAppArgs.builder()        
+ *         var testApp = new DomainsApp("testApp", DomainsAppArgs.builder()        
  *             .basedOnTemplate(DomainsAppBasedOnTemplateArgs.builder()
  *                 .value(appBasedOnTemplateValue)
- *                 .wellKnownId(&#34;CustomWebAppTemplateId&#34;)
+ *                 .wellKnownId("CustomWebAppTemplateId")
  *                 .build())
  *             .displayName(appDisplayName)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:App&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:App")
  *             .accessTokenExpiry(appAccessTokenExpiry)
  *             .active(appActive)
  *             .aliasApps(DomainsAppAliasAppArgs.builder()
@@ -181,8 +182,8 @@ import javax.annotation.Nullable;
  *                 .visible(appAttrRenderingMetadataVisible)
  *                 .widget(appAttrRenderingMetadataWidget)
  *                 .build())
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .audience(appAudience)
  *             .authorization(appAuthorization)
  *             .bypassConsent(appBypassConsent)
@@ -250,7 +251,7 @@ import javax.annotation.Nullable;
  *                 .displayName(appScopesDisplayName)
  *                 .requiresConsent(appScopesRequiresConsent)
  *                 .build())
- *             .secondaryAudiences(&#34;secondaryAudiences&#34;)
+ *             .secondaryAudiences("secondaryAudiences")
  *             .serviceParams(DomainsAppServiceParamArgs.builder()
  *                 .name(appServiceParamsName)
  *                 .value(appServiceParamsValue)
@@ -288,7 +289,7 @@ import javax.annotation.Nullable;
  *                 .domainApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs.builder()
  *                     .value(appUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppValue)
  *                     .build())
- *                 .domainName(&#34;domainName&#34;)
+ *                 .domainName("domainName")
  *                 .build())
  *             .urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs.builder()
  *                 .allowAuthzDecisionTtl(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl)
@@ -397,7 +398,7 @@ import javax.annotation.Nullable;
  *                 .port(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPort)
  *                 .secretKey(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppSecretKey)
  *                 .captureClientIp(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp)
- *                 .countryCodeResponseAttributeId(&#34;1&#34;)
+ *                 .countryCodeResponseAttributeId("1")
  *                 .endUserIpAttribute(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppEndUserIpAttribute)
  *                 .groupMembershipRadiusAttribute(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipRadiusAttribute)
  *                 .groupMembershipToReturns(DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs.builder()
@@ -405,7 +406,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .groupNameFormat(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupNameFormat)
  *                 .passwordAndOtpTogether(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether)
- *                 .radiusVendorSpecificId(&#34;radiusVendorSpecificId&#34;)
+ *                 .radiusVendorSpecificId("radiusVendorSpecificId")
  *                 .responseFormat(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormat)
  *                 .responseFormatDelimiter(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormatDelimiter)
  *                 .typeOfRadiusApp(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppTypeOfRadiusApp)
@@ -417,13 +418,13 @@ import javax.annotation.Nullable;
  *                 .assertionConsumerUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppAssertionConsumerUrl)
  *                 .encryptAssertion(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion)
  *                 .encryptionAlgorithm(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptionAlgorithm)
- *                 .encryptionCertificate(&#34;encryptionCertificate&#34;)
+ *                 .encryptionCertificate("encryptionCertificate")
  *                 .federationProtocol(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppFederationProtocol)
  *                 .groupAssertionAttributes(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs.builder()
  *                     .name(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesName)
  *                     .condition(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesCondition)
  *                     .format(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesFormat)
- *                     .groupName(&#34;groupName&#34;)
+ *                     .groupName("groupName")
  *                     .build())
  *                 .hokAcsUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokAcsUrl)
  *                 .hokRequired(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired)
@@ -433,15 +434,15 @@ import javax.annotation.Nullable;
  *                 .logoutEnabled(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled)
  *                 .logoutRequestUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutRequestUrl)
  *                 .logoutResponseUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutResponseUrl)
- *                 .metadata(&#34;metadata&#34;)
+ *                 .metadata("metadata")
  *                 .nameIdFormat(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdFormat)
  *                 .nameIdUserstoreAttribute(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdUserstoreAttribute)
- *                 .partnerProviderId(&#34;partnerProviderId&#34;)
+ *                 .partnerProviderId("partnerProviderId")
  *                 .partnerProviderPattern(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPartnerProviderPattern)
  *                 .signResponseOrAssertion(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignResponseOrAssertion)
  *                 .signatureHashAlgorithm(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignatureHashAlgorithm)
- *                 .signingCertificate(&#34;signingCertificate&#34;)
- *                 .succinctId(&#34;succinctId&#34;)
+ *                 .signingCertificate("signingCertificate")
+ *                 .succinctId("succinctId")
  *                 .userAssertionAttributes(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs.builder()
  *                     .name(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesName)
  *                     .userStoreAttributeName(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesUserStoreAttributeName)
@@ -457,7 +458,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

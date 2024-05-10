@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -61,13 +62,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNodePool = new NodePool(&#34;testNodePool&#34;, NodePoolArgs.builder()        
+ *         var testNodePool = new NodePool("testNodePool", NodePoolArgs.builder()        
  *             .clusterId(testCluster.id())
  *             .compartmentId(compartmentId)
  *             .name(nodePoolName)
  *             .nodeShape(nodePoolNodeShape)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .initialNodeLabels(NodePoolInitialNodeLabelArgs.builder()
  *                 .key(nodePoolInitialNodeLabelsKey)
  *                 .value(nodePoolInitialNodeLabelsValue)
@@ -95,8 +96,8 @@ import javax.annotation.Nullable;
  *                     .podNsgIds(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds)
  *                     .podSubnetIds(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds)
  *                     .build())
- *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                 .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                 .freeformTags(Map.of("Department", "Finance"))
  *                 .nsgIds(nodePoolNodeConfigDetailsNsgIds)
  *                 .build())
  *             .nodeEvictionNodePoolSettings(NodePoolNodeEvictionNodePoolSettingsArgs.builder()
@@ -126,7 +127,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

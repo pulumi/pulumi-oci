@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,18 +46,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUserCapabilitiesManagement = new UserCapabilitiesManagement(&#34;testUserCapabilitiesManagement&#34;, UserCapabilitiesManagementArgs.builder()        
+ *         var testUserCapabilitiesManagement = new UserCapabilitiesManagement("testUserCapabilitiesManagement", UserCapabilitiesManagementArgs.builder()        
  *             .userId(user1.id())
- *             .canUseApiKeys(&#34;true&#34;)
- *             .canUseAuthTokens(&#34;true&#34;)
- *             .canUseConsolePassword(&#34;false&#34;)
- *             .canUseCustomerSecretKeys(&#34;true&#34;)
- *             .canUseSmtpCredentials(&#34;true&#34;)
+ *             .canUseApiKeys("true")
+ *             .canUseAuthTokens("true")
+ *             .canUseConsolePassword("false")
+ *             .canUseCustomerSecretKeys("true")
+ *             .canUseSmtpCredentials("true")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

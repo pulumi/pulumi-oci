@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testListingPackageAgreement = new ListingPackageAgreement(&#34;testListingPackageAgreement&#34;, ListingPackageAgreementArgs.builder()        
+ *         var testListingPackageAgreement = new ListingPackageAgreement("testListingPackageAgreement", ListingPackageAgreementArgs.builder()        
  *             .agreementId(testAgreement.id())
  *             .listingId(testListing.id())
  *             .packageVersion(listingPackageAgreementPackageVersion)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

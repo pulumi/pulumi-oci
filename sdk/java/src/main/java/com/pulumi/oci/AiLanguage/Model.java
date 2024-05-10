@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
+ *         var testModel = new Model("testModel", ModelArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .modelDetails(ModelModelDetailsArgs.builder()
  *                 .modelType(modelModelDetailsModelType)
@@ -70,10 +71,10 @@ import javax.annotation.Nullable;
  *                 .version(modelModelDetailsVersion)
  *                 .build())
  *             .projectId(testProject.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(modelDescription)
  *             .displayName(modelDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .testStrategy(ModelTestStrategyArgs.builder()
  *                 .strategyType(modelTestStrategyStrategyType)
  *                 .testingDataset(ModelTestStrategyTestingDatasetArgs.builder()
@@ -111,7 +112,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,15 +43,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var switchover = new AutonomousContainerDatabaseDataguardAssociationOperation(&#34;switchover&#34;, AutonomousContainerDatabaseDataguardAssociationOperationArgs.builder()        
- *             .operation(&#34;switchover&#34;)
+ *         var switchover = new AutonomousContainerDatabaseDataguardAssociationOperation("switchover", AutonomousContainerDatabaseDataguardAssociationOperationArgs.builder()        
+ *             .operation("switchover")
  *             .autonomousContainerDatabaseId(dataguardAssociations.autonomousContainerDatabaseDataguardAssociations()[0].autonomous_container_database_id())
  *             .autonomousContainerDatabaseDataguardAssociationId(dataguardAssociations.autonomousContainerDatabaseDataguardAssociations()[0].id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

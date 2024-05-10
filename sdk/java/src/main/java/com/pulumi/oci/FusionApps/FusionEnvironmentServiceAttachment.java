@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentServiceAttachment = new FusionEnvironmentServiceAttachment(&#34;testFusionEnvironmentServiceAttachment&#34;, FusionEnvironmentServiceAttachmentArgs.builder()        
+ *         var testFusionEnvironmentServiceAttachment = new FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", FusionEnvironmentServiceAttachmentArgs.builder()        
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .serviceInstanceId(testInstance.id())
  *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

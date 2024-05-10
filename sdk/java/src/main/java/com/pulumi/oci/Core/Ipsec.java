@@ -52,7 +52,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -73,21 +74,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpSecConnection = new Ipsec(&#34;testIpSecConnection&#34;, IpsecArgs.builder()        
+ *         var testIpSecConnection = new Ipsec("testIpSecConnection", IpsecArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .cpeId(testCpe.id())
  *             .drgId(testDrg.id())
  *             .staticRoutes(ipSecConnectionStaticRoutes)
  *             .cpeLocalIdentifier(ipSecConnectionCpeLocalIdentifier)
  *             .cpeLocalIdentifierType(ipSecConnectionCpeLocalIdentifierType)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(ipSecConnectionDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

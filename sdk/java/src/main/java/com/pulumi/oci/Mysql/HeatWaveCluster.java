@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHeatWaveCluster = new HeatWaveCluster(&#34;testHeatWaveCluster&#34;, HeatWaveClusterArgs.builder()        
+ *         var testHeatWaveCluster = new HeatWaveCluster("testHeatWaveCluster", HeatWaveClusterArgs.builder()        
  *             .dbSystemId(testDbSystem.id())
  *             .clusterSize(heatWaveClusterClusterSize)
  *             .isLakehouseEnabled(heatWaveClusterIsLakehouseEnabled)
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

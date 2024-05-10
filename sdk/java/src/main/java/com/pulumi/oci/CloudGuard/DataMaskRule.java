@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataMaskRule = new DataMaskRule(&#34;testDataMaskRule&#34;, DataMaskRuleArgs.builder()        
+ *         var testDataMaskRule = new DataMaskRule("testDataMaskRule", DataMaskRuleArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .dataMaskCategories(dataMaskRuleDataMaskCategories)
  *             .displayName(dataMaskRuleDisplayName)
@@ -57,15 +58,16 @@ import javax.annotation.Nullable;
  *                 .values(dataMaskRuleTargetSelectedValues)
  *                 .build())
  *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(dataMaskRuleDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .state(dataMaskRuleState)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

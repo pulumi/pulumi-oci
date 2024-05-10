@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
     /**
-     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private @Nullable Integer uplinkHsrpGroup;
@@ -24,7 +24,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
 
     private AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic() {}
     /**
-     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Integer> uplinkHsrpGroup() {

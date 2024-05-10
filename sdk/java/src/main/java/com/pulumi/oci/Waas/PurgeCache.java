@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPurgeCache = new PurgeCache(&#34;testPurgeCache&#34;, PurgeCacheArgs.builder()        
+ *         var testPurgeCache = new PurgeCache("testPurgeCache", PurgeCacheArgs.builder()        
  *             .waasPolicyId(testWaasPolicy.id())
  *             .resources(purgeCacheResources)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

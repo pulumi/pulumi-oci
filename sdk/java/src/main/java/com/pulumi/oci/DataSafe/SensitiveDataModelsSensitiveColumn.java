@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSensitiveDataModelsSensitiveColumn = new SensitiveDataModelsSensitiveColumn(&#34;testSensitiveDataModelsSensitiveColumn&#34;, SensitiveDataModelsSensitiveColumnArgs.builder()        
+ *         var testSensitiveDataModelsSensitiveColumn = new SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", SensitiveDataModelsSensitiveColumnArgs.builder()        
  *             .columnName(sensitiveDataModelsSensitiveColumnColumnName)
  *             .object(sensitiveDataModelsSensitiveColumnObject)
  *             .schemaName(sensitiveDataModelsSensitiveColumnSchemaName)
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

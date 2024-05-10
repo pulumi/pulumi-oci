@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudExadataInfrastructure = new CloudExadataInfrastructure(&#34;testCloudExadataInfrastructure&#34;, CloudExadataInfrastructureArgs.builder()        
+ *         var testCloudExadataInfrastructure = new CloudExadataInfrastructure("testCloudExadataInfrastructure", CloudExadataInfrastructureArgs.builder()        
  *             .availabilityDomain(cloudExadataInfrastructureAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .displayName(cloudExadataInfrastructureDisplayName)
@@ -63,7 +64,7 @@ import javax.annotation.Nullable;
  *                 .email(cloudExadataInfrastructureCustomerContactsEmail)
  *                 .build())
  *             .definedTags(cloudExadataInfrastructureDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs.builder()
  *                 .customActionTimeoutInMins(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins)
  *                 .daysOfWeeks(CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
@@ -85,7 +86,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

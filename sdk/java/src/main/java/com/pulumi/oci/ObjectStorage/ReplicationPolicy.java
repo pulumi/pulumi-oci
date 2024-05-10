@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplicationPolicy = new ReplicationPolicy(&#34;testReplicationPolicy&#34;, ReplicationPolicyArgs.builder()        
+ *         var testReplicationPolicy = new ReplicationPolicy("testReplicationPolicy", ReplicationPolicyArgs.builder()        
  *             .bucket(replicationPolicyBucket)
  *             .destinationBucketName(testBucket.name())
  *             .destinationRegionName(testRegion.name())
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

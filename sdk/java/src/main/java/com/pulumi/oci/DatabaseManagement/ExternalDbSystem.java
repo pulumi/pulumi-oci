@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,15 +50,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDbSystem = new ExternalDbSystem(&#34;testExternalDbSystem&#34;, ExternalDbSystemArgs.builder()        
+ *         var testExternalDbSystem = new ExternalDbSystem("testExternalDbSystem", ExternalDbSystemArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .dbSystemDiscoveryId(testDbSystemDiscovery.id())
  *             .databaseManagementConfig(ExternalDbSystemDatabaseManagementConfigArgs.builder()
  *                 .licenseModel(externalDbSystemDatabaseManagementConfigLicenseModel)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(externalDbSystemDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .stackMonitoringConfig(ExternalDbSystemStackMonitoringConfigArgs.builder()
  *                 .isEnabled(externalDbSystemStackMonitoringConfigIsEnabled)
  *                 .metadata(externalDbSystemStackMonitoringConfigMetadata)
@@ -66,7 +67,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

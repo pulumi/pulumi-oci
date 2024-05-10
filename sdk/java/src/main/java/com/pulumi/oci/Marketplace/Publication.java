@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublication = new Publication(&#34;testPublication&#34;, PublicationArgs.builder()        
+ *         var testPublication = new Publication("testPublication", PublicationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .isAgreementAcknowledged(publicationIsAgreementAcknowledged)
  *             .listingType(publicationListingType)
@@ -77,14 +78,15 @@ import javax.annotation.Nullable;
  *                 .phone(publicationSupportContactsPhone)
  *                 .subject(publicationSupportContactsSubject)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .longDescription(publicationLongDescription)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

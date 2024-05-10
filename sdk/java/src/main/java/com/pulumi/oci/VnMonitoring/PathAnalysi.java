@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPathAnalysi = new PathAnalysi(&#34;testPathAnalysi&#34;, PathAnalysiArgs.builder()        
+ *         var testPathAnalysi = new PathAnalysi("testPathAnalysi", PathAnalysiArgs.builder()        
  *             .type(pathAnalysiType)
  *             .cacheControl(pathAnalysiCacheControl)
  *             .compartmentId(compartmentId)
@@ -100,7 +101,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

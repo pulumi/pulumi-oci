@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicyDecryptionRule = new NetworkFirewallPolicyDecryptionRule(&#34;testNetworkFirewallPolicyDecryptionRule&#34;, NetworkFirewallPolicyDecryptionRuleArgs.builder()        
+ *         var testNetworkFirewallPolicyDecryptionRule = new NetworkFirewallPolicyDecryptionRule("testNetworkFirewallPolicyDecryptionRule", NetworkFirewallPolicyDecryptionRuleArgs.builder()        
  *             .lifecycle(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
  *             .name(networkFirewallPolicyDecryptionRuleName)
  *             .action(networkFirewallPolicyDecryptionRuleAction)
@@ -66,7 +67,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

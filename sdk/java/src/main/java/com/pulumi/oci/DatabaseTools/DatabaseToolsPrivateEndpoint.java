@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,14 +49,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint(&#34;testDatabaseToolsPrivateEndpoint&#34;, DatabaseToolsPrivateEndpointArgs.builder()        
+ *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", DatabaseToolsPrivateEndpointArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(databaseToolsPrivateEndpointDisplayName)
  *             .endpointServiceId(testService.id())
  *             .subnetId(testSubnet.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(databaseToolsPrivateEndpointDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .locks(DatabaseToolsPrivateEndpointLockArgs.builder()
  *                 .type(databaseToolsPrivateEndpointLocksType)
  *                 .message(databaseToolsPrivateEndpointLocksMessage)
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

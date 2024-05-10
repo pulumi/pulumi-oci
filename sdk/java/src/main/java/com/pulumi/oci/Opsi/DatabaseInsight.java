@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseInsight = new DatabaseInsight(&#34;testDatabaseInsight&#34;, DatabaseInsightArgs.builder()        
+ *         var testDatabaseInsight = new DatabaseInsight("testDatabaseInsight", DatabaseInsightArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .entitySource(databaseInsightEntitySource)
  *             .connectionDetails(DatabaseInsightConnectionDetailsArgs.builder()
@@ -69,13 +70,13 @@ import javax.annotation.Nullable;
  *             .databaseId(testDatabase.id())
  *             .databaseResourceType(databaseInsightDatabaseResourceType)
  *             .dbmPrivateEndpointId(testPrivateEndpoint.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .deploymentType(databaseInsightDeploymentType)
  *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
  *             .enterpriseManagerEntityIdentifier(databaseInsightEnterpriseManagerEntityIdentifier)
  *             .enterpriseManagerIdentifier(databaseInsightEnterpriseManagerIdentifier)
  *             .exadataInsightId(testExadataInsight.id())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
  *             .serviceName(testService.name())
  *             .systemTags(databaseInsightSystemTags)
@@ -83,7 +84,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

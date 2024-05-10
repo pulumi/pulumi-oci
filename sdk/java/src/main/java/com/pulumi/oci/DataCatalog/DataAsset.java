@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataAsset = new DataAsset(&#34;testDataAsset&#34;, DataAssetArgs.builder()        
+ *         var testDataAsset = new DataAsset("testDataAsset", DataAssetArgs.builder()        
  *             .catalogId(testCatalog.id())
  *             .displayName(dataAssetDisplayName)
  *             .typeKey(dataAssetTypeKey)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

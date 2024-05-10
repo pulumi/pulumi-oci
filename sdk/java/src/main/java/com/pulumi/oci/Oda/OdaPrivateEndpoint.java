@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,19 +49,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaPrivateEndpoint = new OdaPrivateEndpoint(&#34;testOdaPrivateEndpoint&#34;, OdaPrivateEndpointArgs.builder()        
+ *         var testOdaPrivateEndpoint = new OdaPrivateEndpoint("testOdaPrivateEndpoint", OdaPrivateEndpointArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .subnetId(testSubnet.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(odaPrivateEndpointDescription)
  *             .displayName(odaPrivateEndpointDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(odaPrivateEndpointNsgIds)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

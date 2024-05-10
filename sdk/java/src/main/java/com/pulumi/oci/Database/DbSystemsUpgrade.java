@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbSystemsUpgrade = new DbSystemsUpgrade(&#34;testDbSystemsUpgrade&#34;, DbSystemsUpgradeArgs.builder()        
+ *         var testDbSystemsUpgrade = new DbSystemsUpgrade("testDbSystemsUpgrade", DbSystemsUpgradeArgs.builder()        
  *             .action(dbSystemsUpgradeAction)
  *             .dbSystemId(testDbSystem.id())
  *             .isSnapshotRetentionDaysForceUpdated(dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated)
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

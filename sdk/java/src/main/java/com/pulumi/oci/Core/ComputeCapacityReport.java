@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCapacityReport = new ComputeCapacityReport(&#34;testComputeCapacityReport&#34;, ComputeCapacityReportArgs.builder()        
+ *         var testComputeCapacityReport = new ComputeCapacityReport("testComputeCapacityReport", ComputeCapacityReportArgs.builder()        
  *             .availabilityDomain(computeCapacityReportAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shapeAvailabilities(ComputeCapacityReportShapeAvailabilityArgs.builder()
@@ -67,7 +68,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

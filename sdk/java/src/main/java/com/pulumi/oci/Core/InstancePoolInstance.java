@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,14 +51,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstancePoolInstance = new InstancePoolInstance(&#34;testInstancePoolInstance&#34;, InstancePoolInstanceArgs.builder()        
+ *         var testInstancePoolInstance = new InstancePoolInstance("testInstancePoolInstance", InstancePoolInstanceArgs.builder()        
  *             .instanceId(testInstance.id())
  *             .instancePoolId(testInstancePool.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

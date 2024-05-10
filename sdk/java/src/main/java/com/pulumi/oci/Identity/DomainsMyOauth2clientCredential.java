@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,10 +55,10 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyOauth2clientCredential = new DomainsMyOauth2clientCredential(&#34;testMyOauth2clientCredential&#34;, DomainsMyOauth2clientCredentialArgs.builder()        
+ *         var testMyOauth2clientCredential = new DomainsMyOauth2clientCredential("testMyOauth2clientCredential", DomainsMyOauth2clientCredentialArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .name(myOauth2clientCredentialName)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential")
  *             .scopes(DomainsMyOauth2clientCredentialScopeArgs.builder()
  *                 .audience(myOauth2clientCredentialScopesAudience)
  *                 .scope(myOauth2clientCredentialScopesScope)
@@ -82,7 +83,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

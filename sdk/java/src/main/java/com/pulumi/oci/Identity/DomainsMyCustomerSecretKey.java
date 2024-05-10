@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,9 +53,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyCustomerSecretKey = new DomainsMyCustomerSecretKey(&#34;testMyCustomerSecretKey&#34;, DomainsMyCustomerSecretKeyArgs.builder()        
+ *         var testMyCustomerSecretKey = new DomainsMyCustomerSecretKey("testMyCustomerSecretKey", DomainsMyCustomerSecretKeyArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey")
  *             .authorization(myCustomerSecretKeyAuthorization)
  *             .description(myCustomerSecretKeyDescription)
  *             .displayName(myCustomerSecretKeyDisplayName)
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

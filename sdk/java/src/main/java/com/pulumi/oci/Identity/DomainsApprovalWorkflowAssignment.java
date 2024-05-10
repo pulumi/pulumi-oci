@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApprovalWorkflowAssignment = new DomainsApprovalWorkflowAssignment(&#34;testApprovalWorkflowAssignment&#34;, DomainsApprovalWorkflowAssignmentArgs.builder()        
+ *         var testApprovalWorkflowAssignment = new DomainsApprovalWorkflowAssignment("testApprovalWorkflowAssignment", DomainsApprovalWorkflowAssignmentArgs.builder()        
  *             .approvalWorkflow(DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs.builder()
  *                 .type(approvalWorkflowAssignmentApprovalWorkflowType)
  *                 .value(approvalWorkflowAssignmentApprovalWorkflowValue)
@@ -67,9 +68,9 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .assignmentType(approvalWorkflowAssignmentAssignmentType)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment&#34;)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment")
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(approvalWorkflowAssignmentAuthorization)
  *             .id(approvalWorkflowAssignmentId)
  *             .ocid(approvalWorkflowAssignmentOcid)
@@ -82,7 +83,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

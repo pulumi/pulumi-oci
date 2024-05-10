@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInvokeRun = new InvokeRun(&#34;testInvokeRun&#34;, InvokeRunArgs.builder()        
+ *         var testInvokeRun = new InvokeRun("testInvokeRun", InvokeRunArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .applicationId(testApplication.id())
  *             .applicationLogConfig(InvokeRunApplicationLogConfigArgs.builder()
@@ -66,7 +67,7 @@ import javax.annotation.Nullable;
  *             .archiveUri(invokeRunArchiveUri)
  *             .arguments(invokeRunArguments)
  *             .configuration(invokeRunConfiguration)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(invokeRunDisplayName)
  *             .driverShape(invokeRunDriverShape)
  *             .driverShapeConfig(InvokeRunDriverShapeConfigArgs.builder()
@@ -79,7 +80,7 @@ import javax.annotation.Nullable;
  *                 .memoryInGbs(invokeRunExecutorShapeConfigMemoryInGbs)
  *                 .ocpus(invokeRunExecutorShapeConfigOcpus)
  *                 .build())
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .idleTimeoutInMinutes(invokeRunIdleTimeoutInMinutes)
  *             .logsBucketUri(invokeRunLogsBucketUri)
  *             .maxDurationInMinutes(invokeRunMaxDurationInMinutes)
@@ -98,7 +99,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Note

@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,13 +46,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testResolverEndpoint = new ResolverEndpoint(&#34;testResolverEndpoint&#34;, ResolverEndpointArgs.builder()        
+ *         var testResolverEndpoint = new ResolverEndpoint("testResolverEndpoint", ResolverEndpointArgs.builder()        
  *             .isForwarding(resolverEndpointIsForwarding)
  *             .isListening(resolverEndpointIsListening)
  *             .name(resolverEndpointName)
  *             .resolverId(testResolver.id())
  *             .subnetId(testSubnet.id())
- *             .scope(&#34;PRIVATE&#34;)
+ *             .scope("PRIVATE")
  *             .endpointType(resolverEndpointEndpointType)
  *             .forwardingAddress(resolverEndpointForwardingAddress)
  *             .listeningAddress(resolverEndpointListeningAddress)
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

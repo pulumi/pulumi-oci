@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAwrHubSourceAwrhubsourcesManagement = new AwrHubSourceAwrhubsourcesManagement(&#34;testAwrHubSourceAwrhubsourcesManagement&#34;, AwrHubSourceAwrhubsourcesManagementArgs.builder()        
+ *         var testAwrHubSourceAwrhubsourcesManagement = new AwrHubSourceAwrhubsourcesManagement("testAwrHubSourceAwrhubsourcesManagement", AwrHubSourceAwrhubsourcesManagementArgs.builder()        
  *             .awrHubSourceId(testAwrHubSource.id())
  *             .enableAwrhubsource(enableAwrhubsource)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

@@ -20,14 +20,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     public static final AtCustomerCccUpgradeScheduleState Empty = new AtCustomerCccUpgradeScheduleState();
 
     /**
-     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+     * @return (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -50,14 +50,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -80,14 +80,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     @Import(name="events")
     private @Nullable Output<List<AtCustomerCccUpgradeScheduleEventArgs>> events;
 
     /**
-     * @return (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+     * @return (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
      * 
      */
     public Optional<Output<List<AtCustomerCccUpgradeScheduleEventArgs>>> events() {
@@ -116,14 +116,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     }
 
     /**
-     * List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     @Import(name="infrastructureIds")
     private @Nullable Output<List<String>> infrastructureIds;
 
     /**
-     * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+     * @return List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     public Optional<Output<List<String>>> infrastructureIds() {
@@ -241,7 +241,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
+         * @param compartmentId (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer Upgrade Schedule.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param displayName (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+         * @param displayName (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param displayName (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+         * @param displayName (Updatable) Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param events (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
+         * @param events (Updatable) List of preferred times for Compute Cloud{@literal @}Customer infrastructure to be upgraded.
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param infrastructureIds List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+         * @param infrastructureIds List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param infrastructureIds List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+         * @param infrastructureIds List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param infrastructureIds List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
+         * @param infrastructureIds List of Compute Cloud{@literal @}Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
          * 
          * @return builder
          * 

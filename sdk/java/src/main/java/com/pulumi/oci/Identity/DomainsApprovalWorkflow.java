@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,21 +55,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApprovalWorkflow = new DomainsApprovalWorkflow(&#34;testApprovalWorkflow&#34;, DomainsApprovalWorkflowArgs.builder()        
+ *         var testApprovalWorkflow = new DomainsApprovalWorkflow("testApprovalWorkflow", DomainsApprovalWorkflowArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .maxDuration(DomainsApprovalWorkflowMaxDurationArgs.builder()
  *                 .unit(approvalWorkflowMaxDurationUnit)
  *                 .value(approvalWorkflowMaxDurationValue)
  *                 .build())
  *             .name(approvalWorkflowName)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow")
  *             .approvalWorkflowSteps(DomainsApprovalWorkflowApprovalWorkflowStepArgs.builder()
  *                 .type(approvalWorkflowApprovalWorkflowStepsType)
  *                 .value(approvalWorkflowApprovalWorkflowStepsValue)
  *                 .ocid(approvalWorkflowApprovalWorkflowStepsOcid)
  *                 .build())
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(approvalWorkflowAuthorization)
  *             .description(approvalWorkflowDescription)
  *             .id(approvalWorkflowId)
@@ -82,7 +83,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

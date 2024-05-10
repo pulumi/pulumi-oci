@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRemediationRecipe = new RemediationRecipe(&#34;testRemediationRecipe&#34;, RemediationRecipeArgs.builder()        
+ *         var testRemediationRecipe = new RemediationRecipe("testRemediationRecipe", RemediationRecipeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .detectConfiguration(RemediationRecipeDetectConfigurationArgs.builder()
  *                 .exclusions(remediationRecipeDetectConfigurationExclusions)
@@ -91,14 +92,15 @@ import javax.annotation.Nullable;
  *                 .username(remediationRecipeVerifyConfigurationUsername)
  *                 .workflowName(remediationRecipeVerifyConfigurationWorkflowName)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(remediationRecipeDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -20,12 +20,12 @@ public final class GetMetastoresMetastore {
      */
     private String compartmentId;
     /**
-     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     private String defaultExternalTableLocation;
     /**
-     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     private String defaultManagedTableLocation;
@@ -89,14 +89,14 @@ public final class GetMetastoresMetastore {
         return this.compartmentId;
     }
     /**
-     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public String defaultExternalTableLocation() {
         return this.defaultExternalTableLocation;
     }
     /**
-     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
+     * @return Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket{@literal @}namespace/sub-dir/
      * 
      */
     public String defaultManagedTableLocation() {

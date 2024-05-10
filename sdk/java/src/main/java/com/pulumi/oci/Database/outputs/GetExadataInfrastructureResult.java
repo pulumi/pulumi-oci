@@ -112,7 +112,7 @@ public final class GetExadataInfrastructureResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     private String displayName;
@@ -387,7 +387,7 @@ public final class GetExadataInfrastructureResult {
         return this.definedTags;
     }
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer infrastructure. The name does not need to be unique.
      * 
      */
     public String displayName() {

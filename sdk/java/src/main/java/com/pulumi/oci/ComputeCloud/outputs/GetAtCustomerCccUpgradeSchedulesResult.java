@@ -24,13 +24,13 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
     private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections;
     private @Nullable String cccUpgradeScheduleId;
     /**
-     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
+     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer upgrade schedule.
      * 
      */
     private @Nullable String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -62,7 +62,7 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
         return Optional.ofNullable(this.cccUpgradeScheduleId);
     }
     /**
-     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
+     * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud{@literal @}Customer upgrade schedule.
      * 
      */
     public Optional<String> compartmentId() {
@@ -72,7 +72,7 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
+     * @return Compute Cloud{@literal @}Customer upgrade schedule display name. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

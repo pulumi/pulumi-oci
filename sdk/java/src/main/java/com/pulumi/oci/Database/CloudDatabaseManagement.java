@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var test = new CloudDatabaseManagement(&#34;test&#34;, CloudDatabaseManagementArgs.builder()        
+ *         var test = new CloudDatabaseManagement("test", CloudDatabaseManagementArgs.builder()        
  *             .databaseId(testDatabase.id())
  *             .managementType(databaseCloudDatabaseManagementDetailsManagementType)
  *             .privateEndPointId(databaseCloudDatabaseManagementDetailsPrivateEndPointId)
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

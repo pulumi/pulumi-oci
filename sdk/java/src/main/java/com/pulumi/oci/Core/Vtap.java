@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,15 +55,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVtap = new Vtap(&#34;testVtap&#34;, VtapArgs.builder()        
+ *         var testVtap = new Vtap("testVtap", VtapArgs.builder()        
  *             .captureFilterId(testCaptureFilter.id())
  *             .compartmentId(compartmentId)
  *             .sourceId(testSource.id())
  *             .vcnId(testVcn.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(vtapDisplayName)
  *             .encapsulationProtocol(vtapEncapsulationProtocol)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isVtapEnabled(vtapIsVtapEnabled)
  *             .maxPacketSize(vtapMaxPacketSize)
  *             .sourcePrivateEndpointIp(vtapSourcePrivateEndpointIp)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

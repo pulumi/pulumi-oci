@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement(&#34;testAutonomousDatabaseInstanceWalletManagement&#34;, AutonomousDatabaseInstanceWalletManagementArgs.builder()        
+ *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", AutonomousDatabaseInstanceWalletManagementArgs.builder()        
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .gracePeriod(autonomousDatabaseInstanceWalletManagementGracePeriod)
  *             .shouldRotate(autonomousDatabaseInstanceWalletManagementShouldRotate)
@@ -53,7 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

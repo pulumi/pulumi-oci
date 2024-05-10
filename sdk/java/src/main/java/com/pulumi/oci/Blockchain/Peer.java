@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPeer = new Peer(&#34;testPeer&#34;, PeerArgs.builder()        
+ *         var testPeer = new Peer("testPeer", PeerArgs.builder()        
  *             .ad(peerAd)
  *             .blockchainPlatformId(testBlockchainPlatform.id())
  *             .ocpuAllocationParam(PeerOcpuAllocationParamArgs.builder()
@@ -56,7 +57,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

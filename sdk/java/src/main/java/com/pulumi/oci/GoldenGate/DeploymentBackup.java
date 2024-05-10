@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,20 +47,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeploymentBackup = new DeploymentBackup(&#34;testDeploymentBackup&#34;, DeploymentBackupArgs.builder()        
+ *         var testDeploymentBackup = new DeploymentBackup("testDeploymentBackup", DeploymentBackupArgs.builder()        
  *             .bucket(deploymentBackupBucket)
  *             .compartmentId(compartmentId)
  *             .deploymentId(testDeployment.id())
  *             .displayName(deploymentBackupDisplayName)
  *             .namespace(deploymentBackupNamespace)
  *             .object(deploymentBackupObject)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

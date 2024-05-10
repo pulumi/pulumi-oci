@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentAdminUser = new FusionEnvironmentAdminUser(&#34;testFusionEnvironmentAdminUser&#34;, FusionEnvironmentAdminUserArgs.builder()        
+ *         var testFusionEnvironmentAdminUser = new FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser", FusionEnvironmentAdminUserArgs.builder()        
  *             .emailAddress(fusionEnvironmentAdminUserEmailAddress)
  *             .firstName(fusionEnvironmentAdminUserFirstName)
  *             .fusionEnvironmentId(testFusionEnvironment.id())
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

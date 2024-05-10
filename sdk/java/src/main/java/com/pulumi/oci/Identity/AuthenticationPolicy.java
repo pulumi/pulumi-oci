@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuthenticationPolicy = new AuthenticationPolicy(&#34;testAuthenticationPolicy&#34;, AuthenticationPolicyArgs.builder()        
+ *         var testAuthenticationPolicy = new AuthenticationPolicy("testAuthenticationPolicy", AuthenticationPolicyArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .networkPolicy(AuthenticationPolicyNetworkPolicyArgs.builder()
  *                 .networkSourceIds(authenticationPolicyNetworkPolicyNetworkSourceIds)
@@ -63,7 +64,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

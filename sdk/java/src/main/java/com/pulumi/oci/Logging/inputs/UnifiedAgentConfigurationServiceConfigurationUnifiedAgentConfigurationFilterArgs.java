@@ -86,14 +86,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     }
 
     /**
-     * (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+     * (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
      * 
      */
     @Import(name="emitInvalidRecordToError")
     private @Nullable Output<Boolean> emitInvalidRecordToError;
 
     /**
-     * @return (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+     * @return (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
      * 
      */
     public Optional<Output<Boolean>> emitInvalidRecordToError() {
@@ -537,7 +537,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param emitInvalidRecordToError (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+         * @param emitInvalidRecordToError (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
          * 
          * @return builder
          * 
@@ -548,7 +548,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param emitInvalidRecordToError (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+         * @param emitInvalidRecordToError (Updatable) If true, emit invalid record to{@literal @}ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the{@literal @}ERROR lable. If you want to ignore these errors, set this to false.
          * 
          * @return builder
          * 

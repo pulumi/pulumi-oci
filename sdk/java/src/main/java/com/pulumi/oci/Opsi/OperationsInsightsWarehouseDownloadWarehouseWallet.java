@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsWarehouseDownloadWarehouseWallet = new OperationsInsightsWarehouseDownloadWarehouseWallet(&#34;testOperationsInsightsWarehouseDownloadWarehouseWallet&#34;, OperationsInsightsWarehouseDownloadWarehouseWalletArgs.builder()        
+ *         var testOperationsInsightsWarehouseDownloadWarehouseWallet = new OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", OperationsInsightsWarehouseDownloadWarehouseWalletArgs.builder()        
  *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
  *             .operationsInsightsWarehouseWalletPassword(operationsInsightsWarehouseDownloadWarehouseWalletOperationsInsightsWarehouseWalletPassword)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

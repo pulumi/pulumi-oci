@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testKeyStore = new KeyStore(&#34;testKeyStore&#34;, KeyStoreArgs.builder()        
+ *         var testKeyStore = new KeyStore("testKeyStore", KeyStoreArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(keyStoreDisplayName)
  *             .typeDetails(KeyStoreTypeDetailsArgs.builder()
@@ -59,12 +60,13 @@ import javax.annotation.Nullable;
  *                 .vaultId(testVault.id())
  *                 .build())
  *             .definedTags(keyStoreDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

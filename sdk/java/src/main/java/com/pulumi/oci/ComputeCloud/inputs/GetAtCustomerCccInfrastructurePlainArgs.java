@@ -14,14 +14,14 @@ public final class GetAtCustomerCccInfrastructurePlainArgs extends com.pulumi.re
     public static final GetAtCustomerCccInfrastructurePlainArgs Empty = new GetAtCustomerCccInfrastructurePlainArgs();
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     @Import(name="cccInfrastructureId", required=true)
     private String cccInfrastructureId;
 
     /**
-     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+     * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
      * 
      */
     public String cccInfrastructureId() {
@@ -53,7 +53,7 @@ public final class GetAtCustomerCccInfrastructurePlainArgs extends com.pulumi.re
         }
 
         /**
-         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
+         * @param cccInfrastructureId An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud{@literal @}Customer Infrastructure.
          * 
          * @return builder
          * 

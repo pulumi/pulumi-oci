@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,18 +48,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeGroup = new VolumeGroup(&#34;testVolumeGroup&#34;, VolumeGroupArgs.builder()        
+ *         var testVolumeGroup = new VolumeGroup("testVolumeGroup", VolumeGroupArgs.builder()        
  *             .availabilityDomain(volumeGroupAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .sourceDetails(VolumeGroupSourceDetailsArgs.builder()
- *                 .type(&#34;volumeIds&#34;)
+ *                 .type("volumeIds")
  *                 .volumeIds(volumeGroupSourceId)
  *                 .build())
  *             .backupPolicyId(testVolumeBackupPolicies.volumeBackupPolicies()[0].id())
  *             .clusterPlacementGroupId(testGroup.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeGroupDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .volumeGroupReplicas(VolumeGroupVolumeGroupReplicaArgs.builder()
  *                 .availabilityDomain(volumeGroupVolumeGroupReplicasAvailabilityDomain)
  *                 .displayName(volumeGroupVolumeGroupReplicasDisplayName)
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

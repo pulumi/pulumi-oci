@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,20 +46,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEkmsPrivateEndpoint = new EkmsPrivateEndpoint(&#34;testEkmsPrivateEndpoint&#34;, EkmsPrivateEndpointArgs.builder()        
+ *         var testEkmsPrivateEndpoint = new EkmsPrivateEndpoint("testEkmsPrivateEndpoint", EkmsPrivateEndpointArgs.builder()        
  *             .caBundle(ekmsPrivateEndpointCaBundle)
  *             .compartmentId(compartmentId)
  *             .displayName(ekmsPrivateEndpointDisplayName)
  *             .externalKeyManagerIp(ekmsPrivateEndpointExternalKeyManagerIp)
  *             .subnetId(testSubnet.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .port(ekmsPrivateEndpointPort)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

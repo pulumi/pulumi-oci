@@ -43,7 +43,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -65,7 +66,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn(&#34;testMaskingPoliciesMaskingColumn&#34;, MaskingPoliciesMaskingColumnArgs.builder()        
+ *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()        
  *             .columnName(maskingPoliciesMaskingColumnColumnName)
  *             .maskingPolicyId(testMaskingPolicy.id())
  *             .object(maskingPoliciesMaskingColumnObject)
@@ -108,7 +109,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

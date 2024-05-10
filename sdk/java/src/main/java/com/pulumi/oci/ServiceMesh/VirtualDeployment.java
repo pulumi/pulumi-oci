@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,16 +52,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualDeployment = new VirtualDeployment(&#34;testVirtualDeployment&#34;, VirtualDeploymentArgs.builder()        
+ *         var testVirtualDeployment = new VirtualDeployment("testVirtualDeployment", VirtualDeploymentArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(virtualDeploymentName)
  *             .virtualServiceId(testVirtualService.id())
  *             .accessLogging(VirtualDeploymentAccessLoggingArgs.builder()
  *                 .isEnabled(virtualDeploymentAccessLoggingIsEnabled)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(virtualDeploymentDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .listeners(VirtualDeploymentListenerArgs.builder()
  *                 .port(virtualDeploymentListenersPort)
  *                 .protocol(virtualDeploymentListenersProtocol)
@@ -75,7 +76,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

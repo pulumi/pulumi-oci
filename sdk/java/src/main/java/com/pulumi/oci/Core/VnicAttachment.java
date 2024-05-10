@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVnicAttachment = new VnicAttachment(&#34;testVnicAttachment&#34;, VnicAttachmentArgs.builder()        
+ *         var testVnicAttachment = new VnicAttachment("testVnicAttachment", VnicAttachmentArgs.builder()        
  *             .createVnicDetails(VnicAttachmentCreateVnicDetailsArgs.builder()
  *                 .assignIpv6ip(vnicAttachmentCreateVnicDetailsAssignIpv6ip)
  *                 .assignPrivateDnsRecord(vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord)
@@ -70,7 +71,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

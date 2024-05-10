@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOceInstance = new Instance(&#34;testOceInstance&#34;, InstanceArgs.builder()        
+ *         var testOceInstance = new Instance("testOceInstance", InstanceArgs.builder()        
  *             .adminEmail(oceInstanceAdminEmail)
  *             .compartmentId(compartmentId)
  *             .idcsAccessToken(oceInstanceIdcsAccessToken)
@@ -54,10 +55,10 @@ import javax.annotation.Nullable;
  *             .tenancyId(testTenancy.id())
  *             .tenancyName(testTenancy.name())
  *             .addOnFeatures(oceInstanceAddOnFeatures)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(oceInstanceDescription)
  *             .drRegion(oceInstanceDrRegion)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .instanceAccessType(oceInstanceInstanceAccessType)
  *             .instanceLicenseType(oceInstanceInstanceLicenseType)
  *             .instanceUsageType(oceInstanceInstanceUsageType)
@@ -67,7 +68,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

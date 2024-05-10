@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPathRouteSet = new PathRouteSet(&#34;testPathRouteSet&#34;, PathRouteSetArgs.builder()        
+ *         var testPathRouteSet = new PathRouteSet("testPathRouteSet", PathRouteSetArgs.builder()        
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(pathRouteSetName)
  *             .pathRoutes(PathRouteSetPathRouteArgs.builder()
@@ -61,7 +62,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

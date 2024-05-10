@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,13 +45,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitorPluginManagement = new MonitorPluginManagement(&#34;testMonitorPluginManagement&#34;, MonitorPluginManagementArgs.builder()        
+ *         var testMonitorPluginManagement = new MonitorPluginManagement("testMonitorPluginManagement", MonitorPluginManagementArgs.builder()        
  *             .monitoredInstanceId(testMonitoredInstance.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

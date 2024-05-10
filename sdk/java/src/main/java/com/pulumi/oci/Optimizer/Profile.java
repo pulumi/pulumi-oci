@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProfile = new Profile(&#34;testProfile&#34;, ProfileArgs.builder()        
+ *         var testProfile = new Profile("testProfile", ProfileArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .description(profileDescription)
  *             .levelsConfiguration(ProfileLevelsConfigurationArgs.builder()
@@ -62,8 +63,8 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .name(profileName)
  *             .aggregationIntervalInDays(profileAggregationIntervalInDays)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .targetCompartments(ProfileTargetCompartmentsArgs.builder()
  *                 .items(profileTargetCompartmentsItems)
  *                 .build())
@@ -79,7 +80,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

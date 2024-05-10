@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -55,16 +56,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudGate = new DomainsCloudGate(&#34;testCloudGate&#34;, DomainsCloudGateArgs.builder()        
+ *         var testCloudGate = new DomainsCloudGate("testCloudGate", DomainsCloudGateArgs.builder()        
  *             .displayName(cloudGateDisplayName)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:CloudGate&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGate")
  *             .active(cloudGateActive)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(cloudGateAuthorization)
  *             .description(cloudGateDescription)
- *             .lastModifiedTime(&#34;2000-01-01T00:00:00Z&#34;)
+ *             .lastModifiedTime("2000-01-01T00:00:00Z")
  *             .ocid(cloudGateOcid)
  *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
  *             .tags(DomainsCloudGateTagArgs.builder()
@@ -76,7 +77,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

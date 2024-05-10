@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalpluggabledatabasesStackMonitoring = new ExternalPluggableDatabasesStackMonitoring(&#34;testExternalpluggabledatabasesStackMonitoring&#34;, ExternalPluggableDatabasesStackMonitoringArgs.builder()        
+ *         var testExternalpluggabledatabasesStackMonitoring = new ExternalPluggableDatabasesStackMonitoring("testExternalpluggabledatabasesStackMonitoring", ExternalPluggableDatabasesStackMonitoringArgs.builder()        
  *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
  *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
  *             .enableStackMonitoring(true)
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

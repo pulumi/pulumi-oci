@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(&#34;testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement&#34;, ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs.builder()        
+ *         var testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs.builder()        
  *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
  *             .enableExternalNonContainerDbmFeature(enableExternalNonContainerDbmFeature)
  *             .featureDetails(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs.builder()
@@ -64,7 +65,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkPerimeter = new DomainsNetworkPerimeter(&#34;testNetworkPerimeter&#34;, DomainsNetworkPerimeterArgs.builder()        
+ *         var testNetworkPerimeter = new DomainsNetworkPerimeter("testNetworkPerimeter", DomainsNetworkPerimeterArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .ipAddresses(DomainsNetworkPerimeterIpAddressArgs.builder()
  *                 .value(networkPerimeterIpAddressesValue)
@@ -60,12 +61,12 @@ import javax.annotation.Nullable;
  *                 .version(networkPerimeterIpAddressesVersion)
  *                 .build())
  *             .name(networkPerimeterName)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter&#34;)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter")
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(networkPerimeterAuthorization)
  *             .description(networkPerimeterDescription)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .id(networkPerimeterId)
  *             .ocid(networkPerimeterOcid)
  *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

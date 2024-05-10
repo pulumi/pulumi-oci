@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,13 +48,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourceType = new MonitoredResourceType(&#34;testMonitoredResourceType&#34;, MonitoredResourceTypeArgs.builder()        
+ *         var testMonitoredResourceType = new MonitoredResourceType("testMonitoredResourceType", MonitoredResourceTypeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(monitoredResourceTypeName)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(monitoredResourceTypeDescription)
  *             .displayName(monitoredResourceTypeDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .metadata(MonitoredResourceTypeMetadataArgs.builder()
  *                 .format(monitoredResourceTypeMetadataFormat)
  *                 .agentProperties(monitoredResourceTypeMetadataAgentProperties)
@@ -72,7 +73,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

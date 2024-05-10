@@ -37,7 +37,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -61,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter(&#34;testManagedDatabasesChangeDatabaseParameter&#34;, ManagedDatabasesChangeDatabaseParameterArgs.builder()        
+ *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", ManagedDatabasesChangeDatabaseParameterArgs.builder()        
  *             .managedDatabaseId(testManagedDatabase.id())
  *             .parameters(ManagedDatabasesChangeDatabaseParameterParameterArgs.builder()
  *                 .name(managedDatabasesChangeDatabaseParameterParametersName)
@@ -87,7 +88,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

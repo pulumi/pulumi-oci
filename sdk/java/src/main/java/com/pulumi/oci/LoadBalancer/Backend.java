@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackend = new Backend(&#34;testBackend&#34;, BackendArgs.builder()        
+ *         var testBackend = new Backend("testBackend", BackendArgs.builder()        
  *             .backendsetName(testBackendSet.name())
  *             .ipAddress(backendIpAddress)
  *             .loadBalancerId(testLoadBalancer.id())
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

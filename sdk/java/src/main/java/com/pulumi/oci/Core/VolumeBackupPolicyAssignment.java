@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,14 +45,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment(&#34;testVolumeBackupPolicyAssignment&#34;, VolumeBackupPolicyAssignmentArgs.builder()        
+ *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", VolumeBackupPolicyAssignmentArgs.builder()        
  *             .assetId(testVolume.id())
  *             .policyId(testVolumeBackupPolicy.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

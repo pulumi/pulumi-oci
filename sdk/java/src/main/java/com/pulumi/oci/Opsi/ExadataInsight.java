@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,14 +49,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataInsight = new ExadataInsight(&#34;testExadataInsight&#34;, ExadataInsightArgs.builder()        
+ *         var testExadataInsight = new ExadataInsight("testExadataInsight", ExadataInsightArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
  *             .enterpriseManagerEntityIdentifier(exadataInsightEnterpriseManagerEntityIdentifier)
  *             .enterpriseManagerIdentifier(exadataInsightEnterpriseManagerIdentifier)
  *             .entitySource(exadataInsightEntitySource)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isAutoSyncEnabled(exadataInsightIsAutoSyncEnabled)
  *             .memberVmClusterDetails(ExadataInsightMemberVmClusterDetailArgs.builder()
  *                 .compartmentId(compartmentId)
@@ -96,7 +97,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

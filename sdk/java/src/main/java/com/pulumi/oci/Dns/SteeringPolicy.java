@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSteeringPolicy = new SteeringPolicy(&#34;testSteeringPolicy&#34;, SteeringPolicyArgs.builder()        
+ *         var testSteeringPolicy = new SteeringPolicy("testSteeringPolicy", SteeringPolicyArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(steeringPolicyDisplayName)
  *             .template(steeringPolicyTemplate)
@@ -89,7 +90,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

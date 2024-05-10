@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -57,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataset = new Dataset(&#34;testDataset&#34;, DatasetArgs.builder()        
+ *         var testDataset = new Dataset("testDataset", DatasetArgs.builder()        
  *             .annotationFormat(datasetAnnotationFormat)
  *             .compartmentId(compartmentId)
  *             .datasetFormatDetails(DatasetDatasetFormatDetailsArgs.builder()
@@ -104,7 +105,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

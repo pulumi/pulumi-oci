@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetAtCustomerCccInfrastructureUpgradeInformation {
     /**
-     * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * @return The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     private String currentVersion;
     /**
-     * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * @return Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     private Boolean isActive;
     /**
-     * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * @return Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     private String scheduledUpgradeDuration;
     /**
-     * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * @return Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     private String timeOfScheduledUpgrade;
 
     private GetAtCustomerCccInfrastructureUpgradeInformation() {}
     /**
-     * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
+     * @return The current version of software installed on the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public String currentVersion() {
         return this.currentVersion;
     }
     /**
-     * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+     * @return Indication that the Compute Cloud{@literal @}Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
     public Boolean isActive() {
         return this.isActive;
     }
     /**
-     * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+     * @return Expected duration of Compute Cloud{@literal @}Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
     public String scheduledUpgradeDuration() {
         return this.scheduledUpgradeDuration;
     }
     /**
-     * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+     * @return Compute Cloud{@literal @}Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
     public String timeOfScheduledUpgrade() {

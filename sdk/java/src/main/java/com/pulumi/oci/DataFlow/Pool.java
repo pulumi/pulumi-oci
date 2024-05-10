@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPool = new Pool(&#34;testPool&#34;, PoolArgs.builder()        
+ *         var testPool = new Pool("testPool", PoolArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .configurations(PoolConfigurationArgs.builder()
  *                 .max(poolConfigurationsMax)
@@ -64,9 +65,9 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .displayName(poolDisplayName)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(poolDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .idleTimeoutInMinutes(poolIdleTimeoutInMinutes)
  *             .schedules(PoolScheduleArgs.builder()
  *                 .dayOfWeek(poolSchedulesDayOfWeek)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

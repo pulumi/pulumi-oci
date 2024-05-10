@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterCompleteCredentialRotationManagement = new ClusterCompleteCredentialRotationManagement(&#34;testClusterCompleteCredentialRotationManagement&#34;, ClusterCompleteCredentialRotationManagementArgs.builder()        
+ *         var testClusterCompleteCredentialRotationManagement = new ClusterCompleteCredentialRotationManagement("testClusterCompleteCredentialRotationManagement", ClusterCompleteCredentialRotationManagementArgs.builder()        
  *             .clusterId(testCluster.id())
  *             .build(), CustomResourceOptions.builder()
  *                 .dependsOn(testClusterStartCredentialRotationManagement)
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

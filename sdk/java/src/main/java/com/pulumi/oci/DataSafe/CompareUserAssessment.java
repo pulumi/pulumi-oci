@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCompareUserAssessment = new CompareUserAssessment(&#34;testCompareUserAssessment&#34;, CompareUserAssessmentArgs.builder()        
+ *         var testCompareUserAssessment = new CompareUserAssessment("testCompareUserAssessment", CompareUserAssessmentArgs.builder()        
  *             .comparisonUserAssessmentId(testUserAssessment.id())
  *             .userAssessmentId(testUserAssessment.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

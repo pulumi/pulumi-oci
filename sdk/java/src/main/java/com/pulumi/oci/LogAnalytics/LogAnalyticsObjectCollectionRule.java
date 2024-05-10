@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule(&#34;testLogAnalyticsObjectCollectionRule&#34;, LogAnalyticsObjectCollectionRuleArgs.builder()        
+ *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", LogAnalyticsObjectCollectionRuleArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .logGroupId(testLogGroup.id())
  *             .logSourceName(logAnalyticsObjectCollectionRuleLogSourceName)
@@ -58,10 +59,10 @@ import javax.annotation.Nullable;
  *             .osNamespace(logAnalyticsObjectCollectionRuleOsNamespace)
  *             .charEncoding(logAnalyticsObjectCollectionRuleCharEncoding)
  *             .collectionType(logAnalyticsObjectCollectionRuleCollectionType)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(logAnalyticsObjectCollectionRuleDescription)
  *             .entityId(testEntity.id())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEnabled(logAnalyticsObjectCollectionRuleIsEnabled)
  *             .isForceHistoricCollection(logAnalyticsObjectCollectionRuleIsForceHistoricCollection)
  *             .logSet(logAnalyticsObjectCollectionRuleLogSet)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,15 +49,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOccAvailabilityCatalog = new OccAvailabilityCatalog(&#34;testOccAvailabilityCatalog&#34;, OccAvailabilityCatalogArgs.builder()        
+ *         var testOccAvailabilityCatalog = new OccAvailabilityCatalog("testOccAvailabilityCatalog", OccAvailabilityCatalogArgs.builder()        
  *             .base64encodedCatalogDetails(occAvailabilityCatalogBase64encodedCatalogDetails)
  *             .compartmentId(compartmentId)
  *             .displayName(occAvailabilityCatalogDisplayName)
  *             .namespace(occAvailabilityCatalogNamespace)
  *             .occCustomerGroupId(testOccCustomerGroup.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(occAvailabilityCatalogDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .metadataDetails(OccAvailabilityCatalogMetadataDetailsArgs.builder()
  *                 .formatVersion(occAvailabilityCatalogMetadataDetailsFormatVersion)
  *                 .build())
@@ -64,7 +65,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

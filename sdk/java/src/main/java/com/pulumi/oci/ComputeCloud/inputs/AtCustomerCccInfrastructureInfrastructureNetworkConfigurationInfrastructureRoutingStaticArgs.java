@@ -16,14 +16,14 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
     public static final AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs Empty = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs();
 
     /**
-     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Import(name="uplinkHsrpGroup")
     private @Nullable Output<Integer> uplinkHsrpGroup;
 
     /**
-     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+     * @return The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Output<Integer>> uplinkHsrpGroup() {
@@ -71,7 +71,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkHsrpGroup The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+         * @param uplinkHsrpGroup The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
         }
 
         /**
-         * @param uplinkHsrpGroup The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+         * @param uplinkHsrpGroup The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud{@literal @}Customer infrastructure.
          * 
          * @return builder
          * 

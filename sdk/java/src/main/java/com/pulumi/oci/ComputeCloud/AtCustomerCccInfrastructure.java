@@ -22,13 +22,14 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
  * 
- * Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
+ * Creates a Compute Cloud{@literal @}Customer infrastructure. Once created, Oracle Services
  * must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,21 +50,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCccInfrastructure = new AtCustomerCccInfrastructure(&#34;testCccInfrastructure&#34;, AtCustomerCccInfrastructureArgs.builder()        
+ *         var testCccInfrastructure = new AtCustomerCccInfrastructure("testCccInfrastructure", AtCustomerCccInfrastructureArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(cccInfrastructureDisplayName)
  *             .subnetId(testSubnet.id())
  *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
  *             .connectionDetails(cccInfrastructureConnectionDetails)
  *             .connectionState(cccInfrastructureConnectionState)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(cccInfrastructureDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -120,14 +122,14 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
         return this.connectionDetails;
     }
     /**
-     * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     @Export(name="connectionState", refs={String.class}, tree="[0]")
     private Output<String> connectionState;
 
     /**
-     * @return (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * @return (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     public Output<String> connectionState() {
@@ -148,28 +150,28 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
         return this.definedTags;
     }
     /**
-     * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -190,28 +192,28 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
         return this.freeformTags;
     }
     /**
-     * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Export(name="infrastructureInventories", refs={List.class,AtCustomerCccInfrastructureInfrastructureInventory.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories;
 
     /**
-     * @return Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Inventory for a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public Output<List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories() {
         return this.infrastructureInventories;
     }
     /**
-     * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     @Export(name="infrastructureNetworkConfigurations", refs={List.class,AtCustomerCccInfrastructureInfrastructureNetworkConfiguration.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations;
 
     /**
-     * @return Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
+     * @return Configuration information for the Compute Cloud{@literal @}Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
     public Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations() {
@@ -232,63 +234,63 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
         return this.lifecycleDetails;
     }
     /**
-     * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     @Export(name="provisioningFingerprint", refs={String.class}, tree="[0]")
     private Output<String> provisioningFingerprint;
 
     /**
-     * @return Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
+     * @return Fingerprint of a Compute Cloud{@literal @}Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
     public Output<String> provisioningFingerprint() {
         return this.provisioningFingerprint;
     }
     /**
-     * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     @Export(name="provisioningPin", refs={String.class}, tree="[0]")
     private Output<String> provisioningPin;
 
     /**
-     * @return Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
+     * @return Code that is required for service personnel to connect a Compute Cloud{@literal @}Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud{@literal @}Customer infrastructure).
      * 
      */
     public Output<String> provisioningPin() {
         return this.provisioningPin;
     }
     /**
-     * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     @Export(name="shortName", refs={String.class}, tree="[0]")
     private Output<String> shortName;
 
     /**
-     * @return The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
+     * @return The Compute Cloud{@literal @}Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
     public Output<String> shortName() {
         return this.shortName;
     }
     /**
-     * The current state of the Compute Cloud@Customer infrastructure.
+     * The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Compute Cloud@Customer infrastructure.
+     * @return The current state of the Compute Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,7 +300,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -322,42 +324,42 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
         return this.systemTags;
     }
     /**
-     * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
+     * @return Compute Cloud{@literal @}Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     @Export(name="upgradeInformations", refs={List.class,AtCustomerCccInfrastructureUpgradeInformation.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations;
 
     /**
-     * @return Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
+     * @return Upgrade information that relates to a Compute Cloud{@literal @}Customer infrastructure. This information cannot be updated.
      * 
      */
     public Output<List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations() {

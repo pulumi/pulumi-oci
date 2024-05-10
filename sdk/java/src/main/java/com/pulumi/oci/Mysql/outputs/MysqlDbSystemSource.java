@@ -33,7 +33,7 @@ public final class MysqlDbSystemSource {
      */
     private String sourceType;
     /**
-     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a{@literal @}.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a{@literal @}.manifest.json object PAR.
      * 
      */
     private @Nullable String sourceUrl;
@@ -68,7 +68,7 @@ public final class MysqlDbSystemSource {
         return this.sourceType;
     }
     /**
-     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a @.manifest.json object PAR.
+     * @return The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a{@literal @}.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with &#34;Permit object reads&#34; access type and &#34;Enable Object Listing&#34; permission when using a bucket/prefix PAR. Please create PAR with &#34;Permit object reads&#34; access type when using a{@literal @}.manifest.json object PAR.
      * 
      */
     public Optional<String> sourceUrl() {

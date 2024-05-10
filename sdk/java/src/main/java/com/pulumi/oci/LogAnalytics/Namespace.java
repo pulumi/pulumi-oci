@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamespace = new Namespace(&#34;testNamespace&#34;, NamespaceArgs.builder()        
+ *         var testNamespace = new Namespace("testNamespace", NamespaceArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .isOnboarded(isOnboarded)
  *             .namespace(namespaceNamespace)
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

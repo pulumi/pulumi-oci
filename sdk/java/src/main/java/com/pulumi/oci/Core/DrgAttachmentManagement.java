@@ -36,7 +36,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -57,18 +58,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRpcAttachment = new DrgAttachmentManagement(&#34;testDrgRpcAttachment&#34;, DrgAttachmentManagementArgs.builder()        
- *             .attachmentType(&#34;REMOTE_PEERING_CONNECTION&#34;)
+ *         var testDrgRpcAttachment = new DrgAttachmentManagement("testDrgRpcAttachment", DrgAttachmentManagementArgs.builder()        
+ *             .attachmentType("REMOTE_PEERING_CONNECTION")
  *             .compartmentId(compartmentOcid)
  *             .networkId(testRpc.id())
  *             .drgId(testDrg.id())
- *             .displayName(&#34;MyTestDrgAttachmentForRpc&#34;)
+ *             .displayName("MyTestDrgAttachmentForRpc")
  *             .drgRouteTableId(testDrgRouteTable.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

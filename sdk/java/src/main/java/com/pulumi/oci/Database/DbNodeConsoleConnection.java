@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,16 +47,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection(&#34;testDbNodeConsoleConnection&#34;, DbNodeConsoleConnectionArgs.builder()        
+ *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection("testDbNodeConsoleConnection", DbNodeConsoleConnectionArgs.builder()        
  *             .dbNodeId(testDbNode.id())
  *             .publicKey(dbNodeConsoleConnectionPublicKey)
  *             .definedTags(dbNodeConsoleConnectionDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

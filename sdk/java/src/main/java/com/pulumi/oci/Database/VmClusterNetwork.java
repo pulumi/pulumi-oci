@@ -24,13 +24,14 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
+ * Creates the VM cluster network. Applies to Exadata Cloud{@literal @}Customer instances only.
  * To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmClusterNetwork = new VmClusterNetwork(&#34;testVmClusterNetwork&#34;, VmClusterNetworkArgs.builder()        
+ *         var testVmClusterNetwork = new VmClusterNetwork("testVmClusterNetwork", VmClusterNetworkArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(vmClusterNetworkDisplayName)
  *             .exadataInfrastructureId(testExadataInfrastructure.id())
@@ -87,14 +88,15 @@ import javax.annotation.Nullable;
  *                 .ips(vmClusterNetworkDrScansIps)
  *                 .scanListenerPortTcp(vmClusterNetworkDrScansScanListenerPortTcp)
  *                 .build())
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .ntps(vmClusterNetworkNtp)
  *             .validateVmClusterNetwork(vmClusterNetworkValidateVmClusterNetwork)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -143,14 +145,14 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     public Output<String> displayName() {

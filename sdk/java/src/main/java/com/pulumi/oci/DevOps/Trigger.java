@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTrigger = new Trigger(&#34;testTrigger&#34;, TriggerArgs.builder()        
+ *         var testTrigger = new Trigger("testTrigger", TriggerArgs.builder()        
  *             .actions(TriggerActionArgs.builder()
  *                 .buildPipelineId(testBuildPipeline.id())
  *                 .type(triggerActionsType)
@@ -65,16 +66,17 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .projectId(testProject.id())
  *             .triggerSource(triggerTriggerSource)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(triggerDescription)
  *             .displayName(triggerDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .repositoryId(testRepositoryOciArtifactsRepository.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -32,7 +32,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     private String displayName;
@@ -104,7 +104,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         return this.definedTags;
     }
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
      */
     public String displayName() {

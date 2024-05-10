@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamespaceScheduledTask = new NamespaceScheduledTask(&#34;testNamespaceScheduledTask&#34;, NamespaceScheduledTaskArgs.builder()        
+ *         var testNamespaceScheduledTask = new NamespaceScheduledTask("testNamespaceScheduledTask", NamespaceScheduledTaskArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .kind(namespaceScheduledTaskKind)
  *             .namespace(namespaceScheduledTaskNamespace)
@@ -68,9 +69,9 @@ import javax.annotation.Nullable;
  *                 .queryString(namespaceScheduledTaskActionQueryString)
  *                 .savedSearchId(testSavedSearch.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(namespaceScheduledTaskDisplayName)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .savedSearchId(testSavedSearch.id())
  *             .schedules(NamespaceScheduledTaskSchedulesArgs.builder()
  *                 .type(namespaceScheduledTaskSchedulesType)
@@ -85,7 +86,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

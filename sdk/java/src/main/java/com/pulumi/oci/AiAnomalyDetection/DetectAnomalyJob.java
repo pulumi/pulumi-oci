@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDetectAnomalyJob = new DetectAnomalyJob(&#34;testDetectAnomalyJob&#34;, DetectAnomalyJobArgs.builder()        
+ *         var testDetectAnomalyJob = new DetectAnomalyJob("testDetectAnomalyJob", DetectAnomalyJobArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .inputDetails(DetectAnomalyJobInputDetailsArgs.builder()
  *                 .inputType(detectAnomalyJobInputDetailsInputType)
@@ -81,7 +82,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

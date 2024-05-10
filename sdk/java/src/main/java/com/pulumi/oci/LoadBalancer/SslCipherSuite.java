@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSslCipherSuite = new SslCipherSuite(&#34;testSslCipherSuite&#34;, SslCipherSuiteArgs.builder()        
+ *         var testSslCipherSuite = new SslCipherSuite("testSslCipherSuite", SslCipherSuiteArgs.builder()        
  *             .ciphers(sslCipherSuiteCiphers)
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(sslCipherSuiteName)
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

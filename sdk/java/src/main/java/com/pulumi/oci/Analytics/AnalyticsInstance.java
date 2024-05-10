@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnalyticsInstance = new AnalyticsInstance(&#34;testAnalyticsInstance&#34;, AnalyticsInstanceArgs.builder()        
+ *         var testAnalyticsInstance = new AnalyticsInstance("testAnalyticsInstance", AnalyticsInstanceArgs.builder()        
  *             .capacity(AnalyticsInstanceCapacityArgs.builder()
  *                 .capacityType(analyticsInstanceCapacityCapacityType)
  *                 .capacityValue(analyticsInstanceCapacityCapacityValue)
@@ -61,10 +62,10 @@ import javax.annotation.Nullable;
  *             .idcsAccessToken(analyticsInstanceIdcsAccessToken)
  *             .licenseType(analyticsInstanceLicenseType)
  *             .name(analyticsInstanceName)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(analyticsInstanceDescription)
  *             .emailNotification(analyticsInstanceEmailNotification)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .kmsKeyId(testKey.id())
  *             .networkEndpointDetails(AnalyticsInstanceNetworkEndpointDetailsArgs.builder()
  *                 .networkEndpointType(analyticsInstanceNetworkEndpointDetailsNetworkEndpointType)
@@ -82,7 +83,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

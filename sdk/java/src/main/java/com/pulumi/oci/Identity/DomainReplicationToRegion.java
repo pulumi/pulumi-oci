@@ -17,13 +17,13 @@ import javax.annotation.Nullable;
  * This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
  * 
  * Replicate domain to a new region. This is an asynchronous call - where, at start,
- * {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
- * On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
+ * {{@literal @}code state} of this domain in replica region is set to ENABLING_REPLICATION.
+ * On domain replication completion the {{@literal @}code state} will be set to REPLICATION_ENABLED.
  * 
  * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
  * the async operation&#39;s status.
  * 
- * If the replica region&#39;s {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
+ * If the replica region&#39;s {{@literal @}code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
  * returns 409 CONFLICT.
  * - If the domain doesn&#39;t exists, returns 404 NOT FOUND.
  * - If home region is same as replication region, return 400 BAD REQUEST.
@@ -33,7 +33,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,14 +55,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDomainReplicationToRegion = new DomainReplicationToRegion(&#34;testDomainReplicationToRegion&#34;, DomainReplicationToRegionArgs.builder()        
+ *         var testDomainReplicationToRegion = new DomainReplicationToRegion("testDomainReplicationToRegion", DomainReplicationToRegionArgs.builder()        
  *             .domainId(testDomain.id())
  *             .replicaRegion(domainReplicationToRegionReplicaRegion)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourceTask = new MonitoredResourceTask(&#34;testMonitoredResourceTask&#34;, MonitoredResourceTaskArgs.builder()        
+ *         var testMonitoredResourceTask = new MonitoredResourceTask("testMonitoredResourceTask", MonitoredResourceTaskArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .taskDetails(MonitoredResourceTaskTaskDetailsArgs.builder()
  *                 .namespace(monitoredResourceTaskTaskDetailsNamespace)
@@ -66,14 +67,15 @@ import javax.annotation.Nullable;
  *                 .serviceBaseUrl(monitoredResourceTaskTaskDetailsServiceBaseUrl)
  *                 .shouldUseMetricsFlowForStatus(monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus)
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .name(monitoredResourceTaskName)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

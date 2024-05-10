@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,19 +47,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLocalPeeringGateway = new LocalPeeringGateway(&#34;testLocalPeeringGateway&#34;, LocalPeeringGatewayArgs.builder()        
+ *         var testLocalPeeringGateway = new LocalPeeringGateway("testLocalPeeringGateway", LocalPeeringGatewayArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(localPeeringGatewayDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .peerId(testLocalPeeringGateway2.id())
  *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

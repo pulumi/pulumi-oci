@@ -17,7 +17,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -38,7 +39,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublicIpPoolCapacity = new PublicIpPoolCapacity(&#34;testPublicIpPoolCapacity&#34;, PublicIpPoolCapacityArgs.builder()        
+ *         var testPublicIpPoolCapacity = new PublicIpPoolCapacity("testPublicIpPoolCapacity", PublicIpPoolCapacityArgs.builder()        
  *             .publicIpPoolId(publicIpPoolId)
  *             .byoipId(byoipId)
  *             .cidrBlock(cidrBlock)
@@ -46,7 +47,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

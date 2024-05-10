@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSchedule = new Schedule(&#34;testSchedule&#34;, ScheduleArgs.builder()        
+ *         var testSchedule = new Schedule("testSchedule", ScheduleArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(scheduleName)
  *             .resultLocation(ScheduleResultLocationArgs.builder()
@@ -60,9 +61,9 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .scheduleRecurrences(scheduleScheduleRecurrences)
  *             .timeScheduled(scheduleTimeScheduled)
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(scheduleDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .outputFileFormat(scheduleOutputFileFormat)
  *             .queryProperties(ScheduleQueryPropertiesArgs.builder()
  *                 .dateRange(ScheduleQueryPropertiesDateRangeArgs.builder()
@@ -88,7 +89,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

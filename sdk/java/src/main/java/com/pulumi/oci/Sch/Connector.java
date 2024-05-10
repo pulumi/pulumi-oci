@@ -46,7 +46,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -71,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceConnector = new Connector(&#34;testServiceConnector&#34;, ConnectorArgs.builder()        
+ *         var testServiceConnector = new Connector("testServiceConnector", ConnectorArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(serviceConnectorDisplayName)
  *             .source(ConnectorSourceArgs.builder()
@@ -128,9 +129,9 @@ import javax.annotation.Nullable;
  *                 .streamId(testStream.id())
  *                 .topicId(testNotificationTopic.id())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(serviceConnectorDescription)
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .tasks(ConnectorTaskArgs.builder()
  *                 .kind(serviceConnectorTasksKind)
  *                 .batchSizeInKbs(serviceConnectorTasksBatchSizeInKbs)
@@ -142,7 +143,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

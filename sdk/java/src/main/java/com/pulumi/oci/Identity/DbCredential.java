@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbCredential = new DbCredential(&#34;testDbCredential&#34;, DbCredentialArgs.builder()        
+ *         var testDbCredential = new DbCredential("testDbCredential", DbCredentialArgs.builder()        
  *             .description(dbCredentialDescription)
  *             .password(dbCredentialPassword)
  *             .userId(testUser.id())
@@ -51,7 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

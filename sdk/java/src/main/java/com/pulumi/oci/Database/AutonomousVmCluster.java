@@ -24,12 +24,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
+ * Creates an Autonomous VM cluster for Exadata Cloud{@literal @}Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousVmCluster = new AutonomousVmCluster(&#34;testAutonomousVmCluster&#34;, AutonomousVmClusterArgs.builder()        
+ *         var testAutonomousVmCluster = new AutonomousVmCluster("testAutonomousVmCluster", AutonomousVmClusterArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(autonomousVmClusterDisplayName)
  *             .exadataInfrastructureId(testExadataInfrastructure.id())
@@ -61,7 +62,7 @@ import javax.annotation.Nullable;
  *             .cpuCoreCountPerNode(autonomousVmClusterCpuCoreCountPerNode)
  *             .dbServers(autonomousVmClusterDbServers)
  *             .definedTags(autonomousVmClusterDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isLocalBackupEnabled(autonomousVmClusterIsLocalBackupEnabled)
  *             .isMtlsEnabled(autonomousVmClusterIsMtlsEnabled)
  *             .licenseModel(autonomousVmClusterLicenseModel)
@@ -87,7 +88,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

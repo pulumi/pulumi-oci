@@ -28,7 +28,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -55,7 +56,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -70,7 +72,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -97,7 +100,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -112,7 +116,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -139,7 +144,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -154,7 +160,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -181,7 +188,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -196,7 +204,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -219,12 +228,13 @@ public final class VisualBuilderFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
      *             .vbInstanceId(testVbInstance.id())
-     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -239,7 +249,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -262,12 +273,13 @@ public final class VisualBuilderFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
      *             .vbInstanceId(testVbInstance.id())
-     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -282,7 +294,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -305,12 +318,13 @@ public final class VisualBuilderFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
      *             .vbInstanceId(testVbInstance.id())
-     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -325,7 +339,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -348,12 +363,13 @@ public final class VisualBuilderFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
      *             .vbInstanceId(testVbInstance.id())
-     *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
+     *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -368,7 +384,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -397,7 +414,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -412,7 +430,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -441,7 +460,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -456,7 +476,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -485,7 +506,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -500,7 +522,8 @@ public final class VisualBuilderFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -529,7 +552,8 @@ public final class VisualBuilderFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

@@ -47,7 +47,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -69,12 +70,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTag = new Tag(&#34;testTag&#34;, TagArgs.builder()        
+ *         var testTag = new Tag("testTag", TagArgs.builder()        
  *             .description(tagDescription)
  *             .name(tagName)
  *             .tagNamespaceId(testTagNamespace.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCostTracking(tagIsCostTracking)
  *             .validator(TagValidatorArgs.builder()
  *                 .validatorType(tagValidatorValidatorType)
@@ -85,7 +86,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

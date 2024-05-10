@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember(&#34;testMonitoredResourcesListMember&#34;, MonitoredResourcesListMemberArgs.builder()        
+ *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember("testMonitoredResourcesListMember", MonitoredResourcesListMemberArgs.builder()        
  *             .monitoredResourceId(testMonitoredResource.id())
  *             .destinationResourceId(testDestinationResource.id())
  *             .limitLevel(monitoredResourcesListMemberLimitLevel)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

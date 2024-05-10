@@ -33,14 +33,14 @@ public final class GetAtCustomerCccUpgradeSchedulesPlainArgs extends com.pulumi.
     }
 
     /**
-     * Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compute Cloud{@literal @}Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="cccUpgradeScheduleId")
     private @Nullable String cccUpgradeScheduleId;
 
     /**
-     * @return Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return Compute Cloud{@literal @}Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> cccUpgradeScheduleId() {
@@ -172,7 +172,7 @@ public final class GetAtCustomerCccUpgradeSchedulesPlainArgs extends com.pulumi.
         }
 
         /**
-         * @param cccUpgradeScheduleId Compute Cloud@Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param cccUpgradeScheduleId Compute Cloud{@literal @}Customer upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

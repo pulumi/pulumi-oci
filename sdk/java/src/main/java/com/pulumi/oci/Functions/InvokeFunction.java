@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInvokeFunction = new InvokeFunction(&#34;testInvokeFunction&#34;, InvokeFunctionArgs.builder()        
+ *         var testInvokeFunction = new InvokeFunction("testInvokeFunction", InvokeFunctionArgs.builder()        
  *             .functionId(testFunction.id())
  *             .invokeFunctionBody(invokeFunctionInvokeFunctionBody)
  *             .fnIntent(invokeFunctionFnIntent)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIndex = new Index(&#34;testIndex&#34;, IndexArgs.builder()        
+ *         var testIndex = new Index("testIndex", IndexArgs.builder()        
  *             .keys(IndexKeyArgs.builder()
  *                 .columnName(indexKeysColumnName)
  *                 .jsonFieldType(indexKeysJsonFieldType)
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

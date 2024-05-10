@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJavaLicenseAcceptanceRecord = new JavaDownloadsJavaLicenseAcceptanceRecord(&#34;testJavaLicenseAcceptanceRecord&#34;, JavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()        
+ *         var testJavaLicenseAcceptanceRecord = new JavaDownloadsJavaLicenseAcceptanceRecord("testJavaLicenseAcceptanceRecord", JavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()        
  *             .compartmentId(tenancyOcid)
  *             .licenseAcceptanceStatus(javaLicenseAcceptanceRecordLicenseAcceptanceStatus)
  *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

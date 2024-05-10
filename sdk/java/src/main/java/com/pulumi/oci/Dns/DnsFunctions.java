@@ -73,7 +73,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -107,7 +108,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -128,7 +130,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -162,7 +165,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -183,7 +187,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -217,7 +222,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -238,7 +244,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -272,7 +279,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -289,7 +297,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -312,12 +321,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
      *             .resolverId(testResolverOciDnsResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -334,7 +344,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -357,12 +368,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
      *             .resolverId(testResolverOciDnsResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -379,7 +391,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -402,12 +415,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
      *             .resolverId(testResolverOciDnsResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -424,7 +438,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -447,12 +462,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
      *             .resolverId(testResolverOciDnsResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -469,7 +485,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -493,12 +510,13 @@ public final class DnsFunctions {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
      *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -515,7 +533,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -539,12 +558,13 @@ public final class DnsFunctions {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
      *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -561,7 +581,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -585,12 +606,13 @@ public final class DnsFunctions {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
      *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -607,7 +629,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -631,12 +654,13 @@ public final class DnsFunctions {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
      *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -654,7 +678,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -677,14 +702,15 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -702,7 +728,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -725,14 +752,15 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -750,7 +778,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -773,14 +802,15 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -798,7 +828,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -821,14 +852,15 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
      *             .resolverId(testResolver.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .name(resolverEndpointName)
      *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -848,7 +880,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -871,7 +904,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(resolverDisplayName)
      *             .id(resolverId)
      *             .state(resolverState)
@@ -879,7 +912,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -899,7 +933,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -922,7 +957,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(resolverDisplayName)
      *             .id(resolverId)
      *             .state(resolverState)
@@ -930,7 +965,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -950,7 +986,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -973,7 +1010,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(resolverDisplayName)
      *             .id(resolverId)
      *             .state(resolverState)
@@ -981,7 +1018,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1001,7 +1039,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1024,7 +1063,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(resolverDisplayName)
      *             .id(resolverId)
      *             .state(resolverState)
@@ -1032,7 +1071,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1050,7 +1090,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1082,7 +1123,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1100,7 +1142,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1132,7 +1175,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1150,7 +1194,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1182,7 +1227,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1200,7 +1246,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1232,7 +1279,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1250,7 +1298,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1282,7 +1331,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1300,7 +1350,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1332,7 +1383,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1350,7 +1402,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1382,7 +1435,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1400,7 +1454,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1432,7 +1487,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1447,7 +1503,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1482,7 +1539,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1497,7 +1555,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1532,7 +1591,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1547,7 +1607,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1582,7 +1643,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1597,7 +1659,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1632,7 +1695,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1647,7 +1711,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1674,7 +1739,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1689,7 +1755,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1716,7 +1783,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1731,7 +1799,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1758,7 +1827,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1773,7 +1843,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1800,7 +1871,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1815,7 +1887,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1842,7 +1915,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1857,7 +1931,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1884,7 +1959,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1899,7 +1975,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1926,7 +2003,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1941,7 +2019,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1968,7 +2047,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1983,7 +2063,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2019,7 +2100,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2034,7 +2116,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2070,7 +2153,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2085,7 +2169,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2121,7 +2206,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2136,7 +2222,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2172,7 +2259,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2187,7 +2275,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2214,7 +2303,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2229,7 +2319,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2256,7 +2347,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2271,7 +2363,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2298,7 +2391,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2313,7 +2407,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2340,7 +2435,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2355,7 +2451,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2385,7 +2482,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2400,7 +2498,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2430,7 +2529,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2445,7 +2545,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2475,7 +2576,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2490,7 +2592,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2520,7 +2623,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2537,7 +2641,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2560,12 +2665,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2582,7 +2688,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2605,12 +2712,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2627,7 +2735,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2650,12 +2759,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2672,7 +2782,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2695,12 +2806,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2717,7 +2829,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2740,12 +2853,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2762,7 +2876,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2785,12 +2900,13 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
      *             .viewId(testViewOciDnsView.id())
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2810,7 +2926,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2833,7 +2950,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(viewDisplayName)
      *             .id(viewId)
      *             .state(viewState)
@@ -2841,7 +2958,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2861,7 +2979,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2884,7 +3003,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(viewDisplayName)
      *             .id(viewId)
      *             .state(viewState)
@@ -2892,7 +3011,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2912,7 +3032,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2935,7 +3056,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(viewDisplayName)
      *             .id(viewId)
      *             .state(viewState)
@@ -2943,7 +3064,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -2963,7 +3085,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -2986,7 +3109,7 @@ public final class DnsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .scope(&#34;PRIVATE&#34;)
+     *             .scope("PRIVATE")
      *             .displayName(viewDisplayName)
      *             .id(viewId)
      *             .state(viewState)
@@ -2994,7 +3117,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3012,7 +3136,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3048,7 +3173,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3066,7 +3192,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3102,7 +3229,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3120,7 +3248,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3156,7 +3285,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -3174,7 +3304,8 @@ public final class DnsFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -3210,7 +3341,8 @@ public final class DnsFunctions {
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

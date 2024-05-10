@@ -39,7 +39,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -68,17 +69,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSetting = new DomainsSetting(&#34;testSetting&#34;, DomainsSettingArgs.builder()        
+ *         var testSetting = new DomainsSetting("testSetting", DomainsSettingArgs.builder()        
  *             .csrAccess(settingCsrAccess)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Settings&#34;)
- *             .settingId(&#34;Settings&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Settings")
+ *             .settingId("Settings")
  *             .accountAlwaysTrustScope(settingAccountAlwaysTrustScope)
- *             .allowedDomains(&#34;test.com&#34;)
+ *             .allowedDomains("test.com")
  *             .allowedForgotPasswordFlowReturnUrls(settingAllowedForgotPasswordFlowReturnUrls)
  *             .allowedNotificationRedirectUrls(settingAllowedNotificationRedirectUrls)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .auditEventRetentionPeriod(settingAuditEventRetentionPeriod)
  *             .authorization(settingAuthorization)
  *             .certificateValidation(DomainsSettingCertificateValidationArgs.builder()
@@ -95,7 +96,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .cloudGateCorsSettings(DomainsSettingCloudGateCorsSettingsArgs.builder()
  *                 .cloudGateCorsAllowNullOrigin(settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin)
- *                 .cloudGateCorsAllowedOrigins(&#34;https://test.com&#34;)
+ *                 .cloudGateCorsAllowedOrigins("https://test.com")
  *                 .cloudGateCorsEnabled(settingCloudGateCorsSettingsCloudGateCorsEnabled)
  *                 .cloudGateCorsExposedHeaders(settingCloudGateCorsSettingsCloudGateCorsExposedHeaders)
  *                 .cloudGateCorsMaxAge(settingCloudGateCorsSettingsCloudGateCorsMaxAge)
@@ -106,7 +107,7 @@ import javax.annotation.Nullable;
  *                 .locale(settingCompanyNamesLocale)
  *                 .value(settingCompanyNamesValue)
  *                 .build())
- *             .contactEmails(&#34;contactEmails@test.com&#34;)
+ *             .contactEmails("contactEmails{@literal @}test.com")
  *             .customBranding(settingCustomBranding)
  *             .customCssLocation(settingCustomCssLocation)
  *             .customHtmlLocation(settingCustomHtmlLocation)
@@ -115,7 +116,7 @@ import javax.annotation.Nullable;
  *             .diagnosticLevel(settingDiagnosticLevel)
  *             .diagnosticRecordForSearchIdentifiesReturnedResources(settingDiagnosticRecordForSearchIdentifiesReturnedResources)
  *             .enableTermsOfUse(settingEnableTermsOfUse)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .iamUpstSessionExpiry(settingIamUpstSessionExpiry)
  *             .id(settingId)
  *             .images(DomainsSettingImageArgs.builder()
@@ -137,10 +138,10 @@ import javax.annotation.Nullable;
  *             .prevIssuer(settingPrevIssuer)
  *             .privacyPolicyUrl(settingPrivacyPolicyUrl)
  *             .purgeConfigs(DomainsSettingPurgeConfigArgs.builder()
- *                 .resourceName(&#34;resourceName&#34;)
+ *                 .resourceName("resourceName")
  *                 .retentionPeriod(settingPurgeConfigsRetentionPeriod)
  *                 .build())
- *             .reAuthFactors(&#34;password&#34;)
+ *             .reAuthFactors("password")
  *             .reAuthWhenChangingMyAuthenticationFactors(settingReAuthWhenChangingMyAuthenticationFactors)
  *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
  *             .serviceAdminCannotListOtherUsers(settingServiceAdminCannotListOtherUsers)
@@ -157,7 +158,7 @@ import javax.annotation.Nullable;
  *                 .name(settingTenantCustomClaimsName)
  *                 .tokenType(settingTenantCustomClaimsTokenType)
  *                 .value(settingTenantCustomClaimsValue)
- *                 .scopes(&#34;scopes&#34;)
+ *                 .scopes("scopes")
  *                 .build())
  *             .termsOfUseUrl(settingTermsOfUseUrl)
  *             .timezone(settingTimezone)
@@ -165,7 +166,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

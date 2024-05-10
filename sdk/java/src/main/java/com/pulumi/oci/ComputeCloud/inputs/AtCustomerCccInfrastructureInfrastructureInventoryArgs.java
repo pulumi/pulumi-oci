@@ -17,14 +17,14 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
     public static final AtCustomerCccInfrastructureInfrastructureInventoryArgs Empty = new AtCustomerCccInfrastructureInfrastructureInventoryArgs();
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     @Import(name="capacityStorageTrayCount")
     private @Nullable Output<Integer> capacityStorageTrayCount;
 
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     public Optional<Output<Integer>> capacityStorageTrayCount() {
@@ -32,14 +32,14 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
     }
 
     /**
-     * The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     @Import(name="computeNodeCount")
     private @Nullable Output<Integer> computeNodeCount;
 
     /**
-     * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * @return The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     public Optional<Output<Integer>> computeNodeCount() {
@@ -47,14 +47,14 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
     }
 
     /**
-     * The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     @Import(name="managementNodeCount")
     private @Nullable Output<Integer> managementNodeCount;
 
     /**
-     * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * @return The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public Optional<Output<Integer>> managementNodeCount() {
@@ -62,14 +62,14 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
     }
 
     /**
-     * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     @Import(name="performanceStorageTrayCount")
     private @Nullable Output<Integer> performanceStorageTrayCount;
 
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     public Optional<Output<Integer>> performanceStorageTrayCount() {
@@ -77,14 +77,14 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
     }
 
     /**
-     * The serial number of the Compute Cloud@Customer infrastructure rack.
+     * The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     @Import(name="serialNumber")
     private @Nullable Output<String> serialNumber;
 
     /**
-     * @return The serial number of the Compute Cloud@Customer infrastructure rack.
+     * @return The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public Optional<Output<String>> serialNumber() {
@@ -120,7 +120,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param capacityStorageTrayCount The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+         * @param capacityStorageTrayCount The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param capacityStorageTrayCount The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+         * @param capacityStorageTrayCount The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param computeNodeCount The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+         * @param computeNodeCount The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param computeNodeCount The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+         * @param computeNodeCount The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param managementNodeCount The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+         * @param managementNodeCount The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param managementNodeCount The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+         * @param managementNodeCount The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param performanceStorageTrayCount The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+         * @param performanceStorageTrayCount The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param performanceStorageTrayCount The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+         * @param performanceStorageTrayCount The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param serialNumber The serial number of the Compute Cloud@Customer infrastructure rack.
+         * @param serialNumber The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AtCustomerCccInfrastructureInfrastructureInventoryArgs extend
         }
 
         /**
-         * @param serialNumber The serial number of the Compute Cloud@Customer infrastructure rack.
+         * @param serialNumber The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
          * 
          * @return builder
          * 

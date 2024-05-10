@@ -24,12 +24,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
  * 
- * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
+ * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud{@literal @}Customer instances only.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmClusterRemoveVirtualMachine = new VmClusterRemoveVirtualMachine(&#34;testVmClusterRemoveVirtualMachine&#34;, VmClusterRemoveVirtualMachineArgs.builder()        
+ *         var testVmClusterRemoveVirtualMachine = new VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", VmClusterRemoveVirtualMachineArgs.builder()        
  *             .dbServers(VmClusterRemoveVirtualMachineDbServerArgs.builder()
  *                 .dbServerId(testDbServer.id())
  *                 .build())
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -187,14 +189,14 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
         return this.definedTags;
     }
     /**
-     * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
+     * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster. The name does not need to be unique.
      * 
      */
     public Output<String> displayName() {

@@ -34,7 +34,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -59,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyRequest = new DomainsMyRequest(&#34;testMyRequest&#34;, DomainsMyRequestArgs.builder()        
+ *         var testMyRequest = new DomainsMyRequest("testMyRequest", DomainsMyRequestArgs.builder()        
  *             .approvalDetails()
  *             .idcsEndpoint(testDomain.url())
  *             .justification(myRequestJustification)
@@ -68,10 +69,10 @@ import javax.annotation.Nullable;
  *                 .value(groupToRequest.id())
  *                 .description(myRequestRequestingDescription)
  *                 .build())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Request&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Request")
  *             .action(myRequestAction)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(myRequestAuthorization)
  *             .ocid(myRequestOcid)
  *             .requestor(DomainsMyRequestRequestorArgs.builder()
@@ -86,7 +87,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

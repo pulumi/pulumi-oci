@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDatabaseConnector = new ExternalDatabaseConnector(&#34;testExternalDatabaseConnector&#34;, ExternalDatabaseConnectorArgs.builder()        
+ *         var testExternalDatabaseConnector = new ExternalDatabaseConnector("testExternalDatabaseConnector", ExternalDatabaseConnectorArgs.builder()        
  *             .connectionCredentials(ExternalDatabaseConnectorConnectionCredentialsArgs.builder()
  *                 .credentialName(externalDatabaseConnectorConnectionCredentialsCredentialName)
  *                 .credentialType(externalDatabaseConnectorConnectionCredentialsCredentialType)
@@ -68,12 +69,13 @@ import javax.annotation.Nullable;
  *             .externalDatabaseId(testDatabase.id())
  *             .connectorType(externalDatabaseConnectorConnectorType)
  *             .definedTags(externalDatabaseConnectorDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

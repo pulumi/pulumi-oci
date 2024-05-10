@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTagDefault = new TagDefault(&#34;testTagDefault&#34;, TagDefaultArgs.builder()        
+ *         var testTagDefault = new TagDefault("testTagDefault", TagDefaultArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .tagDefinitionId(testTagDefinition.id())
  *             .value(tagDefaultValue)
@@ -59,7 +60,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

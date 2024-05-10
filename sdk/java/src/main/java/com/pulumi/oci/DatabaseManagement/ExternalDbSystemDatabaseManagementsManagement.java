@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDbSystemDatabaseManagementsManagement = new ExternalDbSystemDatabaseManagementsManagement(&#34;testExternalDbSystemDatabaseManagementsManagement&#34;, ExternalDbSystemDatabaseManagementsManagementArgs.builder()        
+ *         var testExternalDbSystemDatabaseManagementsManagement = new ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement", ExternalDbSystemDatabaseManagementsManagementArgs.builder()        
  *             .externalDbSystemId(testExternalDbSystem.id())
  *             .enableDatabaseManagement(enableDatabaseManagement)
  *             .licenseModel(externalDbSystemDatabaseManagementsManagementLicenseModel)
@@ -52,7 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

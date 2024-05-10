@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgAttachmentsList = new DrgAttachmentsList(&#34;testDrgAttachmentsList&#34;, DrgAttachmentsListArgs.builder()        
+ *         var testDrgAttachmentsList = new DrgAttachmentsList("testDrgAttachmentsList", DrgAttachmentsListArgs.builder()        
  *             .drgId(testDrg.id())
  *             .attachmentType(drgAttachmentsListAttachmentType)
  *             .isCrossTenancy(drgAttachmentsListIsCrossTenancy)
@@ -54,7 +55,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

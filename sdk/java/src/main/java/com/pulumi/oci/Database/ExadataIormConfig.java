@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,18 +53,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataIormConfig = new ExadataIormConfig(&#34;testExadataIormConfig&#34;, ExadataIormConfigArgs.builder()        
+ *         var testExadataIormConfig = new ExadataIormConfig("testExadataIormConfig", ExadataIormConfigArgs.builder()        
  *             .dbPlans(ExadataIormConfigDbPlanArgs.builder()
  *                 .dbName(exadataIormConfigDbPlansDbName)
  *                 .share(exadataIormConfigDbPlansShare)
  *                 .build())
  *             .dbSystemId(testDbSystem.id())
- *             .objective(&#34;AUTO&#34;)
+ *             .objective("AUTO")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

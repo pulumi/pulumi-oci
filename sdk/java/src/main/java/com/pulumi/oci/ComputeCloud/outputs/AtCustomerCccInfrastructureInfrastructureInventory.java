@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AtCustomerCccInfrastructureInfrastructureInventory {
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     private @Nullable Integer capacityStorageTrayCount;
     /**
-     * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * @return The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     private @Nullable Integer computeNodeCount;
     /**
-     * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * @return The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     private @Nullable Integer managementNodeCount;
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     private @Nullable Integer performanceStorageTrayCount;
     /**
-     * @return The serial number of the Compute Cloud@Customer infrastructure rack.
+     * @return The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     private @Nullable String serialNumber;
 
     private AtCustomerCccInfrastructureInfrastructureInventory() {}
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for capacity storage.
      * 
      */
     public Optional<Integer> capacityStorageTrayCount() {
         return Optional.ofNullable(this.capacityStorageTrayCount);
     }
     /**
-     * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+     * @return The number of compute nodes that are available and usable on the Compute Cloud{@literal @}Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
     public Optional<Integer> computeNodeCount() {
         return Optional.ofNullable(this.computeNodeCount);
     }
     /**
-     * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+     * @return The number of management nodes that are available and in active use on the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public Optional<Integer> managementNodeCount() {
         return Optional.ofNullable(this.managementNodeCount);
     }
     /**
-     * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+     * @return The number of storage trays in the Compute Cloud{@literal @}Customer infrastructure rack that are designated for performance storage.
      * 
      */
     public Optional<Integer> performanceStorageTrayCount() {
         return Optional.ofNullable(this.performanceStorageTrayCount);
     }
     /**
-     * @return The serial number of the Compute Cloud@Customer infrastructure rack.
+     * @return The serial number of the Compute Cloud{@literal @}Customer infrastructure rack.
      * 
      */
     public Optional<String> serialNumber() {

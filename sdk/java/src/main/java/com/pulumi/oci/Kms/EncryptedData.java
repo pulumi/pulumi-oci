@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEncryptedData = new EncryptedData(&#34;testEncryptedData&#34;, EncryptedDataArgs.builder()        
+ *         var testEncryptedData = new EncryptedData("testEncryptedData", EncryptedDataArgs.builder()        
  *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
  *             .keyId(testKey.id())
  *             .plaintext(encryptedDataPlaintext)
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

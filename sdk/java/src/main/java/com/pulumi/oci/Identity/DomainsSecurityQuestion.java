@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -52,20 +53,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSecurityQuestion = new DomainsSecurityQuestion(&#34;testSecurityQuestion&#34;, DomainsSecurityQuestionArgs.builder()        
+ *         var testSecurityQuestion = new DomainsSecurityQuestion("testSecurityQuestion", DomainsSecurityQuestionArgs.builder()        
  *             .active(securityQuestionActive)
  *             .idcsEndpoint(testDomain.url())
  *             .questionTexts(DomainsSecurityQuestionQuestionTextArgs.builder()
- *                 .locale(&#34;en&#34;)
+ *                 .locale("en")
  *                 .value(securityQuestionQuestionTextValue)
- *                 .default_(&#34;true&#34;)
+ *                 .default_("true")
  *                 .build())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion&#34;)
- *             .type(&#34;custom&#34;)
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:SecurityQuestion")
+ *             .type("custom")
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(securityQuestionAuthorization)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .id(securityQuestionId)
  *             .ocid(securityQuestionOcid)
  *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

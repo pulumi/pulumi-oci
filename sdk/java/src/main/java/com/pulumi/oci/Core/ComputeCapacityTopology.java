@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,21 +52,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCapacityTopology = new ComputeCapacityTopology(&#34;testComputeCapacityTopology&#34;, ComputeCapacityTopologyArgs.builder()        
+ *         var testComputeCapacityTopology = new ComputeCapacityTopology("testComputeCapacityTopology", ComputeCapacityTopologyArgs.builder()        
  *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
  *             .capacitySource(ComputeCapacityTopologyCapacitySourceArgs.builder()
  *                 .capacityType(computeCapacityTopologyCapacitySourceCapacityType)
  *                 .compartmentId(compartmentId)
  *                 .build())
  *             .compartmentId(compartmentId)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(computeCapacityTopologyDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

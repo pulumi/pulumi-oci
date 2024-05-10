@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,11 +55,11 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuthToken = new DomainsAuthToken(&#34;testAuthToken&#34;, DomainsAuthTokenArgs.builder()        
+ *         var testAuthToken = new DomainsAuthToken("testAuthToken", DomainsAuthTokenArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:authToken&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:authToken")
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authorization(authTokenAuthorization)
  *             .description(authTokenDescription)
  *             .expiresOn(authTokenExpiresOn)
@@ -81,7 +82,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

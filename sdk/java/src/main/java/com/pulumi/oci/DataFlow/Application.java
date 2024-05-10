@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -55,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApplication = new Application(&#34;testApplication&#34;, ApplicationArgs.builder()        
+ *         var testApplication = new Application("testApplication", ApplicationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(applicationDisplayName)
  *             .driverShape(applicationDriverShape)
@@ -71,7 +72,7 @@ import javax.annotation.Nullable;
  *             .arguments(applicationArguments)
  *             .className(applicationClassName)
  *             .configuration(applicationConfiguration)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(applicationDescription)
  *             .driverShapeConfig(ApplicationDriverShapeConfigArgs.builder()
  *                 .memoryInGbs(applicationDriverShapeConfigMemoryInGbs)
@@ -83,7 +84,7 @@ import javax.annotation.Nullable;
  *                 .ocpus(applicationExecutorShapeConfigOcpus)
  *                 .build())
  *             .fileUri(applicationFileUri)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .idleTimeoutInMinutes(applicationIdleTimeoutInMinutes)
  *             .logsBucketUri(applicationLogsBucketUri)
  *             .maxDurationInMinutes(applicationMaxDurationInMinutes)
@@ -100,7 +101,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

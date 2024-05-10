@@ -39,7 +39,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -62,11 +63,11 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVault = new Vault(&#34;testVault&#34;, VaultArgs.builder()        
+ *         var testVault = new Vault("testVault", VaultArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(vaultDisplayName)
  *             .vaultType(vaultVaultType)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .externalKeyManagerMetadata(VaultExternalKeyManagerMetadataArgs.builder()
  *                 .externalVaultEndpointUrl(vaultExternalKeyManagerMetadataExternalVaultEndpointUrl)
  *                 .oauthMetadata(VaultExternalKeyManagerMetadataOauthMetadataArgs.builder()
@@ -76,12 +77,13 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .privateEndpointId(testPrivateEndpoint.id())
  *                 .build())
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

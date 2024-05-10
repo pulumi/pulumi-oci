@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -54,13 +55,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPasswordPolicy = new DomainsPasswordPolicy(&#34;testPasswordPolicy&#34;, DomainsPasswordPolicyArgs.builder()        
+ *         var testPasswordPolicy = new DomainsPasswordPolicy("testPasswordPolicy", DomainsPasswordPolicyArgs.builder()        
  *             .idcsEndpoint(testDomain.url())
  *             .name(passwordPolicyName)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy")
  *             .allowedChars(passwordPolicyAllowedChars)
  *             .attributeSets()
- *             .attributes(&#34;&#34;)
+ *             .attributes("")
  *             .authorization(passwordPolicyAuthorization)
  *             .description(passwordPolicyDescription)
  *             .dictionaryDelimiter(passwordPolicyDictionaryDelimiter)
@@ -70,7 +71,7 @@ import javax.annotation.Nullable;
  *             .disallowedSubstrings(passwordPolicyDisallowedSubstrings)
  *             .disallowedUserAttributeValues(passwordPolicyDisallowedUserAttributeValues)
  *             .distinctCharacters(passwordPolicyDistinctCharacters)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .firstNameDisallowed(passwordPolicyFirstNameDisallowed)
  *             .forcePasswordReset(passwordPolicyForcePasswordReset)
  *             .groups(DomainsPasswordPolicyGroupArgs.builder()
@@ -110,7 +111,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

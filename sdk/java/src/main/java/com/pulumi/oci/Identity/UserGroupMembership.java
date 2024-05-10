@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,14 +43,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUserGroupMembership = new UserGroupMembership(&#34;testUserGroupMembership&#34;, UserGroupMembershipArgs.builder()        
+ *         var testUserGroupMembership = new UserGroupMembership("testUserGroupMembership", UserGroupMembershipArgs.builder()        
  *             .groupId(testGroup.id())
  *             .userId(testUser.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

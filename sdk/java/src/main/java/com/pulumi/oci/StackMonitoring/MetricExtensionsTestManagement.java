@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,14 +43,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMetricExtensionsTestManagement = new MetricExtensionsTestManagement(&#34;testMetricExtensionsTestManagement&#34;, MetricExtensionsTestManagementArgs.builder()        
+ *         var testMetricExtensionsTestManagement = new MetricExtensionsTestManagement("testMetricExtensionsTestManagement", MetricExtensionsTestManagementArgs.builder()        
  *             .metricExtensionId(testMetricExtension.id())
  *             .resourceIds(metricExtensionsTestManagementResourceIds[0])
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

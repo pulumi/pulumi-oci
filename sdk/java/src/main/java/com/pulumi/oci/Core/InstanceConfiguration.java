@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -60,11 +61,11 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstanceConfiguration = new InstanceConfiguration(&#34;testInstanceConfiguration&#34;, InstanceConfigurationArgs.builder()        
+ *         var testInstanceConfiguration = new InstanceConfiguration("testInstanceConfiguration", InstanceConfigurationArgs.builder()        
  *             .compartmentId(compartmentId)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(instanceConfigurationDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .instanceDetails(InstanceConfigurationInstanceDetailsArgs.builder()
  *                 .instanceType(instanceConfigurationInstanceDetailsInstanceType)
  *                 .blockVolumes(InstanceConfigurationInstanceDetailsBlockVolumeArgs.builder()
@@ -90,9 +91,9 @@ import javax.annotation.Nullable;
  *                             .build())
  *                         .clusterPlacementGroupId(clusterPlacementGroupId)
  *                         .compartmentId(compartmentId)
- *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .definedTags(Map.of("Operations.CostCenter", "42"))
  *                         .displayName(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsDisplayName)
- *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .freeformTags(Map.of("Department", "Finance"))
  *                         .isAutoTuneEnabled(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled)
  *                         .kmsKeyId(testKey.id())
  *                         .sizeInGbs(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSizeInGbs)
@@ -126,9 +127,9 @@ import javax.annotation.Nullable;
  *                         .assignIpv6ip(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip)
  *                         .assignPrivateDnsRecord(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord)
  *                         .assignPublicIp(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp)
- *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .definedTags(Map.of("Operations.CostCenter", "42"))
  *                         .displayName(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsDisplayName)
- *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .freeformTags(Map.of("Department", "Finance"))
  *                         .hostnameLabel(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsHostnameLabel)
  *                         .ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
  *                             .ipv6address(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address)
@@ -140,11 +141,11 @@ import javax.annotation.Nullable;
  *                         .subnetId(testSubnet.id())
  *                         .build())
  *                     .dedicatedVmHostId(testDedicatedVmHost.id())
- *                     .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                     .definedTags(Map.of("Operations.CostCenter", "42"))
  *                     .displayName(instanceConfigurationInstanceDetailsLaunchDetailsDisplayName)
  *                     .extendedMetadata(instanceConfigurationInstanceDetailsLaunchDetailsExtendedMetadata)
  *                     .faultDomain(instanceConfigurationInstanceDetailsLaunchDetailsFaultDomain)
- *                     .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                     .freeformTags(Map.of("Department", "Finance"))
  *                     .instanceOptions(InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs.builder()
  *                         .areLegacyImdsEndpointsDisabled(instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled)
  *                         .build())
@@ -224,9 +225,9 @@ import javax.annotation.Nullable;
  *                             .backupPolicyId(testVolumeBackupPolicies.volumeBackupPolicies()[0].id())
  *                             .clusterPlacementGroupId(clusterPlacementGroupId)
  *                             .compartmentId(compartmentId)
- *                             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                             .definedTags(Map.of("Operations.CostCenter", "42"))
  *                             .displayName(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsDisplayName)
- *                             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                             .freeformTags(Map.of("Department", "Finance"))
  *                             .kmsKeyId(testKey.id())
  *                             .sizeInGbs(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSizeInGbs)
  *                             .sourceDetails(InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs.builder()
@@ -258,9 +259,9 @@ import javax.annotation.Nullable;
  *                             .assignIpv6ip(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip)
  *                             .assignPrivateDnsRecord(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord)
  *                             .assignPublicIp(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp)
- *                             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                             .definedTags(Map.of("Operations.CostCenter", "42"))
  *                             .displayName(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsDisplayName)
- *                             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                             .freeformTags(Map.of("Department", "Finance"))
  *                             .hostnameLabel(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsHostnameLabel)
  *                             .ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
  *                                 .ipv6address(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address)
@@ -272,11 +273,11 @@ import javax.annotation.Nullable;
  *                             .subnetId(testSubnet.id())
  *                             .build())
  *                         .dedicatedVmHostId(testDedicatedVmHost.id())
- *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .definedTags(Map.of("Operations.CostCenter", "42"))
  *                         .displayName(instanceConfigurationInstanceDetailsOptionsLaunchDetailsDisplayName)
  *                         .extendedMetadata(instanceConfigurationInstanceDetailsOptionsLaunchDetailsExtendedMetadata)
  *                         .faultDomain(instanceConfigurationInstanceDetailsOptionsLaunchDetailsFaultDomain)
- *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .freeformTags(Map.of("Department", "Finance"))
  *                         .instanceOptions(InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs.builder()
  *                             .areLegacyImdsEndpointsDisabled(instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled)
  *                             .build())
@@ -339,9 +340,9 @@ import javax.annotation.Nullable;
  *                             .assignIpv6ip(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip)
  *                             .assignPrivateDnsRecord(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord)
  *                             .assignPublicIp(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp)
- *                             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                             .definedTags(Map.of("Operations.CostCenter", "42"))
  *                             .displayName(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsDisplayName)
- *                             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                             .freeformTags(Map.of("Department", "Finance"))
  *                             .hostnameLabel(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsHostnameLabel)
  *                             .ipv6addressIpv6subnetCidrPairDetails(InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs.builder()
  *                                 .ipv6address(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address)
@@ -360,9 +361,9 @@ import javax.annotation.Nullable;
  *                     .createVnicDetails(InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs.builder()
  *                         .assignPrivateDnsRecord(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord)
  *                         .assignPublicIp(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp)
- *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .definedTags(Map.of("Operations.CostCenter", "42"))
  *                         .displayName(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsDisplayName)
- *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .freeformTags(Map.of("Department", "Finance"))
  *                         .hostnameLabel(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel)
  *                         .nsgIds(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds)
  *                         .privateIp(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp)
@@ -379,7 +380,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

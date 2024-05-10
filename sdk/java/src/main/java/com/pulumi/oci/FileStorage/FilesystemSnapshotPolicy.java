@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -51,12 +52,12 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFilesystemSnapshotPolicy = new FilesystemSnapshotPolicy(&#34;testFilesystemSnapshotPolicy&#34;, FilesystemSnapshotPolicyArgs.builder()        
+ *         var testFilesystemSnapshotPolicy = new FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy", FilesystemSnapshotPolicyArgs.builder()        
  *             .availabilityDomain(filesystemSnapshotPolicyAvailabilityDomain)
  *             .compartmentId(compartmentId)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(filesystemSnapshotPolicyDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .policyPrefix(filesystemSnapshotPolicyPolicyPrefix)
  *             .schedules(FilesystemSnapshotPolicyScheduleArgs.builder()
  *                 .period(filesystemSnapshotPolicySchedulesPeriod)
@@ -73,7 +74,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

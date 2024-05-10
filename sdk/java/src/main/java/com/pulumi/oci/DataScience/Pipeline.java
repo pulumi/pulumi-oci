@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -60,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPipeline = new Pipeline(&#34;testPipeline&#34;, PipelineArgs.builder()        
+ *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .projectId(testProject.id())
  *             .stepDetails(PipelineStepDetailArgs.builder()
@@ -90,10 +91,10 @@ import javax.annotation.Nullable;
  *                 .environmentVariables(pipelineConfigurationDetailsEnvironmentVariables)
  *                 .maximumRuntimeInMinutes(pipelineConfigurationDetailsMaximumRuntimeInMinutes)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(pipelineDescription)
  *             .displayName(pipelineDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .infrastructureConfigurationDetails(PipelineInfrastructureConfigurationDetailsArgs.builder()
  *                 .blockStorageSizeInGbs(pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
  *                 .shapeName(testShape.name())
@@ -112,7 +113,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

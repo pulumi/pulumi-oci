@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,14 +54,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamPool = new StreamPool(&#34;testStreamPool&#34;, StreamPoolArgs.builder()        
+ *         var testStreamPool = new StreamPool("testStreamPool", StreamPoolArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .name(streamPoolName)
  *             .customEncryptionKey(StreamPoolCustomEncryptionKeyArgs.builder()
  *                 .kmsKeyId(testKey.id())
  *                 .build())
  *             .definedTags(streamPoolDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .kafkaSettings(StreamPoolKafkaSettingsArgs.builder()
  *                 .autoCreateTopicsEnable(streamPoolKafkaSettingsAutoCreateTopicsEnable)
  *                 .bootstrapServers(streamPoolKafkaSettingsBootstrapServers)
@@ -76,7 +77,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

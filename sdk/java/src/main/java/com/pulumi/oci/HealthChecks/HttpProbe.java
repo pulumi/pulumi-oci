@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHttpProbe = new HttpProbe(&#34;testHttpProbe&#34;, HttpProbeArgs.builder()        
+ *         var testHttpProbe = new HttpProbe("testHttpProbe", HttpProbeArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .protocol(httpProbeProtocol)
  *             .targets(httpProbeTargets)
@@ -63,7 +64,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

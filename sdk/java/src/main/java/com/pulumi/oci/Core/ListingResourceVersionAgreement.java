@@ -19,7 +19,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -40,14 +41,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement(&#34;testAppCatalogListingResourceVersionAgreement&#34;, AppCatalogListingResourceVersionAgreementArgs.builder()        
+ *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", AppCatalogListingResourceVersionAgreementArgs.builder()        
  *             .listingId(testListing.id())
  *             .listingResourceVersion(appCatalogListingResourceVersionAgreementListingResourceVersion)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

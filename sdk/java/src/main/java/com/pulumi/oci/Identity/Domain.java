@@ -21,27 +21,28 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
  * 
- * Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
- * {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
- * this Domain&#39;s {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
+ * Creates a new domain in the tenancy with domain home in {{@literal @}code homeRegion}. This is an asynchronous call - where, at start,
+ * {{@literal @}code lifecycleState} of this domain is set to CREATING and {{@literal @}code lifecycleDetails} to UPDATING. On domain creation completion
+ * this Domain&#39;s {{@literal @}code lifecycleState} will be set to ACTIVE and {{@literal @}code lifecycleDetails} to null.
  * 
  * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
  * the async operation&#39;s status.
  * 
  * After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
  * before using it.
- * If the domain&#39;s {@code displayName} already exists, returns 400 BAD REQUEST.
+ * If the domain&#39;s {{@literal @}code displayName} already exists, returns 400 BAD REQUEST.
  * If any one of admin related fields are provided and one of the following 3 fields
- * - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
+ * - {{@literal @}code adminEmail}, {{@literal @}code adminLastName} and {{@literal @}code adminUserName} - is not provided,
  *   returns 400 BAD REQUEST.
- * - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
+ * - If {{@literal @}code isNotificationBypassed} is NOT provided when admin information is provided,
  *   returns 400 BAD REQUEST.
  * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -62,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDomain = new Domain(&#34;testDomain&#34;, DomainArgs.builder()        
+ *         var testDomain = new Domain("testDomain", DomainArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .description(domainDescription)
  *             .displayName(domainDisplayName)
@@ -72,8 +73,8 @@ import javax.annotation.Nullable;
  *             .adminFirstName(domainAdminFirstName)
  *             .adminLastName(domainAdminLastName)
  *             .adminUserName(testUser.name())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .isHiddenOnLogin(domainIsHiddenOnLogin)
  *             .isNotificationBypassed(domainIsNotificationBypassed)
  *             .isPrimaryEmailRequired(domainIsPrimaryEmailRequired)
@@ -81,7 +82,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

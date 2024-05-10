@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement(&#34;testBdsInstanceOperationCertificateManagementsManagement&#34;, BdsInstanceOperationCertificateManagementsManagementArgs.builder()        
+ *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", BdsInstanceOperationCertificateManagementsManagementArgs.builder()        
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword)
  *             .services(bdsInstanceOperationCertificateManagementsManagementServices)
@@ -63,7 +64,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

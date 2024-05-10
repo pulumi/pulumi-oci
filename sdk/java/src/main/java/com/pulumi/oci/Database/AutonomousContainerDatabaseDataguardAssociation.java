@@ -31,7 +31,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -53,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation(&#34;testAutonomousContainerDatabaseDataguardAssociation&#34;, AutonomousContainerDatabaseDataguardAssociationArgs.builder()        
+ *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", AutonomousContainerDatabaseDataguardAssociationArgs.builder()        
  *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
  *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName)
  *             .protectionMode(autonomousContainerDatabaseDataguardAssociationProtectionMode)
@@ -79,7 +80,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

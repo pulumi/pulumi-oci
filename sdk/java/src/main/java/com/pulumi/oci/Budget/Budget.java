@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,16 +48,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBudget = new Budget(&#34;testBudget&#34;, BudgetArgs.builder()        
+ *         var testBudget = new Budget("testBudget", BudgetArgs.builder()        
  *             .amount(budgetAmount)
  *             .compartmentId(tenancyOcid)
  *             .resetPeriod(budgetResetPeriod)
  *             .budgetProcessingPeriodStartOffset(budgetBudgetProcessingPeriodStartOffset)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(budgetDescription)
  *             .displayName(budgetDisplayName)
  *             .endDate(budgetEndDate)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .processingPeriodType(budgetProcessingPeriodType)
  *             .startDate(budgetStartDate)
  *             .targetCompartmentId(testCompartment.id())
@@ -66,7 +67,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

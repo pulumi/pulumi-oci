@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTsigKey = new TsigKey(&#34;testTsigKey&#34;, TsigKeyArgs.builder()        
+ *         var testTsigKey = new TsigKey("testTsigKey", TsigKeyArgs.builder()        
  *             .algorithm(tsigKeyAlgorithm)
  *             .compartmentId(compartmentId)
  *             .name(tsigKeyName)
@@ -57,7 +58,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -42,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceCatalogAssociation = new CatalogAssociation(&#34;testServiceCatalogAssociation&#34;, CatalogAssociationArgs.builder()        
+ *         var testServiceCatalogAssociation = new CatalogAssociation("testServiceCatalogAssociation", CatalogAssociationArgs.builder()        
  *             .entityId(testEntity.id())
  *             .serviceCatalogId(testServiceCatalog.id())
  *             .entityType(serviceCatalogAssociationEntityType)
@@ -50,7 +51,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

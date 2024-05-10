@@ -32,7 +32,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudGateMapping = new DomainsCloudGateMapping(&#34;testCloudGateMapping&#34;, DomainsCloudGateMappingArgs.builder()        
+ *         var testCloudGateMapping = new DomainsCloudGateMapping("testCloudGateMapping", DomainsCloudGateMappingArgs.builder()        
  *             .cloudGate(DomainsCloudGateMappingCloudGateArgs.builder()
  *                 .value(cloudGateMappingCloudGateValue)
  *                 .build())
@@ -69,12 +70,12 @@ import javax.annotation.Nullable;
  *             .idcsEndpoint(testDomain.url())
  *             .policyName(testPolicy.name())
  *             .resourcePrefix(cloudGateMappingResourcePrefix)
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping")
  *             .server(DomainsCloudGateMappingServerArgs.builder()
  *                 .value(cloudGateMappingServerValue)
  *                 .build())
- *             .attributeSets(&#34;all&#34;)
- *             .attributes(&#34;&#34;)
+ *             .attributeSets("all")
+ *             .attributes("")
  *             .authorization(cloudGateMappingAuthorization)
  *             .description(cloudGateMappingDescription)
  *             .id(cloudGateMappingId)
@@ -95,7 +96,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

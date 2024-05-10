@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,21 +51,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrPlanExecution = new DrPlanExecution(&#34;testDrPlanExecution&#34;, DrPlanExecutionArgs.builder()        
+ *         var testDrPlanExecution = new DrPlanExecution("testDrPlanExecution", DrPlanExecutionArgs.builder()        
  *             .executionOptions(DrPlanExecutionExecutionOptionsArgs.builder()
  *                 .planExecutionType(drPlanExecutionExecutionOptionsPlanExecutionType)
  *                 .arePrechecksEnabled(drPlanExecutionExecutionOptionsArePrechecksEnabled)
  *                 .areWarningsIgnored(drPlanExecutionExecutionOptionsAreWarningsIgnored)
  *                 .build())
  *             .planId(testPlan.id())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(drPlanExecutionDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

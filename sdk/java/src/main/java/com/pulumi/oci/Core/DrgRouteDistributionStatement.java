@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement(&#34;testDrgRouteDistributionStatement&#34;, DrgRouteDistributionStatementArgs.builder()        
+ *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement("testDrgRouteDistributionStatement", DrgRouteDistributionStatementArgs.builder()        
  *             .drgRouteDistributionId(testDrgRouteDistribution.id())
  *             .action(drgRouteDistributionStatementStatementsAction)
  *             .matchCriteria(DrgRouteDistributionStatementMatchCriteriaArgs.builder()
@@ -58,7 +59,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

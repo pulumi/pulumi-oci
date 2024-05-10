@@ -22,12 +22,13 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
  * 
- * Creates a backup destination in an Exadata Cloud@Customer system.
+ * Creates a backup destination in an Exadata Cloud{@literal @}Customer system.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,13 +50,13 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackupDestination = new BackupDestination(&#34;testBackupDestination&#34;, BackupDestinationArgs.builder()        
+ *         var testBackupDestination = new BackupDestination("testBackupDestination", BackupDestinationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(backupDestinationDisplayName)
  *             .type(backupDestinationType)
  *             .connectionString(backupDestinationConnectionString)
  *             .definedTags(backupDestinationDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .localMountPointPath(backupDestinationLocalMountPointPath)
  *             .mountTypeDetails(BackupDestinationMountTypeDetailsArgs.builder()
  *                 .mountType(backupDestinationMountTypeDetailsMountType)
@@ -68,7 +69,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,9 +47,9 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testView = new View(&#34;testView&#34;, ViewArgs.builder()        
+ *         var testView = new View("testView", ViewArgs.builder()        
  *             .compartmentId(compartmentId)
- *             .scope(&#34;PRIVATE&#34;)
+ *             .scope("PRIVATE")
  *             .definedTags(viewDefinedTags)
  *             .displayName(viewDisplayName)
  *             .freeformTags(viewFreeformTags)
@@ -56,7 +57,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

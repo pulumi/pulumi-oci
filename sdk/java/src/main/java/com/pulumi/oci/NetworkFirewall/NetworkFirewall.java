@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewall = new NetworkFirewall(&#34;testNetworkFirewall&#34;, NetworkFirewallArgs.builder()        
+ *         var testNetworkFirewall = new NetworkFirewall("testNetworkFirewall", NetworkFirewallArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .subnetId(testSubnet.id())
  *             .availabilityDomain(networkFirewallAvailabilityDomain)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(networkFirewallDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipv4address(networkFirewallIpv4address)
  *             .ipv6address(networkFirewallIpv6address)
  *             .networkSecurityGroupIds(networkFirewallNetworkSecurityGroupIds)
@@ -60,7 +61,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

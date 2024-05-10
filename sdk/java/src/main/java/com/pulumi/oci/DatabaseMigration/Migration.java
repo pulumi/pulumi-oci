@@ -36,7 +36,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -88,7 +89,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMigration = new Migration(&#34;testMigration&#34;, MigrationArgs.builder()        
+ *         var testMigration = new Migration("testMigration", MigrationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .sourceDatabaseConnectionId(testConnection.id())
  *             .targetDatabaseConnectionId(testConnection.id())
@@ -136,7 +137,7 @@ import javax.annotation.Nullable;
  *                     .type(migrationDatapumpSettingsMetadataRemapsType)
  *                     .build())
  *                 .build())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(migrationDisplayName)
  *             .dumpTransferDetails(MigrationDumpTransferDetailsArgs.builder()
  *                 .source(MigrationDumpTransferDetailsSourceArgs.builder()
@@ -156,7 +157,7 @@ import javax.annotation.Nullable;
  *                 .isOmitExcludedTableFromReplication(migrationExcludeObjectsIsOmitExcludedTableFromReplication)
  *                 .type(migrationExcludeObjectsType)
  *                 .build())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .goldenGateDetails(MigrationGoldenGateDetailsArgs.builder()
  *                 .hub(MigrationGoldenGateDetailsHubArgs.builder()
  *                     .restAdminCredentials(MigrationGoldenGateDetailsHubRestAdminCredentialsArgs.builder()
@@ -235,7 +236,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

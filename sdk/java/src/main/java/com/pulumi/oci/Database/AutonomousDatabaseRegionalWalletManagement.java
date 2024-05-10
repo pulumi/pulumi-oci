@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseRegionalWalletManagement = new AutonomousDatabaseRegionalWalletManagement(&#34;testAutonomousDatabaseRegionalWalletManagement&#34;, AutonomousDatabaseRegionalWalletManagementArgs.builder()        
+ *         var testAutonomousDatabaseRegionalWalletManagement = new AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", AutonomousDatabaseRegionalWalletManagementArgs.builder()        
  *             .gracePeriod(autonomousDatabaseRegionalWalletManagementGracePeriod)
  *             .shouldRotate(autonomousDatabaseRegionalWalletManagementShouldRotate)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

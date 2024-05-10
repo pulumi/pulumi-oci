@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,21 +48,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser(&#34;testOperationsInsightsWarehouseUser&#34;, OperationsInsightsWarehouseUserArgs.builder()        
+ *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", OperationsInsightsWarehouseUserArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .connectionPassword(operationsInsightsWarehouseUserConnectionPassword)
  *             .isAwrDataAccess(operationsInsightsWarehouseUserIsAwrDataAccess)
  *             .name(operationsInsightsWarehouseUserName)
  *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEmDataAccess(operationsInsightsWarehouseUserIsEmDataAccess)
  *             .isOpsiDataAccess(operationsInsightsWarehouseUserIsOpsiDataAccess)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

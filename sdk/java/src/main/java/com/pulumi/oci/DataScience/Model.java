@@ -27,7 +27,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
+ *         var testModel = new Model("testModel", ModelArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .projectId(testProject.id())
  *             .customMetadataLists(ModelCustomMetadataListArgs.builder()
@@ -65,17 +66,18 @@ import javax.annotation.Nullable;
  *                 .key(modelDefinedMetadataListKey)
  *                 .value(modelDefinedMetadataListValue)
  *                 .build())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(modelDescription)
  *             .displayName(modelDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .inputSchema(modelInputSchema)
  *             .outputSchema(modelOutputSchema)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

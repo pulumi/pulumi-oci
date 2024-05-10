@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,20 +47,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAwrHubSource = new AwrHubSource(&#34;testAwrHubSource&#34;, AwrHubSourceArgs.builder()        
+ *         var testAwrHubSource = new AwrHubSource("testAwrHubSource", AwrHubSourceArgs.builder()        
  *             .awrHubId(testAwrHub.id())
  *             .compartmentId(compartmentId)
  *             .name(awrHubSourceName)
  *             .type(awrHubSourceType)
  *             .associatedOpsiId(testAssociatedOpsi.id())
  *             .associatedResourceId(testResource.id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

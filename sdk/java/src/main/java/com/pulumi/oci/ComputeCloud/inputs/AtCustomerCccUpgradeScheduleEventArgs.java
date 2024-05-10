@@ -17,14 +17,14 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
     public static final AtCustomerCccUpgradeScheduleEventArgs Empty = new AtCustomerCccUpgradeScheduleEventArgs();
 
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     @Import(name="description", required=true)
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
      * 
      */
     public Output<String> description() {
@@ -77,14 +77,14 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+     * (Updatable) The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
     @Import(name="timeStart", required=true)
     private Output<String> timeStart;
 
     /**
-     * @return (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+     * @return (Updatable) The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
     public Output<String> timeStart() {
@@ -120,7 +120,7 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
         }
 
         /**
-         * @param timeStart (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+         * @param timeStart (Updatable) The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AtCustomerCccUpgradeScheduleEventArgs extends com.pulumi.reso
         }
 
         /**
-         * @param timeStart (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+         * @param timeStart (Updatable) The date and time when the Compute Cloud{@literal @}Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
          * 
          * @return builder
          * 

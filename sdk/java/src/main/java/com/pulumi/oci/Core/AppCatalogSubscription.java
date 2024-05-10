@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAppCatalogSubscription = new AppCatalogSubscription(&#34;testAppCatalogSubscription&#34;, AppCatalogSubscriptionArgs.builder()        
+ *         var testAppCatalogSubscription = new AppCatalogSubscription("testAppCatalogSubscription", AppCatalogSubscriptionArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .listingId(testListing.id())
  *             .listingResourceVersion(appCatalogSubscriptionListingResourceVersion)
@@ -55,7 +56,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

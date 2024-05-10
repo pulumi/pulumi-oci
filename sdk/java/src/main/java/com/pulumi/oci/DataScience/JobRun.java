@@ -32,7 +32,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -56,14 +57,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJobRun = new JobRun(&#34;testJobRun&#34;, JobRunArgs.builder()        
+ *         var testJobRun = new JobRun("testJobRun", JobRunArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .jobId(testJob.id())
  *             .projectId(testProject.id())
  *             .asynchronous(asynchronous)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(jobRunDisplayName)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .jobConfigurationOverrideDetails(JobRunJobConfigurationOverrideDetailsArgs.builder()
  *                 .jobType(jobRunJobConfigurationOverrideDetailsJobType)
  *                 .commandLineArguments(jobRunJobConfigurationOverrideDetailsCommandLineArguments)
@@ -88,7 +89,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

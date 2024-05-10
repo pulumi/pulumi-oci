@@ -37,7 +37,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -61,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceManagement = new ManagedInstanceManagement(&#34;testManagedInstanceManagement&#34;, ManagedInstanceManagementArgs.builder()        
+ *         var testManagedInstanceManagement = new ManagedInstanceManagement("testManagedInstanceManagement", ManagedInstanceManagementArgs.builder()        
  *             .managedInstanceId(testManagedInstance.id())
  *             .parentSoftwareSource(ManagedInstanceManagementParentSoftwareSourceArgs.builder()
  *                 .id(testParentSoftwareSource.id())
@@ -79,7 +80,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

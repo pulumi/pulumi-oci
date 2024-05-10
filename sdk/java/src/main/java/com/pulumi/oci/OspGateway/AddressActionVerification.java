@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAddressActionVerification = new AddressActionVerification(&#34;testAddressActionVerification&#34;, AddressActionVerificationArgs.builder()        
+ *         var testAddressActionVerification = new AddressActionVerification("testAddressActionVerification", AddressActionVerificationArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .ospHomeRegion(addressActionVerificationOspHomeRegion)
  *             .addressKey(addressActionVerificationAddressKey)
@@ -77,7 +78,8 @@ import javax.annotation.Nullable;
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

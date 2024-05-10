@@ -64,14 +64,14 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     @Import(name="connectionState")
     private @Nullable Output<String> connectionState;
 
     /**
-     * @return (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+     * @return (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
     public Optional<Output<String>> connectionState() {
@@ -94,14 +94,14 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+     * @return (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -109,14 +109,14 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+     * @return (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -139,7 +139,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +149,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+     * @return (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +255,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param connectionState (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+         * @param connectionState (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param connectionState (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
+         * @param connectionState (Updatable) The current connection state of the Compute Cloud{@literal @}Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
+         * @param description (Updatable) A mutable client-meaningful text description of the Compute Cloud{@literal @}Customer infrastructure. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+         * @param displayName (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
+         * @param displayName (Updatable) The name that will be used to display the Compute Cloud{@literal @}Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -374,7 +374,7 @@ public final class AtCustomerCccInfrastructureArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
+         * @param subnetId (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud{@literal @}Customer infrastructure.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

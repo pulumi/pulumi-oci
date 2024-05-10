@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,19 +50,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOauthClientCertificate = new DomainsOauthClientCertificate(&#34;testOauthClientCertificate&#34;, DomainsOauthClientCertificateArgs.builder()        
+ *         var testOauthClientCertificate = new DomainsOauthClientCertificate("testOauthClientCertificate", DomainsOauthClientCertificateArgs.builder()        
  *             .certificateAlias(oauthClientCertificateCertificateAlias)
  *             .idcsEndpoint(testDomain.url())
- *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate&#34;)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate")
  *             .x509base64certificate(oauthClientCertificateX509base64certificate)
  *             .authorization(oauthClientCertificateAuthorization)
- *             .externalId(&#34;externalId&#34;)
+ *             .externalId("externalId")
  *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

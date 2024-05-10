@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,23 +45,24 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAgentDependency = new AgentDependency(&#34;testAgentDependency&#34;, AgentDependencyArgs.builder()        
+ *         var testAgentDependency = new AgentDependency("testAgentDependency", AgentDependencyArgs.builder()        
  *             .bucket(agentDependencyBucket)
  *             .compartmentId(compartmentId)
  *             .dependencyName(agentDependencyDependencyName)
  *             .displayName(agentDependencyDisplayName)
  *             .namespace(agentDependencyNamespace)
  *             .object(agentDependencyObject)
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .dependencyVersion(agentDependencyDependencyVersion)
  *             .description(agentDependencyDescription)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .systemTags(agentDependencySystemTags)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

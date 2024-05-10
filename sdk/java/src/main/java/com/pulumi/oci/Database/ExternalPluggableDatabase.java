@@ -28,7 +28,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -49,18 +50,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalPluggableDatabase = new ExternalPluggableDatabase(&#34;testExternalPluggableDatabase&#34;, ExternalPluggableDatabaseArgs.builder()        
+ *         var testExternalPluggableDatabase = new ExternalPluggableDatabase("testExternalPluggableDatabase", ExternalPluggableDatabaseArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(externalPluggableDatabaseDisplayName)
  *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
  *             .definedTags(externalPluggableDatabaseDefinedTags)
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .freeformTags(Map.of("Department", "Finance"))
  *             .sourceId(testSource.id())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

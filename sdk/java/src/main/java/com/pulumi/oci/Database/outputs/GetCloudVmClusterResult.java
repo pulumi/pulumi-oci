@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterDataCollectionOption;
+import com.pulumi.oci.Database.outputs.GetCloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterIormConfigCach;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -100,6 +101,11 @@ public final class GetCloudVmClusterResult {
      * 
      */
     private String domain;
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    private List<GetCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -378,6 +384,13 @@ public final class GetCloudVmClusterResult {
         return this.domain;
     }
     /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public List<GetCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -626,6 +639,7 @@ public final class GetCloudVmClusterResult {
         private String diskRedundancy;
         private String displayName;
         private String domain;
+        private List<GetCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
         private Map<String,Object> freeformTags;
         private String giVersion;
         private String hostname;
@@ -679,6 +693,7 @@ public final class GetCloudVmClusterResult {
     	      this.diskRedundancy = defaults.diskRedundancy;
     	      this.displayName = defaults.displayName;
     	      this.domain = defaults.domain;
+    	      this.fileSystemConfigurationDetails = defaults.fileSystemConfigurationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.giVersion = defaults.giVersion;
     	      this.hostname = defaults.hostname;
@@ -865,6 +880,17 @@ public final class GetCloudVmClusterResult {
             }
             this.domain = domain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder fileSystemConfigurationDetails(List<GetCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            if (fileSystemConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "fileSystemConfigurationDetails");
+            }
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            return this;
+        }
+        public Builder fileSystemConfigurationDetails(GetCloudVmClusterFileSystemConfigurationDetail... fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -1157,6 +1183,7 @@ public final class GetCloudVmClusterResult {
             _resultValue.diskRedundancy = diskRedundancy;
             _resultValue.displayName = displayName;
             _resultValue.domain = domain;
+            _resultValue.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.giVersion = giVersion;
             _resultValue.hostname = hostname;

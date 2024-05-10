@@ -34,6 +34,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
+        /// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        /// </summary>
+        public readonly int MaxConnections;
+        /// <summary>
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         /// </summary>
         public readonly string Name;
@@ -63,6 +67,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string loadBalancerId,
 
+            int maxConnections,
+
             string name,
 
             bool offline,
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             Drain = drain;
             IpAddress = ipAddress;
             LoadBalancerId = loadBalancerId;
+            MaxConnections = maxConnections;
             Name = name;
             Offline = offline;
             Port = port;

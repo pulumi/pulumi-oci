@@ -543,6 +543,8 @@ class DrPlanPlanGroup(dict):
         suggest = None
         if key == "displayName":
             suggest = "display_name"
+        elif key == "isPauseEnabled":
+            suggest = "is_pause_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DrPlanPlanGroup. Access the value via the '{suggest}' property getter instead.")
@@ -558,11 +560,13 @@ class DrPlanPlanGroup(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
+                 is_pause_enabled: Optional[bool] = None,
                  steps: Optional[Sequence['outputs.DrPlanPlanGroupStep']] = None,
                  type: Optional[str] = None):
         """
         :param str display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param Sequence['DrPlanPlanGroupStepArgs'] steps: The list of steps in the group.
         :param str type: The type of DR plan to be created. 
                
@@ -574,6 +578,8 @@ class DrPlanPlanGroup(dict):
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_pause_enabled is not None:
+            pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
         if steps is not None:
             pulumi.set(__self__, "steps", steps)
         if type is not None:
@@ -594,6 +600,14 @@ class DrPlanPlanGroup(dict):
         The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isPauseEnabled")
+    def is_pause_enabled(self) -> Optional[bool]:
+        """
+        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        """
+        return pulumi.get(self, "is_pause_enabled")
 
     @property
     @pulumi.getter
@@ -2805,16 +2819,19 @@ class GetDrPlanPlanGroupResult(dict):
     def __init__(__self__, *,
                  display_name: str,
                  id: str,
+                 is_pause_enabled: bool,
                  steps: Sequence['outputs.GetDrPlanPlanGroupStepResult'],
                  type: str):
         """
         :param str display_name: The display name of the group.  Example: `DATABASE_SWITCHOVER`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param Sequence['GetDrPlanPlanGroupStepArgs'] steps: The list of steps in the group.
         :param str type: The type of the DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
         pulumi.set(__self__, "steps", steps)
         pulumi.set(__self__, "type", type)
 
@@ -2833,6 +2850,14 @@ class GetDrPlanPlanGroupResult(dict):
         The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isPauseEnabled")
+    def is_pause_enabled(self) -> bool:
+        """
+        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        """
+        return pulumi.get(self, "is_pause_enabled")
 
     @property
     @pulumi.getter
@@ -3292,16 +3317,19 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
     def __init__(__self__, *,
                  display_name: str,
                  id: str,
+                 is_pause_enabled: bool,
                  steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult'],
                  type: str):
         """
         :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        :param bool is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepArgs'] steps: The list of steps in the group.
         :param str type: The type of the DR plan.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
         pulumi.set(__self__, "steps", steps)
         pulumi.set(__self__, "type", type)
 
@@ -3320,6 +3348,14 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
         The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isPauseEnabled")
+    def is_pause_enabled(self) -> bool:
+        """
+        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        """
+        return pulumi.get(self, "is_pause_enabled")
 
     @property
     @pulumi.getter

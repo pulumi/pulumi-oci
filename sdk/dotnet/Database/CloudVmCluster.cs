@@ -49,6 +49,14 @@ namespace Pulumi.Oci.Database
     ///         DbServers = cloudVmClusterDbServers,
     ///         DefinedTags = cloudVmClusterDefinedTags,
     ///         Domain = cloudVmClusterDomain,
+    ///         FileSystemConfigurationDetails = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.CloudVmClusterFileSystemConfigurationDetailArgs
+    ///             {
+    ///                 FileSystemSizeGb = cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
+    ///                 MountPoint = cloudVmClusterFileSystemConfigurationDetailsMountPoint,
+    ///             },
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -185,6 +193,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        [Output("fileSystemConfigurationDetails")]
+        public Output<ImmutableArray<Outputs.CloudVmClusterFileSystemConfigurationDetail>> FileSystemConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -539,6 +553,18 @@ namespace Pulumi.Oci.Database
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        [Input("fileSystemConfigurationDetails")]
+        private InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailArgs>? _fileSystemConfigurationDetails;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailArgs> FileSystemConfigurationDetails
+        {
+            get => _fileSystemConfigurationDetails ?? (_fileSystemConfigurationDetails = new InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailArgs>());
+            set => _fileSystemConfigurationDetails = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -793,6 +819,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
+
+        [Input("fileSystemConfigurationDetails")]
+        private InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailGetArgs>? _fileSystemConfigurationDetails;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailGetArgs> FileSystemConfigurationDetails
+        {
+            get => _fileSystemConfigurationDetails ?? (_fileSystemConfigurationDetails = new InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailGetArgs>());
+            set => _fileSystemConfigurationDetails = value;
+        }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

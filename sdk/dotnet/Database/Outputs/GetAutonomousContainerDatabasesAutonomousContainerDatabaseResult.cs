@@ -132,13 +132,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
         /// The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
-        /// =======
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
         /// </summary>
         public readonly string NetServicesArchitecture;
         /// <summary>

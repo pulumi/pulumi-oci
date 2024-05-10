@@ -40,6 +40,11 @@ public final class GetBackendsBackend {
      */
     private String loadBalancerId;
     /**
+     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    private Integer maxConnections;
+    /**
      * @return A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
@@ -98,6 +103,13 @@ public final class GetBackendsBackend {
         return this.loadBalancerId;
     }
     /**
+     * @return The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    public Integer maxConnections() {
+        return this.maxConnections;
+    }
+    /**
      * @return A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      * 
      */
@@ -143,6 +155,7 @@ public final class GetBackendsBackend {
         private Boolean drain;
         private String ipAddress;
         private String loadBalancerId;
+        private Integer maxConnections;
         private String name;
         private Boolean offline;
         private Integer port;
@@ -156,6 +169,7 @@ public final class GetBackendsBackend {
     	      this.drain = defaults.drain;
     	      this.ipAddress = defaults.ipAddress;
     	      this.loadBalancerId = defaults.loadBalancerId;
+    	      this.maxConnections = defaults.maxConnections;
     	      this.name = defaults.name;
     	      this.offline = defaults.offline;
     	      this.port = defaults.port;
@@ -199,6 +213,14 @@ public final class GetBackendsBackend {
               throw new MissingRequiredPropertyException("GetBackendsBackend", "loadBalancerId");
             }
             this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxConnections(Integer maxConnections) {
+            if (maxConnections == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "maxConnections");
+            }
+            this.maxConnections = maxConnections;
             return this;
         }
         @CustomType.Setter
@@ -248,6 +270,7 @@ public final class GetBackendsBackend {
             _resultValue.drain = drain;
             _resultValue.ipAddress = ipAddress;
             _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.maxConnections = maxConnections;
             _resultValue.name = name;
             _resultValue.offline = offline;
             _resultValue.port = port;

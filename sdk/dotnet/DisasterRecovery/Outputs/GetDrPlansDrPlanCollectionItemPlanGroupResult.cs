@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        /// </summary>
+        public readonly bool IsPauseEnabled;
+        /// <summary>
         /// The list of steps in the group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult> Steps;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string id,
 
+            bool isPauseEnabled,
+
             ImmutableArray<Outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult> steps,
 
             string type)
         {
             DisplayName = displayName;
             Id = id;
+            IsPauseEnabled = isPauseEnabled;
             Steps = steps;
             Type = type;
         }

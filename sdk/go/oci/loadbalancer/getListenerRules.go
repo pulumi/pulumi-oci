@@ -60,7 +60,7 @@ func GetListenerRules(ctx *pulumi.Context, args *GetListenerRulesArgs, opts ...p
 // A collection of arguments for invoking getListenerRules.
 type GetListenerRulesArgs struct {
 	Filters []GetListenerRulesFilter `pulumi:"filters"`
-	// The name of the listener the rules are associated with.
+	// The name of the listener the rules are associated with. Example: `exampleListener`
 	ListenerName string `pulumi:"listenerName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
@@ -93,7 +93,7 @@ func GetListenerRulesOutput(ctx *pulumi.Context, args GetListenerRulesOutputArgs
 // A collection of arguments for invoking getListenerRules.
 type GetListenerRulesOutputArgs struct {
 	Filters GetListenerRulesFilterArrayInput `pulumi:"filters"`
-	// The name of the listener the rules are associated with.
+	// The name of the listener the rules are associated with. Example: `exampleListener`
 	ListenerName pulumi.StringInput `pulumi:"listenerName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`

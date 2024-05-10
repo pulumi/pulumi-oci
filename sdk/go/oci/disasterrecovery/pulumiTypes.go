@@ -774,6 +774,8 @@ type DrPlanPlanGroup struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id *string `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled *bool `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps []DrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of DR plan to be created.
@@ -799,6 +801,8 @@ type DrPlanPlanGroupArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringPtrInput `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled pulumi.BoolPtrInput `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps DrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of DR plan to be created.
@@ -867,6 +871,11 @@ func (o DrPlanPlanGroupOutput) DisplayName() pulumi.StringPtrOutput {
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o DrPlanPlanGroupOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+func (o DrPlanPlanGroupOutput) IsPauseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DrPlanPlanGroup) *bool { return v.IsPauseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The list of steps in the group.
@@ -5046,6 +5055,8 @@ type GetDrPlanPlanGroup struct {
 	DisplayName string `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled bool `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps []GetDrPlanPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
@@ -5068,6 +5079,8 @@ type GetDrPlanPlanGroupArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled pulumi.BoolInput `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps GetDrPlanPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
@@ -5133,6 +5146,11 @@ func (o GetDrPlanPlanGroupOutput) DisplayName() pulumi.StringOutput {
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlanPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+func (o GetDrPlanPlanGroupOutput) IsPauseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrPlanPlanGroup) bool { return v.IsPauseEnabled }).(pulumi.BoolOutput)
 }
 
 // The list of steps in the group.
@@ -5942,6 +5960,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroup struct {
 	DisplayName string `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled bool `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps []GetDrPlansDrPlanCollectionItemPlanGroupStep `pulumi:"steps"`
 	// The type of the DR plan.
@@ -5964,6 +5984,8 @@ type GetDrPlansDrPlanCollectionItemPlanGroupArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
+	// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+	IsPauseEnabled pulumi.BoolInput `pulumi:"isPauseEnabled"`
 	// The list of steps in the group.
 	Steps GetDrPlansDrPlanCollectionItemPlanGroupStepArrayInput `pulumi:"steps"`
 	// The type of the DR plan.
@@ -6029,6 +6051,11 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) DisplayName() pulumi.Stri
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+func (o GetDrPlansDrPlanCollectionItemPlanGroupOutput) IsPauseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroup) bool { return v.IsPauseEnabled }).(pulumi.BoolOutput)
 }
 
 // The list of steps in the group.

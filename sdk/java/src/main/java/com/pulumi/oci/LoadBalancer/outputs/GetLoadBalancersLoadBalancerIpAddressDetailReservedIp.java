@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
     /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
+     * @return Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      */
     private String id;
 
     private GetLoadBalancersLoadBalancerIpAddressDetailReservedIp() {}
     /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
+     * @return Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      */
     public String id() {

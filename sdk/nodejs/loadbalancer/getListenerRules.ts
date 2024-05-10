@@ -45,7 +45,7 @@ export function getListenerRules(args: GetListenerRulesArgs, opts?: pulumi.Invok
 export interface GetListenerRulesArgs {
     filters?: inputs.LoadBalancer.GetListenerRulesFilter[];
     /**
-     * The name of the listener the rules are associated with.
+     * The name of the listener the rules are associated with. Example: `exampleListener`
      */
     listenerName: string;
     /**
@@ -103,7 +103,7 @@ export function getListenerRulesOutput(args: GetListenerRulesOutputArgs, opts?: 
 export interface GetListenerRulesOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetListenerRulesFilterArgs>[]>;
     /**
-     * The name of the listener the rules are associated with.
+     * The name of the listener the rules are associated with. Example: `exampleListener`
      */
     listenerName: pulumi.Input<string>;
     /**

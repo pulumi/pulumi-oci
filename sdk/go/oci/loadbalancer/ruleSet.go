@@ -44,10 +44,17 @@ import (
 //								Operator:       pulumi.Any(ruleSetItemsConditionsOperator),
 //							},
 //						},
+//						DefaultMaxConnections:   pulumi.Any(ruleSetItemsDefaultMaxConnections),
 //						Description:             pulumi.Any(ruleSetItemsDescription),
 //						Header:                  pulumi.Any(ruleSetItemsHeader),
 //						HttpLargeHeaderSizeInKb: pulumi.Any(ruleSetItemsHttpLargeHeaderSizeInKb),
-//						Prefix:                  pulumi.Any(ruleSetItemsPrefix),
+//						IpMaxConnections: loadbalancer.RuleSetItemIpMaxConnectionArray{
+//							&loadbalancer.RuleSetItemIpMaxConnectionArgs{
+//								IpAddresses:    pulumi.Any(ruleSetItemsIpMaxConnectionsIpAddresses),
+//								MaxConnections: pulumi.Any(ruleSetItemsIpMaxConnectionsMaxConnections),
+//							},
+//						},
+//						Prefix: pulumi.Any(ruleSetItemsPrefix),
 //						RedirectUri: &loadbalancer.RuleSetItemRedirectUriArgs{
 //							Host:     pulumi.Any(ruleSetItemsRedirectUriHost),
 //							Path:     pulumi.Any(ruleSetItemsRedirectUriPath),

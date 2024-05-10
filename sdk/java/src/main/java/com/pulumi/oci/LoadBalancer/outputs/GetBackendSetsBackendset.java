@@ -10,12 +10,18 @@ import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetHealthChecker
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetSessionPersistenceConfiguration;
 import com.pulumi.oci.LoadBalancer.outputs.GetBackendSetsBackendsetSslConfiguration;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetsBackendset {
+    /**
+     * @return The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    private Integer backendMaxConnections;
     private List<GetBackendSetsBackendsetBackend> backends;
     /**
      * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -56,6 +62,13 @@ public final class GetBackendSetsBackendset {
     private String state;
 
     private GetBackendSetsBackendset() {}
+    /**
+     * @return The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    public Integer backendMaxConnections() {
+        return this.backendMaxConnections;
+    }
     public List<GetBackendSetsBackendsetBackend> backends() {
         return this.backends;
     }
@@ -124,6 +137,7 @@ public final class GetBackendSetsBackendset {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer backendMaxConnections;
         private List<GetBackendSetsBackendsetBackend> backends;
         private List<GetBackendSetsBackendsetHealthChecker> healthCheckers;
         private String id;
@@ -137,6 +151,7 @@ public final class GetBackendSetsBackendset {
         public Builder() {}
         public Builder(GetBackendSetsBackendset defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backendMaxConnections = defaults.backendMaxConnections;
     	      this.backends = defaults.backends;
     	      this.healthCheckers = defaults.healthCheckers;
     	      this.id = defaults.id;
@@ -149,6 +164,14 @@ public final class GetBackendSetsBackendset {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder backendMaxConnections(Integer backendMaxConnections) {
+            if (backendMaxConnections == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendset", "backendMaxConnections");
+            }
+            this.backendMaxConnections = backendMaxConnections;
+            return this;
+        }
         @CustomType.Setter
         public Builder backends(List<GetBackendSetsBackendsetBackend> backends) {
             if (backends == null) {
@@ -246,6 +269,7 @@ public final class GetBackendSetsBackendset {
         }
         public GetBackendSetsBackendset build() {
             final var _resultValue = new GetBackendSetsBackendset();
+            _resultValue.backendMaxConnections = backendMaxConnections;
             _resultValue.backends = backends;
             _resultValue.healthCheckers = healthCheckers;
             _resultValue.id = id;

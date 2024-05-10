@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanPlanGroupStep;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +24,11 @@ public final class DrPlanPlanGroup {
      * 
      */
     private @Nullable String id;
+    /**
+     * @return A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    private @Nullable Boolean isPauseEnabled;
     /**
      * @return The list of steps in the group.
      * 
@@ -53,6 +59,13 @@ public final class DrPlanPlanGroup {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    public Optional<Boolean> isPauseEnabled() {
+        return Optional.ofNullable(this.isPauseEnabled);
+    }
+    /**
      * @return The list of steps in the group.
      * 
      */
@@ -81,6 +94,7 @@ public final class DrPlanPlanGroup {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable String id;
+        private @Nullable Boolean isPauseEnabled;
         private @Nullable List<DrPlanPlanGroupStep> steps;
         private @Nullable String type;
         public Builder() {}
@@ -88,6 +102,7 @@ public final class DrPlanPlanGroup {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isPauseEnabled = defaults.isPauseEnabled;
     	      this.steps = defaults.steps;
     	      this.type = defaults.type;
         }
@@ -102,6 +117,12 @@ public final class DrPlanPlanGroup {
         public Builder id(@Nullable String id) {
 
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPauseEnabled(@Nullable Boolean isPauseEnabled) {
+
+            this.isPauseEnabled = isPauseEnabled;
             return this;
         }
         @CustomType.Setter
@@ -123,6 +144,7 @@ public final class DrPlanPlanGroup {
             final var _resultValue = new DrPlanPlanGroup();
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isPauseEnabled = isPauseEnabled;
             _resultValue.steps = steps;
             _resultValue.type = type;
             return _resultValue;

@@ -6,6 +6,7 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanPlanGroupStep;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetDrPlanPlanGroup {
      * 
      */
     private String id;
+    /**
+     * @return A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    private Boolean isPauseEnabled;
     /**
      * @return The list of steps in the group.
      * 
@@ -49,6 +55,13 @@ public final class GetDrPlanPlanGroup {
         return this.id;
     }
     /**
+     * @return A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    public Boolean isPauseEnabled() {
+        return this.isPauseEnabled;
+    }
+    /**
      * @return The list of steps in the group.
      * 
      */
@@ -74,6 +87,7 @@ public final class GetDrPlanPlanGroup {
     public static final class Builder {
         private String displayName;
         private String id;
+        private Boolean isPauseEnabled;
         private List<GetDrPlanPlanGroupStep> steps;
         private String type;
         public Builder() {}
@@ -81,6 +95,7 @@ public final class GetDrPlanPlanGroup {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isPauseEnabled = defaults.isPauseEnabled;
     	      this.steps = defaults.steps;
     	      this.type = defaults.type;
         }
@@ -99,6 +114,14 @@ public final class GetDrPlanPlanGroup {
               throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPauseEnabled(Boolean isPauseEnabled) {
+            if (isPauseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "isPauseEnabled");
+            }
+            this.isPauseEnabled = isPauseEnabled;
             return this;
         }
         @CustomType.Setter
@@ -124,6 +147,7 @@ public final class GetDrPlanPlanGroup {
             final var _resultValue = new GetDrPlanPlanGroup();
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isPauseEnabled = isPauseEnabled;
             _resultValue.steps = steps;
             _resultValue.type = type;
             return _resultValue;

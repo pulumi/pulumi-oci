@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.CloudExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureCustomerContact;
+import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
@@ -268,6 +269,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<String> dbServerVersion() {
         return this.dbServerVersion;
+    }
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    @Export(name="definedFileSystemConfigurations", refs={List.class,CloudExadataInfrastructureDefinedFileSystemConfiguration.class}, tree="[0,1]")
+    private Output<List<CloudExadataInfrastructureDefinedFileSystemConfiguration>> definedFileSystemConfigurations;
+
+    /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    public Output<List<CloudExadataInfrastructureDefinedFileSystemConfiguration>> definedFileSystemConfigurations() {
+        return this.definedFileSystemConfigurations;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

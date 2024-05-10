@@ -22,7 +22,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -77,6 +77,9 @@ class GetCloudVmClusterResult:
         if domain and not isinstance(domain, str):
             raise TypeError("Expected argument 'domain' to be a str")
         pulumi.set(__self__, "domain", domain)
+        if file_system_configuration_details and not isinstance(file_system_configuration_details, list):
+            raise TypeError("Expected argument 'file_system_configuration_details' to be a list")
+        pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -311,6 +314,14 @@ class GetCloudVmClusterResult:
         The domain name for the cloud VM cluster.
         """
         return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Sequence['outputs.GetCloudVmClusterFileSystemConfigurationDetailResult']:
+        """
+        Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -591,6 +602,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             disk_redundancy=self.disk_redundancy,
             display_name=self.display_name,
             domain=self.domain,
+            file_system_configuration_details=self.file_system_configuration_details,
             freeform_tags=self.freeform_tags,
             gi_version=self.gi_version,
             hostname=self.hostname,
@@ -668,6 +680,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         disk_redundancy=pulumi.get(__ret__, 'disk_redundancy'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain=pulumi.get(__ret__, 'domain'),
+        file_system_configuration_details=pulumi.get(__ret__, 'file_system_configuration_details'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         gi_version=pulumi.get(__ret__, 'gi_version'),
         hostname=pulumi.get(__ret__, 'hostname'),

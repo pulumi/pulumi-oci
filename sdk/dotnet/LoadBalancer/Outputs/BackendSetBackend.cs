@@ -14,17 +14,25 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class BackendSetBackend
     {
         /// <summary>
-        /// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// 
+        /// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+        /// 
+        /// Example: `false`
         /// </summary>
         public readonly bool? Backup;
         /// <summary>
-        /// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         /// </summary>
         public readonly bool? Drain;
         /// <summary>
-        /// The IP address of the backend server.  Example: `10.0.0.3`
+        /// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         /// </summary>
         public readonly string IpAddress;
+        /// <summary>
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        /// </summary>
+        public readonly int? MaxConnections;
         /// <summary>
         /// A friendly name for the backend set. It must be unique and it cannot be changed.
         /// 
@@ -34,7 +42,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
         public readonly bool? Offline;
         /// <summary>
@@ -42,7 +50,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        /// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         /// </summary>
         public readonly int? Weight;
 
@@ -53,6 +61,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             bool? drain,
 
             string ipAddress,
+
+            int? maxConnections,
 
             string? name,
 
@@ -65,6 +75,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             Backup = backup;
             Drain = drain;
             IpAddress = ipAddress;
+            MaxConnections = maxConnections;
             Name = name;
             Offline = offline;
             Port = port;

@@ -92,7 +92,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// The name of the listener the rules are associated with.
+        /// The name of the listener the rules are associated with. Example: `example_listener`
         /// </summary>
         [Input("listenerName", required: true)]
         public string ListenerName { get; set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// The name of the listener the rules are associated with.
+        /// The name of the listener the rules are associated with. Example: `example_listener`
         /// </summary>
         [Input("listenerName", required: true)]
         public Input<string> ListenerName { get; set; } = null!;

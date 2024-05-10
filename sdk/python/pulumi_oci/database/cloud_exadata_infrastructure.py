@@ -216,6 +216,7 @@ class _CloudExadataInfrastructureState:
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  db_server_version: Optional[pulumi.Input[str]] = None,
+                 defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -251,6 +252,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -301,6 +303,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_server_version is not None:
             pulumi.set(__self__, "db_server_version", db_server_version)
+        if defined_file_system_configurations is not None:
+            pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -487,6 +491,18 @@ class _CloudExadataInfrastructureState:
     @db_server_version.setter
     def db_server_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_server_version", value)
+
+    @property
+    @pulumi.getter(name="definedFileSystemConfigurations")
+    def defined_file_system_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]:
+        """
+        Details of the file system configuration of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "defined_file_system_configurations")
+
+    @defined_file_system_configurations.setter
+    def defined_file_system_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]):
+        pulumi.set(self, "defined_file_system_configurations", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -951,6 +967,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["data_storage_size_in_tbs"] = None
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["db_server_version"] = None
+            __props__.__dict__["defined_file_system_configurations"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["max_cpu_count"] = None
@@ -988,6 +1005,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             db_server_version: Optional[pulumi.Input[str]] = None,
+            defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1028,6 +1046,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[str] db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1070,6 +1089,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
         __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
         __props__.__dict__["db_server_version"] = db_server_version
+        __props__.__dict__["defined_file_system_configurations"] = defined_file_system_configurations
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -1188,6 +1208,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "db_server_version")
+
+    @property
+    @pulumi.getter(name="definedFileSystemConfigurations")
+    def defined_file_system_configurations(self) -> pulumi.Output[Sequence['outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration']]:
+        """
+        Details of the file system configuration of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "defined_file_system_configurations")
 
     @property
     @pulumi.getter(name="definedTags")

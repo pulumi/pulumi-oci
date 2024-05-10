@@ -48,17 +48,9 @@ public final class LoadBalancerIpAddressDetailArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.isPublic);
     }
 
-    /**
-     * Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-     * 
-     */
     @Import(name="reservedIps")
     private @Nullable Output<List<LoadBalancerIpAddressDetailReservedIpArgs>> reservedIps;
 
-    /**
-     * @return Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-     * 
-     */
     public Optional<Output<List<LoadBalancerIpAddressDetailReservedIpArgs>>> reservedIps() {
         return Optional.ofNullable(this.reservedIps);
     }
@@ -131,33 +123,15 @@ public final class LoadBalancerIpAddressDetailArgs extends com.pulumi.resources.
             return isPublic(Output.of(isPublic));
         }
 
-        /**
-         * @param reservedIps Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reservedIps(@Nullable Output<List<LoadBalancerIpAddressDetailReservedIpArgs>> reservedIps) {
             $.reservedIps = reservedIps;
             return this;
         }
 
-        /**
-         * @param reservedIps Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reservedIps(List<LoadBalancerIpAddressDetailReservedIpArgs> reservedIps) {
             return reservedIps(Output.of(reservedIps));
         }
 
-        /**
-         * @param reservedIps Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reservedIps(LoadBalancerIpAddressDetailReservedIpArgs... reservedIps) {
             return reservedIps(List.of(reservedIps));
         }

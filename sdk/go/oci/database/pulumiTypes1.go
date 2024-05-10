@@ -13,6 +13,824 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetManagedPreferredCredentialsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedPreferredCredentialsFilterInput is an input type that accepts GetManagedPreferredCredentialsFilterArgs and GetManagedPreferredCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsFilterInput` via:
+//
+//	GetManagedPreferredCredentialsFilterArgs{...}
+type GetManagedPreferredCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsFilterOutput() GetManagedPreferredCredentialsFilterOutput
+	ToGetManagedPreferredCredentialsFilterOutputWithContext(context.Context) GetManagedPreferredCredentialsFilterOutput
+}
+
+type GetManagedPreferredCredentialsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedPreferredCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsFilterArgs) ToGetManagedPreferredCredentialsFilterOutput() GetManagedPreferredCredentialsFilterOutput {
+	return i.ToGetManagedPreferredCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsFilterArgs) ToGetManagedPreferredCredentialsFilterOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsFilterOutput)
+}
+
+// GetManagedPreferredCredentialsFilterArrayInput is an input type that accepts GetManagedPreferredCredentialsFilterArray and GetManagedPreferredCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsFilterArrayInput` via:
+//
+//	GetManagedPreferredCredentialsFilterArray{ GetManagedPreferredCredentialsFilterArgs{...} }
+type GetManagedPreferredCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsFilterArrayOutput() GetManagedPreferredCredentialsFilterArrayOutput
+	ToGetManagedPreferredCredentialsFilterArrayOutputWithContext(context.Context) GetManagedPreferredCredentialsFilterArrayOutput
+}
+
+type GetManagedPreferredCredentialsFilterArray []GetManagedPreferredCredentialsFilterInput
+
+func (GetManagedPreferredCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsFilterArray) ToGetManagedPreferredCredentialsFilterArrayOutput() GetManagedPreferredCredentialsFilterArrayOutput {
+	return i.ToGetManagedPreferredCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsFilterArray) ToGetManagedPreferredCredentialsFilterArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsFilterArrayOutput)
+}
+
+type GetManagedPreferredCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsFilterOutput) ToGetManagedPreferredCredentialsFilterOutput() GetManagedPreferredCredentialsFilterOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsFilterOutput) ToGetManagedPreferredCredentialsFilterOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsFilterOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedPreferredCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedPreferredCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedPreferredCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsFilterArrayOutput) ToGetManagedPreferredCredentialsFilterArrayOutput() GetManagedPreferredCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsFilterArrayOutput) ToGetManagedPreferredCredentialsFilterArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedPreferredCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedPreferredCredentialsFilter {
+		return vs[0].([]GetManagedPreferredCredentialsFilter)[vs[1].(int)]
+	}).(GetManagedPreferredCredentialsFilterOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollection struct {
+	Items []GetManagedPreferredCredentialsPreferredCredentialCollectionItem `pulumi:"items"`
+}
+
+// GetManagedPreferredCredentialsPreferredCredentialCollectionInput is an input type that accepts GetManagedPreferredCredentialsPreferredCredentialCollectionArgs and GetManagedPreferredCredentialsPreferredCredentialCollectionOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsPreferredCredentialCollectionInput` via:
+//
+//	GetManagedPreferredCredentialsPreferredCredentialCollectionArgs{...}
+type GetManagedPreferredCredentialsPreferredCredentialCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionOutput
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutputWithContext(context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionOutput
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionArgs struct {
+	Items GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollection)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionArgs) ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionOutput {
+	return i.ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionArgs) ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsPreferredCredentialCollectionOutput)
+}
+
+// GetManagedPreferredCredentialsPreferredCredentialCollectionArrayInput is an input type that accepts GetManagedPreferredCredentialsPreferredCredentialCollectionArray and GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsPreferredCredentialCollectionArrayInput` via:
+//
+//	GetManagedPreferredCredentialsPreferredCredentialCollectionArray{ GetManagedPreferredCredentialsPreferredCredentialCollectionArgs{...} }
+type GetManagedPreferredCredentialsPreferredCredentialCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutputWithContext(context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionArray []GetManagedPreferredCredentialsPreferredCredentialCollectionInput
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsPreferredCredentialCollection)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionArray) ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput {
+	return i.ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionArray) ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollection)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionOutput) Items() GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollection) []GetManagedPreferredCredentialsPreferredCredentialCollectionItem {
+		return v.Items
+	}).(GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsPreferredCredentialCollection)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedPreferredCredentialsPreferredCredentialCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedPreferredCredentialsPreferredCredentialCollection {
+		return vs[0].([]GetManagedPreferredCredentialsPreferredCredentialCollection)[vs[1].(int)]
+	}).(GetManagedPreferredCredentialsPreferredCredentialCollectionOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItem struct {
+	// The name of the preferred credential.
+	CredentialName string `pulumi:"credentialName"`
+	// Indicates whether the preferred credential is accessible.
+	IsAccessible bool `pulumi:"isAccessible"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+	NamedCredentialId string `pulumi:"namedCredentialId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId string `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role string `pulumi:"role"`
+	// The status of the preferred credential.
+	Status string `pulumi:"status"`
+	// The type of preferred credential. Only 'BASIC' is supported currently.
+	Type string `pulumi:"type"`
+	// The user name used to connect to the database.
+	UserName string `pulumi:"userName"`
+}
+
+// GetManagedPreferredCredentialsPreferredCredentialCollectionItemInput is an input type that accepts GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs and GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsPreferredCredentialCollectionItemInput` via:
+//
+//	GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs{...}
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutputWithContext(context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs struct {
+	// The name of the preferred credential.
+	CredentialName pulumi.StringInput `pulumi:"credentialName"`
+	// Indicates whether the preferred credential is accessible.
+	IsAccessible pulumi.BoolInput `pulumi:"isAccessible"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+	NamedCredentialId pulumi.StringInput `pulumi:"namedCredentialId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	// The role of the database user.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The status of the preferred credential.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The type of preferred credential. Only 'BASIC' is supported currently.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The user name used to connect to the database.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput {
+	return i.ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput)
+}
+
+// GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayInput is an input type that accepts GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray and GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayInput` via:
+//
+//	GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray{ GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs{...} }
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput
+	ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutputWithContext(context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray []GetManagedPreferredCredentialsPreferredCredentialCollectionItemInput
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsPreferredCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput {
+	return i.ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput {
+	return o
+}
+
+// The name of the preferred credential.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) CredentialName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string {
+		return v.CredentialName
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether the preferred credential is accessible.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) IsAccessible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) bool { return v.IsAccessible }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) NamedCredentialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string {
+		return v.NamedCredentialId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The role of the database user.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The status of the preferred credential.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The type of preferred credential. Only 'BASIC' is supported currently.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The user name used to connect to the database.
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialsPreferredCredentialCollectionItem) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedPreferredCredentialsPreferredCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput() GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput) ToGetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedPreferredCredentialsPreferredCredentialCollectionItem {
+		return vs[0].([]GetManagedPreferredCredentialsPreferredCredentialCollectionItem)[vs[1].(int)]
+	}).(GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput)
+}
+
+type GetOneoffPatchesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOneoffPatchesFilterInput is an input type that accepts GetOneoffPatchesFilterArgs and GetOneoffPatchesFilterOutput values.
+// You can construct a concrete instance of `GetOneoffPatchesFilterInput` via:
+//
+//	GetOneoffPatchesFilterArgs{...}
+type GetOneoffPatchesFilterInput interface {
+	pulumi.Input
+
+	ToGetOneoffPatchesFilterOutput() GetOneoffPatchesFilterOutput
+	ToGetOneoffPatchesFilterOutputWithContext(context.Context) GetOneoffPatchesFilterOutput
+}
+
+type GetOneoffPatchesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOneoffPatchesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOneoffPatchesFilter)(nil)).Elem()
+}
+
+func (i GetOneoffPatchesFilterArgs) ToGetOneoffPatchesFilterOutput() GetOneoffPatchesFilterOutput {
+	return i.ToGetOneoffPatchesFilterOutputWithContext(context.Background())
+}
+
+func (i GetOneoffPatchesFilterArgs) ToGetOneoffPatchesFilterOutputWithContext(ctx context.Context) GetOneoffPatchesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOneoffPatchesFilterOutput)
+}
+
+// GetOneoffPatchesFilterArrayInput is an input type that accepts GetOneoffPatchesFilterArray and GetOneoffPatchesFilterArrayOutput values.
+// You can construct a concrete instance of `GetOneoffPatchesFilterArrayInput` via:
+//
+//	GetOneoffPatchesFilterArray{ GetOneoffPatchesFilterArgs{...} }
+type GetOneoffPatchesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOneoffPatchesFilterArrayOutput() GetOneoffPatchesFilterArrayOutput
+	ToGetOneoffPatchesFilterArrayOutputWithContext(context.Context) GetOneoffPatchesFilterArrayOutput
+}
+
+type GetOneoffPatchesFilterArray []GetOneoffPatchesFilterInput
+
+func (GetOneoffPatchesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOneoffPatchesFilter)(nil)).Elem()
+}
+
+func (i GetOneoffPatchesFilterArray) ToGetOneoffPatchesFilterArrayOutput() GetOneoffPatchesFilterArrayOutput {
+	return i.ToGetOneoffPatchesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOneoffPatchesFilterArray) ToGetOneoffPatchesFilterArrayOutputWithContext(ctx context.Context) GetOneoffPatchesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOneoffPatchesFilterArrayOutput)
+}
+
+type GetOneoffPatchesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOneoffPatchesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOneoffPatchesFilter)(nil)).Elem()
+}
+
+func (o GetOneoffPatchesFilterOutput) ToGetOneoffPatchesFilterOutput() GetOneoffPatchesFilterOutput {
+	return o
+}
+
+func (o GetOneoffPatchesFilterOutput) ToGetOneoffPatchesFilterOutputWithContext(ctx context.Context) GetOneoffPatchesFilterOutput {
+	return o
+}
+
+func (o GetOneoffPatchesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOneoffPatchesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOneoffPatchesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOneoffPatchesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOneoffPatchesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOneoffPatchesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOneoffPatchesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOneoffPatchesFilter)(nil)).Elem()
+}
+
+func (o GetOneoffPatchesFilterArrayOutput) ToGetOneoffPatchesFilterArrayOutput() GetOneoffPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetOneoffPatchesFilterArrayOutput) ToGetOneoffPatchesFilterArrayOutputWithContext(ctx context.Context) GetOneoffPatchesFilterArrayOutput {
+	return o
+}
+
+func (o GetOneoffPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetOneoffPatchesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOneoffPatchesFilter {
+		return vs[0].([]GetOneoffPatchesFilter)[vs[1].(int)]
+	}).(GetOneoffPatchesFilterOutput)
+}
+
+type GetOneoffPatchesOneoffPatch struct {
+	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+	DbVersion string `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName                string `pulumi:"displayName"`
+	DownloadOneoffPatchTrigger int    `pulumi:"downloadOneoffPatchTrigger"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
+	Id string `pulumi:"id"`
+	// Detailed message for the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches []string `pulumi:"oneOffPatches"`
+	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+	ReleaseUpdate string `pulumi:"releaseUpdate"`
+	// SHA-256 checksum of the one-off patch.
+	Sha256sum string `pulumi:"sha256sum"`
+	// The size of one-off patch in kilobytes.
+	SizeInKbs float64 `pulumi:"sizeInKbs"`
+	// A filter to return only resources that match the given lifecycle state exactly
+	State string `pulumi:"state"`
+	// The date and time one-off patch was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time until which the one-off patch will be available for download.
+	TimeOfExpiration string `pulumi:"timeOfExpiration"`
+	// The date and time one-off patch was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOneoffPatchesOneoffPatchInput is an input type that accepts GetOneoffPatchesOneoffPatchArgs and GetOneoffPatchesOneoffPatchOutput values.
+// You can construct a concrete instance of `GetOneoffPatchesOneoffPatchInput` via:
+//
+//	GetOneoffPatchesOneoffPatchArgs{...}
+type GetOneoffPatchesOneoffPatchInput interface {
+	pulumi.Input
+
+	ToGetOneoffPatchesOneoffPatchOutput() GetOneoffPatchesOneoffPatchOutput
+	ToGetOneoffPatchesOneoffPatchOutputWithContext(context.Context) GetOneoffPatchesOneoffPatchOutput
+}
+
+type GetOneoffPatchesOneoffPatchArgs struct {
+	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName                pulumi.StringInput `pulumi:"displayName"`
+	DownloadOneoffPatchTrigger pulumi.IntInput    `pulumi:"downloadOneoffPatchTrigger"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Detailed message for the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// List of one-off patches for Database Homes.
+	OneOffPatches pulumi.StringArrayInput `pulumi:"oneOffPatches"`
+	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+	ReleaseUpdate pulumi.StringInput `pulumi:"releaseUpdate"`
+	// SHA-256 checksum of the one-off patch.
+	Sha256sum pulumi.StringInput `pulumi:"sha256sum"`
+	// The size of one-off patch in kilobytes.
+	SizeInKbs pulumi.Float64Input `pulumi:"sizeInKbs"`
+	// A filter to return only resources that match the given lifecycle state exactly
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time one-off patch was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time until which the one-off patch will be available for download.
+	TimeOfExpiration pulumi.StringInput `pulumi:"timeOfExpiration"`
+	// The date and time one-off patch was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOneoffPatchesOneoffPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOneoffPatchesOneoffPatch)(nil)).Elem()
+}
+
+func (i GetOneoffPatchesOneoffPatchArgs) ToGetOneoffPatchesOneoffPatchOutput() GetOneoffPatchesOneoffPatchOutput {
+	return i.ToGetOneoffPatchesOneoffPatchOutputWithContext(context.Background())
+}
+
+func (i GetOneoffPatchesOneoffPatchArgs) ToGetOneoffPatchesOneoffPatchOutputWithContext(ctx context.Context) GetOneoffPatchesOneoffPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOneoffPatchesOneoffPatchOutput)
+}
+
+// GetOneoffPatchesOneoffPatchArrayInput is an input type that accepts GetOneoffPatchesOneoffPatchArray and GetOneoffPatchesOneoffPatchArrayOutput values.
+// You can construct a concrete instance of `GetOneoffPatchesOneoffPatchArrayInput` via:
+//
+//	GetOneoffPatchesOneoffPatchArray{ GetOneoffPatchesOneoffPatchArgs{...} }
+type GetOneoffPatchesOneoffPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetOneoffPatchesOneoffPatchArrayOutput() GetOneoffPatchesOneoffPatchArrayOutput
+	ToGetOneoffPatchesOneoffPatchArrayOutputWithContext(context.Context) GetOneoffPatchesOneoffPatchArrayOutput
+}
+
+type GetOneoffPatchesOneoffPatchArray []GetOneoffPatchesOneoffPatchInput
+
+func (GetOneoffPatchesOneoffPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOneoffPatchesOneoffPatch)(nil)).Elem()
+}
+
+func (i GetOneoffPatchesOneoffPatchArray) ToGetOneoffPatchesOneoffPatchArrayOutput() GetOneoffPatchesOneoffPatchArrayOutput {
+	return i.ToGetOneoffPatchesOneoffPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetOneoffPatchesOneoffPatchArray) ToGetOneoffPatchesOneoffPatchArrayOutputWithContext(ctx context.Context) GetOneoffPatchesOneoffPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOneoffPatchesOneoffPatchArrayOutput)
+}
+
+type GetOneoffPatchesOneoffPatchOutput struct{ *pulumi.OutputState }
+
+func (GetOneoffPatchesOneoffPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOneoffPatchesOneoffPatch)(nil)).Elem()
+}
+
+func (o GetOneoffPatchesOneoffPatchOutput) ToGetOneoffPatchesOneoffPatchOutput() GetOneoffPatchesOneoffPatchOutput {
+	return o
+}
+
+func (o GetOneoffPatchesOneoffPatchOutput) ToGetOneoffPatchesOneoffPatchOutputWithContext(ctx context.Context) GetOneoffPatchesOneoffPatchOutput {
+	return o
+}
+
+// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetOneoffPatchesOneoffPatchOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+func (o GetOneoffPatchesOneoffPatchOutput) DbVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetOneoffPatchesOneoffPatchOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetOneoffPatchesOneoffPatchOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetOneoffPatchesOneoffPatchOutput) DownloadOneoffPatchTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) int { return v.DownloadOneoffPatchTrigger }).(pulumi.IntOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetOneoffPatchesOneoffPatchOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
+func (o GetOneoffPatchesOneoffPatchOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Detailed message for the lifecycle state.
+func (o GetOneoffPatchesOneoffPatchOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// List of one-off patches for Database Homes.
+func (o GetOneoffPatchesOneoffPatchOutput) OneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) []string { return v.OneOffPatches }).(pulumi.StringArrayOutput)
+}
+
+// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
+func (o GetOneoffPatchesOneoffPatchOutput) ReleaseUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.ReleaseUpdate }).(pulumi.StringOutput)
+}
+
+// SHA-256 checksum of the one-off patch.
+func (o GetOneoffPatchesOneoffPatchOutput) Sha256sum() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.Sha256sum }).(pulumi.StringOutput)
+}
+
+// The size of one-off patch in kilobytes.
+func (o GetOneoffPatchesOneoffPatchOutput) SizeInKbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) float64 { return v.SizeInKbs }).(pulumi.Float64Output)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly
+func (o GetOneoffPatchesOneoffPatchOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time one-off patch was created.
+func (o GetOneoffPatchesOneoffPatchOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time until which the one-off patch will be available for download.
+func (o GetOneoffPatchesOneoffPatchOutput) TimeOfExpiration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.TimeOfExpiration }).(pulumi.StringOutput)
+}
+
+// The date and time one-off patch was updated.
+func (o GetOneoffPatchesOneoffPatchOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOneoffPatchesOneoffPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOneoffPatchesOneoffPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOneoffPatchesOneoffPatch)(nil)).Elem()
+}
+
+func (o GetOneoffPatchesOneoffPatchArrayOutput) ToGetOneoffPatchesOneoffPatchArrayOutput() GetOneoffPatchesOneoffPatchArrayOutput {
+	return o
+}
+
+func (o GetOneoffPatchesOneoffPatchArrayOutput) ToGetOneoffPatchesOneoffPatchArrayOutputWithContext(ctx context.Context) GetOneoffPatchesOneoffPatchArrayOutput {
+	return o
+}
+
+func (o GetOneoffPatchesOneoffPatchArrayOutput) Index(i pulumi.IntInput) GetOneoffPatchesOneoffPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOneoffPatchesOneoffPatch {
+		return vs[0].([]GetOneoffPatchesOneoffPatch)[vs[1].(int)]
+	}).(GetOneoffPatchesOneoffPatchOutput)
+}
+
+type GetPluggableDatabaseConnectionString struct {
+	// All connection strings to use to connect to the pluggable database.
+	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	// A host name-based PDB connection string.
+	PdbDefault string `pulumi:"pdbDefault"`
+	// An IP-based PDB connection string.
+	PdbIpDefault string `pulumi:"pdbIpDefault"`
+}
+
+// GetPluggableDatabaseConnectionStringInput is an input type that accepts GetPluggableDatabaseConnectionStringArgs and GetPluggableDatabaseConnectionStringOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseConnectionStringInput` via:
+//
+//	GetPluggableDatabaseConnectionStringArgs{...}
+type GetPluggableDatabaseConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseConnectionStringOutput() GetPluggableDatabaseConnectionStringOutput
+	ToGetPluggableDatabaseConnectionStringOutputWithContext(context.Context) GetPluggableDatabaseConnectionStringOutput
+}
+
+type GetPluggableDatabaseConnectionStringArgs struct {
+	// All connection strings to use to connect to the pluggable database.
+	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	// A host name-based PDB connection string.
+	PdbDefault pulumi.StringInput `pulumi:"pdbDefault"`
+	// An IP-based PDB connection string.
+	PdbIpDefault pulumi.StringInput `pulumi:"pdbIpDefault"`
+}
+
+func (GetPluggableDatabaseConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseConnectionStringArgs) ToGetPluggableDatabaseConnectionStringOutput() GetPluggableDatabaseConnectionStringOutput {
+	return i.ToGetPluggableDatabaseConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseConnectionStringArgs) ToGetPluggableDatabaseConnectionStringOutputWithContext(ctx context.Context) GetPluggableDatabaseConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseConnectionStringOutput)
+}
+
+// GetPluggableDatabaseConnectionStringArrayInput is an input type that accepts GetPluggableDatabaseConnectionStringArray and GetPluggableDatabaseConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseConnectionStringArrayInput` via:
+//
+//	GetPluggableDatabaseConnectionStringArray{ GetPluggableDatabaseConnectionStringArgs{...} }
+type GetPluggableDatabaseConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabaseConnectionStringArrayOutput
+	ToGetPluggableDatabaseConnectionStringArrayOutputWithContext(context.Context) GetPluggableDatabaseConnectionStringArrayOutput
+}
+
+type GetPluggableDatabaseConnectionStringArray []GetPluggableDatabaseConnectionStringInput
+
+func (GetPluggableDatabaseConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseConnectionStringArray) ToGetPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabaseConnectionStringArrayOutput {
+	return i.ToGetPluggableDatabaseConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseConnectionStringArray) ToGetPluggableDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseConnectionStringArrayOutput)
+}
+
+type GetPluggableDatabaseConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseConnectionStringOutput) ToGetPluggableDatabaseConnectionStringOutput() GetPluggableDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseConnectionStringOutput) ToGetPluggableDatabaseConnectionStringOutputWithContext(ctx context.Context) GetPluggableDatabaseConnectionStringOutput {
+	return o
+}
+
+// All connection strings to use to connect to the pluggable database.
+func (o GetPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseConnectionString) map[string]interface{} { return v.AllConnectionStrings }).(pulumi.MapOutput)
+}
+
+// A host name-based PDB connection string.
+func (o GetPluggableDatabaseConnectionStringOutput) PdbDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseConnectionString) string { return v.PdbDefault }).(pulumi.StringOutput)
+}
+
+// An IP-based PDB connection string.
+func (o GetPluggableDatabaseConnectionStringOutput) PdbIpDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseConnectionString) string { return v.PdbIpDefault }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseConnectionStringArrayOutput) ToGetPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseConnectionStringArrayOutput) ToGetPluggableDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabaseConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabaseConnectionString {
+		return vs[0].([]GetPluggableDatabaseConnectionString)[vs[1].(int)]
+	}).(GetPluggableDatabaseConnectionStringOutput)
+}
+
 type GetPluggableDatabasePdbCreationTypeDetail struct {
 	CreationType                         string                                                            `pulumi:"creationType"`
 	DblinkUserPassword                   string                                                            `pulumi:"dblinkUserPassword"`
@@ -5753,6 +6571,18 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterArrayInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionArrayInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionItemInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOneoffPatchesFilterInput)(nil)).Elem(), GetOneoffPatchesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOneoffPatchesFilterArrayInput)(nil)).Elem(), GetOneoffPatchesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOneoffPatchesOneoffPatchInput)(nil)).Elem(), GetOneoffPatchesOneoffPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOneoffPatchesOneoffPatchArrayInput)(nil)).Elem(), GetOneoffPatchesOneoffPatchArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseConnectionStringInput)(nil)).Elem(), GetPluggableDatabaseConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseConnectionStringArrayInput)(nil)).Elem(), GetPluggableDatabaseConnectionStringArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailArrayInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{})
@@ -5839,6 +6669,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOneoffPatchesFilterOutput{})
+	pulumi.RegisterOutputType(GetOneoffPatchesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOneoffPatchesOneoffPatchOutput{})
+	pulumi.RegisterOutputType(GetOneoffPatchesOneoffPatchArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseConnectionStringArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput{})

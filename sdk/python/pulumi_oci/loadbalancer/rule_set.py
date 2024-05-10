@@ -182,9 +182,14 @@ class RuleSet(pulumi.CustomResource):
                     attribute_value=rule_set_items_conditions_attribute_value,
                     operator=rule_set_items_conditions_operator,
                 )],
+                default_max_connections=rule_set_items_default_max_connections,
                 description=rule_set_items_description,
                 header=rule_set_items_header,
                 http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
+                ip_max_connections=[oci.load_balancer.RuleSetItemIpMaxConnectionArgs(
+                    ip_addresses=rule_set_items_ip_max_connections_ip_addresses,
+                    max_connections=rule_set_items_ip_max_connections_max_connections,
+                )],
                 prefix=rule_set_items_prefix,
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
                     host=rule_set_items_redirect_uri_host,
@@ -248,9 +253,14 @@ class RuleSet(pulumi.CustomResource):
                     attribute_value=rule_set_items_conditions_attribute_value,
                     operator=rule_set_items_conditions_operator,
                 )],
+                default_max_connections=rule_set_items_default_max_connections,
                 description=rule_set_items_description,
                 header=rule_set_items_header,
                 http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
+                ip_max_connections=[oci.load_balancer.RuleSetItemIpMaxConnectionArgs(
+                    ip_addresses=rule_set_items_ip_max_connections_ip_addresses,
+                    max_connections=rule_set_items_ip_max_connections_max_connections,
+                )],
                 prefix=rule_set_items_prefix,
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
                     host=rule_set_items_redirect_uri_host,

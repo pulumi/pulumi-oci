@@ -102,6 +102,21 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    @Import(name="maxConnections")
+    private @Nullable Output<Integer> maxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    public Optional<Output<Integer>> maxConnections() {
+        return Optional.ofNullable(this.maxConnections);
+    }
+
+    /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
@@ -160,6 +175,7 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         this.drain = $.drain;
         this.ipAddress = $.ipAddress;
         this.loadBalancerId = $.loadBalancerId;
+        this.maxConnections = $.maxConnections;
         this.offline = $.offline;
         this.port = $.port;
         this.weight = $.weight;
@@ -294,6 +310,27 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder loadBalancerId(String loadBalancerId) {
             return loadBalancerId(Output.of(loadBalancerId));
+        }
+
+        /**
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxConnections(@Nullable Output<Integer> maxConnections) {
+            $.maxConnections = maxConnections;
+            return this;
+        }
+
+        /**
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxConnections(Integer maxConnections) {
+            return maxConnections(Output.of(maxConnections));
         }
 
         /**

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        /// Ocid of the Reserved IP/Public Ip created with VCN.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,6 +42,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
         public readonly string IpMode;
+        /// <summary>
+        /// Whether or not the load balancer has delete protection enabled.
+        /// </summary>
+        public readonly bool IsDeleteProtectionEnabled;
         /// <summary>
         /// Whether the load balancer has a VCN-local (private) IP address.
         /// </summary>
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string ipMode,
 
+            bool isDeleteProtectionEnabled,
+
             bool isPrivate,
 
             ImmutableArray<string> networkSecurityGroupIds,
@@ -120,6 +126,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             IpAddressDetails = ipAddressDetails;
             IpAddresses = ipAddresses;
             IpMode = ipMode;
+            IsDeleteProtectionEnabled = isDeleteProtectionEnabled;
             IsPrivate = isPrivate;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             ReservedIps = reservedIps;

@@ -10,6 +10,7 @@ import com.pulumi.oci.LoadBalancer.inputs.BackendSetHealthCheckerArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetSessionPersistenceConfigurationArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetSslConfigurationArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +20,21 @@ import javax.annotation.Nullable;
 public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BackendSetArgs Empty = new BackendSetArgs();
+
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    @Import(name="backendMaxConnections")
+    private @Nullable Output<Integer> backendMaxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    public Optional<Output<Integer>> backendMaxConnections() {
+        return Optional.ofNullable(this.backendMaxConnections);
+    }
 
     /**
      * (Updatable) The health check policy&#39;s configuration details.
@@ -192,6 +208,7 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
     private BackendSetArgs() {}
 
     private BackendSetArgs(BackendSetArgs $) {
+        this.backendMaxConnections = $.backendMaxConnections;
         this.healthChecker = $.healthChecker;
         this.lbCookieSessionPersistenceConfiguration = $.lbCookieSessionPersistenceConfiguration;
         this.loadBalancerId = $.loadBalancerId;
@@ -217,6 +234,27 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(BackendSetArgs defaults) {
             $ = new BackendSetArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backendMaxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendMaxConnections(@Nullable Output<Integer> backendMaxConnections) {
+            $.backendMaxConnections = backendMaxConnections;
+            return this;
+        }
+
+        /**
+         * @param backendMaxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendMaxConnections(Integer backendMaxConnections) {
+            return backendMaxConnections(Output.of(backendMaxConnections));
         }
 
         /**

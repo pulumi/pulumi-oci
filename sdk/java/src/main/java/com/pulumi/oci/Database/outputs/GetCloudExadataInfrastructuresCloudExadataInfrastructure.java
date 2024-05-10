@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact;
+import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow;
 import java.lang.Double;
 import java.lang.Integer;
@@ -77,6 +78,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      * 
      */
     private String dbServerVersion;
+    /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -274,6 +280,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.dbServerVersion;
     }
     /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    public List<GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations() {
+        return this.definedFileSystemConfigurations;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -449,6 +462,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
         private String dbServerVersion;
+        private List<GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
@@ -486,6 +500,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.dbServerVersion = defaults.dbServerVersion;
+    	      this.definedFileSystemConfigurations = defaults.definedFileSystemConfigurations;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -608,6 +623,17 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             }
             this.dbServerVersion = dbServerVersion;
             return this;
+        }
+        @CustomType.Setter
+        public Builder definedFileSystemConfigurations(List<GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            if (definedFileSystemConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "definedFileSystemConfigurations");
+            }
+            this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            return this;
+        }
+        public Builder definedFileSystemConfigurations(GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfiguration... definedFileSystemConfigurations) {
+            return definedFileSystemConfigurations(List.of(definedFileSystemConfigurations));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -802,6 +828,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.dataStorageSizeInTbs = dataStorageSizeInTbs;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             _resultValue.dbServerVersion = dbServerVersion;
+            _resultValue.definedFileSystemConfigurations = definedFileSystemConfigurations;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemConditionArgs;
+import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemIpMaxConnectionArgs;
 import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemRedirectUriArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -22,14 +23,14 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleSetItemArgs Empty = new RuleSetItemArgs();
 
     /**
-     * (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+     * (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+     * @return (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     public Output<String> action() {
@@ -98,6 +99,21 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+     * 
+     */
+    @Import(name="defaultMaxConnections")
+    private @Nullable Output<Integer> defaultMaxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+     * 
+     */
+    public Optional<Output<Integer>> defaultMaxConnections() {
+        return Optional.ofNullable(this.defaultMaxConnections);
+    }
+
+    /**
      * (Updatable) A brief description of the access control rule. Avoid entering confidential information.
      * 
      * example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -144,6 +160,21 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> httpLargeHeaderSizeInKb() {
         return Optional.ofNullable(this.httpLargeHeaderSizeInKb);
+    }
+
+    /**
+     * (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+     * 
+     */
+    @Import(name="ipMaxConnections")
+    private @Nullable Output<List<RuleSetItemIpMaxConnectionArgs>> ipMaxConnections;
+
+    /**
+     * @return (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+     * 
+     */
+    public Optional<Output<List<RuleSetItemIpMaxConnectionArgs>>> ipMaxConnections() {
+        return Optional.ofNullable(this.ipMaxConnections);
     }
 
     /**
@@ -335,9 +366,11 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         this.allowedMethods = $.allowedMethods;
         this.areInvalidCharactersAllowed = $.areInvalidCharactersAllowed;
         this.conditions = $.conditions;
+        this.defaultMaxConnections = $.defaultMaxConnections;
         this.description = $.description;
         this.header = $.header;
         this.httpLargeHeaderSizeInKb = $.httpLargeHeaderSizeInKb;
+        this.ipMaxConnections = $.ipMaxConnections;
         this.prefix = $.prefix;
         this.redirectUri = $.redirectUri;
         this.responseCode = $.responseCode;
@@ -365,7 +398,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
          * 
          * @return builder
          * 
@@ -376,7 +409,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
          * 
          * @return builder
          * 
@@ -493,6 +526,27 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param defaultMaxConnections (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultMaxConnections(@Nullable Output<Integer> defaultMaxConnections) {
+            $.defaultMaxConnections = defaultMaxConnections;
+            return this;
+        }
+
+        /**
+         * @param defaultMaxConnections (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultMaxConnections(Integer defaultMaxConnections) {
+            return defaultMaxConnections(Output.of(defaultMaxConnections));
+        }
+
+        /**
          * @param description (Updatable) A brief description of the access control rule. Avoid entering confidential information.
          * 
          * example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -557,6 +611,37 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder httpLargeHeaderSizeInKb(Integer httpLargeHeaderSizeInKb) {
             return httpLargeHeaderSizeInKb(Output.of(httpLargeHeaderSizeInKb));
+        }
+
+        /**
+         * @param ipMaxConnections (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipMaxConnections(@Nullable Output<List<RuleSetItemIpMaxConnectionArgs>> ipMaxConnections) {
+            $.ipMaxConnections = ipMaxConnections;
+            return this;
+        }
+
+        /**
+         * @param ipMaxConnections (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipMaxConnections(List<RuleSetItemIpMaxConnectionArgs> ipMaxConnections) {
+            return ipMaxConnections(Output.of(ipMaxConnections));
+        }
+
+        /**
+         * @param ipMaxConnections (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipMaxConnections(RuleSetItemIpMaxConnectionArgs... ipMaxConnections) {
+            return ipMaxConnections(List.of(ipMaxConnections));
         }
 
         /**

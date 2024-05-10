@@ -166,6 +166,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Domain;
         /// <summary>
+        /// Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudVmClusterFileSystemConfigurationDetailResult> FileSystemConfigurationDetails;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -330,6 +334,8 @@ namespace Pulumi.Oci.Database
 
             string domain,
 
+            ImmutableArray<Outputs.GetCloudVmClusterFileSystemConfigurationDetailResult> fileSystemConfigurationDetails,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string giVersion,
@@ -412,6 +418,7 @@ namespace Pulumi.Oci.Database
             DiskRedundancy = diskRedundancy;
             DisplayName = displayName;
             Domain = domain;
+            FileSystemConfigurationDetails = fileSystemConfigurationDetails;
             FreeformTags = freeformTags;
             GiVersion = giVersion;
             Hostname = hostname;

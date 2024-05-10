@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult
     {
         /// <summary>
-        /// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        /// Ocid of the Reserved IP/Public Ip created with VCN.
         /// </summary>
         public readonly string Id;
 

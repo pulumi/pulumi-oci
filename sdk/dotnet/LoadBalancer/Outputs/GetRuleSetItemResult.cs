@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetRuleSetItemResult
     {
         /// <summary>
-        /// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        /// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -27,6 +27,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         public readonly bool AreInvalidCharactersAllowed;
         public readonly ImmutableArray<Outputs.GetRuleSetItemConditionResult> Conditions;
         /// <summary>
+        /// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        /// </summary>
+        public readonly int DefaultMaxConnections;
+        /// <summary>
         /// A brief description of the access control rule. Avoid entering confidential information.
         /// </summary>
         public readonly string Description;
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         /// </summary>
         public readonly int HttpLargeHeaderSizeInKb;
+        /// <summary>
+        /// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRuleSetItemIpMaxConnectionResult> IpMaxConnections;
         /// <summary>
         /// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
@@ -79,11 +87,15 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             ImmutableArray<Outputs.GetRuleSetItemConditionResult> conditions,
 
+            int defaultMaxConnections,
+
             string description,
 
             string header,
 
             int httpLargeHeaderSizeInKb,
+
+            ImmutableArray<Outputs.GetRuleSetItemIpMaxConnectionResult> ipMaxConnections,
 
             string prefix,
 
@@ -101,9 +113,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             AllowedMethods = allowedMethods;
             AreInvalidCharactersAllowed = areInvalidCharactersAllowed;
             Conditions = conditions;
+            DefaultMaxConnections = defaultMaxConnections;
             Description = description;
             Header = header;
             HttpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
+            IpMaxConnections = ipMaxConnections;
             Prefix = prefix;
             RedirectUris = redirectUris;
             ResponseCode = responseCode;

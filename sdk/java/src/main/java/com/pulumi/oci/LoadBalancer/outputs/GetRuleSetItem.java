@@ -6,6 +6,7 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetItemCondition;
+import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetItemIpMaxConnection;
 import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetItemRedirectUri;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -16,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleSetItem {
     /**
-     * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+     * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     private String action;
@@ -32,6 +33,11 @@ public final class GetRuleSetItem {
     private Boolean areInvalidCharactersAllowed;
     private List<GetRuleSetItemCondition> conditions;
     /**
+     * @return The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+     * 
+     */
+    private Integer defaultMaxConnections;
+    /**
      * @return A brief description of the access control rule. Avoid entering confidential information.
      * 
      */
@@ -46,6 +52,11 @@ public final class GetRuleSetItem {
      * 
      */
     private Integer httpLargeHeaderSizeInKb;
+    /**
+     * @return An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+     * 
+     */
+    private List<GetRuleSetItemIpMaxConnection> ipMaxConnections;
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
@@ -85,7 +96,7 @@ public final class GetRuleSetItem {
 
     private GetRuleSetItem() {}
     /**
-     * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+     * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     public String action() {
@@ -109,6 +120,13 @@ public final class GetRuleSetItem {
         return this.conditions;
     }
     /**
+     * @return The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+     * 
+     */
+    public Integer defaultMaxConnections() {
+        return this.defaultMaxConnections;
+    }
+    /**
      * @return A brief description of the access control rule. Avoid entering confidential information.
      * 
      */
@@ -128,6 +146,13 @@ public final class GetRuleSetItem {
      */
     public Integer httpLargeHeaderSizeInKb() {
         return this.httpLargeHeaderSizeInKb;
+    }
+    /**
+     * @return An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+     * 
+     */
+    public List<GetRuleSetItemIpMaxConnection> ipMaxConnections() {
+        return this.ipMaxConnections;
     }
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -191,9 +216,11 @@ public final class GetRuleSetItem {
         private List<String> allowedMethods;
         private Boolean areInvalidCharactersAllowed;
         private List<GetRuleSetItemCondition> conditions;
+        private Integer defaultMaxConnections;
         private String description;
         private String header;
         private Integer httpLargeHeaderSizeInKb;
+        private List<GetRuleSetItemIpMaxConnection> ipMaxConnections;
         private String prefix;
         private List<GetRuleSetItemRedirectUri> redirectUris;
         private Integer responseCode;
@@ -207,9 +234,11 @@ public final class GetRuleSetItem {
     	      this.allowedMethods = defaults.allowedMethods;
     	      this.areInvalidCharactersAllowed = defaults.areInvalidCharactersAllowed;
     	      this.conditions = defaults.conditions;
+    	      this.defaultMaxConnections = defaults.defaultMaxConnections;
     	      this.description = defaults.description;
     	      this.header = defaults.header;
     	      this.httpLargeHeaderSizeInKb = defaults.httpLargeHeaderSizeInKb;
+    	      this.ipMaxConnections = defaults.ipMaxConnections;
     	      this.prefix = defaults.prefix;
     	      this.redirectUris = defaults.redirectUris;
     	      this.responseCode = defaults.responseCode;
@@ -257,6 +286,14 @@ public final class GetRuleSetItem {
             return conditions(List.of(conditions));
         }
         @CustomType.Setter
+        public Builder defaultMaxConnections(Integer defaultMaxConnections) {
+            if (defaultMaxConnections == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetItem", "defaultMaxConnections");
+            }
+            this.defaultMaxConnections = defaultMaxConnections;
+            return this;
+        }
+        @CustomType.Setter
         public Builder description(String description) {
             if (description == null) {
               throw new MissingRequiredPropertyException("GetRuleSetItem", "description");
@@ -279,6 +316,17 @@ public final class GetRuleSetItem {
             }
             this.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ipMaxConnections(List<GetRuleSetItemIpMaxConnection> ipMaxConnections) {
+            if (ipMaxConnections == null) {
+              throw new MissingRequiredPropertyException("GetRuleSetItem", "ipMaxConnections");
+            }
+            this.ipMaxConnections = ipMaxConnections;
+            return this;
+        }
+        public Builder ipMaxConnections(GetRuleSetItemIpMaxConnection... ipMaxConnections) {
+            return ipMaxConnections(List.of(ipMaxConnections));
         }
         @CustomType.Setter
         public Builder prefix(String prefix) {
@@ -337,9 +385,11 @@ public final class GetRuleSetItem {
             _resultValue.allowedMethods = allowedMethods;
             _resultValue.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
             _resultValue.conditions = conditions;
+            _resultValue.defaultMaxConnections = defaultMaxConnections;
             _resultValue.description = description;
             _resultValue.header = header;
             _resultValue.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
+            _resultValue.ipMaxConnections = ipMaxConnections;
             _resultValue.prefix = prefix;
             _resultValue.redirectUris = redirectUris;
             _resultValue.responseCode = responseCode;

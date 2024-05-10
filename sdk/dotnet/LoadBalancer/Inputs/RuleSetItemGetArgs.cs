@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class RuleSetItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        /// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -57,6 +57,12 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         }
 
         /// <summary>
+        /// (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        /// </summary>
+        [Input("defaultMaxConnections")]
+        public Input<int>? DefaultMaxConnections { get; set; }
+
+        /// <summary>
         /// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
         /// 
         /// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -75,6 +81,18 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// </summary>
         [Input("httpLargeHeaderSizeInKb")]
         public Input<int>? HttpLargeHeaderSizeInKb { get; set; }
+
+        [Input("ipMaxConnections")]
+        private InputList<Inputs.RuleSetItemIpMaxConnectionGetArgs>? _ipMaxConnections;
+
+        /// <summary>
+        /// (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        /// </summary>
+        public InputList<Inputs.RuleSetItemIpMaxConnectionGetArgs> IpMaxConnections
+        {
+            get => _ipMaxConnections ?? (_ipMaxConnections = new InputList<Inputs.RuleSetItemIpMaxConnectionGetArgs>());
+            set => _ipMaxConnections = value;
+        }
 
         /// <summary>
         /// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:

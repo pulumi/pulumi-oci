@@ -46,9 +46,10 @@ import (
 //					TimeoutInMillis:   pulumi.Any(backendSetHealthCheckerTimeoutInMillis),
 //					UrlPath:           pulumi.Any(backendSetHealthCheckerUrlPath),
 //				},
-//				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
-//				Name:           pulumi.Any(backendSetName),
-//				Policy:         pulumi.Any(backendSetPolicy),
+//				LoadBalancerId:        pulumi.Any(testLoadBalancer.Id),
+//				Name:                  pulumi.Any(backendSetName),
+//				Policy:                pulumi.Any(backendSetPolicy),
+//				BackendMaxConnections: pulumi.Any(backendSetBackendMaxConnections),
 //				LbCookieSessionPersistenceConfiguration: &loadbalancer.BackendSetLbCookieSessionPersistenceConfigurationArgs{
 //					CookieName:      pulumi.Any(backendSetLbCookieSessionPersistenceConfigurationCookieName),
 //					DisableFallback: pulumi.Any(backendSetLbCookieSessionPersistenceConfigurationDisableFallback),
@@ -96,6 +97,9 @@ import (
 type BackendSet struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections pulumi.IntOutput `pulumi:"backendMaxConnections"`
+	// (Updatable)
 	Backends BackendSetBackendArrayOutput `pulumi:"backends"`
 	// (Updatable) The health check policy's configuration details.
 	HealthChecker BackendSetHealthCheckerOutput `pulumi:"healthChecker"`
@@ -185,6 +189,9 @@ func GetBackendSet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering BackendSet resources.
 type backendSetState struct {
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections *int `pulumi:"backendMaxConnections"`
+	// (Updatable)
 	Backends []BackendSetBackend `pulumi:"backends"`
 	// (Updatable) The health check policy's configuration details.
 	HealthChecker *BackendSetHealthChecker `pulumi:"healthChecker"`
@@ -236,6 +243,9 @@ type backendSetState struct {
 }
 
 type BackendSetState struct {
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections pulumi.IntPtrInput
+	// (Updatable)
 	Backends BackendSetBackendArrayInput
 	// (Updatable) The health check policy's configuration details.
 	HealthChecker BackendSetHealthCheckerPtrInput
@@ -291,6 +301,8 @@ func (BackendSetState) ElementType() reflect.Type {
 }
 
 type backendSetArgs struct {
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections *int `pulumi:"backendMaxConnections"`
 	// (Updatable) The health check policy's configuration details.
 	HealthChecker BackendSetHealthChecker `pulumi:"healthChecker"`
 	// (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -341,6 +353,8 @@ type backendSetArgs struct {
 
 // The set of arguments for constructing a BackendSet resource.
 type BackendSetArgs struct {
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections pulumi.IntPtrInput
 	// (Updatable) The health check policy's configuration details.
 	HealthChecker BackendSetHealthCheckerInput
 	// (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -476,6 +490,12 @@ func (o BackendSetOutput) ToBackendSetOutputWithContext(ctx context.Context) Bac
 	return o
 }
 
+// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+func (o BackendSetOutput) BackendMaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v *BackendSet) pulumi.IntOutput { return v.BackendMaxConnections }).(pulumi.IntOutput)
+}
+
+// (Updatable)
 func (o BackendSetOutput) Backends() BackendSetBackendArrayOutput {
 	return o.ApplyT(func(v *BackendSet) BackendSetBackendArrayOutput { return v.Backends }).(BackendSetBackendArrayOutput)
 }

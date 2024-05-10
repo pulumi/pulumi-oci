@@ -32,6 +32,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///         Port = backendPort,
     ///         Backup = backendBackup,
     ///         Drain = backendDrain,
+    ///         MaxConnections = backendMaxConnections,
     ///         Offline = backendOffline,
     ///         Weight = backendWeight,
     ///     });
@@ -83,6 +84,12 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         [Output("loadBalancerId")]
         public Output<string> LoadBalancerId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        /// </summary>
+        [Output("maxConnections")]
+        public Output<int> MaxConnections { get; private set; } = null!;
 
         /// <summary>
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
@@ -196,6 +203,12 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        /// </summary>
+        [Input("maxConnections")]
+        public Input<int>? MaxConnections { get; set; }
+
+        /// <summary>
         /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
         [Input("offline")]
@@ -258,6 +271,12 @@ namespace Pulumi.Oci.LoadBalancer
         /// </summary>
         [Input("loadBalancerId")]
         public Input<string>? LoadBalancerId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        /// </summary>
+        [Input("maxConnections")]
+        public Input<int>? MaxConnections { get; set; }
 
         /// <summary>
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`

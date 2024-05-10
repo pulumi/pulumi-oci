@@ -26,10 +26,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
         [Input("reservedIps")]
         private InputList<Inputs.LoadBalancerIpAddressDetailReservedIpArgs>? _reservedIps;
-
-        /// <summary>
-        /// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        /// </summary>
         public InputList<Inputs.LoadBalancerIpAddressDetailReservedIpArgs> ReservedIps
         {
             get => _reservedIps ?? (_reservedIps = new InputList<Inputs.LoadBalancerIpAddressDetailReservedIpArgs>());

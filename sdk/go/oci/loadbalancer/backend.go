@@ -37,6 +37,7 @@ import (
 //				Port:           pulumi.Any(backendPort),
 //				Backup:         pulumi.Any(backendBackup),
 //				Drain:          pulumi.Any(backendDrain),
+//				MaxConnections: pulumi.Any(backendMaxConnections),
 //				Offline:        pulumi.Any(backendOffline),
 //				Weight:         pulumi.Any(backendWeight),
 //			})
@@ -73,6 +74,8 @@ type Backend struct {
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntOutput `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -143,6 +146,8 @@ type backendState struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections *int `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name *string `pulumi:"name"`
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -172,6 +177,8 @@ type BackendState struct {
 	IpAddress pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringPtrInput
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntPtrInput
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringPtrInput
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -205,6 +212,8 @@ type backendArgs struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections *int `pulumi:"maxConnections"`
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline *bool `pulumi:"offline"`
 	// The communication port for the backend server.  Example: `8080`
@@ -232,6 +241,8 @@ type BackendArgs struct {
 	IpAddress pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringInput
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntPtrInput
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline pulumi.BoolPtrInput
 	// The communication port for the backend server.  Example: `8080`
@@ -357,6 +368,11 @@ func (o BackendOutput) IpAddress() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 func (o BackendOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backend) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+func (o BackendOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v *Backend) pulumi.IntOutput { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 // A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`

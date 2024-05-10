@@ -22,7 +22,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -62,6 +62,9 @@ class GetCloudExadataInfrastructureResult:
         if db_server_version and not isinstance(db_server_version, str):
             raise TypeError("Expected argument 'db_server_version' to be a str")
         pulumi.set(__self__, "db_server_version", db_server_version)
+        if defined_file_system_configurations and not isinstance(defined_file_system_configurations, list):
+            raise TypeError("Expected argument 'defined_file_system_configurations' to be a list")
+        pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -229,6 +232,14 @@ class GetCloudExadataInfrastructureResult:
         The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "db_server_version")
+
+    @property
+    @pulumi.getter(name="definedFileSystemConfigurations")
+    def defined_file_system_configurations(self) -> Sequence['outputs.GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult']:
+        """
+        Details of the file system configuration of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "defined_file_system_configurations")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -426,6 +437,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             db_server_version=self.db_server_version,
+            defined_file_system_configurations=self.defined_file_system_configurations,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -488,6 +500,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__ret__, 'db_server_version'),
+        defined_file_system_configurations=pulumi.get(__ret__, 'defined_file_system_configurations'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),

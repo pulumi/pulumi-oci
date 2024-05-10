@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -99,6 +100,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String domain;
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    private List<GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -370,6 +376,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.domain;
     }
     /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public List<GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -613,6 +626,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String diskRedundancy;
         private String displayName;
         private String domain;
+        private List<GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
         private Map<String,Object> freeformTags;
         private String giVersion;
         private String hostname;
@@ -665,6 +679,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.diskRedundancy = defaults.diskRedundancy;
     	      this.displayName = defaults.displayName;
     	      this.domain = defaults.domain;
+    	      this.fileSystemConfigurationDetails = defaults.fileSystemConfigurationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.giVersion = defaults.giVersion;
     	      this.hostname = defaults.hostname;
@@ -843,6 +858,17 @@ public final class GetCloudVmClustersCloudVmCluster {
             }
             this.domain = domain;
             return this;
+        }
+        @CustomType.Setter
+        public Builder fileSystemConfigurationDetails(List<GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            if (fileSystemConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "fileSystemConfigurationDetails");
+            }
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            return this;
+        }
+        public Builder fileSystemConfigurationDetails(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail... fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -1134,6 +1160,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.diskRedundancy = diskRedundancy;
             _resultValue.displayName = displayName;
             _resultValue.domain = domain;
+            _resultValue.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.giVersion = giVersion;
             _resultValue.hostname = hostname;

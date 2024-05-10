@@ -24223,6 +24223,25 @@ export namespace Database {
         email?: pulumi.Input<string>;
     }
 
+    export interface CloudExadataInfrastructureDefinedFileSystemConfiguration {
+        /**
+         * If true, the file system is used to create a backup prior to Exadata VM OS update.
+         */
+        isBackupPartition?: pulumi.Input<boolean>;
+        /**
+         * If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+         */
+        isResizable?: pulumi.Input<boolean>;
+        /**
+         * The minimum size of file system.
+         */
+        minSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
     export interface CloudExadataInfrastructureMaintenanceWindow {
         /**
          * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -24297,6 +24316,17 @@ export namespace Database {
          * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
          */
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface CloudVmClusterFileSystemConfigurationDetail {
+        /**
+         * (Updatable) The file system size to be allocated in GBs.
+         */
+        fileSystemSizeGb?: pulumi.Input<number>;
+        /**
+         * (Updatable) The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
     }
 
     export interface CloudVmClusterIormConfigCach {
@@ -32352,6 +32382,10 @@ export namespace DisasterRecovery {
          * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
          */
         id?: pulumi.Input<string>;
+        /**
+         * A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+         */
+        isPauseEnabled?: pulumi.Input<boolean>;
         /**
          * The list of steps in the group.
          */
@@ -63286,17 +63320,25 @@ export namespace Limits {
 export namespace LoadBalancer {
     export interface BackendSetBackend {
         /**
-         * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+         * (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+         *
+         * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+         *
+         * Example: `false`
          */
         backup?: pulumi.Input<boolean>;
         /**
-         * Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+         * (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
          */
         drain?: pulumi.Input<boolean>;
         /**
-         * The IP address of the backend server.  Example: `10.0.0.3`
+         * (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
          */
         ipAddress: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         */
+        maxConnections?: pulumi.Input<number>;
         /**
          * A friendly name for the backend set. It must be unique and it cannot be changed.
          *
@@ -63306,7 +63348,7 @@ export namespace LoadBalancer {
          */
         name?: pulumi.Input<string>;
         /**
-         * Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+         * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
          */
         offline?: pulumi.Input<boolean>;
         /**
@@ -63314,7 +63356,7 @@ export namespace LoadBalancer {
          */
         port: pulumi.Input<number>;
         /**
-         * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }
@@ -63825,22 +63867,35 @@ export namespace LoadBalancer {
          * Whether the IP address is public or private.
          */
         isPublic?: pulumi.Input<boolean>;
-        /**
-         * Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-         */
         reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerIpAddressDetailReservedIp>[]>;
     }
 
     export interface LoadBalancerIpAddressDetailReservedIp {
         /**
-         * Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+         * Ocid of the Reserved IP/Public Ip created with VCN.
+         *
+         * Reserved IPs are IPs which already registered using VCN API.
+         *
+         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+         *
+         * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+         *
+         * Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
          */
         id?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerReservedIp {
         /**
-         * Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+         * Ocid of the Reserved IP/Public Ip created with VCN.
+         *
+         * Reserved IPs are IPs which already registered using VCN API.
+         *
+         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+         *
+         * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+         *
+         * Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
          */
         id?: pulumi.Input<string>;
     }
@@ -63933,7 +63988,7 @@ export namespace LoadBalancer {
 
     export interface RuleSetItem {
         /**
-         * (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+         * (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
          */
         action: pulumi.Input<string>;
         /**
@@ -63957,6 +64012,10 @@ export namespace LoadBalancer {
          */
         conditions?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItemCondition>[]>;
         /**
+         * (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+         */
+        defaultMaxConnections?: pulumi.Input<number>;
+        /**
          * (Updatable) A brief description of the access control rule. Avoid entering confidential information.
          *
          * example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -63970,6 +64029,10 @@ export namespace LoadBalancer {
          * (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
          */
         httpLargeHeaderSizeInKb?: pulumi.Input<number>;
+        /**
+         * (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+         */
+        ipMaxConnections?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItemIpMaxConnection>[]>;
         /**
          * (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
          * *  value cannot contain `$`
@@ -64062,6 +64125,17 @@ export namespace LoadBalancer {
          * *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
          */
         operator?: pulumi.Input<string>;
+    }
+
+    export interface RuleSetItemIpMaxConnection {
+        /**
+         * (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+         */
+        ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+         */
+        maxConnections?: pulumi.Input<number>;
     }
 
     export interface RuleSetItemRedirectUri {

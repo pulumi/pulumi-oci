@@ -28,6 +28,7 @@ __all__ = [
     'PathRouteSetPathRoutePathMatchType',
     'RuleSetItem',
     'RuleSetItemCondition',
+    'RuleSetItemIpMaxConnection',
     'RuleSetItemRedirectUri',
     'GetBackendHealthHealthCheckResultResult',
     'GetBackendSetsBackendsetResult',
@@ -47,6 +48,7 @@ __all__ = [
     'GetListenerRulesListenerRuleResult',
     'GetListenerRulesListenerRuleRuleResult',
     'GetListenerRulesListenerRuleRuleConditionResult',
+    'GetListenerRulesListenerRuleRuleIpMaxConnectionResult',
     'GetListenerRulesListenerRuleRuleRedirectUriResult',
     'GetLoadBalancerRoutingPoliciesFilterResult',
     'GetLoadBalancerRoutingPoliciesRoutingPolicyResult',
@@ -70,11 +72,13 @@ __all__ = [
     'GetProtocolsProtocolResult',
     'GetRuleSetItemResult',
     'GetRuleSetItemConditionResult',
+    'GetRuleSetItemIpMaxConnectionResult',
     'GetRuleSetItemRedirectUriResult',
     'GetRuleSetsFilterResult',
     'GetRuleSetsRuleSetResult',
     'GetRuleSetsRuleSetItemResult',
     'GetRuleSetsRuleSetItemConditionResult',
+    'GetRuleSetsRuleSetItemIpMaxConnectionResult',
     'GetRuleSetsRuleSetItemRedirectUriResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
@@ -89,6 +93,8 @@ class BackendSetBackend(dict):
         suggest = None
         if key == "ipAddress":
             suggest = "ip_address"
+        elif key == "maxConnections":
+            suggest = "max_connections"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BackendSetBackend. Access the value via the '{suggest}' property getter instead.")
@@ -106,21 +112,27 @@ class BackendSetBackend(dict):
                  port: int,
                  backup: Optional[bool] = None,
                  drain: Optional[bool] = None,
+                 max_connections: Optional[int] = None,
                  name: Optional[str] = None,
                  offline: Optional[bool] = None,
                  weight: Optional[int] = None):
         """
-        :param str ip_address: The IP address of the backend server.  Example: `10.0.0.3`
+        :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-        :param bool backup: Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-        :param bool drain: Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        :param bool backup: (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+               
+               **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+               
+               Example: `false`
+        :param bool drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        :param int max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         :param str name: A friendly name for the backend set. It must be unique and it cannot be changed.
                
                Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
                
                Example: `example_backend_set`
-        :param bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param bool offline: (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        :param int weight: (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "port", port)
@@ -128,6 +140,8 @@ class BackendSetBackend(dict):
             pulumi.set(__self__, "backup", backup)
         if drain is not None:
             pulumi.set(__self__, "drain", drain)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if offline is not None:
@@ -139,7 +153,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> str:
         """
-        The IP address of the backend server.  Example: `10.0.0.3`
+        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -155,7 +169,11 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def backup(self) -> Optional[bool]:
         """
-        Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+
+        **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+
+        Example: `false`
         """
         return pulumi.get(self, "backup")
 
@@ -163,9 +181,17 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def drain(self) -> Optional[bool]:
         """
-        Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "drain")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[int]:
+        """
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        """
+        return pulumi.get(self, "max_connections")
 
     @property
     @pulumi.getter
@@ -183,7 +209,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def offline(self) -> Optional[bool]:
         """
-        Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "offline")
 
@@ -191,7 +217,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def weight(self) -> Optional[int]:
         """
-        The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -1059,7 +1085,6 @@ class LoadBalancerIpAddressDetail(dict):
         """
         :param str ip_address: An IP address.  Example: `192.168.0.3`
         :param bool is_public: Whether the IP address is public or private.
-        :param Sequence['LoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
@@ -1087,9 +1112,6 @@ class LoadBalancerIpAddressDetail(dict):
     @property
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[Sequence['outputs.LoadBalancerIpAddressDetailReservedIp']]:
-        """
-        Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        """
         return pulumi.get(self, "reserved_ips")
 
 
@@ -1098,7 +1120,15 @@ class LoadBalancerIpAddressDetailReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
         """
-        :param str id: Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        :param str id: Ocid of the Reserved IP/Public Ip created with VCN.
+               
+               Reserved IPs are IPs which already registered using VCN API.
+               
+               Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+               
+               Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+               
+               Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1107,7 +1137,15 @@ class LoadBalancerIpAddressDetailReservedIp(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        Ocid of the Reserved IP/Public Ip created with VCN.
+
+        Reserved IPs are IPs which already registered using VCN API.
+
+        Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+
+        Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+
+        Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         return pulumi.get(self, "id")
 
@@ -1117,7 +1155,15 @@ class LoadBalancerReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
         """
-        :param str id: Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        :param str id: Ocid of the Reserved IP/Public Ip created with VCN.
+               
+               Reserved IPs are IPs which already registered using VCN API.
+               
+               Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+               
+               Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+               
+               Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1126,7 +1172,15 @@ class LoadBalancerReservedIp(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        Ocid of the Reserved IP/Public Ip created with VCN.
+
+        Reserved IPs are IPs which already registered using VCN API.
+
+        Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+
+        Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+
+        Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         return pulumi.get(self, "id")
 
@@ -1422,8 +1476,12 @@ class RuleSetItem(dict):
             suggest = "allowed_methods"
         elif key == "areInvalidCharactersAllowed":
             suggest = "are_invalid_characters_allowed"
+        elif key == "defaultMaxConnections":
+            suggest = "default_max_connections"
         elif key == "httpLargeHeaderSizeInKb":
             suggest = "http_large_header_size_in_kb"
+        elif key == "ipMaxConnections":
+            suggest = "ip_max_connections"
         elif key == "redirectUri":
             suggest = "redirect_uri"
         elif key == "responseCode":
@@ -1447,9 +1505,11 @@ class RuleSetItem(dict):
                  allowed_methods: Optional[Sequence[str]] = None,
                  are_invalid_characters_allowed: Optional[bool] = None,
                  conditions: Optional[Sequence['outputs.RuleSetItemCondition']] = None,
+                 default_max_connections: Optional[int] = None,
                  description: Optional[str] = None,
                  header: Optional[str] = None,
                  http_large_header_size_in_kb: Optional[int] = None,
+                 ip_max_connections: Optional[Sequence['outputs.RuleSetItemIpMaxConnection']] = None,
                  prefix: Optional[str] = None,
                  redirect_uri: Optional['outputs.RuleSetItemRedirectUri'] = None,
                  response_code: Optional[int] = None,
@@ -1457,7 +1517,7 @@ class RuleSetItem(dict):
                  suffix: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str action: (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        :param str action: (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param Sequence[str] allowed_methods: (Updatable) The list of HTTP methods allowed for this listener.
                
                By default, you can specify only the standard HTTP methods defined in the [HTTP Method Registry](http://www.iana.org/assignments/http-methods/http-methods.xhtml). You can also see a list of supported standard HTTP methods in the Load Balancing service documentation at [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
@@ -1469,11 +1529,13 @@ class RuleSetItem(dict):
                Example: ["GET", "PUT", "POST", "PROPFIND"]
         :param bool are_invalid_characters_allowed: (Updatable) Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         :param Sequence['RuleSetItemConditionArgs'] conditions: (Updatable)
+        :param int default_max_connections: (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
         :param str description: (Updatable) A brief description of the access control rule. Avoid entering confidential information.
                
                example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
         :param str header: (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
         :param int http_large_header_size_in_kb: (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
+        :param Sequence['RuleSetItemIpMaxConnectionArgs'] ip_max_connections: (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
         :param str prefix: (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -1534,12 +1596,16 @@ class RuleSetItem(dict):
             pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
+        if default_max_connections is not None:
+            pulumi.set(__self__, "default_max_connections", default_max_connections)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if header is not None:
             pulumi.set(__self__, "header", header)
         if http_large_header_size_in_kb is not None:
             pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        if ip_max_connections is not None:
+            pulumi.set(__self__, "ip_max_connections", ip_max_connections)
         if prefix is not None:
             pulumi.set(__self__, "prefix", prefix)
         if redirect_uri is not None:
@@ -1557,7 +1623,7 @@ class RuleSetItem(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         """
         return pulumi.get(self, "action")
 
@@ -1594,6 +1660,14 @@ class RuleSetItem(dict):
         return pulumi.get(self, "conditions")
 
     @property
+    @pulumi.getter(name="defaultMaxConnections")
+    def default_max_connections(self) -> Optional[int]:
+        """
+        (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        """
+        return pulumi.get(self, "default_max_connections")
+
+    @property
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
@@ -1618,6 +1692,14 @@ class RuleSetItem(dict):
         (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         """
         return pulumi.get(self, "http_large_header_size_in_kb")
+
+    @property
+    @pulumi.getter(name="ipMaxConnections")
+    def ip_max_connections(self) -> Optional[Sequence['outputs.RuleSetItemIpMaxConnection']]:
+        """
+        (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        """
+        return pulumi.get(self, "ip_max_connections")
 
     @property
     @pulumi.getter
@@ -1786,6 +1868,56 @@ class RuleSetItemCondition(dict):
         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
         return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class RuleSetItemIpMaxConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddresses":
+            suggest = "ip_addresses"
+        elif key == "maxConnections":
+            suggest = "max_connections"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleSetItemIpMaxConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleSetItemIpMaxConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleSetItemIpMaxConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip_addresses: Optional[Sequence[str]] = None,
+                 max_connections: Optional[int] = None):
+        """
+        :param Sequence[str] ip_addresses: (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        :param int max_connections: (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        if ip_addresses is not None:
+            pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[int]:
+        """
+        (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        return pulumi.get(self, "max_connections")
 
 
 @pulumi.output_type
@@ -2025,6 +2157,7 @@ class GetBackendHealthHealthCheckResultResult(dict):
 @pulumi.output_type
 class GetBackendSetsBackendsetResult(dict):
     def __init__(__self__, *,
+                 backend_max_connections: int,
                  backends: Sequence['outputs.GetBackendSetsBackendsetBackendResult'],
                  health_checkers: Sequence['outputs.GetBackendSetsBackendsetHealthCheckerResult'],
                  id: str,
@@ -2036,6 +2169,7 @@ class GetBackendSetsBackendsetResult(dict):
                  ssl_configurations: Sequence['outputs.GetBackendSetsBackendsetSslConfigurationResult'],
                  state: str):
         """
+        :param int backend_max_connections: The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
         :param Sequence['GetBackendSetsBackendsetHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param Sequence['GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configurations: The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
@@ -2044,6 +2178,7 @@ class GetBackendSetsBackendsetResult(dict):
         :param Sequence['GetBackendSetsBackendsetSessionPersistenceConfigurationArgs'] session_persistence_configurations: The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         :param Sequence['GetBackendSetsBackendsetSslConfigurationArgs'] ssl_configurations: A listener's SSL handling configuration.
         """
+        pulumi.set(__self__, "backend_max_connections", backend_max_connections)
         pulumi.set(__self__, "backends", backends)
         pulumi.set(__self__, "health_checkers", health_checkers)
         pulumi.set(__self__, "id", id)
@@ -2054,6 +2189,14 @@ class GetBackendSetsBackendsetResult(dict):
         pulumi.set(__self__, "session_persistence_configurations", session_persistence_configurations)
         pulumi.set(__self__, "ssl_configurations", ssl_configurations)
         pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="backendMaxConnections")
+    def backend_max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        """
+        return pulumi.get(self, "backend_max_connections")
 
     @property
     @pulumi.getter
@@ -2133,6 +2276,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
                  backup: bool,
                  drain: bool,
                  ip_address: str,
+                 max_connections: int,
                  name: str,
                  offline: bool,
                  port: int,
@@ -2141,6 +2285,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
         :param bool backup: Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         :param bool drain: Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param str ip_address: The IP address of the backend server.  Example: `10.0.0.3`
+        :param int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         :param str name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param int port: The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -2149,6 +2294,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
         pulumi.set(__self__, "backup", backup)
         pulumi.set(__self__, "drain", drain)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "max_connections", max_connections)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "offline", offline)
         pulumi.set(__self__, "port", port)
@@ -2177,6 +2323,14 @@ class GetBackendSetsBackendsetBackendResult(dict):
         The IP address of the backend server.  Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        """
+        return pulumi.get(self, "max_connections")
 
     @property
     @pulumi.getter
@@ -2565,6 +2719,7 @@ class GetBackendsBackendResult(dict):
                  drain: bool,
                  ip_address: str,
                  load_balancer_id: str,
+                 max_connections: int,
                  name: str,
                  offline: bool,
                  port: int,
@@ -2576,6 +2731,7 @@ class GetBackendsBackendResult(dict):
         :param bool drain: Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param str ip_address: The IP address of the backend server.  Example: `10.0.0.3`
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
+        :param int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         :param str name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         :param bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param int port: The communication port for the backend server.  Example: `8080`
@@ -2586,6 +2742,7 @@ class GetBackendsBackendResult(dict):
         pulumi.set(__self__, "drain", drain)
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "max_connections", max_connections)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "offline", offline)
         pulumi.set(__self__, "port", port)
@@ -2625,6 +2782,14 @@ class GetBackendsBackendResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
         """
         return pulumi.get(self, "load_balancer_id")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        """
+        return pulumi.get(self, "max_connections")
 
     @property
     @pulumi.getter
@@ -2961,9 +3126,11 @@ class GetListenerRulesListenerRuleRuleResult(dict):
                  allowed_methods: Sequence[str],
                  are_invalid_characters_allowed: bool,
                  conditions: Sequence['outputs.GetListenerRulesListenerRuleRuleConditionResult'],
+                 default_max_connections: int,
                  description: str,
                  header: str,
                  http_large_header_size_in_kb: int,
+                 ip_max_connections: Sequence['outputs.GetListenerRulesListenerRuleRuleIpMaxConnectionResult'],
                  prefix: str,
                  redirect_uris: Sequence['outputs.GetListenerRulesListenerRuleRuleRedirectUriResult'],
                  response_code: int,
@@ -2971,12 +3138,14 @@ class GetListenerRulesListenerRuleRuleResult(dict):
                  suffix: str,
                  value: str):
         """
-        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param Sequence[str] allowed_methods: The list of HTTP methods allowed for this listener.
         :param bool are_invalid_characters_allowed: Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
+        :param int default_max_connections: The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
         :param str description: A brief description of the access control rule. Avoid entering confidential information.
         :param str header: A header name that conforms to RFC 7230.  Example: `example_header_name`
         :param int http_large_header_size_in_kb: The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
+        :param Sequence['GetListenerRulesListenerRuleRuleIpMaxConnectionArgs'] ip_max_connections: An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
         :param str prefix: A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -2994,9 +3163,11 @@ class GetListenerRulesListenerRuleRuleResult(dict):
         pulumi.set(__self__, "allowed_methods", allowed_methods)
         pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
         pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "default_max_connections", default_max_connections)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "header", header)
         pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "ip_max_connections", ip_max_connections)
         pulumi.set(__self__, "prefix", prefix)
         pulumi.set(__self__, "redirect_uris", redirect_uris)
         pulumi.set(__self__, "response_code", response_code)
@@ -3008,7 +3179,7 @@ class GetListenerRulesListenerRuleRuleResult(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         """
         return pulumi.get(self, "action")
 
@@ -3034,6 +3205,14 @@ class GetListenerRulesListenerRuleRuleResult(dict):
         return pulumi.get(self, "conditions")
 
     @property
+    @pulumi.getter(name="defaultMaxConnections")
+    def default_max_connections(self) -> int:
+        """
+        The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        """
+        return pulumi.get(self, "default_max_connections")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
@@ -3056,6 +3235,14 @@ class GetListenerRulesListenerRuleRuleResult(dict):
         The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         """
         return pulumi.get(self, "http_large_header_size_in_kb")
+
+    @property
+    @pulumi.getter(name="ipMaxConnections")
+    def ip_max_connections(self) -> Sequence['outputs.GetListenerRulesListenerRuleRuleIpMaxConnectionResult']:
+        """
+        An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        """
+        return pulumi.get(self, "ip_max_connections")
 
     @property
     @pulumi.getter
@@ -3158,6 +3345,35 @@ class GetListenerRulesListenerRuleRuleConditionResult(dict):
         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
         return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class GetListenerRulesListenerRuleRuleIpMaxConnectionResult(dict):
+    def __init__(__self__, *,
+                 ip_addresses: Sequence[str],
+                 max_connections: int):
+        """
+        :param Sequence[str] ip_addresses: Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        :param int max_connections: The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        return pulumi.get(self, "max_connections")
 
 
 @pulumi.output_type
@@ -3495,6 +3711,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
                  ip_address_details: Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult'],
                  ip_addresses: Sequence[str],
                  ip_mode: str,
+                 is_delete_protection_enabled: bool,
                  is_private: bool,
                  network_security_group_ids: Sequence[str],
                  reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult'],
@@ -3509,9 +3726,10 @@ class GetLoadBalancersLoadBalancerResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        :param str id: Ocid of the Reserved IP/Public Ip created with VCN.
         :param Sequence['GetLoadBalancersLoadBalancerIpAddressDetailArgs'] ip_address_details: An array of IP addresses.
         :param Sequence[str] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead.
+        :param bool is_delete_protection_enabled: Whether or not the load balancer has delete protection enabled.
         :param bool is_private: Whether the load balancer has a VCN-local (private) IP address.
         :param Sequence[str] network_security_group_ids: An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
         :param str shape: A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
@@ -3529,6 +3747,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
         pulumi.set(__self__, "ip_address_details", ip_address_details)
         pulumi.set(__self__, "ip_addresses", ip_addresses)
         pulumi.set(__self__, "ip_mode", ip_mode)
+        pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         pulumi.set(__self__, "is_private", is_private)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "reserved_ips", reserved_ips)
@@ -3575,7 +3794,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        Ocid of the Reserved IP/Public Ip created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -3602,6 +3821,14 @@ class GetLoadBalancersLoadBalancerResult(dict):
     @pulumi.getter(name="ipMode")
     def ip_mode(self) -> str:
         return pulumi.get(self, "ip_mode")
+
+    @property
+    @pulumi.getter(name="isDeleteProtectionEnabled")
+    def is_delete_protection_enabled(self) -> bool:
+        """
+        Whether or not the load balancer has delete protection enabled.
+        """
+        return pulumi.get(self, "is_delete_protection_enabled")
 
     @property
     @pulumi.getter(name="isPrivate")
@@ -3682,7 +3909,6 @@ class GetLoadBalancersLoadBalancerIpAddressDetailResult(dict):
         """
         :param str ip_address: An IP address.  Example: `192.168.0.3`
         :param bool is_public: Whether the IP address is public or private.
-        :param Sequence['GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_public", is_public)
@@ -3707,9 +3933,6 @@ class GetLoadBalancersLoadBalancerIpAddressDetailResult(dict):
     @property
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult']:
-        """
-        Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        """
         return pulumi.get(self, "reserved_ips")
 
 
@@ -3718,7 +3941,7 @@ class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult(dict):
     def __init__(__self__, *,
                  id: str):
         """
-        :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        :param str id: Ocid of the Reserved IP/Public Ip created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -3726,7 +3949,7 @@ class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        Ocid of the Reserved IP/Public Ip created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -3736,7 +3959,7 @@ class GetLoadBalancersLoadBalancerReservedIpResult(dict):
     def __init__(__self__, *,
                  id: str):
         """
-        :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        :param str id: Ocid of the Reserved IP/Public Ip created with VCN.
         """
         pulumi.set(__self__, "id", id)
 
@@ -3744,7 +3967,7 @@ class GetLoadBalancersLoadBalancerReservedIpResult(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        Ocid of the pre-created public IP. That should be attahed to this load balancer.
+        Ocid of the Reserved IP/Public Ip created with VCN.
         """
         return pulumi.get(self, "id")
 
@@ -4039,9 +4262,11 @@ class GetRuleSetItemResult(dict):
                  allowed_methods: Sequence[str],
                  are_invalid_characters_allowed: bool,
                  conditions: Sequence['outputs.GetRuleSetItemConditionResult'],
+                 default_max_connections: int,
                  description: str,
                  header: str,
                  http_large_header_size_in_kb: int,
+                 ip_max_connections: Sequence['outputs.GetRuleSetItemIpMaxConnectionResult'],
                  prefix: str,
                  redirect_uris: Sequence['outputs.GetRuleSetItemRedirectUriResult'],
                  response_code: int,
@@ -4049,12 +4274,14 @@ class GetRuleSetItemResult(dict):
                  suffix: str,
                  value: str):
         """
-        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param Sequence[str] allowed_methods: The list of HTTP methods allowed for this listener.
         :param bool are_invalid_characters_allowed: Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
+        :param int default_max_connections: The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
         :param str description: A brief description of the access control rule. Avoid entering confidential information.
         :param str header: A header name that conforms to RFC 7230.  Example: `example_header_name`
         :param int http_large_header_size_in_kb: The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
+        :param Sequence['GetRuleSetItemIpMaxConnectionArgs'] ip_max_connections: An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
         :param str prefix: A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -4072,9 +4299,11 @@ class GetRuleSetItemResult(dict):
         pulumi.set(__self__, "allowed_methods", allowed_methods)
         pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
         pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "default_max_connections", default_max_connections)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "header", header)
         pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "ip_max_connections", ip_max_connections)
         pulumi.set(__self__, "prefix", prefix)
         pulumi.set(__self__, "redirect_uris", redirect_uris)
         pulumi.set(__self__, "response_code", response_code)
@@ -4086,7 +4315,7 @@ class GetRuleSetItemResult(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         """
         return pulumi.get(self, "action")
 
@@ -4112,6 +4341,14 @@ class GetRuleSetItemResult(dict):
         return pulumi.get(self, "conditions")
 
     @property
+    @pulumi.getter(name="defaultMaxConnections")
+    def default_max_connections(self) -> int:
+        """
+        The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        """
+        return pulumi.get(self, "default_max_connections")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
@@ -4134,6 +4371,14 @@ class GetRuleSetItemResult(dict):
         The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         """
         return pulumi.get(self, "http_large_header_size_in_kb")
+
+    @property
+    @pulumi.getter(name="ipMaxConnections")
+    def ip_max_connections(self) -> Sequence['outputs.GetRuleSetItemIpMaxConnectionResult']:
+        """
+        An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        """
+        return pulumi.get(self, "ip_max_connections")
 
     @property
     @pulumi.getter
@@ -4242,6 +4487,35 @@ class GetRuleSetItemConditionResult(dict):
         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
         return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class GetRuleSetItemIpMaxConnectionResult(dict):
+    def __init__(__self__, *,
+                 ip_addresses: Sequence[str],
+                 max_connections: int):
+        """
+        :param Sequence[str] ip_addresses: Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        :param int max_connections: The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        return pulumi.get(self, "max_connections")
 
 
 @pulumi.output_type
@@ -4400,9 +4674,11 @@ class GetRuleSetsRuleSetItemResult(dict):
                  allowed_methods: Sequence[str],
                  are_invalid_characters_allowed: bool,
                  conditions: Sequence['outputs.GetRuleSetsRuleSetItemConditionResult'],
+                 default_max_connections: int,
                  description: str,
                  header: str,
                  http_large_header_size_in_kb: int,
+                 ip_max_connections: Sequence['outputs.GetRuleSetsRuleSetItemIpMaxConnectionResult'],
                  prefix: str,
                  redirect_uris: Sequence['outputs.GetRuleSetsRuleSetItemRedirectUriResult'],
                  response_code: int,
@@ -4410,12 +4686,14 @@ class GetRuleSetsRuleSetItemResult(dict):
                  suffix: str,
                  value: str):
         """
-        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        :param str action: The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         :param Sequence[str] allowed_methods: The list of HTTP methods allowed for this listener.
         :param bool are_invalid_characters_allowed: Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
+        :param int default_max_connections: The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
         :param str description: A brief description of the access control rule. Avoid entering confidential information.
         :param str header: A header name that conforms to RFC 7230.  Example: `example_header_name`
         :param int http_large_header_size_in_kb: The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
+        :param Sequence['GetRuleSetsRuleSetItemIpMaxConnectionArgs'] ip_max_connections: An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
         :param str prefix: A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -4433,9 +4711,11 @@ class GetRuleSetsRuleSetItemResult(dict):
         pulumi.set(__self__, "allowed_methods", allowed_methods)
         pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
         pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "default_max_connections", default_max_connections)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "header", header)
         pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+        pulumi.set(__self__, "ip_max_connections", ip_max_connections)
         pulumi.set(__self__, "prefix", prefix)
         pulumi.set(__self__, "redirect_uris", redirect_uris)
         pulumi.set(__self__, "response_code", response_code)
@@ -4447,7 +4727,7 @@ class GetRuleSetsRuleSetItemResult(dict):
     @pulumi.getter
     def action(self) -> str:
         """
-        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+        The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         """
         return pulumi.get(self, "action")
 
@@ -4473,6 +4753,14 @@ class GetRuleSetsRuleSetItemResult(dict):
         return pulumi.get(self, "conditions")
 
     @property
+    @pulumi.getter(name="defaultMaxConnections")
+    def default_max_connections(self) -> int:
+        """
+        The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+        """
+        return pulumi.get(self, "default_max_connections")
+
+    @property
     @pulumi.getter
     def description(self) -> str:
         """
@@ -4495,6 +4783,14 @@ class GetRuleSetsRuleSetItemResult(dict):
         The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         """
         return pulumi.get(self, "http_large_header_size_in_kb")
+
+    @property
+    @pulumi.getter(name="ipMaxConnections")
+    def ip_max_connections(self) -> Sequence['outputs.GetRuleSetsRuleSetItemIpMaxConnectionResult']:
+        """
+        An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+        """
+        return pulumi.get(self, "ip_max_connections")
 
     @property
     @pulumi.getter
@@ -4603,6 +4899,35 @@ class GetRuleSetsRuleSetItemConditionResult(dict):
         *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
         return pulumi.get(self, "operator")
+
+
+@pulumi.output_type
+class GetRuleSetsRuleSetItemIpMaxConnectionResult(dict):
+    def __init__(__self__, *,
+                 ip_addresses: Sequence[str],
+                 max_connections: int):
+        """
+        :param Sequence[str] ip_addresses: Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        :param int max_connections: The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter(name="ipAddresses")
+    def ip_addresses(self) -> Sequence[str]:
+        """
+        Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+        """
+        return pulumi.get(self, "ip_addresses")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> int:
+        """
+        The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+        """
+        return pulumi.get(self, "max_connections")
 
 
 @pulumi.output_type

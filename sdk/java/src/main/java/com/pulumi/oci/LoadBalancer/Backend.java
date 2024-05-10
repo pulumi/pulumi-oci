@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .port(backendPort)
  *             .backup(backendBackup)
  *             .drain(backendDrain)
+ *             .maxConnections(backendMaxConnections)
  *             .offline(backendOffline)
  *             .weight(backendWeight)
  *             .build());
@@ -151,6 +152,20 @@ public class Backend extends com.pulumi.resources.CustomResource {
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
+    }
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    @Export(name="maxConnections", refs={Integer.class}, tree="[0]")
+    private Output<Integer> maxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    public Output<Integer> maxConnections() {
+        return this.maxConnections;
     }
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`

@@ -61,10 +61,12 @@ __all__ = [
     'CloudAutonomousVmClusterMaintenanceWindowMonthArgs',
     'CloudDatabaseManagementCredentialdetailsArgs',
     'CloudExadataInfrastructureCustomerContactArgs',
+    'CloudExadataInfrastructureDefinedFileSystemConfigurationArgs',
     'CloudExadataInfrastructureMaintenanceWindowArgs',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
     'CloudExadataInfrastructureMaintenanceWindowMonthArgs',
     'CloudVmClusterDataCollectionOptionsArgs',
+    'CloudVmClusterFileSystemConfigurationDetailArgs',
     'CloudVmClusterIormConfigCachArgs',
     'CloudVmClusterIormConfigCachDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgs',
@@ -3816,6 +3818,77 @@ class CloudExadataInfrastructureCustomerContactArgs:
 
 
 @pulumi.input_type
+class CloudExadataInfrastructureDefinedFileSystemConfigurationArgs:
+    def __init__(__self__, *,
+                 is_backup_partition: Optional[pulumi.Input[bool]] = None,
+                 is_resizable: Optional[pulumi.Input[bool]] = None,
+                 min_size_gb: Optional[pulumi.Input[int]] = None,
+                 mount_point: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param pulumi.Input[bool] is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param pulumi.Input[int] min_size_gb: The minimum size of file system.
+        :param pulumi.Input[str] mount_point: The mount point of file system.
+        """
+        if is_backup_partition is not None:
+            pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        if is_resizable is not None:
+            pulumi.set(__self__, "is_resizable", is_resizable)
+        if min_size_gb is not None:
+            pulumi.set(__self__, "min_size_gb", min_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @is_backup_partition.setter
+    def is_backup_partition(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_backup_partition", value)
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @is_resizable.setter
+    def is_resizable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_resizable", value)
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @min_size_gb.setter
+    def min_size_gb(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_size_gb", value)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+    @mount_point.setter
+    def mount_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_point", value)
+
+
+@pulumi.input_type
 class CloudExadataInfrastructureMaintenanceWindowArgs:
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
@@ -4097,6 +4170,45 @@ class CloudVmClusterDataCollectionOptionsArgs:
     @is_incident_logs_enabled.setter
     def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_incident_logs_enabled", value)
+
+
+@pulumi.input_type
+class CloudVmClusterFileSystemConfigurationDetailArgs:
+    def __init__(__self__, *,
+                 file_system_size_gb: Optional[pulumi.Input[int]] = None,
+                 mount_point: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] file_system_size_gb: (Updatable) The file system size to be allocated in GBs.
+        :param pulumi.Input[str] mount_point: (Updatable) The mount point of file system.
+        """
+        if file_system_size_gb is not None:
+            pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @file_system_size_gb.setter
+    def file_system_size_gb(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "file_system_size_gb", value)
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+    @mount_point.setter
+    def mount_point(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mount_point", value)
 
 
 @pulumi.input_type

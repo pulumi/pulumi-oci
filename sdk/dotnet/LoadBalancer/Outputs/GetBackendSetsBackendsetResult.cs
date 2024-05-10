@@ -13,6 +13,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     [OutputType]
     public sealed class GetBackendSetsBackendsetResult
     {
+        /// <summary>
+        /// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        /// </summary>
+        public readonly int BackendMaxConnections;
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendsetBackendResult> Backends;
         /// <summary>
         /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -47,6 +51,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
         [OutputConstructor]
         private GetBackendSetsBackendsetResult(
+            int backendMaxConnections,
+
             ImmutableArray<Outputs.GetBackendSetsBackendsetBackendResult> backends,
 
             ImmutableArray<Outputs.GetBackendSetsBackendsetHealthCheckerResult> healthCheckers,
@@ -67,6 +73,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string state)
         {
+            BackendMaxConnections = backendMaxConnections;
             Backends = backends;
             HealthCheckers = healthCheckers;
             Id = id;

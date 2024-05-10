@@ -523,11 +523,13 @@ class DrPlanPlanGroupArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 is_pause_enabled: Optional[pulumi.Input[bool]] = None,
                  steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
         :param pulumi.Input[str] id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
+        :param pulumi.Input[bool] is_pause_enabled: A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepArgs']]] steps: The list of steps in the group.
         :param pulumi.Input[str] type: The type of DR plan to be created. 
                
@@ -539,6 +541,8 @@ class DrPlanPlanGroupArgs:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_pause_enabled is not None:
+            pulumi.set(__self__, "is_pause_enabled", is_pause_enabled)
         if steps is not None:
             pulumi.set(__self__, "steps", steps)
         if type is not None:
@@ -567,6 +571,18 @@ class DrPlanPlanGroupArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isPauseEnabled")
+    def is_pause_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        """
+        return pulumi.get(self, "is_pause_enabled")
+
+    @is_pause_enabled.setter
+    def is_pause_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_pause_enabled", value)
 
     @property
     @pulumi.getter

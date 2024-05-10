@@ -43,9 +43,18 @@ namespace Pulumi.Oci.LoadBalancer
     ///                         Operator = ruleSetItemsConditionsOperator,
     ///                     },
     ///                 },
+    ///                 DefaultMaxConnections = ruleSetItemsDefaultMaxConnections,
     ///                 Description = ruleSetItemsDescription,
     ///                 Header = ruleSetItemsHeader,
     ///                 HttpLargeHeaderSizeInKb = ruleSetItemsHttpLargeHeaderSizeInKb,
+    ///                 IpMaxConnections = new[]
+    ///                 {
+    ///                     new Oci.LoadBalancer.Inputs.RuleSetItemIpMaxConnectionArgs
+    ///                     {
+    ///                         IpAddresses = ruleSetItemsIpMaxConnectionsIpAddresses,
+    ///                         MaxConnections = ruleSetItemsIpMaxConnectionsMaxConnections,
+    ///                     },
+    ///                 },
     ///                 Prefix = ruleSetItemsPrefix,
     ///                 RedirectUri = new Oci.LoadBalancer.Inputs.RuleSetItemRedirectUriArgs
     ///                 {

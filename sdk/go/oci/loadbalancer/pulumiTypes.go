@@ -14,23 +14,29 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type BackendSetBackend struct {
-	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup *bool `pulumi:"backup"`
-	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain *bool `pulumi:"drain"`
-	// The IP address of the backend server.  Example: `10.0.0.3`
+	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections *int `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	//
 	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
 	//
 	// Example: `exampleBackendSet`
 	Name *string `pulumi:"name"`
-	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline *bool `pulumi:"offline"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port int `pulumi:"port"`
-	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight *int `pulumi:"weight"`
 }
 
@@ -46,23 +52,29 @@ type BackendSetBackendInput interface {
 }
 
 type BackendSetBackendArgs struct {
-	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+	//
+	// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+	//
+	// Example: `false`
 	Backup pulumi.BoolPtrInput `pulumi:"backup"`
-	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+	// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 	Drain pulumi.BoolPtrInput `pulumi:"drain"`
-	// The IP address of the backend server.  Example: `10.0.0.3`
+	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	//
 	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
 	//
 	// Example: `exampleBackendSet`
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline pulumi.BoolPtrInput `pulumi:"offline"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
-	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+	// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -117,19 +129,28 @@ func (o BackendSetBackendOutput) ToBackendSetBackendOutputWithContext(ctx contex
 	return o
 }
 
-// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+//
+// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+//
+// Example: `false`
 func (o BackendSetBackendOutput) Backup() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.Backup }).(pulumi.BoolPtrOutput)
 }
 
-// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
 func (o BackendSetBackendOutput) Drain() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.Drain }).(pulumi.BoolPtrOutput)
 }
 
-// The IP address of the backend server.  Example: `10.0.0.3`
+// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
 func (o BackendSetBackendOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v BackendSetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+func (o BackendSetBackendOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BackendSetBackend) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -141,7 +162,7 @@ func (o BackendSetBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 func (o BackendSetBackendOutput) Offline() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.Offline }).(pulumi.BoolPtrOutput)
 }
@@ -151,7 +172,7 @@ func (o BackendSetBackendOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v BackendSetBackend) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 func (o BackendSetBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1996,8 +2017,7 @@ type LoadBalancerIpAddressDetail struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress *string `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic *bool `pulumi:"isPublic"`
-	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	IsPublic    *bool                                   `pulumi:"isPublic"`
 	ReservedIps []LoadBalancerIpAddressDetailReservedIp `pulumi:"reservedIps"`
 }
 
@@ -2016,8 +2036,7 @@ type LoadBalancerIpAddressDetailArgs struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
-	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	IsPublic    pulumi.BoolPtrInput                             `pulumi:"isPublic"`
 	ReservedIps LoadBalancerIpAddressDetailReservedIpArrayInput `pulumi:"reservedIps"`
 }
 
@@ -2082,7 +2101,6 @@ func (o LoadBalancerIpAddressDetailOutput) IsPublic() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LoadBalancerIpAddressDetail) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
-// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 func (o LoadBalancerIpAddressDetailOutput) ReservedIps() LoadBalancerIpAddressDetailReservedIpArrayOutput {
 	return o.ApplyT(func(v LoadBalancerIpAddressDetail) []LoadBalancerIpAddressDetailReservedIp { return v.ReservedIps }).(LoadBalancerIpAddressDetailReservedIpArrayOutput)
 }
@@ -2108,7 +2126,15 @@ func (o LoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.IntInput) LoadBal
 }
 
 type LoadBalancerIpAddressDetailReservedIp struct {
-	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
+	//
+	// Reserved IPs are IPs which already registered using VCN API.
+	//
+	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	//
+	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
 }
 
@@ -2124,7 +2150,15 @@ type LoadBalancerIpAddressDetailReservedIpInput interface {
 }
 
 type LoadBalancerIpAddressDetailReservedIpArgs struct {
-	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
+	//
+	// Reserved IPs are IPs which already registered using VCN API.
+	//
+	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	//
+	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2179,7 +2213,15 @@ func (o LoadBalancerIpAddressDetailReservedIpOutput) ToLoadBalancerIpAddressDeta
 	return o
 }
 
-// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+// Ocid of the Reserved IP/Public Ip created with VCN.
+//
+// Reserved IPs are IPs which already registered using VCN API.
+//
+// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+//
+// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+//
+// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerIpAddressDetailReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2205,7 +2247,15 @@ func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInpu
 }
 
 type LoadBalancerReservedIp struct {
-	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
+	//
+	// Reserved IPs are IPs which already registered using VCN API.
+	//
+	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	//
+	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
 }
 
@@ -2221,7 +2271,15 @@ type LoadBalancerReservedIpInput interface {
 }
 
 type LoadBalancerReservedIpArgs struct {
-	// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
+	//
+	// Reserved IPs are IPs which already registered using VCN API.
+	//
+	// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+	//
+	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+	//
+	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2276,7 +2334,15 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(
 	return o
 }
 
-// Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+// Ocid of the Reserved IP/Public Ip created with VCN.
+//
+// Reserved IPs are IPs which already registered using VCN API.
+//
+// Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
+//
+// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
+//
+// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -2922,7 +2988,7 @@ func (o PathRouteSetPathRoutePathMatchTypeOutput) MatchType() pulumi.StringOutpu
 }
 
 type RuleSetItem struct {
-	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// (Updatable) The list of HTTP methods allowed for this listener.
 	//
@@ -2938,6 +3004,8 @@ type RuleSetItem struct {
 	AreInvalidCharactersAllowed *bool `pulumi:"areInvalidCharactersAllowed"`
 	// (Updatable)
 	Conditions []RuleSetItemCondition `pulumi:"conditions"`
+	// (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections *int `pulumi:"defaultMaxConnections"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 	//
 	// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -2946,6 +3014,8 @@ type RuleSetItem struct {
 	Header *string `pulumi:"header"`
 	// (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb *int `pulumi:"httpLargeHeaderSizeInKb"`
+	// (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections []RuleSetItemIpMaxConnection `pulumi:"ipMaxConnections"`
 	// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -3018,7 +3088,7 @@ type RuleSetItemInput interface {
 }
 
 type RuleSetItemArgs struct {
-	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The list of HTTP methods allowed for this listener.
 	//
@@ -3034,6 +3104,8 @@ type RuleSetItemArgs struct {
 	AreInvalidCharactersAllowed pulumi.BoolPtrInput `pulumi:"areInvalidCharactersAllowed"`
 	// (Updatable)
 	Conditions RuleSetItemConditionArrayInput `pulumi:"conditions"`
+	// (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections pulumi.IntPtrInput `pulumi:"defaultMaxConnections"`
 	// (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 	//
 	// example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -3042,6 +3114,8 @@ type RuleSetItemArgs struct {
 	Header pulumi.StringPtrInput `pulumi:"header"`
 	// (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb pulumi.IntPtrInput `pulumi:"httpLargeHeaderSizeInKb"`
+	// (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections RuleSetItemIpMaxConnectionArrayInput `pulumi:"ipMaxConnections"`
 	// (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -3153,7 +3227,7 @@ func (o RuleSetItemOutput) ToRuleSetItemOutputWithContext(ctx context.Context) R
 	return o
 }
 
-// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+// (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 func (o RuleSetItemOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v RuleSetItem) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -3181,6 +3255,11 @@ func (o RuleSetItemOutput) Conditions() RuleSetItemConditionArrayOutput {
 	return o.ApplyT(func(v RuleSetItem) []RuleSetItemCondition { return v.Conditions }).(RuleSetItemConditionArrayOutput)
 }
 
+// (Updatable) The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+func (o RuleSetItemOutput) DefaultMaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleSetItem) *int { return v.DefaultMaxConnections }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) A brief description of the access control rule. Avoid entering confidential information.
 //
 // example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
@@ -3196,6 +3275,11 @@ func (o RuleSetItemOutput) Header() pulumi.StringPtrOutput {
 // (Updatable) The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 func (o RuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v RuleSetItem) *int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+func (o RuleSetItemOutput) IpMaxConnections() RuleSetItemIpMaxConnectionArrayOutput {
+	return o.ApplyT(func(v RuleSetItem) []RuleSetItemIpMaxConnection { return v.IpMaxConnections }).(RuleSetItemIpMaxConnectionArrayOutput)
 }
 
 // (Updatable) A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -3428,6 +3512,112 @@ func (o RuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) RuleSetItemCon
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleSetItemCondition {
 		return vs[0].([]RuleSetItemCondition)[vs[1].(int)]
 	}).(RuleSetItemConditionOutput)
+}
+
+type RuleSetItemIpMaxConnection struct {
+	// (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections *int `pulumi:"maxConnections"`
+}
+
+// RuleSetItemIpMaxConnectionInput is an input type that accepts RuleSetItemIpMaxConnectionArgs and RuleSetItemIpMaxConnectionOutput values.
+// You can construct a concrete instance of `RuleSetItemIpMaxConnectionInput` via:
+//
+//	RuleSetItemIpMaxConnectionArgs{...}
+type RuleSetItemIpMaxConnectionInput interface {
+	pulumi.Input
+
+	ToRuleSetItemIpMaxConnectionOutput() RuleSetItemIpMaxConnectionOutput
+	ToRuleSetItemIpMaxConnectionOutputWithContext(context.Context) RuleSetItemIpMaxConnectionOutput
+}
+
+type RuleSetItemIpMaxConnectionArgs struct {
+	// (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
+}
+
+func (RuleSetItemIpMaxConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i RuleSetItemIpMaxConnectionArgs) ToRuleSetItemIpMaxConnectionOutput() RuleSetItemIpMaxConnectionOutput {
+	return i.ToRuleSetItemIpMaxConnectionOutputWithContext(context.Background())
+}
+
+func (i RuleSetItemIpMaxConnectionArgs) ToRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) RuleSetItemIpMaxConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemIpMaxConnectionOutput)
+}
+
+// RuleSetItemIpMaxConnectionArrayInput is an input type that accepts RuleSetItemIpMaxConnectionArray and RuleSetItemIpMaxConnectionArrayOutput values.
+// You can construct a concrete instance of `RuleSetItemIpMaxConnectionArrayInput` via:
+//
+//	RuleSetItemIpMaxConnectionArray{ RuleSetItemIpMaxConnectionArgs{...} }
+type RuleSetItemIpMaxConnectionArrayInput interface {
+	pulumi.Input
+
+	ToRuleSetItemIpMaxConnectionArrayOutput() RuleSetItemIpMaxConnectionArrayOutput
+	ToRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Context) RuleSetItemIpMaxConnectionArrayOutput
+}
+
+type RuleSetItemIpMaxConnectionArray []RuleSetItemIpMaxConnectionInput
+
+func (RuleSetItemIpMaxConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i RuleSetItemIpMaxConnectionArray) ToRuleSetItemIpMaxConnectionArrayOutput() RuleSetItemIpMaxConnectionArrayOutput {
+	return i.ToRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i RuleSetItemIpMaxConnectionArray) ToRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) RuleSetItemIpMaxConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemIpMaxConnectionArrayOutput)
+}
+
+type RuleSetItemIpMaxConnectionOutput struct{ *pulumi.OutputState }
+
+func (RuleSetItemIpMaxConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o RuleSetItemIpMaxConnectionOutput) ToRuleSetItemIpMaxConnectionOutput() RuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+func (o RuleSetItemIpMaxConnectionOutput) ToRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) RuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+// (Updatable) Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+func (o RuleSetItemIpMaxConnectionOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleSetItemIpMaxConnection) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+func (o RuleSetItemIpMaxConnectionOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleSetItemIpMaxConnection) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
+}
+
+type RuleSetItemIpMaxConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleSetItemIpMaxConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o RuleSetItemIpMaxConnectionArrayOutput) ToRuleSetItemIpMaxConnectionArrayOutput() RuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o RuleSetItemIpMaxConnectionArrayOutput) ToRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) RuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o RuleSetItemIpMaxConnectionArrayOutput) Index(i pulumi.IntInput) RuleSetItemIpMaxConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleSetItemIpMaxConnection {
+		return vs[0].([]RuleSetItemIpMaxConnection)[vs[1].(int)]
+	}).(RuleSetItemIpMaxConnectionOutput)
 }
 
 type RuleSetItemRedirectUri struct {
@@ -4000,7 +4190,9 @@ func (o GetBackendHealthHealthCheckResultArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetBackendSetsBackendset struct {
-	Backends []GetBackendSetsBackendsetBackend `pulumi:"backends"`
+	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections int                               `pulumi:"backendMaxConnections"`
+	Backends              []GetBackendSetsBackendsetBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetsBackendsetHealthChecker `pulumi:"healthCheckers"`
 	Id             string                                  `pulumi:"id"`
@@ -4031,7 +4223,9 @@ type GetBackendSetsBackendsetInput interface {
 }
 
 type GetBackendSetsBackendsetArgs struct {
-	Backends GetBackendSetsBackendsetBackendArrayInput `pulumi:"backends"`
+	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	BackendMaxConnections pulumi.IntInput                           `pulumi:"backendMaxConnections"`
+	Backends              GetBackendSetsBackendsetBackendArrayInput `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers GetBackendSetsBackendsetHealthCheckerArrayInput `pulumi:"healthCheckers"`
 	Id             pulumi.StringInput                              `pulumi:"id"`
@@ -4099,6 +4293,11 @@ func (o GetBackendSetsBackendsetOutput) ToGetBackendSetsBackendsetOutput() GetBa
 
 func (o GetBackendSetsBackendsetOutput) ToGetBackendSetsBackendsetOutputWithContext(ctx context.Context) GetBackendSetsBackendsetOutput {
 	return o
+}
+
+// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+func (o GetBackendSetsBackendsetOutput) BackendMaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) int { return v.BackendMaxConnections }).(pulumi.IntOutput)
 }
 
 func (o GetBackendSetsBackendsetOutput) Backends() GetBackendSetsBackendsetBackendArrayOutput {
@@ -4181,6 +4380,8 @@ type GetBackendSetsBackendsetBackend struct {
 	Drain bool `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections int `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	Name string `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -4209,6 +4410,8 @@ type GetBackendSetsBackendsetBackendArgs struct {
 	Drain pulumi.BoolInput `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -4283,6 +4486,11 @@ func (o GetBackendSetsBackendsetBackendOutput) Drain() pulumi.BoolOutput {
 // The IP address of the backend server.  Example: `10.0.0.3`
 func (o GetBackendSetsBackendsetBackendOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+func (o GetBackendSetsBackendsetBackendOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -5031,6 +5239,8 @@ type GetBackendsBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections int `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name string `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -5064,6 +5274,8 @@ type GetBackendsBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringInput `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
@@ -5149,6 +5361,11 @@ func (o GetBackendsBackendOutput) IpAddress() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 func (o GetBackendsBackendOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendsBackend) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+func (o GetBackendsBackendOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBackendsBackend) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 // A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
@@ -6004,19 +6221,23 @@ func (o GetListenerRulesListenerRuleArrayOutput) Index(i pulumi.IntInput) GetLis
 }
 
 type GetListenerRulesListenerRuleRule struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed bool                                        `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetListenerRulesListenerRuleRuleCondition `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections int `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections []GetListenerRulesListenerRuleRuleIpMaxConnection `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -6049,19 +6270,23 @@ type GetListenerRulesListenerRuleRuleInput interface {
 }
 
 type GetListenerRulesListenerRuleRuleArgs struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed pulumi.BoolInput                                    `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetListenerRulesListenerRuleRuleConditionArrayInput `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections pulumi.IntInput `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections GetListenerRulesListenerRuleRuleIpMaxConnectionArrayInput `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -6133,7 +6358,7 @@ func (o GetListenerRulesListenerRuleRuleOutput) ToGetListenerRulesListenerRuleRu
 	return o
 }
 
-// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 func (o GetListenerRulesListenerRuleRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -6154,6 +6379,11 @@ func (o GetListenerRulesListenerRuleRuleOutput) Conditions() GetListenerRulesLis
 	}).(GetListenerRulesListenerRuleRuleConditionArrayOutput)
 }
 
+// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+func (o GetListenerRulesListenerRuleRuleOutput) DefaultMaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) int { return v.DefaultMaxConnections }).(pulumi.IntOutput)
+}
+
 // A brief description of the access control rule. Avoid entering confidential information.
 func (o GetListenerRulesListenerRuleRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Description }).(pulumi.StringOutput)
@@ -6167,6 +6397,13 @@ func (o GetListenerRulesListenerRuleRuleOutput) Header() pulumi.StringOutput {
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 func (o GetListenerRulesListenerRuleRuleOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+}
+
+// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+func (o GetListenerRulesListenerRuleRuleOutput) IpMaxConnections() GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) []GetListenerRulesListenerRuleRuleIpMaxConnection {
+		return v.IpMaxConnections
+	}).(GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -6352,6 +6589,112 @@ func (o GetListenerRulesListenerRuleRuleConditionArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesListenerRuleRuleCondition {
 		return vs[0].([]GetListenerRulesListenerRuleRuleCondition)[vs[1].(int)]
 	}).(GetListenerRulesListenerRuleRuleConditionOutput)
+}
+
+type GetListenerRulesListenerRuleRuleIpMaxConnection struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections int `pulumi:"maxConnections"`
+}
+
+// GetListenerRulesListenerRuleRuleIpMaxConnectionInput is an input type that accepts GetListenerRulesListenerRuleRuleIpMaxConnectionArgs and GetListenerRulesListenerRuleRuleIpMaxConnectionOutput values.
+// You can construct a concrete instance of `GetListenerRulesListenerRuleRuleIpMaxConnectionInput` via:
+//
+//	GetListenerRulesListenerRuleRuleIpMaxConnectionArgs{...}
+type GetListenerRulesListenerRuleRuleIpMaxConnectionInput interface {
+	pulumi.Input
+
+	ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionOutput
+	ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutputWithContext(context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionOutput
+}
+
+type GetListenerRulesListenerRuleRuleIpMaxConnectionArgs struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+}
+
+func (GetListenerRulesListenerRuleRuleIpMaxConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListenerRulesListenerRuleRuleIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetListenerRulesListenerRuleRuleIpMaxConnectionArgs) ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionOutput {
+	return i.ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutputWithContext(context.Background())
+}
+
+func (i GetListenerRulesListenerRuleRuleIpMaxConnectionArgs) ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleIpMaxConnectionOutput)
+}
+
+// GetListenerRulesListenerRuleRuleIpMaxConnectionArrayInput is an input type that accepts GetListenerRulesListenerRuleRuleIpMaxConnectionArray and GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput values.
+// You can construct a concrete instance of `GetListenerRulesListenerRuleRuleIpMaxConnectionArrayInput` via:
+//
+//	GetListenerRulesListenerRuleRuleIpMaxConnectionArray{ GetListenerRulesListenerRuleRuleIpMaxConnectionArgs{...} }
+type GetListenerRulesListenerRuleRuleIpMaxConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput
+	ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutputWithContext(context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput
+}
+
+type GetListenerRulesListenerRuleRuleIpMaxConnectionArray []GetListenerRulesListenerRuleRuleIpMaxConnectionInput
+
+func (GetListenerRulesListenerRuleRuleIpMaxConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListenerRulesListenerRuleRuleIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetListenerRulesListenerRuleRuleIpMaxConnectionArray) ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput {
+	return i.ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetListenerRulesListenerRuleRuleIpMaxConnectionArray) ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput)
+}
+
+type GetListenerRulesListenerRuleRuleIpMaxConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetListenerRulesListenerRuleRuleIpMaxConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetListenerRulesListenerRuleRuleIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionOutput) ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionOutput {
+	return o
+}
+
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionOutput) ToGetListenerRulesListenerRuleRuleIpMaxConnectionOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionOutput {
+	return o
+}
+
+// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleIpMaxConnection) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleIpMaxConnection) int { return v.MaxConnections }).(pulumi.IntOutput)
+}
+
+type GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetListenerRulesListenerRuleRuleIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput) ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput() GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput) ToGetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput) Index(i pulumi.IntInput) GetListenerRulesListenerRuleRuleIpMaxConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesListenerRuleRuleIpMaxConnection {
+		return vs[0].([]GetListenerRulesListenerRuleRuleIpMaxConnection)[vs[1].(int)]
+	}).(GetListenerRulesListenerRuleRuleIpMaxConnectionOutput)
 }
 
 type GetListenerRulesListenerRuleRuleRedirectUri struct {
@@ -7290,7 +7633,7 @@ type GetLoadBalancersLoadBalancer struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails []GetLoadBalancersLoadBalancerIpAddressDetail `pulumi:"ipAddressDetails"`
@@ -7299,6 +7642,8 @@ type GetLoadBalancersLoadBalancer struct {
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	IpMode      string   `pulumi:"ipMode"`
+	// Whether or not the load balancer has delete protection enabled.
+	IsDeleteProtectionEnabled bool `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
 	IsPrivate bool `pulumi:"isPrivate"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
@@ -7338,7 +7683,7 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails GetLoadBalancersLoadBalancerIpAddressDetailArrayInput `pulumi:"ipAddressDetails"`
@@ -7347,6 +7692,8 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	IpMode      pulumi.StringInput      `pulumi:"ipMode"`
+	// Whether or not the load balancer has delete protection enabled.
+	IsDeleteProtectionEnabled pulumi.BoolInput `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
 	IsPrivate pulumi.BoolInput `pulumi:"isPrivate"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
@@ -7437,7 +7784,7 @@ func (o GetLoadBalancersLoadBalancerOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+// Ocid of the Reserved IP/Public Ip created with VCN.
 func (o GetLoadBalancersLoadBalancerOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -7458,6 +7805,11 @@ func (o GetLoadBalancersLoadBalancerOutput) IpAddresses() pulumi.StringArrayOutp
 
 func (o GetLoadBalancersLoadBalancerOutput) IpMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.IpMode }).(pulumi.StringOutput)
+}
+
+// Whether or not the load balancer has delete protection enabled.
+func (o GetLoadBalancersLoadBalancerOutput) IsDeleteProtectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) bool { return v.IsDeleteProtectionEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether the load balancer has a VCN-local (private) IP address.
@@ -7528,8 +7880,7 @@ type GetLoadBalancersLoadBalancerIpAddressDetail struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic bool `pulumi:"isPublic"`
-	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	IsPublic    bool                                                    `pulumi:"isPublic"`
 	ReservedIps []GetLoadBalancersLoadBalancerIpAddressDetailReservedIp `pulumi:"reservedIps"`
 }
 
@@ -7548,8 +7899,7 @@ type GetLoadBalancersLoadBalancerIpAddressDetailArgs struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
-	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+	IsPublic    pulumi.BoolInput                                                `pulumi:"isPublic"`
 	ReservedIps GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayInput `pulumi:"reservedIps"`
 }
 
@@ -7614,7 +7964,6 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) IsPublic() pulumi.Boo
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) bool { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
-// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) ReservedIps() GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) []GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
 		return v.ReservedIps
@@ -7642,7 +7991,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.I
 }
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIp struct {
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -7658,7 +8007,7 @@ type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpInput interface {
 }
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs struct {
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -7713,7 +8062,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) ToGetLoadBa
 	return o
 }
 
-// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+// Ocid of the Reserved IP/Public Ip created with VCN.
 func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetailReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -7739,7 +8088,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) Index(
 }
 
 type GetLoadBalancersLoadBalancerReservedIp struct {
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id string `pulumi:"id"`
 }
 
@@ -7755,7 +8104,7 @@ type GetLoadBalancersLoadBalancerReservedIpInput interface {
 }
 
 type GetLoadBalancersLoadBalancerReservedIpArgs struct {
-	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -7810,7 +8159,7 @@ func (o GetLoadBalancersLoadBalancerReservedIpOutput) ToGetLoadBalancersLoadBala
 	return o
 }
 
-// Ocid of the pre-created public IP. That should be attahed to this load balancer.
+// Ocid of the Reserved IP/Public Ip created with VCN.
 func (o GetLoadBalancersLoadBalancerReservedIpOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerReservedIp) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -8774,19 +9123,23 @@ func (o GetProtocolsProtocolArrayOutput) Index(i pulumi.IntInput) GetProtocolsPr
 }
 
 type GetRuleSetItem struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed bool                      `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetRuleSetItemCondition `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections int `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections []GetRuleSetItemIpMaxConnection `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -8819,19 +9172,23 @@ type GetRuleSetItemInput interface {
 }
 
 type GetRuleSetItemArgs struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed pulumi.BoolInput                  `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetRuleSetItemConditionArrayInput `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections pulumi.IntInput `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections GetRuleSetItemIpMaxConnectionArrayInput `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -8903,7 +9260,7 @@ func (o GetRuleSetItemOutput) ToGetRuleSetItemOutputWithContext(ctx context.Cont
 	return o
 }
 
-// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 func (o GetRuleSetItemOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleSetItem) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -8922,6 +9279,11 @@ func (o GetRuleSetItemOutput) Conditions() GetRuleSetItemConditionArrayOutput {
 	return o.ApplyT(func(v GetRuleSetItem) []GetRuleSetItemCondition { return v.Conditions }).(GetRuleSetItemConditionArrayOutput)
 }
 
+// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+func (o GetRuleSetItemOutput) DefaultMaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleSetItem) int { return v.DefaultMaxConnections }).(pulumi.IntOutput)
+}
+
 // A brief description of the access control rule. Avoid entering confidential information.
 func (o GetRuleSetItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleSetItem) string { return v.Description }).(pulumi.StringOutput)
@@ -8935,6 +9297,11 @@ func (o GetRuleSetItemOutput) Header() pulumi.StringOutput {
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 func (o GetRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRuleSetItem) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+}
+
+// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+func (o GetRuleSetItemOutput) IpMaxConnections() GetRuleSetItemIpMaxConnectionArrayOutput {
+	return o.ApplyT(func(v GetRuleSetItem) []GetRuleSetItemIpMaxConnection { return v.IpMaxConnections }).(GetRuleSetItemIpMaxConnectionArrayOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -9127,6 +9494,112 @@ func (o GetRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) GetRuleSetI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetItemCondition {
 		return vs[0].([]GetRuleSetItemCondition)[vs[1].(int)]
 	}).(GetRuleSetItemConditionOutput)
+}
+
+type GetRuleSetItemIpMaxConnection struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections int `pulumi:"maxConnections"`
+}
+
+// GetRuleSetItemIpMaxConnectionInput is an input type that accepts GetRuleSetItemIpMaxConnectionArgs and GetRuleSetItemIpMaxConnectionOutput values.
+// You can construct a concrete instance of `GetRuleSetItemIpMaxConnectionInput` via:
+//
+//	GetRuleSetItemIpMaxConnectionArgs{...}
+type GetRuleSetItemIpMaxConnectionInput interface {
+	pulumi.Input
+
+	ToGetRuleSetItemIpMaxConnectionOutput() GetRuleSetItemIpMaxConnectionOutput
+	ToGetRuleSetItemIpMaxConnectionOutputWithContext(context.Context) GetRuleSetItemIpMaxConnectionOutput
+}
+
+type GetRuleSetItemIpMaxConnectionArgs struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+}
+
+func (GetRuleSetItemIpMaxConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetRuleSetItemIpMaxConnectionArgs) ToGetRuleSetItemIpMaxConnectionOutput() GetRuleSetItemIpMaxConnectionOutput {
+	return i.ToGetRuleSetItemIpMaxConnectionOutputWithContext(context.Background())
+}
+
+func (i GetRuleSetItemIpMaxConnectionArgs) ToGetRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) GetRuleSetItemIpMaxConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemIpMaxConnectionOutput)
+}
+
+// GetRuleSetItemIpMaxConnectionArrayInput is an input type that accepts GetRuleSetItemIpMaxConnectionArray and GetRuleSetItemIpMaxConnectionArrayOutput values.
+// You can construct a concrete instance of `GetRuleSetItemIpMaxConnectionArrayInput` via:
+//
+//	GetRuleSetItemIpMaxConnectionArray{ GetRuleSetItemIpMaxConnectionArgs{...} }
+type GetRuleSetItemIpMaxConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetItemIpMaxConnectionArrayOutput
+	ToGetRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Context) GetRuleSetItemIpMaxConnectionArrayOutput
+}
+
+type GetRuleSetItemIpMaxConnectionArray []GetRuleSetItemIpMaxConnectionInput
+
+func (GetRuleSetItemIpMaxConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetRuleSetItemIpMaxConnectionArray) ToGetRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetItemIpMaxConnectionArrayOutput {
+	return i.ToGetRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleSetItemIpMaxConnectionArray) ToGetRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetRuleSetItemIpMaxConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemIpMaxConnectionArrayOutput)
+}
+
+type GetRuleSetItemIpMaxConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuleSetItemIpMaxConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetRuleSetItemIpMaxConnectionOutput) ToGetRuleSetItemIpMaxConnectionOutput() GetRuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+func (o GetRuleSetItemIpMaxConnectionOutput) ToGetRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) GetRuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+func (o GetRuleSetItemIpMaxConnectionOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleSetItemIpMaxConnection) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+func (o GetRuleSetItemIpMaxConnectionOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleSetItemIpMaxConnection) int { return v.MaxConnections }).(pulumi.IntOutput)
+}
+
+type GetRuleSetItemIpMaxConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleSetItemIpMaxConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetRuleSetItemIpMaxConnectionArrayOutput) ToGetRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetRuleSetItemIpMaxConnectionArrayOutput) ToGetRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetRuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetRuleSetItemIpMaxConnectionArrayOutput) Index(i pulumi.IntInput) GetRuleSetItemIpMaxConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetItemIpMaxConnection {
+		return vs[0].([]GetRuleSetItemIpMaxConnection)[vs[1].(int)]
+	}).(GetRuleSetItemIpMaxConnectionOutput)
 }
 
 type GetRuleSetItemRedirectUri struct {
@@ -9499,19 +9972,23 @@ func (o GetRuleSetsRuleSetArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleS
 }
 
 type GetRuleSetsRuleSetItem struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed bool                              `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetRuleSetsRuleSetItemCondition `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections int `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections []GetRuleSetsRuleSetItemIpMaxConnection `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -9544,19 +10021,23 @@ type GetRuleSetsRuleSetItemInput interface {
 }
 
 type GetRuleSetsRuleSetItemArgs struct {
-	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
 	AreInvalidCharactersAllowed pulumi.BoolInput                          `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetRuleSetsRuleSetItemConditionArrayInput `pulumi:"conditions"`
+	// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+	DefaultMaxConnections pulumi.IntInput `pulumi:"defaultMaxConnections"`
 	// A brief description of the access control rule. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+	IpMaxConnections GetRuleSetsRuleSetItemIpMaxConnectionArrayInput `pulumi:"ipMaxConnections"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
@@ -9628,7 +10109,7 @@ func (o GetRuleSetsRuleSetItemOutput) ToGetRuleSetsRuleSetItemOutputWithContext(
 	return o
 }
 
-// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
+// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `IP_BASED_MAX_CONNECTIONS`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 func (o GetRuleSetsRuleSetItemOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -9647,6 +10128,11 @@ func (o GetRuleSetsRuleSetItemOutput) Conditions() GetRuleSetsRuleSetItemConditi
 	return o.ApplyT(func(v GetRuleSetsRuleSetItem) []GetRuleSetsRuleSetItemCondition { return v.Conditions }).(GetRuleSetsRuleSetItemConditionArrayOutput)
 }
 
+// The maximum number of connections that the any IP can make to a listener unless the IP is mentioned in maxConnections. If no defaultMaxConnections is specified the default is unlimited.
+func (o GetRuleSetsRuleSetItemOutput) DefaultMaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) int { return v.DefaultMaxConnections }).(pulumi.IntOutput)
+}
+
 // A brief description of the access control rule. Avoid entering confidential information.
 func (o GetRuleSetsRuleSetItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Description }).(pulumi.StringOutput)
@@ -9660,6 +10146,11 @@ func (o GetRuleSetsRuleSetItemOutput) Header() pulumi.StringOutput {
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
 func (o GetRuleSetsRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRuleSetsRuleSetItem) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+}
+
+// An array of IPs that have a maxConnection setting different than the default and what that maxConnection setting is
+func (o GetRuleSetsRuleSetItemOutput) IpMaxConnections() GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) []GetRuleSetsRuleSetItemIpMaxConnection { return v.IpMaxConnections }).(GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -9852,6 +10343,112 @@ func (o GetRuleSetsRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsRuleSetItemCondition {
 		return vs[0].([]GetRuleSetsRuleSetItemCondition)[vs[1].(int)]
 	}).(GetRuleSetsRuleSetItemConditionOutput)
+}
+
+type GetRuleSetsRuleSetItemIpMaxConnection struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses []string `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections int `pulumi:"maxConnections"`
+}
+
+// GetRuleSetsRuleSetItemIpMaxConnectionInput is an input type that accepts GetRuleSetsRuleSetItemIpMaxConnectionArgs and GetRuleSetsRuleSetItemIpMaxConnectionOutput values.
+// You can construct a concrete instance of `GetRuleSetsRuleSetItemIpMaxConnectionInput` via:
+//
+//	GetRuleSetsRuleSetItemIpMaxConnectionArgs{...}
+type GetRuleSetsRuleSetItemIpMaxConnectionInput interface {
+	pulumi.Input
+
+	ToGetRuleSetsRuleSetItemIpMaxConnectionOutput() GetRuleSetsRuleSetItemIpMaxConnectionOutput
+	ToGetRuleSetsRuleSetItemIpMaxConnectionOutputWithContext(context.Context) GetRuleSetsRuleSetItemIpMaxConnectionOutput
+}
+
+type GetRuleSetsRuleSetItemIpMaxConnectionArgs struct {
+	// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+}
+
+func (GetRuleSetsRuleSetItemIpMaxConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleSetsRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetRuleSetsRuleSetItemIpMaxConnectionArgs) ToGetRuleSetsRuleSetItemIpMaxConnectionOutput() GetRuleSetsRuleSetItemIpMaxConnectionOutput {
+	return i.ToGetRuleSetsRuleSetItemIpMaxConnectionOutputWithContext(context.Background())
+}
+
+func (i GetRuleSetsRuleSetItemIpMaxConnectionArgs) ToGetRuleSetsRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemIpMaxConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemIpMaxConnectionOutput)
+}
+
+// GetRuleSetsRuleSetItemIpMaxConnectionArrayInput is an input type that accepts GetRuleSetsRuleSetItemIpMaxConnectionArray and GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput values.
+// You can construct a concrete instance of `GetRuleSetsRuleSetItemIpMaxConnectionArrayInput` via:
+//
+//	GetRuleSetsRuleSetItemIpMaxConnectionArray{ GetRuleSetsRuleSetItemIpMaxConnectionArgs{...} }
+type GetRuleSetsRuleSetItemIpMaxConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput
+	ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Context) GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput
+}
+
+type GetRuleSetsRuleSetItemIpMaxConnectionArray []GetRuleSetsRuleSetItemIpMaxConnectionInput
+
+func (GetRuleSetsRuleSetItemIpMaxConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleSetsRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (i GetRuleSetsRuleSetItemIpMaxConnectionArray) ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput {
+	return i.ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleSetsRuleSetItemIpMaxConnectionArray) ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput)
+}
+
+type GetRuleSetsRuleSetItemIpMaxConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetRuleSetsRuleSetItemIpMaxConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleSetsRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetRuleSetsRuleSetItemIpMaxConnectionOutput) ToGetRuleSetsRuleSetItemIpMaxConnectionOutput() GetRuleSetsRuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+func (o GetRuleSetsRuleSetItemIpMaxConnectionOutput) ToGetRuleSetsRuleSetItemIpMaxConnectionOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemIpMaxConnectionOutput {
+	return o
+}
+
+// Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+func (o GetRuleSetsRuleSetItemIpMaxConnectionOutput) IpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemIpMaxConnection) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// The maximum number of simultaneous connections that the specified IPs can make to the Listener. IPs without a maxConnections setting can make either defaultMaxConnections simultaneous connections to a listener or, if no defaultMaxConnections is specified, an unlimited number of simultaneous connections to a listener.
+func (o GetRuleSetsRuleSetItemIpMaxConnectionOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemIpMaxConnection) int { return v.MaxConnections }).(pulumi.IntOutput)
+}
+
+type GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleSetsRuleSetItemIpMaxConnection)(nil)).Elem()
+}
+
+func (o GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput) ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutput() GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput) ToGetRuleSetsRuleSetItemIpMaxConnectionArrayOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput {
+	return o
+}
+
+func (o GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleSetItemIpMaxConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsRuleSetItemIpMaxConnection {
+		return vs[0].([]GetRuleSetsRuleSetItemIpMaxConnection)[vs[1].(int)]
+	}).(GetRuleSetsRuleSetItemIpMaxConnectionOutput)
 }
 
 type GetRuleSetsRuleSetItemRedirectUri struct {
@@ -10457,6 +11054,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemArrayInput)(nil)).Elem(), RuleSetItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemConditionInput)(nil)).Elem(), RuleSetItemConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemConditionArrayInput)(nil)).Elem(), RuleSetItemConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemIpMaxConnectionInput)(nil)).Elem(), RuleSetItemIpMaxConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemIpMaxConnectionArrayInput)(nil)).Elem(), RuleSetItemIpMaxConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemRedirectUriInput)(nil)).Elem(), RuleSetItemRedirectUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleSetItemRedirectUriPtrInput)(nil)).Elem(), RuleSetItemRedirectUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendHealthHealthCheckResultInput)(nil)).Elem(), GetBackendHealthHealthCheckResultArgs{})
@@ -10495,6 +11094,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleArrayInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleConditionInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleConditionArrayInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleIpMaxConnectionInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleIpMaxConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleIpMaxConnectionArrayInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleIpMaxConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleRedirectUriInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleRedirectUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerRulesListenerRuleRuleRedirectUriArrayInput)(nil)).Elem(), GetListenerRulesListenerRuleRuleRedirectUriArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerRoutingPoliciesFilterInput)(nil)).Elem(), GetLoadBalancerRoutingPoliciesFilterArgs{})
@@ -10540,6 +11141,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemArrayInput)(nil)).Elem(), GetRuleSetItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemConditionInput)(nil)).Elem(), GetRuleSetItemConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemConditionArrayInput)(nil)).Elem(), GetRuleSetItemConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemIpMaxConnectionInput)(nil)).Elem(), GetRuleSetItemIpMaxConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemIpMaxConnectionArrayInput)(nil)).Elem(), GetRuleSetItemIpMaxConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemRedirectUriInput)(nil)).Elem(), GetRuleSetItemRedirectUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetItemRedirectUriArrayInput)(nil)).Elem(), GetRuleSetItemRedirectUriArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsFilterInput)(nil)).Elem(), GetRuleSetsFilterArgs{})
@@ -10550,6 +11153,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemArrayInput)(nil)).Elem(), GetRuleSetsRuleSetItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemConditionInput)(nil)).Elem(), GetRuleSetsRuleSetItemConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemConditionArrayInput)(nil)).Elem(), GetRuleSetsRuleSetItemConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemIpMaxConnectionInput)(nil)).Elem(), GetRuleSetsRuleSetItemIpMaxConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemIpMaxConnectionArrayInput)(nil)).Elem(), GetRuleSetsRuleSetItemIpMaxConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemRedirectUriInput)(nil)).Elem(), GetRuleSetsRuleSetItemRedirectUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleSetsRuleSetItemRedirectUriArrayInput)(nil)).Elem(), GetRuleSetsRuleSetItemRedirectUriArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
@@ -10593,6 +11198,8 @@ func init() {
 	pulumi.RegisterOutputType(RuleSetItemArrayOutput{})
 	pulumi.RegisterOutputType(RuleSetItemConditionOutput{})
 	pulumi.RegisterOutputType(RuleSetItemConditionArrayOutput{})
+	pulumi.RegisterOutputType(RuleSetItemIpMaxConnectionOutput{})
+	pulumi.RegisterOutputType(RuleSetItemIpMaxConnectionArrayOutput{})
 	pulumi.RegisterOutputType(RuleSetItemRedirectUriOutput{})
 	pulumi.RegisterOutputType(RuleSetItemRedirectUriPtrOutput{})
 	pulumi.RegisterOutputType(GetBackendHealthHealthCheckResultOutput{})
@@ -10631,6 +11238,8 @@ func init() {
 	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleConditionOutput{})
 	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleIpMaxConnectionOutput{})
+	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleIpMaxConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleRedirectUriOutput{})
 	pulumi.RegisterOutputType(GetListenerRulesListenerRuleRuleRedirectUriArrayOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerRoutingPoliciesFilterOutput{})
@@ -10676,6 +11285,8 @@ func init() {
 	pulumi.RegisterOutputType(GetRuleSetItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleSetItemConditionOutput{})
 	pulumi.RegisterOutputType(GetRuleSetItemConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleSetItemIpMaxConnectionOutput{})
+	pulumi.RegisterOutputType(GetRuleSetItemIpMaxConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleSetItemRedirectUriOutput{})
 	pulumi.RegisterOutputType(GetRuleSetItemRedirectUriArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleSetsFilterOutput{})
@@ -10686,6 +11297,8 @@ func init() {
 	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemConditionOutput{})
 	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemIpMaxConnectionOutput{})
+	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemIpMaxConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemRedirectUriOutput{})
 	pulumi.RegisterOutputType(GetRuleSetsRuleSetItemRedirectUriArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})

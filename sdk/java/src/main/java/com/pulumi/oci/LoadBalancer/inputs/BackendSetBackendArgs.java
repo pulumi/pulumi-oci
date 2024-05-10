@@ -19,14 +19,22 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     public static final BackendSetBackendArgs Empty = new BackendSetBackendArgs();
 
     /**
-     * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
      * 
      */
     @Import(name="backup")
     private @Nullable Output<Boolean> backup;
 
     /**
-     * @return Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * @return (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Output<Boolean>> backup() {
@@ -34,14 +42,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+     * (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
     @Import(name="drain")
     private @Nullable Output<Boolean> drain;
 
     /**
-     * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> drain() {
@@ -49,18 +57,33 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The IP address of the backend server.  Example: `10.0.0.3`
+     * (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     @Import(name="ipAddress", required=true)
     private Output<String> ipAddress;
 
     /**
-     * @return The IP address of the backend server.  Example: `10.0.0.3`
+     * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
+    }
+
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    @Import(name="maxConnections")
+    private @Nullable Output<Integer> maxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    public Optional<Output<Integer>> maxConnections() {
+        return Optional.ofNullable(this.maxConnections);
     }
 
     /**
@@ -87,14 +110,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     @Import(name="offline")
     private @Nullable Output<Boolean> offline;
 
     /**
-     * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     public Optional<Output<Boolean>> offline() {
@@ -117,14 +140,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -137,6 +160,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         this.backup = $.backup;
         this.drain = $.drain;
         this.ipAddress = $.ipAddress;
+        this.maxConnections = $.maxConnections;
         this.name = $.name;
         this.offline = $.offline;
         this.port = $.port;
@@ -162,7 +186,11 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param backup Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+         * @param backup (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+         * 
+         * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+         * 
+         * Example: `false`
          * 
          * @return builder
          * 
@@ -173,7 +201,11 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param backup Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+         * @param backup (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+         * 
+         * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+         * 
+         * Example: `false`
          * 
          * @return builder
          * 
@@ -183,7 +215,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param drain Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+         * @param drain (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
          * 
          * @return builder
          * 
@@ -194,7 +226,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param drain Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+         * @param drain (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
          * 
          * @return builder
          * 
@@ -204,7 +236,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ipAddress The IP address of the backend server.  Example: `10.0.0.3`
+         * @param ipAddress (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
          * 
          * @return builder
          * 
@@ -215,13 +247,34 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ipAddress The IP address of the backend server.  Example: `10.0.0.3`
+         * @param ipAddress (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
          * 
          * @return builder
          * 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
+        }
+
+        /**
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxConnections(@Nullable Output<Integer> maxConnections) {
+            $.maxConnections = maxConnections;
+            return this;
+        }
+
+        /**
+         * @param maxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxConnections(Integer maxConnections) {
+            return maxConnections(Output.of(maxConnections));
         }
 
         /**
@@ -254,7 +307,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param offline Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+         * @param offline (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
          * 
          * @return builder
          * 
@@ -265,7 +318,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param offline Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+         * @param offline (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
          * 
          * @return builder
          * 
@@ -296,7 +349,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * @param weight (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          * 
          * @return builder
          * 
@@ -307,7 +360,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param weight The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * @param weight (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          * 
          * @return builder
          * 

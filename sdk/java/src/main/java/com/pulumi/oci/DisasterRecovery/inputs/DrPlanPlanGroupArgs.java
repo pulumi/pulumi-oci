@@ -6,6 +6,7 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanPlanGroupStepArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -45,6 +46,21 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> id() {
         return Optional.ofNullable(this.id);
+    }
+
+    /**
+     * A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    @Import(name="isPauseEnabled")
+    private @Nullable Output<Boolean> isPauseEnabled;
+
+    /**
+     * @return A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+     * 
+     */
+    public Optional<Output<Boolean>> isPauseEnabled() {
+        return Optional.ofNullable(this.isPauseEnabled);
     }
 
     /**
@@ -88,6 +104,7 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
     private DrPlanPlanGroupArgs(DrPlanPlanGroupArgs $) {
         this.displayName = $.displayName;
         this.id = $.id;
+        this.isPauseEnabled = $.isPauseEnabled;
         this.steps = $.steps;
         this.type = $.type;
     }
@@ -150,6 +167,27 @@ public final class DrPlanPlanGroupArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param isPauseEnabled A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPauseEnabled(@Nullable Output<Boolean> isPauseEnabled) {
+            $.isPauseEnabled = isPauseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isPauseEnabled A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPauseEnabled(Boolean isPauseEnabled) {
+            return isPauseEnabled(Output.of(isPauseEnabled));
         }
 
         /**

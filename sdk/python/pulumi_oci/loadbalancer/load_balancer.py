@@ -23,6 +23,7 @@ class LoadBalancerArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ip_mode: Optional[pulumi.Input[str]] = None,
+                 is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
@@ -31,7 +32,7 @@ class LoadBalancerArgs:
         The set of arguments for constructing a LoadBalancer resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                
@@ -46,6 +47,13 @@ class LoadBalancerArgs:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
+               
+               If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+               
+               If "false", the loadbalancer will not be protected against deletion.
+               
+               Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
                
                If "true", the service assigns a private IP address to the load balancer.
@@ -77,6 +85,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ip_mode is not None:
             pulumi.set(__self__, "ip_mode", ip_mode)
+        if is_delete_protection_enabled is not None:
+            pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
         if network_security_group_ids is not None:
@@ -114,7 +124,7 @@ class LoadBalancerArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         """
         return pulumi.get(self, "shape")
 
@@ -179,6 +189,24 @@ class LoadBalancerArgs:
     @ip_mode.setter
     def ip_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_mode", value)
+
+    @property
+    @pulumi.getter(name="isDeleteProtectionEnabled")
+    def is_delete_protection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not the load balancer has delete protection enabled.
+
+        If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If "false", the loadbalancer will not be protected against deletion.
+
+        Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        """
+        return pulumi.get(self, "is_delete_protection_enabled")
+
+    @is_delete_protection_enabled.setter
+    def is_delete_protection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_delete_protection_enabled", value)
 
     @property
     @pulumi.getter(name="isPrivate")
@@ -255,6 +283,7 @@ class _LoadBalancerState:
                  ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ip_mode: Optional[pulumi.Input[str]] = None,
+                 is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
@@ -279,6 +308,13 @@ class _LoadBalancerState:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
+               
+               If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+               
+               If "false", the loadbalancer will not be protected against deletion.
+               
+               Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
                
                If "true", the service assigns a private IP address to the load balancer.
@@ -298,7 +334,7 @@ class _LoadBalancerState:
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -326,6 +362,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ip_mode is not None:
             pulumi.set(__self__, "ip_mode", ip_mode)
+        if is_delete_protection_enabled is not None:
+            pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
             pulumi.set(__self__, "is_private", is_private)
         if network_security_group_ids is not None:
@@ -439,6 +477,24 @@ class _LoadBalancerState:
         pulumi.set(self, "ip_mode", value)
 
     @property
+    @pulumi.getter(name="isDeleteProtectionEnabled")
+    def is_delete_protection_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Whether or not the load balancer has delete protection enabled.
+
+        If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If "false", the loadbalancer will not be protected against deletion.
+
+        Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        """
+        return pulumi.get(self, "is_delete_protection_enabled")
+
+    @is_delete_protection_enabled.setter
+    def is_delete_protection_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_delete_protection_enabled", value)
+
+    @property
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -494,7 +550,7 @@ class _LoadBalancerState:
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         """
         return pulumi.get(self, "shape")
 
@@ -577,6 +633,7 @@ class LoadBalancer(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ip_mode: Optional[pulumi.Input[str]] = None,
+                 is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]]] = None,
@@ -634,6 +691,7 @@ class LoadBalancer(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mode=load_balancer_ip_mode,
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
             network_security_group_ids=load_balancer_network_security_group_ids,
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
@@ -666,6 +724,13 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
+               
+               If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+               
+               If "false", the loadbalancer will not be protected against deletion.
+               
+               Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
                
                If "true", the service assigns a private IP address to the load balancer.
@@ -685,7 +750,7 @@ class LoadBalancer(pulumi.CustomResource):
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
@@ -749,6 +814,7 @@ class LoadBalancer(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mode=load_balancer_ip_mode,
+            is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
             network_security_group_ids=load_balancer_network_security_group_ids,
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
@@ -788,6 +854,7 @@ class LoadBalancer(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ip_mode: Optional[pulumi.Input[str]] = None,
+                 is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]]] = None,
@@ -812,6 +879,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["ip_mode"] = ip_mode
+            __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
             __props__.__dict__["is_private"] = is_private
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["reserved_ips"] = reserved_ips
@@ -844,6 +912,7 @@ class LoadBalancer(pulumi.CustomResource):
             ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerIpAddressDetailArgs']]]]] = None,
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ip_mode: Optional[pulumi.Input[str]] = None,
+            is_delete_protection_enabled: Optional[pulumi.Input[bool]] = None,
             is_private: Optional[pulumi.Input[bool]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]]] = None,
@@ -873,6 +942,13 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
+               
+               If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+               
+               If "false", the loadbalancer will not be protected against deletion.
+               
+               Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
         :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
                
                If "true", the service assigns a private IP address to the load balancer.
@@ -892,7 +968,7 @@ class LoadBalancer(pulumi.CustomResource):
                
                Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -914,6 +990,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["ip_address_details"] = ip_address_details
         __props__.__dict__["ip_addresses"] = ip_addresses
         __props__.__dict__["ip_mode"] = ip_mode
+        __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
         __props__.__dict__["is_private"] = is_private
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["reserved_ips"] = reserved_ips
@@ -991,6 +1068,20 @@ class LoadBalancer(pulumi.CustomResource):
         return pulumi.get(self, "ip_mode")
 
     @property
+    @pulumi.getter(name="isDeleteProtectionEnabled")
+    def is_delete_protection_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Whether or not the load balancer has delete protection enabled.
+
+        If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If "false", the loadbalancer will not be protected against deletion.
+
+        Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        """
+        return pulumi.get(self, "is_delete_protection_enabled")
+
+    @property
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> pulumi.Output[bool]:
         """
@@ -1034,7 +1125,7 @@ class LoadBalancer(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         """
         return pulumi.get(self, "shape")
 

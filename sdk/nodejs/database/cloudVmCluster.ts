@@ -40,6 +40,10 @@ import * as utilities from "../utilities";
  *     dbServers: cloudVmClusterDbServers,
  *     definedTags: cloudVmClusterDefinedTags,
  *     domain: cloudVmClusterDomain,
+ *     fileSystemConfigurationDetails: [{
+ *         fileSystemSizeGb: cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
+ *         mountPoint: cloudVmClusterFileSystemConfigurationDetailsMountPoint,
+ *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -165,6 +169,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
     public readonly domain!: pulumi.Output<string>;
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    public readonly fileSystemConfigurationDetails!: pulumi.Output<outputs.Database.CloudVmClusterFileSystemConfigurationDetail[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -329,6 +337,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["diskRedundancy"] = state ? state.diskRedundancy : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["giVersion"] = state ? state.giVersion : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
@@ -404,6 +413,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["fileSystemConfigurationDetails"] = args ? args.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["giVersion"] = args ? args.giVersion : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
@@ -519,6 +529,10 @@ export interface CloudVmClusterState {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
     domain?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterFileSystemConfigurationDetail>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -722,6 +736,10 @@ export interface CloudVmClusterArgs {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
     domain?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterFileSystemConfigurationDetail>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

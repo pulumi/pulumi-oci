@@ -28,9 +28,14 @@ import * as utilities from "../utilities";
  *             attributeValue: ruleSetItemsConditionsAttributeValue,
  *             operator: ruleSetItemsConditionsOperator,
  *         }],
+ *         defaultMaxConnections: ruleSetItemsDefaultMaxConnections,
  *         description: ruleSetItemsDescription,
  *         header: ruleSetItemsHeader,
  *         httpLargeHeaderSizeInKb: ruleSetItemsHttpLargeHeaderSizeInKb,
+ *         ipMaxConnections: [{
+ *             ipAddresses: ruleSetItemsIpMaxConnectionsIpAddresses,
+ *             maxConnections: ruleSetItemsIpMaxConnectionsMaxConnections,
+ *         }],
  *         prefix: ruleSetItemsPrefix,
  *         redirectUri: {
  *             host: ruleSetItemsRedirectUriHost,

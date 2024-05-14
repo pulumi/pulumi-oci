@@ -1679,14 +1679,17 @@ func Provider() tfbridge.ProviderInfo {
 			// See the documentation for tfbridge.OverlayInfo for how to lay out this
 			// section, or refer to the AWS provider. Delete this section if there are
 			// no overlay files.
-			//Overlay: &tfbridge.OverlayInfo{},
+			// Overlay: &tfbridge.OverlayInfo{},
+			RespectSchemaVersion: true,
 		},
 		Python: (func() *tfbridge.PythonInfo {
 			i := &tfbridge.PythonInfo{
+				RespectSchemaVersion: true,
 
 				Requires: map[string]string{
 					"pulumi": ">=3.0.0,<4.0.0",
-				}}
+				},
+			}
 			i.PyProject.Enabled = true
 			return i
 		})(),
@@ -1699,8 +1702,10 @@ func Provider() tfbridge.ProviderInfo {
 				mainPkg,
 			),
 			GenerateResourceContainerTypes: true,
+			RespectSchemaVersion:           true,
 		},
 		CSharp: &tfbridge.CSharpInfo{
+			RespectSchemaVersion: true,
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},

@@ -22,6 +22,7 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetai
     private String namespace;
     /**
      * @return The type of output location Allowed values are:
+     * * `OBJECT_STORAGE`: Object store output location.
      * 
      */
     private String outputType;
@@ -48,6 +49,7 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetai
     }
     /**
      * @return The type of output location Allowed values are:
+     * * `OBJECT_STORAGE`: Object store output location.
      * 
      */
     public String outputType() {

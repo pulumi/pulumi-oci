@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 public final class ProcessorJobProcessorConfigFeature {
     /**
      * @return The type of document analysis requested. The allowed values are:
+     * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+     * * `TEXT_EXTRACTION`: Recognize text.
+     * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+     * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+     * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
      * 
      */
     private String featureType;
@@ -43,6 +48,11 @@ public final class ProcessorJobProcessorConfigFeature {
     private ProcessorJobProcessorConfigFeature() {}
     /**
      * @return The type of document analysis requested. The allowed values are:
+     * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+     * * `TEXT_EXTRACTION`: Recognize text.
+     * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+     * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+     * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
      * 
      */
     public String featureType() {

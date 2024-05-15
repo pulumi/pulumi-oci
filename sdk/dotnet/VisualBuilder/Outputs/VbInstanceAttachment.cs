@@ -27,7 +27,9 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// </summary>
         public readonly string? TargetInstanceUrl;
         /// <summary>
-        /// The role of the target attachment.
+        /// The role of the target attachment. 
+        /// * `PARENT` - The target instance is the parent of this attachment.
+        /// * `CHILD` - The target instance is the child of this attachment.
         /// </summary>
         public readonly string? TargetRole;
         /// <summary>

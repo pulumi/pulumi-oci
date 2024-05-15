@@ -80,6 +80,10 @@ type LookupImageResult struct {
 	ImageSourceDetails []GetImageImageSourceDetail `pulumi:"imageSourceDetails"`
 	InstanceId         string                      `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions []GetImageLaunchOption `pulumi:"launchOptions"`
@@ -193,6 +197,10 @@ func (o LookupImageResultOutput) InstanceId() pulumi.StringOutput {
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o LookupImageResultOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.LaunchMode }).(pulumi.StringOutput)
 }

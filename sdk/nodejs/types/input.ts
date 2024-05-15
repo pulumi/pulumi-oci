@@ -506,6 +506,7 @@ export namespace AiAnomalyDetection {
         namespace: pulumi.Input<string>;
         /**
          * The type of output location. Allowed values are:
+         * * `OBJECT_STORAGE`: Object store output location.
          */
         outputType: pulumi.Input<string>;
         /**
@@ -926,6 +927,8 @@ export namespace AiDocument {
         objectLocations?: pulumi.Input<pulumi.Input<inputs.AiDocument.ProcessorJobInputLocationObjectLocation>[]>;
         /**
          * The type of input location. The allowed values are:
+         * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+         * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
          */
         sourceType: pulumi.Input<string>;
     }
@@ -990,6 +993,11 @@ export namespace AiDocument {
     export interface ProcessorJobProcessorConfigFeature {
         /**
          * The type of document analysis requested. The allowed values are:
+         * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+         * * `TEXT_EXTRACTION`: Recognize text.
+         * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+         * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+         * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
          */
         featureType: pulumi.Input<string>;
         /**
@@ -9483,6 +9491,9 @@ export namespace CloudMigrations {
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -9774,6 +9785,9 @@ export namespace CloudMigrations {
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -10065,6 +10079,9 @@ export namespace CloudMigrations {
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -13749,6 +13766,8 @@ export namespace Core {
         operatingSystemVersion?: pulumi.Input<string>;
         /**
          * The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+         * * `QCOW2`
+         * * `VMDK`
          */
         sourceImageType?: pulumi.Input<string>;
         /**
@@ -13764,10 +13783,17 @@ export namespace Core {
     export interface ImageLaunchOption {
         /**
          * Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         bootVolumeType?: pulumi.Input<string>;
         /**
          * Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          */
         firmware?: pulumi.Input<string>;
         /**
@@ -13780,10 +13806,18 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          */
         networkType?: pulumi.Input<string>;
         /**
          * Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
     }
@@ -13841,6 +13875,8 @@ export namespace Core {
         isLiveMigrationPreferred?: pulumi.Input<boolean>;
         /**
          * (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
          */
         recoveryAction?: pulumi.Input<string>;
     }
@@ -14096,6 +14132,10 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+         * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+         * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
          */
         launchMode?: pulumi.Input<string>;
         /**
@@ -14144,6 +14184,8 @@ export namespace Core {
         preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig>;
         /**
          * The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+         * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+         * * `REBOOT` - Run maintenance using a reboot.
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
@@ -14216,6 +14258,8 @@ export namespace Core {
         isLiveMigrationPreferred?: pulumi.Input<boolean>;
         /**
          * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
          */
         recoveryAction?: pulumi.Input<string>;
     }
@@ -14292,10 +14336,17 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions {
         /**
          * Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         bootVolumeType?: pulumi.Input<string>;
         /**
          * Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          */
         firmware?: pulumi.Input<string>;
         /**
@@ -14308,10 +14359,18 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          */
         networkType?: pulumi.Input<string>;
         /**
          * Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
     }
@@ -14394,6 +14453,9 @@ export namespace Core {
          * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -14709,6 +14771,10 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+         * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+         * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
          */
         launchMode?: pulumi.Input<string>;
         /**
@@ -14757,6 +14823,8 @@ export namespace Core {
         preemptibleInstanceConfig?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig>;
         /**
          * The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+         * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+         * * `REBOOT` - Run maintenance using a reboot.
          */
         preferredMaintenanceAction?: pulumi.Input<string>;
         /**
@@ -14829,6 +14897,8 @@ export namespace Core {
         isLiveMigrationPreferred?: pulumi.Input<boolean>;
         /**
          * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
          */
         recoveryAction?: pulumi.Input<string>;
     }
@@ -14905,10 +14975,17 @@ export namespace Core {
     export interface InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions {
         /**
          * Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         bootVolumeType?: pulumi.Input<string>;
         /**
          * Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          */
         firmware?: pulumi.Input<string>;
         /**
@@ -14921,10 +14998,18 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          */
         networkType?: pulumi.Input<string>;
         /**
          * Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
     }
@@ -15003,6 +15088,9 @@ export namespace Core {
          * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -15320,10 +15408,17 @@ export namespace Core {
     export interface InstanceLaunchOptions {
         /**
          * (Updatable) Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         bootVolumeType?: pulumi.Input<string>;
         /**
          * Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          */
         firmware?: pulumi.Input<string>;
         /**
@@ -15336,10 +15431,18 @@ export namespace Core {
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          */
         networkType?: pulumi.Input<string>;
         /**
          * Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          */
         remoteDataVolumeType?: pulumi.Input<string>;
     }
@@ -15629,6 +15732,9 @@ export namespace Core {
          * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          *
          * The following values are supported:
+         * * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+         * * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+         * * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
          */
         baselineOcpuUtilization?: pulumi.Input<string>;
         /**
@@ -16041,6 +16147,8 @@ export namespace Core {
         destination?: pulumi.Input<string>;
         /**
          * (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+         * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+         * * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          */
         destinationType?: pulumi.Input<string>;
         /**
@@ -16070,6 +16178,8 @@ export namespace Core {
          * (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
          *
          * Allowed values:
+         * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+         * * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          */
         destinationType?: pulumi.Input<string>;
         /**
@@ -16188,6 +16298,8 @@ export namespace Core {
         source: pulumi.Input<string>;
         /**
          * (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
+         * * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+         * * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
          */
         sourceType?: pulumi.Input<string>;
         /**
@@ -16524,6 +16636,12 @@ export namespace Core {
         /**
          * (Updatable) Specifies what time zone is the schedule in
          * enum:
+         * - `UTC`
+         * - `REGIONAL_DATA_CENTER_TIME`
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeZone?: pulumi.Input<string>;
     }
@@ -22770,6 +22888,8 @@ export namespace DataScience {
          * (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
          *
          * The following values are supported:
+         * * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+         * * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
          */
         metricExpressionRuleType: pulumi.Input<string>;
         /**
@@ -33004,6 +33124,7 @@ export namespace Dns {
     export interface ResolverRule {
         /**
          * (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+         * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
          */
         action: pulumi.Input<string>;
         /**
@@ -33097,6 +33218,11 @@ export namespace Dns {
         description?: pulumi.Input<string>;
         /**
          * The type of a rule determines its sorting/filtering behavior.
+         * * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+         * * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+         * * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+         * * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+         * * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
          */
         ruleType: pulumi.Input<string>;
     }
@@ -62462,6 +62588,8 @@ export namespace Integration {
         targetInstanceUrl?: pulumi.Input<string>;
         /**
          * The role of the target attachment.
+         * * `PARENT` - The target instance is the parent of this attachment.
+         * * `CHILD` - The target instance is the child of this attachment.
          */
         targetRole?: pulumi.Input<string>;
         /**
@@ -70511,7 +70639,9 @@ export namespace Opa {
          */
         targetInstanceUrl?: pulumi.Input<string>;
         /**
-         * The role of the target attachment.
+         * The role of the target attachment. 
+         * * `PARENT` - The target instance is the parent of this attachment.
+         * * `CHILD` - The target instance is the child of this attachment.
          */
         targetRole?: pulumi.Input<string>;
         /**
@@ -75662,7 +75792,9 @@ export namespace VisualBuilder {
          */
         targetInstanceUrl?: pulumi.Input<string>;
         /**
-         * The role of the target attachment.
+         * The role of the target attachment. 
+         * * `PARENT` - The target instance is the parent of this attachment.
+         * * `CHILD` - The target instance is the child of this attachment.
          */
         targetRole?: pulumi.Input<string>;
         /**

@@ -32,6 +32,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
         /// 
         /// Allowed values:
+        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }

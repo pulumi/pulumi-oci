@@ -18,6 +18,8 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         public readonly ImmutableArray<Outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult> Datas;
         /// <summary>
         /// The type of input location Allowed values are:
+        /// * `INLINE`: Inline input data.
+        /// * `OBJECT_LIST`: Object store output location.
         /// </summary>
         public readonly string InputType;
         /// <summary>

@@ -96,6 +96,9 @@ type NetworkSecurityGroupSecurityRule struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	DestinationType pulumi.StringOutput `pulumi:"destinationType"`
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction pulumi.StringOutput `pulumi:"direction"`
@@ -119,6 +122,9 @@ type NetworkSecurityGroupSecurityRule struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType pulumi.StringOutput `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless pulumi.BoolOutput `pulumi:"stateless"`
@@ -181,6 +187,9 @@ type networkSecurityGroupSecurityRuleState struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	DestinationType *string `pulumi:"destinationType"`
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction *string `pulumi:"direction"`
@@ -204,6 +213,9 @@ type networkSecurityGroupSecurityRuleState struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source *string `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType *string `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless *bool `pulumi:"stateless"`
@@ -228,6 +240,9 @@ type NetworkSecurityGroupSecurityRuleState struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	DestinationType pulumi.StringPtrInput
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction pulumi.StringPtrInput
@@ -251,6 +266,9 @@ type NetworkSecurityGroupSecurityRuleState struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source pulumi.StringPtrInput
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType pulumi.StringPtrInput
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless pulumi.BoolPtrInput
@@ -279,6 +297,9 @@ type networkSecurityGroupSecurityRuleArgs struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	DestinationType *string `pulumi:"destinationType"`
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction string `pulumi:"direction"`
@@ -300,6 +321,9 @@ type networkSecurityGroupSecurityRuleArgs struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source *string `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType *string `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless *bool `pulumi:"stateless"`
@@ -323,6 +347,9 @@ type NetworkSecurityGroupSecurityRuleArgs struct {
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	DestinationType pulumi.StringPtrInput
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction pulumi.StringInput
@@ -344,6 +371,9 @@ type NetworkSecurityGroupSecurityRuleArgs struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source pulumi.StringPtrInput
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType pulumi.StringPtrInput
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless pulumi.BoolPtrInput
@@ -458,6 +488,9 @@ func (o NetworkSecurityGroupSecurityRuleOutput) Destination() pulumi.StringOutpu
 // Type of destination for the rule. Required if `direction` = `EGRESS`.
 //
 // Allowed values:
+// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+// * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 func (o NetworkSecurityGroupSecurityRuleOutput) DestinationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.DestinationType }).(pulumi.StringOutput)
 }
@@ -504,6 +537,9 @@ func (o NetworkSecurityGroupSecurityRuleOutput) Source() pulumi.StringPtrOutput 
 }
 
 // Type of source for the rule. Required if `direction` = `INGRESS`.
+// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 func (o NetworkSecurityGroupSecurityRuleOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }

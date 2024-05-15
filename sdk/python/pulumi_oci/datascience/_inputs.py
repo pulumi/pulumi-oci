@@ -1966,6 +1966,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[str] metric_expression_rule_type: (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
                
                The following values are supported:
+               * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+               * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
         :param pulumi.Input[str] metric_type: (Updatable) Metric type
@@ -1983,6 +1985,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 
         The following values are supported:
+        * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+        * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
         """
         return pulumi.get(self, "metric_expression_rule_type")
 

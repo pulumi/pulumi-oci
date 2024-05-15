@@ -74,6 +74,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         /// <summary>
         /// Type of the secrets mapped based on the policy.
+        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -160,6 +162,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         /// <summary>
         /// Type of the secrets mapped based on the policy.
+        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -214,6 +218,8 @@ namespace Pulumi.Oci.NetworkFirewall
 
         /// <summary>
         /// Type of the secrets mapped based on the policy.
+        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

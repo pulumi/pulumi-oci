@@ -137,6 +137,8 @@ type VbInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType *string `pulumi:"targetServiceType"`
@@ -162,6 +164,8 @@ type VbInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
@@ -235,6 +239,8 @@ func (o VbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o VbInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VbInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
@@ -916,6 +922,8 @@ type GetVbInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -941,6 +949,8 @@ type GetVbInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -1014,6 +1024,8 @@ func (o GetVbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetVbInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }
@@ -1921,6 +1933,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItemAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -1946,6 +1960,8 @@ type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -2019,6 +2035,8 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetIns
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }

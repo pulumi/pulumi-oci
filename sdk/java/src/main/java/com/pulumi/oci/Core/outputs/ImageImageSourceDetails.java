@@ -39,6 +39,8 @@ public final class ImageImageSourceDetails {
     private @Nullable String operatingSystemVersion;
     /**
      * @return The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+     * * `QCOW2`
+     * * `VMDK`
      * 
      */
     private @Nullable String sourceImageType;
@@ -91,6 +93,8 @@ public final class ImageImageSourceDetails {
     }
     /**
      * @return The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+     * * `QCOW2`
+     * * `VMDK`
      * 
      */
     public Optional<String> sourceImageType() {

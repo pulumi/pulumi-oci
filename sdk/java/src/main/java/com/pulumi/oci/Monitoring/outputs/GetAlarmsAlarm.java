@@ -63,6 +63,9 @@ public final class GetAlarmsAlarm {
     private Boolean isNotificationsPerMetricDimensionEnabled;
     /**
      * @return The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      * 
      */
     private String messageFormat;
@@ -213,6 +216,9 @@ public final class GetAlarmsAlarm {
     }
     /**
      * @return The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      * 
      */
     public String messageFormat() {

@@ -112,6 +112,8 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     @Import(name="isVtapEnabled")
@@ -119,6 +121,8 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     public Optional<Output<Boolean>> isVtapEnabled() {
@@ -465,6 +469,8 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isVtapEnabled (Updatable) Used to start or stop a `Vtap` resource.
+         * * `TRUE` directs the VTAP to start mirroring traffic.
+         * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
          * 
          * @return builder
          * 
@@ -476,6 +482,8 @@ public final class VtapArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isVtapEnabled (Updatable) Used to start or stop a `Vtap` resource.
+         * * `TRUE` directs the VTAP to start mirroring traffic.
+         * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
          * 
          * @return builder
          * 

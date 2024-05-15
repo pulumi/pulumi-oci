@@ -23,6 +23,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         public readonly string Namespace;
         /// <summary>
         /// The type of output location Allowed values are:
+        /// * `OBJECT_STORAGE`: Object store output location.
         /// </summary>
         public readonly string OutputType;
         /// <summary>

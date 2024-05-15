@@ -3629,6 +3629,8 @@ type GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem stru
 	// Source of the secrets, where the secrets are stored.
 	Source string `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -3657,6 +3659,8 @@ type GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemArgs 
 	// Source of the secrets, where the secrets are stored.
 	Source pulumi.StringInput `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -3740,6 +3744,8 @@ func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOu
 }
 
 // Type of the secrets mapped based on the policy.
+// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }

@@ -647,6 +647,7 @@ class DetectAnomalyJobOutputDetails(dict):
         :param str bucket: Object Storage bucket name.
         :param str namespace: Object Storage namespace.
         :param str output_type: The type of output location. Allowed values are:
+               * `OBJECT_STORAGE`: Object store output location.
         :param str prefix: Object Storage folder name.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -676,6 +677,7 @@ class DetectAnomalyJobOutputDetails(dict):
     def output_type(self) -> str:
         """
         The type of output location. Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
         """
         return pulumi.get(self, "output_type")
 
@@ -1332,6 +1334,8 @@ class GetDetectAnomalyJobInputDetailResult(dict):
                  signal_names: Sequence[str]):
         """
         :param str input_type: The type of input location Allowed values are:
+               * `INLINE`: Inline input data.
+               * `OBJECT_LIST`: Object store output location.
         :param str message: Inline input details.
         :param Sequence['GetDetectAnomalyJobInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
         """
@@ -1363,6 +1367,8 @@ class GetDetectAnomalyJobInputDetailResult(dict):
     def input_type(self) -> str:
         """
         The type of input location Allowed values are:
+        * `INLINE`: Inline input data.
+        * `OBJECT_LIST`: Object store output location.
         """
         return pulumi.get(self, "input_type")
 
@@ -1458,6 +1464,7 @@ class GetDetectAnomalyJobOutputDetailResult(dict):
         :param str bucket: Object Storage bucket name.
         :param str namespace: Object Storage namespace.
         :param str output_type: The type of output location Allowed values are:
+               * `OBJECT_STORAGE`: Object store output location.
         :param str prefix: Object Storage folder name.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -1486,6 +1493,7 @@ class GetDetectAnomalyJobOutputDetailResult(dict):
     def output_type(self) -> str:
         """
         The type of output location Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
         """
         return pulumi.get(self, "output_type")
 
@@ -1716,6 +1724,8 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult(dict):
                  signal_names: Sequence[str]):
         """
         :param str input_type: The type of input location Allowed values are:
+               * `INLINE`: Inline input data.
+               * `OBJECT_LIST`: Object store output location.
         :param str message: Inline input details.
         :param Sequence['GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
         """
@@ -1747,6 +1757,8 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult(dict):
     def input_type(self) -> str:
         """
         The type of input location Allowed values are:
+        * `INLINE`: Inline input data.
+        * `OBJECT_LIST`: Object store output location.
         """
         return pulumi.get(self, "input_type")
 
@@ -1842,6 +1854,7 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult(dict)
         :param str bucket: Object Storage bucket name.
         :param str namespace: Object Storage namespace.
         :param str output_type: The type of output location Allowed values are:
+               * `OBJECT_STORAGE`: Object store output location.
         :param str prefix: Object Storage folder name.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -1870,6 +1883,7 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult(dict)
     def output_type(self) -> str:
         """
         The type of output location Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
         """
         return pulumi.get(self, "output_type")
 

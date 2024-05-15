@@ -37,6 +37,10 @@ export interface GetAutonomousDatabaseWalletArgs {
      * The type of wallet to generate.
      *
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     *
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
     generateType?: string;
     /**
@@ -91,6 +95,10 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
      * The type of wallet to generate.
      *
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     *
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
     generateType?: pulumi.Input<string>;
     /**

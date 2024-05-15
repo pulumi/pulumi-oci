@@ -123,6 +123,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Output("cloneType")]
         public Output<string> CloneType { get; private set; } = null!;
@@ -1004,6 +1006,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Input("cloneType")]
         public Input<string>? CloneType { get; set; }
@@ -1654,6 +1658,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Input("cloneType")]
         public Input<string>? CloneType { get; set; }

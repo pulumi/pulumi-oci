@@ -67,6 +67,10 @@ namespace Pulumi.Oci.Database
         /// The type of wallet to generate.
         /// 
         /// **Serverless instance usage:**
+        /// * `SINGLE` - used to generate a wallet for a single database
+        /// * `ALL` - used to generate wallet for all databases in the region
+        /// 
+        /// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         /// </summary>
         [Output("generateType")]
         public Output<string?> GenerateType { get; private set; } = null!;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.Database
         /// The type of wallet to generate.
         /// 
         /// **Serverless instance usage:**
+        /// * `SINGLE` - used to generate a wallet for a single database
+        /// * `ALL` - used to generate wallet for all databases in the region
+        /// 
+        /// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
@@ -207,6 +215,10 @@ namespace Pulumi.Oci.Database
         /// The type of wallet to generate.
         /// 
         /// **Serverless instance usage:**
+        /// * `SINGLE` - used to generate a wallet for a single database
+        /// * `ALL` - used to generate wallet for all databases in the region
+        /// 
+        /// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }

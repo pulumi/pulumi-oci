@@ -13,11 +13,18 @@ import java.util.Objects;
 public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption {
     /**
      * @return Emulation type for the boot volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     private String bootVolumeType;
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
+     * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+     * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
      * 
      */
     private String firmware;
@@ -33,11 +40,19 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     private Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Emulation type for the physical network interface card (NIC).
+     * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * 
      */
     private String networkType;
     /**
      * @return Emulation type for volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     private String remoteDataVolumeType;
@@ -45,6 +60,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption() {}
     /**
      * @return Emulation type for the boot volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     public String bootVolumeType() {
@@ -52,6 +72,8 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     }
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
+     * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+     * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
      * 
      */
     public String firmware() {
@@ -73,6 +95,9 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     }
     /**
      * @return Emulation type for the physical network interface card (NIC).
+     * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * 
      */
     public String networkType() {
@@ -80,6 +105,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     }
     /**
      * @return Emulation type for volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     public String remoteDataVolumeType() {

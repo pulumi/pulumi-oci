@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterDataCollectionOption;
+import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterFileSystemConfigurationDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -73,6 +74,11 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String exadataInfrastructureId;
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    private List<GetVmClustersVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -238,6 +244,13 @@ public final class GetVmClustersVmCluster {
         return this.exadataInfrastructureId;
     }
     /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public List<GetVmClustersVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -377,6 +390,7 @@ public final class GetVmClustersVmCluster {
         private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
+        private List<GetVmClustersVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
         private Map<String,Object> freeformTags;
         private String giVersion;
         private String id;
@@ -410,6 +424,7 @@ public final class GetVmClustersVmCluster {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
+    	      this.fileSystemConfigurationDetails = defaults.fileSystemConfigurationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.giVersion = defaults.giVersion;
     	      this.id = defaults.id;
@@ -531,6 +546,17 @@ public final class GetVmClustersVmCluster {
             }
             this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder fileSystemConfigurationDetails(List<GetVmClustersVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            if (fileSystemConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "fileSystemConfigurationDetails");
+            }
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            return this;
+        }
+        public Builder fileSystemConfigurationDetails(GetVmClustersVmClusterFileSystemConfigurationDetail... fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -693,6 +719,7 @@ public final class GetVmClustersVmCluster {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.giVersion = giVersion;
             _resultValue.id = id;

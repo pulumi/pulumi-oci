@@ -13,7 +13,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ManagementStationProxyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) URL that the proxy will forward to
+        /// (Updatable) The URL the proxy will forward to.
         /// </summary>
         [Input("forward")]
         public Input<string>? Forward { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         private InputList<string>? _hosts;
 
         /// <summary>
-        /// (Updatable) List of hosts
+        /// (Updatable) List of hosts.
         /// </summary>
         public InputList<string> Hosts
         {
@@ -31,17 +31,13 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         }
 
         /// <summary>
-        /// (Updatable) To enable or disable the proxy (default true)
+        /// (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Port that the proxy will use
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Listening port used for the proxy.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }

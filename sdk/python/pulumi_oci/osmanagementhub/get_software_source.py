@@ -22,13 +22,16 @@ class GetSoftwareSourceResult:
     """
     A collection of values returned by getSoftwareSource.
     """
-    def __init__(__self__, arch_type=None, availability=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_automatically_updated=None, os_family=None, package_count=None, repo_id=None, software_source_id=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, url=None, vendor_name=None, vendor_software_sources=None):
+    def __init__(__self__, arch_type=None, availability=None, availability_at_oci=None, checksum_type=None, compartment_id=None, custom_software_source_filters=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, gpg_key_fingerprint=None, gpg_key_id=None, gpg_key_url=None, id=None, is_auto_resolve_dependencies=None, is_automatically_updated=None, is_created_from_package_list=None, is_mandatory_for_autonomous_linux=None, origin_software_source_id=None, os_family=None, package_count=None, packages=None, repo_id=None, size=None, software_source_id=None, software_source_type=None, software_source_version=None, state=None, system_tags=None, time_created=None, url=None, vendor_name=None, vendor_software_sources=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
         if availability and not isinstance(availability, str):
             raise TypeError("Expected argument 'availability' to be a str")
         pulumi.set(__self__, "availability", availability)
+        if availability_at_oci and not isinstance(availability_at_oci, str):
+            raise TypeError("Expected argument 'availability_at_oci' to be a str")
+        pulumi.set(__self__, "availability_at_oci", availability_at_oci)
         if checksum_type and not isinstance(checksum_type, str):
             raise TypeError("Expected argument 'checksum_type' to be a str")
         pulumi.set(__self__, "checksum_type", checksum_type)
@@ -62,18 +65,36 @@ class GetSoftwareSourceResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_auto_resolve_dependencies and not isinstance(is_auto_resolve_dependencies, bool):
+            raise TypeError("Expected argument 'is_auto_resolve_dependencies' to be a bool")
+        pulumi.set(__self__, "is_auto_resolve_dependencies", is_auto_resolve_dependencies)
         if is_automatically_updated and not isinstance(is_automatically_updated, bool):
             raise TypeError("Expected argument 'is_automatically_updated' to be a bool")
         pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
+        if is_created_from_package_list and not isinstance(is_created_from_package_list, bool):
+            raise TypeError("Expected argument 'is_created_from_package_list' to be a bool")
+        pulumi.set(__self__, "is_created_from_package_list", is_created_from_package_list)
+        if is_mandatory_for_autonomous_linux and not isinstance(is_mandatory_for_autonomous_linux, bool):
+            raise TypeError("Expected argument 'is_mandatory_for_autonomous_linux' to be a bool")
+        pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if origin_software_source_id and not isinstance(origin_software_source_id, str):
+            raise TypeError("Expected argument 'origin_software_source_id' to be a str")
+        pulumi.set(__self__, "origin_software_source_id", origin_software_source_id)
         if os_family and not isinstance(os_family, str):
             raise TypeError("Expected argument 'os_family' to be a str")
         pulumi.set(__self__, "os_family", os_family)
         if package_count and not isinstance(package_count, str):
             raise TypeError("Expected argument 'package_count' to be a str")
         pulumi.set(__self__, "package_count", package_count)
+        if packages and not isinstance(packages, list):
+            raise TypeError("Expected argument 'packages' to be a list")
+        pulumi.set(__self__, "packages", packages)
         if repo_id and not isinstance(repo_id, str):
             raise TypeError("Expected argument 'repo_id' to be a str")
         pulumi.set(__self__, "repo_id", repo_id)
+        if size and not isinstance(size, float):
+            raise TypeError("Expected argument 'size' to be a float")
+        pulumi.set(__self__, "size", size)
         if software_source_id and not isinstance(software_source_id, str):
             raise TypeError("Expected argument 'software_source_id' to be a str")
         pulumi.set(__self__, "software_source_id", software_source_id)
@@ -114,9 +135,17 @@ class GetSoftwareSourceResult:
     @pulumi.getter
     def availability(self) -> str:
         """
-        Possible availabilities of a software source.
+        Availability of the software source (for non-OCI environments).
         """
         return pulumi.get(self, "availability")
+
+    @property
+    @pulumi.getter(name="availabilityAtOci")
+    def availability_at_oci(self) -> str:
+        """
+        Availability of the software source (for Oracle Cloud Infrastructure environments).
+        """
+        return pulumi.get(self, "availability_at_oci")
 
     @property
     @pulumi.getter(name="checksumType")
@@ -130,7 +159,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy containing the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -138,7 +167,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="customSoftwareSourceFilters")
     def custom_software_source_filters(self) -> Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterResult']:
         """
-        Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+        Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         """
         return pulumi.get(self, "custom_software_source_filters")
 
@@ -154,7 +183,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Information specified by the user about the software source.
+        User-specified description for the software source.
         """
         return pulumi.get(self, "description")
 
@@ -162,7 +191,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        User friendly name.
+        User-friendly name.
         """
         return pulumi.get(self, "display_name")
 
@@ -202,17 +231,49 @@ class GetSoftwareSourceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the resource that is immutable on creation.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isAutoResolveDependencies")
+    def is_auto_resolve_dependencies(self) -> bool:
+        """
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+        """
+        return pulumi.get(self, "is_auto_resolve_dependencies")
 
     @property
     @pulumi.getter(name="isAutomaticallyUpdated")
     def is_automatically_updated(self) -> bool:
         """
-        Indicates whether service should automatically update the custom software source for the user.
+        Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         """
         return pulumi.get(self, "is_automatically_updated")
+
+    @property
+    @pulumi.getter(name="isCreatedFromPackageList")
+    def is_created_from_package_list(self) -> bool:
+        """
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+        """
+        return pulumi.get(self, "is_created_from_package_list")
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> bool:
+        """
+        Indicates whether the software source is required for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @property
+    @pulumi.getter(name="originSoftwareSourceId")
+    def origin_software_source_id(self) -> str:
+        """
+        This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+        """
+        return pulumi.get(self, "origin_software_source_id")
 
     @property
     @pulumi.getter(name="osFamily")
@@ -226,17 +287,33 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="packageCount")
     def package_count(self) -> str:
         """
-        Number of packages.
+        Number of packages the software source contains.
         """
         return pulumi.get(self, "package_count")
+
+    @property
+    @pulumi.getter
+    def packages(self) -> Sequence[str]:
+        """
+        The packages in the software source.
+        """
+        return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter(name="repoId")
     def repo_id(self) -> str:
         """
-        The Repo ID for the software source.
+        The repository ID for the software source.
         """
         return pulumi.get(self, "repo_id")
+
+    @property
+    @pulumi.getter
+    def size(self) -> float:
+        """
+        The size of the software source in gigabytes (GB).
+        """
+        return pulumi.get(self, "size")
 
     @property
     @pulumi.getter(name="softwareSourceId")
@@ -247,7 +324,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> str:
         """
-        Type of the software source.
+        Type of software source.
         """
         return pulumi.get(self, "software_source_type")
 
@@ -279,7 +356,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -287,7 +364,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter
     def url(self) -> str:
         """
-        URL for the repository.
+        URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
         """
         return pulumi.get(self, "url")
 
@@ -303,7 +380,7 @@ class GetSoftwareSourceResult:
     @pulumi.getter(name="vendorSoftwareSources")
     def vendor_software_sources(self) -> Sequence['outputs.GetSoftwareSourceVendorSoftwareSourceResult']:
         """
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the versioned custom software source.
         """
         return pulumi.get(self, "vendor_software_sources")
 
@@ -316,6 +393,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
         return GetSoftwareSourceResult(
             arch_type=self.arch_type,
             availability=self.availability,
+            availability_at_oci=self.availability_at_oci,
             checksum_type=self.checksum_type,
             compartment_id=self.compartment_id,
             custom_software_source_filters=self.custom_software_source_filters,
@@ -327,10 +405,16 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
             gpg_key_id=self.gpg_key_id,
             gpg_key_url=self.gpg_key_url,
             id=self.id,
+            is_auto_resolve_dependencies=self.is_auto_resolve_dependencies,
             is_automatically_updated=self.is_automatically_updated,
+            is_created_from_package_list=self.is_created_from_package_list,
+            is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
+            origin_software_source_id=self.origin_software_source_id,
             os_family=self.os_family,
             package_count=self.package_count,
+            packages=self.packages,
             repo_id=self.repo_id,
+            size=self.size,
             software_source_id=self.software_source_id,
             software_source_type=self.software_source_type,
             software_source_version=self.software_source_version,
@@ -347,7 +431,7 @@ def get_software_source(software_source_id: Optional[str] = None,
     """
     This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified software source.
+    Returns information about the specified software source.
 
     ## Example Usage
 
@@ -359,7 +443,7 @@ def get_software_source(software_source_id: Optional[str] = None,
     ```
 
 
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['softwareSourceId'] = software_source_id
@@ -369,6 +453,7 @@ def get_software_source(software_source_id: Optional[str] = None,
     return AwaitableGetSoftwareSourceResult(
         arch_type=pulumi.get(__ret__, 'arch_type'),
         availability=pulumi.get(__ret__, 'availability'),
+        availability_at_oci=pulumi.get(__ret__, 'availability_at_oci'),
         checksum_type=pulumi.get(__ret__, 'checksum_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         custom_software_source_filters=pulumi.get(__ret__, 'custom_software_source_filters'),
@@ -380,10 +465,16 @@ def get_software_source(software_source_id: Optional[str] = None,
         gpg_key_id=pulumi.get(__ret__, 'gpg_key_id'),
         gpg_key_url=pulumi.get(__ret__, 'gpg_key_url'),
         id=pulumi.get(__ret__, 'id'),
+        is_auto_resolve_dependencies=pulumi.get(__ret__, 'is_auto_resolve_dependencies'),
         is_automatically_updated=pulumi.get(__ret__, 'is_automatically_updated'),
+        is_created_from_package_list=pulumi.get(__ret__, 'is_created_from_package_list'),
+        is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
+        origin_software_source_id=pulumi.get(__ret__, 'origin_software_source_id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         package_count=pulumi.get(__ret__, 'package_count'),
+        packages=pulumi.get(__ret__, 'packages'),
         repo_id=pulumi.get(__ret__, 'repo_id'),
+        size=pulumi.get(__ret__, 'size'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         software_source_type=pulumi.get(__ret__, 'software_source_type'),
         software_source_version=pulumi.get(__ret__, 'software_source_version'),
@@ -401,7 +492,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified software source.
+    Returns information about the specified software source.
 
     ## Example Usage
 
@@ -413,6 +504,6 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

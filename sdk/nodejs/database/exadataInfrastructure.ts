@@ -186,6 +186,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly dbServerVersion!: pulumi.Output<string>;
     /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     */
+    public /*out*/ readonly definedFileSystemConfigurations!: pulumi.Output<outputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -330,6 +334,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
             resourceInputs["dbServerVersion"] = state ? state.dbServerVersion : undefined;
+            resourceInputs["definedFileSystemConfigurations"] = state ? state.definedFileSystemConfigurations : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
@@ -431,6 +436,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerVersion"] = undefined /*out*/;
+            resourceInputs["definedFileSystemConfigurations"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceSloStatus"] = undefined /*out*/;
             resourceInputs["maxCpuCount"] = undefined /*out*/;
@@ -529,6 +535,10 @@ export interface ExadataInfrastructureState {
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
     dbServerVersion?: pulumi.Input<string>;
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     */
+    definedFileSystemConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */

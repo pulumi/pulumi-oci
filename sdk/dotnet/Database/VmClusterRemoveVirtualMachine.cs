@@ -111,6 +111,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
+        /// Details of the file system configuration of the VM cluster.
+        /// </summary>
+        [Output("fileSystemConfigurationDetails")]
+        public Output<ImmutableArray<Outputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail>> FileSystemConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -363,6 +369,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("exadataInfrastructureId")]
         public Input<string>? ExadataInfrastructureId { get; set; }
+
+        [Input("fileSystemConfigurationDetails")]
+        private InputList<Inputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetailGetArgs>? _fileSystemConfigurationDetails;
+
+        /// <summary>
+        /// Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetailGetArgs> FileSystemConfigurationDetails
+        {
+            get => _fileSystemConfigurationDetails ?? (_fileSystemConfigurationDetails = new InputList<Inputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetailGetArgs>());
+            set => _fileSystemConfigurationDetails = value;
+        }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

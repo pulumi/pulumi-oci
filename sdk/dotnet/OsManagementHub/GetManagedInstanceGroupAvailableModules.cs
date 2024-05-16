@@ -14,8 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists available modules that for the specified managed instance group. Filter the list against a variety of 
-        /// criteria including but not limited to its name.
+        /// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
         /// 
         /// 
         /// ## Example Usage
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists available modules that for the specified managed instance group. Filter the list against a variety of 
-        /// criteria including but not limited to its name.
+        /// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +76,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailableModulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -92,7 +90,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public string ManagedInstanceGroupId { get; set; } = null!;
@@ -118,7 +116,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailableModulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -132,7 +130,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public Input<string> ManagedInstanceGroupId { get; set; } = null!;
@@ -171,7 +169,7 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly ImmutableArray<Outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult> ManagedInstanceGroupAvailableModuleCollections;
         public readonly string ManagedInstanceGroupId;
         /// <summary>
-        /// The name of the module that is available to be enabled on the managed instance group.
+        /// The name of the module that is available to the managed instance group.
         /// </summary>
         public readonly string? Name;
         public readonly string? NameContains;

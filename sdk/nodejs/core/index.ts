@@ -580,6 +580,21 @@ export const getInternetGateways: typeof import("./getInternetGateways").getInte
 export const getInternetGatewaysOutput: typeof import("./getInternetGateways").getInternetGatewaysOutput = null as any;
 utilities.lazyLoad(exports, ["getInternetGateways","getInternetGatewaysOutput"], () => require("./getInternetGateways"));
 
+export { GetIpInventorySubnetArgs, GetIpInventorySubnetResult, GetIpInventorySubnetOutputArgs } from "./getIpInventorySubnet";
+export const getIpInventorySubnet: typeof import("./getIpInventorySubnet").getIpInventorySubnet = null as any;
+export const getIpInventorySubnetOutput: typeof import("./getIpInventorySubnet").getIpInventorySubnetOutput = null as any;
+utilities.lazyLoad(exports, ["getIpInventorySubnet","getIpInventorySubnetOutput"], () => require("./getIpInventorySubnet"));
+
+export { GetIpInventorySubnetCidrArgs, GetIpInventorySubnetCidrResult, GetIpInventorySubnetCidrOutputArgs } from "./getIpInventorySubnetCidr";
+export const getIpInventorySubnetCidr: typeof import("./getIpInventorySubnetCidr").getIpInventorySubnetCidr = null as any;
+export const getIpInventorySubnetCidrOutput: typeof import("./getIpInventorySubnetCidr").getIpInventorySubnetCidrOutput = null as any;
+utilities.lazyLoad(exports, ["getIpInventorySubnetCidr","getIpInventorySubnetCidrOutput"], () => require("./getIpInventorySubnetCidr"));
+
+export { GetIpInventoryVcnOverlapsArgs, GetIpInventoryVcnOverlapsResult, GetIpInventoryVcnOverlapsOutputArgs } from "./getIpInventoryVcnOverlaps";
+export const getIpInventoryVcnOverlaps: typeof import("./getIpInventoryVcnOverlaps").getIpInventoryVcnOverlaps = null as any;
+export const getIpInventoryVcnOverlapsOutput: typeof import("./getIpInventoryVcnOverlaps").getIpInventoryVcnOverlapsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpInventoryVcnOverlaps","getIpInventoryVcnOverlapsOutput"], () => require("./getIpInventoryVcnOverlaps"));
+
 export { GetIpsecAlgorithmResult } from "./getIpsecAlgorithm";
 export const getIpsecAlgorithm: typeof import("./getIpsecAlgorithm").getIpsecAlgorithm = null as any;
 export const getIpsecAlgorithmOutput: typeof import("./getIpsecAlgorithm").getIpsecAlgorithmOutput = null as any;

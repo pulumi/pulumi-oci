@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified software package.
+ * Returns information about the specified software package.
  *
  * ## Example Usage
  *
@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceSoftwarePackage = oci.OsManagementHub.getSoftwareSourceSoftwarePackage({
- *     softwarePackageName: softwareSourceSoftwarePackageSoftwarePackageName,
+ *     softwarePackageName: testSoftwarePackage.name,
  *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```
@@ -41,7 +41,7 @@ export interface GetSoftwareSourceSoftwarePackageArgs {
      */
     softwarePackageName: string;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
 }
@@ -87,13 +87,17 @@ export interface GetSoftwareSourceSoftwarePackageResult {
      */
     readonly isLatest: boolean;
     /**
-     * Date of the last update to the package.
+     * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly lastModifiedDate: string;
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      */
     readonly name: string;
+    /**
+     * The OS families the package belongs to.
+     */
+    readonly osFamilies: string[];
     /**
      * Size of the package in bytes.
      */
@@ -101,7 +105,7 @@ export interface GetSoftwareSourceSoftwarePackageResult {
     readonly softwarePackageName: string;
     readonly softwareSourceId: string;
     /**
-     * List of software sources that provide the software package.
+     * List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      */
     readonly softwareSources: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackageSoftwareSource[];
     /**
@@ -116,7 +120,7 @@ export interface GetSoftwareSourceSoftwarePackageResult {
 /**
  * This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified software package.
+ * Returns information about the specified software package.
  *
  * ## Example Usage
  *
@@ -125,7 +129,7 @@ export interface GetSoftwareSourceSoftwarePackageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceSoftwarePackage = oci.OsManagementHub.getSoftwareSourceSoftwarePackage({
- *     softwarePackageName: softwareSourceSoftwarePackageSoftwarePackageName,
+ *     softwarePackageName: testSoftwarePackage.name,
  *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```
@@ -143,7 +147,7 @@ export interface GetSoftwareSourceSoftwarePackageOutputArgs {
      */
     softwarePackageName: pulumi.Input<string>;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
 }

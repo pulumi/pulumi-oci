@@ -53,7 +53,7 @@ class GetManagementStationsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the tenancy containing the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -61,7 +61,7 @@ class GetManagementStationsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ManagementStation name
+        A user-friendly name for the management station.
         """
         return pulumi.get(self, "display_name")
 
@@ -79,7 +79,7 @@ class GetManagementStationsResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        OCID for the ManagementStation config
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         """
         return pulumi.get(self, "id")
 
@@ -87,7 +87,7 @@ class GetManagementStationsResult:
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
         """
-        OCID for the Instance associated with the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         """
         return pulumi.get(self, "managed_instance_id")
 
@@ -103,7 +103,7 @@ class GetManagementStationsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Management Station config.
+        The current state of the management station.
         """
         return pulumi.get(self, "state")
 
@@ -152,12 +152,12 @@ def get_management_stations(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str id: The OCID of the management station.
-    :param str managed_instance_id: The OCID of the managed instance for which to list resources.
-    :param str state: The current lifecycle state for the object.
+    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
+    :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+    :param str state: A filter that returns information for management stations in the specified state.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -210,11 +210,11 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str id: The OCID of the management station.
-    :param str managed_instance_id: The OCID of the managed instance for which to list resources.
-    :param str state: The current lifecycle state for the object.
+    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
+    :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
+    :param str state: A filter that returns information for management stations in the specified state.
     """
     ...

@@ -19,14 +19,14 @@ public final class GetSoftwareSourceVendorsArgs extends com.pulumi.resources.Inv
     public static final GetSoftwareSourceVendorsArgs Empty = new GetSoftwareSourceVendorsArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list. This parameter is required.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -82,7 +82,7 @@ public final class GetSoftwareSourceVendorsArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list. This parameter is required.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetSoftwareSourceVendorsArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list. This parameter is required.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 

@@ -77,6 +77,8 @@ type VmClusterRemoveVirtualMachine struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -170,6 +172,8 @@ type vmClusterRemoveVirtualMachineState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []VmClusterRemoveVirtualMachineFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -228,6 +232,8 @@ type VmClusterRemoveVirtualMachineState struct {
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringPtrInput
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -429,6 +435,13 @@ func (o VmClusterRemoveVirtualMachineOutput) DisplayName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o VmClusterRemoveVirtualMachineOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.StringOutput { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the VM cluster.
+func (o VmClusterRemoveVirtualMachineOutput) FileSystemConfigurationDetails() VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayOutput {
+		return v.FileSystemConfigurationDetails
+	}).(VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

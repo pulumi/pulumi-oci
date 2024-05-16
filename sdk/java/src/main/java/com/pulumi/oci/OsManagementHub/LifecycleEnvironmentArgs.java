@@ -21,14 +21,14 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     public static final LifecycleEnvironmentArgs Empty = new LifecycleEnvironmentArgs();
 
     /**
-     * The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     @Import(name="archType", required=true)
     private Output<String> archType;
 
     /**
-     * @return The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * @return The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     public Output<String> archType() {
@@ -36,14 +36,14 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The OCID of the tenancy containing the lifecycle environment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the lifecycle environment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public Output<String> compartmentId() {
@@ -66,14 +66,14 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) User specified information about the lifecycle environment.
+     * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) User specified information about the lifecycle environment.
+     * @return (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -111,14 +111,29 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The operating system type of the managed instance(s) in the lifecycle environment.
+     * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    @Import(name="location")
+    private @Nullable Output<String> location;
+
+    /**
+     * @return The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    public Optional<Output<String>> location() {
+        return Optional.ofNullable(this.location);
+    }
+
+    /**
+     * The operating system of the managed instances in the lifecycle environment.
      * 
      */
     @Import(name="osFamily", required=true)
     private Output<String> osFamily;
 
     /**
-     * @return The operating system type of the managed instance(s) in the lifecycle environment.
+     * @return The operating system of the managed instances in the lifecycle environment.
      * 
      */
     public Output<String> osFamily() {
@@ -126,14 +141,14 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+     * (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      * 
      */
     @Import(name="stages", required=true)
     private Output<List<LifecycleEnvironmentStageArgs>> stages;
 
     /**
-     * @return (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+     * @return (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      * 
      */
     public Output<List<LifecycleEnvironmentStageArgs>> stages() {
@@ -141,7 +156,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +166,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
     private Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -170,6 +185,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.location = $.location;
         this.osFamily = $.osFamily;
         this.stages = $.stages;
         this.vendorName = $.vendorName;
@@ -194,7 +210,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param archType The CPU architecture of the managed instance(s) in the lifecycle environment.
+         * @param archType The CPU architecture of the managed instances in the lifecycle environment.
          * 
          * @return builder
          * 
@@ -205,7 +221,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param archType The CPU architecture of the managed instance(s) in the lifecycle environment.
+         * @param archType The CPU architecture of the managed instances in the lifecycle environment.
          * 
          * @return builder
          * 
@@ -215,7 +231,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the lifecycle environment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
          * 
          * @return builder
          * 
@@ -226,7 +242,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the lifecycle environment.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
          * 
          * @return builder
          * 
@@ -257,7 +273,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) User specified information about the lifecycle environment.
+         * @param description (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -268,7 +284,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) User specified information about the lifecycle environment.
+         * @param description (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -278,7 +294,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -289,7 +305,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -320,7 +336,28 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param osFamily The operating system type of the managed instance(s) in the lifecycle environment.
+         * @param location The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(@Nullable Output<String> location) {
+            $.location = location;
+            return this;
+        }
+
+        /**
+         * @param location The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(String location) {
+            return location(Output.of(location));
+        }
+
+        /**
+         * @param osFamily The operating system of the managed instances in the lifecycle environment.
          * 
          * @return builder
          * 
@@ -331,7 +368,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param osFamily The operating system type of the managed instance(s) in the lifecycle environment.
+         * @param osFamily The operating system of the managed instances in the lifecycle environment.
          * 
          * @return builder
          * 
@@ -341,7 +378,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param stages (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+         * @param stages (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
          * 
          * @return builder
          * 
@@ -352,7 +389,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param stages (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+         * @param stages (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
          * 
          * @return builder
          * 
@@ -362,7 +399,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param stages (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+         * @param stages (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
          * 
          * @return builder
          * 
@@ -372,7 +409,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system used by the managed instances in the lifecycle environment.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,7 +423,7 @@ public final class LifecycleEnvironmentArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system used by the managed instances in the lifecycle environment.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

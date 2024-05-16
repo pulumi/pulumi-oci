@@ -103,7 +103,7 @@ class GetSoftwareSourceModuleStreamsResult:
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> str:
         """
-        The OCID of the software source that provides this module stream.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
         """
         return pulumi.get(self, "software_source_id")
 
@@ -134,8 +134,8 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
     """
     This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists module streams from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name and (stream) name.
+    Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
 
     ## Example Usage
 
@@ -151,11 +151,11 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
     ```
 
 
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.
     :param str module_name_contains: A filter to return resources that may partially match the module name given.
     :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -189,8 +189,8 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     """
     This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists module streams from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name and (stream) name.
+    Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
 
     ## Example Usage
 
@@ -206,10 +206,10 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     ```
 
 
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.
     :param str module_name_contains: A filter to return resources that may partially match the module name given.
     :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

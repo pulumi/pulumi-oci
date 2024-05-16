@@ -58,7 +58,7 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID for the compartment.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -71,7 +71,7 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesResult:
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
         """
-        User friendly name for the software source.
+        User-friendly name for the software source.
         """
         return pulumi.get(self, "display_names")
 
@@ -118,8 +118,7 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
     """
     This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists available software sources for a specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
+    Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
 
     ## Example Usage
 
@@ -134,10 +133,10 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,8 +167,7 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
     """
     This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists available software sources for a specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
+    Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
 
     ## Example Usage
 
@@ -184,9 +182,9 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     ...

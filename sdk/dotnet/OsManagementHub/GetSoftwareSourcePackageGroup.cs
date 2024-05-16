@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified package group from a software source.
+        /// Returns information about the specified package group from a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified package group from a software source.
+        /// Returns information about the specified package group from a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string PackageGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> PackageGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourcePackageGroupResult
     {
         /// <summary>
-        /// description of the package group.
+        /// Description of the package group.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly int DisplayOrder;
         /// <summary>
-        /// Indicates if this is a group, category or environment.
+        /// Indicates if this is a group, category, or environment.
         /// </summary>
         public readonly string GroupType;
         /// <summary>
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
-        /// Indicates if this package group is visible by users.
+        /// Indicates if this package group is visible to users.
         /// </summary>
         public readonly bool IsUserVisible;
         /// <summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<string> Packages;
         /// <summary>
-        /// the IDs of the package group's repositories.
+        /// The repository IDs of the package group's repositories.
         /// </summary>
         public readonly ImmutableArray<string> Repositories;
         public readonly string SoftwareSourceId;

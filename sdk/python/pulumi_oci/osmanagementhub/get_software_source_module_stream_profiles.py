@@ -121,8 +121,8 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[pulumi
     """
     This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name, stream name, and (profile) name.
+    Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+    criteria including but not limited to its module name, stream name, and profile name.
 
     ## Example Usage
 
@@ -139,8 +139,8 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[pulumi
 
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.
     :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    :param str stream_name: The name of the module stream. This parameter is required if a profile name is specified.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -171,8 +171,8 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
     """
     This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name, stream name, and (profile) name.
+    Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+    criteria including but not limited to its module name, stream name, and profile name.
 
     ## Example Usage
 
@@ -189,7 +189,7 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
 
     :param str module_name: The name of a module. This parameter is required if a streamName is specified.
     :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+    :param str stream_name: The name of the module stream. This parameter is required if a profile name is specified.
     """
     ...

@@ -181,6 +181,12 @@ import com.pulumi.oci.Core.inputs.GetInstancesArgs;
 import com.pulumi.oci.Core.inputs.GetInstancesPlainArgs;
 import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
 import com.pulumi.oci.Core.inputs.GetInternetGatewaysPlainArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrPlainArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventorySubnetPlainArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
 import com.pulumi.oci.Core.inputs.GetIpsecConfigPlainArgs;
 import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
@@ -388,6 +394,9 @@ import com.pulumi.oci.Core.outputs.GetInstancePoolsResult;
 import com.pulumi.oci.Core.outputs.GetInstanceResult;
 import com.pulumi.oci.Core.outputs.GetInstancesResult;
 import com.pulumi.oci.Core.outputs.GetInternetGatewaysResult;
+import com.pulumi.oci.Core.outputs.GetIpInventorySubnetCidrResult;
+import com.pulumi.oci.Core.outputs.GetIpInventorySubnetResult;
+import com.pulumi.oci.Core.outputs.GetIpInventoryVcnOverlapsResult;
 import com.pulumi.oci.Core.outputs.GetIpsecAlgorithmResult;
 import com.pulumi.oci.Core.outputs.GetIpsecConfigResult;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelErrorResult;
@@ -17243,6 +17252,542 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetInternetGatewaysResult> getInternetGatewaysPlain(GetInternetGatewaysPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getInternetGateways:getInternetGateways", TypeShape.of(GetInternetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventorySubnetResult> getIpInventorySubnet(GetIpInventorySubnetArgs args) {
+        return getIpInventorySubnet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventorySubnetResult> getIpInventorySubnetPlain(GetIpInventorySubnetPlainArgs args) {
+        return getIpInventorySubnetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventorySubnetResult> getIpInventorySubnet(GetIpInventorySubnetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventorySubnet:getIpInventorySubnet", TypeShape.of(GetIpInventorySubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnet = CoreFunctions.getIpInventorySubnet(GetIpInventorySubnetArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventorySubnetResult> getIpInventorySubnetPlain(GetIpInventorySubnetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getIpInventorySubnet:getIpInventorySubnet", TypeShape.of(GetIpInventorySubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs args) {
+        return getIpInventorySubnetCidr(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidrPlain(GetIpInventorySubnetCidrPlainArgs args) {
+        return getIpInventorySubnetCidrPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", TypeShape.of(GetIpInventorySubnetCidrResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ip Inventory Subnet Cidr resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventorySubnetCidrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventorySubnetCidr = CoreFunctions.getIpInventorySubnetCidr(GetIpInventorySubnetCidrArgs.builder()
+     *             .subnetId(testSubnet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventorySubnetCidrResult> getIpInventorySubnetCidrPlain(GetIpInventorySubnetCidrPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getIpInventorySubnetCidr:getIpInventorySubnetCidr", TypeShape.of(GetIpInventorySubnetCidrResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
+     *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
+     *             .regionLists(ipInventoryVcnOverlapRegionList)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs args) {
+        return getIpInventoryVcnOverlaps(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
+     *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
+     *             .regionLists(ipInventoryVcnOverlapRegionList)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlapsPlain(GetIpInventoryVcnOverlapsPlainArgs args) {
+        return getIpInventoryVcnOverlapsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
+     *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
+     *             .regionLists(ipInventoryVcnOverlapRegionList)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", TypeShape.of(GetIpInventoryVcnOverlapsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ip Inventory Vcn Overlaps in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpInventoryVcnOverlapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpInventoryVcnOverlaps = CoreFunctions.getIpInventoryVcnOverlaps(GetIpInventoryVcnOverlapsArgs.builder()
+     *             .compartmentLists(ipInventoryVcnOverlapCompartmentList)
+     *             .regionLists(ipInventoryVcnOverlapRegionList)
+     *             .vcnId(testVcn.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetIpInventoryVcnOverlapsResult> getIpInventoryVcnOverlapsPlain(GetIpInventoryVcnOverlapsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getIpInventoryVcnOverlaps:getIpInventoryVcnOverlaps", TypeShape.of(GetIpInventoryVcnOverlapsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.

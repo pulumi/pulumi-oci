@@ -18,7 +18,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
     private @Nullable String compartmentId;
     private @Nullable List<GetSoftwareSourcePackageGroupsFilter> filters;
     /**
-     * @return Indicates if this is a group, category or environment.
+     * @return Indicates if this is a group, category, or environment.
      * 
      */
     private @Nullable List<String> groupTypes;
@@ -48,7 +48,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Indicates if this is a group, category or environment.
+     * @return Indicates if this is a group, category, or environment.
      * 
      */
     public List<String> groupTypes() {

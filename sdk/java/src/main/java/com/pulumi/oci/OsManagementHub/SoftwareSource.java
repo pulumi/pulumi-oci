@@ -13,6 +13,7 @@ import com.pulumi.oci.OsManagementHub.outputs.SoftwareSourceCustomSoftwareSource
 import com.pulumi.oci.OsManagementHub.outputs.SoftwareSourceVendorSoftwareSource;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -23,72 +24,6 @@ import javax.annotation.Nullable;
  * This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
  * Creates a new versioned or custom software source.
- * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.OsManagementHub.SoftwareSource;
- * import com.pulumi.oci.OsManagementHub.SoftwareSourceArgs;
- * import com.pulumi.oci.OsManagementHub.inputs.SoftwareSourceVendorSoftwareSourceArgs;
- * import com.pulumi.oci.OsManagementHub.inputs.SoftwareSourceCustomSoftwareSourceFilterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testSoftwareSource = new SoftwareSource("testSoftwareSource", SoftwareSourceArgs.builder()        
- *             .compartmentId(compartmentId)
- *             .displayName(softwareSourceDisplayName)
- *             .softwareSourceType(softwareSourceSoftwareSourceType)
- *             .vendorSoftwareSources(SoftwareSourceVendorSoftwareSourceArgs.builder()
- *                 .displayName(softwareSourceVendorSoftwareSourcesDisplayName)
- *                 .id(softwareSourceVendorSoftwareSourcesId)
- *                 .build())
- *             .customSoftwareSourceFilter(SoftwareSourceCustomSoftwareSourceFilterArgs.builder()
- *                 .moduleStreamProfileFilters(SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs.builder()
- *                     .filterType(softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType)
- *                     .moduleName(softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName)
- *                     .profileName(testProfile.name())
- *                     .streamName(testStream.name())
- *                     .build())
- *                 .packageFilters(SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs.builder()
- *                     .filterType(softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType)
- *                     .packageName(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName)
- *                     .packageNamePattern(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern)
- *                     .packageVersion(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion)
- *                     .build())
- *                 .packageGroupFilters(SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs.builder()
- *                     .filterType(softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType)
- *                     .packageGroups(softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups)
- *                     .build())
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(softwareSourceDescription)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .isAutomaticallyUpdated(softwareSourceIsAutomaticallyUpdated)
- *             .softwareSourceVersion(softwareSourceSoftwareSourceVersion)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -116,18 +51,32 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.archType;
     }
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      * 
      */
     @Export(name="availability", refs={String.class}, tree="[0]")
     private Output<String> availability;
 
     /**
-     * @return Possible availabilities of a software source.
+     * @return Availability of the software source (for non-OCI environments).
      * 
      */
     public Output<String> availability() {
         return this.availability;
+    }
+    /**
+     * Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    @Export(name="availabilityAtOci", refs={String.class}, tree="[0]")
+    private Output<String> availabilityAtOci;
+
+    /**
+     * @return Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    public Output<String> availabilityAtOci() {
+        return this.availabilityAtOci;
     }
     /**
      * The yum repository checksum type used by this software source.
@@ -144,28 +93,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.checksumType;
     }
     /**
-     * (Updatable) The OCID of the tenancy containing the software source.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the tenancy containing the software source.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     @Export(name="customSoftwareSourceFilter", refs={SoftwareSourceCustomSoftwareSourceFilter.class}, tree="[0]")
     private Output<SoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilter;
 
     /**
-     * @return (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * @return (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     public Output<SoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilter() {
@@ -186,28 +135,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Information specified by the user about the software source.
+     * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Information specified by the user about the software source.
+     * @return (Updatable) User-specified description for the software source. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) User friendly name.
+     * @return (Updatable) User-friendly name.
      * 
      */
     public Output<String> displayName() {
@@ -270,18 +219,74 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.gpgKeyUrl;
     }
     /**
-     * (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    @Export(name="isAutoResolveDependencies", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoResolveDependencies;
+
+    /**
+     * @return (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    public Output<Boolean> isAutoResolveDependencies() {
+        return this.isAutoResolveDependencies;
+    }
+    /**
+     * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     @Export(name="isAutomaticallyUpdated", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticallyUpdated;
 
     /**
-     * @return (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * @return (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     public Output<Boolean> isAutomaticallyUpdated() {
         return this.isAutomaticallyUpdated;
+    }
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    @Export(name="isCreatedFromPackageList", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isCreatedFromPackageList;
+
+    /**
+     * @return Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    public Output<Boolean> isCreatedFromPackageList() {
+        return this.isCreatedFromPackageList;
+    }
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    @Export(name="isMandatoryForAutonomousLinux", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isMandatoryForAutonomousLinux;
+
+    /**
+     * @return Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    public Output<Boolean> isMandatoryForAutonomousLinux() {
+        return this.isMandatoryForAutonomousLinux;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     * 
+     */
+    @Export(name="originSoftwareSourceId", refs={String.class}, tree="[0]")
+    private Output<String> originSoftwareSourceId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     * 
+     */
+    public Output<String> originSoftwareSourceId() {
+        return this.originSoftwareSourceId;
     }
     /**
      * The OS family the software source belongs to.
@@ -298,42 +303,70 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.osFamily;
     }
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      * 
      */
     @Export(name="packageCount", refs={String.class}, tree="[0]")
     private Output<String> packageCount;
 
     /**
-     * @return Number of packages.
+     * @return Number of packages the software source contains.
      * 
      */
     public Output<String> packageCount() {
         return this.packageCount;
     }
     /**
-     * The Repo ID for the software source.
+     * A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     * 
+     */
+    @Export(name="packages", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> packages;
+
+    /**
+     * @return A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     * 
+     */
+    public Output<List<String>> packages() {
+        return this.packages;
+    }
+    /**
+     * The repository ID for the software source.
      * 
      */
     @Export(name="repoId", refs={String.class}, tree="[0]")
     private Output<String> repoId;
 
     /**
-     * @return The Repo ID for the software source.
+     * @return The repository ID for the software source.
      * 
      */
     public Output<String> repoId() {
         return this.repoId;
     }
     /**
-     * (Updatable) Type of the software source.
+     * The size of the software source in gigabytes (GB).
+     * 
+     */
+    @Export(name="size", refs={Double.class}, tree="[0]")
+    private Output<Double> size;
+
+    /**
+     * @return The size of the software source in gigabytes (GB).
+     * 
+     */
+    public Output<Double> size() {
+        return this.size;
+    }
+    /**
+     * (Updatable) Type of software source.
      * 
      */
     @Export(name="softwareSourceType", refs={String.class}, tree="[0]")
     private Output<String> softwareSourceType;
 
     /**
-     * @return (Updatable) Type of the software source.
+     * @return (Updatable) Type of software source.
      * 
      */
     public Output<String> softwareSourceType() {
@@ -382,28 +415,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
-     * @return URL for the repository.
+     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     public Output<String> url() {

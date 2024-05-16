@@ -78,14 +78,14 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      * 
      */
     @Import(name="dnsSubdomainName")
     private @Nullable Output<String> dnsSubdomainName;
 
     /**
-     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      * 
      */
     public Optional<Output<String>> dnsSubdomainName() {
@@ -363,7 +363,7 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class DkimState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+         * @param dnsSubdomainName The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
          * 
          * @return builder
          * 

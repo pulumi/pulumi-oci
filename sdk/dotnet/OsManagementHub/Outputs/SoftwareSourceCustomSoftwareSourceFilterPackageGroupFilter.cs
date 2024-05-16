@@ -14,9 +14,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter
     {
         /// <summary>
-        /// (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// (Updatable) The type of the filter.
         /// </summary>
-        public readonly string FilterType;
+        public readonly string? FilterType;
         /// <summary>
         /// (Updatable) List of package group names.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter(
-            string filterType,
+            string? filterType,
 
             ImmutableArray<string> packageGroups)
         {

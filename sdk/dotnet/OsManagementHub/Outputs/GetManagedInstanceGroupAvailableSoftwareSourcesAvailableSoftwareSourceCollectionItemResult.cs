@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// unique identifier that is immutable on creation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
 

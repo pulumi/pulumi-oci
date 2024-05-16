@@ -14,11 +14,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult
     {
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The OCID of the resource that is immutable on creation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         /// </summary>
         public readonly string Id;
 

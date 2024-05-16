@@ -43,6 +43,11 @@ public final class ListenerSslConfiguration {
      */
     private @Nullable String cipherSuiteName;
     /**
+     * @return (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+     * 
+     */
+    private @Nullable Boolean hasSessionResumption;
+    /**
      * @return (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -127,6 +132,13 @@ public final class ListenerSslConfiguration {
         return Optional.ofNullable(this.cipherSuiteName);
     }
     /**
+     * @return (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+     * 
+     */
+    public Optional<Boolean> hasSessionResumption() {
+        return Optional.ofNullable(this.hasSessionResumption);
+    }
+    /**
      * @return (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -197,6 +209,7 @@ public final class ListenerSslConfiguration {
         private @Nullable List<String> certificateIds;
         private @Nullable String certificateName;
         private @Nullable String cipherSuiteName;
+        private @Nullable Boolean hasSessionResumption;
         private @Nullable List<String> protocols;
         private @Nullable String serverOrderPreference;
         private @Nullable List<String> trustedCertificateAuthorityIds;
@@ -208,6 +221,7 @@ public final class ListenerSslConfiguration {
     	      this.certificateIds = defaults.certificateIds;
     	      this.certificateName = defaults.certificateName;
     	      this.cipherSuiteName = defaults.cipherSuiteName;
+    	      this.hasSessionResumption = defaults.hasSessionResumption;
     	      this.protocols = defaults.protocols;
     	      this.serverOrderPreference = defaults.serverOrderPreference;
     	      this.trustedCertificateAuthorityIds = defaults.trustedCertificateAuthorityIds;
@@ -234,6 +248,12 @@ public final class ListenerSslConfiguration {
         public Builder cipherSuiteName(@Nullable String cipherSuiteName) {
 
             this.cipherSuiteName = cipherSuiteName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hasSessionResumption(@Nullable Boolean hasSessionResumption) {
+
+            this.hasSessionResumption = hasSessionResumption;
             return this;
         }
         @CustomType.Setter
@@ -277,6 +297,7 @@ public final class ListenerSslConfiguration {
             _resultValue.certificateIds = certificateIds;
             _resultValue.certificateName = certificateName;
             _resultValue.cipherSuiteName = cipherSuiteName;
+            _resultValue.hasSessionResumption = hasSessionResumption;
             _resultValue.protocols = protocols;
             _resultValue.serverOrderPreference = serverOrderPreference;
             _resultValue.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;

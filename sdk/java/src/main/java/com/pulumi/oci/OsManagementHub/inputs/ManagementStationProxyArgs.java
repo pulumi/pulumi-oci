@@ -19,14 +19,14 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
     public static final ManagementStationProxyArgs Empty = new ManagementStationProxyArgs();
 
     /**
-     * (Updatable) URL that the proxy will forward to
+     * (Updatable) The URL the proxy will forward to.
      * 
      */
     @Import(name="forward")
     private @Nullable Output<String> forward;
 
     /**
-     * @return (Updatable) URL that the proxy will forward to
+     * @return (Updatable) The URL the proxy will forward to.
      * 
      */
     public Optional<Output<String>> forward() {
@@ -34,14 +34,14 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) List of hosts
+     * (Updatable) List of hosts.
      * 
      */
     @Import(name="hosts")
     private @Nullable Output<List<String>> hosts;
 
     /**
-     * @return (Updatable) List of hosts
+     * @return (Updatable) List of hosts.
      * 
      */
     public Optional<Output<List<String>>> hosts() {
@@ -49,14 +49,14 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) To enable or disable the proxy (default true)
+     * (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) To enable or disable the proxy (default true)
+     * @return (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -64,20 +64,14 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Listening port used for the proxy.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     public Optional<Output<String>> port() {
@@ -112,7 +106,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param forward (Updatable) URL that the proxy will forward to
+         * @param forward (Updatable) The URL the proxy will forward to.
          * 
          * @return builder
          * 
@@ -123,7 +117,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param forward (Updatable) URL that the proxy will forward to
+         * @param forward (Updatable) The URL the proxy will forward to.
          * 
          * @return builder
          * 
@@ -133,7 +127,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hosts (Updatable) List of hosts
+         * @param hosts (Updatable) List of hosts.
          * 
          * @return builder
          * 
@@ -144,7 +138,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hosts (Updatable) List of hosts
+         * @param hosts (Updatable) List of hosts.
          * 
          * @return builder
          * 
@@ -154,7 +148,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hosts (Updatable) List of hosts
+         * @param hosts (Updatable) List of hosts.
          * 
          * @return builder
          * 
@@ -164,7 +158,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isEnabled (Updatable) To enable or disable the proxy (default true)
+         * @param isEnabled (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
          * 
          * @return builder
          * 
@@ -175,7 +169,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param isEnabled (Updatable) To enable or disable the proxy (default true)
+         * @param isEnabled (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
          * 
          * @return builder
          * 
@@ -185,10 +179,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port (Updatable) Port that the proxy will use
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param port (Updatable) Listening port used for the proxy.
          * 
          * @return builder
          * 
@@ -199,10 +190,7 @@ public final class ManagementStationProxyArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port (Updatable) Port that the proxy will use
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param port (Updatable) Listening port used for the proxy.
          * 
          * @return builder
          * 

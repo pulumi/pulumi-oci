@@ -68,7 +68,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public string ManagedInstanceGroupId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public Input<string> ManagedInstanceGroupId { get; set; } = null!;
@@ -102,7 +102,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the managed instance group.
+        /// Settings for the Autonomous Linux service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagedInstanceGroupAutonomousSettingResult> AutonomousSettings;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -122,18 +126,30 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The number of Managed Instances in the managed instance group.
+        /// Indicates whether the Autonomous Linux service manages the group.
+        /// </summary>
+        public readonly bool IsManagedByAutonomousLinux;
+        /// <summary>
+        /// The location of managed instances attached to the group.
+        /// </summary>
+        public readonly string Location;
+        /// <summary>
+        /// The number of managed instances in the group.
         /// </summary>
         public readonly int ManagedInstanceCount;
         public readonly string ManagedInstanceGroupId;
         /// <summary>
-        /// The list of managed instances OCIDs attached to the managed instance group.
+        /// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
         /// </summary>
         public readonly ImmutableArray<string> ManagedInstanceIds;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        /// </summary>
+        public readonly string NotificationTopicId;
         /// <summary>
         /// The operating system type of the instances in the managed instance group.
         /// </summary>
@@ -159,21 +175,23 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the managed instance group was created. An RFC3339 formatted datetime string.
+        /// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        /// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeModified;
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the group.
         /// </summary>
         public readonly string VendorName;
 
         [OutputConstructor]
         private GetManagedInstanceGroupResult(
             string archType,
+
+            ImmutableArray<Outputs.GetManagedInstanceGroupAutonomousSettingResult> autonomousSettings,
 
             string compartmentId,
 
@@ -187,11 +205,17 @@ namespace Pulumi.Oci.OsManagementHub
 
             string id,
 
+            bool isManagedByAutonomousLinux,
+
+            string location,
+
             int managedInstanceCount,
 
             string managedInstanceGroupId,
 
             ImmutableArray<string> managedInstanceIds,
+
+            string notificationTopicId,
 
             string osFamily,
 
@@ -212,15 +236,19 @@ namespace Pulumi.Oci.OsManagementHub
             string vendorName)
         {
             ArchType = archType;
+            AutonomousSettings = autonomousSettings;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            Location = location;
             ManagedInstanceCount = managedInstanceCount;
             ManagedInstanceGroupId = managedInstanceGroupId;
             ManagedInstanceIds = managedInstanceIds;
+            NotificationTopicId = notificationTopicId;
             OsFamily = osFamily;
             PendingJobCount = pendingJobCount;
             SoftwareSourceIds = softwareSourceIds;

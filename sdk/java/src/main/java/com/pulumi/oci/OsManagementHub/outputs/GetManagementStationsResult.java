@@ -16,24 +16,24 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagementStationsResult {
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return ManagementStation name
+     * @return A user-friendly name for the management station.
      * 
      */
     private @Nullable String displayName;
     private @Nullable String displayNameContains;
     private @Nullable List<GetManagementStationsFilter> filters;
     /**
-     * @return OCID for the ManagementStation config
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     private @Nullable String id;
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     private @Nullable String managedInstanceId;
@@ -43,21 +43,21 @@ public final class GetManagementStationsResult {
      */
     private List<GetManagementStationsManagementStationCollection> managementStationCollections;
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     private @Nullable String state;
 
     private GetManagementStationsResult() {}
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return ManagementStation name
+     * @return A user-friendly name for the management station.
      * 
      */
     public Optional<String> displayName() {
@@ -70,14 +70,14 @@ public final class GetManagementStationsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return OCID for the ManagementStation config
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     public Optional<String> managedInstanceId() {
@@ -91,7 +91,7 @@ public final class GetManagementStationsResult {
         return this.managementStationCollections;
     }
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     public Optional<String> state() {

@@ -13187,6 +13187,18 @@ export namespace Core {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetIpInventoryVcnOverlapsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIpInventoryVcnOverlapsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetIpsecConfigFilter {
         name: string;
         regex?: boolean;
@@ -25453,6 +25465,25 @@ export namespace Database {
         phoneNumber?: pulumi.Input<string>;
     }
 
+    export interface ExadataInfrastructureDefinedFileSystemConfiguration {
+        /**
+         * If true, the file system is used to create a backup prior to Exadata VM OS update.
+         */
+        isBackupPartition?: pulumi.Input<boolean>;
+        /**
+         * If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+         */
+        isResizable?: pulumi.Input<boolean>;
+        /**
+         * The minimum size of file system.
+         */
+        minSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
     export interface ExadataInfrastructureMaintenanceWindow {
         /**
          * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -26919,6 +26950,17 @@ export namespace Database {
         dbServerId: pulumi.Input<string>;
     }
 
+    export interface VmClusterAddVirtualNetworkFileSystemConfigurationDetail {
+        /**
+         * The file system size to be allocated in GBs.
+         */
+        fileSystemSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
     export interface VmClusterDataCollectionOptions {
         /**
          * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -26932,6 +26974,17 @@ export namespace Database {
          * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
          */
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface VmClusterFileSystemConfigurationDetail {
+        /**
+         * (Updatable) The file system size to be allocated in GBs.
+         */
+        fileSystemSizeGb?: pulumi.Input<number>;
+        /**
+         * (Updatable) The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
     }
 
     export interface VmClusterNetworkDrScan {
@@ -27050,6 +27103,17 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
          */
         dbServerId: pulumi.Input<string>;
+    }
+
+    export interface VmClusterRemoveVirtualMachineFileSystemConfigurationDetail {
+        /**
+         * The file system size to be allocated in GBs.
+         */
+        fileSystemSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
     }
 }
 
@@ -33259,6 +33323,24 @@ export namespace Email {
     }
 
     export interface GetEmailDomainsFilterArgs {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetEmailReturnPathsFilter {
+        /**
+         * A filter to only return resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEmailReturnPathsFilterArgs {
         /**
          * A filter to only return resources that match the given name exactly.
          */
@@ -63813,6 +63895,10 @@ export namespace LoadBalancer {
          */
         cipherSuiteName?: pulumi.Input<string>;
         /**
+         * (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+         */
+        hasSessionResumption?: pulumi.Input<boolean>;
+        /**
          * (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
          *
          * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -71532,6 +71618,176 @@ export namespace OsManagement {
 }
 
 export namespace OsManagementHub {
+    export interface EventData {
+        /**
+         * Provides additional information for the work request associated with an event.
+         */
+        additionalDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventDataAdditionalDetail>[]>;
+        /**
+         * Provides information collected for the exploit attempt event.
+         */
+        contents?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventDataContent>[]>;
+        /**
+         * Number of times the event has occurred.
+         */
+        eventCount?: pulumi.Input<number>;
+        /**
+         * Fingerprint of the event.
+         */
+        eventFingerprint?: pulumi.Input<string>;
+        /**
+         * Type of management station operation.
+         */
+        operationType?: pulumi.Input<string>;
+        /**
+         * Reason for the event.
+         */
+        reason?: pulumi.Input<string>;
+        /**
+         * Status of the management station operation.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The date and time that the event first occurred.
+         */
+        timeFirstOccurred?: pulumi.Input<string>;
+    }
+
+    export interface EventDataAdditionalDetail {
+        /**
+         * List of CVEs in the exploit.
+         */
+        exploitCves?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
+         */
+        initiatorId?: pulumi.Input<string>;
+        /**
+         * Kernel event vmcore details
+         */
+        vmcores?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.EventDataAdditionalDetailVmcore>[]>;
+        /**
+         * List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
+         */
+        workRequestIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface EventDataAdditionalDetailVmcore {
+        /**
+         * Kernel vmcore backtrace.
+         */
+        backtrace?: pulumi.Input<string>;
+        /**
+         * Kernel vmcore component.
+         */
+        component?: pulumi.Input<string>;
+    }
+
+    export interface EventDataContent {
+        /**
+         * Crash content availability status:
+         * * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+         * * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+         * * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+         * * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+         * * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+         */
+        contentAvailability?: pulumi.Input<string>;
+        /**
+         * Location of the Kernel event content.
+         */
+        contentLocation?: pulumi.Input<string>;
+        /**
+         * The content of the exploit detection log.
+         */
+        exploitDetectionLogContent?: pulumi.Input<string>;
+        /**
+         * The location of the exploit detection log within object storage.
+         */
+        exploitObjectStoreLocation?: pulumi.Input<string>;
+        /**
+         * Size of the event content.
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * Event type:
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface EventSystemDetail {
+        /**
+         * Architecture type.
+         */
+        architecture?: pulumi.Input<string>;
+        /**
+         * Version of the Ksplice effective kernel.
+         */
+        kspliceEffectiveKernelVersion?: pulumi.Input<string>;
+        /**
+         * Operating system type.
+         */
+        osFamily?: pulumi.Input<string>;
+        /**
+         * Release of the kernel.
+         */
+        osKernelRelease?: pulumi.Input<string>;
+        /**
+         * Version of the kernel.
+         */
+        osKernelVersion?: pulumi.Input<string>;
+        /**
+         * Name of the operating system.
+         */
+        osName?: pulumi.Input<string>;
+        /**
+         * Version of the operating system.
+         */
+        osSystemVersion?: pulumi.Input<string>;
+    }
+
+    export interface GetEntitlementsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEntitlementsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetErrataFilter {
+        /**
+         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetErrataFilterArgs {
+        /**
+         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetEventsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEventsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetLifecycleEnvironmentsFilter {
         name: string;
         regex?: boolean;
@@ -71551,6 +71807,72 @@ export namespace OsManagementHub {
     }
 
     export interface GetLifecycleStagesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceAvailablePackagesFilter {
+        /**
+         * Unique identifier for the package.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceAvailablePackagesFilterArgs {
+        /**
+         * Unique identifier for the package.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceAvailableSoftwareSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceAvailableSoftwareSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceAvailableWindowsUpdatesFilter {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceAvailableWindowsUpdatesFilterArgs {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceErrataFilter {
+        /**
+         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceErrataFilterArgs {
+        /**
+         * The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -71576,7 +71898,7 @@ export namespace OsManagementHub {
 
     export interface GetManagedInstanceGroupAvailablePackagesFilter {
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          */
         name: string;
         regex?: boolean;
@@ -71585,7 +71907,7 @@ export namespace OsManagementHub {
 
     export interface GetManagedInstanceGroupAvailablePackagesFilterArgs {
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -71604,6 +71926,42 @@ export namespace OsManagementHub {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedInstanceGroupInstalledPackagesFilter {
+        /**
+         * The name of the package that is installed on the managed instance group.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupInstalledPackagesFilterArgs {
+        /**
+         * The name of the package that is installed on the managed instance group.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceGroupModulesFilter {
+        /**
+         * The resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceGroupModulesFilterArgs {
+        /**
+         * The resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagedInstanceGroupsFilter {
         name: string;
         regex?: boolean;
@@ -71611,6 +71969,90 @@ export namespace OsManagementHub {
     }
 
     export interface GetManagedInstanceGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceInstalledPackagesFilter {
+        /**
+         * Unique identifier for the package.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceInstalledPackagesFilterArgs {
+        /**
+         * Unique identifier for the package.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceInstalledWindowsUpdatesFilter {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceInstalledWindowsUpdatesFilterArgs {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceModulesFilter {
+        /**
+         * The resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceModulesFilterArgs {
+        /**
+         * The resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstanceUpdatablePackagesFilter {
+        /**
+         * Unique identifier for the package.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstanceUpdatablePackagesFilterArgs {
+        /**
+         * Unique identifier for the package.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedInstancesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -71647,6 +72089,48 @@ export namespace OsManagementHub {
     }
 
     export interface GetProfilesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetScheduledJobsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetScheduledJobsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwarePackageSoftwareSourceFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwarePackageSoftwareSourceFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSoftwarePackagesFilter {
+        /**
+         * Unique identifier for the package. Note that this is not an OCID.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSoftwarePackagesFilterArgs {
+        /**
+         * Unique identifier for the package. Note that this is not an OCID.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -71708,7 +72192,7 @@ export namespace OsManagementHub {
 
     export interface GetSoftwareSourceSoftwarePackagesFilter {
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          */
         name: string;
         regex?: boolean;
@@ -71717,7 +72201,7 @@ export namespace OsManagementHub {
 
     export interface GetSoftwareSourceSoftwarePackagesFilterArgs {
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -71754,24 +72238,42 @@ export namespace OsManagementHub {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWindowsUpdatesFilter {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWindowsUpdatesFilterArgs {
+        /**
+         * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface LifecycleEnvironmentManagedInstanceId {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
     }
 
     export interface LifecycleEnvironmentStage {
         /**
-         * The CPU architecture of the managed instance(s) in the lifecycle environment.
+         * The CPU architecture of the managed instances in the lifecycle environment.
          */
         archType?: pulumi.Input<string>;
         /**
-         * The OCID of the tenancy containing the lifecycle environment.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -71779,7 +72281,7 @@ export namespace OsManagementHub {
          */
         definedTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          */
         displayName: pulumi.Input<string>;
         /**
@@ -71787,27 +72289,31 @@ export namespace OsManagementHub {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the lifecycle environment for the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
          */
         lifecycleEnvironmentId?: pulumi.Input<string>;
         /**
-         * The list of managed instances specified lifecycle stage.
+         * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * The list of managed instances associated with the lifecycle stage.
          */
         managedInstanceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStageManagedInstanceId>[]>;
         /**
-         * The operating system type of the managed instance(s) in the lifecycle environment.
+         * The operating system of the managed instances in the lifecycle environment.
          */
         osFamily?: pulumi.Input<string>;
         /**
-         * User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
          */
         rank: pulumi.Input<number>;
         /**
-         * Identifying information for the specified software source.
+         * Provides identifying information for the specified software source.
          */
         softwareSourceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStageSoftwareSourceId>[]>;
         /**
@@ -71819,15 +72325,15 @@ export namespace OsManagementHub {
          */
         systemTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+         * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+         * The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
         timeModified?: pulumi.Input<string>;
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the lifecycle environment.
          *
          *
          * ** IMPORTANT **
@@ -71838,118 +72344,492 @@ export namespace OsManagementHub {
 
     export interface LifecycleEnvironmentStageManagedInstanceId {
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
     }
 
     export interface LifecycleEnvironmentStageSoftwareSourceId {
         /**
-         * (Updatable) User specified information about the lifecycle environment.
+         * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         */
+        isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
         /**
          * Type of the software source.
          */
         softwareSourceType?: pulumi.Input<string>;
     }
 
-    export interface ManagedInstanceGroupSoftwareSource {
+    export interface LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails {
         /**
-         * (Updatable) Details about the managed instance group.
+         * The list of managed instance OCIDs to be attached/detached.
+         */
+        managedInstances: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Provides the name and description of the job.
+         */
+        workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails>;
+    }
+
+    export interface LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-         */
-        displayName?: pulumi.Input<string>;
-        /**
-         * The OCID of the software source.
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * Type of the software source.
-         */
-        softwareSourceType?: pulumi.Input<string>;
-    }
-
-    export interface ManagementStationMirror {
-        /**
-         * (Updatable) Directory for the mirroring
-         */
-        directory: pulumi.Input<string>;
-        /**
-         * (Updatable) Port that the proxy will use
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface LifecycleStageDetachManagedInstancesManagementManagedInstanceDetails {
+        /**
+         * The list of managed instance OCIDs to be attached/detached.
+         */
+        managedInstances: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Provides the name and description of the job.
+         */
+        workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails>;
+    }
+
+    export interface LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceAutonomousSettings {
+        /**
+         * (Updatable) Indicates whether Autonomous Linux will collect crash files.
+         */
+        isDataCollectionAuthorized?: pulumi.Input<boolean>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+         */
+        scheduledJobId?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupAutonomousSettings {
+        /**
+         * (Updatable) Indicates whether Autonomous Linux will collect crash files.
+         */
+        isDataCollectionAuthorized?: pulumi.Input<boolean>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+         */
+        scheduledJobId?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupManageModuleStreamsManagementDisable {
+        /**
+         * The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupManageModuleStreamsManagementEnable {
+        /**
+         * The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupManageModuleStreamsManagementInstall {
+        /**
+         * The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * The name of a profile of the specified module stream.
+         */
+        profileName: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupManageModuleStreamsManagementRemove {
+        /**
+         * The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * The name of a profile of the specified module stream.
+         */
+        profileName: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupSoftwareSource {
+        /**
+         * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         */
+        isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+        /**
+         * Type of the software source.
+         */
+        softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceLifecycleEnvironment {
+        /**
+         * Software source name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceLifecycleStage {
+        /**
+         * Software source name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceManagedInstanceGroup {
+        /**
+         * Software source name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceSoftwareSource {
+        /**
+         * (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Software source name.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         */
+        isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+        /**
+         * Type of the software source.
+         */
+        softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface ManagedInstanceUpdatePackagesManagementWorkRequestDetails {
+        /**
+         * User-specified information about the job. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        displayName?: pulumi.Input<string>;
+    }
+
+    export interface ManagementStationHealth {
+        /**
+         * (Updatable) User-specified description of the management station. Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * The current state of the management station.
+         */
+        state?: pulumi.Input<string>;
+    }
+
+    export interface ManagementStationMirror {
+        /**
+         * (Updatable) Path to the data volume on the management station where software source mirrors are stored.
+         */
+        directory: pulumi.Input<string>;
+        /**
+         * (Updatable) Listening port used for the proxy.
+         */
         port: pulumi.Input<string>;
         /**
-         * (Updatable) Local path for the sslcert
+         * (Updatable) Path to the SSL cerfificate.
          */
         sslcert?: pulumi.Input<string>;
         /**
-         * (Updatable) Default sslport for the mirror
+         * (Updatable) Default mirror listening port for https.
          */
         sslport: pulumi.Input<string>;
     }
 
     export interface ManagementStationMirrorSyncStatus {
         /**
-         * Total of mirrors in 'failed' state
+         * Total number of software sources that failed to sync.
          */
         failed?: pulumi.Input<number>;
         /**
-         * Total of mirrors in 'queued' state
+         * Total number of software sources that are queued for sync.
          */
         queued?: pulumi.Input<number>;
         /**
-         * Total of mirrors in 'synced' state
+         * Total number of software sources that successfully synced.
          */
         synced?: pulumi.Input<number>;
         /**
-         * Total of mirrors in 'syncing' state
+         * Total number of software sources currently syncing.
          */
         syncing?: pulumi.Input<number>;
         /**
-         * Total of mirrors in 'failed' state
+         * Total number of software sources that have not yet been synced.
          */
         unsynced?: pulumi.Input<number>;
     }
 
     export interface ManagementStationProxy {
         /**
-         * (Updatable) URL that the proxy will forward to
+         * (Updatable) The URL the proxy will forward to.
          */
         forward?: pulumi.Input<string>;
         /**
-         * (Updatable) List of hosts
+         * (Updatable) List of hosts.
          */
         hosts?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) To enable or disable the proxy (default true)
+         * (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
          */
         isEnabled: pulumi.Input<boolean>;
         /**
-         * (Updatable) Port that the proxy will use
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * (Updatable) Listening port used for the proxy.
          */
         port?: pulumi.Input<string>;
     }
@@ -71960,7 +72840,7 @@ export namespace OsManagementHub {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
     }
@@ -71971,7 +72851,7 @@ export namespace OsManagementHub {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
     }
@@ -71982,14 +72862,14 @@ export namespace OsManagementHub {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
     }
 
     export interface ProfileSoftwareSource {
         /**
-         * (Updatable) The description of the registration profile.
+         * (Updatable) User-specified description of the registration profile.
          */
         description?: pulumi.Input<string>;
         /**
@@ -71997,13 +72877,165 @@ export namespace OsManagementHub {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         id?: pulumi.Input<string>;
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         */
+        isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
         /**
          * Type of the software source.
          */
         softwareSourceType?: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperation {
+        /**
+         * (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
+         */
+        manageModuleStreamsDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetails>;
+        /**
+         * (Updatable) The type of operation this scheduled job performs.
+         */
+        operationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+         */
+        packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
+         */
+        softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Provides the information used to update a module stream.
+         */
+        switchModuleStreamsDetails?: pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationSwitchModuleStreamsDetails>;
+        /**
+         * (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+         */
+        windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ScheduledJobOperationManageModuleStreamsDetails {
+        /**
+         * (Updatable) The set of module streams to disable.
+         */
+        disables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetailsDisable>[]>;
+        /**
+         * (Updatable) The set of module streams to enable.
+         */
+        enables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetailsEnable>[]>;
+        /**
+         * (Updatable) The set of module stream profiles to install.
+         */
+        installs?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetailsInstall>[]>;
+        /**
+         * (Updatable) The set of module stream profiles to remove.
+         */
+        removes?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperationManageModuleStreamsDetailsRemove>[]>;
+    }
+
+    export interface ScheduledJobOperationManageModuleStreamsDetailsDisable {
+        /**
+         * (Updatable) The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperationManageModuleStreamsDetailsEnable {
+        /**
+         * (Updatable) The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperationManageModuleStreamsDetailsInstall {
+        /**
+         * (Updatable) The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a profile of the specified module stream.
+         */
+        profileName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperationManageModuleStreamsDetailsRemove {
+        /**
+         * (Updatable) The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a profile of the specified module stream.
+         */
+        profileName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface ScheduledJobOperationSwitchModuleStreamsDetails {
+        /**
+         * (Updatable) The name of a module.
+         */
+        moduleName: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+         */
+        softwareSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of a stream of the specified module.
+         */
+        streamName: pulumi.Input<string>;
+    }
+
+    export interface SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability {
+        /**
+         * Availability of the software source to instances in private data centers or third-party clouds.
+         */
+        availability?: pulumi.Input<string>;
+        /**
+         * Availability of the software source to Oracle Cloud Infrastructure instances.
+         */
+        availabilityAtOci?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        softwareSourceId: pulumi.Input<string>;
     }
 
     export interface SoftwareSourceCustomSoftwareSourceFilter {
@@ -72023,13 +73055,13 @@ export namespace OsManagementHub {
 
     export interface SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter {
         /**
-         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * (Updatable) The type of the filter.
          */
-        filterType: pulumi.Input<string>;
+        filterType?: pulumi.Input<string>;
         /**
          * (Updatable) Module name.
          */
-        moduleName: pulumi.Input<string>;
+        moduleName?: pulumi.Input<string>;
         /**
          * (Updatable) Profile name.
          */
@@ -72042,9 +73074,9 @@ export namespace OsManagementHub {
 
     export interface SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
         /**
-         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * (Updatable) The type of the filter.
          */
-        filterType: pulumi.Input<string>;
+        filterType?: pulumi.Input<string>;
         /**
          * (Updatable) The package name.
          */
@@ -72061,9 +73093,9 @@ export namespace OsManagementHub {
 
     export interface SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter {
         /**
-         * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * (Updatable) The type of the filter.
          */
-        filterType: pulumi.Input<string>;
+        filterType?: pulumi.Input<string>;
         /**
          * (Updatable) List of package group names.
          */
@@ -72072,17 +73104,17 @@ export namespace OsManagementHub {
 
     export interface SoftwareSourceVendorSoftwareSource {
         /**
-         * (Updatable) User friendly name.
+         * (Updatable) User-friendly name.
          */
-        displayName: pulumi.Input<string>;
+        displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the resource that is immutable on creation.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
          *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        id: pulumi.Input<string>;
+        id?: pulumi.Input<string>;
     }
 }
 

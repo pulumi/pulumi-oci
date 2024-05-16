@@ -35,7 +35,7 @@ export function getProfile(args: GetProfileArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetProfileArgs {
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      */
     profileId: string;
 }
@@ -49,7 +49,7 @@ export interface GetProfileResult {
      */
     readonly archType: string;
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
     readonly compartmentId: string;
     /**
@@ -69,25 +69,33 @@ export interface GetProfileResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     readonly id: string;
     /**
-     * Identifying information for the specified lifecycle environment.
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     */
+    readonly isDefaultProfile: boolean;
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     */
+    readonly isServiceProvidedProfile: boolean;
+    /**
+     * Provides identifying information for the specified lifecycle environment.
      */
     readonly lifecycleEnvironments: outputs.OsManagementHub.GetProfileLifecycleEnvironment[];
     readonly lifecycleStageId: string;
     /**
-     * Identifying information for the specified lifecycle stage.
+     * Provides identifying information for the specified lifecycle stage.
      */
     readonly lifecycleStages: outputs.OsManagementHub.GetProfileLifecycleStage[];
     readonly managedInstanceGroupId: string;
     /**
-     * Identifying information for the specified managed instance group.
+     * Provides identifying information for the specified managed instance group.
      */
     readonly managedInstanceGroups: outputs.OsManagementHub.GetProfileManagedInstanceGroup[];
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      */
     readonly managementStationId: string;
     /**
@@ -96,9 +104,13 @@ export interface GetProfileResult {
     readonly osFamily: string;
     readonly profileId: string;
     /**
-     * The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      */
     readonly profileType: string;
+    /**
+     * The type of instance to register.
+     */
+    readonly registrationType: string;
     readonly softwareSourceIds: string[];
     /**
      * The list of software sources that the registration profile will use.
@@ -113,11 +125,11 @@ export interface GetProfileResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      */
     readonly vendorName: string;
 }
@@ -146,7 +158,7 @@ export function getProfileOutput(args: GetProfileOutputArgs, opts?: pulumi.Invok
  */
 export interface GetProfileOutputArgs {
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      */
     profileId: pulumi.Input<string>;
 }

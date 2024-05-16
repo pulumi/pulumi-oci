@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.OsManagementHub.inputs.GetSoftwareSourcesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -32,14 +33,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The availabilities of the software source for a tenant.
+     * The availabilities of the software source in a non-OCI environment for a tenancy.
      * 
      */
     @Import(name="availabilities")
     private @Nullable List<String> availabilities;
 
     /**
-     * @return The availabilities of the software source for a tenant.
+     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
      * 
      */
     public Optional<List<String>> availabilities() {
@@ -47,14 +48,44 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * 
+     */
+    @Import(name="availabilityAnywheres")
+    private @Nullable List<String> availabilityAnywheres;
+
+    /**
+     * @return The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     * 
+     */
+    public Optional<List<String>> availabilityAnywheres() {
+        return Optional.ofNullable(this.availabilityAnywheres);
+    }
+
+    /**
+     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * 
+     */
+    @Import(name="availabilityAtOcis")
+    private @Nullable List<String> availabilityAtOcis;
+
+    /**
+     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     * 
+     */
+    public Optional<List<String>> availabilityAtOcis() {
+        return Optional.ofNullable(this.availabilityAtOcis);
+    }
+
+    /**
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -62,14 +93,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public Optional<String> displayName() {
@@ -114,14 +145,29 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only instances whose OS family type matches the given OS family.
+     * Indicates whether the software source is mandatory for the Autonomous Linux service.
+     * 
+     */
+    @Import(name="isMandatoryForAutonomousLinux")
+    private @Nullable Boolean isMandatoryForAutonomousLinux;
+
+    /**
+     * @return Indicates whether the software source is mandatory for the Autonomous Linux service.
+     * 
+     */
+    public Optional<Boolean> isMandatoryForAutonomousLinux() {
+        return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
+    }
+
+    /**
+     * A filter to return only resources that match the given operating system family.
      * 
      */
     @Import(name="osFamilies")
     private @Nullable List<String> osFamilies;
 
     /**
-     * @return A filter to return only instances whose OS family type matches the given OS family.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public Optional<List<String>> osFamilies() {
@@ -129,14 +175,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
      * 
      */
     @Import(name="softwareSourceId")
     private @Nullable String softwareSourceId;
 
     /**
-     * @return The OCID for the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
      * 
      */
     public Optional<String> softwareSourceId() {
@@ -159,14 +205,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * A filter to return only software sources whose state matches the given state.
      * 
      */
     @Import(name="states")
     private @Nullable List<String> states;
 
     /**
-     * @return A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * @return A filter to return only software sources whose state matches the given state.
      * 
      */
     public Optional<List<String>> states() {
@@ -174,14 +220,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      * 
      */
     @Import(name="vendorName")
     private @Nullable String vendorName;
 
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     public Optional<String> vendorName() {
@@ -193,11 +239,14 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
     private GetSoftwareSourcesPlainArgs(GetSoftwareSourcesPlainArgs $) {
         this.archTypes = $.archTypes;
         this.availabilities = $.availabilities;
+        this.availabilityAnywheres = $.availabilityAnywheres;
+        this.availabilityAtOcis = $.availabilityAtOcis;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.displayNameContains = $.displayNameContains;
         this.displayNameNotEqualTos = $.displayNameNotEqualTos;
         this.filters = $.filters;
+        this.isMandatoryForAutonomousLinux = $.isMandatoryForAutonomousLinux;
         this.osFamilies = $.osFamilies;
         this.softwareSourceId = $.softwareSourceId;
         this.softwareSourceTypes = $.softwareSourceTypes;
@@ -245,7 +294,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param availabilities The availabilities of the software source for a tenant.
+         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -256,7 +305,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param availabilities The availabilities of the software source for a tenant.
+         * @param availabilities The availabilities of the software source in a non-OCI environment for a tenancy.
          * 
          * @return builder
          * 
@@ -266,7 +315,49 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityAnywheres(@Nullable List<String> availabilityAnywheres) {
+            $.availabilityAnywheres = availabilityAnywheres;
+            return this;
+        }
+
+        /**
+         * @param availabilityAnywheres The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityAnywheres(String... availabilityAnywheres) {
+            return availabilityAnywheres(List.of(availabilityAnywheres));
+        }
+
+        /**
+         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityAtOcis(@Nullable List<String> availabilityAtOcis) {
+            $.availabilityAtOcis = availabilityAtOcis;
+            return this;
+        }
+
+        /**
+         * @param availabilityAtOcis The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityAtOcis(String... availabilityAtOcis) {
+            return availabilityAtOcis(List.of(availabilityAtOcis));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -277,7 +368,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A filter to return resources that match the given user-friendly name.
          * 
          * @return builder
          * 
@@ -329,7 +420,18 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param osFamilies A filter to return only instances whose OS family type matches the given OS family.
+         * @param isMandatoryForAutonomousLinux Indicates whether the software source is mandatory for the Autonomous Linux service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMandatoryForAutonomousLinux(@Nullable Boolean isMandatoryForAutonomousLinux) {
+            $.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+
+        /**
+         * @param osFamilies A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -340,7 +442,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param osFamilies A filter to return only instances whose OS family type matches the given OS family.
+         * @param osFamilies A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -350,7 +452,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param softwareSourceId The OCID for the software source.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
          * 
          * @return builder
          * 
@@ -382,7 +484,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param states A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+         * @param states A filter to return only software sources whose state matches the given state.
          * 
          * @return builder
          * 
@@ -393,7 +495,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param states A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+         * @param states A filter to return only software sources whose state matches the given state.
          * 
          * @return builder
          * 
@@ -403,7 +505,7 @@ public final class GetSoftwareSourcesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param vendorName A filter to return only profiles that match the given vendorName.
+         * @param vendorName A filter to return only resources that match the given vendor name.
          * 
          * @return builder
          * 

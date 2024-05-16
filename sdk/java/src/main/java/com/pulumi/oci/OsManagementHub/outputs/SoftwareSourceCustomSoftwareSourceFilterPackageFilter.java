@@ -4,7 +4,6 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,10 +12,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    private String filterType;
+    private @Nullable String filterType;
     /**
      * @return (Updatable) The package name.
      * 
@@ -35,11 +34,11 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
 
     private SoftwareSourceCustomSoftwareSourceFilterPackageFilter() {}
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    public String filterType() {
-        return this.filterType;
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
     /**
      * @return (Updatable) The package name.
@@ -72,7 +71,7 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String filterType;
+        private @Nullable String filterType;
         private @Nullable String packageName;
         private @Nullable String packageNamePattern;
         private @Nullable String packageVersion;
@@ -86,10 +85,8 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
         }
 
         @CustomType.Setter
-        public Builder filterType(String filterType) {
-            if (filterType == null) {
-              throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterPackageFilter", "filterType");
-            }
+        public Builder filterType(@Nullable String filterType) {
+
             this.filterType = filterType;
             return this;
         }

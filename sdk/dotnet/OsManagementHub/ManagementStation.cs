@@ -12,7 +12,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// <summary>
     /// This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
     /// 
-    /// Creates a management station.
+    /// Create a management station. You must provide proxy and mirror configuration information.
     /// 
     /// ## Example Usage
     /// 
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.OsManagementHub
     public partial class ManagementStation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the tenancy containing the Management Station.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -81,13 +81,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details describing the Management Station config.
+        /// (Updatable) User-specified description of the management station. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Management Station name
+        /// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -99,67 +99,83 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the host
+        /// Overall health information of the management station.
+        /// </summary>
+        [Output("healths")]
+        public Output<ImmutableArray<Outputs.ManagementStationHealth>> Healths { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Hostname of the management station.
         /// </summary>
         [Output("hostname")]
         public Output<string> Hostname { get; private set; } = null!;
 
         /// <summary>
-        /// OCID for the Instance associated with the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         [Output("managedInstanceId")]
         public Output<string> ManagedInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information for creating a mirror configuration
+        /// (Updatable) Information used to create the mirror configuration for a management station.
         /// </summary>
         [Output("mirror")]
         public Output<Outputs.ManagementStationMirror> Mirror { get; private set; } = null!;
 
         /// <summary>
-        /// A decimal number representing the mirror capacity
+        /// A decimal number representing the amount of mirror capacity used by the sync.
         /// </summary>
         [Output("mirrorCapacity")]
         public Output<int> MirrorCapacity { get; private set; } = null!;
 
         /// <summary>
-        /// Status summary of all repos
+        /// Status summary of the mirror sync.
         /// </summary>
         [Output("mirrorSyncStatuses")]
         public Output<ImmutableArray<Outputs.ManagementStationMirrorSyncStatus>> MirrorSyncStatuses { get; private set; } = null!;
 
         /// <summary>
-        /// A decimal number representing the completeness percentage
+        /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         [Output("overallPercentage")]
         public Output<int> OverallPercentage { get; private set; } = null!;
 
         /// <summary>
-        /// Current state of the mirroring
+        /// Current state of the mirror sync for the management station.
         /// </summary>
         [Output("overallState")]
         public Output<string> OverallState { get; private set; } = null!;
 
         /// <summary>
-        /// OCID of the Profile associated with the Station
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         /// </summary>
         [Output("profileId")]
         public Output<string> ProfileId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information for creating a proxy configuration
+        /// (Updatable) Information used to create the proxy configuration for a management station.
         /// </summary>
         [Output("proxy")]
         public Output<Outputs.ManagementStationProxy> Proxy { get; private set; } = null!;
 
         /// <summary>
-        /// OCID of the Scheduled Job for mirror sync
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("refreshTrigger")]
+        public Output<int?> RefreshTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         /// </summary>
         [Output("scheduledJobId")]
         public Output<string> ScheduledJobId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Management Station config.
+        /// The current state of the management station.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -171,7 +187,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// A decimal number representing the total of repos
+        /// The number of software sources that the station is mirroring.
         /// </summary>
         [Output("totalMirrors")]
         public Output<int> TotalMirrors { get; private set; } = null!;
@@ -223,7 +239,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class ManagementStationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the tenancy containing the Management Station.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -241,13 +257,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Details describing the Management Station config.
+        /// (Updatable) User-specified description of the management station. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Management Station name
+        /// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -265,22 +281,32 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Name of the host
+        /// (Updatable) Hostname of the management station.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information for creating a mirror configuration
+        /// (Updatable) Information used to create the mirror configuration for a management station.
         /// </summary>
         [Input("mirror", required: true)]
         public Input<Inputs.ManagementStationMirrorArgs> Mirror { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information for creating a proxy configuration
+        /// (Updatable) Information used to create the proxy configuration for a management station.
         /// </summary>
         [Input("proxy", required: true)]
         public Input<Inputs.ManagementStationProxyArgs> Proxy { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
 
         public ManagementStationArgs()
         {
@@ -291,7 +317,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class ManagementStationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the tenancy containing the Management Station.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -309,13 +335,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Details describing the Management Station config.
+        /// (Updatable) User-specified description of the management station. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Management Station name
+        /// (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -332,26 +358,38 @@ namespace Pulumi.Oci.OsManagementHub
             set => _freeformTags = value;
         }
 
+        [Input("healths")]
+        private InputList<Inputs.ManagementStationHealthGetArgs>? _healths;
+
         /// <summary>
-        /// (Updatable) Name of the host
+        /// Overall health information of the management station.
+        /// </summary>
+        public InputList<Inputs.ManagementStationHealthGetArgs> Healths
+        {
+            get => _healths ?? (_healths = new InputList<Inputs.ManagementStationHealthGetArgs>());
+            set => _healths = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Hostname of the management station.
         /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
-        /// OCID for the Instance associated with the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         [Input("managedInstanceId")]
         public Input<string>? ManagedInstanceId { get; set; }
 
         /// <summary>
-        /// (Updatable) Information for creating a mirror configuration
+        /// (Updatable) Information used to create the mirror configuration for a management station.
         /// </summary>
         [Input("mirror")]
         public Input<Inputs.ManagementStationMirrorGetArgs>? Mirror { get; set; }
 
         /// <summary>
-        /// A decimal number representing the mirror capacity
+        /// A decimal number representing the amount of mirror capacity used by the sync.
         /// </summary>
         [Input("mirrorCapacity")]
         public Input<int>? MirrorCapacity { get; set; }
@@ -360,7 +398,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<Inputs.ManagementStationMirrorSyncStatusGetArgs>? _mirrorSyncStatuses;
 
         /// <summary>
-        /// Status summary of all repos
+        /// Status summary of the mirror sync.
         /// </summary>
         public InputList<Inputs.ManagementStationMirrorSyncStatusGetArgs> MirrorSyncStatuses
         {
@@ -369,37 +407,47 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A decimal number representing the completeness percentage
+        /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         [Input("overallPercentage")]
         public Input<int>? OverallPercentage { get; set; }
 
         /// <summary>
-        /// Current state of the mirroring
+        /// Current state of the mirror sync for the management station.
         /// </summary>
         [Input("overallState")]
         public Input<string>? OverallState { get; set; }
 
         /// <summary>
-        /// OCID of the Profile associated with the Station
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         /// </summary>
         [Input("profileId")]
         public Input<string>? ProfileId { get; set; }
 
         /// <summary>
-        /// (Updatable) Information for creating a proxy configuration
+        /// (Updatable) Information used to create the proxy configuration for a management station.
         /// </summary>
         [Input("proxy")]
         public Input<Inputs.ManagementStationProxyGetArgs>? Proxy { get; set; }
 
         /// <summary>
-        /// OCID of the Scheduled Job for mirror sync
+        /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("refreshTrigger")]
+        public Input<int>? RefreshTrigger { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         /// </summary>
         [Input("scheduledJobId")]
         public Input<string>? ScheduledJobId { get; set; }
 
         /// <summary>
-        /// The current state of the Management Station config.
+        /// The current state of the management station.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -417,7 +465,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A decimal number representing the total of repos
+        /// The number of software sources that the station is mirroring.
         /// </summary>
         [Input("totalMirrors")]
         public Input<int>? TotalMirrors { get; set; }

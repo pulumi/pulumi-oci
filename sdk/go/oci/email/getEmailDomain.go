@@ -65,8 +65,12 @@ type LookupEmailDomainResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of an email domain.
-	Description   string `pulumi:"description"`
-	EmailDomainId string `pulumi:"emailDomainId"`
+	Description string `pulumi:"description"`
+	// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId string `pulumi:"domainVerificationId"`
+	// The current domain verification status.
+	DomainVerificationStatus string `pulumi:"domainVerificationStatus"`
+	EmailDomainId            string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
@@ -139,6 +143,16 @@ func (o LookupEmailDomainResultOutput) DefinedTags() pulumi.MapOutput {
 // The description of an email domain.
 func (o LookupEmailDomainResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+func (o LookupEmailDomainResultOutput) DomainVerificationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.DomainVerificationId }).(pulumi.StringOutput)
+}
+
+// The current domain verification status.
+func (o LookupEmailDomainResultOutput) DomainVerificationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.DomainVerificationStatus }).(pulumi.StringOutput)
 }
 
 func (o LookupEmailDomainResultOutput) EmailDomainId() pulumi.StringOutput {

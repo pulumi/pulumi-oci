@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified lifecycle stage.
+ * Returns information about the specified lifecycle stage.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getLifecycleStage(args: GetLifecycleStageArgs, opts?: pulumi.Inv
  */
 export interface GetLifecycleStageArgs {
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     lifecycleStageId: string;
 }
@@ -45,11 +45,11 @@ export interface GetLifecycleStageArgs {
  */
 export interface GetLifecycleStageResult {
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      */
     readonly archType: string;
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      */
     readonly compartmentId: string;
     /**
@@ -69,24 +69,28 @@ export interface GetLifecycleStageResult {
      */
     readonly id: string;
     /**
-     * The OCID of the lifecycle environment for the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      */
     readonly lifecycleEnvironmentId: string;
     readonly lifecycleStageId: string;
     /**
-     * The list of managed instances specified lifecycle stage.
+     * The location of managed instances associated with the lifecycle stage.
+     */
+    readonly location: string;
+    /**
+     * The list of managed instances associated with the lifecycle stage.
      */
     readonly managedInstanceIds: outputs.OsManagementHub.GetLifecycleStageManagedInstanceId[];
     /**
-     * The operating system type of the target instances.
+     * The operating system of the managed instances in the lifecycle stage.
      */
     readonly osFamily: string;
     /**
-     * User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      */
     readonly rank: number;
     /**
-     * Identifying information for the specified software source.
+     * Provides identifying information for the specified software source.
      */
     readonly softwareSourceIds: outputs.OsManagementHub.GetLifecycleStageSoftwareSourceId[];
     /**
@@ -98,22 +102,22 @@ export interface GetLifecycleStageResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
     /**
-     * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeModified: string;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle stage.
      */
     readonly vendorName: string;
 }
 /**
  * This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified lifecycle stage.
+ * Returns information about the specified lifecycle stage.
  *
  * ## Example Usage
  *
@@ -135,7 +139,7 @@ export function getLifecycleStageOutput(args: GetLifecycleStageOutputArgs, opts?
  */
 export interface GetLifecycleStageOutputArgs {
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     lifecycleStageId: pulumi.Input<string>;
 }

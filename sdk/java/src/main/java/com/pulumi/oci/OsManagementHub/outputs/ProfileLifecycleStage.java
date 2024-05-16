@@ -17,7 +17,7 @@ public final class ProfileLifecycleStage {
      */
     private @Nullable String displayName;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private @Nullable String id;
@@ -31,7 +31,7 @@ public final class ProfileLifecycleStage {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<String> id() {

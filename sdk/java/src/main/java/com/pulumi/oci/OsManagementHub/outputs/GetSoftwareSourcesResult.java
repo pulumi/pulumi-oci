@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,17 +22,23 @@ public final class GetSoftwareSourcesResult {
      */
     private @Nullable List<String> archTypes;
     /**
-     * @return Possible availabilities of a software source.
+     * @return Availability of the software source (for non-OCI environments).
      * 
      */
     private @Nullable List<String> availabilities;
+    private @Nullable List<String> availabilityAnywheres;
     /**
-     * @return The OCID of the tenancy containing the software source.
+     * @return Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    private @Nullable List<String> availabilityAtOcis;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     private @Nullable String displayName;
@@ -44,6 +51,11 @@ public final class GetSoftwareSourcesResult {
      */
     private String id;
     /**
+     * @return Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    private @Nullable Boolean isMandatoryForAutonomousLinux;
+    /**
      * @return The OS family the software source belongs to.
      * 
      */
@@ -55,7 +67,7 @@ public final class GetSoftwareSourcesResult {
     private List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
     private @Nullable String softwareSourceId;
     /**
-     * @return Type of the software source.
+     * @return Type of software source.
      * 
      */
     private @Nullable List<String> softwareSourceTypes;
@@ -79,21 +91,31 @@ public final class GetSoftwareSourcesResult {
         return this.archTypes == null ? List.of() : this.archTypes;
     }
     /**
-     * @return Possible availabilities of a software source.
+     * @return Availability of the software source (for non-OCI environments).
      * 
      */
     public List<String> availabilities() {
         return this.availabilities == null ? List.of() : this.availabilities;
     }
+    public List<String> availabilityAnywheres() {
+        return this.availabilityAnywheres == null ? List.of() : this.availabilityAnywheres;
+    }
     /**
-     * @return The OCID of the tenancy containing the software source.
+     * @return Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    public List<String> availabilityAtOcis() {
+        return this.availabilityAtOcis == null ? List.of() : this.availabilityAtOcis;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     public Optional<String> displayName() {
@@ -116,6 +138,13 @@ public final class GetSoftwareSourcesResult {
         return this.id;
     }
     /**
+     * @return Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    public Optional<Boolean> isMandatoryForAutonomousLinux() {
+        return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
+    }
+    /**
      * @return The OS family the software source belongs to.
      * 
      */
@@ -133,7 +162,7 @@ public final class GetSoftwareSourcesResult {
         return Optional.ofNullable(this.softwareSourceId);
     }
     /**
-     * @return Type of the software source.
+     * @return Type of software source.
      * 
      */
     public List<String> softwareSourceTypes() {
@@ -165,12 +194,15 @@ public final class GetSoftwareSourcesResult {
     public static final class Builder {
         private @Nullable List<String> archTypes;
         private @Nullable List<String> availabilities;
+        private @Nullable List<String> availabilityAnywheres;
+        private @Nullable List<String> availabilityAtOcis;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNameNotEqualTos;
         private @Nullable List<GetSoftwareSourcesFilter> filters;
         private String id;
+        private @Nullable Boolean isMandatoryForAutonomousLinux;
         private @Nullable List<String> osFamilies;
         private List<GetSoftwareSourcesSoftwareSourceCollection> softwareSourceCollections;
         private @Nullable String softwareSourceId;
@@ -182,12 +214,15 @@ public final class GetSoftwareSourcesResult {
     	      Objects.requireNonNull(defaults);
     	      this.archTypes = defaults.archTypes;
     	      this.availabilities = defaults.availabilities;
+    	      this.availabilityAnywheres = defaults.availabilityAnywheres;
+    	      this.availabilityAtOcis = defaults.availabilityAtOcis;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.displayNameContains = defaults.displayNameContains;
     	      this.displayNameNotEqualTos = defaults.displayNameNotEqualTos;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.osFamilies = defaults.osFamilies;
     	      this.softwareSourceCollections = defaults.softwareSourceCollections;
     	      this.softwareSourceId = defaults.softwareSourceId;
@@ -213,6 +248,24 @@ public final class GetSoftwareSourcesResult {
         }
         public Builder availabilities(String... availabilities) {
             return availabilities(List.of(availabilities));
+        }
+        @CustomType.Setter
+        public Builder availabilityAnywheres(@Nullable List<String> availabilityAnywheres) {
+
+            this.availabilityAnywheres = availabilityAnywheres;
+            return this;
+        }
+        public Builder availabilityAnywheres(String... availabilityAnywheres) {
+            return availabilityAnywheres(List.of(availabilityAnywheres));
+        }
+        @CustomType.Setter
+        public Builder availabilityAtOcis(@Nullable List<String> availabilityAtOcis) {
+
+            this.availabilityAtOcis = availabilityAtOcis;
+            return this;
+        }
+        public Builder availabilityAtOcis(String... availabilityAtOcis) {
+            return availabilityAtOcis(List.of(availabilityAtOcis));
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
@@ -256,6 +309,12 @@ public final class GetSoftwareSourcesResult {
               throw new MissingRequiredPropertyException("GetSoftwareSourcesResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMandatoryForAutonomousLinux(@Nullable Boolean isMandatoryForAutonomousLinux) {
+
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             return this;
         }
         @CustomType.Setter
@@ -312,12 +371,15 @@ public final class GetSoftwareSourcesResult {
             final var _resultValue = new GetSoftwareSourcesResult();
             _resultValue.archTypes = archTypes;
             _resultValue.availabilities = availabilities;
+            _resultValue.availabilityAnywheres = availabilityAnywheres;
+            _resultValue.availabilityAtOcis = availabilityAtOcis;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.displayNameContains = displayNameContains;
             _resultValue.displayNameNotEqualTos = displayNameNotEqualTos;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.osFamilies = osFamilies;
             _resultValue.softwareSourceCollections = softwareSourceCollections;
             _resultValue.softwareSourceId = softwareSourceId;

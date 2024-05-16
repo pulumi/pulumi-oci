@@ -5,7 +5,6 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,33 +16,33 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
     public static final SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs Empty = new SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs();
 
     /**
-     * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * (Updatable) The type of the filter.
      * 
      */
-    @Import(name="filterType", required=true)
-    private Output<String> filterType;
+    @Import(name="filterType")
+    private @Nullable Output<String> filterType;
 
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    public Output<String> filterType() {
-        return this.filterType;
+    public Optional<Output<String>> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
 
     /**
      * (Updatable) Module name.
      * 
      */
-    @Import(name="moduleName", required=true)
-    private Output<String> moduleName;
+    @Import(name="moduleName")
+    private @Nullable Output<String> moduleName;
 
     /**
      * @return (Updatable) Module name.
      * 
      */
-    public Output<String> moduleName() {
-        return this.moduleName;
+    public Optional<Output<String>> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
 
     /**
@@ -104,18 +103,18 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
         }
 
         /**
-         * @param filterType (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * @param filterType (Updatable) The type of the filter.
          * 
          * @return builder
          * 
          */
-        public Builder filterType(Output<String> filterType) {
+        public Builder filterType(@Nullable Output<String> filterType) {
             $.filterType = filterType;
             return this;
         }
 
         /**
-         * @param filterType (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * @param filterType (Updatable) The type of the filter.
          * 
          * @return builder
          * 
@@ -130,7 +129,7 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
          * @return builder
          * 
          */
-        public Builder moduleName(Output<String> moduleName) {
+        public Builder moduleName(@Nullable Output<String> moduleName) {
             $.moduleName = moduleName;
             return this;
         }
@@ -188,12 +187,6 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
         }
 
         public SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs build() {
-            if ($.filterType == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs", "filterType");
-            }
-            if ($.moduleName == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs", "moduleName");
-            }
             return $;
         }
     }

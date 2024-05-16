@@ -74,7 +74,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceVendorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list. This parameter is required.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceVendorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list. This parameter is required.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

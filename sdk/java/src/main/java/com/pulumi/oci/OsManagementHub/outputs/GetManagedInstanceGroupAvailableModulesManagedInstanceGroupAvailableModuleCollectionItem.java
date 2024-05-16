@@ -16,7 +16,7 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
      */
     private String name;
     /**
-     * @return The OCID of the software source that provides this module.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module.
      * 
      */
     private String softwareSourceId;
@@ -30,7 +30,7 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
         return this.name;
     }
     /**
-     * @return The OCID of the software source that provides this module.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module.
      * 
      */
     public String softwareSourceId() {

@@ -29,14 +29,14 @@ public final class GetSoftwareSourceModuleStreamProfilePlainArgs extends com.pul
     }
 
     /**
-     * The name of the profile of the containing module stream.
+     * The name of the module stream profile.
      * 
      */
     @Import(name="profileName", required=true)
     private String profileName;
 
     /**
-     * @return The name of the profile of the containing module stream.
+     * @return The name of the module stream profile.
      * 
      */
     public String profileName() {
@@ -44,14 +44,14 @@ public final class GetSoftwareSourceModuleStreamProfilePlainArgs extends com.pul
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private String softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String softwareSourceId() {
@@ -112,7 +112,7 @@ public final class GetSoftwareSourceModuleStreamProfilePlainArgs extends com.pul
         }
 
         /**
-         * @param profileName The name of the profile of the containing module stream.
+         * @param profileName The name of the module stream profile.
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class GetSoftwareSourceModuleStreamProfilePlainArgs extends com.pul
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

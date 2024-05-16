@@ -18,7 +18,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// Settings for the Autonomous Linux service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSettingResult> AutonomousSettings;
+        /// <summary>
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -38,19 +42,31 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The number of Managed Instances in the managed instance group.
+        /// Indicates whether to list only resources managed by the Autonomous Linux service.
+        /// </summary>
+        public readonly bool IsManagedByAutonomousLinux;
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public readonly string Location;
+        /// <summary>
+        /// The number of managed instances in the group.
         /// </summary>
         public readonly int ManagedInstanceCount;
         /// <summary>
-        /// The list of managed instances OCIDs attached to the managed instance group.
+        /// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
         /// </summary>
         public readonly ImmutableArray<string> ManagedInstanceIds;
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        /// </summary>
+        public readonly string NotificationTopicId;
+        /// <summary>
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
@@ -58,7 +74,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly int PendingJobCount;
         /// <summary>
-        /// The list of software sources that the managed instance group will use.
+        /// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
         /// </summary>
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>
@@ -66,7 +82,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult> SoftwareSources;
         /// <summary>
-        /// A filter to return only resources their lifecycle state matches the given lifecycle state.
+        /// A filter to return only managed instance groups that are in the specified state.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -74,21 +90,23 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the managed instance group was created. An RFC3339 formatted datetime string.
+        /// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        /// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeModified;
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the group.
         /// </summary>
         public readonly string VendorName;
 
         [OutputConstructor]
         private GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult(
             string archType,
+
+            ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSettingResult> autonomousSettings,
 
             string compartmentId,
 
@@ -102,9 +120,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string id,
 
+            bool isManagedByAutonomousLinux,
+
+            string location,
+
             int managedInstanceCount,
 
             ImmutableArray<string> managedInstanceIds,
+
+            string notificationTopicId,
 
             string osFamily,
 
@@ -125,14 +149,18 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             string vendorName)
         {
             ArchType = archType;
+            AutonomousSettings = autonomousSettings;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            Location = location;
             ManagedInstanceCount = managedInstanceCount;
             ManagedInstanceIds = managedInstanceIds;
+            NotificationTopicId = notificationTopicId;
             OsFamily = osFamily;
             PendingJobCount = pendingJobCount;
             SoftwareSourceIds = softwareSourceIds;

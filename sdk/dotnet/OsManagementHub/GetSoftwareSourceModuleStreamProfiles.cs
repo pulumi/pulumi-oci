@@ -14,8 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module stream profiles from the specified software source OCID. Filter the list against a variety of 
-        /// criteria including but not limited to its module name, stream name, and (profile) name.
+        /// Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of 
+        /// criteria including but not limited to its module name, stream name, and profile name.
         /// 
         /// 
         /// ## Example Usage
@@ -45,8 +45,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module stream profiles from the specified software source OCID. Filter the list against a variety of 
-        /// criteria including but not limited to its module name, stream name, and (profile) name.
+        /// Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of 
+        /// criteria including but not limited to its module name, stream name, and profile name.
         /// 
         /// 
         /// ## Example Usage
@@ -98,13 +98,13 @@ namespace Pulumi.Oci.OsManagementHub
         public string? Name { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        /// The name of the module stream. This parameter is required if a profile name is specified.
         /// </summary>
         [Input("streamName")]
         public string? StreamName { get; set; }
@@ -138,13 +138,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        /// The name of the module stream. This parameter is required if a profile name is specified.
         /// </summary>
         [Input("streamName")]
         public Input<string>? StreamName { get; set; }

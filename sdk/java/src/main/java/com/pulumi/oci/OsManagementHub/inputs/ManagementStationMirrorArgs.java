@@ -17,14 +17,14 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
     public static final ManagementStationMirrorArgs Empty = new ManagementStationMirrorArgs();
 
     /**
-     * (Updatable) Directory for the mirroring
+     * (Updatable) Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     @Import(name="directory", required=true)
     private Output<String> directory;
 
     /**
-     * @return (Updatable) Directory for the mirroring
+     * @return (Updatable) Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     public Output<String> directory() {
@@ -32,20 +32,14 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Listening port used for the proxy.
      * 
      */
     @Import(name="port", required=true)
     private Output<String> port;
 
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     public Output<String> port() {
@@ -53,14 +47,14 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Local path for the sslcert
+     * (Updatable) Path to the SSL cerfificate.
      * 
      */
     @Import(name="sslcert")
     private @Nullable Output<String> sslcert;
 
     /**
-     * @return (Updatable) Local path for the sslcert
+     * @return (Updatable) Path to the SSL cerfificate.
      * 
      */
     public Optional<Output<String>> sslcert() {
@@ -68,14 +62,14 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Default sslport for the mirror
+     * (Updatable) Default mirror listening port for https.
      * 
      */
     @Import(name="sslport", required=true)
     private Output<String> sslport;
 
     /**
-     * @return (Updatable) Default sslport for the mirror
+     * @return (Updatable) Default mirror listening port for https.
      * 
      */
     public Output<String> sslport() {
@@ -110,7 +104,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param directory (Updatable) Directory for the mirroring
+         * @param directory (Updatable) Path to the data volume on the management station where software source mirrors are stored.
          * 
          * @return builder
          * 
@@ -121,7 +115,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param directory (Updatable) Directory for the mirroring
+         * @param directory (Updatable) Path to the data volume on the management station where software source mirrors are stored.
          * 
          * @return builder
          * 
@@ -131,10 +125,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port (Updatable) Port that the proxy will use
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param port (Updatable) Listening port used for the proxy.
          * 
          * @return builder
          * 
@@ -145,10 +136,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port (Updatable) Port that the proxy will use
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param port (Updatable) Listening port used for the proxy.
          * 
          * @return builder
          * 
@@ -158,7 +146,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sslcert (Updatable) Local path for the sslcert
+         * @param sslcert (Updatable) Path to the SSL cerfificate.
          * 
          * @return builder
          * 
@@ -169,7 +157,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sslcert (Updatable) Local path for the sslcert
+         * @param sslcert (Updatable) Path to the SSL cerfificate.
          * 
          * @return builder
          * 
@@ -179,7 +167,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sslport (Updatable) Default sslport for the mirror
+         * @param sslport (Updatable) Default mirror listening port for https.
          * 
          * @return builder
          * 
@@ -190,7 +178,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sslport (Updatable) Default sslport for the mirror
+         * @param sslport (Updatable) Default mirror listening port for https.
          * 
          * @return builder
          * 

@@ -24,6 +24,8 @@ import * as utilities from "../utilities";
  *     displayNames: lifecycleEnvironmentDisplayName,
  *     displayNameContains: lifecycleEnvironmentDisplayNameContains,
  *     lifecycleEnvironmentId: testLifecycleEnvironment.id,
+ *     locations: lifecycleEnvironmentLocation,
+ *     locationNotEqualTos: lifecycleEnvironmentLocationNotEqualTo,
  *     osFamily: lifecycleEnvironmentOsFamily,
  *     state: lifecycleEnvironmentState,
  * });
@@ -40,6 +42,8 @@ export function getLifecycleEnvironments(args?: GetLifecycleEnvironmentsArgs, op
         "displayNames": args.displayNames,
         "filters": args.filters,
         "lifecycleEnvironmentId": args.lifecycleEnvironmentId,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
         "osFamily": args.osFamily,
         "state": args.state,
     }, opts);
@@ -54,7 +58,7 @@ export interface GetLifecycleEnvironmentsArgs {
      */
     archType?: string;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
@@ -67,11 +71,19 @@ export interface GetLifecycleEnvironmentsArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetLifecycleEnvironmentsFilter[];
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      */
     lifecycleEnvironmentId?: string;
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: string[];
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: string[];
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: string;
     /**
@@ -85,11 +97,11 @@ export interface GetLifecycleEnvironmentsArgs {
  */
 export interface GetLifecycleEnvironmentsResult {
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      */
     readonly archType?: string;
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      */
     readonly compartmentId?: string;
     readonly displayNameContains?: string;
@@ -107,11 +119,16 @@ export interface GetLifecycleEnvironmentsResult {
      */
     readonly lifecycleEnvironmentCollections: outputs.OsManagementHub.GetLifecycleEnvironmentsLifecycleEnvironmentCollection[];
     /**
-     * The OCID of the lifecycle environment for the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      */
     readonly lifecycleEnvironmentId?: string;
+    readonly locationNotEqualTos?: string[];
     /**
-     * The operating system type of the target instances.
+     * The location of managed instances associated with the lifecycle stage.
+     */
+    readonly locations?: string[];
+    /**
+     * The operating system of the managed instances in the lifecycle stage.
      */
     readonly osFamily?: string;
     /**
@@ -137,6 +154,8 @@ export interface GetLifecycleEnvironmentsResult {
  *     displayNames: lifecycleEnvironmentDisplayName,
  *     displayNameContains: lifecycleEnvironmentDisplayNameContains,
  *     lifecycleEnvironmentId: testLifecycleEnvironment.id,
+ *     locations: lifecycleEnvironmentLocation,
+ *     locationNotEqualTos: lifecycleEnvironmentLocationNotEqualTo,
  *     osFamily: lifecycleEnvironmentOsFamily,
  *     state: lifecycleEnvironmentState,
  * });
@@ -155,7 +174,7 @@ export interface GetLifecycleEnvironmentsOutputArgs {
      */
     archType?: pulumi.Input<string>;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -168,11 +187,19 @@ export interface GetLifecycleEnvironmentsOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetLifecycleEnvironmentsFilterArgs>[]>;
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      */
     lifecycleEnvironmentId?: pulumi.Input<string>;
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: pulumi.Input<string>;
     /**

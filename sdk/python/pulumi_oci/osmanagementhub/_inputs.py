@@ -10,11 +10,42 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'EventDataArgs',
+    'EventDataAdditionalDetailArgs',
+    'EventDataAdditionalDetailVmcoreArgs',
+    'EventDataContentArgs',
+    'EventSystemDetailArgs',
     'LifecycleEnvironmentManagedInstanceIdArgs',
     'LifecycleEnvironmentStageArgs',
     'LifecycleEnvironmentStageManagedInstanceIdArgs',
     'LifecycleEnvironmentStageSoftwareSourceIdArgs',
+    'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs',
+    'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs',
+    'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs',
+    'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs',
+    'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs',
+    'ManagedInstanceAutonomousSettingsArgs',
+    'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupAutonomousSettingsArgs',
+    'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementDisableArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementEnableArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementInstallArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs',
+    'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs',
+    'ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs',
     'ManagedInstanceGroupSoftwareSourceArgs',
+    'ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs',
+    'ManagedInstanceLifecycleEnvironmentArgs',
+    'ManagedInstanceLifecycleStageArgs',
+    'ManagedInstanceManagedInstanceGroupArgs',
+    'ManagedInstanceSoftwareSourceArgs',
+    'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs',
+    'ManagementStationHealthArgs',
     'ManagementStationMirrorArgs',
     'ManagementStationMirrorSyncStatusArgs',
     'ManagementStationProxyArgs',
@@ -22,27 +53,530 @@ __all__ = [
     'ProfileLifecycleStageArgs',
     'ProfileManagedInstanceGroupArgs',
     'ProfileSoftwareSourceArgs',
+    'ScheduledJobOperationArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsDisableArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsEnableArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsInstallArgs',
+    'ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs',
+    'ScheduledJobOperationSwitchModuleStreamsDetailsArgs',
+    'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs',
     'SoftwareSourceCustomSoftwareSourceFilterArgs',
     'SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs',
     'SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs',
     'SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs',
     'SoftwareSourceVendorSoftwareSourceArgs',
+    'GetEntitlementsFilterArgs',
+    'GetErrataFilterArgs',
+    'GetEventsFilterArgs',
     'GetLifecycleEnvironmentsFilterArgs',
     'GetLifecycleStagesFilterArgs',
+    'GetManagedInstanceAvailablePackagesFilterArgs',
+    'GetManagedInstanceAvailableSoftwareSourcesFilterArgs',
+    'GetManagedInstanceAvailableWindowsUpdatesFilterArgs',
+    'GetManagedInstanceErrataFilterArgs',
     'GetManagedInstanceGroupAvailableModulesFilterArgs',
     'GetManagedInstanceGroupAvailablePackagesFilterArgs',
     'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs',
+    'GetManagedInstanceGroupInstalledPackagesFilterArgs',
+    'GetManagedInstanceGroupModulesFilterArgs',
     'GetManagedInstanceGroupsFilterArgs',
+    'GetManagedInstanceInstalledPackagesFilterArgs',
+    'GetManagedInstanceInstalledWindowsUpdatesFilterArgs',
+    'GetManagedInstanceModulesFilterArgs',
+    'GetManagedInstanceUpdatablePackagesFilterArgs',
+    'GetManagedInstancesFilterArgs',
     'GetManagementStationMirrorsFilterArgs',
     'GetManagementStationsFilterArgs',
     'GetProfilesFilterArgs',
+    'GetScheduledJobsFilterArgs',
+    'GetSoftwarePackageSoftwareSourceFilterArgs',
+    'GetSoftwarePackagesFilterArgs',
     'GetSoftwareSourceModuleStreamProfilesFilterArgs',
     'GetSoftwareSourceModuleStreamsFilterArgs',
     'GetSoftwareSourcePackageGroupsFilterArgs',
     'GetSoftwareSourceSoftwarePackagesFilterArgs',
     'GetSoftwareSourceVendorsFilterArgs',
     'GetSoftwareSourcesFilterArgs',
+    'GetWindowsUpdatesFilterArgs',
 ]
+
+@pulumi.input_type
+class EventDataArgs:
+    def __init__(__self__, *,
+                 additional_details: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]]] = None,
+                 contents: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]] = None,
+                 event_count: Optional[pulumi.Input[int]] = None,
+                 event_fingerprint: Optional[pulumi.Input[str]] = None,
+                 operation_type: Optional[pulumi.Input[str]] = None,
+                 reason: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 time_first_occurred: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]] additional_details: Provides additional information for the work request associated with an event.
+        :param pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]] contents: Provides information collected for the exploit attempt event.
+        :param pulumi.Input[int] event_count: Number of times the event has occurred.
+        :param pulumi.Input[str] event_fingerprint: Fingerprint of the event.
+        :param pulumi.Input[str] operation_type: Type of management station operation.
+        :param pulumi.Input[str] reason: Reason for the event.
+        :param pulumi.Input[str] status: Status of the management station operation.
+        :param pulumi.Input[str] time_first_occurred: The date and time that the event first occurred.
+        """
+        if additional_details is not None:
+            pulumi.set(__self__, "additional_details", additional_details)
+        if contents is not None:
+            pulumi.set(__self__, "contents", contents)
+        if event_count is not None:
+            pulumi.set(__self__, "event_count", event_count)
+        if event_fingerprint is not None:
+            pulumi.set(__self__, "event_fingerprint", event_fingerprint)
+        if operation_type is not None:
+            pulumi.set(__self__, "operation_type", operation_type)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_first_occurred is not None:
+            pulumi.set(__self__, "time_first_occurred", time_first_occurred)
+
+    @property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]]]:
+        """
+        Provides additional information for the work request associated with an event.
+        """
+        return pulumi.get(self, "additional_details")
+
+    @additional_details.setter
+    def additional_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailArgs']]]]):
+        pulumi.set(self, "additional_details", value)
+
+    @property
+    @pulumi.getter
+    def contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]]:
+        """
+        Provides information collected for the exploit attempt event.
+        """
+        return pulumi.get(self, "contents")
+
+    @contents.setter
+    def contents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataContentArgs']]]]):
+        pulumi.set(self, "contents", value)
+
+    @property
+    @pulumi.getter(name="eventCount")
+    def event_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of times the event has occurred.
+        """
+        return pulumi.get(self, "event_count")
+
+    @event_count.setter
+    def event_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "event_count", value)
+
+    @property
+    @pulumi.getter(name="eventFingerprint")
+    def event_fingerprint(self) -> Optional[pulumi.Input[str]]:
+        """
+        Fingerprint of the event.
+        """
+        return pulumi.get(self, "event_fingerprint")
+
+    @event_fingerprint.setter
+    def event_fingerprint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "event_fingerprint", value)
+
+    @property
+    @pulumi.getter(name="operationType")
+    def operation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of management station operation.
+        """
+        return pulumi.get(self, "operation_type")
+
+    @operation_type.setter
+    def operation_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operation_type", value)
+
+    @property
+    @pulumi.getter
+    def reason(self) -> Optional[pulumi.Input[str]]:
+        """
+        Reason for the event.
+        """
+        return pulumi.get(self, "reason")
+
+    @reason.setter
+    def reason(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "reason", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Status of the management station operation.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeFirstOccurred")
+    def time_first_occurred(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time that the event first occurred.
+        """
+        return pulumi.get(self, "time_first_occurred")
+
+    @time_first_occurred.setter
+    def time_first_occurred(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_first_occurred", value)
+
+
+@pulumi.input_type
+class EventDataAdditionalDetailArgs:
+    def __init__(__self__, *,
+                 exploit_cves: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 initiator_id: Optional[pulumi.Input[str]] = None,
+                 vmcores: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgs']]]] = None,
+                 work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] exploit_cves: List of CVEs in the exploit.
+        :param pulumi.Input[str] initiator_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
+        :param pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgs']]] vmcores: Kernel event vmcore details
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] work_request_ids: List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
+        """
+        if exploit_cves is not None:
+            pulumi.set(__self__, "exploit_cves", exploit_cves)
+        if initiator_id is not None:
+            pulumi.set(__self__, "initiator_id", initiator_id)
+        if vmcores is not None:
+            pulumi.set(__self__, "vmcores", vmcores)
+        if work_request_ids is not None:
+            pulumi.set(__self__, "work_request_ids", work_request_ids)
+
+    @property
+    @pulumi.getter(name="exploitCves")
+    def exploit_cves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of CVEs in the exploit.
+        """
+        return pulumi.get(self, "exploit_cves")
+
+    @exploit_cves.setter
+    def exploit_cves(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "exploit_cves", value)
+
+    @property
+    @pulumi.getter(name="initiatorId")
+    def initiator_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that triggered the event, such as scheduled job id.
+        """
+        return pulumi.get(self, "initiator_id")
+
+    @initiator_id.setter
+    def initiator_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "initiator_id", value)
+
+    @property
+    @pulumi.getter
+    def vmcores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgs']]]]:
+        """
+        Kernel event vmcore details
+        """
+        return pulumi.get(self, "vmcores")
+
+    @vmcores.setter
+    def vmcores(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EventDataAdditionalDetailVmcoreArgs']]]]):
+        pulumi.set(self, "vmcores", value)
+
+    @property
+    @pulumi.getter(name="workRequestIds")
+    def work_request_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of all work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the event.
+        """
+        return pulumi.get(self, "work_request_ids")
+
+    @work_request_ids.setter
+    def work_request_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "work_request_ids", value)
+
+
+@pulumi.input_type
+class EventDataAdditionalDetailVmcoreArgs:
+    def __init__(__self__, *,
+                 backtrace: Optional[pulumi.Input[str]] = None,
+                 component: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] backtrace: Kernel vmcore backtrace.
+        :param pulumi.Input[str] component: Kernel vmcore component.
+        """
+        if backtrace is not None:
+            pulumi.set(__self__, "backtrace", backtrace)
+        if component is not None:
+            pulumi.set(__self__, "component", component)
+
+    @property
+    @pulumi.getter
+    def backtrace(self) -> Optional[pulumi.Input[str]]:
+        """
+        Kernel vmcore backtrace.
+        """
+        return pulumi.get(self, "backtrace")
+
+    @backtrace.setter
+    def backtrace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "backtrace", value)
+
+    @property
+    @pulumi.getter
+    def component(self) -> Optional[pulumi.Input[str]]:
+        """
+        Kernel vmcore component.
+        """
+        return pulumi.get(self, "component")
+
+    @component.setter
+    def component(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "component", value)
+
+
+@pulumi.input_type
+class EventDataContentArgs:
+    def __init__(__self__, *,
+                 content_availability: Optional[pulumi.Input[str]] = None,
+                 content_location: Optional[pulumi.Input[str]] = None,
+                 exploit_detection_log_content: Optional[pulumi.Input[str]] = None,
+                 exploit_object_store_location: Optional[pulumi.Input[str]] = None,
+                 size: Optional[pulumi.Input[int]] = None,
+                 type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] content_availability: Crash content availability status:
+               * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+               * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+               * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+               * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+               * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+        :param pulumi.Input[str] content_location: Location of the Kernel event content.
+        :param pulumi.Input[str] exploit_detection_log_content: The content of the exploit detection log.
+        :param pulumi.Input[str] exploit_object_store_location: The location of the exploit detection log within object storage.
+        :param pulumi.Input[int] size: Size of the event content.
+        :param pulumi.Input[str] type: Event type:
+        """
+        if content_availability is not None:
+            pulumi.set(__self__, "content_availability", content_availability)
+        if content_location is not None:
+            pulumi.set(__self__, "content_location", content_location)
+        if exploit_detection_log_content is not None:
+            pulumi.set(__self__, "exploit_detection_log_content", exploit_detection_log_content)
+        if exploit_object_store_location is not None:
+            pulumi.set(__self__, "exploit_object_store_location", exploit_object_store_location)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="contentAvailability")
+    def content_availability(self) -> Optional[pulumi.Input[str]]:
+        """
+        Crash content availability status:
+        * 'NOT_AVAILABLE' indicates the content is not available on the instance nor in the service
+        * 'AVAILABLE_ON_INSTANCE' indicates the content is only available on the instance.
+        * 'AVAILABLE_ON_SERVICE' indicates the content is only available on the service.
+        * 'AVAILABLE_ON_INSTANCE_AND_SERVICE' indicates the content is available both on the instance and the service
+        * 'AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS' indicates the content is available on the instance and its upload to the service is in progress.
+        """
+        return pulumi.get(self, "content_availability")
+
+    @content_availability.setter
+    def content_availability(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "content_availability", value)
+
+    @property
+    @pulumi.getter(name="contentLocation")
+    def content_location(self) -> Optional[pulumi.Input[str]]:
+        """
+        Location of the Kernel event content.
+        """
+        return pulumi.get(self, "content_location")
+
+    @content_location.setter
+    def content_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "content_location", value)
+
+    @property
+    @pulumi.getter(name="exploitDetectionLogContent")
+    def exploit_detection_log_content(self) -> Optional[pulumi.Input[str]]:
+        """
+        The content of the exploit detection log.
+        """
+        return pulumi.get(self, "exploit_detection_log_content")
+
+    @exploit_detection_log_content.setter
+    def exploit_detection_log_content(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exploit_detection_log_content", value)
+
+    @property
+    @pulumi.getter(name="exploitObjectStoreLocation")
+    def exploit_object_store_location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of the exploit detection log within object storage.
+        """
+        return pulumi.get(self, "exploit_object_store_location")
+
+    @exploit_object_store_location.setter
+    def exploit_object_store_location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "exploit_object_store_location", value)
+
+    @property
+    @pulumi.getter
+    def size(self) -> Optional[pulumi.Input[int]]:
+        """
+        Size of the event content.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "size", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Event type:
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class EventSystemDetailArgs:
+    def __init__(__self__, *,
+                 architecture: Optional[pulumi.Input[str]] = None,
+                 ksplice_effective_kernel_version: Optional[pulumi.Input[str]] = None,
+                 os_family: Optional[pulumi.Input[str]] = None,
+                 os_kernel_release: Optional[pulumi.Input[str]] = None,
+                 os_kernel_version: Optional[pulumi.Input[str]] = None,
+                 os_name: Optional[pulumi.Input[str]] = None,
+                 os_system_version: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] architecture: Architecture type.
+        :param pulumi.Input[str] ksplice_effective_kernel_version: Version of the Ksplice effective kernel.
+        :param pulumi.Input[str] os_family: Operating system type.
+        :param pulumi.Input[str] os_kernel_release: Release of the kernel.
+        :param pulumi.Input[str] os_kernel_version: Version of the kernel.
+        :param pulumi.Input[str] os_name: Name of the operating system.
+        :param pulumi.Input[str] os_system_version: Version of the operating system.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if ksplice_effective_kernel_version is not None:
+            pulumi.set(__self__, "ksplice_effective_kernel_version", ksplice_effective_kernel_version)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if os_kernel_release is not None:
+            pulumi.set(__self__, "os_kernel_release", os_kernel_release)
+        if os_kernel_version is not None:
+            pulumi.set(__self__, "os_kernel_version", os_kernel_version)
+        if os_name is not None:
+            pulumi.set(__self__, "os_name", os_name)
+        if os_system_version is not None:
+            pulumi.set(__self__, "os_system_version", os_system_version)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> Optional[pulumi.Input[str]]:
+        """
+        Architecture type.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "architecture", value)
+
+    @property
+    @pulumi.getter(name="kspliceEffectiveKernelVersion")
+    def ksplice_effective_kernel_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the Ksplice effective kernel.
+        """
+        return pulumi.get(self, "ksplice_effective_kernel_version")
+
+    @ksplice_effective_kernel_version.setter
+    def ksplice_effective_kernel_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ksplice_effective_kernel_version", value)
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[pulumi.Input[str]]:
+        """
+        Operating system type.
+        """
+        return pulumi.get(self, "os_family")
+
+    @os_family.setter
+    def os_family(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_family", value)
+
+    @property
+    @pulumi.getter(name="osKernelRelease")
+    def os_kernel_release(self) -> Optional[pulumi.Input[str]]:
+        """
+        Release of the kernel.
+        """
+        return pulumi.get(self, "os_kernel_release")
+
+    @os_kernel_release.setter
+    def os_kernel_release(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_kernel_release", value)
+
+    @property
+    @pulumi.getter(name="osKernelVersion")
+    def os_kernel_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the kernel.
+        """
+        return pulumi.get(self, "os_kernel_version")
+
+    @os_kernel_version.setter
+    def os_kernel_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_kernel_version", value)
+
+    @property
+    @pulumi.getter(name="osName")
+    def os_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the operating system.
+        """
+        return pulumi.get(self, "os_name")
+
+    @os_name.setter
+    def os_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_name", value)
+
+    @property
+    @pulumi.getter(name="osSystemVersion")
+    def os_system_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Version of the operating system.
+        """
+        return pulumi.get(self, "os_system_version")
+
+    @os_system_version.setter
+    def os_system_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_system_version", value)
+
 
 @pulumi.input_type
 class LifecycleEnvironmentManagedInstanceIdArgs:
@@ -50,8 +584,8 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -62,7 +596,7 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -74,7 +608,7 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -94,6 +628,7 @@ class LifecycleEnvironmentStageArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  lifecycle_environment_id: Optional[pulumi.Input[str]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]]] = None,
@@ -103,22 +638,23 @@ class LifecycleEnvironmentStageArgs:
                  time_modified: Optional[pulumi.Input[str]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[int] rank: User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
+        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instances in the lifecycle environment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] lifecycle_environment_id: The OCID of the lifecycle environment for the lifecycle stage.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]] software_source_ids: Identifying information for the specified software source.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param pulumi.Input[str] lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
+        :param pulumi.Input[str] location: The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]] managed_instance_ids: The list of managed instances associated with the lifecycle stage.
+        :param pulumi.Input[str] os_family: The operating system of the managed instances in the lifecycle environment.
+        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]] software_source_ids: Provides identifying information for the specified software source.
         :param pulumi.Input[str] state: The current state of the lifecycle environment.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
+        :param pulumi.Input[str] time_created: The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
                
                
                ** IMPORTANT **
@@ -138,6 +674,8 @@ class LifecycleEnvironmentStageArgs:
             pulumi.set(__self__, "id", id)
         if lifecycle_environment_id is not None:
             pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if managed_instance_ids is not None:
             pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
         if os_family is not None:
@@ -159,7 +697,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -171,7 +709,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter
     def rank(self) -> pulumi.Input[int]:
         """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
         """
         return pulumi.get(self, "rank")
 
@@ -183,7 +721,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
+        The CPU architecture of the managed instances in the lifecycle environment.
         """
         return pulumi.get(self, "arch_type")
 
@@ -195,7 +733,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the tenancy containing the lifecycle environment.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -231,7 +769,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -243,7 +781,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the lifecycle environment for the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_environment_id")
 
@@ -252,10 +790,22 @@ class LifecycleEnvironmentStageArgs:
         pulumi.set(self, "lifecycle_environment_id", value)
 
     @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]]]:
         """
-        The list of managed instances specified lifecycle stage.
+        The list of managed instances associated with the lifecycle stage.
         """
         return pulumi.get(self, "managed_instance_ids")
 
@@ -267,7 +817,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The operating system type of the managed instance(s) in the lifecycle environment.
+        The operating system of the managed instances in the lifecycle environment.
         """
         return pulumi.get(self, "os_family")
 
@@ -279,7 +829,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]]]:
         """
-        Identifying information for the specified software source.
+        Provides identifying information for the specified software source.
         """
         return pulumi.get(self, "software_source_ids")
 
@@ -315,7 +865,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+        The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -327,7 +877,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+        The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
@@ -339,7 +889,7 @@ class LifecycleEnvironmentStageArgs:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the lifecycle environment.
 
 
         ** IMPORTANT **
@@ -358,8 +908,8 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -370,7 +920,7 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -382,7 +932,7 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -397,11 +947,13 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] description: (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param pulumi.Input[str] software_source_type: Type of the software source.
         """
         if description is not None:
@@ -410,6 +962,8 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_mandatory_for_autonomous_linux is not None:
+            pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
         if software_source_type is not None:
             pulumi.set(__self__, "software_source_type", software_source_type)
 
@@ -417,7 +971,7 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User specified information about the lifecycle environment.
+        (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -429,7 +983,7 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -441,13 +995,25 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mandatory_for_autonomous_linux", value)
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -463,32 +1029,66 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
 
 
 @pulumi.input_type
-class ManagedInstanceGroupSoftwareSourceArgs:
+class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs:
+    def __init__(__self__, *,
+                 managed_instances: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 work_request_details: Optional[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instances: The list of managed instance OCIDs to be attached/detached.
+        :param pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
+        """
+        pulumi.set(__self__, "managed_instances", managed_instances)
+        if work_request_details is not None:
+            pulumi.set(__self__, "work_request_details", work_request_details)
+
+    @property
+    @pulumi.getter(name="managedInstances")
+    def managed_instances(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        The list of managed instance OCIDs to be attached/detached.
+        """
+        return pulumi.get(self, "managed_instances")
+
+    @managed_instances.setter
+    def managed_instances(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "managed_instances", value)
+
+    @property
+    @pulumi.getter(name="workRequestDetails")
+    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]:
+        """
+        Provides the name and description of the job.
+        """
+        return pulumi.get(self, "work_request_details")
+
+    @work_request_details.setter
+    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]):
+        pulumi.set(self, "work_request_details", value)
+
+
+@pulumi.input_type
+class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
-                 display_name: Optional[pulumi.Input[str]] = None,
-                 id: Optional[pulumi.Input[str]] = None,
-                 software_source_type: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] software_source_type: Type of the software source.
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
-        if software_source_type is not None:
-            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details about the managed instance group.
+        User-specified information about the job. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -500,7 +1100,843 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs:
+    def __init__(__self__, *,
+                 managed_instances: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 work_request_details: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instances: The list of managed instance OCIDs to be attached/detached.
+        :param pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
+        """
+        pulumi.set(__self__, "managed_instances", managed_instances)
+        if work_request_details is not None:
+            pulumi.set(__self__, "work_request_details", work_request_details)
+
+    @property
+    @pulumi.getter(name="managedInstances")
+    def managed_instances(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        The list of managed instance OCIDs to be attached/detached.
+        """
+        return pulumi.get(self, "managed_instances")
+
+    @managed_instances.setter
+    def managed_instances(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "managed_instances", value)
+
+    @property
+    @pulumi.getter(name="workRequestDetails")
+    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]:
+        """
+        Provides the name and description of the job.
+        """
+        return pulumi.get(self, "work_request_details")
+
+    @work_request_details.setter
+    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs']]):
+        pulumi.set(self, "work_request_details", value)
+
+
+@pulumi.input_type
+class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceAutonomousSettingsArgs:
+    def __init__(__self__, *,
+                 is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
+                 scheduled_job_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_data_collection_authorized: (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        :param pulumi.Input[str] scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        if is_data_collection_authorized is not None:
+            pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+        if scheduled_job_id is not None:
+            pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+
+    @property
+    @pulumi.getter(name="isDataCollectionAuthorized")
+    def is_data_collection_authorized(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        """
+        return pulumi.get(self, "is_data_collection_authorized")
+
+    @is_data_collection_authorized.setter
+    def is_data_collection_authorized(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_data_collection_authorized", value)
+
+    @property
+    @pulumi.getter(name="scheduledJobId")
+    def scheduled_job_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        return pulumi.get(self, "scheduled_job_id")
+
+    @scheduled_job_id.setter
+    def scheduled_job_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_job_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupAutonomousSettingsArgs:
+    def __init__(__self__, *,
+                 is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
+                 scheduled_job_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] is_data_collection_authorized: (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        :param pulumi.Input[str] scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        if is_data_collection_authorized is not None:
+            pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+        if scheduled_job_id is not None:
+            pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+
+    @property
+    @pulumi.getter(name="isDataCollectionAuthorized")
+    def is_data_collection_authorized(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether Autonomous Linux will collect crash files.
+        """
+        return pulumi.get(self, "is_data_collection_authorized")
+
+    @is_data_collection_authorized.setter
+    def is_data_collection_authorized(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_data_collection_authorized", value)
+
+    @property
+    @pulumi.getter(name="scheduledJobId")
+    def scheduled_job_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the restricted scheduled job associated with this instance. This value cannot be deleted by the user.
+        """
+        return pulumi.get(self, "scheduled_job_id")
+
+    @scheduled_job_id.setter
+    def scheduled_job_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scheduled_job_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupManageModuleStreamsManagementDisableArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: The name of a module.
+        :param pulumi.Input[str] stream_name: The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupManageModuleStreamsManagementEnableArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: The name of a module.
+        :param pulumi.Input[str] stream_name: The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupManageModuleStreamsManagementInstallArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 profile_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: The name of a module.
+        :param pulumi.Input[str] profile_name: The name of a profile of the specified module stream.
+        :param pulumi.Input[str] stream_name: The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> pulumi.Input[str]:
+        """
+        The name of a profile of the specified module stream.
+        """
+        return pulumi.get(self, "profile_name")
+
+    @profile_name.setter
+    def profile_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "profile_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 profile_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: The name of a module.
+        :param pulumi.Input[str] profile_name: The name of a profile of the specified module stream.
+        :param pulumi.Input[str] stream_name: The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> pulumi.Input[str]:
+        """
+        The name of a profile of the specified module stream.
+        """
+        return pulumi.get(self, "profile_name")
+
+    @profile_name.setter
+    def profile_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "profile_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupSoftwareSourceArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+                 software_source_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        :param pulumi.Input[str] software_source_type: Type of the software source.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_mandatory_for_autonomous_linux is not None:
+            pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -512,13 +1948,25 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mandatory_for_autonomous_linux", value)
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -531,6 +1979,390 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @software_source_type.setter
     def software_source_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_type", value)
+
+
+@pulumi.input_type
+class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagedInstanceLifecycleEnvironmentArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: Software source name.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceLifecycleStageArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: Software source name.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceManagedInstanceGroupArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: Software source name.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class ManagedInstanceSoftwareSourceArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+                 software_source_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: Software source name.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        :param pulumi.Input[str] software_source_type: Type of the software source.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_mandatory_for_autonomous_linux is not None:
+            pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Software source name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mandatory_for_autonomous_linux", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceType")
+    def software_source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the software source.
+        """
+        return pulumi.get(self, "software_source_type")
+
+    @software_source_type.setter
+    def software_source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_type", value)
+
+
+@pulumi.input_type
+class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: User-specified information about the job. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        User-specified information about the job. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class ManagementStationHealthArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        :param pulumi.Input[str] state: The current state of the management station.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the management station.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
@@ -541,14 +2373,10 @@ class ManagementStationMirrorArgs:
                  sslport: pulumi.Input[str],
                  sslcert: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] directory: (Updatable) Directory for the mirroring
-        :param pulumi.Input[str] port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] sslport: (Updatable) Default sslport for the mirror
-        :param pulumi.Input[str] sslcert: (Updatable) Local path for the sslcert
+        :param pulumi.Input[str] directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
+        :param pulumi.Input[str] port: (Updatable) Listening port used for the proxy.
+        :param pulumi.Input[str] sslport: (Updatable) Default mirror listening port for https.
+        :param pulumi.Input[str] sslcert: (Updatable) Path to the SSL cerfificate.
         """
         pulumi.set(__self__, "directory", directory)
         pulumi.set(__self__, "port", port)
@@ -560,7 +2388,7 @@ class ManagementStationMirrorArgs:
     @pulumi.getter
     def directory(self) -> pulumi.Input[str]:
         """
-        (Updatable) Directory for the mirroring
+        (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         """
         return pulumi.get(self, "directory")
 
@@ -572,11 +2400,7 @@ class ManagementStationMirrorArgs:
     @pulumi.getter
     def port(self) -> pulumi.Input[str]:
         """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Listening port used for the proxy.
         """
         return pulumi.get(self, "port")
 
@@ -588,7 +2412,7 @@ class ManagementStationMirrorArgs:
     @pulumi.getter
     def sslport(self) -> pulumi.Input[str]:
         """
-        (Updatable) Default sslport for the mirror
+        (Updatable) Default mirror listening port for https.
         """
         return pulumi.get(self, "sslport")
 
@@ -600,7 +2424,7 @@ class ManagementStationMirrorArgs:
     @pulumi.getter
     def sslcert(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Local path for the sslcert
+        (Updatable) Path to the SSL cerfificate.
         """
         return pulumi.get(self, "sslcert")
 
@@ -618,11 +2442,11 @@ class ManagementStationMirrorSyncStatusArgs:
                  syncing: Optional[pulumi.Input[int]] = None,
                  unsynced: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[int] failed: Total of mirrors in 'failed' state
-        :param pulumi.Input[int] queued: Total of mirrors in 'queued' state
-        :param pulumi.Input[int] synced: Total of mirrors in 'synced' state
-        :param pulumi.Input[int] syncing: Total of mirrors in 'syncing' state
-        :param pulumi.Input[int] unsynced: Total of mirrors in 'failed' state
+        :param pulumi.Input[int] failed: Total number of software sources that failed to sync.
+        :param pulumi.Input[int] queued: Total number of software sources that are queued for sync.
+        :param pulumi.Input[int] synced: Total number of software sources that successfully synced.
+        :param pulumi.Input[int] syncing: Total number of software sources currently syncing.
+        :param pulumi.Input[int] unsynced: Total number of software sources that have not yet been synced.
         """
         if failed is not None:
             pulumi.set(__self__, "failed", failed)
@@ -639,7 +2463,7 @@ class ManagementStationMirrorSyncStatusArgs:
     @pulumi.getter
     def failed(self) -> Optional[pulumi.Input[int]]:
         """
-        Total of mirrors in 'failed' state
+        Total number of software sources that failed to sync.
         """
         return pulumi.get(self, "failed")
 
@@ -651,7 +2475,7 @@ class ManagementStationMirrorSyncStatusArgs:
     @pulumi.getter
     def queued(self) -> Optional[pulumi.Input[int]]:
         """
-        Total of mirrors in 'queued' state
+        Total number of software sources that are queued for sync.
         """
         return pulumi.get(self, "queued")
 
@@ -663,7 +2487,7 @@ class ManagementStationMirrorSyncStatusArgs:
     @pulumi.getter
     def synced(self) -> Optional[pulumi.Input[int]]:
         """
-        Total of mirrors in 'synced' state
+        Total number of software sources that successfully synced.
         """
         return pulumi.get(self, "synced")
 
@@ -675,7 +2499,7 @@ class ManagementStationMirrorSyncStatusArgs:
     @pulumi.getter
     def syncing(self) -> Optional[pulumi.Input[int]]:
         """
-        Total of mirrors in 'syncing' state
+        Total number of software sources currently syncing.
         """
         return pulumi.get(self, "syncing")
 
@@ -687,7 +2511,7 @@ class ManagementStationMirrorSyncStatusArgs:
     @pulumi.getter
     def unsynced(self) -> Optional[pulumi.Input[int]]:
         """
-        Total of mirrors in 'failed' state
+        Total number of software sources that have not yet been synced.
         """
         return pulumi.get(self, "unsynced")
 
@@ -704,14 +2528,10 @@ class ManagementStationProxyArgs:
                  hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  port: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] is_enabled: (Updatable) To enable or disable the proxy (default true)
-        :param pulumi.Input[str] forward: (Updatable) URL that the proxy will forward to
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: (Updatable) List of hosts
-        :param pulumi.Input[str] port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
+        :param pulumi.Input[str] forward: (Updatable) The URL the proxy will forward to.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: (Updatable) List of hosts.
+        :param pulumi.Input[str] port: (Updatable) Listening port used for the proxy.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if forward is not None:
@@ -725,7 +2545,7 @@ class ManagementStationProxyArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
         """
-        (Updatable) To enable or disable the proxy (default true)
+        (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -737,7 +2557,7 @@ class ManagementStationProxyArgs:
     @pulumi.getter
     def forward(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) URL that the proxy will forward to
+        (Updatable) The URL the proxy will forward to.
         """
         return pulumi.get(self, "forward")
 
@@ -749,7 +2569,7 @@ class ManagementStationProxyArgs:
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) List of hosts
+        (Updatable) List of hosts.
         """
         return pulumi.get(self, "hosts")
 
@@ -761,11 +2581,7 @@ class ManagementStationProxyArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Listening port used for the proxy.
         """
         return pulumi.get(self, "port")
 
@@ -781,7 +2597,7 @@ class ProfileLifecycleEnvironmentArgs:
                  id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -804,7 +2620,7 @@ class ProfileLifecycleEnvironmentArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -820,7 +2636,7 @@ class ProfileLifecycleStageArgs:
                  id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -843,7 +2659,7 @@ class ProfileLifecycleStageArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -859,7 +2675,7 @@ class ProfileManagedInstanceGroupArgs:
                  id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -882,7 +2698,7 @@ class ProfileManagedInstanceGroupArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -897,11 +2713,13 @@ class ProfileSoftwareSourceArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 is_mandatory_for_autonomous_linux: Optional[pulumi.Input[bool]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) The description of the registration profile.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the registration profile.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+        :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param pulumi.Input[str] software_source_type: Type of the software source.
         """
         if description is not None:
@@ -910,6 +2728,8 @@ class ProfileSoftwareSourceArgs:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_mandatory_for_autonomous_linux is not None:
+            pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
         if software_source_type is not None:
             pulumi.set(__self__, "software_source_type", software_source_type)
 
@@ -917,7 +2737,7 @@ class ProfileSoftwareSourceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the registration profile.
+        (Updatable) User-specified description of the registration profile.
         """
         return pulumi.get(self, "description")
 
@@ -941,13 +2761,25 @@ class ProfileSoftwareSourceArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_mandatory_for_autonomous_linux", value)
 
     @property
     @pulumi.getter(name="softwareSourceType")
@@ -960,6 +2792,536 @@ class ProfileSoftwareSourceArgs:
     @software_source_type.setter
     def software_source_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "software_source_type", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationArgs:
+    def __init__(__self__, *,
+                 operation_type: pulumi.Input[str],
+                 manage_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs']] = None,
+                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 switch_module_streams_details: Optional[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']] = None,
+                 windows_update_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] operation_type: (Updatable) The type of operation this scheduled job performs.
+        :param pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs'] manage_module_streams_details: (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] package_names: (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
+        :param pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs'] switch_module_streams_details: (Updatable) Provides the information used to update a module stream.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] windows_update_names: (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+        """
+        pulumi.set(__self__, "operation_type", operation_type)
+        if manage_module_streams_details is not None:
+            pulumi.set(__self__, "manage_module_streams_details", manage_module_streams_details)
+        if package_names is not None:
+            pulumi.set(__self__, "package_names", package_names)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if switch_module_streams_details is not None:
+            pulumi.set(__self__, "switch_module_streams_details", switch_module_streams_details)
+        if windows_update_names is not None:
+            pulumi.set(__self__, "windows_update_names", windows_update_names)
+
+    @property
+    @pulumi.getter(name="operationType")
+    def operation_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The type of operation this scheduled job performs.
+        """
+        return pulumi.get(self, "operation_type")
+
+    @operation_type.setter
+    def operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operation_type", value)
+
+    @property
+    @pulumi.getter(name="manageModuleStreamsDetails")
+    def manage_module_streams_details(self) -> Optional[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs']]:
+        """
+        (Updatable) The set of changes to make to the state of the modules, streams, and profiles on the managed target.
+        """
+        return pulumi.get(self, "manage_module_streams_details")
+
+    @manage_module_streams_details.setter
+    def manage_module_streams_details(self, value: Optional[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsArgs']]):
+        pulumi.set(self, "manage_module_streams_details", value)
+
+    @property
+    @pulumi.getter(name="packageNames")
+    def package_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+        """
+        return pulumi.get(self, "package_names")
+
+    @package_names.setter
+    def package_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "package_names", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceIds")
+    def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).  This parameter only applies when the scheduled job is for attaching or detaching software sources.
+        """
+        return pulumi.get(self, "software_source_ids")
+
+    @software_source_ids.setter
+    def software_source_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "software_source_ids", value)
+
+    @property
+    @pulumi.getter(name="switchModuleStreamsDetails")
+    def switch_module_streams_details(self) -> Optional[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']]:
+        """
+        (Updatable) Provides the information used to update a module stream.
+        """
+        return pulumi.get(self, "switch_module_streams_details")
+
+    @switch_module_streams_details.setter
+    def switch_module_streams_details(self, value: Optional[pulumi.Input['ScheduledJobOperationSwitchModuleStreamsDetailsArgs']]):
+        pulumi.set(self, "switch_module_streams_details", value)
+
+    @property
+    @pulumi.getter(name="windowsUpdateNames")
+    def windows_update_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates. Note that this is not an OCID, but is a unique identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+        """
+        return pulumi.get(self, "windows_update_names")
+
+    @windows_update_names.setter
+    def windows_update_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "windows_update_names", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationManageModuleStreamsDetailsArgs:
+    def __init__(__self__, *,
+                 disables: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgs']]]] = None,
+                 enables: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgs']]]] = None,
+                 installs: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgs']]]] = None,
+                 removes: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgs']]] disables: (Updatable) The set of module streams to disable.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgs']]] enables: (Updatable) The set of module streams to enable.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgs']]] installs: (Updatable) The set of module stream profiles to install.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs']]] removes: (Updatable) The set of module stream profiles to remove.
+        """
+        if disables is not None:
+            pulumi.set(__self__, "disables", disables)
+        if enables is not None:
+            pulumi.set(__self__, "enables", enables)
+        if installs is not None:
+            pulumi.set(__self__, "installs", installs)
+        if removes is not None:
+            pulumi.set(__self__, "removes", removes)
+
+    @property
+    @pulumi.getter
+    def disables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgs']]]]:
+        """
+        (Updatable) The set of module streams to disable.
+        """
+        return pulumi.get(self, "disables")
+
+    @disables.setter
+    def disables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsDisableArgs']]]]):
+        pulumi.set(self, "disables", value)
+
+    @property
+    @pulumi.getter
+    def enables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgs']]]]:
+        """
+        (Updatable) The set of module streams to enable.
+        """
+        return pulumi.get(self, "enables")
+
+    @enables.setter
+    def enables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsEnableArgs']]]]):
+        pulumi.set(self, "enables", value)
+
+    @property
+    @pulumi.getter
+    def installs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgs']]]]:
+        """
+        (Updatable) The set of module stream profiles to install.
+        """
+        return pulumi.get(self, "installs")
+
+    @installs.setter
+    def installs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsInstallArgs']]]]):
+        pulumi.set(self, "installs", value)
+
+    @property
+    @pulumi.getter
+    def removes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs']]]]:
+        """
+        (Updatable) The set of module stream profiles to remove.
+        """
+        return pulumi.get(self, "removes")
+
+    @removes.setter
+    def removes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs']]]]):
+        pulumi.set(self, "removes", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationManageModuleStreamsDetailsDisableArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: (Updatable) The name of a module.
+        :param pulumi.Input[str] stream_name: (Updatable) The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationManageModuleStreamsDetailsEnableArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: (Updatable) The name of a module.
+        :param pulumi.Input[str] stream_name: (Updatable) The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationManageModuleStreamsDetailsInstallArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 profile_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: (Updatable) The name of a module.
+        :param pulumi.Input[str] profile_name: (Updatable) The name of a profile of the specified module stream.
+        :param pulumi.Input[str] stream_name: (Updatable) The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a profile of the specified module stream.
+        """
+        return pulumi.get(self, "profile_name")
+
+    @profile_name.setter
+    def profile_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "profile_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationManageModuleStreamsDetailsRemoveArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 profile_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: (Updatable) The name of a module.
+        :param pulumi.Input[str] profile_name: (Updatable) The name of a profile of the specified module stream.
+        :param pulumi.Input[str] stream_name: (Updatable) The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "profile_name", profile_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="profileName")
+    def profile_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a profile of the specified module stream.
+        """
+        return pulumi.get(self, "profile_name")
+
+    @profile_name.setter
+    def profile_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "profile_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class ScheduledJobOperationSwitchModuleStreamsDetailsArgs:
+    def __init__(__self__, *,
+                 module_name: pulumi.Input[str],
+                 stream_name: pulumi.Input[str],
+                 software_source_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] module_name: (Updatable) The name of a module.
+        :param pulumi.Input[str] stream_name: (Updatable) The name of a stream of the specified module.
+        :param pulumi.Input[str] software_source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        pulumi.set(__self__, "module_name", module_name)
+        pulumi.set(__self__, "stream_name", stream_name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
+
+    @property
+    @pulumi.getter(name="moduleName")
+    def module_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a module.
+        """
+        return pulumi.get(self, "module_name")
+
+    @module_name.setter
+    def module_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "module_name", value)
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The name of a stream of the specified module.
+        """
+        return pulumi.get(self, "stream_name")
+
+    @stream_name.setter
+    def stream_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "stream_name", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that contains the module stream.
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "software_source_id", value)
+
+
+@pulumi.input_type
+class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
+    def __init__(__self__, *,
+                 software_source_id: pulumi.Input[str],
+                 availability: Optional[pulumi.Input[str]] = None,
+                 availability_at_oci: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] availability: Availability of the software source to instances in private data centers or third-party clouds.
+        :param pulumi.Input[str] availability_at_oci: Availability of the software source to Oracle Cloud Infrastructure instances.
+        """
+        pulumi.set(__self__, "software_source_id", software_source_id)
+        if availability is not None:
+            pulumi.set(__self__, "availability", availability)
+        if availability_at_oci is not None:
+            pulumi.set(__self__, "availability_at_oci", availability_at_oci)
+
+    @property
+    @pulumi.getter(name="softwareSourceId")
+    def software_source_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "software_source_id")
+
+    @software_source_id.setter
+    def software_source_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "software_source_id", value)
+
+    @property
+    @pulumi.getter
+    def availability(self) -> Optional[pulumi.Input[str]]:
+        """
+        Availability of the software source to instances in private data centers or third-party clouds.
+        """
+        return pulumi.get(self, "availability")
+
+    @availability.setter
+    def availability(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability", value)
+
+    @property
+    @pulumi.getter(name="availabilityAtOci")
+    def availability_at_oci(self) -> Optional[pulumi.Input[str]]:
+        """
+        Availability of the software source to Oracle Cloud Infrastructure instances.
+        """
+        return pulumi.get(self, "availability_at_oci")
+
+    @availability_at_oci.setter
+    def availability_at_oci(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "availability_at_oci", value)
 
 
 @pulumi.input_type
@@ -1020,18 +3382,20 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
     def __init__(__self__, *,
-                 filter_type: pulumi.Input[str],
-                 module_name: pulumi.Input[str],
+                 filter_type: Optional[pulumi.Input[str]] = None,
+                 module_name: Optional[pulumi.Input[str]] = None,
                  profile_name: Optional[pulumi.Input[str]] = None,
                  stream_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter.
         :param pulumi.Input[str] module_name: (Updatable) Module name.
         :param pulumi.Input[str] profile_name: (Updatable) Profile name.
         :param pulumi.Input[str] stream_name: (Updatable) Stream name.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if module_name is not None:
+            pulumi.set(__self__, "module_name", module_name)
         if profile_name is not None:
             pulumi.set(__self__, "profile_name", profile_name)
         if stream_name is not None:
@@ -1039,26 +3403,26 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> pulumi.Input[str]:
+    def filter_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        (Updatable) The type of the filter.
         """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
-    def filter_type(self, value: pulumi.Input[str]):
+    def filter_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "filter_type", value)
 
     @property
     @pulumi.getter(name="moduleName")
-    def module_name(self) -> pulumi.Input[str]:
+    def module_name(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Module name.
         """
         return pulumi.get(self, "module_name")
 
     @module_name.setter
-    def module_name(self, value: pulumi.Input[str]):
+    def module_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "module_name", value)
 
     @property
@@ -1089,17 +3453,18 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     def __init__(__self__, *,
-                 filter_type: pulumi.Input[str],
+                 filter_type: Optional[pulumi.Input[str]] = None,
                  package_name: Optional[pulumi.Input[str]] = None,
                  package_name_pattern: Optional[pulumi.Input[str]] = None,
                  package_version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter.
         :param pulumi.Input[str] package_name: (Updatable) The package name.
         :param pulumi.Input[str] package_name_pattern: (Updatable) The package name pattern.
         :param pulumi.Input[str] package_version: (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
         if package_name is not None:
             pulumi.set(__self__, "package_name", package_name)
         if package_name_pattern is not None:
@@ -1109,14 +3474,14 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> pulumi.Input[str]:
+    def filter_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        (Updatable) The type of the filter.
         """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
-    def filter_type(self, value: pulumi.Input[str]):
+    def filter_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "filter_type", value)
 
     @property
@@ -1159,26 +3524,27 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
 @pulumi.input_type
 class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     def __init__(__self__, *,
-                 filter_type: pulumi.Input[str],
+                 filter_type: Optional[pulumi.Input[str]] = None,
                  package_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] package_groups: (Updatable) List of package group names.
         """
-        pulumi.set(__self__, "filter_type", filter_type)
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
         if package_groups is not None:
             pulumi.set(__self__, "package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> pulumi.Input[str]:
+    def filter_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        (Updatable) The type of the filter.
         """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
-    def filter_type(self, value: pulumi.Input[str]):
+    def filter_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "filter_type", value)
 
     @property
@@ -1197,36 +3563,38 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
 @pulumi.input_type
 class SoftwareSourceVendorSoftwareSourceArgs:
     def __init__(__self__, *,
-                 display_name: pulumi.Input[str],
-                 id: pulumi.Input[str]):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name.
-        :param pulumi.Input[str] id: (Updatable) The OCID of the resource that is immutable on creation.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name.
+        :param pulumi.Input[str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Input[str]:
+    def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User friendly name.
+        (Updatable) User-friendly name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: pulumi.Input[str]):
+    def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter
-    def id(self) -> pulumi.Input[str]:
+    def id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the resource that is immutable on creation.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 
 
         ** IMPORTANT **
@@ -1235,8 +3603,131 @@ class SoftwareSourceVendorSoftwareSourceArgs:
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: pulumi.Input[str]):
+    def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+
+@pulumi.input_type
+class GetEntitlementsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetErrataFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetEventsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
 
 
 @pulumi.input_type
@@ -1318,6 +3809,180 @@ class GetLifecycleStagesFilterArgs:
 
 
 @pulumi.input_type
+class GetManagedInstanceAvailablePackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceAvailableSoftwareSourcesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceAvailableWindowsUpdatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceErrataFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The assigned erratum name. It's unique and not changeable.  Example: `ELSA-2020-5804`
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetManagedInstanceGroupAvailableModulesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -1369,7 +4034,7 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1380,7 +4045,7 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
         """
         return pulumi.get(self, "name")
 
@@ -1447,7 +4112,316 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs:
 
 
 @pulumi.input_type
+class GetManagedInstanceGroupInstalledPackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the package that is installed on the managed instance group.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the package that is installed on the managed instance group.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceGroupModulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetManagedInstanceGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceInstalledPackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceInstalledWindowsUpdatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceModulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstanceUpdatablePackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetManagedInstancesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -1577,6 +4551,129 @@ class GetProfilesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetScheduledJobsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSoftwarePackageSoftwareSourceFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSoftwarePackagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Unique identifier for the package. Note that this is not an OCID.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1744,7 +4841,7 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
+        :param str name: Unique identifier for the package. Note that this is not an OCID.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1755,7 +4852,7 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
         """
         return pulumi.get(self, "name")
 
@@ -1841,6 +4938,51 @@ class GetSoftwareSourcesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetWindowsUpdatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+        """
         return pulumi.get(self, "name")
 
     @name.setter

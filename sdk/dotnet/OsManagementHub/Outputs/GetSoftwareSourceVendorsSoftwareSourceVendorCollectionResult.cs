@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult
     {
         /// <summary>
-        /// List of SoftwareSourceVendor.
+        /// List of software source vendors.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult> Items;
 

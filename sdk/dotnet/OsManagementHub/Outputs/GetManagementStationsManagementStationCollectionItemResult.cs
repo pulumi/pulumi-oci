@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationsManagementStationCollectionItemResult
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,73 +22,59 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Details describing the ManagementStation config.
+        /// Explanation of the health status.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly string HealthState;
         /// <summary>
-        /// Name of the host
+        /// Hostname of the management station.
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the managed instance for which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         /// </summary>
         public readonly string ManagedInstanceId;
         /// <summary>
-        /// A decimal number representing the mirror capacity
+        /// A decimal number representing the amount of mirror capacity used by the sync.
         /// </summary>
         public readonly int MirrorCapacity;
         /// <summary>
-        /// Status summary of all repos
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult> MirrorSyncStatuses;
-        /// <summary>
-        /// Information for a mirror configuration
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemMirrorResult> Mirrors;
-        /// <summary>
-        /// A decimal number representing the completeness percentage
+        /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         public readonly int OverallPercentage;
         /// <summary>
-        /// Current state of the mirroring
+        /// Current state of the mirror sync for the management station.
         /// </summary>
         public readonly string OverallState;
         /// <summary>
-        /// OCID of the Profile associated with the Station
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         /// </summary>
         public readonly string ProfileId;
         /// <summary>
-        /// Information for a proxy configuration
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemProxyResult> Proxies;
-        /// <summary>
-        /// OCID of the Scheduled Job for mirror sync
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         /// </summary>
         public readonly string ScheduledJobId;
         /// <summary>
-        /// The current lifecycle state for the object.
+        /// A filter that returns information for management stations in the specified state.
         /// </summary>
         public readonly string State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
-        /// <summary>
-        /// A decimal number representing the total of repos
-        /// </summary>
-        public readonly int TotalMirrors;
+        public readonly string? TimeNextExecution;
 
         [OutputConstructor]
         private GetManagementStationsManagementStationCollectionItemResult(
@@ -102,6 +88,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
+            string healthState,
+
             string hostname,
 
             string id,
@@ -110,17 +98,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             int mirrorCapacity,
 
-            ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult> mirrorSyncStatuses,
-
-            ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemMirrorResult> mirrors,
-
             int overallPercentage,
 
             string overallState,
 
             string profileId,
-
-            ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionItemProxyResult> proxies,
 
             string scheduledJobId,
 
@@ -128,27 +110,25 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             ImmutableDictionary<string, object> systemTags,
 
-            int totalMirrors)
+            string? timeNextExecution)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            HealthState = healthState;
             Hostname = hostname;
             Id = id;
             ManagedInstanceId = managedInstanceId;
             MirrorCapacity = mirrorCapacity;
-            MirrorSyncStatuses = mirrorSyncStatuses;
-            Mirrors = mirrors;
             OverallPercentage = overallPercentage;
             OverallState = overallState;
             ProfileId = profileId;
-            Proxies = proxies;
             ScheduledJobId = scheduledJobId;
             State = state;
             SystemTags = systemTags;
-            TotalMirrors = totalMirrors;
+            TimeNextExecution = timeNextExecution;
         }
     }
 }

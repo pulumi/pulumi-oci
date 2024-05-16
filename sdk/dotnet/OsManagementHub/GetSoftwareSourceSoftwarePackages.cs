@@ -78,7 +78,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceSoftwarePackagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -98,13 +98,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public bool? IsLatest { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceSoftwarePackagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -138,13 +138,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public Input<bool>? IsLatest { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;

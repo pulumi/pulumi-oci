@@ -27,14 +27,14 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
     }
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     @Import(name="isLatest")
     private @Nullable Output<Boolean> isLatest;
 
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Optional<Output<Boolean>> isLatest() {
@@ -87,14 +87,14 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private Output<String> softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Output<String> softwareSourceId() {
@@ -144,7 +144,7 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isLatest A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+         * @param isLatest Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isLatest A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+         * @param isLatest Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class GetSoftwareSourceModuleStreamsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

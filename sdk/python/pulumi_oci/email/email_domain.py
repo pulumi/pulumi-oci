@@ -17,6 +17,7 @@ class EmailDomainArgs:
                  compartment_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_verification_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
@@ -24,6 +25,7 @@ class EmailDomainArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
                
@@ -36,6 +38,8 @@ class EmailDomainArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_verification_id is not None:
+            pulumi.set(__self__, "domain_verification_id", domain_verification_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
@@ -78,6 +82,18 @@ class EmailDomainArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="domainVerificationId")
+    def domain_verification_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        """
+        return pulumi.get(self, "domain_verification_id")
+
+    @domain_verification_id.setter
+    def domain_verification_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_verification_id", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -113,6 +129,8 @@ class _EmailDomainState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_verification_id: Optional[pulumi.Input[str]] = None,
+                 domain_verification_status: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_spf: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -125,6 +143,8 @@ class _EmailDomainState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        :param pulumi.Input[str] domain_verification_status: The current domain verification status.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         :param pulumi.Input[str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -144,6 +164,10 @@ class _EmailDomainState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if domain_verification_id is not None:
+            pulumi.set(__self__, "domain_verification_id", domain_verification_id)
+        if domain_verification_status is not None:
+            pulumi.set(__self__, "domain_verification_status", domain_verification_status)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_spf is not None:
@@ -204,6 +228,30 @@ class _EmailDomainState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="domainVerificationId")
+    def domain_verification_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        """
+        return pulumi.get(self, "domain_verification_id")
+
+    @domain_verification_id.setter
+    def domain_verification_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_verification_id", value)
+
+    @property
+    @pulumi.getter(name="domainVerificationStatus")
+    def domain_verification_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current domain verification status.
+        """
+        return pulumi.get(self, "domain_verification_status")
+
+    @domain_verification_status.setter
+    def domain_verification_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_verification_status", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -290,6 +338,7 @@ class EmailDomain(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_verification_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -311,6 +360,7 @@ class EmailDomain(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=email_domain_description,
+            domain_verification_id=test_domain_verification["id"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -329,6 +379,7 @@ class EmailDomain(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
                
@@ -360,6 +411,7 @@ class EmailDomain(pulumi.CustomResource):
                 "Operations.CostCenter": "42",
             },
             description=email_domain_description,
+            domain_verification_id=test_domain_verification["id"],
             freeform_tags={
                 "Department": "Finance",
             })
@@ -391,6 +443,7 @@ class EmailDomain(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 domain_verification_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -407,9 +460,11 @@ class EmailDomain(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["domain_verification_id"] = domain_verification_id
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
             __props__.__dict__["active_dkim_id"] = None
+            __props__.__dict__["domain_verification_status"] = None
             __props__.__dict__["is_spf"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -428,6 +483,8 @@ class EmailDomain(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            domain_verification_id: Optional[pulumi.Input[str]] = None,
+            domain_verification_status: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_spf: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -445,6 +502,8 @@ class EmailDomain(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        :param pulumi.Input[str] domain_verification_status: The current domain verification status.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         :param pulumi.Input[str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -464,6 +523,8 @@ class EmailDomain(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["domain_verification_id"] = domain_verification_id
+        __props__.__dict__["domain_verification_status"] = domain_verification_status
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_spf"] = is_spf
         __props__.__dict__["name"] = name
@@ -503,6 +564,22 @@ class EmailDomain(pulumi.CustomResource):
         (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="domainVerificationId")
+    def domain_verification_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        """
+        return pulumi.get(self, "domain_verification_id")
+
+    @property
+    @pulumi.getter(name="domainVerificationStatus")
+    def domain_verification_status(self) -> pulumi.Output[str]:
+        """
+        The current domain verification status.
+        """
+        return pulumi.get(self, "domain_verification_status")
 
     @property
     @pulumi.getter(name="freeformTags")

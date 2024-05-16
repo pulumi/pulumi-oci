@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified software source.
+        /// Returns information about the specified software source.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified software source.
+        /// Returns information about the specified software source.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
@@ -102,19 +102,23 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// Possible availabilities of a software source.
+        /// Availability of the software source (for non-OCI environments).
         /// </summary>
         public readonly string Availability;
+        /// <summary>
+        /// Availability of the software source (for Oracle Cloud Infrastructure environments).
+        /// </summary>
+        public readonly string AvailabilityAtOci;
         /// <summary>
         /// The yum repository checksum type used by this software source.
         /// </summary>
         public readonly string ChecksumType;
         /// <summary>
-        /// The OCID of the tenancy containing the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+        /// Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourceCustomSoftwareSourceFilterResult> CustomSoftwareSourceFilters;
         /// <summary>
@@ -122,11 +126,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Information specified by the user about the software source.
+        /// User-specified description for the software source.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// User friendly name.
+        /// User-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -146,28 +150,52 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string GpgKeyUrl;
         /// <summary>
-        /// The OCID of the resource that is immutable on creation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether service should automatically update the custom software source for the user.
+        /// Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+        /// </summary>
+        public readonly bool IsAutoResolveDependencies;
+        /// <summary>
+        /// Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         /// </summary>
         public readonly bool IsAutomaticallyUpdated;
+        /// <summary>
+        /// Indicates whether the service should create the software source from a list of packages provided by the user.
+        /// </summary>
+        public readonly bool IsCreatedFromPackageList;
+        /// <summary>
+        /// Indicates whether the software source is required for the Autonomous Linux service.
+        /// </summary>
+        public readonly bool IsMandatoryForAutonomousLinux;
+        /// <summary>
+        /// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+        /// </summary>
+        public readonly string OriginSoftwareSourceId;
         /// <summary>
         /// The OS family the software source belongs to.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// Number of packages.
+        /// Number of packages the software source contains.
         /// </summary>
         public readonly string PackageCount;
         /// <summary>
-        /// The Repo ID for the software source.
+        /// The packages in the software source.
+        /// </summary>
+        public readonly ImmutableArray<string> Packages;
+        /// <summary>
+        /// The repository ID for the software source.
         /// </summary>
         public readonly string RepoId;
+        /// <summary>
+        /// The size of the software source in gigabytes (GB).
+        /// </summary>
+        public readonly double Size;
         public readonly string SoftwareSourceId;
         /// <summary>
-        /// Type of the software source.
+        /// Type of software source.
         /// </summary>
         public readonly string SoftwareSourceType;
         /// <summary>
@@ -183,11 +211,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        /// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// URL for the repository.
+        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
         /// </summary>
         public readonly string Url;
         /// <summary>
@@ -195,7 +223,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string VendorName;
         /// <summary>
-        /// List of vendor software sources.
+        /// List of vendor software sources that are used for the basis of the versioned custom software source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourceVendorSoftwareSourceResult> VendorSoftwareSources;
 
@@ -204,6 +232,8 @@ namespace Pulumi.Oci.OsManagementHub
             string archType,
 
             string availability,
+
+            string availabilityAtOci,
 
             string checksumType,
 
@@ -227,13 +257,25 @@ namespace Pulumi.Oci.OsManagementHub
 
             string id,
 
+            bool isAutoResolveDependencies,
+
             bool isAutomaticallyUpdated,
+
+            bool isCreatedFromPackageList,
+
+            bool isMandatoryForAutonomousLinux,
+
+            string originSoftwareSourceId,
 
             string osFamily,
 
             string packageCount,
 
+            ImmutableArray<string> packages,
+
             string repoId,
+
+            double size,
 
             string softwareSourceId,
 
@@ -255,6 +297,7 @@ namespace Pulumi.Oci.OsManagementHub
         {
             ArchType = archType;
             Availability = availability;
+            AvailabilityAtOci = availabilityAtOci;
             ChecksumType = checksumType;
             CompartmentId = compartmentId;
             CustomSoftwareSourceFilters = customSoftwareSourceFilters;
@@ -266,10 +309,16 @@ namespace Pulumi.Oci.OsManagementHub
             GpgKeyId = gpgKeyId;
             GpgKeyUrl = gpgKeyUrl;
             Id = id;
+            IsAutoResolveDependencies = isAutoResolveDependencies;
             IsAutomaticallyUpdated = isAutomaticallyUpdated;
+            IsCreatedFromPackageList = isCreatedFromPackageList;
+            IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            OriginSoftwareSourceId = originSoftwareSourceId;
             OsFamily = osFamily;
             PackageCount = packageCount;
+            Packages = packages;
             RepoId = repoId;
+            Size = size;
             SoftwareSourceId = softwareSourceId;
             SoftwareSourceType = softwareSourceType;
             SoftwareSourceVersion = softwareSourceVersion;

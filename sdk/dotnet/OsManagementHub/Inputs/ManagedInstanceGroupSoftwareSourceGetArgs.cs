@@ -13,22 +13,28 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ManagedInstanceGroupSoftwareSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Details about the managed instance group.
+        /// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
+
+        /// <summary>
+        /// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        /// </summary>
+        [Input("isMandatoryForAutonomousLinux")]
+        public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
 
         /// <summary>
         /// Type of the software source.

@@ -19,14 +19,14 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
     public static final GetManagedInstanceGroupAvailableModulesArgs Empty = new GetManagedInstanceGroupAvailableModulesArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -41,14 +41,14 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
     }
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     @Import(name="managedInstanceGroupId", required=true)
     private Output<String> managedInstanceGroupId;
 
     /**
-     * @return The managed instance group OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     public Output<String> managedInstanceGroupId() {
@@ -114,7 +114,7 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class GetManagedInstanceGroupAvailableModulesArgs extends com.pulum
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 

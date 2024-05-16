@@ -22,7 +22,7 @@ class GetExadataInfrastructureResult:
     """
     A collection of values returned by getExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
+    def __init__(__self__, activated_storage_count=None, activation_file=None, additional_compute_count=None, additional_compute_system_model=None, additional_storage_count=None, admin_network_cidr=None, availability_domain=None, cloud_control_plane_server1=None, cloud_control_plane_server2=None, compartment_id=None, compute_count=None, contacts=None, corporate_proxy=None, cpus_enabled=None, create_async=None, csi_number=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, dns_servers=None, exadata_infrastructure_id=None, freeform_tags=None, gateway=None, id=None, infini_band_network_cidr=None, is_cps_offline_report_enabled=None, is_multi_rack_deployment=None, lifecycle_details=None, maintenance_slo_status=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, multi_rack_configuration_file=None, netmask=None, network_bonding_mode_details=None, ntp_servers=None, rack_serial_number=None, shape=None, state=None, storage_count=None, storage_server_version=None, time_created=None, time_zone=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -80,6 +80,9 @@ class GetExadataInfrastructureResult:
         if db_server_version and not isinstance(db_server_version, str):
             raise TypeError("Expected argument 'db_server_version' to be a str")
         pulumi.set(__self__, "db_server_version", db_server_version)
+        if defined_file_system_configurations and not isinstance(defined_file_system_configurations, list):
+            raise TypeError("Expected argument 'defined_file_system_configurations' to be a list")
+        pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -316,6 +319,14 @@ class GetExadataInfrastructureResult:
         The software version of the database servers (dom0) in the Exadata infrastructure.
         """
         return pulumi.get(self, "db_server_version")
+
+    @property
+    @pulumi.getter(name="definedFileSystemConfigurations")
+    def defined_file_system_configurations(self) -> Sequence['outputs.GetExadataInfrastructureDefinedFileSystemConfigurationResult']:
+        """
+        Details of the file system configuration of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "defined_file_system_configurations")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -580,6 +591,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             db_server_version=self.db_server_version,
+            defined_file_system_configurations=self.defined_file_system_configurations,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             dns_servers=self.dns_servers,
@@ -648,6 +660,7 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
         db_server_version=pulumi.get(__ret__, 'db_server_version'),
+        defined_file_system_configurations=pulumi.get(__ret__, 'defined_file_system_configurations'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         dns_servers=pulumi.get(__ret__, 'dns_servers'),

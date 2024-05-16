@@ -32,14 +32,14 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -84,14 +84,14 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     @Import(name="lifecycleEnvironmentId")
     private @Nullable String lifecycleEnvironmentId;
 
     /**
-     * @return The OCID of the lifecycle environment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     public Optional<String> lifecycleEnvironmentId() {
@@ -99,14 +99,44 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    @Import(name="locationNotEqualTos")
+    private @Nullable List<String> locationNotEqualTos;
+
+    /**
+     * @return A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    public Optional<List<String>> locationNotEqualTos() {
+        return Optional.ofNullable(this.locationNotEqualTos);
+    }
+
+    /**
+     * A filter to return only resources whose location matches the given value.
+     * 
+     */
+    @Import(name="locations")
+    private @Nullable List<String> locations;
+
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public Optional<List<String>> locations() {
+        return Optional.ofNullable(this.locations);
+    }
+
+    /**
+     * A filter to return only resources that match the given operating system family.
      * 
      */
     @Import(name="osFamily")
     private @Nullable String osFamily;
 
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public Optional<String> osFamily() {
@@ -137,6 +167,8 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
         this.displayNames = $.displayNames;
         this.filters = $.filters;
         this.lifecycleEnvironmentId = $.lifecycleEnvironmentId;
+        this.locationNotEqualTos = $.locationNotEqualTos;
+        this.locations = $.locations;
         this.osFamily = $.osFamily;
         this.state = $.state;
     }
@@ -171,7 +203,7 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -223,7 +255,7 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param lifecycleEnvironmentId The OCID of the lifecycle environment.
+         * @param lifecycleEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
          * 
          * @return builder
          * 
@@ -234,7 +266,49 @@ public final class GetLifecycleEnvironmentsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+            $.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(@Nullable List<String> locations) {
+            $.locations = locations;
+            return this;
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+
+        /**
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 

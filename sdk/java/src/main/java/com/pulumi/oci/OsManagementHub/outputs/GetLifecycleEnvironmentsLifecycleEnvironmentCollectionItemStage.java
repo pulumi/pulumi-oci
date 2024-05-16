@@ -5,7 +5,6 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId;
 import java.lang.Integer;
 import java.lang.Object;
@@ -22,7 +21,7 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
      */
     private String archType;
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
@@ -42,32 +41,42 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
     /**
-     * @return The OCID of the lifecycle environment.
+     * @return The user-friendly name for the lifecycle environment. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
+    private String lifecycleEnvironmentDisplayName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     private String lifecycleEnvironmentId;
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return A filter to return only resources whose location matches the given value.
      * 
      */
-    private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId> managedInstanceIds;
+    private String location;
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return The number of managed instances associated with the lifecycle stage.
+     * 
+     */
+    private Integer managedInstances;
+    /**
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     private String osFamily;
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     private Integer rank;
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId> softwareSourceIds;
@@ -82,17 +91,17 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeModified;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      */
     private String vendorName;
@@ -106,7 +115,7 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         return this.archType;
     }
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -134,42 +143,56 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The OCID of the lifecycle environment.
+     * @return The user-friendly name for the lifecycle environment. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
+    public String lifecycleEnvironmentDisplayName() {
+        return this.lifecycleEnvironmentDisplayName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     public String lifecycleEnvironmentId() {
         return this.lifecycleEnvironmentId;
     }
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return A filter to return only resources whose location matches the given value.
      * 
      */
-    public List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId> managedInstanceIds() {
-        return this.managedInstanceIds;
+    public String location() {
+        return this.location;
     }
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return The number of managed instances associated with the lifecycle stage.
+     * 
+     */
+    public Integer managedInstances() {
+        return this.managedInstances;
+    }
+    /**
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     public Integer rank() {
         return this.rank;
     }
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     public List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId> softwareSourceIds() {
@@ -190,21 +213,21 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         return this.systemTags;
     }
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeModified() {
         return this.timeModified;
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      */
     public String vendorName() {
@@ -226,8 +249,10 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private String lifecycleEnvironmentDisplayName;
         private String lifecycleEnvironmentId;
-        private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId> managedInstanceIds;
+        private String location;
+        private Integer managedInstances;
         private String osFamily;
         private Integer rank;
         private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId> softwareSourceIds;
@@ -245,8 +270,10 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.lifecycleEnvironmentDisplayName = defaults.lifecycleEnvironmentDisplayName;
     	      this.lifecycleEnvironmentId = defaults.lifecycleEnvironmentId;
-    	      this.managedInstanceIds = defaults.managedInstanceIds;
+    	      this.location = defaults.location;
+    	      this.managedInstances = defaults.managedInstances;
     	      this.osFamily = defaults.osFamily;
     	      this.rank = defaults.rank;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
@@ -306,6 +333,14 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleEnvironmentDisplayName(String lifecycleEnvironmentDisplayName) {
+            if (lifecycleEnvironmentDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "lifecycleEnvironmentDisplayName");
+            }
+            this.lifecycleEnvironmentDisplayName = lifecycleEnvironmentDisplayName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleEnvironmentId(String lifecycleEnvironmentId) {
             if (lifecycleEnvironmentId == null) {
               throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "lifecycleEnvironmentId");
@@ -314,15 +349,20 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceIds(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId> managedInstanceIds) {
-            if (managedInstanceIds == null) {
-              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "managedInstanceIds");
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "location");
             }
-            this.managedInstanceIds = managedInstanceIds;
+            this.location = location;
             return this;
         }
-        public Builder managedInstanceIds(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId... managedInstanceIds) {
-            return managedInstanceIds(List.of(managedInstanceIds));
+        @CustomType.Setter
+        public Builder managedInstances(Integer managedInstances) {
+            if (managedInstances == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage", "managedInstances");
+            }
+            this.managedInstances = managedInstances;
+            return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
@@ -399,8 +439,10 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.lifecycleEnvironmentDisplayName = lifecycleEnvironmentDisplayName;
             _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
-            _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.location = location;
+            _resultValue.managedInstances = managedInstances;
             _resultValue.osFamily = osFamily;
             _resultValue.rank = rank;
             _resultValue.softwareSourceIds = softwareSourceIds;

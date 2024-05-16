@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ProfileSoftwareSource {
     /**
-     * @return (Updatable) The description of the registration profile.
+     * @return (Updatable) User-specified description of the registration profile.
      * 
      */
     private @Nullable String description;
@@ -22,10 +23,15 @@ public final class ProfileSoftwareSource {
      */
     private @Nullable String displayName;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private @Nullable String id;
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    private @Nullable Boolean isMandatoryForAutonomousLinux;
     /**
      * @return Type of the software source.
      * 
@@ -34,7 +40,7 @@ public final class ProfileSoftwareSource {
 
     private ProfileSoftwareSource() {}
     /**
-     * @return (Updatable) The description of the registration profile.
+     * @return (Updatable) User-specified description of the registration profile.
      * 
      */
     public Optional<String> description() {
@@ -48,11 +54,18 @@ public final class ProfileSoftwareSource {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
+    }
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    public Optional<Boolean> isMandatoryForAutonomousLinux() {
+        return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
     }
     /**
      * @return Type of the software source.
@@ -74,6 +87,7 @@ public final class ProfileSoftwareSource {
         private @Nullable String description;
         private @Nullable String displayName;
         private @Nullable String id;
+        private @Nullable Boolean isMandatoryForAutonomousLinux;
         private @Nullable String softwareSourceType;
         public Builder() {}
         public Builder(ProfileSoftwareSource defaults) {
@@ -81,6 +95,7 @@ public final class ProfileSoftwareSource {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.softwareSourceType = defaults.softwareSourceType;
         }
 
@@ -103,6 +118,12 @@ public final class ProfileSoftwareSource {
             return this;
         }
         @CustomType.Setter
+        public Builder isMandatoryForAutonomousLinux(@Nullable Boolean isMandatoryForAutonomousLinux) {
+
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceType(@Nullable String softwareSourceType) {
 
             this.softwareSourceType = softwareSourceType;
@@ -113,6 +134,7 @@ public final class ProfileSoftwareSource {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.softwareSourceType = softwareSourceType;
             return _resultValue;
         }

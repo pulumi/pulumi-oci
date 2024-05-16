@@ -23,6 +23,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly string IpVersion;
         /// <summary>
+        /// Property to enable/disable PPv2 feature for this listener.
+        /// </summary>
+        public readonly bool IsPpv2enabled;
+        /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         /// </summary>
         public readonly string Name;
@@ -47,6 +51,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             string ipVersion,
 
+            bool isPpv2enabled,
+
             string name,
 
             string networkLoadBalancerId,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
             DefaultBackendSetName = defaultBackendSetName;
             Id = id;
             IpVersion = ipVersion;
+            IsPpv2enabled = isPpv2enabled;
             Name = name;
             NetworkLoadBalancerId = networkLoadBalancerId;
             Port = port;

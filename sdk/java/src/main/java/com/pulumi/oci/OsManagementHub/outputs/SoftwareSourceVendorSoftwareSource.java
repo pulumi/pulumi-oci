@@ -4,43 +4,44 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class SoftwareSourceVendorSoftwareSource {
     /**
-     * @return (Updatable) User friendly name.
+     * @return (Updatable) User-friendly name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
-     * @return (Updatable) The OCID of the resource that is immutable on creation.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private SoftwareSourceVendorSoftwareSource() {}
     /**
-     * @return (Updatable) User friendly name.
+     * @return (Updatable) User-friendly name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) The OCID of the resource that is immutable on creation.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -52,8 +53,8 @@ public final class SoftwareSourceVendorSoftwareSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String id;
+        private @Nullable String displayName;
+        private @Nullable String id;
         public Builder() {}
         public Builder(SoftwareSourceVendorSoftwareSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -62,18 +63,14 @@ public final class SoftwareSourceVendorSoftwareSource {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            if (displayName == null) {
-              throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSource", "displayName");
-            }
+        public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            if (id == null) {
-              throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSource", "id");
-            }
+        public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }

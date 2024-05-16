@@ -55,12 +55,12 @@ func GetManagementStationMirrors(ctx *pulumi.Context, args *GetManagementStation
 
 // A collection of arguments for invoking getManagementStationMirrors.
 type GetManagementStationMirrorsArgs struct {
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName *string `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string                             `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationMirrorsFilter `pulumi:"filters"`
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId string `pulumi:"managementStationId"`
 	// List of Mirror state to filter by
 	MirrorStates []string `pulumi:"mirrorStates"`
@@ -95,12 +95,12 @@ func GetManagementStationMirrorsOutput(ctx *pulumi.Context, args GetManagementSt
 
 // A collection of arguments for invoking getManagementStationMirrors.
 type GetManagementStationMirrorsOutputArgs struct {
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput                       `pulumi:"displayNameContains"`
 	Filters             GetManagementStationMirrorsFilterArrayInput `pulumi:"filters"`
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId pulumi.StringInput `pulumi:"managementStationId"`
 	// List of Mirror state to filter by
 	MirrorStates pulumi.StringArrayInput `pulumi:"mirrorStates"`

@@ -79,6 +79,36 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    @Import(name="domainVerificationId")
+    private @Nullable Output<String> domainVerificationId;
+
+    /**
+     * @return (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    public Optional<Output<String>> domainVerificationId() {
+        return Optional.ofNullable(this.domainVerificationId);
+    }
+
+    /**
+     * The current domain verification status.
+     * 
+     */
+    @Import(name="domainVerificationStatus")
+    private @Nullable Output<String> domainVerificationStatus;
+
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    public Optional<Output<String>> domainVerificationStatus() {
+        return Optional.ofNullable(this.domainVerificationStatus);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -181,6 +211,8 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.domainVerificationId = $.domainVerificationId;
+        this.domainVerificationStatus = $.domainVerificationStatus;
         this.freeformTags = $.freeformTags;
         this.isSpf = $.isSpf;
         this.name = $.name;
@@ -289,6 +321,48 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param domainVerificationId (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainVerificationId(@Nullable Output<String> domainVerificationId) {
+            $.domainVerificationId = domainVerificationId;
+            return this;
+        }
+
+        /**
+         * @param domainVerificationId (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainVerificationId(String domainVerificationId) {
+            return domainVerificationId(Output.of(domainVerificationId));
+        }
+
+        /**
+         * @param domainVerificationStatus The current domain verification status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainVerificationStatus(@Nullable Output<String> domainVerificationStatus) {
+            $.domainVerificationStatus = domainVerificationStatus;
+            return this;
+        }
+
+        /**
+         * @param domainVerificationStatus The current domain verification status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainVerificationStatus(String domainVerificationStatus) {
+            return domainVerificationStatus(Output.of(domainVerificationStatus));
         }
 
         /**

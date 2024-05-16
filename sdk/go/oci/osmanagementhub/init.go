@@ -21,16 +21,64 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:OsManagementHub/event:Event":
+		r = &Event{}
 	case "oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment":
 		r = &LifecycleEnvironment{}
+	case "oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement":
+		r = &LifecycleStageAttachManagedInstancesManagement{}
+	case "oci:OsManagementHub/lifecycleStageDetachManagedInstancesManagement:LifecycleStageDetachManagedInstancesManagement":
+		r = &LifecycleStageDetachManagedInstancesManagement{}
+	case "oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement":
+		r = &LifecycleStagePromoteSoftwareSourceManagement{}
+	case "oci:OsManagementHub/managedInstance:ManagedInstance":
+		r = &ManagedInstance{}
+	case "oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement":
+		r = &ManagedInstanceAttachProfileManagement{}
+	case "oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement":
+		r = &ManagedInstanceDetachProfileManagement{}
 	case "oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup":
 		r = &ManagedInstanceGroup{}
+	case "oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement":
+		r = &ManagedInstanceGroupAttachManagedInstancesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement:ManagedInstanceGroupAttachSoftwareSourcesManagement":
+		r = &ManagedInstanceGroupAttachSoftwareSourcesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement:ManagedInstanceGroupDetachManagedInstancesManagement":
+		r = &ManagedInstanceGroupDetachManagedInstancesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement:ManagedInstanceGroupDetachSoftwareSourcesManagement":
+		r = &ManagedInstanceGroupDetachSoftwareSourcesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement":
+		r = &ManagedInstanceGroupInstallPackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement":
+		r = &ManagedInstanceGroupInstallWindowsUpdatesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement":
+		r = &ManagedInstanceGroupManageModuleStreamsManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement":
+		r = &ManagedInstanceGroupRemovePackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement:ManagedInstanceGroupUpdateAllPackagesManagement":
+		r = &ManagedInstanceGroupUpdateAllPackagesManagement{}
+	case "oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement":
+		r = &ManagedInstanceInstallWindowsUpdatesManagement{}
+	case "oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement":
+		r = &ManagedInstanceUpdatePackagesManagement{}
 	case "oci:OsManagementHub/managementStation:ManagementStation":
 		r = &ManagementStation{}
+	case "oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement":
+		r = &ManagementStationMirrorSynchronizeManagement{}
+	case "oci:OsManagementHub/managementStationRefreshManagement:ManagementStationRefreshManagement":
+		r = &ManagementStationRefreshManagement{}
+	case "oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement":
+		r = &ManagementStationSynchronizeMirrorsManagement{}
 	case "oci:OsManagementHub/profile:Profile":
 		r = &Profile{}
+	case "oci:OsManagementHub/scheduledJob:ScheduledJob":
+		r = &ScheduledJob{}
 	case "oci:OsManagementHub/softwareSource:SoftwareSource":
 		r = &SoftwareSource{}
+	case "oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement":
+		r = &SoftwareSourceAddPackagesManagement{}
+	case "oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement":
+		r = &SoftwareSourceChangeAvailabilityManagement{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,7 +94,42 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/event",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/lifecycleEnvironment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/lifecycleStageAttachManagedInstancesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/lifecycleStageDetachManagedInstancesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceAttachProfileManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceDetachProfileManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -56,7 +139,77 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupDetachManagedInstancesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupDetachSoftwareSourcesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupInstallPackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupManageModuleStreamsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupRemovePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceGroupUpdateAllPackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceInstallWindowsUpdatesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managedInstanceUpdatePackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/managementStation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managementStationMirrorSynchronizeManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managementStationRefreshManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/managementStationSynchronizeMirrorsManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -66,7 +219,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"OsManagementHub/scheduledJob",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"OsManagementHub/softwareSource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceAddPackagesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"OsManagementHub/softwareSourceChangeAvailabilityManagement",
 		&module{version},
 	)
 }

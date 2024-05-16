@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureContactArgs;
+import com.pulumi.oci.Database.inputs.ExadataInfrastructureDefinedFileSystemConfigurationArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs;
 import java.lang.Boolean;
@@ -305,6 +306,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
      */
     public Optional<Output<String>> dbServerVersion() {
         return Optional.ofNullable(this.dbServerVersion);
+    }
+
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    @Import(name="definedFileSystemConfigurations")
+    private @Nullable Output<List<ExadataInfrastructureDefinedFileSystemConfigurationArgs>> definedFileSystemConfigurations;
+
+    /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    public Optional<Output<List<ExadataInfrastructureDefinedFileSystemConfigurationArgs>>> definedFileSystemConfigurations() {
+        return Optional.ofNullable(this.definedFileSystemConfigurations);
     }
 
     /**
@@ -749,6 +765,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
         this.dbServerVersion = $.dbServerVersion;
+        this.definedFileSystemConfigurations = $.definedFileSystemConfigurations;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dnsServers = $.dnsServers;
@@ -1198,6 +1215,37 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder dbServerVersion(String dbServerVersion) {
             return dbServerVersion(Output.of(dbServerVersion));
+        }
+
+        /**
+         * @param definedFileSystemConfigurations Details of the file system configuration of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedFileSystemConfigurations(@Nullable Output<List<ExadataInfrastructureDefinedFileSystemConfigurationArgs>> definedFileSystemConfigurations) {
+            $.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            return this;
+        }
+
+        /**
+         * @param definedFileSystemConfigurations Details of the file system configuration of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedFileSystemConfigurations(List<ExadataInfrastructureDefinedFileSystemConfigurationArgs> definedFileSystemConfigurations) {
+            return definedFileSystemConfigurations(Output.of(definedFileSystemConfigurations));
+        }
+
+        /**
+         * @param definedFileSystemConfigurations Details of the file system configuration of the Exadata infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedFileSystemConfigurations(ExadataInfrastructureDefinedFileSystemConfigurationArgs... definedFileSystemConfigurations) {
+            return definedFileSystemConfigurations(List.of(definedFileSystemConfigurations));
         }
 
         /**

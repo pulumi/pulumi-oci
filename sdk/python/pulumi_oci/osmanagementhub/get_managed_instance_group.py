@@ -22,10 +22,13 @@ class GetManagedInstanceGroupResult:
     """
     A collection of values returned by getManagedInstanceGroup.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, managed_instance_count=None, managed_instance_group_id=None, managed_instance_ids=None, os_family=None, pending_job_count=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, time_modified=None, vendor_name=None):
+    def __init__(__self__, arch_type=None, autonomous_settings=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_managed_by_autonomous_linux=None, location=None, managed_instance_count=None, managed_instance_group_id=None, managed_instance_ids=None, notification_topic_id=None, os_family=None, pending_job_count=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, time_modified=None, vendor_name=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
+        if autonomous_settings and not isinstance(autonomous_settings, list):
+            raise TypeError("Expected argument 'autonomous_settings' to be a list")
+        pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +47,12 @@ class GetManagedInstanceGroupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_managed_by_autonomous_linux and not isinstance(is_managed_by_autonomous_linux, bool):
+            raise TypeError("Expected argument 'is_managed_by_autonomous_linux' to be a bool")
+        pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
+        if location and not isinstance(location, str):
+            raise TypeError("Expected argument 'location' to be a str")
+        pulumi.set(__self__, "location", location)
         if managed_instance_count and not isinstance(managed_instance_count, int):
             raise TypeError("Expected argument 'managed_instance_count' to be a int")
         pulumi.set(__self__, "managed_instance_count", managed_instance_count)
@@ -53,6 +62,9 @@ class GetManagedInstanceGroupResult:
         if managed_instance_ids and not isinstance(managed_instance_ids, list):
             raise TypeError("Expected argument 'managed_instance_ids' to be a list")
         pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if notification_topic_id and not isinstance(notification_topic_id, str):
+            raise TypeError("Expected argument 'notification_topic_id' to be a str")
+        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         if os_family and not isinstance(os_family, str):
             raise TypeError("Expected argument 'os_family' to be a str")
         pulumi.set(__self__, "os_family", os_family)
@@ -90,10 +102,18 @@ class GetManagedInstanceGroupResult:
         return pulumi.get(self, "arch_type")
 
     @property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> Sequence['outputs.GetManagedInstanceGroupAutonomousSettingResult']:
+        """
+        Settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy containing the managed instance group.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -133,15 +153,31 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> bool:
+        """
+        Indicates whether the Autonomous Linux service manages the group.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @property
+    @pulumi.getter
+    def location(self) -> str:
+        """
+        The location of managed instances attached to the group.
+        """
+        return pulumi.get(self, "location")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
     def managed_instance_count(self) -> int:
         """
-        The number of Managed Instances in the managed instance group.
+        The number of managed instances in the group.
         """
         return pulumi.get(self, "managed_instance_count")
 
@@ -154,9 +190,17 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Sequence[str]:
         """
-        The list of managed instances OCIDs attached to the managed instance group.
+        The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
         """
         return pulumi.get(self, "managed_instance_ids")
+
+    @property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
 
     @property
     @pulumi.getter(name="osFamily")
@@ -210,7 +254,7 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
+        The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -218,7 +262,7 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> str:
         """
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
@@ -226,7 +270,7 @@ class GetManagedInstanceGroupResult:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> str:
         """
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the group.
         """
         return pulumi.get(self, "vendor_name")
 
@@ -238,15 +282,19 @@ class AwaitableGetManagedInstanceGroupResult(GetManagedInstanceGroupResult):
             yield self
         return GetManagedInstanceGroupResult(
             arch_type=self.arch_type,
+            autonomous_settings=self.autonomous_settings,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_managed_by_autonomous_linux=self.is_managed_by_autonomous_linux,
+            location=self.location,
             managed_instance_count=self.managed_instance_count,
             managed_instance_group_id=self.managed_instance_group_id,
             managed_instance_ids=self.managed_instance_ids,
+            notification_topic_id=self.notification_topic_id,
             os_family=self.os_family,
             pending_job_count=self.pending_job_count,
             software_source_ids=self.software_source_ids,
@@ -275,7 +323,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
     ```
 
 
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     __args__ = dict()
     __args__['managedInstanceGroupId'] = managed_instance_group_id
@@ -284,15 +332,19 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
 
     return AwaitableGetManagedInstanceGroupResult(
         arch_type=pulumi.get(__ret__, 'arch_type'),
+        autonomous_settings=pulumi.get(__ret__, 'autonomous_settings'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__ret__, 'is_managed_by_autonomous_linux'),
+        location=pulumi.get(__ret__, 'location'),
         managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
         managed_instance_ids=pulumi.get(__ret__, 'managed_instance_ids'),
+        notification_topic_id=pulumi.get(__ret__, 'notification_topic_id'),
         os_family=pulumi.get(__ret__, 'os_family'),
         pending_job_count=pulumi.get(__ret__, 'pending_job_count'),
         software_source_ids=pulumi.get(__ret__, 'software_source_ids'),
@@ -322,6 +374,6 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
     ```
 
 
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     ...

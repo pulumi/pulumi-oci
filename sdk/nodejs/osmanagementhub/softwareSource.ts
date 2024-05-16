@@ -11,50 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new versioned or custom software source.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSoftwareSource = new oci.osmanagementhub.SoftwareSource("test_software_source", {
- *     compartmentId: compartmentId,
- *     displayName: softwareSourceDisplayName,
- *     softwareSourceType: softwareSourceSoftwareSourceType,
- *     vendorSoftwareSources: [{
- *         displayName: softwareSourceVendorSoftwareSourcesDisplayName,
- *         id: softwareSourceVendorSoftwareSourcesId,
- *     }],
- *     customSoftwareSourceFilter: {
- *         moduleStreamProfileFilters: [{
- *             filterType: softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType,
- *             moduleName: softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName,
- *             profileName: testProfile.name,
- *             streamName: testStream.name,
- *         }],
- *         packageFilters: [{
- *             filterType: softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType,
- *             packageName: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName,
- *             packageNamePattern: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern,
- *             packageVersion: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion,
- *         }],
- *         packageGroupFilters: [{
- *             filterType: softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType,
- *             packageGroups: softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups,
- *         }],
- *     },
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: softwareSourceDescription,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     isAutomaticallyUpdated: softwareSourceIsAutomaticallyUpdated,
- *     softwareSourceVersion: softwareSourceSoftwareSourceVersion,
- * });
- * ```
- *
  * ## Import
  *
  * SoftwareSources can be imported using the `id`, e.g.
@@ -96,19 +52,23 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly archType!: pulumi.Output<string>;
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      */
     public /*out*/ readonly availability!: pulumi.Output<string>;
+    /**
+     * Availability of the software source (for Oracle Cloud Infrastructure environments).
+     */
+    public /*out*/ readonly availabilityAtOci!: pulumi.Output<string>;
     /**
      * The yum repository checksum type used by this software source.
      */
     public /*out*/ readonly checksumType!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the tenancy containing the software source.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      */
     public readonly customSoftwareSourceFilter!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
     /**
@@ -116,11 +76,11 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Information specified by the user about the software source.
+     * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -140,23 +100,47 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     */
+    public readonly isAutoResolveDependencies!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      */
     public readonly isAutomaticallyUpdated!: pulumi.Output<boolean>;
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     */
+    public readonly isCreatedFromPackageList!: pulumi.Output<boolean>;
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     */
+    public /*out*/ readonly isMandatoryForAutonomousLinux!: pulumi.Output<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     */
+    public readonly originSoftwareSourceId!: pulumi.Output<string>;
     /**
      * The OS family the software source belongs to.
      */
     public /*out*/ readonly osFamily!: pulumi.Output<string>;
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      */
     public /*out*/ readonly packageCount!: pulumi.Output<string>;
     /**
-     * The Repo ID for the software source.
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     */
+    public readonly packages!: pulumi.Output<string[]>;
+    /**
+     * The repository ID for the software source.
      */
     public /*out*/ readonly repoId!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of the software source.
+     * The size of the software source in gigabytes (GB).
+     */
+    public /*out*/ readonly size!: pulumi.Output<number>;
+    /**
+     * (Updatable) Type of software source.
      */
     public readonly softwareSourceType!: pulumi.Output<string>;
     /**
@@ -172,11 +156,11 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
      */
     public /*out*/ readonly url!: pulumi.Output<string>;
     /**
@@ -203,6 +187,7 @@ export class SoftwareSource extends pulumi.CustomResource {
             const state = argsOrState as SoftwareSourceState | undefined;
             resourceInputs["archType"] = state ? state.archType : undefined;
             resourceInputs["availability"] = state ? state.availability : undefined;
+            resourceInputs["availabilityAtOci"] = state ? state.availabilityAtOci : undefined;
             resourceInputs["checksumType"] = state ? state.checksumType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["customSoftwareSourceFilter"] = state ? state.customSoftwareSourceFilter : undefined;
@@ -213,10 +198,16 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["gpgKeyFingerprint"] = state ? state.gpgKeyFingerprint : undefined;
             resourceInputs["gpgKeyId"] = state ? state.gpgKeyId : undefined;
             resourceInputs["gpgKeyUrl"] = state ? state.gpgKeyUrl : undefined;
+            resourceInputs["isAutoResolveDependencies"] = state ? state.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = state ? state.isAutomaticallyUpdated : undefined;
+            resourceInputs["isCreatedFromPackageList"] = state ? state.isCreatedFromPackageList : undefined;
+            resourceInputs["isMandatoryForAutonomousLinux"] = state ? state.isMandatoryForAutonomousLinux : undefined;
+            resourceInputs["originSoftwareSourceId"] = state ? state.originSoftwareSourceId : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
             resourceInputs["packageCount"] = state ? state.packageCount : undefined;
+            resourceInputs["packages"] = state ? state.packages : undefined;
             resourceInputs["repoId"] = state ? state.repoId : undefined;
+            resourceInputs["size"] = state ? state.size : undefined;
             resourceInputs["softwareSourceType"] = state ? state.softwareSourceType : undefined;
             resourceInputs["softwareSourceVersion"] = state ? state.softwareSourceVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -230,14 +221,8 @@ export class SoftwareSource extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.displayName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'displayName'");
-            }
             if ((!args || args.softwareSourceType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'softwareSourceType'");
-            }
-            if ((!args || args.vendorSoftwareSources === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'vendorSoftwareSources'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["customSoftwareSourceFilter"] = args ? args.customSoftwareSourceFilter : undefined;
@@ -245,19 +230,26 @@ export class SoftwareSource extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isAutoResolveDependencies"] = args ? args.isAutoResolveDependencies : undefined;
             resourceInputs["isAutomaticallyUpdated"] = args ? args.isAutomaticallyUpdated : undefined;
+            resourceInputs["isCreatedFromPackageList"] = args ? args.isCreatedFromPackageList : undefined;
+            resourceInputs["originSoftwareSourceId"] = args ? args.originSoftwareSourceId : undefined;
+            resourceInputs["packages"] = args ? args.packages : undefined;
             resourceInputs["softwareSourceType"] = args ? args.softwareSourceType : undefined;
             resourceInputs["softwareSourceVersion"] = args ? args.softwareSourceVersion : undefined;
             resourceInputs["vendorSoftwareSources"] = args ? args.vendorSoftwareSources : undefined;
             resourceInputs["archType"] = undefined /*out*/;
             resourceInputs["availability"] = undefined /*out*/;
+            resourceInputs["availabilityAtOci"] = undefined /*out*/;
             resourceInputs["checksumType"] = undefined /*out*/;
             resourceInputs["gpgKeyFingerprint"] = undefined /*out*/;
             resourceInputs["gpgKeyId"] = undefined /*out*/;
             resourceInputs["gpgKeyUrl"] = undefined /*out*/;
+            resourceInputs["isMandatoryForAutonomousLinux"] = undefined /*out*/;
             resourceInputs["osFamily"] = undefined /*out*/;
             resourceInputs["packageCount"] = undefined /*out*/;
             resourceInputs["repoId"] = undefined /*out*/;
+            resourceInputs["size"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -278,19 +270,23 @@ export interface SoftwareSourceState {
      */
     archType?: pulumi.Input<string>;
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      */
     availability?: pulumi.Input<string>;
+    /**
+     * Availability of the software source (for Oracle Cloud Infrastructure environments).
+     */
+    availabilityAtOci?: pulumi.Input<string>;
     /**
      * The yum repository checksum type used by this software source.
      */
     checksumType?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the tenancy containing the software source.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      */
     customSoftwareSourceFilter?: pulumi.Input<inputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
     /**
@@ -298,11 +294,11 @@ export interface SoftwareSourceState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Information specified by the user about the software source.
+     * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -322,23 +318,47 @@ export interface SoftwareSourceState {
      */
     gpgKeyUrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     */
+    isAutoResolveDependencies?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      */
     isAutomaticallyUpdated?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     */
+    isCreatedFromPackageList?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     */
+    isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     */
+    originSoftwareSourceId?: pulumi.Input<string>;
     /**
      * The OS family the software source belongs to.
      */
     osFamily?: pulumi.Input<string>;
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      */
     packageCount?: pulumi.Input<string>;
     /**
-     * The Repo ID for the software source.
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     */
+    packages?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The repository ID for the software source.
      */
     repoId?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of the software source.
+     * The size of the software source in gigabytes (GB).
+     */
+    size?: pulumi.Input<number>;
+    /**
+     * (Updatable) Type of software source.
      */
     softwareSourceType?: pulumi.Input<string>;
     /**
@@ -354,11 +374,11 @@ export interface SoftwareSourceState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
      */
     url?: pulumi.Input<string>;
     /**
@@ -376,11 +396,11 @@ export interface SoftwareSourceState {
  */
 export interface SoftwareSourceArgs {
     /**
-     * (Updatable) The OCID of the tenancy containing the software source.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      */
     customSoftwareSourceFilter?: pulumi.Input<inputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
     /**
@@ -388,23 +408,39 @@ export interface SoftwareSourceArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Information specified by the user about the software source.
+     * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      */
-    displayName: pulumi.Input<string>;
+    displayName?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     */
+    isAutoResolveDependencies?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      */
     isAutomaticallyUpdated?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Type of the software source.
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     */
+    isCreatedFromPackageList?: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     */
+    originSoftwareSourceId?: pulumi.Input<string>;
+    /**
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     */
+    packages?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Type of software source.
      */
     softwareSourceType: pulumi.Input<string>;
     /**
@@ -414,5 +450,5 @@ export interface SoftwareSourceArgs {
     /**
      * (Updatable) List of vendor software sources.
      */
-    vendorSoftwareSources: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceVendorSoftwareSource>[]>;
+    vendorSoftwareSources?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceVendorSoftwareSource>[]>;
 }

@@ -81,7 +81,7 @@ class GetManagedInstanceGroupAvailableModulesResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of the module that is available to be enabled on the managed instance group.
+        The name of the module that is available to the managed instance group.
         """
         return pulumi.get(self, "name")
 
@@ -115,8 +115,7 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[str] =
     """
     This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists available modules that for the specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
+    List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
 
     ## Example Usage
 
@@ -131,8 +130,8 @@ def get_managed_instance_group_available_modules(compartment_id: Optional[str] =
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     :param str name: The resource name.
     :param str name_contains: A filter to return resources that may partially match the name given.
     """
@@ -165,8 +164,7 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     """
     This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists available modules that for the specified managed instance group. Filter the list against a variety of
-    criteria including but not limited to its name.
+    List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
 
     ## Example Usage
 
@@ -181,8 +179,8 @@ def get_managed_instance_group_available_modules_output(compartment_id: Optional
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     :param str name: The resource name.
     :param str name_contains: A filter to return resources that may partially match the name given.
     """

@@ -52,7 +52,7 @@ func LookupManagedInstanceGroup(ctx *pulumi.Context, args *LookupManagedInstance
 
 // A collection of arguments for invoking getManagedInstanceGroup.
 type LookupManagedInstanceGroupArgs struct {
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 }
 
@@ -60,7 +60,9 @@ type LookupManagedInstanceGroupArgs struct {
 type LookupManagedInstanceGroupResult struct {
 	// The CPU architecture of the instances in the managed instance group.
 	ArchType string `pulumi:"archType"`
-	// The OCID of the tenancy containing the managed instance group.
+	// Settings for the Autonomous Linux service.
+	AutonomousSettings []GetManagedInstanceGroupAutonomousSetting `pulumi:"autonomousSettings"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -70,13 +72,19 @@ type LookupManagedInstanceGroupResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
-	// The number of Managed Instances in the managed instance group.
+	// Indicates whether the Autonomous Linux service manages the group.
+	IsManagedByAutonomousLinux bool `pulumi:"isManagedByAutonomousLinux"`
+	// The location of managed instances attached to the group.
+	Location string `pulumi:"location"`
+	// The number of managed instances in the group.
 	ManagedInstanceCount   int    `pulumi:"managedInstanceCount"`
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
-	// The list of managed instances OCIDs attached to the managed instance group.
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
 	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId string `pulumi:"notificationTopicId"`
 	// The operating system type of the instances in the managed instance group.
 	OsFamily string `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
@@ -89,11 +97,11 @@ type LookupManagedInstanceGroupResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the managed instance group was created. An RFC3339 formatted datetime string.
+	// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+	// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified string `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the group.
 	VendorName string `pulumi:"vendorName"`
 }
 
@@ -112,7 +120,7 @@ func LookupManagedInstanceGroupOutput(ctx *pulumi.Context, args LookupManagedIns
 
 // A collection of arguments for invoking getManagedInstanceGroup.
 type LookupManagedInstanceGroupOutputArgs struct {
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringInput `pulumi:"managedInstanceGroupId"`
 }
 
@@ -140,7 +148,14 @@ func (o LookupManagedInstanceGroupResultOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the managed instance group.
+// Settings for the Autonomous Linux service.
+func (o LookupManagedInstanceGroupResultOutput) AutonomousSettings() GetManagedInstanceGroupAutonomousSettingArrayOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) []GetManagedInstanceGroupAutonomousSetting {
+		return v.AutonomousSettings
+	}).(GetManagedInstanceGroupAutonomousSettingArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,12 +180,22 @@ func (o LookupManagedInstanceGroupResultOutput) FreeformTags() pulumi.MapOutput 
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the software source.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o LookupManagedInstanceGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The number of Managed Instances in the managed instance group.
+// Indicates whether the Autonomous Linux service manages the group.
+func (o LookupManagedInstanceGroupResultOutput) IsManagedByAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) bool { return v.IsManagedByAutonomousLinux }).(pulumi.BoolOutput)
+}
+
+// The location of managed instances attached to the group.
+func (o LookupManagedInstanceGroupResultOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// The number of managed instances in the group.
 func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
 }
@@ -179,9 +204,14 @@ func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceGroupId() pulumi.
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
 }
 
-// The list of managed instances OCIDs attached to the managed instance group.
+// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
 func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+func (o LookupManagedInstanceGroupResultOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.NotificationTopicId }).(pulumi.StringOutput)
 }
 
 // The operating system type of the instances in the managed instance group.
@@ -216,17 +246,17 @@ func (o LookupManagedInstanceGroupResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the managed instance group was created. An RFC3339 formatted datetime string.
+// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupManagedInstanceGroupResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupManagedInstanceGroupResultOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.TimeModified }).(pulumi.StringOutput)
 }
 
-// The software source vendor name.
+// The vendor of the operating system used by the managed instances in the group.
 func (o LookupManagedInstanceGroupResultOutput) VendorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.VendorName }).(pulumi.StringOutput)
 }

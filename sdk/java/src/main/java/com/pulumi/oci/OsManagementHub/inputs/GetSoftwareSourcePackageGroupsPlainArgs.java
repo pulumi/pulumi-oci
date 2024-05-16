@@ -18,14 +18,14 @@ public final class GetSoftwareSourcePackageGroupsPlainArgs extends com.pulumi.re
     public static final GetSoftwareSourcePackageGroupsPlainArgs Empty = new GetSoftwareSourcePackageGroupsPlainArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -85,14 +85,14 @@ public final class GetSoftwareSourcePackageGroupsPlainArgs extends com.pulumi.re
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private String softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String softwareSourceId() {
@@ -129,7 +129,7 @@ public final class GetSoftwareSourcePackageGroupsPlainArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class GetSoftwareSourcePackageGroupsPlainArgs extends com.pulumi.re
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

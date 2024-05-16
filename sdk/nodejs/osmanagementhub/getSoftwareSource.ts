@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified software source.
+ * Returns information about the specified software source.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getSoftwareSource(args: GetSoftwareSourceArgs, opts?: pulumi.Inv
  */
 export interface GetSoftwareSourceArgs {
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
 }
@@ -49,19 +49,23 @@ export interface GetSoftwareSourceResult {
      */
     readonly archType: string;
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      */
     readonly availability: string;
+    /**
+     * Availability of the software source (for Oracle Cloud Infrastructure environments).
+     */
+    readonly availabilityAtOci: string;
     /**
      * The yum repository checksum type used by this software source.
      */
     readonly checksumType: string;
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     readonly compartmentId: string;
     /**
-     * Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      */
     readonly customSoftwareSourceFilters: outputs.OsManagementHub.GetSoftwareSourceCustomSoftwareSourceFilter[];
     /**
@@ -69,11 +73,11 @@ export interface GetSoftwareSourceResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Information specified by the user about the software source.
+     * User-specified description for the software source.
      */
     readonly description: string;
     /**
-     * User friendly name.
+     * User-friendly name.
      */
     readonly displayName: string;
     /**
@@ -93,28 +97,52 @@ export interface GetSoftwareSourceResult {
      */
     readonly gpgKeyUrl: string;
     /**
-     * The OCID of the resource that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      */
     readonly id: string;
     /**
-     * Indicates whether service should automatically update the custom software source for the user.
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     */
+    readonly isAutoResolveDependencies: boolean;
+    /**
+     * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      */
     readonly isAutomaticallyUpdated: boolean;
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     */
+    readonly isCreatedFromPackageList: boolean;
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     */
+    readonly isMandatoryForAutonomousLinux: boolean;
+    /**
+     * This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     */
+    readonly originSoftwareSourceId: string;
     /**
      * The OS family the software source belongs to.
      */
     readonly osFamily: string;
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      */
     readonly packageCount: string;
     /**
-     * The Repo ID for the software source.
+     * The packages in the software source.
+     */
+    readonly packages: string[];
+    /**
+     * The repository ID for the software source.
      */
     readonly repoId: string;
+    /**
+     * The size of the software source in gigabytes (GB).
+     */
+    readonly size: number;
     readonly softwareSourceId: string;
     /**
-     * Type of the software source.
+     * Type of software source.
      */
     readonly softwareSourceType: string;
     /**
@@ -130,11 +158,11 @@ export interface GetSoftwareSourceResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
      */
     readonly url: string;
     /**
@@ -142,14 +170,14 @@ export interface GetSoftwareSourceResult {
      */
     readonly vendorName: string;
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the versioned custom software source.
      */
     readonly vendorSoftwareSources: outputs.OsManagementHub.GetSoftwareSourceVendorSoftwareSource[];
 }
 /**
  * This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified software source.
+ * Returns information about the specified software source.
  *
  * ## Example Usage
  *
@@ -171,7 +199,7 @@ export function getSoftwareSourceOutput(args: GetSoftwareSourceOutputArgs, opts?
  */
 export interface GetSoftwareSourceOutputArgs {
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
 }

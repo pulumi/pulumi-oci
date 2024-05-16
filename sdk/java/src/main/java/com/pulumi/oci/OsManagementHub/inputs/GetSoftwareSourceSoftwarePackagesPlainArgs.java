@@ -19,14 +19,14 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
     public static final GetSoftwareSourceSoftwarePackagesPlainArgs Empty = new GetSoftwareSourceSoftwarePackagesPlainArgs();
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public Optional<String> displayName() {
@@ -56,14 +56,14 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
     }
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     @Import(name="isLatest")
     private @Nullable Boolean isLatest;
 
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Optional<Boolean> isLatest() {
@@ -71,14 +71,14 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private String softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String softwareSourceId() {
@@ -114,7 +114,7 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A filter to return resources that match the given user-friendly name.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
         }
 
         /**
-         * @param isLatest A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+         * @param isLatest Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GetSoftwareSourceSoftwarePackagesPlainArgs extends com.pulumi
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

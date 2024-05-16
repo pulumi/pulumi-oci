@@ -22,7 +22,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -59,6 +59,9 @@ class GetVmClusterResult:
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if file_system_configuration_details and not isinstance(file_system_configuration_details, list):
+            raise TypeError("Expected argument 'file_system_configuration_details' to be a list")
+        pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -209,6 +212,14 @@ class GetVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Sequence['outputs.GetVmClusterFileSystemConfigurationDetailResult']:
+        """
+        Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -372,6 +383,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
+            file_system_configuration_details=self.file_system_configuration_details,
             freeform_tags=self.freeform_tags,
             gi_version=self.gi_version,
             id=self.id,
@@ -430,6 +442,7 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        file_system_configuration_details=pulumi.get(__ret__, 'file_system_configuration_details'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         gi_version=pulumi.get(__ret__, 'gi_version'),
         id=pulumi.get(__ret__, 'id'),

@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.VmClusterAddVirtualNetworkArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkState;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkDbServer;
+import com.pulumi.oci.Database.outputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -231,6 +232,20 @@ public class VmClusterAddVirtualNetwork extends com.pulumi.resources.CustomResou
      */
     public Output<String> exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * Details of the file system configuration of the VM cluster.
+     * 
+     */
+    @Export(name="fileSystemConfigurationDetails", refs={List.class,VmClusterAddVirtualNetworkFileSystemConfigurationDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterAddVirtualNetworkFileSystemConfigurationDetail>> fileSystemConfigurationDetails;
+
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public Output<List<VmClusterAddVirtualNetworkFileSystemConfigurationDetail>> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists package groups that associate with the specified software source OCID. Filter the list against a
+ * Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
  * variety of criteria including but not limited to its name, and package group type.
  *
  * ## Example Usage
@@ -45,7 +45,7 @@ export function getSoftwareSourcePackageGroups(args: GetSoftwareSourcePackageGro
  */
 export interface GetSoftwareSourcePackageGroupsArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     filters?: inputs.OsManagementHub.GetSoftwareSourcePackageGroupsFilter[];
@@ -62,7 +62,7 @@ export interface GetSoftwareSourcePackageGroupsArgs {
      */
     nameContains?: string;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
 }
@@ -74,7 +74,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
     readonly compartmentId?: string;
     readonly filters?: outputs.OsManagementHub.GetSoftwareSourcePackageGroupsFilter[];
     /**
-     * Indicates if this is a group, category or environment.
+     * Indicates if this is a group, category, or environment.
      */
     readonly groupTypes?: string[];
     /**
@@ -95,7 +95,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
 /**
  * This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists package groups that associate with the specified software source OCID. Filter the list against a
+ * Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
  * variety of criteria including but not limited to its name, and package group type.
  *
  * ## Example Usage
@@ -122,7 +122,7 @@ export function getSoftwareSourcePackageGroupsOutput(args: GetSoftwareSourcePack
  */
 export interface GetSoftwareSourcePackageGroupsOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcePackageGroupsFilterArgs>[]>;
@@ -139,7 +139,7 @@ export interface GetSoftwareSourcePackageGroupsOutputArgs {
      */
     nameContains?: pulumi.Input<string>;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
 }

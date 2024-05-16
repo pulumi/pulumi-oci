@@ -14,6 +14,7 @@ import com.pulumi.oci.OsManagementHub.outputs.ProfileLifecycleStage;
 import com.pulumi.oci.OsManagementHub.outputs.ProfileManagedInstanceGroup;
 import com.pulumi.oci.OsManagementHub.outputs.ProfileSoftwareSource;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -23,9 +24,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Creates a registration profile.\
- * A profile is a supplementary file for the OS Management Hub agentry
- * that dictates the content for a managed instance at registration time.
+ * Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
  * 
  * ## Example Usage
  * 
@@ -60,10 +59,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(profileDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isDefaultProfile(profileIsDefaultProfile)
  *             .lifecycleStageId(testLifecycleStage.id())
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .managementStationId(testManagementStation.id())
  *             .osFamily(profileOsFamily)
+ *             .registrationType(profileRegistrationType)
  *             .softwareSourceIds(profileSoftwareSourceIds)
  *             .vendorName(profileVendorName)
  *             .build());
@@ -100,14 +101,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.archType;
     }
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     public Output<String> compartmentId() {
@@ -128,14 +129,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the registration profile.
+     * (Updatable) User-specified description of the registration profile.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the registration profile.
+     * @return (Updatable) User-specified description of the registration profile.
      * 
      */
     public Output<String> description() {
@@ -170,84 +171,112 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Identifying information for the specified lifecycle environment.
+     * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    @Export(name="isDefaultProfile", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDefaultProfile;
+
+    /**
+     * @return (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    public Output<Boolean> isDefaultProfile() {
+        return this.isDefaultProfile;
+    }
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    @Export(name="isServiceProvidedProfile", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isServiceProvidedProfile;
+
+    /**
+     * @return Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    public Output<Boolean> isServiceProvidedProfile() {
+        return this.isServiceProvidedProfile;
+    }
+    /**
+     * Provides identifying information for the specified lifecycle environment.
      * 
      */
     @Export(name="lifecycleEnvironments", refs={List.class,ProfileLifecycleEnvironment.class}, tree="[0,1]")
     private Output<List<ProfileLifecycleEnvironment>> lifecycleEnvironments;
 
     /**
-     * @return Identifying information for the specified lifecycle environment.
+     * @return Provides identifying information for the specified lifecycle environment.
      * 
      */
     public Output<List<ProfileLifecycleEnvironment>> lifecycleEnvironments() {
         return this.lifecycleEnvironments;
     }
     /**
-     * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      * 
      */
     @Export(name="lifecycleStageId", refs={String.class}, tree="[0]")
     private Output<String> lifecycleStageId;
 
     /**
-     * @return The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      * 
      */
     public Output<String> lifecycleStageId() {
         return this.lifecycleStageId;
     }
     /**
-     * Identifying information for the specified lifecycle stage.
+     * Provides identifying information for the specified lifecycle stage.
      * 
      */
     @Export(name="lifecycleStages", refs={List.class,ProfileLifecycleStage.class}, tree="[0,1]")
     private Output<List<ProfileLifecycleStage>> lifecycleStages;
 
     /**
-     * @return Identifying information for the specified lifecycle stage.
+     * @return Provides identifying information for the specified lifecycle stage.
      * 
      */
     public Output<List<ProfileLifecycleStage>> lifecycleStages() {
         return this.lifecycleStages;
     }
     /**
-     * The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      * 
      */
     @Export(name="managedInstanceGroupId", refs={String.class}, tree="[0]")
     private Output<String> managedInstanceGroupId;
 
     /**
-     * @return The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      * 
      */
     public Output<String> managedInstanceGroupId() {
         return this.managedInstanceGroupId;
     }
     /**
-     * Identifying information for the specified managed instance group.
+     * Provides identifying information for the specified managed instance group.
      * 
      */
     @Export(name="managedInstanceGroups", refs={List.class,ProfileManagedInstanceGroup.class}, tree="[0,1]")
     private Output<List<ProfileManagedInstanceGroup>> managedInstanceGroups;
 
     /**
-     * @return Identifying information for the specified managed instance group.
+     * @return Provides identifying information for the specified managed instance group.
      * 
      */
     public Output<List<ProfileManagedInstanceGroup>> managedInstanceGroups() {
         return this.managedInstanceGroups;
     }
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     @Export(name="managementStationId", refs={String.class}, tree="[0]")
     private Output<String> managementStationId;
 
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     public Output<String> managementStationId() {
@@ -268,28 +297,42 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.osFamily;
     }
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      * 
      */
     @Export(name="profileType", refs={String.class}, tree="[0]")
     private Output<String> profileType;
 
     /**
-     * @return The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     public Output<String> profileType() {
         return this.profileType;
     }
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The type of instance to register.
+     * 
+     */
+    @Export(name="registrationType", refs={String.class}, tree="[0]")
+    private Output<String> registrationType;
+
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    public Output<String> registrationType() {
+        return this.registrationType;
+    }
+    /**
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      * 
      */
     @Export(name="softwareSourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> softwareSourceIds;
 
     /**
-     * @return The list of software source OCIDs that the registration profile will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      * 
      */
     public Output<List<String>> softwareSourceIds() {
@@ -338,21 +381,21 @@ public class Profile extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * @return The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -362,7 +405,7 @@ public class Profile extends com.pulumi.resources.CustomResource {
     private Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

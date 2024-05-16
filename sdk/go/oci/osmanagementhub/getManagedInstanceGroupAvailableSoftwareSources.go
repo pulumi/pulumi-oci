@@ -13,8 +13,7 @@ import (
 
 // This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists available software sources for a specified managed instance group. Filter the list against a variety of
-// criteria including but not limited to its name.
+// Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
 //
 // ## Example Usage
 //
@@ -56,14 +55,14 @@ func GetManagedInstanceGroupAvailableSoftwareSources(ctx *pulumi.Context, args *
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableSoftwareSources.
 type GetManagedInstanceGroupAvailableSoftwareSourcesArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames []string                                                `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupAvailableSoftwareSourcesFilter `pulumi:"filters"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 }
 
@@ -71,10 +70,10 @@ type GetManagedInstanceGroupAvailableSoftwareSourcesArgs struct {
 type GetManagedInstanceGroupAvailableSoftwareSourcesResult struct {
 	// The list of available_software_source_collection.
 	AvailableSoftwareSourceCollections []GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection `pulumi:"availableSoftwareSourceCollections"`
-	// The OCID for the compartment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 	CompartmentId       *string `pulumi:"compartmentId"`
 	DisplayNameContains *string `pulumi:"displayNameContains"`
-	// User friendly name for the software source.
+	// User-friendly name for the software source.
 	DisplayNames []string                                                `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupAvailableSoftwareSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -97,14 +96,14 @@ func GetManagedInstanceGroupAvailableSoftwareSourcesOutput(ctx *pulumi.Context, 
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableSoftwareSources.
 type GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput                                         `pulumi:"displayNames"`
 	Filters      GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayInput `pulumi:"filters"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringInput `pulumi:"managedInstanceGroupId"`
 }
 
@@ -134,7 +133,7 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) AvailableSo
 	}).(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput)
 }
 
-// The OCID for the compartment.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -143,7 +142,7 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) DisplayName
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) *string { return v.DisplayNameContains }).(pulumi.StringPtrOutput)
 }
 
-// User friendly name for the software source.
+// User-friendly name for the software source.
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) DisplayNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) []string { return v.DisplayNames }).(pulumi.StringArrayOutput)
 }

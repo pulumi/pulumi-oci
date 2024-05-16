@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetLifecycleEnvironmentsResult {
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     private @Nullable String archType;
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     private @Nullable String compartmentId;
@@ -43,12 +43,18 @@ public final class GetLifecycleEnvironmentsResult {
      */
     private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollection> lifecycleEnvironmentCollections;
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     private @Nullable String lifecycleEnvironmentId;
+    private @Nullable List<String> locationNotEqualTos;
     /**
-     * @return The operating system type of the target instances.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    private @Nullable List<String> locations;
+    /**
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     private @Nullable String osFamily;
@@ -60,14 +66,14 @@ public final class GetLifecycleEnvironmentsResult {
 
     private GetLifecycleEnvironmentsResult() {}
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     public Optional<String> archType() {
         return Optional.ofNullable(this.archType);
     }
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public Optional<String> compartmentId() {
@@ -101,14 +107,24 @@ public final class GetLifecycleEnvironmentsResult {
         return this.lifecycleEnvironmentCollections;
     }
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     public Optional<String> lifecycleEnvironmentId() {
         return Optional.ofNullable(this.lifecycleEnvironmentId);
     }
+    public List<String> locationNotEqualTos() {
+        return this.locationNotEqualTos == null ? List.of() : this.locationNotEqualTos;
+    }
     /**
-     * @return The operating system type of the target instances.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    public List<String> locations() {
+        return this.locations == null ? List.of() : this.locations;
+    }
+    /**
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     public Optional<String> osFamily() {
@@ -139,6 +155,8 @@ public final class GetLifecycleEnvironmentsResult {
         private String id;
         private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollection> lifecycleEnvironmentCollections;
         private @Nullable String lifecycleEnvironmentId;
+        private @Nullable List<String> locationNotEqualTos;
+        private @Nullable List<String> locations;
         private @Nullable String osFamily;
         private @Nullable String state;
         public Builder() {}
@@ -152,6 +170,8 @@ public final class GetLifecycleEnvironmentsResult {
     	      this.id = defaults.id;
     	      this.lifecycleEnvironmentCollections = defaults.lifecycleEnvironmentCollections;
     	      this.lifecycleEnvironmentId = defaults.lifecycleEnvironmentId;
+    	      this.locationNotEqualTos = defaults.locationNotEqualTos;
+    	      this.locations = defaults.locations;
     	      this.osFamily = defaults.osFamily;
     	      this.state = defaults.state;
         }
@@ -218,6 +238,24 @@ public final class GetLifecycleEnvironmentsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+
+            this.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder locations(@Nullable List<String> locations) {
+
+            this.locations = locations;
+            return this;
+        }
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+        @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
 
             this.osFamily = osFamily;
@@ -239,6 +277,8 @@ public final class GetLifecycleEnvironmentsResult {
             _resultValue.id = id;
             _resultValue.lifecycleEnvironmentCollections = lifecycleEnvironmentCollections;
             _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.locationNotEqualTos = locationNotEqualTos;
+            _resultValue.locations = locations;
             _resultValue.osFamily = osFamily;
             _resultValue.state = state;
             return _resultValue;

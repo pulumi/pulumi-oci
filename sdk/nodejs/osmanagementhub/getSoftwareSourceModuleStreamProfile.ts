@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified module stream profile in a software source.
+ * Returns information about the specified module stream profile in a software source.
  *
  * ## Example Usage
  *
@@ -43,11 +43,11 @@ export interface GetSoftwareSourceModuleStreamProfileArgs {
      */
     moduleName: string;
     /**
-     * The name of the profile of the containing module stream.
+     * The name of the module stream profile.
      */
     profileName: string;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
     /**
@@ -94,7 +94,7 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
 /**
  * This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Gets information about the specified module stream profile in a software source.
+ * Returns information about the specified module stream profile in a software source.
  *
  * ## Example Usage
  *
@@ -123,11 +123,11 @@ export interface GetSoftwareSourceModuleStreamProfileOutputArgs {
      */
     moduleName: pulumi.Input<string>;
     /**
-     * The name of the profile of the containing module stream.
+     * The name of the module stream profile.
      */
     profileName: pulumi.Input<string>;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
     /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult
     {
         /// <summary>
-        /// description of the package group.
+        /// Description of the package group.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly bool IsDefault;
         /// <summary>
-        /// Indicates if this package group is visible by users.
+        /// Indicates if this package group is visible to users.
         /// </summary>
         public readonly bool IsUserVisible;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Packages;
         /// <summary>
-        /// the IDs of the package group's repositories.
+        /// The repository IDs of the package group's repositories.
         /// </summary>
         public readonly ImmutableArray<string> Repositories;
 

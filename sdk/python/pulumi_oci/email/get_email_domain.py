@@ -21,7 +21,7 @@ class GetEmailDomainResult:
     """
     A collection of values returned by getEmailDomain.
     """
-    def __init__(__self__, active_dkim_id=None, compartment_id=None, defined_tags=None, description=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, name=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, active_dkim_id=None, compartment_id=None, defined_tags=None, description=None, domain_verification_id=None, domain_verification_status=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, name=None, state=None, system_tags=None, time_created=None):
         if active_dkim_id and not isinstance(active_dkim_id, str):
             raise TypeError("Expected argument 'active_dkim_id' to be a str")
         pulumi.set(__self__, "active_dkim_id", active_dkim_id)
@@ -34,6 +34,12 @@ class GetEmailDomainResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if domain_verification_id and not isinstance(domain_verification_id, str):
+            raise TypeError("Expected argument 'domain_verification_id' to be a str")
+        pulumi.set(__self__, "domain_verification_id", domain_verification_id)
+        if domain_verification_status and not isinstance(domain_verification_status, str):
+            raise TypeError("Expected argument 'domain_verification_status' to be a str")
+        pulumi.set(__self__, "domain_verification_status", domain_verification_status)
         if email_domain_id and not isinstance(email_domain_id, str):
             raise TypeError("Expected argument 'email_domain_id' to be a str")
         pulumi.set(__self__, "email_domain_id", email_domain_id)
@@ -90,6 +96,22 @@ class GetEmailDomainResult:
         The description of an email domain.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="domainVerificationId")
+    def domain_verification_id(self) -> str:
+        """
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        """
+        return pulumi.get(self, "domain_verification_id")
+
+    @property
+    @pulumi.getter(name="domainVerificationStatus")
+    def domain_verification_status(self) -> str:
+        """
+        The current domain verification status.
+        """
+        return pulumi.get(self, "domain_verification_status")
 
     @property
     @pulumi.getter(name="emailDomainId")
@@ -163,6 +185,8 @@ class AwaitableGetEmailDomainResult(GetEmailDomainResult):
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
+            domain_verification_id=self.domain_verification_id,
+            domain_verification_status=self.domain_verification_status,
             email_domain_id=self.email_domain_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -202,6 +226,8 @@ def get_email_domain(email_domain_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        domain_verification_id=pulumi.get(__ret__, 'domain_verification_id'),
+        domain_verification_status=pulumi.get(__ret__, 'domain_verification_status'),
         email_domain_id=pulumi.get(__ret__, 'email_domain_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified module stream in a software source.
+// Returns information about the specified module stream in a software source.
 //
 // ## Example Usage
 //
@@ -56,7 +56,7 @@ func GetSoftwareSourceModuleStream(ctx *pulumi.Context, args *GetSoftwareSourceM
 type GetSoftwareSourceModuleStreamArgs struct {
 	// The name of the module.
 	ModuleName string `pulumi:"moduleName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 	// The name of the stream of the containing module.
 	StreamName string `pulumi:"streamName"`
@@ -82,7 +82,7 @@ type GetSoftwareSourceModuleStreamResult struct {
 	Packages []string `pulumi:"packages"`
 	// A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
 	Profiles []string `pulumi:"profiles"`
-	// The OCID of the software source that provides this module stream.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 	StreamName       string `pulumi:"streamName"`
 }
@@ -104,7 +104,7 @@ func GetSoftwareSourceModuleStreamOutput(ctx *pulumi.Context, args GetSoftwareSo
 type GetSoftwareSourceModuleStreamOutputArgs struct {
 	// The name of the module.
 	ModuleName pulumi.StringInput `pulumi:"moduleName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 	// The name of the stream of the containing module.
 	StreamName pulumi.StringInput `pulumi:"streamName"`
@@ -174,7 +174,7 @@ func (o GetSoftwareSourceModuleStreamResultOutput) Profiles() pulumi.StringArray
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) []string { return v.Profiles }).(pulumi.StringArrayOutput)
 }
 
-// The OCID of the software source that provides this module stream.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
 func (o GetSoftwareSourceModuleStreamResultOutput) SoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
 }

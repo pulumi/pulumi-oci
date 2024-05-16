@@ -47,11 +47,11 @@ export function getManagementStations(args?: GetManagementStationsArgs, opts?: p
  */
 export interface GetManagementStationsArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: string;
     /**
@@ -60,15 +60,15 @@ export interface GetManagementStationsArgs {
     displayNameContains?: string;
     filters?: inputs.OsManagementHub.GetManagementStationsFilter[];
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */
     id?: string;
     /**
-     * The OCID of the managed instance for which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     managedInstanceId?: string;
     /**
-     * The current lifecycle state for the object.
+     * A filter that returns information for management stations in the specified state.
      */
     state?: string;
 }
@@ -78,21 +78,21 @@ export interface GetManagementStationsArgs {
  */
 export interface GetManagementStationsResult {
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
     readonly compartmentId?: string;
     /**
-     * ManagementStation name
+     * A user-friendly name for the management station.
      */
     readonly displayName?: string;
     readonly displayNameContains?: string;
     readonly filters?: outputs.OsManagementHub.GetManagementStationsFilter[];
     /**
-     * OCID for the ManagementStation config
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     readonly id?: string;
     /**
-     * OCID for the Instance associated with the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
     readonly managedInstanceId?: string;
     /**
@@ -100,7 +100,7 @@ export interface GetManagementStationsResult {
      */
     readonly managementStationCollections: outputs.OsManagementHub.GetManagementStationsManagementStationCollection[];
     /**
-     * The current state of the Management Station config.
+     * The current state of the management station.
      */
     readonly state?: string;
 }
@@ -134,11 +134,11 @@ export function getManagementStationsOutput(args?: GetManagementStationsOutputAr
  */
 export interface GetManagementStationsOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -147,15 +147,15 @@ export interface GetManagementStationsOutputArgs {
     displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationsFilterArgs>[]>;
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      */
     id?: pulumi.Input<string>;
     /**
-     * The OCID of the managed instance for which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     managedInstanceId?: pulumi.Input<string>;
     /**
-     * The current lifecycle state for the object.
+     * A filter that returns information for management stations in the specified state.
      */
     state?: pulumi.Input<string>;
 }

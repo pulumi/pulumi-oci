@@ -14,19 +14,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationMirrorResult
     {
         /// <summary>
-        /// Directory for the mirroring
+        /// Path to the data volume on the management station where software source mirrors are stored.
         /// </summary>
         public readonly string Directory;
         /// <summary>
-        /// Port that the proxy will use
+        /// Listening port used for the proxy.
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// Local path for the sslcert
+        /// Path to the SSL cerfificate.
         /// </summary>
         public readonly string Sslcert;
         /// <summary>
-        /// Default sslport for the mirror
+        /// Default mirror listening port for https.
         /// </summary>
         public readonly string Sslport;
 

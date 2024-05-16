@@ -18,14 +18,14 @@ public final class GetSoftwareSourceVendorsPlainArgs extends com.pulumi.resource
     public static final GetSoftwareSourceVendorsPlainArgs Empty = new GetSoftwareSourceVendorsPlainArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list. This parameter is required.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -81,7 +81,7 @@ public final class GetSoftwareSourceVendorsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list. This parameter is required.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 

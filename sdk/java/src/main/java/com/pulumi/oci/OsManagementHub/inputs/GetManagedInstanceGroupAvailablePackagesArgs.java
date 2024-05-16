@@ -20,14 +20,14 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
     public static final GetManagedInstanceGroupAvailablePackagesArgs Empty = new GetManagedInstanceGroupAvailablePackagesArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -72,14 +72,14 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
     }
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     @Import(name="isLatest")
     private @Nullable Output<Boolean> isLatest;
 
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Optional<Output<Boolean>> isLatest() {
@@ -87,14 +87,14 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
     }
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     @Import(name="managedInstanceGroupId", required=true)
     private Output<String> managedInstanceGroupId;
 
     /**
-     * @return The managed instance group OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     public Output<String> managedInstanceGroupId() {
@@ -131,7 +131,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param isLatest A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+         * @param isLatest Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param isLatest A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+         * @param isLatest Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 

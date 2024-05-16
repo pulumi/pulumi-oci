@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Creates a new lifecycle environment.
+ * Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
  * 
  * ## Example Usage
  * 
@@ -54,16 +54,24 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .displayName(lifecycleEnvironmentDisplayName)
  *             .osFamily(lifecycleEnvironmentOsFamily)
- *             .stages(LifecycleEnvironmentStageArgs.builder()
- *                 .displayName(lifecycleEnvironmentStagesDisplayName)
- *                 .rank(lifecycleEnvironmentStagesRank)
- *                 .definedTags(Map.of("Operations.CostCenter", "42"))
- *                 .freeformTags(Map.of("Department", "Finance"))
- *                 .build())
+ *             .stages(            
+ *                 LifecycleEnvironmentStageArgs.builder()
+ *                     .displayName(lifecycleEnvironmentStagesDisplayName1)
+ *                     .rank(lifecycleEnvironmentStagesRank1)
+ *                     .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                     .freeformTags(Map.of("Department", "Finance"))
+ *                     .build(),
+ *                 LifecycleEnvironmentStageArgs.builder()
+ *                     .displayName(lifecycleEnvironmentStagesDisplayName2)
+ *                     .rank(lifecycleEnvironmentStagesRank2)
+ *                     .definedTags(Map.of("Operations.CostCenter", "42"))
+ *                     .freeformTags(Map.of("Department", "Finance"))
+ *                     .build())
  *             .vendorName(lifecycleEnvironmentVendorName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(lifecycleEnvironmentDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .location(lifecycleEnvironmentLocation)
  *             .build());
  * 
  *     }
@@ -84,28 +92,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment")
 public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
     /**
-     * The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
-     * @return The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * @return The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     public Output<String> archType() {
         return this.archType;
     }
     /**
-     * The OCID of the tenancy containing the lifecycle environment.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the lifecycle environment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public Output<String> compartmentId() {
@@ -126,28 +134,28 @@ public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) User specified information about the lifecycle environment.
+     * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) User specified information about the lifecycle environment.
+     * @return (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -168,42 +176,56 @@ public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The list of managed instances specified lifecycle stage.
+     * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    @Export(name="location", refs={String.class}, tree="[0]")
+    private Output<String> location;
+
+    /**
+     * @return The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    public Output<String> location() {
+        return this.location;
+    }
+    /**
+     * The list of managed instances associated with the lifecycle stage.
      * 
      */
     @Export(name="managedInstanceIds", refs={List.class,LifecycleEnvironmentManagedInstanceId.class}, tree="[0,1]")
     private Output<List<LifecycleEnvironmentManagedInstanceId>> managedInstanceIds;
 
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     public Output<List<LifecycleEnvironmentManagedInstanceId>> managedInstanceIds() {
         return this.managedInstanceIds;
     }
     /**
-     * The operating system type of the managed instance(s) in the lifecycle environment.
+     * The operating system of the managed instances in the lifecycle environment.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
-     * @return The operating system type of the managed instance(s) in the lifecycle environment.
+     * @return The operating system of the managed instances in the lifecycle environment.
      * 
      */
     public Output<String> osFamily() {
         return this.osFamily;
     }
     /**
-     * (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+     * (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      * 
      */
     @Export(name="stages", refs={List.class,LifecycleEnvironmentStage.class}, tree="[0,1]")
     private Output<List<LifecycleEnvironmentStage>> stages;
 
     /**
-     * @return (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+     * @return (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      * 
      */
     public Output<List<LifecycleEnvironmentStage>> stages() {
@@ -238,35 +260,35 @@ public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeModified", refs={String.class}, tree="[0]")
     private Output<String> timeModified;
 
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeModified() {
         return this.timeModified;
     }
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -276,7 +298,7 @@ public class LifecycleEnvironment extends com.pulumi.resources.CustomResource {
     private Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

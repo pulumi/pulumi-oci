@@ -3827,6 +3827,8 @@ type GetListenersListenerCollectionItem struct {
 	Id                    string `pulumi:"id"`
 	// IP version associated with the listener.
 	IpVersion string `pulumi:"ipVersion"`
+	// Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled bool `pulumi:"isPpv2enabled"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -3854,6 +3856,8 @@ type GetListenersListenerCollectionItemArgs struct {
 	Id                    pulumi.StringInput `pulumi:"id"`
 	// IP version associated with the listener.
 	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	// Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled pulumi.BoolInput `pulumi:"isPpv2enabled"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -3927,6 +3931,11 @@ func (o GetListenersListenerCollectionItemOutput) Id() pulumi.StringOutput {
 // IP version associated with the listener.
 func (o GetListenersListenerCollectionItemOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenersListenerCollectionItem) string { return v.IpVersion }).(pulumi.StringOutput)
+}
+
+// Property to enable/disable PPv2 feature for this listener.
+func (o GetListenersListenerCollectionItemOutput) IsPpv2enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetListenersListenerCollectionItem) bool { return v.IsPpv2enabled }).(pulumi.BoolOutput)
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

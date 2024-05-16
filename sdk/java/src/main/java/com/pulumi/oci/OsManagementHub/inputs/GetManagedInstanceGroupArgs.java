@@ -15,14 +15,14 @@ public final class GetManagedInstanceGroupArgs extends com.pulumi.resources.Invo
     public static final GetManagedInstanceGroupArgs Empty = new GetManagedInstanceGroupArgs();
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     @Import(name="managedInstanceGroupId", required=true)
     private Output<String> managedInstanceGroupId;
 
     /**
-     * @return The managed instance group OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     public Output<String> managedInstanceGroupId() {
@@ -54,7 +54,7 @@ public final class GetManagedInstanceGroupArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetManagedInstanceGroupArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 

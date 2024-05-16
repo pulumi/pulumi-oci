@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsManagedInstanceGroupCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +22,7 @@ public final class GetManagedInstanceGroupsResult {
      */
     private @Nullable String archType;
     /**
-     * @return The OCID of the tenancy containing the managed instance group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     private @Nullable String compartmentId;
@@ -37,6 +38,17 @@ public final class GetManagedInstanceGroupsResult {
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether the Autonomous Linux service manages the group.
+     * 
+     */
+    private @Nullable Boolean isManagedByAutonomousLinux;
+    private @Nullable List<String> locationNotEqualTos;
+    /**
+     * @return The location of managed instances attached to the group.
+     * 
+     */
+    private @Nullable List<String> locations;
     /**
      * @return The list of managed_instance_group_collection.
      * 
@@ -64,7 +76,7 @@ public final class GetManagedInstanceGroupsResult {
         return Optional.ofNullable(this.archType);
     }
     /**
-     * @return The OCID of the tenancy containing the managed instance group.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     public Optional<String> compartmentId() {
@@ -89,6 +101,23 @@ public final class GetManagedInstanceGroupsResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates whether the Autonomous Linux service manages the group.
+     * 
+     */
+    public Optional<Boolean> isManagedByAutonomousLinux() {
+        return Optional.ofNullable(this.isManagedByAutonomousLinux);
+    }
+    public List<String> locationNotEqualTos() {
+        return this.locationNotEqualTos == null ? List.of() : this.locationNotEqualTos;
+    }
+    /**
+     * @return The location of managed instances attached to the group.
+     * 
+     */
+    public List<String> locations() {
+        return this.locations == null ? List.of() : this.locations;
     }
     /**
      * @return The list of managed_instance_group_collection.
@@ -133,6 +162,9 @@ public final class GetManagedInstanceGroupsResult {
         private @Nullable List<String> displayNames;
         private @Nullable List<GetManagedInstanceGroupsFilter> filters;
         private String id;
+        private @Nullable Boolean isManagedByAutonomousLinux;
+        private @Nullable List<String> locationNotEqualTos;
+        private @Nullable List<String> locations;
         private List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections;
         private @Nullable String managedInstanceGroupId;
         private @Nullable String osFamily;
@@ -147,6 +179,9 @@ public final class GetManagedInstanceGroupsResult {
     	      this.displayNames = defaults.displayNames;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isManagedByAutonomousLinux = defaults.isManagedByAutonomousLinux;
+    	      this.locationNotEqualTos = defaults.locationNotEqualTos;
+    	      this.locations = defaults.locations;
     	      this.managedInstanceGroupCollections = defaults.managedInstanceGroupCollections;
     	      this.managedInstanceGroupId = defaults.managedInstanceGroupId;
     	      this.osFamily = defaults.osFamily;
@@ -199,6 +234,30 @@ public final class GetManagedInstanceGroupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isManagedByAutonomousLinux(@Nullable Boolean isManagedByAutonomousLinux) {
+
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+
+            this.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder locations(@Nullable List<String> locations) {
+
+            this.locations = locations;
+            return this;
+        }
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+        @CustomType.Setter
         public Builder managedInstanceGroupCollections(List<GetManagedInstanceGroupsManagedInstanceGroupCollection> managedInstanceGroupCollections) {
             if (managedInstanceGroupCollections == null) {
               throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "managedInstanceGroupCollections");
@@ -241,6 +300,9 @@ public final class GetManagedInstanceGroupsResult {
             _resultValue.displayNames = displayNames;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            _resultValue.locationNotEqualTos = locationNotEqualTos;
+            _resultValue.locations = locations;
             _resultValue.managedInstanceGroupCollections = managedInstanceGroupCollections;
             _resultValue.managedInstanceGroupId = managedInstanceGroupId;
             _resultValue.osFamily = osFamily;

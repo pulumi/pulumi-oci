@@ -80,7 +80,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailablePackagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public bool? IsLatest { get; set; }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public string ManagedInstanceGroupId { get; set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailablePackagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -164,13 +164,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public Input<bool>? IsLatest { get; set; }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public Input<string> ManagedInstanceGroupId { get; set; } = null!;
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Flag to return only latest package versions.
+        /// Indicates whether this is the latest package version.
         /// </summary>
         public readonly bool? IsLatest;
         /// <summary>

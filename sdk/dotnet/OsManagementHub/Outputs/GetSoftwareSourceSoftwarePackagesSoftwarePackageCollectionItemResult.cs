@@ -34,7 +34,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -42,23 +42,27 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult> Files;
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         public readonly bool IsLatest;
         /// <summary>
-        /// Date of the last update to the package.
+        /// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string LastModifiedDate;
         /// <summary>
-        /// Unique identifier for the package. NOTE - This is not an OCID.
+        /// Unique identifier for the package. Note that this is not an OCID.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The OS families the package belongs to.
+        /// </summary>
+        public readonly ImmutableArray<string> OsFamilies;
         /// <summary>
         /// Size of the package in bytes.
         /// </summary>
         public readonly string SizeInBytes;
         /// <summary>
-        /// List of software sources that provide the software package.
+        /// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult> SoftwareSources;
         /// <summary>
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string name,
 
+            ImmutableArray<string> osFamilies,
+
             string sizeInBytes,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult> softwareSources,
@@ -110,6 +116,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             IsLatest = isLatest;
             LastModifiedDate = lastModifiedDate;
             Name = name;
+            OsFamilies = osFamilies;
             SizeInBytes = sizeInBytes;
             SoftwareSources = softwareSources;
             Type = type;

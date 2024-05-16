@@ -28,7 +28,7 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
      */
     private Boolean isDefault;
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     private Boolean isLatest;
@@ -53,7 +53,7 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
      */
     private List<String> profiles;
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String softwareSourceId;
@@ -81,7 +81,7 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
         return this.isDefault;
     }
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Boolean isLatest() {
@@ -116,7 +116,7 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollectionItem {
         return this.profiles;
     }
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String softwareSourceId() {

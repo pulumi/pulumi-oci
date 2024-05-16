@@ -39,7 +39,7 @@ export function getSoftwareSourceVendors(args: GetSoftwareSourceVendorsArgs, opt
  */
 export interface GetSoftwareSourceVendorsArgs {
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     compartmentId: string;
     filters?: inputs.OsManagementHub.GetSoftwareSourceVendorsFilter[];
@@ -95,7 +95,7 @@ export function getSoftwareSourceVendorsOutput(args: GetSoftwareSourceVendorsOut
  */
 export interface GetSoftwareSourceVendorsOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceVendorsFilterArgs>[]>;

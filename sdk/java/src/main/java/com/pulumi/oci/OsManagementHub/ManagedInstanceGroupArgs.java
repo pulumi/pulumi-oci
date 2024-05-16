@@ -6,6 +6,7 @@ package com.pulumi.oci.OsManagementHub;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.inputs.ManagedInstanceGroupAutonomousSettingsArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -20,14 +21,14 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     public static final ManagedInstanceGroupArgs Empty = new ManagedInstanceGroupArgs();
 
     /**
-     * The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+     * The CPU architecture type of the managed instances that will be attached to this group.
      * 
      */
     @Import(name="archType", required=true)
     private Output<String> archType;
 
     /**
-     * @return The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+     * @return The CPU architecture type of the managed instances that will be attached to this group.
      * 
      */
     public Output<String> archType() {
@@ -35,14 +36,29 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The OCID of the tenancy containing the managed instance group.
+     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * 
+     */
+    @Import(name="autonomousSettings")
+    private @Nullable Output<ManagedInstanceGroupAutonomousSettingsArgs> autonomousSettings;
+
+    /**
+     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * 
+     */
+    public Optional<Output<ManagedInstanceGroupAutonomousSettingsArgs>> autonomousSettings() {
+        return Optional.ofNullable(this.autonomousSettings);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the managed instance group.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     public Output<String> compartmentId() {
@@ -65,14 +81,14 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Details about the managed instance group.
+     * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Details about the managed instance group.
+     * @return (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -80,14 +96,14 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -110,14 +126,29 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The list of managed instance OCIDs to be added to the managed instance group.
+     * The location of managed instances attached to the group. If no location is provided, the default is on premises.
+     * 
+     */
+    @Import(name="location")
+    private @Nullable Output<String> location;
+
+    /**
+     * @return The location of managed instances attached to the group. If no location is provided, the default is on premises.
+     * 
+     */
+    public Optional<Output<String>> location() {
+        return Optional.ofNullable(this.location);
+    }
+
+    /**
+     * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      * 
      */
     @Import(name="managedInstanceIds")
     private @Nullable Output<List<String>> managedInstanceIds;
 
     /**
-     * @return The list of managed instance OCIDs to be added to the managed instance group.
+     * @return The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      * 
      */
     public Optional<Output<List<String>>> managedInstanceIds() {
@@ -125,14 +156,29 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The operating system type of the managed instance(s) that this managed instance group will contain.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    @Import(name="notificationTopicId")
+    private @Nullable Output<String> notificationTopicId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    public Optional<Output<String>> notificationTopicId() {
+        return Optional.ofNullable(this.notificationTopicId);
+    }
+
+    /**
+     * The operating system type of the managed instances that will be attached to this group.
      * 
      */
     @Import(name="osFamily", required=true)
     private Output<String> osFamily;
 
     /**
-     * @return The operating system type of the managed instance(s) that this managed instance group will contain.
+     * @return The operating system type of the managed instances that will be attached to this group.
      * 
      */
     public Output<String> osFamily() {
@@ -140,22 +186,22 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The list of software source OCIDs available to the managed instances in the managed instance group.
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      * 
      */
-    @Import(name="softwareSourceIds", required=true)
-    private Output<List<String>> softwareSourceIds;
+    @Import(name="softwareSourceIds")
+    private @Nullable Output<List<String>> softwareSourceIds;
 
     /**
-     * @return The list of software source OCIDs available to the managed instances in the managed instance group.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      * 
      */
-    public Output<List<String>> softwareSourceIds() {
-        return this.softwareSourceIds;
+    public Optional<Output<List<String>>> softwareSourceIds() {
+        return Optional.ofNullable(this.softwareSourceIds);
     }
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system that will be used by the managed instances in the group.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +211,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     private Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system that will be used by the managed instances in the group.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,12 +225,15 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
 
     private ManagedInstanceGroupArgs(ManagedInstanceGroupArgs $) {
         this.archType = $.archType;
+        this.autonomousSettings = $.autonomousSettings;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.location = $.location;
         this.managedInstanceIds = $.managedInstanceIds;
+        this.notificationTopicId = $.notificationTopicId;
         this.osFamily = $.osFamily;
         this.softwareSourceIds = $.softwareSourceIds;
         this.vendorName = $.vendorName;
@@ -209,7 +258,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param archType The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+         * @param archType The CPU architecture type of the managed instances that will be attached to this group.
          * 
          * @return builder
          * 
@@ -220,7 +269,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param archType The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+         * @param archType The CPU architecture type of the managed instances that will be attached to this group.
          * 
          * @return builder
          * 
@@ -230,7 +279,28 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the managed instance group.
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousSettings(@Nullable Output<ManagedInstanceGroupAutonomousSettingsArgs> autonomousSettings) {
+            $.autonomousSettings = autonomousSettings;
+            return this;
+        }
+
+        /**
+         * @param autonomousSettings (Updatable) Updatable settings for the Autonomous Linux service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousSettings(ManagedInstanceGroupAutonomousSettingsArgs autonomousSettings) {
+            return autonomousSettings(Output.of(autonomousSettings));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
          * 
          * @return builder
          * 
@@ -241,7 +311,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the managed instance group.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
          * 
          * @return builder
          * 
@@ -272,7 +342,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) Details about the managed instance group.
+         * @param description (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -283,7 +353,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) Details about the managed instance group.
+         * @param description (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -293,7 +363,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -304,7 +374,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -335,7 +405,28 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
+         * @param location The location of managed instances attached to the group. If no location is provided, the default is on premises.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(@Nullable Output<String> location) {
+            $.location = location;
+            return this;
+        }
+
+        /**
+         * @param location The location of managed instances attached to the group. If no location is provided, the default is on premises.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(String location) {
+            return location(Output.of(location));
+        }
+
+        /**
+         * @param managedInstanceIds The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
          * 
          * @return builder
          * 
@@ -346,7 +437,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
+         * @param managedInstanceIds The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
          * 
          * @return builder
          * 
@@ -356,7 +447,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
+         * @param managedInstanceIds The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
          * 
          * @return builder
          * 
@@ -366,7 +457,28 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param osFamily The operating system type of the managed instance(s) that this managed instance group will contain.
+         * @param notificationTopicId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationTopicId(@Nullable Output<String> notificationTopicId) {
+            $.notificationTopicId = notificationTopicId;
+            return this;
+        }
+
+        /**
+         * @param notificationTopicId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationTopicId(String notificationTopicId) {
+            return notificationTopicId(Output.of(notificationTopicId));
+        }
+
+        /**
+         * @param osFamily The operating system type of the managed instances that will be attached to this group.
          * 
          * @return builder
          * 
@@ -377,7 +489,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param osFamily The operating system type of the managed instance(s) that this managed instance group will contain.
+         * @param osFamily The operating system type of the managed instances that will be attached to this group.
          * 
          * @return builder
          * 
@@ -387,18 +499,18 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs available to the managed instances in the managed instance group.
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
          * 
          * @return builder
          * 
          */
-        public Builder softwareSourceIds(Output<List<String>> softwareSourceIds) {
+        public Builder softwareSourceIds(@Nullable Output<List<String>> softwareSourceIds) {
             $.softwareSourceIds = softwareSourceIds;
             return this;
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs available to the managed instances in the managed instance group.
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
          * 
          * @return builder
          * 
@@ -408,7 +520,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs available to the managed instances in the managed instance group.
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
          * 
          * @return builder
          * 
@@ -418,7 +530,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system that will be used by the managed instances in the group.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -432,7 +544,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system that will be used by the managed instances in the group.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -456,9 +568,6 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
             }
             if ($.osFamily == null) {
                 throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "osFamily");
-            }
-            if ($.softwareSourceIds == null) {
-                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "softwareSourceIds");
             }
             if ($.vendorName == null) {
                 throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "vendorName");

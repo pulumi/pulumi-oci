@@ -544,6 +544,10 @@ type GetEmailDomainsEmailDomainCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of an email domain.
 	Description string `pulumi:"description"`
+	// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId string `pulumi:"domainVerificationId"`
+	// The current domain verification status.
+	DomainVerificationStatus string `pulumi:"domainVerificationStatus"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
@@ -580,6 +584,10 @@ type GetEmailDomainsEmailDomainCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of an email domain.
 	Description pulumi.StringInput `pulumi:"description"`
+	// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId pulumi.StringInput `pulumi:"domainVerificationId"`
+	// The current domain verification status.
+	DomainVerificationStatus pulumi.StringInput `pulumi:"domainVerificationStatus"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
@@ -665,6 +673,16 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) DefinedTags() pulumi.Map
 // The description of an email domain.
 func (o GetEmailDomainsEmailDomainCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) DomainVerificationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.DomainVerificationId }).(pulumi.StringOutput)
+}
+
+// The current domain verification status.
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) DomainVerificationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.DomainVerificationStatus }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -829,6 +847,425 @@ func (o GetEmailDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailDomai
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsFilter {
 		return vs[0].([]GetEmailDomainsFilter)[vs[1].(int)]
 	}).(GetEmailDomainsFilterOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollection struct {
+	Items []GetEmailReturnPathsEmailReturnPathCollectionItem `pulumi:"items"`
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionArgs and GetEmailReturnPathsEmailReturnPathCollectionOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionArgs{...}
+type GetEmailReturnPathsEmailReturnPathCollectionInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionOutput() GetEmailReturnPathsEmailReturnPathCollectionOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionArgs struct {
+	Items GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetEmailReturnPathsEmailReturnPathCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollection)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionArgs) ToGetEmailReturnPathsEmailReturnPathCollectionOutput() GetEmailReturnPathsEmailReturnPathCollectionOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionArgs) ToGetEmailReturnPathsEmailReturnPathCollectionOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionOutput)
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionArrayInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionArray and GetEmailReturnPathsEmailReturnPathCollectionArrayOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionArrayInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionArray{ GetEmailReturnPathsEmailReturnPathCollectionArgs{...} }
+type GetEmailReturnPathsEmailReturnPathCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionArrayOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionArrayOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionArray []GetEmailReturnPathsEmailReturnPathCollectionInput
+
+func (GetEmailReturnPathsEmailReturnPathCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollection)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionArray) ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionArrayOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionArray) ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionArrayOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollection)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionOutput) ToGetEmailReturnPathsEmailReturnPathCollectionOutput() GetEmailReturnPathsEmailReturnPathCollectionOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionOutput) ToGetEmailReturnPathsEmailReturnPathCollectionOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionOutput) Items() GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollection) []GetEmailReturnPathsEmailReturnPathCollectionItem {
+		return v.Items
+	}).(GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollection)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionArrayOutput) Index(i pulumi.IntInput) GetEmailReturnPathsEmailReturnPathCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsEmailReturnPathCollection {
+		return vs[0].([]GetEmailReturnPathsEmailReturnPathCollection)[vs[1].(int)]
+	}).(GetEmailReturnPathsEmailReturnPathCollectionOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItem struct {
+	// The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+	CnameRecordValue string `pulumi:"cnameRecordValue"`
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the email return path. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+	DnsSubdomainName string `pulumi:"dnsSubdomainName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// A filter to only return resources that match the given id exactly.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to only return resources that match the given name exactly.
+	Name string `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+	ParentResourceId string `pulumi:"parentResourceId"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionItemInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionItemArgs and GetEmailReturnPathsEmailReturnPathCollectionItemOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionItemInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionItemArgs{...}
+type GetEmailReturnPathsEmailReturnPathCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemOutput() GetEmailReturnPathsEmailReturnPathCollectionItemOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemArgs struct {
+	// The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+	CnameRecordValue pulumi.StringInput `pulumi:"cnameRecordValue"`
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the email return path. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+	DnsSubdomainName pulumi.StringInput `pulumi:"dnsSubdomainName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// A filter to only return resources that match the given id exactly.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to only return resources that match the given name exactly.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+	ParentResourceId pulumi.StringInput `pulumi:"parentResourceId"`
+	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemArgs) ToGetEmailReturnPathsEmailReturnPathCollectionItemOutput() GetEmailReturnPathsEmailReturnPathCollectionItemOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemArgs) ToGetEmailReturnPathsEmailReturnPathCollectionItemOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionItemOutput)
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionItemArray and GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionItemArray{ GetEmailReturnPathsEmailReturnPathCollectionItemArgs{...} }
+type GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemArray []GetEmailReturnPathsEmailReturnPathCollectionItemInput
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollectionItem)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemArray) ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemArray) ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemOutput() GetEmailReturnPathsEmailReturnPathCollectionItemOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemOutput {
+	return o
+}
+
+// The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) CnameRecordValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.CnameRecordValue }).(pulumi.StringOutput)
+}
+
+// The OCID for the compartment.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The description of the email return path. Avoid entering confidential information.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) DnsSubdomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.DnsSubdomainName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// A filter to only return resources that match the given id exactly.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) ParentResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.ParentResourceId }).(pulumi.StringOutput)
+}
+
+// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollectionItem)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEmailReturnPathsEmailReturnPathCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsEmailReturnPathCollectionItem {
+		return vs[0].([]GetEmailReturnPathsEmailReturnPathCollectionItem)[vs[1].(int)]
+	}).(GetEmailReturnPathsEmailReturnPathCollectionItemOutput)
+}
+
+type GetEmailReturnPathsFilter struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetEmailReturnPathsFilterInput is an input type that accepts GetEmailReturnPathsFilterArgs and GetEmailReturnPathsFilterOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsFilterInput` via:
+//
+//	GetEmailReturnPathsFilterArgs{...}
+type GetEmailReturnPathsFilterInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsFilterOutput() GetEmailReturnPathsFilterOutput
+	ToGetEmailReturnPathsFilterOutputWithContext(context.Context) GetEmailReturnPathsFilterOutput
+}
+
+type GetEmailReturnPathsFilterArgs struct {
+	// A filter to only return resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetEmailReturnPathsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsFilter)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsFilterArgs) ToGetEmailReturnPathsFilterOutput() GetEmailReturnPathsFilterOutput {
+	return i.ToGetEmailReturnPathsFilterOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsFilterArgs) ToGetEmailReturnPathsFilterOutputWithContext(ctx context.Context) GetEmailReturnPathsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsFilterOutput)
+}
+
+// GetEmailReturnPathsFilterArrayInput is an input type that accepts GetEmailReturnPathsFilterArray and GetEmailReturnPathsFilterArrayOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsFilterArrayInput` via:
+//
+//	GetEmailReturnPathsFilterArray{ GetEmailReturnPathsFilterArgs{...} }
+type GetEmailReturnPathsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsFilterArrayOutput() GetEmailReturnPathsFilterArrayOutput
+	ToGetEmailReturnPathsFilterArrayOutputWithContext(context.Context) GetEmailReturnPathsFilterArrayOutput
+}
+
+type GetEmailReturnPathsFilterArray []GetEmailReturnPathsFilterInput
+
+func (GetEmailReturnPathsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsFilter)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsFilterArray) ToGetEmailReturnPathsFilterArrayOutput() GetEmailReturnPathsFilterArrayOutput {
+	return i.ToGetEmailReturnPathsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsFilterArray) ToGetEmailReturnPathsFilterArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsFilterArrayOutput)
+}
+
+type GetEmailReturnPathsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsFilter)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsFilterOutput) ToGetEmailReturnPathsFilterOutput() GetEmailReturnPathsFilterOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsFilterOutput) ToGetEmailReturnPathsFilterOutputWithContext(ctx context.Context) GetEmailReturnPathsFilterOutput {
+	return o
+}
+
+// A filter to only return resources that match the given name exactly.
+func (o GetEmailReturnPathsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetEmailReturnPathsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetEmailReturnPathsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetEmailReturnPathsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsFilter)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsFilterArrayOutput) ToGetEmailReturnPathsFilterArrayOutput() GetEmailReturnPathsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsFilterArrayOutput) ToGetEmailReturnPathsFilterArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsFilterArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailReturnPathsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsFilter {
+		return vs[0].([]GetEmailReturnPathsFilter)[vs[1].(int)]
+	}).(GetEmailReturnPathsFilterOutput)
 }
 
 type GetSendersFilter struct {
@@ -1403,6 +1840,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemArrayInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterInput)(nil)).Elem(), GetEmailDomainsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterArrayInput)(nil)).Elem(), GetEmailDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionArrayInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsFilterInput)(nil)).Elem(), GetEmailReturnPathsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsFilterArrayInput)(nil)).Elem(), GetEmailReturnPathsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersFilterInput)(nil)).Elem(), GetSendersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersFilterArrayInput)(nil)).Elem(), GetSendersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersSenderInput)(nil)).Elem(), GetSendersSenderArgs{})
@@ -1423,6 +1866,12 @@ func init() {
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsFilterOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSendersFilterOutput{})
 	pulumi.RegisterOutputType(GetSendersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSendersSenderOutput{})

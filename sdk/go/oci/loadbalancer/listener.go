@@ -50,6 +50,7 @@ import (
 //				},
 //				SslConfiguration: &loadbalancer.ListenerSslConfigurationArgs{
 //					CertificateName:                pulumi.Any(testCertificate.Name),
+//					HasSessionResumption:           pulumi.Any(listenerSslConfigurationHasSessionResumption),
 //					CertificateIds:                 pulumi.Any(listenerSslConfigurationCertificateIds),
 //					CipherSuiteName:                pulumi.Any(listenerSslConfigurationCipherSuiteName),
 //					Protocols:                      pulumi.Any(listenerSslConfigurationProtocols),

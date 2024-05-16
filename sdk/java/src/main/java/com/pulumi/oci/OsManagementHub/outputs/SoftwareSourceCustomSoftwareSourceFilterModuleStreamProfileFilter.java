@@ -4,7 +4,6 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,15 +12,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter {
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    private String filterType;
+    private @Nullable String filterType;
     /**
      * @return (Updatable) Module name.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return (Updatable) Profile name.
      * 
@@ -35,18 +34,18 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
 
     private SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter() {}
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    public String filterType() {
-        return this.filterType;
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
     /**
      * @return (Updatable) Module name.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return (Updatable) Profile name.
@@ -72,8 +71,8 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
     }
     @CustomType.Builder
     public static final class Builder {
-        private String filterType;
-        private String moduleName;
+        private @Nullable String filterType;
+        private @Nullable String moduleName;
         private @Nullable String profileName;
         private @Nullable String streamName;
         public Builder() {}
@@ -86,18 +85,14 @@ public final class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFi
         }
 
         @CustomType.Setter
-        public Builder filterType(String filterType) {
-            if (filterType == null) {
-              throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter", "filterType");
-            }
+        public Builder filterType(@Nullable String filterType) {
+
             this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            if (moduleName == null) {
-              throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter", "moduleName");
-            }
+        public Builder moduleName(@Nullable String moduleName) {
+
             this.moduleName = moduleName;
             return this;
         }

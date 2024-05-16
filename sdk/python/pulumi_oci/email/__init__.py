@@ -7,11 +7,14 @@ import typing
 # Export this package's modules as members:
 from .dkim import *
 from .email_domain import *
+from .email_return_path import *
 from .get_configuration import *
 from .get_dkim import *
 from .get_dkims import *
 from .get_email_domain import *
 from .get_email_domains import *
+from .get_email_return_path import *
+from .get_email_return_paths import *
 from .get_sender import *
 from .get_senders import *
 from .get_suppression import *

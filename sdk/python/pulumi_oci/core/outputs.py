@@ -544,6 +544,10 @@ __all__ = [
     'GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetailResult',
     'GetInternetGatewaysFilterResult',
     'GetInternetGatewaysGatewayResult',
+    'GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryResult',
+    'GetIpInventorySubnetIpInventorySubnetResourceSummaryResult',
+    'GetIpInventoryVcnOverlapsFilterResult',
+    'GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryResult',
     'GetIpsecAlgorithmAllowedPhaseOneParameterResult',
     'GetIpsecAlgorithmAllowedPhaseTwoParameterResult',
     'GetIpsecAlgorithmDefaultPhaseOneParameterResult',
@@ -36471,6 +36475,263 @@ class GetInternetGatewaysGatewayResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryResult(dict):
+    def __init__(__self__, *,
+                 address_type: str,
+                 cidr: str,
+                 utilization: float):
+        """
+        :param str address_type: Address type of the CIDR within a subnet.
+        :param str cidr: The CIDR range of a subnet.
+        :param float utilization: The CIDR utilisation of a subnet.
+        """
+        pulumi.set(__self__, "address_type", address_type)
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "utilization", utilization)
+
+    @property
+    @pulumi.getter(name="addressType")
+    def address_type(self) -> str:
+        """
+        Address type of the CIDR within a subnet.
+        """
+        return pulumi.get(self, "address_type")
+
+    @property
+    @pulumi.getter
+    def cidr(self) -> str:
+        """
+        The CIDR range of a subnet.
+        """
+        return pulumi.get(self, "cidr")
+
+    @property
+    @pulumi.getter
+    def utilization(self) -> float:
+        """
+        The CIDR utilisation of a subnet.
+        """
+        return pulumi.get(self, "utilization")
+
+
+@pulumi.output_type
+class GetIpInventorySubnetIpInventorySubnetResourceSummaryResult(dict):
+    def __init__(__self__, *,
+                 address_type: str,
+                 assigned_resource_name: str,
+                 assigned_resource_type: str,
+                 assigned_time: str,
+                 associated_public_ip: str,
+                 associated_public_ip_pool: str,
+                 dns_host_name: str,
+                 ip_address: str,
+                 ip_address_lifetime: str,
+                 ip_id: str,
+                 parent_cidr: str,
+                 public_ip_lifetime: str):
+        """
+        :param str address_type: Address type of the allocated private IP address.
+        :param str assigned_resource_name: Name of the created resource.
+        :param str assigned_resource_type: Type of the resource.
+        :param str assigned_time: Assigned time of the private IP address.
+        :param str associated_public_ip: Associated public IP address for the private IP address.
+        :param str associated_public_ip_pool: Public IP address Pool the IP address is allocated from.
+        :param str dns_host_name: DNS hostname of the IP address.
+        :param str ip_address: Lists the allocated private IP address.
+        :param str ip_address_lifetime: Lifetime of the allocated private IP address.
+        :param str ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+        :param str parent_cidr: The address range the IP address is assigned from.
+        :param str public_ip_lifetime: Lifetime of the assigned public IP address.
+        """
+        pulumi.set(__self__, "address_type", address_type)
+        pulumi.set(__self__, "assigned_resource_name", assigned_resource_name)
+        pulumi.set(__self__, "assigned_resource_type", assigned_resource_type)
+        pulumi.set(__self__, "assigned_time", assigned_time)
+        pulumi.set(__self__, "associated_public_ip", associated_public_ip)
+        pulumi.set(__self__, "associated_public_ip_pool", associated_public_ip_pool)
+        pulumi.set(__self__, "dns_host_name", dns_host_name)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "ip_address_lifetime", ip_address_lifetime)
+        pulumi.set(__self__, "ip_id", ip_id)
+        pulumi.set(__self__, "parent_cidr", parent_cidr)
+        pulumi.set(__self__, "public_ip_lifetime", public_ip_lifetime)
+
+    @property
+    @pulumi.getter(name="addressType")
+    def address_type(self) -> str:
+        """
+        Address type of the allocated private IP address.
+        """
+        return pulumi.get(self, "address_type")
+
+    @property
+    @pulumi.getter(name="assignedResourceName")
+    def assigned_resource_name(self) -> str:
+        """
+        Name of the created resource.
+        """
+        return pulumi.get(self, "assigned_resource_name")
+
+    @property
+    @pulumi.getter(name="assignedResourceType")
+    def assigned_resource_type(self) -> str:
+        """
+        Type of the resource.
+        """
+        return pulumi.get(self, "assigned_resource_type")
+
+    @property
+    @pulumi.getter(name="assignedTime")
+    def assigned_time(self) -> str:
+        """
+        Assigned time of the private IP address.
+        """
+        return pulumi.get(self, "assigned_time")
+
+    @property
+    @pulumi.getter(name="associatedPublicIp")
+    def associated_public_ip(self) -> str:
+        """
+        Associated public IP address for the private IP address.
+        """
+        return pulumi.get(self, "associated_public_ip")
+
+    @property
+    @pulumi.getter(name="associatedPublicIpPool")
+    def associated_public_ip_pool(self) -> str:
+        """
+        Public IP address Pool the IP address is allocated from.
+        """
+        return pulumi.get(self, "associated_public_ip_pool")
+
+    @property
+    @pulumi.getter(name="dnsHostName")
+    def dns_host_name(self) -> str:
+        """
+        DNS hostname of the IP address.
+        """
+        return pulumi.get(self, "dns_host_name")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        Lists the allocated private IP address.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="ipAddressLifetime")
+    def ip_address_lifetime(self) -> str:
+        """
+        Lifetime of the allocated private IP address.
+        """
+        return pulumi.get(self, "ip_address_lifetime")
+
+    @property
+    @pulumi.getter(name="ipId")
+    def ip_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+        """
+        return pulumi.get(self, "ip_id")
+
+    @property
+    @pulumi.getter(name="parentCidr")
+    def parent_cidr(self) -> str:
+        """
+        The address range the IP address is assigned from.
+        """
+        return pulumi.get(self, "parent_cidr")
+
+    @property
+    @pulumi.getter(name="publicIpLifetime")
+    def public_ip_lifetime(self) -> str:
+        """
+        Lifetime of the assigned public IP address.
+        """
+        return pulumi.get(self, "public_ip_lifetime")
+
+
+@pulumi.output_type
+class GetIpInventoryVcnOverlapsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryResult(dict):
+    def __init__(__self__, *,
+                 cidr: str,
+                 overlapping_cidr: str,
+                 overlapping_vcn_id: str,
+                 overlapping_vcn_name: str):
+        """
+        :param str cidr: CIDR prefix of the VCN.
+        :param str overlapping_cidr: The overlapping CIDR prefix.
+        :param str overlapping_vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+        :param str overlapping_vcn_name: Name of the overlapping VCN.
+        """
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "overlapping_cidr", overlapping_cidr)
+        pulumi.set(__self__, "overlapping_vcn_id", overlapping_vcn_id)
+        pulumi.set(__self__, "overlapping_vcn_name", overlapping_vcn_name)
+
+    @property
+    @pulumi.getter
+    def cidr(self) -> str:
+        """
+        CIDR prefix of the VCN.
+        """
+        return pulumi.get(self, "cidr")
+
+    @property
+    @pulumi.getter(name="overlappingCidr")
+    def overlapping_cidr(self) -> str:
+        """
+        The overlapping CIDR prefix.
+        """
+        return pulumi.get(self, "overlapping_cidr")
+
+    @property
+    @pulumi.getter(name="overlappingVcnId")
+    def overlapping_vcn_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+        """
+        return pulumi.get(self, "overlapping_vcn_id")
+
+    @property
+    @pulumi.getter(name="overlappingVcnName")
+    def overlapping_vcn_name(self) -> str:
+        """
+        Name of the overlapping VCN.
+        """
+        return pulumi.get(self, "overlapping_vcn_name")
 
 
 @pulumi.output_type

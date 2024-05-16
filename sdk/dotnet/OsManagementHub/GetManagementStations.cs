@@ -80,13 +80,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -106,19 +106,19 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// The OCID of the managed instance for which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         /// </summary>
         [Input("managedInstanceId")]
         public string? ManagedInstanceId { get; set; }
 
         /// <summary>
-        /// The current lifecycle state for the object.
+        /// A filter that returns information for management stations in the specified state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -132,13 +132,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -158,19 +158,19 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The OCID of the managed instance for which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
         /// </summary>
         [Input("managedInstanceId")]
         public Input<string>? ManagedInstanceId { get; set; }
 
         /// <summary>
-        /// The current lifecycle state for the object.
+        /// A filter that returns information for management stations in the specified state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -186,21 +186,21 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationsResult
     {
         /// <summary>
-        /// The OCID of the tenancy containing the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// ManagementStation name
+        /// A user-friendly name for the management station.
         /// </summary>
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;
         public readonly ImmutableArray<Outputs.GetManagementStationsFilterResult> Filters;
         /// <summary>
-        /// OCID for the ManagementStation config
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// OCID for the Instance associated with the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         public readonly string? ManagedInstanceId;
         /// <summary>
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagementStationsManagementStationCollectionResult> ManagementStationCollections;
         /// <summary>
-        /// The current state of the Management Station config.
+        /// The current state of the management station.
         /// </summary>
         public readonly string? State;
 

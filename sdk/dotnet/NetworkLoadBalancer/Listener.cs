@@ -32,6 +32,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         Port = listenerPort,
     ///         Protocol = listenerProtocol,
     ///         IpVersion = listenerIpVersion,
+    ///         IsPpv2enabled = listenerIsPpv2enabled,
     ///     });
     /// 
     /// });
@@ -59,6 +60,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Output("ipVersion")]
         public Output<string> IpVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Property to enable/disable PPv2 feature for this listener.
+        /// </summary>
+        [Output("isPpv2enabled")]
+        public Output<bool> IsPpv2enabled { get; private set; } = null!;
 
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -147,6 +154,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string>? IpVersion { get; set; }
 
         /// <summary>
+        /// (Updatable) Property to enable/disable PPv2 feature for this listener.
+        /// </summary>
+        [Input("isPpv2enabled")]
+        public Input<bool>? IsPpv2enabled { get; set; }
+
+        /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         /// </summary>
         [Input("name")]
@@ -193,6 +206,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         [Input("ipVersion")]
         public Input<string>? IpVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) Property to enable/disable PPv2 feature for this listener.
+        /// </summary>
+        [Input("isPpv2enabled")]
+        public Input<bool>? IsPpv2enabled { get; set; }
 
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

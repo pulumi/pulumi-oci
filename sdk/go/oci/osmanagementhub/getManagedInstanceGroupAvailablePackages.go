@@ -57,16 +57,16 @@ func GetManagedInstanceGroupAvailablePackages(ctx *pulumi.Context, args *GetMana
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailablePackages.
 type GetManagedInstanceGroupAvailablePackagesArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames []string                                         `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupAvailablePackagesFilter `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest *bool `pulumi:"isLatest"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 }
 
@@ -79,7 +79,7 @@ type GetManagedInstanceGroupAvailablePackagesResult struct {
 	Filters      []GetManagedInstanceGroupAvailablePackagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Flag to return only latest package versions.
+	// Indicates whether this is the latest package version.
 	IsLatest *bool `pulumi:"isLatest"`
 	// The list of managed_instance_group_available_package_collection.
 	ManagedInstanceGroupAvailablePackageCollections []GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection `pulumi:"managedInstanceGroupAvailablePackageCollections"`
@@ -101,16 +101,16 @@ func GetManagedInstanceGroupAvailablePackagesOutput(ctx *pulumi.Context, args Ge
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailablePackages.
 type GetManagedInstanceGroupAvailablePackagesOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput                                  `pulumi:"displayNames"`
 	Filters      GetManagedInstanceGroupAvailablePackagesFilterArrayInput `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringInput `pulumi:"managedInstanceGroupId"`
 }
 
@@ -157,7 +157,7 @@ func (o GetManagedInstanceGroupAvailablePackagesResultOutput) Id() pulumi.String
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Flag to return only latest package versions.
+// Indicates whether this is the latest package version.
 func (o GetManagedInstanceGroupAvailablePackagesResultOutput) IsLatest() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesResult) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
 }

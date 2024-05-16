@@ -17,12 +17,12 @@ import java.util.Objects;
 @CustomType
 public final class GetLifecycleStageResult {
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     private String archType;
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     private String compartmentId;
@@ -47,28 +47,33 @@ public final class GetLifecycleStageResult {
      */
     private String id;
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     private String lifecycleEnvironmentId;
     private String lifecycleStageId;
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    private String location;
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     private List<GetLifecycleStageManagedInstanceId> managedInstanceIds;
     /**
-     * @return The operating system type of the target instances.
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     private String osFamily;
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     private Integer rank;
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     private List<GetLifecycleStageSoftwareSourceId> softwareSourceIds;
@@ -83,31 +88,31 @@ public final class GetLifecycleStageResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeModified;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle stage.
      * 
      */
     private String vendorName;
 
     private GetLifecycleStageResult() {}
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     public String archType() {
         return this.archType;
     }
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public String compartmentId() {
@@ -142,7 +147,7 @@ public final class GetLifecycleStageResult {
         return this.id;
     }
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     public String lifecycleEnvironmentId() {
@@ -152,28 +157,35 @@ public final class GetLifecycleStageResult {
         return this.lifecycleStageId;
     }
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    public String location() {
+        return this.location;
+    }
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     public List<GetLifecycleStageManagedInstanceId> managedInstanceIds() {
         return this.managedInstanceIds;
     }
     /**
-     * @return The operating system type of the target instances.
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     public Integer rank() {
         return this.rank;
     }
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     public List<GetLifecycleStageSoftwareSourceId> softwareSourceIds() {
@@ -194,21 +206,21 @@ public final class GetLifecycleStageResult {
         return this.systemTags;
     }
     /**
-     * @return The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeModified() {
         return this.timeModified;
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle stage.
      * 
      */
     public String vendorName() {
@@ -232,6 +244,7 @@ public final class GetLifecycleStageResult {
         private String id;
         private String lifecycleEnvironmentId;
         private String lifecycleStageId;
+        private String location;
         private List<GetLifecycleStageManagedInstanceId> managedInstanceIds;
         private String osFamily;
         private Integer rank;
@@ -252,6 +265,7 @@ public final class GetLifecycleStageResult {
     	      this.id = defaults.id;
     	      this.lifecycleEnvironmentId = defaults.lifecycleEnvironmentId;
     	      this.lifecycleStageId = defaults.lifecycleStageId;
+    	      this.location = defaults.location;
     	      this.managedInstanceIds = defaults.managedInstanceIds;
     	      this.osFamily = defaults.osFamily;
     	      this.rank = defaults.rank;
@@ -325,6 +339,14 @@ public final class GetLifecycleStageResult {
               throw new MissingRequiredPropertyException("GetLifecycleStageResult", "lifecycleStageId");
             }
             this.lifecycleStageId = lifecycleStageId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleStageResult", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -415,6 +437,7 @@ public final class GetLifecycleStageResult {
             _resultValue.id = id;
             _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
             _resultValue.lifecycleStageId = lifecycleStageId;
+            _resultValue.location = location;
             _resultValue.managedInstanceIds = managedInstanceIds;
             _resultValue.osFamily = osFamily;
             _resultValue.rank = rank;

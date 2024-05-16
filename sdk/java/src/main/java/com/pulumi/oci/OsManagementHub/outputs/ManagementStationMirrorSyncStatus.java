@@ -12,62 +12,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ManagementStationMirrorSyncStatus {
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that failed to sync.
      * 
      */
     private @Nullable Integer failed;
     /**
-     * @return Total of mirrors in &#39;queued&#39; state
+     * @return Total number of software sources that are queued for sync.
      * 
      */
     private @Nullable Integer queued;
     /**
-     * @return Total of mirrors in &#39;synced&#39; state
+     * @return Total number of software sources that successfully synced.
      * 
      */
     private @Nullable Integer synced;
     /**
-     * @return Total of mirrors in &#39;syncing&#39; state
+     * @return Total number of software sources currently syncing.
      * 
      */
     private @Nullable Integer syncing;
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that have not yet been synced.
      * 
      */
     private @Nullable Integer unsynced;
 
     private ManagementStationMirrorSyncStatus() {}
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that failed to sync.
      * 
      */
     public Optional<Integer> failed() {
         return Optional.ofNullable(this.failed);
     }
     /**
-     * @return Total of mirrors in &#39;queued&#39; state
+     * @return Total number of software sources that are queued for sync.
      * 
      */
     public Optional<Integer> queued() {
         return Optional.ofNullable(this.queued);
     }
     /**
-     * @return Total of mirrors in &#39;synced&#39; state
+     * @return Total number of software sources that successfully synced.
      * 
      */
     public Optional<Integer> synced() {
         return Optional.ofNullable(this.synced);
     }
     /**
-     * @return Total of mirrors in &#39;syncing&#39; state
+     * @return Total number of software sources currently syncing.
      * 
      */
     public Optional<Integer> syncing() {
         return Optional.ofNullable(this.syncing);
     }
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that have not yet been synced.
      * 
      */
     public Optional<Integer> unsynced() {

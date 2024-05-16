@@ -43,7 +43,7 @@ export function getSoftwareSourceSoftwarePackages(args: GetSoftwareSourceSoftwar
  */
 export interface GetSoftwareSourceSoftwarePackagesArgs {
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: string;
     /**
@@ -52,11 +52,11 @@ export interface GetSoftwareSourceSoftwarePackagesArgs {
     displayNameContains?: string;
     filters?: inputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesFilter[];
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
     isLatest?: boolean;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
 }
@@ -114,7 +114,7 @@ export function getSoftwareSourceSoftwarePackagesOutput(args: GetSoftwareSourceS
  */
 export interface GetSoftwareSourceSoftwarePackagesOutputArgs {
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -123,11 +123,11 @@ export interface GetSoftwareSourceSoftwarePackagesOutputArgs {
     displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesFilterArgs>[]>;
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
     isLatest?: pulumi.Input<boolean>;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
 }

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ProfileSoftwareSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The description of the registration profile.
+        /// (Updatable) User-specified description of the registration profile.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -25,10 +25,16 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
+
+        /// <summary>
+        /// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        /// </summary>
+        [Input("isMandatoryForAutonomousLinux")]
+        public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
 
         /// <summary>
         /// Type of the software source.

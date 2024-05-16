@@ -36,10 +36,10 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Import
     /// 
-    /// Namespace can be imported using the `namespace`, e.g.
+    /// Namespace can be imported using the `compartment_id` and `namespace`, e.g.
     /// 
     /// ```sh
-    /// $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+    /// $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/&lt;compartment_id&gt;/namespace/&lt;namespace&gt;"
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespace:Namespace")]

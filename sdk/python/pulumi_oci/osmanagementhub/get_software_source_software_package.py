@@ -22,7 +22,7 @@ class GetSoftwareSourceSoftwarePackageResult:
     """
     A collection of values returned by getSoftwareSourceSoftwarePackage.
     """
-    def __init__(__self__, architecture=None, checksum=None, checksum_type=None, dependencies=None, description=None, display_name=None, files=None, id=None, is_latest=None, last_modified_date=None, name=None, size_in_bytes=None, software_package_name=None, software_source_id=None, software_sources=None, type=None, version=None):
+    def __init__(__self__, architecture=None, checksum=None, checksum_type=None, dependencies=None, description=None, display_name=None, files=None, id=None, is_latest=None, last_modified_date=None, name=None, os_families=None, size_in_bytes=None, software_package_name=None, software_source_id=None, software_sources=None, type=None, version=None):
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
@@ -56,6 +56,9 @@ class GetSoftwareSourceSoftwarePackageResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if os_families and not isinstance(os_families, list):
+            raise TypeError("Expected argument 'os_families' to be a list")
+        pulumi.set(__self__, "os_families", os_families)
         if size_in_bytes and not isinstance(size_in_bytes, str):
             raise TypeError("Expected argument 'size_in_bytes' to be a str")
         pulumi.set(__self__, "size_in_bytes", size_in_bytes)
@@ -151,7 +154,7 @@ class GetSoftwareSourceSoftwarePackageResult:
     @pulumi.getter(name="lastModifiedDate")
     def last_modified_date(self) -> str:
         """
-        Date of the last update to the package.
+        The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "last_modified_date")
 
@@ -159,9 +162,17 @@ class GetSoftwareSourceSoftwarePackageResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="osFamilies")
+    def os_families(self) -> Sequence[str]:
+        """
+        The OS families the package belongs to.
+        """
+        return pulumi.get(self, "os_families")
 
     @property
     @pulumi.getter(name="sizeInBytes")
@@ -185,7 +196,7 @@ class GetSoftwareSourceSoftwarePackageResult:
     @pulumi.getter(name="softwareSources")
     def software_sources(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackageSoftwareSourceResult']:
         """
-        List of software sources that provide the software package.
+        List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
         """
         return pulumi.get(self, "software_sources")
 
@@ -223,6 +234,7 @@ class AwaitableGetSoftwareSourceSoftwarePackageResult(GetSoftwareSourceSoftwareP
             is_latest=self.is_latest,
             last_modified_date=self.last_modified_date,
             name=self.name,
+            os_families=self.os_families,
             size_in_bytes=self.size_in_bytes,
             software_package_name=self.software_package_name,
             software_source_id=self.software_source_id,
@@ -237,7 +249,7 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
     """
     This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified software package.
+    Returns information about the specified software package.
 
     ## Example Usage
 
@@ -245,13 +257,13 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=software_source_software_package_software_package_name,
+    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=test_software_package["name"],
         software_source_id=test_software_source["id"])
     ```
 
 
     :param str software_package_name: The name of the software package.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['softwarePackageName'] = software_package_name
@@ -271,6 +283,7 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
         is_latest=pulumi.get(__ret__, 'is_latest'),
         last_modified_date=pulumi.get(__ret__, 'last_modified_date'),
         name=pulumi.get(__ret__, 'name'),
+        os_families=pulumi.get(__ret__, 'os_families'),
         size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
         software_package_name=pulumi.get(__ret__, 'software_package_name'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
@@ -286,7 +299,7 @@ def get_software_source_software_package_output(software_package_name: Optional[
     """
     This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified software package.
+    Returns information about the specified software package.
 
     ## Example Usage
 
@@ -294,12 +307,12 @@ def get_software_source_software_package_output(software_package_name: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=software_source_software_package_software_package_name,
+    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=test_software_package["name"],
         software_source_id=test_software_source["id"])
     ```
 
 
     :param str software_package_name: The name of the software package.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

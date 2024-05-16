@@ -149,6 +149,8 @@ type ExadataInfrastructure struct {
 	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
 	DbServerVersion pulumi.StringOutput `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations ExadataInfrastructureDefinedFileSystemConfigurationArrayOutput `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -313,6 +315,8 @@ type exadataInfrastructureState struct {
 	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
 	DbServerVersion *string `pulumi:"dbServerVersion"`
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations []ExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -412,6 +416,8 @@ type ExadataInfrastructureState struct {
 	DbNodeStorageSizeInGbs pulumi.IntPtrInput
 	// The software version of the database servers (dom0) in the Exadata infrastructure.
 	DbServerVersion pulumi.StringPtrInput
+	// Details of the file system configuration of the Exadata infrastructure.
+	DefinedFileSystemConfigurations ExadataInfrastructureDefinedFileSystemConfigurationArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -771,6 +777,13 @@ func (o ExadataInfrastructureOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
 // The software version of the database servers (dom0) in the Exadata infrastructure.
 func (o ExadataInfrastructureOutput) DbServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.DbServerVersion }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the Exadata infrastructure.
+func (o ExadataInfrastructureOutput) DefinedFileSystemConfigurations() ExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) ExadataInfrastructureDefinedFileSystemConfigurationArrayOutput {
+		return v.DefinedFileSystemConfigurations
+	}).(ExadataInfrastructureDefinedFileSystemConfigurationArrayOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

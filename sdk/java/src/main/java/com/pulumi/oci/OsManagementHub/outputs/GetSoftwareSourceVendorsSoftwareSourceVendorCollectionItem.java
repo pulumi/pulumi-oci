@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
     /**
-     * @return List of corresponding archTypes.
+     * @return List of corresponding architecture types.
      * 
      */
     private List<String> archTypes;
@@ -22,14 +22,14 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
      */
     private String name;
     /**
-     * @return List of corresponding osFamilies.
+     * @return List of corresponding operating system families.
      * 
      */
     private List<String> osFamilies;
 
     private GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem() {}
     /**
-     * @return List of corresponding archTypes.
+     * @return List of corresponding architecture types.
      * 
      */
     public List<String> archTypes() {
@@ -43,7 +43,7 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
         return this.name;
     }
     /**
-     * @return List of corresponding osFamilies.
+     * @return List of corresponding operating system families.
      * 
      */
     public List<String> osFamilies() {

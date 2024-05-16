@@ -14,17 +14,21 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class LifecycleEnvironmentStageSoftwareSourceId
     {
         /// <summary>
-        /// (Updatable) User specified information about the lifecycle environment.
+        /// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        /// </summary>
+        public readonly bool? IsMandatoryForAutonomousLinux;
         /// <summary>
         /// Type of the software source.
         /// </summary>
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string? id,
 
+            bool? isMandatoryForAutonomousLinux,
+
             string? softwareSourceType)
         {
             Description = description;
             DisplayName = displayName;
             Id = id;
+            IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             SoftwareSourceType = softwareSourceType;
         }
     }

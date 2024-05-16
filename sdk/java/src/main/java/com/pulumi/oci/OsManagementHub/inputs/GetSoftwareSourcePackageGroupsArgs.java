@@ -19,14 +19,14 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
     public static final GetSoftwareSourcePackageGroupsArgs Empty = new GetSoftwareSourcePackageGroupsArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -86,14 +86,14 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private Output<String> softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Output<String> softwareSourceId() {
@@ -130,7 +130,7 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class GetSoftwareSourcePackageGroupsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

@@ -49,6 +49,7 @@ namespace Pulumi.Oci.LoadBalancer
     ///         SslConfiguration = new Oci.LoadBalancer.Inputs.ListenerSslConfigurationArgs
     ///         {
     ///             CertificateName = testCertificate.Name,
+    ///             HasSessionResumption = listenerSslConfigurationHasSessionResumption,
     ///             CertificateIds = listenerSslConfigurationCertificateIds,
     ///             CipherSuiteName = listenerSslConfigurationCipherSuiteName,
     ///             Protocols = listenerSslConfigurationProtocols,

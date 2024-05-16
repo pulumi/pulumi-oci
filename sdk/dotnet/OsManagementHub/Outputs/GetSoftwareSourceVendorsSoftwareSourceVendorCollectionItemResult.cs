@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult
     {
         /// <summary>
-        /// List of corresponding archTypes.
+        /// List of corresponding architecture types.
         /// </summary>
         public readonly ImmutableArray<string> ArchTypes;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// List of corresponding osFamilies.
+        /// List of corresponding operating system families.
         /// </summary>
         public readonly ImmutableArray<string> OsFamilies;
 

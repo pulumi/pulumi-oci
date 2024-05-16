@@ -21,7 +21,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None):
+    def __init__(__self__, default_backend_set_name=None, id=None, ip_version=None, is_ppv2enabled=None, listener_name=None, name=None, network_load_balancer_id=None, port=None, protocol=None):
         if default_backend_set_name and not isinstance(default_backend_set_name, str):
             raise TypeError("Expected argument 'default_backend_set_name' to be a str")
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
@@ -31,6 +31,9 @@ class GetListenerResult:
         if ip_version and not isinstance(ip_version, str):
             raise TypeError("Expected argument 'ip_version' to be a str")
         pulumi.set(__self__, "ip_version", ip_version)
+        if is_ppv2enabled and not isinstance(is_ppv2enabled, bool):
+            raise TypeError("Expected argument 'is_ppv2enabled' to be a bool")
+        pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
         if listener_name and not isinstance(listener_name, str):
             raise TypeError("Expected argument 'listener_name' to be a str")
         pulumi.set(__self__, "listener_name", listener_name)
@@ -67,6 +70,14 @@ class GetListenerResult:
         IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isPpv2enabled")
+    def is_ppv2enabled(self) -> bool:
+        """
+        Property to enable/disable PPv2 feature for this listener.
+        """
+        return pulumi.get(self, "is_ppv2enabled")
 
     @property
     @pulumi.getter(name="listenerName")
@@ -112,6 +123,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             default_backend_set_name=self.default_backend_set_name,
             id=self.id,
             ip_version=self.ip_version,
+            is_ppv2enabled=self.is_ppv2enabled,
             listener_name=self.listener_name,
             name=self.name,
             network_load_balancer_id=self.network_load_balancer_id,
@@ -151,6 +163,7 @@ def get_listener(listener_name: Optional[str] = None,
         default_backend_set_name=pulumi.get(__ret__, 'default_backend_set_name'),
         id=pulumi.get(__ret__, 'id'),
         ip_version=pulumi.get(__ret__, 'ip_version'),
+        is_ppv2enabled=pulumi.get(__ret__, 'is_ppv2enabled'),
         listener_name=pulumi.get(__ret__, 'listener_name'),
         name=pulumi.get(__ret__, 'name'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),

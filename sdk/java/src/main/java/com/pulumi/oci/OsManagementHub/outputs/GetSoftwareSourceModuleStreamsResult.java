@@ -44,7 +44,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
      */
     private @Nullable String name;
     /**
-     * @return The OCID of the software source that provides this module stream.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
      * 
      */
     private String softwareSourceId;
@@ -92,7 +92,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return The OCID of the software source that provides this module stream.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
      * 
      */
     public String softwareSourceId() {

@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Email
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
         /// </summary>
         [Output("dnsSubdomainName")]
         public Output<string> DnsSubdomainName { get; private set; } = null!;
@@ -284,7 +284,7 @@ namespace Pulumi.Oci.Email
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+        /// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
         /// </summary>
         [Input("dnsSubdomainName")]
         public Input<string>? DnsSubdomainName { get; set; }

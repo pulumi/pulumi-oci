@@ -134,10 +134,10 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
     ```
 
 
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str software_source_id: The software source OCID.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -184,9 +184,9 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
     ```
 
 
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str software_source_id: The software source OCID.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

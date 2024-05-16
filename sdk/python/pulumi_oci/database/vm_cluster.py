@@ -29,6 +29,7 @@ class VmClusterArgs:
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -55,6 +56,7 @@ class VmClusterArgs:
         :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of Db server.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
@@ -82,6 +84,8 @@ class VmClusterArgs:
             pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if file_system_configuration_details is not None:
+            pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
@@ -257,6 +261,18 @@ class VmClusterArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]]):
+        pulumi.set(self, "file_system_configuration_details", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -365,6 +381,7 @@ class _VmClusterState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -395,6 +412,7 @@ class _VmClusterState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -439,6 +457,8 @@ class _VmClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if file_system_configuration_details is not None:
+            pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gi_version is not None:
@@ -614,6 +634,18 @@ class _VmClusterState:
     @exadata_infrastructure_id.setter
     def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterFileSystemConfigurationDetailArgs']]]]):
+        pulumi.set(self, "file_system_configuration_details", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -833,6 +865,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -873,6 +906,10 @@ class VmCluster(pulumi.CustomResource):
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
+            file_system_configuration_details=[oci.database.VmClusterFileSystemConfigurationDetailArgs(
+                file_system_size_gb=vm_cluster_file_system_configuration_details_file_system_size_gb,
+                mount_point=vm_cluster_file_system_configuration_details_mount_point,
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -903,6 +940,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -952,6 +990,10 @@ class VmCluster(pulumi.CustomResource):
             db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
             db_servers=vm_cluster_db_servers,
             defined_tags=vm_cluster_defined_tags,
+            file_system_configuration_details=[oci.database.VmClusterFileSystemConfigurationDetailArgs(
+                file_system_size_gb=vm_cluster_file_system_configuration_details_file_system_size_gb,
+                mount_point=vm_cluster_file_system_configuration_details_mount_point,
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -996,6 +1038,7 @@ class VmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1034,6 +1077,7 @@ class VmCluster(pulumi.CustomResource):
             if exadata_infrastructure_id is None and not opts.urn:
                 raise TypeError("Missing required property 'exadata_infrastructure_id'")
             __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+            __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
             __props__.__dict__["freeform_tags"] = freeform_tags
             if gi_version is None and not opts.urn:
                 raise TypeError("Missing required property 'gi_version'")
@@ -1081,6 +1125,7 @@ class VmCluster(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -1116,6 +1161,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -1152,6 +1198,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+        __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
         __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
@@ -1263,6 +1310,14 @@ class VmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> pulumi.Output[Sequence['outputs.VmClusterFileSystemConfigurationDetail']]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")

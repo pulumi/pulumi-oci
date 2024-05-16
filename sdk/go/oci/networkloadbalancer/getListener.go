@@ -65,8 +65,10 @@ type LookupListenerResult struct {
 	DefaultBackendSetName string `pulumi:"defaultBackendSetName"`
 	Id                    string `pulumi:"id"`
 	// IP version associated with the listener.
-	IpVersion    string `pulumi:"ipVersion"`
-	ListenerName string `pulumi:"listenerName"`
+	IpVersion string `pulumi:"ipVersion"`
+	// Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled bool   `pulumi:"isPpv2enabled"`
+	ListenerName  string `pulumi:"listenerName"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name                  string `pulumi:"name"`
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
@@ -128,6 +130,11 @@ func (o LookupListenerResultOutput) Id() pulumi.StringOutput {
 // IP version associated with the listener.
 func (o LookupListenerResultOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.IpVersion }).(pulumi.StringOutput)
+}
+
+// Property to enable/disable PPv2 feature for this listener.
+func (o LookupListenerResultOutput) IsPpv2enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupListenerResult) bool { return v.IsPpv2enabled }).(pulumi.BoolOutput)
 }
 
 func (o LookupListenerResultOutput) ListenerName() pulumi.StringOutput {

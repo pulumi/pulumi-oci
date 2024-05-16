@@ -14,8 +14,35 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against 
-        /// a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLifecycleStages = Oci.OsManagementHub.GetLifecycleStages.Invoke(new()
+        ///     {
+        ///         ArchType = lifecycleStageArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = lifecycleStageDisplayName,
+        ///         DisplayNameContains = lifecycleStageDisplayNameContains,
+        ///         LifecycleStageId = testLifecycleStage.Id,
+        ///         Locations = lifecycleStageLocation,
+        ///         LocationNotEqualTos = lifecycleStageLocationNotEqualTo,
+        ///         OsFamily = lifecycleStageOsFamily,
+        ///         SoftwareSourceId = lifecycleStageSoftwareSourceId,
+        ///         State = lifecycleStageState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetLifecycleStagesResult> InvokeAsync(GetLifecycleStagesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLifecycleStagesResult>("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args ?? new GetLifecycleStagesArgs(), options.WithDefaults());
@@ -23,8 +50,35 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against 
-        /// a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testLifecycleStages = Oci.OsManagementHub.GetLifecycleStages.Invoke(new()
+        ///     {
+        ///         ArchType = lifecycleStageArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = lifecycleStageDisplayName,
+        ///         DisplayNameContains = lifecycleStageDisplayNameContains,
+        ///         LifecycleStageId = testLifecycleStage.Id,
+        ///         Locations = lifecycleStageLocation,
+        ///         LocationNotEqualTos = lifecycleStageLocationNotEqualTo,
+        ///         OsFamily = lifecycleStageOsFamily,
+        ///         SoftwareSourceId = lifecycleStageSoftwareSourceId,
+        ///         State = lifecycleStageState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetLifecycleStagesResult> Invoke(GetLifecycleStagesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleStagesResult>("oci:OsManagementHub/getLifecycleStages:getLifecycleStages", args ?? new GetLifecycleStagesInvokeArgs(), options.WithDefaults());
@@ -40,7 +94,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -72,25 +126,49 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         /// </summary>
         [Input("lifecycleStageId")]
         public string? LifecycleStageId { get; set; }
 
+        [Input("locationNotEqualTos")]
+        private List<string>? _locationNotEqualTos;
+
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public List<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new List<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private List<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public List<string> Locations
+        {
+            get => _locations ?? (_locations = new List<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public string? OsFamily { get; set; }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         /// </summary>
         [Input("softwareSourceId")]
         public string? SoftwareSourceId { get; set; }
 
         /// <summary>
-        /// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+        /// A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -110,7 +188,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -142,25 +220,49 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         /// </summary>
         [Input("lifecycleStageId")]
         public Input<string>? LifecycleStageId { get; set; }
 
+        [Input("locationNotEqualTos")]
+        private InputList<string>? _locationNotEqualTos;
+
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public InputList<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new InputList<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private InputList<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public InputList<string> Locations
+        {
+            get => _locations ?? (_locations = new InputList<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         /// </summary>
         [Input("softwareSourceId")]
         public Input<string>? SoftwareSourceId { get; set; }
 
         /// <summary>
-        /// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+        /// A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -176,11 +278,11 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetLifecycleStagesResult
     {
         /// <summary>
-        /// The CPU architecture of the target instances.
+        /// The CPU architecture of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string? ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         public readonly string? CompartmentId;
         public readonly string? DisplayNameContains;
@@ -198,12 +300,17 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLifecycleStagesLifecycleStageCollectionResult> LifecycleStageCollections;
         public readonly string? LifecycleStageId;
+        public readonly ImmutableArray<string> LocationNotEqualTos;
         /// <summary>
-        /// The operating system type of the target instances.
+        /// The location of managed instances associated with the lifecycle stage.
+        /// </summary>
+        public readonly ImmutableArray<string> Locations;
+        /// <summary>
+        /// The operating system of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string? OsFamily;
         /// <summary>
-        /// Identifying information for the specified software source.
+        /// Provides identifying information for the specified software source.
         /// </summary>
         public readonly string? SoftwareSourceId;
         /// <summary>
@@ -229,6 +336,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             string? lifecycleStageId,
 
+            ImmutableArray<string> locationNotEqualTos,
+
+            ImmutableArray<string> locations,
+
             string? osFamily,
 
             string? softwareSourceId,
@@ -243,6 +354,8 @@ namespace Pulumi.Oci.OsManagementHub
             Id = id;
             LifecycleStageCollections = lifecycleStageCollections;
             LifecycleStageId = lifecycleStageId;
+            LocationNotEqualTos = locationNotEqualTos;
+            Locations = locations;
             OsFamily = osFamily;
             SoftwareSourceId = softwareSourceId;
             State = state;

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource {
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     private String id;
 
     private GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource() {}
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     public String id() {

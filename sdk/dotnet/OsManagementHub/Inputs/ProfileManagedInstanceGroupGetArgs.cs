@@ -19,7 +19,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

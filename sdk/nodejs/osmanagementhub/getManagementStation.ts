@@ -35,7 +35,7 @@ export function getManagementStation(args: GetManagementStationArgs, opts?: pulu
  */
 export interface GetManagementStationArgs {
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     managementStationId: string;
 }
@@ -45,7 +45,7 @@ export interface GetManagementStationArgs {
  */
 export interface GetManagementStationResult {
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
     readonly compartmentId: string;
     /**
@@ -53,11 +53,11 @@ export interface GetManagementStationResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Details describing the ManagementStation config.
+     * Explanation of the health status.
      */
     readonly description: string;
     /**
-     * ManagementStation name
+     * A user-friendly name for the management station.
      */
     readonly displayName: string;
     /**
@@ -65,52 +65,57 @@ export interface GetManagementStationResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Name of the host
+     * Overall health information of the management station.
+     */
+    readonly healths: outputs.OsManagementHub.GetManagementStationHealth[];
+    /**
+     * Hostname of the management station.
      */
     readonly hostname: string;
     /**
-     * OCID for the ManagementStation config
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     readonly id: string;
     /**
-     * OCID for the Instance associated with the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
     readonly managedInstanceId: string;
     readonly managementStationId: string;
     /**
-     * A decimal number representing the mirror capacity
+     * A decimal number representing the amount of mirror capacity used by the sync.
      */
     readonly mirrorCapacity: number;
     /**
-     * Status summary of all repos
+     * Status summary of the mirror sync.
      */
     readonly mirrorSyncStatuses: outputs.OsManagementHub.GetManagementStationMirrorSyncStatus[];
     /**
-     * Information for a mirror configuration
+     * Mirror information used for the management station configuration.
      */
     readonly mirrors: outputs.OsManagementHub.GetManagementStationMirror[];
     /**
-     * A decimal number representing the completeness percentage
+     * A decimal number representing the progress of the current mirror sync.
      */
     readonly overallPercentage: number;
     /**
-     * Current state of the mirroring
+     * Current state of the mirror sync for the management station.
      */
     readonly overallState: string;
     /**
-     * OCID of the Profile associated with the Station
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
     readonly profileId: string;
     /**
-     * Information for a proxy configuration
+     * Proxy information used for the management station configuration.
      */
     readonly proxies: outputs.OsManagementHub.GetManagementStationProxy[];
+    readonly refreshTrigger: number;
     /**
-     * OCID of the Scheduled Job for mirror sync
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      */
     readonly scheduledJobId: string;
     /**
-     * The current state of the Management Station config.
+     * The current state of the management station.
      */
     readonly state: string;
     /**
@@ -118,7 +123,7 @@ export interface GetManagementStationResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * A decimal number representing the total of repos
+     * The number of software sources that the station is mirroring.
      */
     readonly totalMirrors: number;
 }
@@ -147,7 +152,7 @@ export function getManagementStationOutput(args: GetManagementStationOutputArgs,
  */
 export interface GetManagementStationOutputArgs {
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     managementStationId: pulumi.Input<string>;
 }

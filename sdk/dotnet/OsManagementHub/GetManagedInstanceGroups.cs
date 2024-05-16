@@ -14,8 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the 
-        /// list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
         /// 
         /// 
         /// ## Example Usage
@@ -34,6 +33,9 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentId = compartmentId,
         ///         DisplayNames = managedInstanceGroupDisplayName,
         ///         DisplayNameContains = managedInstanceGroupDisplayNameContains,
+        ///         IsManagedByAutonomousLinux = managedInstanceGroupIsManagedByAutonomousLinux,
+        ///         Locations = managedInstanceGroupLocation,
+        ///         LocationNotEqualTos = managedInstanceGroupLocationNotEqualTo,
         ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
         ///         OsFamily = managedInstanceGroupOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
@@ -49,8 +51,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the 
-        /// list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        /// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
         /// 
         /// 
         /// ## Example Usage
@@ -69,6 +70,9 @@ namespace Pulumi.Oci.OsManagementHub
         ///         CompartmentId = compartmentId,
         ///         DisplayNames = managedInstanceGroupDisplayName,
         ///         DisplayNameContains = managedInstanceGroupDisplayNameContains,
+        ///         IsManagedByAutonomousLinux = managedInstanceGroupIsManagedByAutonomousLinux,
+        ///         Locations = managedInstanceGroupLocation,
+        ///         LocationNotEqualTos = managedInstanceGroupLocationNotEqualTo,
         ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
         ///         OsFamily = managedInstanceGroupOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
@@ -92,7 +96,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -124,25 +128,55 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the managed instance group for which to list resources.
+        /// Indicates whether to list only resources managed by the Autonomous Linux service.
+        /// </summary>
+        [Input("isManagedByAutonomousLinux")]
+        public bool? IsManagedByAutonomousLinux { get; set; }
+
+        [Input("locationNotEqualTos")]
+        private List<string>? _locationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public List<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new List<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private List<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public List<string> Locations
+        {
+            get => _locations ?? (_locations = new List<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
         /// </summary>
         [Input("managedInstanceGroupId")]
         public string? ManagedInstanceGroupId { get; set; }
 
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public string? OsFamily { get; set; }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         /// </summary>
         [Input("softwareSourceId")]
         public string? SoftwareSourceId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycle state matches the given lifecycle state.
+        /// A filter to return only managed instance groups that are in the specified state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -162,7 +196,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -194,25 +228,55 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the managed instance group for which to list resources.
+        /// Indicates whether to list only resources managed by the Autonomous Linux service.
+        /// </summary>
+        [Input("isManagedByAutonomousLinux")]
+        public Input<bool>? IsManagedByAutonomousLinux { get; set; }
+
+        [Input("locationNotEqualTos")]
+        private InputList<string>? _locationNotEqualTos;
+
+        /// <summary>
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public InputList<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new InputList<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private InputList<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public InputList<string> Locations
+        {
+            get => _locations ?? (_locations = new InputList<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
         /// </summary>
         [Input("managedInstanceGroupId")]
         public Input<string>? ManagedInstanceGroupId { get; set; }
 
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         /// </summary>
         [Input("softwareSourceId")]
         public Input<string>? SoftwareSourceId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycle state matches the given lifecycle state.
+        /// A filter to return only managed instance groups that are in the specified state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -232,7 +296,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string? ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the managed instance group.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         /// </summary>
         public readonly string? CompartmentId;
         public readonly string? DisplayNameContains;
@@ -245,6 +309,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates whether the Autonomous Linux service manages the group.
+        /// </summary>
+        public readonly bool? IsManagedByAutonomousLinux;
+        public readonly ImmutableArray<string> LocationNotEqualTos;
+        /// <summary>
+        /// The location of managed instances attached to the group.
+        /// </summary>
+        public readonly ImmutableArray<string> Locations;
         /// <summary>
         /// The list of managed_instance_group_collection.
         /// </summary>
@@ -274,6 +347,12 @@ namespace Pulumi.Oci.OsManagementHub
 
             string id,
 
+            bool? isManagedByAutonomousLinux,
+
+            ImmutableArray<string> locationNotEqualTos,
+
+            ImmutableArray<string> locations,
+
             ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionResult> managedInstanceGroupCollections,
 
             string? managedInstanceGroupId,
@@ -290,6 +369,9 @@ namespace Pulumi.Oci.OsManagementHub
             DisplayNames = displayNames;
             Filters = filters;
             Id = id;
+            IsManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            LocationNotEqualTos = locationNotEqualTos;
+            Locations = locations;
             ManagedInstanceGroupCollections = managedInstanceGroupCollections;
             ManagedInstanceGroupId = managedInstanceGroupId;
             OsFamily = osFamily;

@@ -23,9 +23,12 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
+ *     isDefaultProfile: profileIsDefaultProfile,
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
  *     osFamily: profileOsFamily,
  *     profileId: testProfile.id,
  *     profileTypes: profileProfileType,
+ *     registrationTypes: profileRegistrationType,
  *     state: profileState,
  *     vendorName: profileVendorName,
  * });
@@ -41,9 +44,12 @@ export function getProfiles(args?: GetProfilesArgs, opts?: pulumi.InvokeOptions)
         "displayNameContains": args.displayNameContains,
         "displayNames": args.displayNames,
         "filters": args.filters,
+        "isDefaultProfile": args.isDefaultProfile,
+        "isServiceProvidedProfile": args.isServiceProvidedProfile,
         "osFamily": args.osFamily,
         "profileId": args.profileId,
         "profileTypes": args.profileTypes,
+        "registrationTypes": args.registrationTypes,
         "state": args.state,
         "vendorName": args.vendorName,
     }, opts);
@@ -58,7 +64,7 @@ export interface GetProfilesArgs {
      */
     archType?: string;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
@@ -71,23 +77,35 @@ export interface GetProfilesArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetProfilesFilter[];
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A boolean variable that is used to list only the default profile resources.
+     */
+    isDefaultProfile?: boolean;
+    /**
+     * A filter to return only service-provided profiles.
+     */
+    isServiceProvidedProfile?: boolean;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: string;
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     profileId?: string;
     /**
-     * A filter to return registration profiles that match the given profileType.
+     * A filter to return registration profiles that match the given profile type.
      */
     profileTypes?: string[];
     /**
-     * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * A filter to return profiles that match the given instance type.
+     */
+    registrationTypes?: string[];
+    /**
+     * A filter to return only registration profiles in the given state.
      */
     state?: string;
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      */
     vendorName?: string;
 }
@@ -101,7 +119,7 @@ export interface GetProfilesResult {
      */
     readonly archType?: string;
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
     readonly compartmentId?: string;
     readonly displayNameContains?: string;
@@ -115,6 +133,14 @@ export interface GetProfilesResult {
      */
     readonly id: string;
     /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     */
+    readonly isDefaultProfile?: boolean;
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     */
+    readonly isServiceProvidedProfile?: boolean;
+    /**
      * The operating system family.
      */
     readonly osFamily?: string;
@@ -124,15 +150,19 @@ export interface GetProfilesResult {
     readonly profileCollections: outputs.OsManagementHub.GetProfilesProfileCollection[];
     readonly profileId?: string;
     /**
-     * The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      */
     readonly profileTypes?: string[];
+    /**
+     * The type of instance to register.
+     */
+    readonly registrationTypes?: string[];
     /**
      * The current state of the registration profile.
      */
     readonly state?: string;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      */
     readonly vendorName?: string;
 }
@@ -153,9 +183,12 @@ export interface GetProfilesResult {
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
+ *     isDefaultProfile: profileIsDefaultProfile,
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
  *     osFamily: profileOsFamily,
  *     profileId: testProfile.id,
  *     profileTypes: profileProfileType,
+ *     registrationTypes: profileRegistrationType,
  *     state: profileState,
  *     vendorName: profileVendorName,
  * });
@@ -174,7 +207,7 @@ export interface GetProfilesOutputArgs {
      */
     archType?: pulumi.Input<string>;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -187,23 +220,35 @@ export interface GetProfilesOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfilesFilterArgs>[]>;
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A boolean variable that is used to list only the default profile resources.
+     */
+    isDefaultProfile?: pulumi.Input<boolean>;
+    /**
+     * A filter to return only service-provided profiles.
+     */
+    isServiceProvidedProfile?: pulumi.Input<boolean>;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: pulumi.Input<string>;
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     profileId?: pulumi.Input<string>;
     /**
-     * A filter to return registration profiles that match the given profileType.
+     * A filter to return registration profiles that match the given profile type.
      */
     profileTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * A filter to return profiles that match the given instance type.
+     */
+    registrationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only registration profiles in the given state.
      */
     state?: pulumi.Input<string>;
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      */
     vendorName?: pulumi.Input<string>;
 }

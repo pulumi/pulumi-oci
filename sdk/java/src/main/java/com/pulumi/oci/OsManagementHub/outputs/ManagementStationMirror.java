@@ -13,56 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ManagementStationMirror {
     /**
-     * @return (Updatable) Directory for the mirroring
+     * @return (Updatable) Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     private String directory;
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     private String port;
     /**
-     * @return (Updatable) Local path for the sslcert
+     * @return (Updatable) Path to the SSL cerfificate.
      * 
      */
     private @Nullable String sslcert;
     /**
-     * @return (Updatable) Default sslport for the mirror
+     * @return (Updatable) Default mirror listening port for https.
      * 
      */
     private String sslport;
 
     private ManagementStationMirror() {}
     /**
-     * @return (Updatable) Directory for the mirroring
+     * @return (Updatable) Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     public String directory() {
         return this.directory;
     }
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return (Updatable) Local path for the sslcert
+     * @return (Updatable) Path to the SSL cerfificate.
      * 
      */
     public Optional<String> sslcert() {
         return Optional.ofNullable(this.sslcert);
     }
     /**
-     * @return (Updatable) Default sslport for the mirror
+     * @return (Updatable) Default mirror listening port for https.
      * 
      */
     public String sslport() {

@@ -13,8 +13,8 @@ import (
 
 // This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists module streams from the specified software source OCID. Filter the list against a variety of
-// criteria including but not limited to its module name and (stream) name.
+// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
 //
 // ## Example Usage
 //
@@ -58,7 +58,7 @@ func GetSoftwareSourceModuleStreams(ctx *pulumi.Context, args *GetSoftwareSource
 // A collection of arguments for invoking getSoftwareSourceModuleStreams.
 type GetSoftwareSourceModuleStreamsArgs struct {
 	Filters []GetSoftwareSourceModuleStreamsFilter `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest *bool `pulumi:"isLatest"`
 	// The name of a module. This parameter is required if a streamName is specified.
 	ModuleName *string `pulumi:"moduleName"`
@@ -66,7 +66,7 @@ type GetSoftwareSourceModuleStreamsArgs struct {
 	ModuleNameContains *string `pulumi:"moduleNameContains"`
 	// The name of the entity to be queried.
 	Name *string `pulumi:"name"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -84,7 +84,7 @@ type GetSoftwareSourceModuleStreamsResult struct {
 	ModuleStreamCollections []GetSoftwareSourceModuleStreamsModuleStreamCollection `pulumi:"moduleStreamCollections"`
 	// The name of the stream.
 	Name *string `pulumi:"name"`
-	// The OCID of the software source that provides this module stream.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -104,7 +104,7 @@ func GetSoftwareSourceModuleStreamsOutput(ctx *pulumi.Context, args GetSoftwareS
 // A collection of arguments for invoking getSoftwareSourceModuleStreams.
 type GetSoftwareSourceModuleStreamsOutputArgs struct {
 	Filters GetSoftwareSourceModuleStreamsFilterArrayInput `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
 	// The name of a module. This parameter is required if a streamName is specified.
 	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
@@ -112,7 +112,7 @@ type GetSoftwareSourceModuleStreamsOutputArgs struct {
 	ModuleNameContains pulumi.StringPtrInput `pulumi:"moduleNameContains"`
 	// The name of the entity to be queried.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 
@@ -170,7 +170,7 @@ func (o GetSoftwareSourceModuleStreamsResultOutput) Name() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the software source that provides this module stream.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
 func (o GetSoftwareSourceModuleStreamsResultOutput) SoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
 }

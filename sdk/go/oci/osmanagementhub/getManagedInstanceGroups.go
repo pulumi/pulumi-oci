@@ -13,8 +13,7 @@ import (
 
 // This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-// list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+// Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
 //
 // ## Example Usage
 //
@@ -31,14 +30,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagedInstanceGroups(ctx, &osmanagementhub.GetManagedInstanceGroupsArgs{
-//				ArchType:               pulumi.StringRef(managedInstanceGroupArchType),
-//				CompartmentId:          pulumi.StringRef(compartmentId),
-//				DisplayNames:           managedInstanceGroupDisplayName,
-//				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupDisplayNameContains),
-//				ManagedInstanceGroupId: pulumi.StringRef(testManagedInstanceGroup.Id),
-//				OsFamily:               pulumi.StringRef(managedInstanceGroupOsFamily),
-//				SoftwareSourceId:       pulumi.StringRef(testSoftwareSource.Id),
-//				State:                  pulumi.StringRef(managedInstanceGroupState),
+//				ArchType:                   pulumi.StringRef(managedInstanceGroupArchType),
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				DisplayNames:               managedInstanceGroupDisplayName,
+//				DisplayNameContains:        pulumi.StringRef(managedInstanceGroupDisplayNameContains),
+//				IsManagedByAutonomousLinux: pulumi.BoolRef(managedInstanceGroupIsManagedByAutonomousLinux),
+//				Locations:                  managedInstanceGroupLocation,
+//				LocationNotEqualTos:        managedInstanceGroupLocationNotEqualTo,
+//				ManagedInstanceGroupId:     pulumi.StringRef(testManagedInstanceGroup.Id),
+//				OsFamily:                   pulumi.StringRef(managedInstanceGroupOsFamily),
+//				SoftwareSourceId:           pulumi.StringRef(testSoftwareSource.Id),
+//				State:                      pulumi.StringRef(managedInstanceGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,20 +64,26 @@ func GetManagedInstanceGroups(ctx *pulumi.Context, args *GetManagedInstanceGroup
 type GetManagedInstanceGroupsArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames []string                         `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupsFilter `pulumi:"filters"`
-	// The OCID of the managed instance group for which to list resources.
+	// Indicates whether to list only resources managed by the Autonomous Linux service.
+	IsManagedByAutonomousLinux *bool `pulumi:"isManagedByAutonomousLinux"`
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos []string `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations []string `pulumi:"locations"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
 	ManagedInstanceGroupId *string `pulumi:"managedInstanceGroupId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources that match the given operating system family.
 	OsFamily *string `pulumi:"osFamily"`
-	// The OCID for the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
 	SoftwareSourceId *string `pulumi:"softwareSourceId"`
-	// A filter to return only resources their lifecycle state matches the given lifecycle state.
+	// A filter to return only managed instance groups that are in the specified state.
 	State *string `pulumi:"state"`
 }
 
@@ -83,7 +91,7 @@ type GetManagedInstanceGroupsArgs struct {
 type GetManagedInstanceGroupsResult struct {
 	// The CPU architecture of the instances in the managed instance group.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the tenancy containing the managed instance group.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId       *string `pulumi:"compartmentId"`
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// Software source name.
@@ -91,6 +99,11 @@ type GetManagedInstanceGroupsResult struct {
 	Filters      []GetManagedInstanceGroupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates whether the Autonomous Linux service manages the group.
+	IsManagedByAutonomousLinux *bool    `pulumi:"isManagedByAutonomousLinux"`
+	LocationNotEqualTos        []string `pulumi:"locationNotEqualTos"`
+	// The location of managed instances attached to the group.
+	Locations []string `pulumi:"locations"`
 	// The list of managed_instance_group_collection.
 	ManagedInstanceGroupCollections []GetManagedInstanceGroupsManagedInstanceGroupCollection `pulumi:"managedInstanceGroupCollections"`
 	ManagedInstanceGroupId          *string                                                  `pulumi:"managedInstanceGroupId"`
@@ -118,20 +131,26 @@ func GetManagedInstanceGroupsOutput(ctx *pulumi.Context, args GetManagedInstance
 type GetManagedInstanceGroupsOutputArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType pulumi.StringPtrInput `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput                  `pulumi:"displayNames"`
 	Filters      GetManagedInstanceGroupsFilterArrayInput `pulumi:"filters"`
-	// The OCID of the managed instance group for which to list resources.
+	// Indicates whether to list only resources managed by the Autonomous Linux service.
+	IsManagedByAutonomousLinux pulumi.BoolPtrInput `pulumi:"isManagedByAutonomousLinux"`
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos pulumi.StringArrayInput `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
 	ManagedInstanceGroupId pulumi.StringPtrInput `pulumi:"managedInstanceGroupId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
-	// The OCID for the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
 	SoftwareSourceId pulumi.StringPtrInput `pulumi:"softwareSourceId"`
-	// A filter to return only resources their lifecycle state matches the given lifecycle state.
+	// A filter to return only managed instance groups that are in the specified state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -159,7 +178,7 @@ func (o GetManagedInstanceGroupsResultOutput) ArchType() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v GetManagedInstanceGroupsResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the tenancy containing the managed instance group.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 func (o GetManagedInstanceGroupsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -180,6 +199,20 @@ func (o GetManagedInstanceGroupsResultOutput) Filters() GetManagedInstanceGroups
 // The provider-assigned unique ID for this managed resource.
 func (o GetManagedInstanceGroupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the Autonomous Linux service manages the group.
+func (o GetManagedInstanceGroupsResultOutput) IsManagedByAutonomousLinux() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsResult) *bool { return v.IsManagedByAutonomousLinux }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedInstanceGroupsResultOutput) LocationNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsResult) []string { return v.LocationNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+// The location of managed instances attached to the group.
+func (o GetManagedInstanceGroupsResultOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsResult) []string { return v.Locations }).(pulumi.StringArrayOutput)
 }
 
 // The list of managed_instance_group_collection.

@@ -9,8 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
- * criteria including but not limited to its module name, stream name, and (profile) name.
+ * Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+ * criteria including but not limited to its module name, stream name, and profile name.
  *
  * ## Example Usage
  *
@@ -52,11 +52,11 @@ export interface GetSoftwareSourceModuleStreamProfilesArgs {
      */
     name?: string;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: string;
     /**
-     * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * The name of the module stream. This parameter is required if a profile name is specified.
      */
     streamName?: string;
 }
@@ -91,8 +91,8 @@ export interface GetSoftwareSourceModuleStreamProfilesResult {
 /**
  * This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
- * criteria including but not limited to its module name, stream name, and (profile) name.
+ * Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+ * criteria including but not limited to its module name, stream name, and profile name.
  *
  * ## Example Usage
  *
@@ -126,11 +126,11 @@ export interface GetSoftwareSourceModuleStreamProfilesOutputArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     softwareSourceId: pulumi.Input<string>;
     /**
-     * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * The name of the module stream. This parameter is required if a profile name is specified.
      */
     streamName?: pulumi.Input<string>;
 }

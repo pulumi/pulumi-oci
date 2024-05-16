@@ -76,7 +76,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationMirrorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         [Input("managementStationId", required: true)]
         public string ManagementStationId { get; set; } = null!;
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationMirrorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         [Input("managementStationId", required: true)]
         public Input<string> ManagementStationId { get; set; } = null!;

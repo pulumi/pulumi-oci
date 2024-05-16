@@ -15,14 +15,14 @@ public final class GetLifecycleEnvironmentArgs extends com.pulumi.resources.Invo
     public static final GetLifecycleEnvironmentArgs Empty = new GetLifecycleEnvironmentArgs();
 
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     @Import(name="lifecycleEnvironmentId", required=true)
     private Output<String> lifecycleEnvironmentId;
 
     /**
-     * @return The OCID of the lifecycle environment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      * 
      */
     public Output<String> lifecycleEnvironmentId() {
@@ -54,7 +54,7 @@ public final class GetLifecycleEnvironmentArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param lifecycleEnvironmentId The OCID of the lifecycle environment.
+         * @param lifecycleEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetLifecycleEnvironmentArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param lifecycleEnvironmentId The OCID of the lifecycle environment.
+         * @param lifecycleEnvironmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
          * 
          * @return builder
          * 

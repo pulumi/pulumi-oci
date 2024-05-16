@@ -58,10 +58,10 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * Namespace can be imported using the `namespace`, e.g.
+ * Namespace can be imported using the `compartment_id` and `namespace`, e.g.
  * 
  * ```sh
- * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace &#34;namespace&#34;
+ * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace &#34;compartmentId/&lt;compartment_id&gt;/namespace/&lt;namespace&gt;&#34;
  * ```
  * 
  */

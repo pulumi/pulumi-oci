@@ -35,6 +35,8 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNames = lifecycleEnvironmentDisplayName,
         ///         DisplayNameContains = lifecycleEnvironmentDisplayNameContains,
         ///         LifecycleEnvironmentId = testLifecycleEnvironment.Id,
+        ///         Locations = lifecycleEnvironmentLocation,
+        ///         LocationNotEqualTos = lifecycleEnvironmentLocationNotEqualTo,
         ///         OsFamily = lifecycleEnvironmentOsFamily,
         ///         State = lifecycleEnvironmentState,
         ///     });
@@ -69,6 +71,8 @@ namespace Pulumi.Oci.OsManagementHub
         ///         DisplayNames = lifecycleEnvironmentDisplayName,
         ///         DisplayNameContains = lifecycleEnvironmentDisplayNameContains,
         ///         LifecycleEnvironmentId = testLifecycleEnvironment.Id,
+        ///         Locations = lifecycleEnvironmentLocation,
+        ///         LocationNotEqualTos = lifecycleEnvironmentLocationNotEqualTo,
         ///         OsFamily = lifecycleEnvironmentOsFamily,
         ///         State = lifecycleEnvironmentState,
         ///     });
@@ -90,7 +94,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -122,13 +126,37 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the lifecycle environment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
         /// </summary>
         [Input("lifecycleEnvironmentId")]
         public string? LifecycleEnvironmentId { get; set; }
 
+        [Input("locationNotEqualTos")]
+        private List<string>? _locationNotEqualTos;
+
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public List<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new List<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private List<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public List<string> Locations
+        {
+            get => _locations ?? (_locations = new List<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public string? OsFamily { get; set; }
@@ -154,7 +182,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -186,13 +214,37 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID of the lifecycle environment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
         /// </summary>
         [Input("lifecycleEnvironmentId")]
         public Input<string>? LifecycleEnvironmentId { get; set; }
 
+        [Input("locationNotEqualTos")]
+        private InputList<string>? _locationNotEqualTos;
+
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources whose location does not match the given value.
+        /// </summary>
+        public InputList<string> LocationNotEqualTos
+        {
+            get => _locationNotEqualTos ?? (_locationNotEqualTos = new InputList<string>());
+            set => _locationNotEqualTos = value;
+        }
+
+        [Input("locations")]
+        private InputList<string>? _locations;
+
+        /// <summary>
+        /// A filter to return only resources whose location matches the given value.
+        /// </summary>
+        public InputList<string> Locations
+        {
+            get => _locations ?? (_locations = new InputList<string>());
+            set => _locations = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
@@ -214,11 +266,11 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetLifecycleEnvironmentsResult
     {
         /// <summary>
-        /// The CPU architecture of the target instances.
+        /// The CPU architecture of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string? ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         public readonly string? CompartmentId;
         public readonly string? DisplayNameContains;
@@ -236,11 +288,16 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult> LifecycleEnvironmentCollections;
         /// <summary>
-        /// The OCID of the lifecycle environment for the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         /// </summary>
         public readonly string? LifecycleEnvironmentId;
+        public readonly ImmutableArray<string> LocationNotEqualTos;
         /// <summary>
-        /// The operating system type of the target instances.
+        /// The location of managed instances associated with the lifecycle stage.
+        /// </summary>
+        public readonly ImmutableArray<string> Locations;
+        /// <summary>
+        /// The operating system of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string? OsFamily;
         /// <summary>
@@ -266,6 +323,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             string? lifecycleEnvironmentId,
 
+            ImmutableArray<string> locationNotEqualTos,
+
+            ImmutableArray<string> locations,
+
             string? osFamily,
 
             string? state)
@@ -278,6 +339,8 @@ namespace Pulumi.Oci.OsManagementHub
             Id = id;
             LifecycleEnvironmentCollections = lifecycleEnvironmentCollections;
             LifecycleEnvironmentId = lifecycleEnvironmentId;
+            LocationNotEqualTos = locationNotEqualTos;
+            Locations = locations;
             OsFamily = osFamily;
             State = state;
         }

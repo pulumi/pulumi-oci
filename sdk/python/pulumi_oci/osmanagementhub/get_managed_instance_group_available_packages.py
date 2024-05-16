@@ -84,7 +84,7 @@ class GetManagedInstanceGroupAvailablePackagesResult:
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> Optional[bool]:
         """
-        Flag to return only latest package versions.
+        Indicates whether this is the latest package version.
         """
         return pulumi.get(self, "is_latest")
 
@@ -145,11 +145,11 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[str] 
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -200,10 +200,10 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str managed_instance_group_id: The managed instance group OCID.
+    :param bool is_latest: Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
     """
     ...

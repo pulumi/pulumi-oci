@@ -5,9 +5,10 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,39 +16,39 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
     public static final SoftwareSourceVendorSoftwareSourceArgs Empty = new SoftwareSourceVendorSoftwareSourceArgs();
 
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      * 
      */
-    @Import(name="displayName", required=true)
-    private Output<String> displayName;
+    @Import(name="displayName")
+    private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) User friendly name.
+     * @return (Updatable) User-friendly name.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Optional<Output<String>> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     /**
-     * (Updatable) The OCID of the resource that is immutable on creation.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="id", required=true)
-    private Output<String> id;
+    @Import(name="id")
+    private @Nullable Output<String> id;
 
     /**
-     * @return (Updatable) The OCID of the resource that is immutable on creation.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> id() {
-        return this.id;
+    public Optional<Output<String>> id() {
+        return Optional.ofNullable(this.id);
     }
 
     private SoftwareSourceVendorSoftwareSourceArgs() {}
@@ -76,18 +77,18 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param displayName (Updatable) User friendly name.
+         * @param displayName (Updatable) User-friendly name.
          * 
          * @return builder
          * 
          */
-        public Builder displayName(Output<String> displayName) {
+        public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
         /**
-         * @param displayName (Updatable) User friendly name.
+         * @param displayName (Updatable) User-friendly name.
          * 
          * @return builder
          * 
@@ -97,7 +98,7 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
         }
 
         /**
-         * @param id (Updatable) The OCID of the resource that is immutable on creation.
+         * @param id (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -105,13 +106,13 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
          * @return builder
          * 
          */
-        public Builder id(Output<String> id) {
+        public Builder id(@Nullable Output<String> id) {
             $.id = id;
             return this;
         }
 
         /**
-         * @param id (Updatable) The OCID of the resource that is immutable on creation.
+         * @param id (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -124,12 +125,6 @@ public final class SoftwareSourceVendorSoftwareSourceArgs extends com.pulumi.res
         }
 
         public SoftwareSourceVendorSoftwareSourceArgs build() {
-            if ($.displayName == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSourceArgs", "displayName");
-            }
-            if ($.id == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceVendorSoftwareSourceArgs", "id");
-            }
             return $;
         }
     }

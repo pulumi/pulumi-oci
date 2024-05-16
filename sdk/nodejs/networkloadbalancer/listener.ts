@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     port: listenerPort,
  *     protocol: listenerProtocol,
  *     ipVersion: listenerIpVersion,
+ *     isPpv2enabled: listenerIsPpv2enabled,
  * });
  * ```
  *
@@ -70,6 +71,10 @@ export class Listener extends pulumi.CustomResource {
      */
     public readonly ipVersion!: pulumi.Output<string>;
     /**
+     * (Updatable) Property to enable/disable PPv2 feature for this listener.
+     */
+    public readonly isPpv2enabled!: pulumi.Output<boolean>;
+    /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
     public readonly name!: pulumi.Output<string>;
@@ -105,6 +110,7 @@ export class Listener extends pulumi.CustomResource {
             const state = argsOrState as ListenerState | undefined;
             resourceInputs["defaultBackendSetName"] = state ? state.defaultBackendSetName : undefined;
             resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
+            resourceInputs["isPpv2enabled"] = state ? state.isPpv2enabled : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
@@ -125,6 +131,7 @@ export class Listener extends pulumi.CustomResource {
             }
             resourceInputs["defaultBackendSetName"] = args ? args.defaultBackendSetName : undefined;
             resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
+            resourceInputs["isPpv2enabled"] = args ? args.isPpv2enabled : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
@@ -147,6 +154,10 @@ export interface ListenerState {
      * (Updatable) IP version associated with the listener.
      */
     ipVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) Property to enable/disable PPv2 feature for this listener.
+     */
+    isPpv2enabled?: pulumi.Input<boolean>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
@@ -181,6 +192,10 @@ export interface ListenerArgs {
      * (Updatable) IP version associated with the listener.
      */
     ipVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) Property to enable/disable PPv2 feature for this listener.
+     */
+    isPpv2enabled?: pulumi.Input<boolean>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */

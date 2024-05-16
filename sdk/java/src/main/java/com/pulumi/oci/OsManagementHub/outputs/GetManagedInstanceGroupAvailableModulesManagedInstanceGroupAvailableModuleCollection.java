@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection {
     /**
-     * @return List of module stream profile.
+     * @return List of available modules.
      * 
      */
     private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items;
 
     private GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection() {}
     /**
-     * @return List of module stream profile.
+     * @return List of available modules.
      * 
      */
     public List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem> items() {

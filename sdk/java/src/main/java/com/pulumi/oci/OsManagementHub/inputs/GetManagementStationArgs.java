@@ -15,14 +15,14 @@ public final class GetManagementStationArgs extends com.pulumi.resources.InvokeA
     public static final GetManagementStationArgs Empty = new GetManagementStationArgs();
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     @Import(name="managementStationId", required=true)
     private Output<String> managementStationId;
 
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     public Output<String> managementStationId() {
@@ -54,7 +54,7 @@ public final class GetManagementStationArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param managementStationId The OCID of the management station.
+         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetManagementStationArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param managementStationId The OCID of the management station.
+         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
          * 
          * @return builder
          * 

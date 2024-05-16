@@ -33,6 +33,7 @@ import * as utilities from "../utilities";
  *     ruleSetNames: [testRuleSet.name],
  *     sslConfiguration: {
  *         certificateName: testCertificate.name,
+ *         hasSessionResumption: listenerSslConfigurationHasSessionResumption,
  *         certificateIds: listenerSslConfigurationCertificateIds,
  *         cipherSuiteName: listenerSslConfigurationCipherSuiteName,
  *         protocols: listenerSslConfigurationProtocols,

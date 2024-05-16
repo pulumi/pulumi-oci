@@ -9,6 +9,7 @@ import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemLi
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemLifecycleStage;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemManagedInstanceGroup;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollectionItemSoftwareSource;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -23,7 +24,7 @@ public final class GetProfilesProfileCollectionItem {
      */
     private String archType;
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
@@ -48,42 +49,57 @@ public final class GetProfilesProfileCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
     /**
-     * @return Identifying information for the specified lifecycle environment.
+     * @return A boolean variable that is used to list only the default profile resources.
+     * 
+     */
+    private Boolean isDefaultProfile;
+    /**
+     * @return A filter to return only service-provided profiles.
+     * 
+     */
+    private Boolean isServiceProvidedProfile;
+    /**
+     * @return Provides identifying information for the specified lifecycle environment.
      * 
      */
     private List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
     private String lifecycleStageId;
     /**
-     * @return Identifying information for the specified lifecycle stage.
+     * @return Provides identifying information for the specified lifecycle stage.
      * 
      */
     private List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
     private String managedInstanceGroupId;
     /**
-     * @return Identifying information for the specified managed instance group.
+     * @return Provides identifying information for the specified managed instance group.
      * 
      */
     private List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     private String managementStationId;
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     private String osFamily;
     /**
-     * @return A filter to return registration profiles that match the given profileType.
+     * @return A filter to return registration profiles that match the given profile type.
      * 
      */
     private String profileType;
+    /**
+     * @return A filter to return profiles that match the given instance type.
+     * 
+     */
+    private String registrationType;
     private List<String> softwareSourceIds;
     /**
      * @return The list of software sources that the registration profile will use.
@@ -91,7 +107,7 @@ public final class GetProfilesProfileCollectionItem {
      */
     private List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
     /**
-     * @return A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * @return A filter to return only registration profiles in the given state.
      * 
      */
     private String state;
@@ -101,12 +117,12 @@ public final class GetProfilesProfileCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * @return The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     private String vendorName;
@@ -120,7 +136,7 @@ public final class GetProfilesProfileCollectionItem {
         return this.archType;
     }
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -155,14 +171,28 @@ public final class GetProfilesProfileCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Identifying information for the specified lifecycle environment.
+     * @return A boolean variable that is used to list only the default profile resources.
+     * 
+     */
+    public Boolean isDefaultProfile() {
+        return this.isDefaultProfile;
+    }
+    /**
+     * @return A filter to return only service-provided profiles.
+     * 
+     */
+    public Boolean isServiceProvidedProfile() {
+        return this.isServiceProvidedProfile;
+    }
+    /**
+     * @return Provides identifying information for the specified lifecycle environment.
      * 
      */
     public List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments() {
@@ -172,7 +202,7 @@ public final class GetProfilesProfileCollectionItem {
         return this.lifecycleStageId;
     }
     /**
-     * @return Identifying information for the specified lifecycle stage.
+     * @return Provides identifying information for the specified lifecycle stage.
      * 
      */
     public List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages() {
@@ -182,32 +212,39 @@ public final class GetProfilesProfileCollectionItem {
         return this.managedInstanceGroupId;
     }
     /**
-     * @return Identifying information for the specified managed instance group.
+     * @return Provides identifying information for the specified managed instance group.
      * 
      */
     public List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups() {
         return this.managedInstanceGroups;
     }
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     public String managementStationId() {
         return this.managementStationId;
     }
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return A filter to return registration profiles that match the given profileType.
+     * @return A filter to return registration profiles that match the given profile type.
      * 
      */
     public String profileType() {
         return this.profileType;
+    }
+    /**
+     * @return A filter to return profiles that match the given instance type.
+     * 
+     */
+    public String registrationType() {
+        return this.registrationType;
     }
     public List<String> softwareSourceIds() {
         return this.softwareSourceIds;
@@ -220,7 +257,7 @@ public final class GetProfilesProfileCollectionItem {
         return this.softwareSources;
     }
     /**
-     * @return A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * @return A filter to return only registration profiles in the given state.
      * 
      */
     public String state() {
@@ -234,14 +271,14 @@ public final class GetProfilesProfileCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * @return The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     public String vendorName() {
@@ -264,6 +301,8 @@ public final class GetProfilesProfileCollectionItem {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isDefaultProfile;
+        private Boolean isServiceProvidedProfile;
         private List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
         private String lifecycleStageId;
         private List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
@@ -272,6 +311,7 @@ public final class GetProfilesProfileCollectionItem {
         private String managementStationId;
         private String osFamily;
         private String profileType;
+        private String registrationType;
         private List<String> softwareSourceIds;
         private List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
         private String state;
@@ -288,6 +328,8 @@ public final class GetProfilesProfileCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isDefaultProfile = defaults.isDefaultProfile;
+    	      this.isServiceProvidedProfile = defaults.isServiceProvidedProfile;
     	      this.lifecycleEnvironments = defaults.lifecycleEnvironments;
     	      this.lifecycleStageId = defaults.lifecycleStageId;
     	      this.lifecycleStages = defaults.lifecycleStages;
@@ -296,6 +338,7 @@ public final class GetProfilesProfileCollectionItem {
     	      this.managementStationId = defaults.managementStationId;
     	      this.osFamily = defaults.osFamily;
     	      this.profileType = defaults.profileType;
+    	      this.registrationType = defaults.registrationType;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.softwareSources = defaults.softwareSources;
     	      this.state = defaults.state;
@@ -358,6 +401,22 @@ public final class GetProfilesProfileCollectionItem {
               throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            if (isDefaultProfile == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "isDefaultProfile");
+            }
+            this.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            if (isServiceProvidedProfile == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "isServiceProvidedProfile");
+            }
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
             return this;
         }
         @CustomType.Setter
@@ -434,6 +493,14 @@ public final class GetProfilesProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder registrationType(String registrationType) {
+            if (registrationType == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "registrationType");
+            }
+            this.registrationType = registrationType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceIds(List<String> softwareSourceIds) {
             if (softwareSourceIds == null) {
               throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItem", "softwareSourceIds");
@@ -496,6 +563,8 @@ public final class GetProfilesProfileCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isDefaultProfile = isDefaultProfile;
+            _resultValue.isServiceProvidedProfile = isServiceProvidedProfile;
             _resultValue.lifecycleEnvironments = lifecycleEnvironments;
             _resultValue.lifecycleStageId = lifecycleStageId;
             _resultValue.lifecycleStages = lifecycleStages;
@@ -504,6 +573,7 @@ public final class GetProfilesProfileCollectionItem {
             _resultValue.managementStationId = managementStationId;
             _resultValue.osFamily = osFamily;
             _resultValue.profileType = profileType;
+            _resultValue.registrationType = registrationType;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.softwareSources = softwareSources;
             _resultValue.state = state;

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter {
     /**
-     * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return The type of the filter.
      * 
      */
     private String filterType;
@@ -33,7 +33,7 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter {
 
     private GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter() {}
     /**
-     * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return The type of the filter.
      * 
      */
     public String filterType() {

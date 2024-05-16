@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult
     {
         /// <summary>
-        /// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// The type of the filter.
         /// </summary>
         public readonly string FilterType;
         /// <summary>

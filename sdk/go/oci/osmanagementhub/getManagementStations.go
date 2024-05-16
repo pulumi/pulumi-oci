@@ -57,36 +57,36 @@ func GetManagementStations(ctx *pulumi.Context, args *GetManagementStationsArgs,
 
 // A collection of arguments for invoking getManagementStations.
 type GetManagementStationsArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName *string `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string                       `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationsFilter `pulumi:"filters"`
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id *string `pulumi:"id"`
-	// The OCID of the managed instance for which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
-	// The current lifecycle state for the object.
+	// A filter that returns information for management stations in the specified state.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getManagementStations.
 type GetManagementStationsResult struct {
-	// The OCID of the tenancy containing the Management Station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// ManagementStation name
+	// A user-friendly name for the management station.
 	DisplayName         *string                       `pulumi:"displayName"`
 	DisplayNameContains *string                       `pulumi:"displayNameContains"`
 	Filters             []GetManagementStationsFilter `pulumi:"filters"`
-	// OCID for the ManagementStation config
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	Id *string `pulumi:"id"`
-	// OCID for the Instance associated with the Management Station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The list of management_station_collection.
 	ManagementStationCollections []GetManagementStationsManagementStationCollection `pulumi:"managementStationCollections"`
-	// The current state of the Management Station config.
+	// The current state of the management station.
 	State *string `pulumi:"state"`
 }
 
@@ -105,18 +105,18 @@ func GetManagementStationsOutput(ctx *pulumi.Context, args GetManagementStations
 
 // A collection of arguments for invoking getManagementStations.
 type GetManagementStationsOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput                 `pulumi:"displayNameContains"`
 	Filters             GetManagementStationsFilterArrayInput `pulumi:"filters"`
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The OCID of the managed instance for which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
 	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
-	// The current lifecycle state for the object.
+	// A filter that returns information for management stations in the specified state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -139,12 +139,12 @@ func (o GetManagementStationsResultOutput) ToGetManagementStationsResultOutputWi
 	return o
 }
 
-// The OCID of the tenancy containing the Management Station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 func (o GetManagementStationsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// ManagementStation name
+// A user-friendly name for the management station.
 func (o GetManagementStationsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -157,12 +157,12 @@ func (o GetManagementStationsResultOutput) Filters() GetManagementStationsFilter
 	return o.ApplyT(func(v GetManagementStationsResult) []GetManagementStationsFilter { return v.Filters }).(GetManagementStationsFilterArrayOutput)
 }
 
-// OCID for the ManagementStation config
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 func (o GetManagementStationsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// OCID for the Instance associated with the Management Station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 func (o GetManagementStationsResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
@@ -174,7 +174,7 @@ func (o GetManagementStationsResultOutput) ManagementStationCollections() GetMan
 	}).(GetManagementStationsManagementStationCollectionArrayOutput)
 }
 
-// The current state of the Management Station config.
+// The current state of the management station.
 func (o GetManagementStationsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementStationsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

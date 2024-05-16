@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceCustomSoftwareSourceFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceVendorSoftwareSource;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -22,22 +23,27 @@ public final class GetSoftwareSourceResult {
      */
     private String archType;
     /**
-     * @return Possible availabilities of a software source.
+     * @return Availability of the software source (for non-OCI environments).
      * 
      */
     private String availability;
+    /**
+     * @return Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    private String availabilityAtOci;
     /**
      * @return The yum repository checksum type used by this software source.
      * 
      */
     private String checksumType;
     /**
-     * @return The OCID of the tenancy containing the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     private String compartmentId;
     /**
-     * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * @return Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     private List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
@@ -47,12 +53,12 @@ public final class GetSoftwareSourceResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Information specified by the user about the software source.
+     * @return User-specified description for the software source.
      * 
      */
     private String description;
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     private String displayName;
@@ -77,33 +83,63 @@ public final class GetSoftwareSourceResult {
      */
     private String gpgKeyUrl;
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     private String id;
     /**
-     * @return Indicates whether service should automatically update the custom software source for the user.
+     * @return Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    private Boolean isAutoResolveDependencies;
+    /**
+     * @return Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     private Boolean isAutomaticallyUpdated;
+    /**
+     * @return Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    private Boolean isCreatedFromPackageList;
+    /**
+     * @return Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    private Boolean isMandatoryForAutonomousLinux;
+    /**
+     * @return This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     * 
+     */
+    private String originSoftwareSourceId;
     /**
      * @return The OS family the software source belongs to.
      * 
      */
     private String osFamily;
     /**
-     * @return Number of packages.
+     * @return Number of packages the software source contains.
      * 
      */
     private String packageCount;
     /**
-     * @return The Repo ID for the software source.
+     * @return The packages in the software source.
+     * 
+     */
+    private List<String> packages;
+    /**
+     * @return The repository ID for the software source.
      * 
      */
     private String repoId;
+    /**
+     * @return The size of the software source in gigabytes (GB).
+     * 
+     */
+    private Double size;
     private String softwareSourceId;
     /**
-     * @return Type of the software source.
+     * @return Type of software source.
      * 
      */
     private String softwareSourceType;
@@ -123,12 +159,12 @@ public final class GetSoftwareSourceResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return URL for the repository.
+     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     private String url;
@@ -138,7 +174,7 @@ public final class GetSoftwareSourceResult {
      */
     private String vendorName;
     /**
-     * @return List of vendor software sources.
+     * @return List of vendor software sources that are used for the basis of the versioned custom software source.
      * 
      */
     private List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources;
@@ -152,11 +188,18 @@ public final class GetSoftwareSourceResult {
         return this.archType;
     }
     /**
-     * @return Possible availabilities of a software source.
+     * @return Availability of the software source (for non-OCI environments).
      * 
      */
     public String availability() {
         return this.availability;
+    }
+    /**
+     * @return Availability of the software source (for Oracle Cloud Infrastructure environments).
+     * 
+     */
+    public String availabilityAtOci() {
+        return this.availabilityAtOci;
     }
     /**
      * @return The yum repository checksum type used by this software source.
@@ -166,14 +209,14 @@ public final class GetSoftwareSourceResult {
         return this.checksumType;
     }
     /**
-     * @return The OCID of the tenancy containing the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * @return Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     public List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters() {
@@ -187,14 +230,14 @@ public final class GetSoftwareSourceResult {
         return this.definedTags;
     }
     /**
-     * @return Information specified by the user about the software source.
+     * @return User-specified description for the software source.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     public String displayName() {
@@ -229,18 +272,46 @@ public final class GetSoftwareSourceResult {
         return this.gpgKeyUrl;
     }
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Indicates whether service should automatically update the custom software source for the user.
+     * @return Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    public Boolean isAutoResolveDependencies() {
+        return this.isAutoResolveDependencies;
+    }
+    /**
+     * @return Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     public Boolean isAutomaticallyUpdated() {
         return this.isAutomaticallyUpdated;
+    }
+    /**
+     * @return Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    public Boolean isCreatedFromPackageList() {
+        return this.isCreatedFromPackageList;
+    }
+    /**
+     * @return Indicates whether the software source is required for the Autonomous Linux service.
+     * 
+     */
+    public Boolean isMandatoryForAutonomousLinux() {
+        return this.isMandatoryForAutonomousLinux;
+    }
+    /**
+     * @return This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+     * 
+     */
+    public String originSoftwareSourceId() {
+        return this.originSoftwareSourceId;
     }
     /**
      * @return The OS family the software source belongs to.
@@ -250,24 +321,38 @@ public final class GetSoftwareSourceResult {
         return this.osFamily;
     }
     /**
-     * @return Number of packages.
+     * @return Number of packages the software source contains.
      * 
      */
     public String packageCount() {
         return this.packageCount;
     }
     /**
-     * @return The Repo ID for the software source.
+     * @return The packages in the software source.
+     * 
+     */
+    public List<String> packages() {
+        return this.packages;
+    }
+    /**
+     * @return The repository ID for the software source.
      * 
      */
     public String repoId() {
         return this.repoId;
     }
+    /**
+     * @return The size of the software source in gigabytes (GB).
+     * 
+     */
+    public Double size() {
+        return this.size;
+    }
     public String softwareSourceId() {
         return this.softwareSourceId;
     }
     /**
-     * @return Type of the software source.
+     * @return Type of software source.
      * 
      */
     public String softwareSourceType() {
@@ -295,14 +380,14 @@ public final class GetSoftwareSourceResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return URL for the repository.
+     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     public String url() {
@@ -316,7 +401,7 @@ public final class GetSoftwareSourceResult {
         return this.vendorName;
     }
     /**
-     * @return List of vendor software sources.
+     * @return List of vendor software sources that are used for the basis of the versioned custom software source.
      * 
      */
     public List<GetSoftwareSourceVendorSoftwareSource> vendorSoftwareSources() {
@@ -334,6 +419,7 @@ public final class GetSoftwareSourceResult {
     public static final class Builder {
         private String archType;
         private String availability;
+        private String availabilityAtOci;
         private String checksumType;
         private String compartmentId;
         private List<GetSoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilters;
@@ -345,10 +431,16 @@ public final class GetSoftwareSourceResult {
         private String gpgKeyId;
         private String gpgKeyUrl;
         private String id;
+        private Boolean isAutoResolveDependencies;
         private Boolean isAutomaticallyUpdated;
+        private Boolean isCreatedFromPackageList;
+        private Boolean isMandatoryForAutonomousLinux;
+        private String originSoftwareSourceId;
         private String osFamily;
         private String packageCount;
+        private List<String> packages;
         private String repoId;
+        private Double size;
         private String softwareSourceId;
         private String softwareSourceType;
         private String softwareSourceVersion;
@@ -363,6 +455,7 @@ public final class GetSoftwareSourceResult {
     	      Objects.requireNonNull(defaults);
     	      this.archType = defaults.archType;
     	      this.availability = defaults.availability;
+    	      this.availabilityAtOci = defaults.availabilityAtOci;
     	      this.checksumType = defaults.checksumType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.customSoftwareSourceFilters = defaults.customSoftwareSourceFilters;
@@ -374,10 +467,16 @@ public final class GetSoftwareSourceResult {
     	      this.gpgKeyId = defaults.gpgKeyId;
     	      this.gpgKeyUrl = defaults.gpgKeyUrl;
     	      this.id = defaults.id;
+    	      this.isAutoResolveDependencies = defaults.isAutoResolveDependencies;
     	      this.isAutomaticallyUpdated = defaults.isAutomaticallyUpdated;
+    	      this.isCreatedFromPackageList = defaults.isCreatedFromPackageList;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
+    	      this.originSoftwareSourceId = defaults.originSoftwareSourceId;
     	      this.osFamily = defaults.osFamily;
     	      this.packageCount = defaults.packageCount;
+    	      this.packages = defaults.packages;
     	      this.repoId = defaults.repoId;
+    	      this.size = defaults.size;
     	      this.softwareSourceId = defaults.softwareSourceId;
     	      this.softwareSourceType = defaults.softwareSourceType;
     	      this.softwareSourceVersion = defaults.softwareSourceVersion;
@@ -403,6 +502,14 @@ public final class GetSoftwareSourceResult {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "availability");
             }
             this.availability = availability;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityAtOci(String availabilityAtOci) {
+            if (availabilityAtOci == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "availabilityAtOci");
+            }
+            this.availabilityAtOci = availabilityAtOci;
             return this;
         }
         @CustomType.Setter
@@ -497,11 +604,43 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            if (isAutoResolveDependencies == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isAutoResolveDependencies");
+            }
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isAutomaticallyUpdated(Boolean isAutomaticallyUpdated) {
             if (isAutomaticallyUpdated == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isAutomaticallyUpdated");
             }
             this.isAutomaticallyUpdated = isAutomaticallyUpdated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            if (isCreatedFromPackageList == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isCreatedFromPackageList");
+            }
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            if (isMandatoryForAutonomousLinux == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "isMandatoryForAutonomousLinux");
+            }
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder originSoftwareSourceId(String originSoftwareSourceId) {
+            if (originSoftwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "originSoftwareSourceId");
+            }
+            this.originSoftwareSourceId = originSoftwareSourceId;
             return this;
         }
         @CustomType.Setter
@@ -521,11 +660,30 @@ public final class GetSoftwareSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder packages(List<String> packages) {
+            if (packages == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "packages");
+            }
+            this.packages = packages;
+            return this;
+        }
+        public Builder packages(String... packages) {
+            return packages(List.of(packages));
+        }
+        @CustomType.Setter
         public Builder repoId(String repoId) {
             if (repoId == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "repoId");
             }
             this.repoId = repoId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder size(Double size) {
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceResult", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
@@ -607,6 +765,7 @@ public final class GetSoftwareSourceResult {
             final var _resultValue = new GetSoftwareSourceResult();
             _resultValue.archType = archType;
             _resultValue.availability = availability;
+            _resultValue.availabilityAtOci = availabilityAtOci;
             _resultValue.checksumType = checksumType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.customSoftwareSourceFilters = customSoftwareSourceFilters;
@@ -618,10 +777,16 @@ public final class GetSoftwareSourceResult {
             _resultValue.gpgKeyId = gpgKeyId;
             _resultValue.gpgKeyUrl = gpgKeyUrl;
             _resultValue.id = id;
+            _resultValue.isAutoResolveDependencies = isAutoResolveDependencies;
             _resultValue.isAutomaticallyUpdated = isAutomaticallyUpdated;
+            _resultValue.isCreatedFromPackageList = isCreatedFromPackageList;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            _resultValue.originSoftwareSourceId = originSoftwareSourceId;
             _resultValue.osFamily = osFamily;
             _resultValue.packageCount = packageCount;
+            _resultValue.packages = packages;
             _resultValue.repoId = repoId;
+            _resultValue.size = size;
             _resultValue.softwareSourceId = softwareSourceId;
             _resultValue.softwareSourceType = softwareSourceType;
             _resultValue.softwareSourceVersion = softwareSourceVersion;

@@ -18,14 +18,14 @@ public final class GetSoftwareSourceSoftwarePackagesFilter extends com.pulumi.re
     public static final GetSoftwareSourceSoftwarePackagesFilter Empty = new GetSoftwareSourceSoftwarePackagesFilter();
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetSoftwareSourceSoftwarePackagesFilter extends com.pulumi.re
         }
 
         /**
-         * @param name Unique identifier for the package. NOTE - This is not an OCID.
+         * @param name Unique identifier for the package. Note that this is not an OCID.
          * 
          * @return builder
          * 

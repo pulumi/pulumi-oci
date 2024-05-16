@@ -39,6 +39,9 @@ import (
 //				DisplayName:   pulumi.Any(managedInstanceGroupDisplayName),
 //				OsFamily:      pulumi.Any(managedInstanceGroupOsFamily),
 //				VendorName:    pulumi.Any(managedInstanceGroupVendorName),
+//				AutonomousSettings: &osmanagementhub.ManagedInstanceGroupAutonomousSettingsArgs{
+//					IsDataCollectionAuthorized: pulumi.Any(managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized),
+//				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -46,7 +49,9 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ManagedInstanceIds: pulumi.Any(managedInstanceGroupManagedInstanceIds),
+//				Location:            pulumi.Any(managedInstanceGroupLocation),
+//				ManagedInstanceIds:  pulumi.Any(managedInstanceGroupManagedInstanceIds),
+//				NotificationTopicId: pulumi.Any(testNotificationTopic.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -67,27 +72,35 @@ import (
 type ManagedInstanceGroup struct {
 	pulumi.CustomResourceState
 
-	// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringOutput `pulumi:"archType"`
-	// The OCID of the tenancy containing the managed instance group.
+	// (Updatable) Updatable settings for the Autonomous Linux service.
+	AutonomousSettings ManagedInstanceGroupAutonomousSettingsOutput `pulumi:"autonomousSettings"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Details about the managed instance group.
+	// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The number of Managed Instances in the managed instance group.
+	// Indicates whether the Autonomous Linux service manages the group.
+	IsManagedByAutonomousLinux pulumi.BoolOutput `pulumi:"isManagedByAutonomousLinux"`
+	// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+	Location pulumi.StringOutput `pulumi:"location"`
+	// The number of managed instances in the group.
 	ManagedInstanceCount pulumi.IntOutput `pulumi:"managedInstanceCount"`
-	// The list of managed instance OCIDs to be added to the managed instance group.
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 	ManagedInstanceIds pulumi.StringArrayOutput `pulumi:"managedInstanceIds"`
-	// The operating system type of the managed instance(s) that this managed instance group will contain.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId pulumi.StringOutput `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instances that will be attached to this group.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
 	PendingJobCount pulumi.IntOutput `pulumi:"pendingJobCount"`
-	// The list of software source OCIDs available to the managed instances in the managed instance group.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 	SoftwareSourceIds pulumi.StringArrayOutput `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources ManagedInstanceGroupSoftwareSourceArrayOutput `pulumi:"softwareSources"`
@@ -95,11 +108,11 @@ type ManagedInstanceGroup struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the managed instance group was created. An RFC3339 formatted datetime string.
+	// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+	// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system that will be used by the managed instances in the group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -124,9 +137,6 @@ func NewManagedInstanceGroup(ctx *pulumi.Context,
 	}
 	if args.OsFamily == nil {
 		return nil, errors.New("invalid value for required argument 'OsFamily'")
-	}
-	if args.SoftwareSourceIds == nil {
-		return nil, errors.New("invalid value for required argument 'SoftwareSourceIds'")
 	}
 	if args.VendorName == nil {
 		return nil, errors.New("invalid value for required argument 'VendorName'")
@@ -154,27 +164,35 @@ func GetManagedInstanceGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedInstanceGroup resources.
 type managedInstanceGroupState struct {
-	// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the tenancy containing the managed instance group.
+	// (Updatable) Updatable settings for the Autonomous Linux service.
+	AutonomousSettings *ManagedInstanceGroupAutonomousSettings `pulumi:"autonomousSettings"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Details about the managed instance group.
+	// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The number of Managed Instances in the managed instance group.
+	// Indicates whether the Autonomous Linux service manages the group.
+	IsManagedByAutonomousLinux *bool `pulumi:"isManagedByAutonomousLinux"`
+	// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+	Location *string `pulumi:"location"`
+	// The number of managed instances in the group.
 	ManagedInstanceCount *int `pulumi:"managedInstanceCount"`
-	// The list of managed instance OCIDs to be added to the managed instance group.
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
-	// The operating system type of the managed instance(s) that this managed instance group will contain.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instances that will be attached to this group.
 	OsFamily *string `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
 	PendingJobCount *int `pulumi:"pendingJobCount"`
-	// The list of software source OCIDs available to the managed instances in the managed instance group.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources []ManagedInstanceGroupSoftwareSource `pulumi:"softwareSources"`
@@ -182,11 +200,11 @@ type managedInstanceGroupState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the managed instance group was created. An RFC3339 formatted datetime string.
+	// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+	// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified *string `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system that will be used by the managed instances in the group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,27 +212,35 @@ type managedInstanceGroupState struct {
 }
 
 type ManagedInstanceGroupState struct {
-	// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringPtrInput
-	// The OCID of the tenancy containing the managed instance group.
+	// (Updatable) Updatable settings for the Autonomous Linux service.
+	AutonomousSettings ManagedInstanceGroupAutonomousSettingsPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Details about the managed instance group.
+	// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The number of Managed Instances in the managed instance group.
+	// Indicates whether the Autonomous Linux service manages the group.
+	IsManagedByAutonomousLinux pulumi.BoolPtrInput
+	// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+	Location pulumi.StringPtrInput
+	// The number of managed instances in the group.
 	ManagedInstanceCount pulumi.IntPtrInput
-	// The list of managed instance OCIDs to be added to the managed instance group.
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 	ManagedInstanceIds pulumi.StringArrayInput
-	// The operating system type of the managed instance(s) that this managed instance group will contain.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId pulumi.StringPtrInput
+	// The operating system type of the managed instances that will be attached to this group.
 	OsFamily pulumi.StringPtrInput
 	// The number of scheduled jobs pending against the managed instance group.
 	PendingJobCount pulumi.IntPtrInput
-	// The list of software source OCIDs available to the managed instances in the managed instance group.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 	SoftwareSourceIds pulumi.StringArrayInput
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources ManagedInstanceGroupSoftwareSourceArrayInput
@@ -222,11 +248,11 @@ type ManagedInstanceGroupState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the managed instance group was created. An RFC3339 formatted datetime string.
+	// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
-	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+	// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified pulumi.StringPtrInput
-	// The software source vendor name.
+	// The vendor of the operating system that will be used by the managed instances in the group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,25 +264,31 @@ func (ManagedInstanceGroupState) ElementType() reflect.Type {
 }
 
 type managedInstanceGroupArgs struct {
-	// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType string `pulumi:"archType"`
-	// The OCID of the tenancy containing the managed instance group.
+	// (Updatable) Updatable settings for the Autonomous Linux service.
+	AutonomousSettings *ManagedInstanceGroupAutonomousSettings `pulumi:"autonomousSettings"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Details about the managed instance group.
+	// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The list of managed instance OCIDs to be added to the managed instance group.
+	// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+	Location *string `pulumi:"location"`
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
-	// The operating system type of the managed instance(s) that this managed instance group will contain.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
+	// The operating system type of the managed instances that will be attached to this group.
 	OsFamily string `pulumi:"osFamily"`
-	// The list of software source OCIDs available to the managed instances in the managed instance group.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
-	// The software source vendor name.
+	// The vendor of the operating system that will be used by the managed instances in the group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -265,25 +297,31 @@ type managedInstanceGroupArgs struct {
 
 // The set of arguments for constructing a ManagedInstanceGroup resource.
 type ManagedInstanceGroupArgs struct {
-	// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType pulumi.StringInput
-	// The OCID of the tenancy containing the managed instance group.
+	// (Updatable) Updatable settings for the Autonomous Linux service.
+	AutonomousSettings ManagedInstanceGroupAutonomousSettingsPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Details about the managed instance group.
+	// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The list of managed instance OCIDs to be added to the managed instance group.
+	// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+	Location pulumi.StringPtrInput
+	// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 	ManagedInstanceIds pulumi.StringArrayInput
-	// The operating system type of the managed instance(s) that this managed instance group will contain.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+	NotificationTopicId pulumi.StringPtrInput
+	// The operating system type of the managed instances that will be attached to this group.
 	OsFamily pulumi.StringInput
-	// The list of software source OCIDs available to the managed instances in the managed instance group.
+	// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 	SoftwareSourceIds pulumi.StringArrayInput
-	// The software source vendor name.
+	// The vendor of the operating system that will be used by the managed instances in the group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -377,12 +415,19 @@ func (o ManagedInstanceGroupOutput) ToManagedInstanceGroupOutputWithContext(ctx 
 	return o
 }
 
-// The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+// The CPU architecture type of the managed instances that will be attached to this group.
 func (o ManagedInstanceGroupOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the managed instance group.
+// (Updatable) Updatable settings for the Autonomous Linux service.
+func (o ManagedInstanceGroupOutput) AutonomousSettings() ManagedInstanceGroupAutonomousSettingsOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) ManagedInstanceGroupAutonomousSettingsOutput {
+		return v.AutonomousSettings
+	}).(ManagedInstanceGroupAutonomousSettingsOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
 func (o ManagedInstanceGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -392,12 +437,12 @@ func (o ManagedInstanceGroupOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Details about the managed instance group.
+// (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
 func (o ManagedInstanceGroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o ManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -407,17 +452,32 @@ func (o ManagedInstanceGroupOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The number of Managed Instances in the managed instance group.
+// Indicates whether the Autonomous Linux service manages the group.
+func (o ManagedInstanceGroupOutput) IsManagedByAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.BoolOutput { return v.IsManagedByAutonomousLinux }).(pulumi.BoolOutput)
+}
+
+// The location of managed instances attached to the group. If no location is provided, the default is on premises.
+func (o ManagedInstanceGroupOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.Location }).(pulumi.StringOutput)
+}
+
+// The number of managed instances in the group.
 func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.ManagedInstanceCount }).(pulumi.IntOutput)
 }
 
-// The list of managed instance OCIDs to be added to the managed instance group.
+// The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
 func (o ManagedInstanceGroupOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringArrayOutput { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// The operating system type of the managed instance(s) that this managed instance group will contain.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+func (o ManagedInstanceGroupOutput) NotificationTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.NotificationTopicId }).(pulumi.StringOutput)
+}
+
+// The operating system type of the managed instances that will be attached to this group.
 func (o ManagedInstanceGroupOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
 }
@@ -427,7 +487,7 @@ func (o ManagedInstanceGroupOutput) PendingJobCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.PendingJobCount }).(pulumi.IntOutput)
 }
 
-// The list of software source OCIDs available to the managed instances in the managed instance group.
+// The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
 func (o ManagedInstanceGroupOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringArrayOutput { return v.SoftwareSourceIds }).(pulumi.StringArrayOutput)
 }
@@ -447,17 +507,17 @@ func (o ManagedInstanceGroupOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the managed instance group was created. An RFC3339 formatted datetime string.
+// The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o ManagedInstanceGroupOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+// The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o ManagedInstanceGroupOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
 }
 
-// The software source vendor name.
+// The vendor of the operating system that will be used by the managed instances in the group.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

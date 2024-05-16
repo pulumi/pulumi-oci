@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourceSoftwarePackagesFilterResult
     {
         /// <summary>
-        /// Unique identifier for the package. NOTE - This is not an OCID.
+        /// Unique identifier for the package. Note that this is not an OCID.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

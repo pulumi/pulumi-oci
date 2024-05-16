@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified module stream in a software source.
+        /// Returns information about the specified module stream in a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified module stream in a software source.
+        /// Returns information about the specified module stream in a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string ModuleName { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> ModuleName { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<string> Profiles;
         /// <summary>
-        /// The OCID of the software source that provides this module stream.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
         /// </summary>
         public readonly string SoftwareSourceId;
         public readonly string StreamName;

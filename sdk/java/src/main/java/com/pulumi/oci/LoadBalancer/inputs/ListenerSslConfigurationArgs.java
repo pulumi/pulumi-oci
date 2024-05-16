@@ -90,6 +90,21 @@ public final class ListenerSslConfigurationArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+     * 
+     */
+    @Import(name="hasSessionResumption")
+    private @Nullable Output<Boolean> hasSessionResumption;
+
+    /**
+     * @return (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+     * 
+     */
+    public Optional<Output<Boolean>> hasSessionResumption() {
+        return Optional.ofNullable(this.hasSessionResumption);
+    }
+
+    /**
      * (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
      * 
      * The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -216,6 +231,7 @@ public final class ListenerSslConfigurationArgs extends com.pulumi.resources.Res
         this.certificateIds = $.certificateIds;
         this.certificateName = $.certificateName;
         this.cipherSuiteName = $.cipherSuiteName;
+        this.hasSessionResumption = $.hasSessionResumption;
         this.protocols = $.protocols;
         this.serverOrderPreference = $.serverOrderPreference;
         this.trustedCertificateAuthorityIds = $.trustedCertificateAuthorityIds;
@@ -338,6 +354,27 @@ public final class ListenerSslConfigurationArgs extends com.pulumi.resources.Res
          */
         public Builder cipherSuiteName(String cipherSuiteName) {
             return cipherSuiteName(Output.of(cipherSuiteName));
+        }
+
+        /**
+         * @param hasSessionResumption (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hasSessionResumption(@Nullable Output<Boolean> hasSessionResumption) {
+            $.hasSessionResumption = hasSessionResumption;
+            return this;
+        }
+
+        /**
+         * @param hasSessionResumption (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If &#34;true&#34;, the service resumes the previous TLS encrypted session. If &#34;false&#34;, the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hasSessionResumption(Boolean hasSessionResumption) {
+            return hasSessionResumption(Output.of(hasSessionResumption));
         }
 
         /**

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified software source.
+// Returns information about the specified software source.
 //
 // ## Example Usage
 //
@@ -52,7 +52,7 @@ func LookupSoftwareSource(ctx *pulumi.Context, args *LookupSoftwareSourceArgs, o
 
 // A collection of arguments for invoking getSoftwareSource.
 type LookupSoftwareSourceArgs struct {
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -60,19 +60,21 @@ type LookupSoftwareSourceArgs struct {
 type LookupSoftwareSourceResult struct {
 	// The architecture type supported by the software source.
 	ArchType string `pulumi:"archType"`
-	// Possible availabilities of a software source.
+	// Availability of the software source (for non-OCI environments).
 	Availability string `pulumi:"availability"`
+	// Availability of the software source (for Oracle Cloud Infrastructure environments).
+	AvailabilityAtOci string `pulumi:"availabilityAtOci"`
 	// The yum repository checksum type used by this software source.
 	ChecksumType string `pulumi:"checksumType"`
-	// The OCID of the tenancy containing the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+	// Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilters []GetSoftwareSourceCustomSoftwareSourceFilter `pulumi:"customSoftwareSourceFilters"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Information specified by the user about the software source.
+	// User-specified description for the software source.
 	Description string `pulumi:"description"`
-	// User friendly name.
+	// User-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -82,18 +84,30 @@ type LookupSoftwareSourceResult struct {
 	GpgKeyId string `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source.
 	GpgKeyUrl string `pulumi:"gpgKeyUrl"`
-	// The OCID of the resource that is immutable on creation.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 	Id string `pulumi:"id"`
-	// Indicates whether service should automatically update the custom software source for the user.
+	// Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+	IsAutoResolveDependencies bool `pulumi:"isAutoResolveDependencies"`
+	// Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 	IsAutomaticallyUpdated bool `pulumi:"isAutomaticallyUpdated"`
+	// Indicates whether the service should create the software source from a list of packages provided by the user.
+	IsCreatedFromPackageList bool `pulumi:"isCreatedFromPackageList"`
+	// Indicates whether the software source is required for the Autonomous Linux service.
+	IsMandatoryForAutonomousLinux bool `pulumi:"isMandatoryForAutonomousLinux"`
+	// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+	OriginSoftwareSourceId string `pulumi:"originSoftwareSourceId"`
 	// The OS family the software source belongs to.
 	OsFamily string `pulumi:"osFamily"`
-	// Number of packages.
+	// Number of packages the software source contains.
 	PackageCount string `pulumi:"packageCount"`
-	// The Repo ID for the software source.
-	RepoId           string `pulumi:"repoId"`
-	SoftwareSourceId string `pulumi:"softwareSourceId"`
-	// Type of the software source.
+	// The packages in the software source.
+	Packages []string `pulumi:"packages"`
+	// The repository ID for the software source.
+	RepoId string `pulumi:"repoId"`
+	// The size of the software source in gigabytes (GB).
+	Size             float64 `pulumi:"size"`
+	SoftwareSourceId string  `pulumi:"softwareSourceId"`
+	// Type of software source.
 	SoftwareSourceType string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
 	SoftwareSourceVersion string `pulumi:"softwareSourceVersion"`
@@ -101,13 +115,13 @@ type LookupSoftwareSourceResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
-	// URL for the repository.
+	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
 	Url string `pulumi:"url"`
 	// Name of the vendor providing the software source.
 	VendorName string `pulumi:"vendorName"`
-	// List of vendor software sources.
+	// List of vendor software sources that are used for the basis of the versioned custom software source.
 	VendorSoftwareSources []GetSoftwareSourceVendorSoftwareSource `pulumi:"vendorSoftwareSources"`
 }
 
@@ -126,7 +140,7 @@ func LookupSoftwareSourceOutput(ctx *pulumi.Context, args LookupSoftwareSourceOu
 
 // A collection of arguments for invoking getSoftwareSource.
 type LookupSoftwareSourceOutputArgs struct {
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 
@@ -154,9 +168,14 @@ func (o LookupSoftwareSourceResultOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// Possible availabilities of a software source.
+// Availability of the software source (for non-OCI environments).
 func (o LookupSoftwareSourceResultOutput) Availability() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Availability }).(pulumi.StringOutput)
+}
+
+// Availability of the software source (for Oracle Cloud Infrastructure environments).
+func (o LookupSoftwareSourceResultOutput) AvailabilityAtOci() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.AvailabilityAtOci }).(pulumi.StringOutput)
 }
 
 // The yum repository checksum type used by this software source.
@@ -164,12 +183,12 @@ func (o LookupSoftwareSourceResultOutput) ChecksumType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.ChecksumType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the software source.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
 func (o LookupSoftwareSourceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+// Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 func (o LookupSoftwareSourceResultOutput) CustomSoftwareSourceFilters() GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) []GetSoftwareSourceCustomSoftwareSourceFilter {
 		return v.CustomSoftwareSourceFilters
@@ -181,12 +200,12 @@ func (o LookupSoftwareSourceResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Information specified by the user about the software source.
+// User-specified description for the software source.
 func (o LookupSoftwareSourceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// User friendly name.
+// User-friendly name.
 func (o LookupSoftwareSourceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -211,14 +230,34 @@ func (o LookupSoftwareSourceResultOutput) GpgKeyUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.GpgKeyUrl }).(pulumi.StringOutput)
 }
 
-// The OCID of the resource that is immutable on creation.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 func (o LookupSoftwareSourceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether service should automatically update the custom software source for the user.
+// Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+func (o LookupSoftwareSourceResultOutput) IsAutoResolveDependencies() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsAutoResolveDependencies }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 func (o LookupSoftwareSourceResultOutput) IsAutomaticallyUpdated() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsAutomaticallyUpdated }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the service should create the software source from a list of packages provided by the user.
+func (o LookupSoftwareSourceResultOutput) IsCreatedFromPackageList() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsCreatedFromPackageList }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the software source is required for the Autonomous Linux service.
+func (o LookupSoftwareSourceResultOutput) IsMandatoryForAutonomousLinux() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) bool { return v.IsMandatoryForAutonomousLinux }).(pulumi.BoolOutput)
+}
+
+// This property applies only to replicated vendor software sources. This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment.
+func (o LookupSoftwareSourceResultOutput) OriginSoftwareSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.OriginSoftwareSourceId }).(pulumi.StringOutput)
 }
 
 // The OS family the software source belongs to.
@@ -226,21 +265,31 @@ func (o LookupSoftwareSourceResultOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.OsFamily }).(pulumi.StringOutput)
 }
 
-// Number of packages.
+// Number of packages the software source contains.
 func (o LookupSoftwareSourceResultOutput) PackageCount() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.PackageCount }).(pulumi.StringOutput)
 }
 
-// The Repo ID for the software source.
+// The packages in the software source.
+func (o LookupSoftwareSourceResultOutput) Packages() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) []string { return v.Packages }).(pulumi.StringArrayOutput)
+}
+
+// The repository ID for the software source.
 func (o LookupSoftwareSourceResultOutput) RepoId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.RepoId }).(pulumi.StringOutput)
+}
+
+// The size of the software source in gigabytes (GB).
+func (o LookupSoftwareSourceResultOutput) Size() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) float64 { return v.Size }).(pulumi.Float64Output)
 }
 
 func (o LookupSoftwareSourceResultOutput) SoftwareSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
 }
 
-// Type of the software source.
+// Type of software source.
 func (o LookupSoftwareSourceResultOutput) SoftwareSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
 }
@@ -260,12 +309,12 @@ func (o LookupSoftwareSourceResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupSoftwareSourceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// URL for the repository.
+// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
 func (o LookupSoftwareSourceResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.Url }).(pulumi.StringOutput)
 }
@@ -275,7 +324,7 @@ func (o LookupSoftwareSourceResultOutput) VendorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) string { return v.VendorName }).(pulumi.StringOutput)
 }
 
-// List of vendor software sources.
+// List of vendor software sources that are used for the basis of the versioned custom software source.
 func (o LookupSoftwareSourceResultOutput) VendorSoftwareSources() GetSoftwareSourceVendorSoftwareSourceArrayOutput {
 	return o.ApplyT(func(v LookupSoftwareSourceResult) []GetSoftwareSourceVendorSoftwareSource {
 		return v.VendorSoftwareSources

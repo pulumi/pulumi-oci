@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Creates a new lifecycle environment.
+// Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
 //
 // ## Example Usage
 //
@@ -37,8 +37,18 @@ import (
 //				OsFamily:      pulumi.Any(lifecycleEnvironmentOsFamily),
 //				Stages: osmanagementhub.LifecycleEnvironmentStageArray{
 //					&osmanagementhub.LifecycleEnvironmentStageArgs{
-//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName),
-//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank),
+//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName1),
+//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank1),
+//						DefinedTags: pulumi.Map{
+//							"Operations.CostCenter": pulumi.Any("42"),
+//						},
+//						FreeformTags: pulumi.Map{
+//							"Department": pulumi.Any("Finance"),
+//						},
+//					},
+//					&osmanagementhub.LifecycleEnvironmentStageArgs{
+//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName2),
+//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank2),
 //						DefinedTags: pulumi.Map{
 //							"Operations.CostCenter": pulumi.Any("42"),
 //						},
@@ -55,6 +65,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				Location: pulumi.Any(lifecycleEnvironmentLocation),
 //			})
 //			if err != nil {
 //				return err
@@ -75,33 +86,35 @@ import (
 type LifecycleEnvironment struct {
 	pulumi.CustomResourceState
 
-	// The CPU architecture of the managed instance(s) in the lifecycle environment.
+	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType pulumi.StringOutput `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle environment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) User specified information about the lifecycle environment.
+	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The list of managed instances specified lifecycle stage.
+	// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+	Location pulumi.StringOutput `pulumi:"location"`
+	// The list of managed instances associated with the lifecycle stage.
 	ManagedInstanceIds LifecycleEnvironmentManagedInstanceIdArrayOutput `pulumi:"managedInstanceIds"`
-	// The operating system type of the managed instance(s) in the lifecycle environment.
+	// The operating system of the managed instances in the lifecycle environment.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
-	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+	// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 	Stages LifecycleEnvironmentStageArrayOutput `pulumi:"stages"`
 	// The current state of the lifecycle environment.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -156,33 +169,35 @@ func GetLifecycleEnvironment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LifecycleEnvironment resources.
 type lifecycleEnvironmentState struct {
-	// The CPU architecture of the managed instance(s) in the lifecycle environment.
+	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle environment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) User specified information about the lifecycle environment.
+	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The list of managed instances specified lifecycle stage.
+	// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+	Location *string `pulumi:"location"`
+	// The list of managed instances associated with the lifecycle stage.
 	ManagedInstanceIds []LifecycleEnvironmentManagedInstanceId `pulumi:"managedInstanceIds"`
-	// The operating system type of the managed instance(s) in the lifecycle environment.
+	// The operating system of the managed instances in the lifecycle environment.
 	OsFamily *string `pulumi:"osFamily"`
-	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+	// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 	Stages []LifecycleEnvironmentStage `pulumi:"stages"`
 	// The current state of the lifecycle environment.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified *string `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,33 +205,35 @@ type lifecycleEnvironmentState struct {
 }
 
 type LifecycleEnvironmentState struct {
-	// The CPU architecture of the managed instance(s) in the lifecycle environment.
+	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType pulumi.StringPtrInput
-	// The OCID of the tenancy containing the lifecycle environment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) User specified information about the lifecycle environment.
+	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The list of managed instances specified lifecycle stage.
+	// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+	Location pulumi.StringPtrInput
+	// The list of managed instances associated with the lifecycle stage.
 	ManagedInstanceIds LifecycleEnvironmentManagedInstanceIdArrayInput
-	// The operating system type of the managed instance(s) in the lifecycle environment.
+	// The operating system of the managed instances in the lifecycle environment.
 	OsFamily pulumi.StringPtrInput
-	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+	// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 	Stages LifecycleEnvironmentStageArrayInput
 	// The current state of the lifecycle environment.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
-	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified pulumi.StringPtrInput
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,23 +245,25 @@ func (LifecycleEnvironmentState) ElementType() reflect.Type {
 }
 
 type lifecycleEnvironmentArgs struct {
-	// The CPU architecture of the managed instance(s) in the lifecycle environment.
+	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType string `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle environment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) User specified information about the lifecycle environment.
+	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The operating system type of the managed instance(s) in the lifecycle environment.
+	// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+	Location *string `pulumi:"location"`
+	// The operating system of the managed instances in the lifecycle environment.
 	OsFamily string `pulumi:"osFamily"`
-	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+	// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 	Stages []LifecycleEnvironmentStage `pulumi:"stages"`
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,23 +272,25 @@ type lifecycleEnvironmentArgs struct {
 
 // The set of arguments for constructing a LifecycleEnvironment resource.
 type LifecycleEnvironmentArgs struct {
-	// The CPU architecture of the managed instance(s) in the lifecycle environment.
+	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType pulumi.StringInput
-	// The OCID of the tenancy containing the lifecycle environment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) User specified information about the lifecycle environment.
+	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The operating system type of the managed instance(s) in the lifecycle environment.
+	// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+	Location pulumi.StringPtrInput
+	// The operating system of the managed instances in the lifecycle environment.
 	OsFamily pulumi.StringInput
-	// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+	// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 	Stages LifecycleEnvironmentStageArrayInput
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -363,12 +384,12 @@ func (o LifecycleEnvironmentOutput) ToLifecycleEnvironmentOutputWithContext(ctx 
 	return o
 }
 
-// The CPU architecture of the managed instance(s) in the lifecycle environment.
+// The CPU architecture of the managed instances in the lifecycle environment.
 func (o LifecycleEnvironmentOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the lifecycle environment.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 func (o LifecycleEnvironmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -378,12 +399,12 @@ func (o LifecycleEnvironmentOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) User specified information about the lifecycle environment.
+// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 func (o LifecycleEnvironmentOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o LifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -393,19 +414,24 @@ func (o LifecycleEnvironmentOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The list of managed instances specified lifecycle stage.
+// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+func (o LifecycleEnvironmentOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.Location }).(pulumi.StringOutput)
+}
+
+// The list of managed instances associated with the lifecycle stage.
 func (o LifecycleEnvironmentOutput) ManagedInstanceIds() LifecycleEnvironmentManagedInstanceIdArrayOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) LifecycleEnvironmentManagedInstanceIdArrayOutput {
 		return v.ManagedInstanceIds
 	}).(LifecycleEnvironmentManagedInstanceIdArrayOutput)
 }
 
-// The operating system type of the managed instance(s) in the lifecycle environment.
+// The operating system of the managed instances in the lifecycle environment.
 func (o LifecycleEnvironmentOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
 }
 
-// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
 func (o LifecycleEnvironmentOutput) Stages() LifecycleEnvironmentStageArrayOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) LifecycleEnvironmentStageArrayOutput { return v.Stages }).(LifecycleEnvironmentStageArrayOutput)
 }
@@ -420,17 +446,17 @@ func (o LifecycleEnvironmentOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LifecycleEnvironmentOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LifecycleEnvironmentOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *LifecycleEnvironment) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
 }
 
-// The software source vendor name.
+// The vendor of the operating system used by the managed instances in the lifecycle environment.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

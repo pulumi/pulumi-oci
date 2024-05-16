@@ -4751,6 +4751,547 @@ func (o GetInternetGatewaysGatewayArrayOutput) Index(i pulumi.IntInput) GetInter
 	}).(GetInternetGatewaysGatewayOutput)
 }
 
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary struct {
+	// Address type of the CIDR within a subnet.
+	AddressType string `pulumi:"addressType"`
+	// The CIDR range of a subnet.
+	Cidr string `pulumi:"cidr"`
+	// The CIDR utilisation of a subnet.
+	Utilization float64 `pulumi:"utilization"`
+}
+
+// GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryInput is an input type that accepts GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs and GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput values.
+// You can construct a concrete instance of `GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryInput` via:
+//
+//	GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs{...}
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryInput interface {
+	pulumi.Input
+
+	ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput
+	ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutputWithContext(context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput
+}
+
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs struct {
+	// Address type of the CIDR within a subnet.
+	AddressType pulumi.StringInput `pulumi:"addressType"`
+	// The CIDR range of a subnet.
+	Cidr pulumi.StringInput `pulumi:"cidr"`
+	// The CIDR utilisation of a subnet.
+	Utilization pulumi.Float64Input `pulumi:"utilization"`
+}
+
+func (GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary)(nil)).Elem()
+}
+
+func (i GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput {
+	return i.ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutputWithContext(context.Background())
+}
+
+func (i GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutputWithContext(ctx context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput)
+}
+
+// GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayInput is an input type that accepts GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray and GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput values.
+// You can construct a concrete instance of `GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayInput` via:
+//
+//	GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray{ GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs{...} }
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput
+	ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutputWithContext(context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput
+}
+
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray []GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryInput
+
+func (GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary)(nil)).Elem()
+}
+
+func (i GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput {
+	return i.ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutputWithContext(ctx context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput)
+}
+
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary)(nil)).Elem()
+}
+
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutputWithContext(ctx context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput {
+	return o
+}
+
+// Address type of the CIDR within a subnet.
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) AddressType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary) string { return v.AddressType }).(pulumi.StringOutput)
+}
+
+// The CIDR range of a subnet.
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) Cidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary) string { return v.Cidr }).(pulumi.StringOutput)
+}
+
+// The CIDR utilisation of a subnet.
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput) Utilization() pulumi.Float64Output {
+	return o.ApplyT(func(v GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary) float64 { return v.Utilization }).(pulumi.Float64Output)
+}
+
+type GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary)(nil)).Elem()
+}
+
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput() GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput) ToGetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutputWithContext(ctx context.Context) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput) Index(i pulumi.IntInput) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary {
+		return vs[0].([]GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummary)[vs[1].(int)]
+	}).(GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput)
+}
+
+type GetIpInventorySubnetIpInventorySubnetResourceSummary struct {
+	// Address type of the allocated private IP address.
+	AddressType string `pulumi:"addressType"`
+	// Name of the created resource.
+	AssignedResourceName string `pulumi:"assignedResourceName"`
+	// Type of the resource.
+	AssignedResourceType string `pulumi:"assignedResourceType"`
+	// Assigned time of the private IP address.
+	AssignedTime string `pulumi:"assignedTime"`
+	// Associated public IP address for the private IP address.
+	AssociatedPublicIp string `pulumi:"associatedPublicIp"`
+	// Public IP address Pool the IP address is allocated from.
+	AssociatedPublicIpPool string `pulumi:"associatedPublicIpPool"`
+	// DNS hostname of the IP address.
+	DnsHostName string `pulumi:"dnsHostName"`
+	// Lists the allocated private IP address.
+	IpAddress string `pulumi:"ipAddress"`
+	// Lifetime of the allocated private IP address.
+	IpAddressLifetime string `pulumi:"ipAddressLifetime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+	IpId string `pulumi:"ipId"`
+	// The address range the IP address is assigned from.
+	ParentCidr string `pulumi:"parentCidr"`
+	// Lifetime of the assigned public IP address.
+	PublicIpLifetime string `pulumi:"publicIpLifetime"`
+}
+
+// GetIpInventorySubnetIpInventorySubnetResourceSummaryInput is an input type that accepts GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs and GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput values.
+// You can construct a concrete instance of `GetIpInventorySubnetIpInventorySubnetResourceSummaryInput` via:
+//
+//	GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs{...}
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryInput interface {
+	pulumi.Input
+
+	ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput
+	ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutputWithContext(context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput
+}
+
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs struct {
+	// Address type of the allocated private IP address.
+	AddressType pulumi.StringInput `pulumi:"addressType"`
+	// Name of the created resource.
+	AssignedResourceName pulumi.StringInput `pulumi:"assignedResourceName"`
+	// Type of the resource.
+	AssignedResourceType pulumi.StringInput `pulumi:"assignedResourceType"`
+	// Assigned time of the private IP address.
+	AssignedTime pulumi.StringInput `pulumi:"assignedTime"`
+	// Associated public IP address for the private IP address.
+	AssociatedPublicIp pulumi.StringInput `pulumi:"associatedPublicIp"`
+	// Public IP address Pool the IP address is allocated from.
+	AssociatedPublicIpPool pulumi.StringInput `pulumi:"associatedPublicIpPool"`
+	// DNS hostname of the IP address.
+	DnsHostName pulumi.StringInput `pulumi:"dnsHostName"`
+	// Lists the allocated private IP address.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Lifetime of the allocated private IP address.
+	IpAddressLifetime pulumi.StringInput `pulumi:"ipAddressLifetime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+	IpId pulumi.StringInput `pulumi:"ipId"`
+	// The address range the IP address is assigned from.
+	ParentCidr pulumi.StringInput `pulumi:"parentCidr"`
+	// Lifetime of the assigned public IP address.
+	PublicIpLifetime pulumi.StringInput `pulumi:"publicIpLifetime"`
+}
+
+func (GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventorySubnetIpInventorySubnetResourceSummary)(nil)).Elem()
+}
+
+func (i GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput {
+	return i.ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutputWithContext(context.Background())
+}
+
+func (i GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutputWithContext(ctx context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput)
+}
+
+// GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayInput is an input type that accepts GetIpInventorySubnetIpInventorySubnetResourceSummaryArray and GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput values.
+// You can construct a concrete instance of `GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayInput` via:
+//
+//	GetIpInventorySubnetIpInventorySubnetResourceSummaryArray{ GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs{...} }
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput
+	ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutputWithContext(context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput
+}
+
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryArray []GetIpInventorySubnetIpInventorySubnetResourceSummaryInput
+
+func (GetIpInventorySubnetIpInventorySubnetResourceSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventorySubnetIpInventorySubnetResourceSummary)(nil)).Elem()
+}
+
+func (i GetIpInventorySubnetIpInventorySubnetResourceSummaryArray) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput {
+	return i.ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpInventorySubnetIpInventorySubnetResourceSummaryArray) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutputWithContext(ctx context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput)
+}
+
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventorySubnetIpInventorySubnetResourceSummary)(nil)).Elem()
+}
+
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryOutputWithContext(ctx context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput {
+	return o
+}
+
+// Address type of the allocated private IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AddressType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AddressType }).(pulumi.StringOutput)
+}
+
+// Name of the created resource.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AssignedResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AssignedResourceName }).(pulumi.StringOutput)
+}
+
+// Type of the resource.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AssignedResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AssignedResourceType }).(pulumi.StringOutput)
+}
+
+// Assigned time of the private IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AssignedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AssignedTime }).(pulumi.StringOutput)
+}
+
+// Associated public IP address for the private IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AssociatedPublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AssociatedPublicIp }).(pulumi.StringOutput)
+}
+
+// Public IP address Pool the IP address is allocated from.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) AssociatedPublicIpPool() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.AssociatedPublicIpPool }).(pulumi.StringOutput)
+}
+
+// DNS hostname of the IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) DnsHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.DnsHostName }).(pulumi.StringOutput)
+}
+
+// Lists the allocated private IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Lifetime of the allocated private IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) IpAddressLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.IpAddressLifetime }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) IpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.IpId }).(pulumi.StringOutput)
+}
+
+// The address range the IP address is assigned from.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) ParentCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.ParentCidr }).(pulumi.StringOutput)
+}
+
+// Lifetime of the assigned public IP address.
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput) PublicIpLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventorySubnetIpInventorySubnetResourceSummary) string { return v.PublicIpLifetime }).(pulumi.StringOutput)
+}
+
+type GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventorySubnetIpInventorySubnetResourceSummary)(nil)).Elem()
+}
+
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput() GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput) ToGetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutputWithContext(ctx context.Context) GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput) Index(i pulumi.IntInput) GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpInventorySubnetIpInventorySubnetResourceSummary {
+		return vs[0].([]GetIpInventorySubnetIpInventorySubnetResourceSummary)[vs[1].(int)]
+	}).(GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput)
+}
+
+type GetIpInventoryVcnOverlapsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIpInventoryVcnOverlapsFilterInput is an input type that accepts GetIpInventoryVcnOverlapsFilterArgs and GetIpInventoryVcnOverlapsFilterOutput values.
+// You can construct a concrete instance of `GetIpInventoryVcnOverlapsFilterInput` via:
+//
+//	GetIpInventoryVcnOverlapsFilterArgs{...}
+type GetIpInventoryVcnOverlapsFilterInput interface {
+	pulumi.Input
+
+	ToGetIpInventoryVcnOverlapsFilterOutput() GetIpInventoryVcnOverlapsFilterOutput
+	ToGetIpInventoryVcnOverlapsFilterOutputWithContext(context.Context) GetIpInventoryVcnOverlapsFilterOutput
+}
+
+type GetIpInventoryVcnOverlapsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIpInventoryVcnOverlapsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventoryVcnOverlapsFilter)(nil)).Elem()
+}
+
+func (i GetIpInventoryVcnOverlapsFilterArgs) ToGetIpInventoryVcnOverlapsFilterOutput() GetIpInventoryVcnOverlapsFilterOutput {
+	return i.ToGetIpInventoryVcnOverlapsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIpInventoryVcnOverlapsFilterArgs) ToGetIpInventoryVcnOverlapsFilterOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventoryVcnOverlapsFilterOutput)
+}
+
+// GetIpInventoryVcnOverlapsFilterArrayInput is an input type that accepts GetIpInventoryVcnOverlapsFilterArray and GetIpInventoryVcnOverlapsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIpInventoryVcnOverlapsFilterArrayInput` via:
+//
+//	GetIpInventoryVcnOverlapsFilterArray{ GetIpInventoryVcnOverlapsFilterArgs{...} }
+type GetIpInventoryVcnOverlapsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIpInventoryVcnOverlapsFilterArrayOutput() GetIpInventoryVcnOverlapsFilterArrayOutput
+	ToGetIpInventoryVcnOverlapsFilterArrayOutputWithContext(context.Context) GetIpInventoryVcnOverlapsFilterArrayOutput
+}
+
+type GetIpInventoryVcnOverlapsFilterArray []GetIpInventoryVcnOverlapsFilterInput
+
+func (GetIpInventoryVcnOverlapsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventoryVcnOverlapsFilter)(nil)).Elem()
+}
+
+func (i GetIpInventoryVcnOverlapsFilterArray) ToGetIpInventoryVcnOverlapsFilterArrayOutput() GetIpInventoryVcnOverlapsFilterArrayOutput {
+	return i.ToGetIpInventoryVcnOverlapsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpInventoryVcnOverlapsFilterArray) ToGetIpInventoryVcnOverlapsFilterArrayOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventoryVcnOverlapsFilterArrayOutput)
+}
+
+type GetIpInventoryVcnOverlapsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventoryVcnOverlapsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventoryVcnOverlapsFilter)(nil)).Elem()
+}
+
+func (o GetIpInventoryVcnOverlapsFilterOutput) ToGetIpInventoryVcnOverlapsFilterOutput() GetIpInventoryVcnOverlapsFilterOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsFilterOutput) ToGetIpInventoryVcnOverlapsFilterOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsFilterOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIpInventoryVcnOverlapsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIpInventoryVcnOverlapsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIpInventoryVcnOverlapsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventoryVcnOverlapsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventoryVcnOverlapsFilter)(nil)).Elem()
+}
+
+func (o GetIpInventoryVcnOverlapsFilterArrayOutput) ToGetIpInventoryVcnOverlapsFilterArrayOutput() GetIpInventoryVcnOverlapsFilterArrayOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsFilterArrayOutput) ToGetIpInventoryVcnOverlapsFilterArrayOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsFilterArrayOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsFilterArrayOutput) Index(i pulumi.IntInput) GetIpInventoryVcnOverlapsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpInventoryVcnOverlapsFilter {
+		return vs[0].([]GetIpInventoryVcnOverlapsFilter)[vs[1].(int)]
+	}).(GetIpInventoryVcnOverlapsFilterOutput)
+}
+
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary struct {
+	// CIDR prefix of the VCN.
+	Cidr string `pulumi:"cidr"`
+	// The overlapping CIDR prefix.
+	OverlappingCidr string `pulumi:"overlappingCidr"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+	OverlappingVcnId string `pulumi:"overlappingVcnId"`
+	// Name of the overlapping VCN.
+	OverlappingVcnName string `pulumi:"overlappingVcnName"`
+}
+
+// GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryInput is an input type that accepts GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs and GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput values.
+// You can construct a concrete instance of `GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryInput` via:
+//
+//	GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs{...}
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryInput interface {
+	pulumi.Input
+
+	ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput
+	ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutputWithContext(context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput
+}
+
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs struct {
+	// CIDR prefix of the VCN.
+	Cidr pulumi.StringInput `pulumi:"cidr"`
+	// The overlapping CIDR prefix.
+	OverlappingCidr pulumi.StringInput `pulumi:"overlappingCidr"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+	OverlappingVcnId pulumi.StringInput `pulumi:"overlappingVcnId"`
+	// Name of the overlapping VCN.
+	OverlappingVcnName pulumi.StringInput `pulumi:"overlappingVcnName"`
+}
+
+func (GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary)(nil)).Elem()
+}
+
+func (i GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput {
+	return i.ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutputWithContext(context.Background())
+}
+
+func (i GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput)
+}
+
+// GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayInput is an input type that accepts GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray and GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput values.
+// You can construct a concrete instance of `GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayInput` via:
+//
+//	GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray{ GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs{...} }
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput
+	ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutputWithContext(context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput
+}
+
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray []GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryInput
+
+func (GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary)(nil)).Elem()
+}
+
+func (i GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput {
+	return i.ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput)
+}
+
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary)(nil)).Elem()
+}
+
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput {
+	return o
+}
+
+// CIDR prefix of the VCN.
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) Cidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary) string { return v.Cidr }).(pulumi.StringOutput)
+}
+
+// The overlapping CIDR prefix.
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) OverlappingCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary) string { return v.OverlappingCidr }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) OverlappingVcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary) string { return v.OverlappingVcnId }).(pulumi.StringOutput)
+}
+
+// Name of the overlapping VCN.
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput) OverlappingVcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary) string { return v.OverlappingVcnName }).(pulumi.StringOutput)
+}
+
+type GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary)(nil)).Elem()
+}
+
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput() GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput) ToGetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutputWithContext(ctx context.Context) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput {
+	return o
+}
+
+func (o GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput) Index(i pulumi.IntInput) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary {
+		return vs[0].([]GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummary)[vs[1].(int)]
+	}).(GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput)
+}
+
 type GetIpsecAlgorithmAllowedPhaseOneParameter struct {
 	// Allowed phase two authentication algorithms.
 	AuthenticationAlgorithms []string `pulumi:"authenticationAlgorithms"`
@@ -28666,6 +29207,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternetGatewaysFilterArrayInput)(nil)).Elem(), GetInternetGatewaysFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternetGatewaysGatewayInput)(nil)).Elem(), GetInternetGatewaysGatewayArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternetGatewaysGatewayArrayInput)(nil)).Elem(), GetInternetGatewaysGatewayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryInput)(nil)).Elem(), GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayInput)(nil)).Elem(), GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventorySubnetIpInventorySubnetResourceSummaryInput)(nil)).Elem(), GetIpInventorySubnetIpInventorySubnetResourceSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayInput)(nil)).Elem(), GetIpInventorySubnetIpInventorySubnetResourceSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventoryVcnOverlapsFilterInput)(nil)).Elem(), GetIpInventoryVcnOverlapsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventoryVcnOverlapsFilterArrayInput)(nil)).Elem(), GetIpInventoryVcnOverlapsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryInput)(nil)).Elem(), GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayInput)(nil)).Elem(), GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecAlgorithmAllowedPhaseOneParameterInput)(nil)).Elem(), GetIpsecAlgorithmAllowedPhaseOneParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecAlgorithmAllowedPhaseOneParameterArrayInput)(nil)).Elem(), GetIpsecAlgorithmAllowedPhaseOneParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecAlgorithmAllowedPhaseTwoParameterInput)(nil)).Elem(), GetIpsecAlgorithmAllowedPhaseTwoParameterArgs{})
@@ -29082,6 +29631,14 @@ func init() {
 	pulumi.RegisterOutputType(GetInternetGatewaysFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetInternetGatewaysGatewayOutput{})
 	pulumi.RegisterOutputType(GetInternetGatewaysGatewayArrayOutput{})
+	pulumi.RegisterOutputType(GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryOutput{})
+	pulumi.RegisterOutputType(GetIpInventorySubnetCidrIpInventoryCidrUtilizationSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetIpInventorySubnetIpInventorySubnetResourceSummaryOutput{})
+	pulumi.RegisterOutputType(GetIpInventorySubnetIpInventorySubnetResourceSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetIpInventoryVcnOverlapsFilterOutput{})
+	pulumi.RegisterOutputType(GetIpInventoryVcnOverlapsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryOutput{})
+	pulumi.RegisterOutputType(GetIpInventoryVcnOverlapsIpInventoryVcnOverlapSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecAlgorithmAllowedPhaseOneParameterOutput{})
 	pulumi.RegisterOutputType(GetIpsecAlgorithmAllowedPhaseOneParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecAlgorithmAllowedPhaseTwoParameterOutput{})

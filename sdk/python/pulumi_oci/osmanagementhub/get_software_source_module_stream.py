@@ -132,7 +132,7 @@ class GetSoftwareSourceModuleStreamResult:
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> str:
         """
-        The OCID of the software source that provides this module stream.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
         """
         return pulumi.get(self, "software_source_id")
 
@@ -168,7 +168,7 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
     """
     This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified module stream in a software source.
+    Returns information about the specified module stream in a software source.
 
     ## Example Usage
 
@@ -183,7 +183,7 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
 
 
     :param str module_name: The name of the module.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     :param str stream_name: The name of the stream of the containing module.
     """
     __args__ = dict()
@@ -215,7 +215,7 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
     """
     This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified module stream in a software source.
+    Returns information about the specified module stream in a software source.
 
     ## Example Usage
 
@@ -230,7 +230,7 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
 
 
     :param str module_name: The name of the module.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     :param str stream_name: The name of the stream of the containing module.
     """
     ...

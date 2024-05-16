@@ -15,14 +15,14 @@ public final class GetProfileArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetProfileArgs Empty = new GetProfileArgs();
 
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * 
      */
     @Import(name="profileId", required=true)
     private Output<String> profileId;
 
     /**
-     * @return The OCID of the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * 
      */
     public Output<String> profileId() {
@@ -54,7 +54,7 @@ public final class GetProfileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileId The OCID of the registration profile.
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetProfileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileId The OCID of the registration profile.
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
          * 
          * @return builder
          * 

@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,14 +17,14 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
     public static final LifecycleEnvironmentStageSoftwareSourceIdArgs Empty = new LifecycleEnvironmentStageSoftwareSourceIdArgs();
 
     /**
-     * (Updatable) User specified information about the lifecycle environment.
+     * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) User specified information about the lifecycle environment.
+     * @return (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +32,14 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -46,18 +47,33 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
     }
 
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<Output<String>> id() {
         return Optional.ofNullable(this.id);
+    }
+
+    /**
+     * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    @Import(name="isMandatoryForAutonomousLinux")
+    private @Nullable Output<Boolean> isMandatoryForAutonomousLinux;
+
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    public Optional<Output<Boolean>> isMandatoryForAutonomousLinux() {
+        return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
     }
 
     /**
@@ -81,6 +97,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         this.description = $.description;
         this.displayName = $.displayName;
         this.id = $.id;
+        this.isMandatoryForAutonomousLinux = $.isMandatoryForAutonomousLinux;
         this.softwareSourceType = $.softwareSourceType;
     }
 
@@ -103,7 +120,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param description (Updatable) User specified information about the lifecycle environment.
+         * @param description (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -114,7 +131,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param description (Updatable) User specified information about the lifecycle environment.
+         * @param description (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -124,7 +141,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -135,7 +152,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -145,7 +162,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -156,13 +173,34 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param isMandatoryForAutonomousLinux Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMandatoryForAutonomousLinux(@Nullable Output<Boolean> isMandatoryForAutonomousLinux) {
+            $.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+
+        /**
+         * @param isMandatoryForAutonomousLinux Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            return isMandatoryForAutonomousLinux(Output.of(isMandatoryForAutonomousLinux));
         }
 
         /**

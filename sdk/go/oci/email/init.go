@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Dkim{}
 	case "oci:Email/emailDomain:EmailDomain":
 		r = &EmailDomain{}
+	case "oci:Email/emailReturnPath:EmailReturnPath":
+		r = &EmailReturnPath{}
 	case "oci:Email/sender:Sender":
 		r = &Sender{}
 	case "oci:Email/suppression:Suppression":
@@ -50,6 +52,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Email/emailDomain",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Email/emailReturnPath",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

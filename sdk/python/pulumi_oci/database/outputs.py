@@ -113,6 +113,7 @@ __all__ = [
     'ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureComputeMaintenanceWindowMonth',
     'ExadataInfrastructureContact',
+    'ExadataInfrastructureDefinedFileSystemConfiguration',
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureMaintenanceWindowMonth',
@@ -154,13 +155,16 @@ __all__ = [
     'PluggableDatabasesRemoteCloneRefreshableCloneConfig',
     'VmClusterAddVirtualNetworkDataCollectionOption',
     'VmClusterAddVirtualNetworkDbServer',
+    'VmClusterAddVirtualNetworkFileSystemConfigurationDetail',
     'VmClusterDataCollectionOptions',
+    'VmClusterFileSystemConfigurationDetail',
     'VmClusterNetworkDrScan',
     'VmClusterNetworkScan',
     'VmClusterNetworkVmNetwork',
     'VmClusterNetworkVmNetworkNode',
     'VmClusterRemoveVirtualMachineDataCollectionOption',
     'VmClusterRemoveVirtualMachineDbServer',
+    'VmClusterRemoveVirtualMachineFileSystemConfigurationDetail',
     'GetApplicationVipsApplicationVipResult',
     'GetApplicationVipsFilterResult',
     'GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult',
@@ -455,6 +459,7 @@ __all__ = [
     'GetDbVersionsDbVersionResult',
     'GetDbVersionsFilterResult',
     'GetExadataInfrastructureContactResult',
+    'GetExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
@@ -462,6 +467,7 @@ __all__ = [
     'GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterResult',
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
+    'GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult',
@@ -534,6 +540,7 @@ __all__ = [
     'GetSystemVersionsSystemVersionCollectionResult',
     'GetSystemVersionsSystemVersionCollectionItemResult',
     'GetVmClusterDataCollectionOptionResult',
+    'GetVmClusterFileSystemConfigurationDetailResult',
     'GetVmClusterNetworkDrScanResult',
     'GetVmClusterNetworkScanResult',
     'GetVmClusterNetworkVmNetworkResult',
@@ -560,6 +567,7 @@ __all__ = [
     'GetVmClustersFilterResult',
     'GetVmClustersVmClusterResult',
     'GetVmClustersVmClusterDataCollectionOptionResult',
+    'GetVmClustersVmClusterFileSystemConfigurationDetailResult',
 ]
 
 @pulumi.output_type
@@ -8796,6 +8804,84 @@ class ExadataInfrastructureContact(dict):
 
 
 @pulumi.output_type
+class ExadataInfrastructureDefinedFileSystemConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isBackupPartition":
+            suggest = "is_backup_partition"
+        elif key == "isResizable":
+            suggest = "is_resizable"
+        elif key == "minSizeGb":
+            suggest = "min_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureDefinedFileSystemConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureDefinedFileSystemConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureDefinedFileSystemConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_backup_partition: Optional[bool] = None,
+                 is_resizable: Optional[bool] = None,
+                 min_size_gb: Optional[int] = None,
+                 mount_point: Optional[str] = None):
+        """
+        :param bool is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param bool is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param int min_size_gb: The minimum size of file system.
+        :param str mount_point: The mount point of file system.
+        """
+        if is_backup_partition is not None:
+            pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        if is_resizable is not None:
+            pulumi.set(__self__, "is_resizable", is_resizable)
+        if min_size_gb is not None:
+            pulumi.set(__self__, "min_size_gb", min_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> Optional[bool]:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> Optional[bool]:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> Optional[int]:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[str]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class ExadataInfrastructureMaintenanceWindow(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -11095,6 +11181,56 @@ class VmClusterAddVirtualNetworkDbServer(dict):
 
 
 @pulumi.output_type
+class VmClusterAddVirtualNetworkFileSystemConfigurationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileSystemSizeGb":
+            suggest = "file_system_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterAddVirtualNetworkFileSystemConfigurationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterAddVirtualNetworkFileSystemConfigurationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterAddVirtualNetworkFileSystemConfigurationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_system_size_gb: Optional[int] = None,
+                 mount_point: Optional[str] = None):
+        """
+        :param int file_system_size_gb: The file system size to be allocated in GBs.
+        :param str mount_point: The mount point of file system.
+        """
+        if file_system_size_gb is not None:
+            pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> Optional[int]:
+        """
+        The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[str]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class VmClusterDataCollectionOptions(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -11156,6 +11292,56 @@ class VmClusterDataCollectionOptions(dict):
         (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
+
+
+@pulumi.output_type
+class VmClusterFileSystemConfigurationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileSystemSizeGb":
+            suggest = "file_system_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterFileSystemConfigurationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterFileSystemConfigurationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterFileSystemConfigurationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_system_size_gb: Optional[int] = None,
+                 mount_point: Optional[str] = None):
+        """
+        :param int file_system_size_gb: (Updatable) The file system size to be allocated in GBs.
+        :param str mount_point: (Updatable) The mount point of file system.
+        """
+        if file_system_size_gb is not None:
+            pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> Optional[int]:
+        """
+        (Updatable) The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[str]:
+        """
+        (Updatable) The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
 
 
 @pulumi.output_type
@@ -11598,6 +11784,56 @@ class VmClusterRemoveVirtualMachineDbServer(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
         """
         return pulumi.get(self, "db_server_id")
+
+
+@pulumi.output_type
+class VmClusterRemoveVirtualMachineFileSystemConfigurationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileSystemSizeGb":
+            suggest = "file_system_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmClusterRemoveVirtualMachineFileSystemConfigurationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmClusterRemoveVirtualMachineFileSystemConfigurationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmClusterRemoveVirtualMachineFileSystemConfigurationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_system_size_gb: Optional[int] = None,
+                 mount_point: Optional[str] = None):
+        """
+        :param int file_system_size_gb: The file system size to be allocated in GBs.
+        :param str mount_point: The mount point of file system.
+        """
+        if file_system_size_gb is not None:
+            pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> Optional[int]:
+        """
+        The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[str]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
 
 
 @pulumi.output_type
@@ -35890,6 +36126,57 @@ class GetExadataInfrastructureContactResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_backup_partition: bool,
+                 is_resizable: bool,
+                 min_size_gb: int,
+                 mount_point: str):
+        """
+        :param bool is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param bool is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param int min_size_gb: The minimum size of file system.
+        :param str mount_point: The mount point of file system.
+        """
+        pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        pulumi.set(__self__, "is_resizable", is_resizable)
+        pulumi.set(__self__, "min_size_gb", min_size_gb)
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> bool:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> bool:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> int:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> str:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class GetExadataInfrastructureMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: int,
@@ -36142,6 +36429,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
                  db_server_version: str,
+                 defined_file_system_configurations: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  dns_servers: Sequence[str],
@@ -36189,6 +36477,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param str db_server_version: The software version of the database servers (dom0) in the Exadata infrastructure.
+        :param Sequence['GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns_servers: The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -36238,6 +36527,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "db_server_version", db_server_version)
+        pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "dns_servers", dns_servers)
@@ -36413,6 +36703,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The software version of the database servers (dom0) in the Exadata infrastructure.
         """
         return pulumi.get(self, "db_server_version")
+
+    @property
+    @pulumi.getter(name="definedFileSystemConfigurations")
+    def defined_file_system_configurations(self) -> Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult']:
+        """
+        Details of the file system configuration of the Exadata infrastructure.
+        """
+        return pulumi.get(self, "defined_file_system_configurations")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -36707,6 +37005,57 @@ class GetExadataInfrastructuresExadataInfrastructureContactResult(dict):
         The phone number for the Exadata Infrastructure contact.
         """
         return pulumi.get(self, "phone_number")
+
+
+@pulumi.output_type
+class GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_backup_partition: bool,
+                 is_resizable: bool,
+                 min_size_gb: int,
+                 mount_point: str):
+        """
+        :param bool is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param bool is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param int min_size_gb: The minimum size of file system.
+        :param str mount_point: The mount point of file system.
+        """
+        pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        pulumi.set(__self__, "is_resizable", is_resizable)
+        pulumi.set(__self__, "min_size_gb", min_size_gb)
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> bool:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> bool:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> int:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> str:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
 
 
 @pulumi.output_type
@@ -40731,6 +41080,35 @@ class GetVmClusterDataCollectionOptionResult(dict):
 
 
 @pulumi.output_type
+class GetVmClusterFileSystemConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 file_system_size_gb: int,
+                 mount_point: str):
+        """
+        :param int file_system_size_gb: The file system size to be allocated in GBs.
+        :param str mount_point: The mount point of file system.
+        """
+        pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> int:
+        """
+        The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> str:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
 class GetVmClusterNetworkDrScanResult(dict):
     def __init__(__self__, *,
                  hostname: str,
@@ -42301,6 +42679,7 @@ class GetVmClustersVmClusterResult(dict):
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  exadata_infrastructure_id: str,
+                 file_system_configuration_details: Sequence['outputs.GetVmClustersVmClusterFileSystemConfigurationDetailResult'],
                  freeform_tags: Mapping[str, Any],
                  gi_version: str,
                  id: str,
@@ -42331,6 +42710,7 @@ class GetVmClustersVmClusterResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
+        :param Sequence['GetVmClustersVmClusterFileSystemConfigurationDetailArgs'] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -42360,6 +42740,7 @@ class GetVmClustersVmClusterResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gi_version", gi_version)
         pulumi.set(__self__, "id", id)
@@ -42471,6 +42852,14 @@ class GetVmClustersVmClusterResult(dict):
         If provided, filters the results for the given Exadata Infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Sequence['outputs.GetVmClustersVmClusterFileSystemConfigurationDetailResult']:
+        """
+        Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -42649,5 +43038,34 @@ class GetVmClustersVmClusterDataCollectionOptionResult(dict):
         Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
+
+
+@pulumi.output_type
+class GetVmClustersVmClusterFileSystemConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 file_system_size_gb: int,
+                 mount_point: str):
+        """
+        :param int file_system_size_gb: The file system size to be allocated in GBs.
+        :param str mount_point: The mount point of file system.
+        """
+        pulumi.set(__self__, "file_system_size_gb", file_system_size_gb)
+        pulumi.set(__self__, "mount_point", mount_point)
+
+    @property
+    @pulumi.getter(name="fileSystemSizeGb")
+    def file_system_size_gb(self) -> int:
+        """
+        The file system size to be allocated in GBs.
+        """
+        return pulumi.get(self, "file_system_size_gb")
+
+    @property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> str:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
 
 

@@ -13,8 +13,8 @@ import (
 
 // This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-// criteria including but not limited to its module name, stream name, and (profile) name.
+// Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+// criteria including but not limited to its module name, stream name, and profile name.
 //
 // ## Example Usage
 //
@@ -61,9 +61,9 @@ type GetSoftwareSourceModuleStreamProfilesArgs struct {
 	ModuleName *string `pulumi:"moduleName"`
 	// The name of the entity to be queried.
 	Name *string `pulumi:"name"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
-	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	// The name of the module stream. This parameter is required if a profile name is specified.
 	StreamName *string `pulumi:"streamName"`
 }
 
@@ -103,9 +103,9 @@ type GetSoftwareSourceModuleStreamProfilesOutputArgs struct {
 	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the entity to be queried.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
-	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+	// The name of the module stream. This parameter is required if a profile name is specified.
 	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 }
 

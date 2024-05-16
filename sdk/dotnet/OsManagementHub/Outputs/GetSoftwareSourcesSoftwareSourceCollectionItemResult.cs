@@ -18,31 +18,27 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The availabilities of the software source for a tenant.
+        /// The availabilities of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public readonly string Availability;
         /// <summary>
-        /// The yum repository checksum type used by this software source.
+        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
         /// </summary>
-        public readonly string ChecksumType;
+        public readonly string AvailabilityAtOci;
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult> CustomSoftwareSourceFilters;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Information specified by the user about the software source.
+        /// User-specified description for the software source.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -50,37 +46,29 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Fingerprint of the GPG key for this software source.
-        /// </summary>
-        public readonly string GpgKeyFingerprint;
-        /// <summary>
-        /// ID of the GPG key for this software source.
-        /// </summary>
-        public readonly string GpgKeyId;
-        /// <summary>
-        /// URL of the GPG key for this software source.
-        /// </summary>
-        public readonly string GpgKeyUrl;
-        /// <summary>
-        /// The OCID of the resource that is immutable on creation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether service should automatically update the custom software source for the user.
+        /// Indicates whether the software source is mandatory for the Autonomous Linux service.
         /// </summary>
-        public readonly bool IsAutomaticallyUpdated;
+        public readonly bool IsMandatoryForAutonomousLinux;
         /// <summary>
-        /// A filter to return only instances whose OS family type matches the given OS family.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// Number of packages.
+        /// Number of packages the software source contains.
         /// </summary>
         public readonly string PackageCount;
         /// <summary>
-        /// The Repo ID for the software source.
+        /// The repository ID for the software source.
         /// </summary>
         public readonly string RepoId;
+        /// <summary>
+        /// The size of the software source in gigabytes (GB).
+        /// </summary>
+        public readonly double Size;
         /// <summary>
         /// The type of the software source.
         /// </summary>
@@ -90,7 +78,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string SoftwareSourceVersion;
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+        /// A filter to return only software sources whose state matches the given state.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -98,19 +86,20 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        /// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
+        public readonly string TimeUpdated;
         /// <summary>
-        /// URL for the repository.
+        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
         /// </summary>
         public readonly string Url;
         /// <summary>
-        /// A filter to return only profiles that match the given vendorName.
+        /// A filter to return only resources that match the given vendor name.
         /// </summary>
         public readonly string VendorName;
         /// <summary>
-        /// List of vendor software sources.
+        /// List of vendor software sources that are used for the basis of the versioned custom software source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult> VendorSoftwareSources;
 
@@ -120,11 +109,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string availability,
 
-            string checksumType,
+            string availabilityAtOci,
 
             string compartmentId,
-
-            ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult> customSoftwareSourceFilters,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -134,21 +121,17 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
-            string gpgKeyFingerprint,
-
-            string gpgKeyId,
-
-            string gpgKeyUrl,
-
             string id,
 
-            bool isAutomaticallyUpdated,
+            bool isMandatoryForAutonomousLinux,
 
             string osFamily,
 
             string packageCount,
 
             string repoId,
+
+            double size,
 
             string softwareSourceType,
 
@@ -160,6 +143,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string timeCreated,
 
+            string timeUpdated,
+
             string url,
 
             string vendorName,
@@ -168,26 +153,24 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         {
             ArchType = archType;
             Availability = availability;
-            ChecksumType = checksumType;
+            AvailabilityAtOci = availabilityAtOci;
             CompartmentId = compartmentId;
-            CustomSoftwareSourceFilters = customSoftwareSourceFilters;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
-            GpgKeyFingerprint = gpgKeyFingerprint;
-            GpgKeyId = gpgKeyId;
-            GpgKeyUrl = gpgKeyUrl;
             Id = id;
-            IsAutomaticallyUpdated = isAutomaticallyUpdated;
+            IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             OsFamily = osFamily;
             PackageCount = packageCount;
             RepoId = repoId;
+            Size = size;
             SoftwareSourceType = softwareSourceType;
             SoftwareSourceVersion = softwareSourceVersion;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeUpdated = timeUpdated;
             Url = url;
             VendorName = vendorName;
             VendorSoftwareSources = vendorSoftwareSources;

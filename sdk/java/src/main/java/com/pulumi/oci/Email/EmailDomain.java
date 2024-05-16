@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *             .name(emailDomainName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(emailDomainDescription)
+ *             .domainVerificationId(testDomainVerification.id())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());
  * 
@@ -126,6 +127,34 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    @Export(name="domainVerificationId", refs={String.class}, tree="[0]")
+    private Output<String> domainVerificationId;
+
+    /**
+     * @return (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    public Output<String> domainVerificationId() {
+        return this.domainVerificationId;
+    }
+    /**
+     * The current domain verification status.
+     * 
+     */
+    @Export(name="domainVerificationStatus", refs={String.class}, tree="[0]")
+    private Output<String> domainVerificationStatus;
+
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    public Output<String> domainVerificationStatus() {
+        return this.domainVerificationStatus;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

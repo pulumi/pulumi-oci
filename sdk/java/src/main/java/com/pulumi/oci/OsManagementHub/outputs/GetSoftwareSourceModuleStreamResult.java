@@ -58,7 +58,7 @@ public final class GetSoftwareSourceModuleStreamResult {
      */
     private List<String> profiles;
     /**
-     * @return The OCID of the software source that provides this module stream.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
      * 
      */
     private String softwareSourceId;
@@ -129,7 +129,7 @@ public final class GetSoftwareSourceModuleStreamResult {
         return this.profiles;
     }
     /**
-     * @return The OCID of the software source that provides this module stream.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
      * 
      */
     public String softwareSourceId() {

@@ -16,14 +16,14 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
     public static final ManagementStationMirrorSyncStatusArgs Empty = new ManagementStationMirrorSyncStatusArgs();
 
     /**
-     * Total of mirrors in &#39;failed&#39; state
+     * Total number of software sources that failed to sync.
      * 
      */
     @Import(name="failed")
     private @Nullable Output<Integer> failed;
 
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that failed to sync.
      * 
      */
     public Optional<Output<Integer>> failed() {
@@ -31,14 +31,14 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
     }
 
     /**
-     * Total of mirrors in &#39;queued&#39; state
+     * Total number of software sources that are queued for sync.
      * 
      */
     @Import(name="queued")
     private @Nullable Output<Integer> queued;
 
     /**
-     * @return Total of mirrors in &#39;queued&#39; state
+     * @return Total number of software sources that are queued for sync.
      * 
      */
     public Optional<Output<Integer>> queued() {
@@ -46,14 +46,14 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
     }
 
     /**
-     * Total of mirrors in &#39;synced&#39; state
+     * Total number of software sources that successfully synced.
      * 
      */
     @Import(name="synced")
     private @Nullable Output<Integer> synced;
 
     /**
-     * @return Total of mirrors in &#39;synced&#39; state
+     * @return Total number of software sources that successfully synced.
      * 
      */
     public Optional<Output<Integer>> synced() {
@@ -61,14 +61,14 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
     }
 
     /**
-     * Total of mirrors in &#39;syncing&#39; state
+     * Total number of software sources currently syncing.
      * 
      */
     @Import(name="syncing")
     private @Nullable Output<Integer> syncing;
 
     /**
-     * @return Total of mirrors in &#39;syncing&#39; state
+     * @return Total number of software sources currently syncing.
      * 
      */
     public Optional<Output<Integer>> syncing() {
@@ -76,14 +76,14 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
     }
 
     /**
-     * Total of mirrors in &#39;failed&#39; state
+     * Total number of software sources that have not yet been synced.
      * 
      */
     @Import(name="unsynced")
     private @Nullable Output<Integer> unsynced;
 
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that have not yet been synced.
      * 
      */
     public Optional<Output<Integer>> unsynced() {
@@ -119,7 +119,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param failed Total of mirrors in &#39;failed&#39; state
+         * @param failed Total number of software sources that failed to sync.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param failed Total of mirrors in &#39;failed&#39; state
+         * @param failed Total number of software sources that failed to sync.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param queued Total of mirrors in &#39;queued&#39; state
+         * @param queued Total number of software sources that are queued for sync.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param queued Total of mirrors in &#39;queued&#39; state
+         * @param queued Total number of software sources that are queued for sync.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param synced Total of mirrors in &#39;synced&#39; state
+         * @param synced Total number of software sources that successfully synced.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param synced Total of mirrors in &#39;synced&#39; state
+         * @param synced Total number of software sources that successfully synced.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param syncing Total of mirrors in &#39;syncing&#39; state
+         * @param syncing Total number of software sources currently syncing.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param syncing Total of mirrors in &#39;syncing&#39; state
+         * @param syncing Total number of software sources currently syncing.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param unsynced Total of mirrors in &#39;failed&#39; state
+         * @param unsynced Total number of software sources that have not yet been synced.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class ManagementStationMirrorSyncStatusArgs extends com.pulumi.reso
         }
 
         /**
-         * @param unsynced Total of mirrors in &#39;failed&#39; state
+         * @param unsynced Total number of software sources that have not yet been synced.
          * 
          * @return builder
          * 

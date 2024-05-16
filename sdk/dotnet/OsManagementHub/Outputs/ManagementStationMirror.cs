@@ -14,23 +14,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class ManagementStationMirror
     {
         /// <summary>
-        /// (Updatable) Directory for the mirroring
+        /// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         /// </summary>
         public readonly string Directory;
         /// <summary>
-        /// (Updatable) Port that the proxy will use
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Listening port used for the proxy.
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// (Updatable) Local path for the sslcert
+        /// (Updatable) Path to the SSL cerfificate.
         /// </summary>
         public readonly string? Sslcert;
         /// <summary>
-        /// (Updatable) Default sslport for the mirror
+        /// (Updatable) Default mirror listening port for https.
         /// </summary>
         public readonly string Sslport;
 

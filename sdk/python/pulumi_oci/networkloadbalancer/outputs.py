@@ -1942,6 +1942,7 @@ class GetListenersListenerCollectionItemResult(dict):
                  default_backend_set_name: str,
                  id: str,
                  ip_version: str,
+                 is_ppv2enabled: bool,
                  name: str,
                  network_load_balancer_id: str,
                  port: int,
@@ -1949,6 +1950,7 @@ class GetListenersListenerCollectionItemResult(dict):
         """
         :param str default_backend_set_name: The name of the associated backend set.  Example: `example_backend_set`
         :param str ip_version: IP version associated with the listener.
+        :param bool is_ppv2enabled: Property to enable/disable PPv2 feature for this listener.
         :param str name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param int port: The communication port for the listener.  Example: `80`
@@ -1957,6 +1959,7 @@ class GetListenersListenerCollectionItemResult(dict):
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_version", ip_version)
+        pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
         pulumi.set(__self__, "port", port)
@@ -1982,6 +1985,14 @@ class GetListenersListenerCollectionItemResult(dict):
         IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isPpv2enabled")
+    def is_ppv2enabled(self) -> bool:
+        """
+        Property to enable/disable PPv2 feature for this listener.
+        """
+        return pulumi.get(self, "is_ppv2enabled")
 
     @property
     @pulumi.getter

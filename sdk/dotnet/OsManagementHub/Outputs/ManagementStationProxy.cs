@@ -14,23 +14,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class ManagementStationProxy
     {
         /// <summary>
-        /// (Updatable) URL that the proxy will forward to
+        /// (Updatable) The URL the proxy will forward to.
         /// </summary>
         public readonly string? Forward;
         /// <summary>
-        /// (Updatable) List of hosts
+        /// (Updatable) List of hosts.
         /// </summary>
         public readonly ImmutableArray<string> Hosts;
         /// <summary>
-        /// (Updatable) To enable or disable the proxy (default true)
+        /// (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// (Updatable) Port that the proxy will use
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Listening port used for the proxy.
         /// </summary>
         public readonly string? Port;
 

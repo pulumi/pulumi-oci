@@ -1619,6 +1619,8 @@ type ListenerSslConfiguration struct {
 	//
 	// example: `exampleCipherSuite`
 	CipherSuiteName *string `pulumi:"cipherSuiteName"`
+	// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+	HasSessionResumption *bool `pulumi:"hasSessionResumption"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 	//
 	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -1685,6 +1687,8 @@ type ListenerSslConfigurationArgs struct {
 	//
 	// example: `exampleCipherSuite`
 	CipherSuiteName pulumi.StringPtrInput `pulumi:"cipherSuiteName"`
+	// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+	HasSessionResumption pulumi.BoolPtrInput `pulumi:"hasSessionResumption"`
 	// (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 	//
 	// The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -1825,6 +1829,11 @@ func (o ListenerSslConfigurationOutput) CipherSuiteName() pulumi.StringPtrOutput
 	return o.ApplyT(func(v ListenerSslConfiguration) *string { return v.CipherSuiteName }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+func (o ListenerSslConfigurationOutput) HasSessionResumption() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ListenerSslConfiguration) *bool { return v.HasSessionResumption }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 //
 // The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -1938,6 +1947,16 @@ func (o ListenerSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrOut
 		}
 		return v.CipherSuiteName
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+func (o ListenerSslConfigurationPtrOutput) HasSessionResumption() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ListenerSslConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.HasSessionResumption
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.

@@ -6,6 +6,7 @@ package com.pulumi.oci.NetworkLoadBalancer;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -45,6 +46,21 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
+    }
+
+    /**
+     * (Updatable) Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    @Import(name="isPpv2enabled")
+    private @Nullable Output<Boolean> isPpv2enabled;
+
+    /**
+     * @return (Updatable) Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    public Optional<Output<Boolean>> isPpv2enabled() {
+        return Optional.ofNullable(this.isPpv2enabled);
     }
 
     /**
@@ -118,6 +134,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     private ListenerArgs(ListenerArgs $) {
         this.defaultBackendSetName = $.defaultBackendSetName;
         this.ipVersion = $.ipVersion;
+        this.isPpv2enabled = $.isPpv2enabled;
         this.name = $.name;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
         this.port = $.port;
@@ -182,6 +199,27 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipVersion(String ipVersion) {
             return ipVersion(Output.of(ipVersion));
+        }
+
+        /**
+         * @param isPpv2enabled (Updatable) Property to enable/disable PPv2 feature for this listener.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPpv2enabled(@Nullable Output<Boolean> isPpv2enabled) {
+            $.isPpv2enabled = isPpv2enabled;
+            return this;
+        }
+
+        /**
+         * @param isPpv2enabled (Updatable) Property to enable/disable PPv2 feature for this listener.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPpv2enabled(Boolean isPpv2enabled) {
+            return isPpv2enabled(Output.of(isPpv2enabled));
         }
 
         /**

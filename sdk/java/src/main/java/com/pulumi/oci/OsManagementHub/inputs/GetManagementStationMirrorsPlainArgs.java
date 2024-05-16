@@ -18,14 +18,14 @@ public final class GetManagementStationMirrorsPlainArgs extends com.pulumi.resou
     public static final GetManagementStationMirrorsPlainArgs Empty = new GetManagementStationMirrorsPlainArgs();
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public Optional<String> displayName() {
@@ -55,14 +55,14 @@ public final class GetManagementStationMirrorsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     @Import(name="managementStationId", required=true)
     private String managementStationId;
 
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     public String managementStationId() {
@@ -113,7 +113,7 @@ public final class GetManagementStationMirrorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A filter to return resources that match the given user-friendly name.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class GetManagementStationMirrorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param managementStationId The OCID of the management station.
+         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
          * 
          * @return builder
          * 

@@ -36,7 +36,8 @@ import (
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(emailDomainDescription),
+//				Description:          pulumi.Any(emailDomainDescription),
+//				DomainVerificationId: pulumi.Any(testDomainVerification.Id),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
@@ -68,6 +69,10 @@ type EmailDomain struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
+	// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId pulumi.StringOutput `pulumi:"domainVerificationId"`
+	// The current domain verification status.
+	DomainVerificationStatus pulumi.StringOutput `pulumi:"domainVerificationStatus"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -126,6 +131,10 @@ type emailDomainState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
+	// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId *string `pulumi:"domainVerificationId"`
+	// The current domain verification status.
+	DomainVerificationStatus *string `pulumi:"domainVerificationStatus"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -152,6 +161,10 @@ type EmailDomainState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
+	// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId pulumi.StringPtrInput
+	// The current domain verification status.
+	DomainVerificationStatus pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -180,6 +193,8 @@ type emailDomainArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
+	// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId *string `pulumi:"domainVerificationId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -197,6 +212,8 @@ type EmailDomainArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
+	// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+	DomainVerificationId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -311,6 +328,16 @@ func (o EmailDomainOutput) DefinedTags() pulumi.MapOutput {
 // (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
 func (o EmailDomainOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+func (o EmailDomainOutput) DomainVerificationId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.DomainVerificationId }).(pulumi.StringOutput)
+}
+
+// The current domain verification status.
+func (o EmailDomainOutput) DomainVerificationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.DomainVerificationStatus }).(pulumi.StringOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

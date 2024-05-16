@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.VmClusterArgs;
 import com.pulumi.oci.Database.inputs.VmClusterState;
 import com.pulumi.oci.Database.outputs.VmClusterDataCollectionOptions;
+import com.pulumi.oci.Database.outputs.VmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -38,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.VmCluster;
  * import com.pulumi.oci.Database.VmClusterArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -68,6 +70,10 @@ import javax.annotation.Nullable;
  *             .dbNodeStorageSizeInGbs(vmClusterDbNodeStorageSizeInGbs)
  *             .dbServers(vmClusterDbServers)
  *             .definedTags(vmClusterDefinedTags)
+ *             .fileSystemConfigurationDetails(VmClusterFileSystemConfigurationDetailArgs.builder()
+ *                 .fileSystemSizeGb(vmClusterFileSystemConfigurationDetailsFileSystemSizeGb)
+ *                 .mountPoint(vmClusterFileSystemConfigurationDetailsMountPoint)
+ *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isLocalBackupEnabled(vmClusterIsLocalBackupEnabled)
  *             .isSparseDiskgroupEnabled(vmClusterIsSparseDiskgroupEnabled)
@@ -253,6 +259,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     * 
+     */
+    @Export(name="fileSystemConfigurationDetails", refs={List.class,VmClusterFileSystemConfigurationDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterFileSystemConfigurationDetail>> fileSystemConfigurationDetails;
+
+    /**
+     * @return (Updatable) Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public Output<List<VmClusterFileSystemConfigurationDetail>> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

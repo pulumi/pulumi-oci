@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -32,14 +33,14 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -84,14 +85,59 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the managed instance group for which to list resources.
+     * Indicates whether to list only resources managed by the Autonomous Linux service.
+     * 
+     */
+    @Import(name="isManagedByAutonomousLinux")
+    private @Nullable Boolean isManagedByAutonomousLinux;
+
+    /**
+     * @return Indicates whether to list only resources managed by the Autonomous Linux service.
+     * 
+     */
+    public Optional<Boolean> isManagedByAutonomousLinux() {
+        return Optional.ofNullable(this.isManagedByAutonomousLinux);
+    }
+
+    /**
+     * A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    @Import(name="locationNotEqualTos")
+    private @Nullable List<String> locationNotEqualTos;
+
+    /**
+     * @return A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    public Optional<List<String>> locationNotEqualTos() {
+        return Optional.ofNullable(this.locationNotEqualTos);
+    }
+
+    /**
+     * A filter to return only resources whose location matches the given value.
+     * 
+     */
+    @Import(name="locations")
+    private @Nullable List<String> locations;
+
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public Optional<List<String>> locations() {
+        return Optional.ofNullable(this.locations);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      * 
      */
     @Import(name="managedInstanceGroupId")
     private @Nullable String managedInstanceGroupId;
 
     /**
-     * @return The OCID of the managed instance group for which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      * 
      */
     public Optional<String> managedInstanceGroupId() {
@@ -99,14 +145,14 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources that match the given operating system family.
      * 
      */
     @Import(name="osFamily")
     private @Nullable String osFamily;
 
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public Optional<String> osFamily() {
@@ -114,14 +160,14 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      * 
      */
     @Import(name="softwareSourceId")
     private @Nullable String softwareSourceId;
 
     /**
-     * @return The OCID for the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      * 
      */
     public Optional<String> softwareSourceId() {
@@ -129,14 +175,14 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * A filter to return only resources their lifecycle state matches the given lifecycle state.
+     * A filter to return only managed instance groups that are in the specified state.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycle state matches the given lifecycle state.
+     * @return A filter to return only managed instance groups that are in the specified state.
      * 
      */
     public Optional<String> state() {
@@ -151,6 +197,9 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         this.displayNameContains = $.displayNameContains;
         this.displayNames = $.displayNames;
         this.filters = $.filters;
+        this.isManagedByAutonomousLinux = $.isManagedByAutonomousLinux;
+        this.locationNotEqualTos = $.locationNotEqualTos;
+        this.locations = $.locations;
         this.managedInstanceGroupId = $.managedInstanceGroupId;
         this.osFamily = $.osFamily;
         this.softwareSourceId = $.softwareSourceId;
@@ -187,7 +236,7 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -239,7 +288,60 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param managedInstanceGroupId The OCID of the managed instance group for which to list resources.
+         * @param isManagedByAutonomousLinux Indicates whether to list only resources managed by the Autonomous Linux service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isManagedByAutonomousLinux(@Nullable Boolean isManagedByAutonomousLinux) {
+            $.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+            $.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(@Nullable List<String> locations) {
+            $.locations = locations;
+            return this;
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+
+        /**
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
          * 
          * @return builder
          * 
@@ -250,7 +352,7 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -261,7 +363,7 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param softwareSourceId The OCID for the software source.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          * 
          * @return builder
          * 
@@ -272,7 +374,7 @@ public final class GetManagedInstanceGroupsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param state A filter to return only resources their lifecycle state matches the given lifecycle state.
+         * @param state A filter to return only managed instance groups that are in the specified state.
          * 
          * @return builder
          * 

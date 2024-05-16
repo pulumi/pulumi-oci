@@ -5,7 +5,9 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -21,7 +23,12 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
      */
     private String archType;
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return Settings for the Autonomous Linux service.
+     * 
+     */
+    private List<GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting> autonomousSettings;
+    /**
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
@@ -46,22 +53,37 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
     /**
-     * @return The number of Managed Instances in the managed instance group.
+     * @return Indicates whether to list only resources managed by the Autonomous Linux service.
+     * 
+     */
+    private Boolean isManagedByAutonomousLinux;
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    private String location;
+    /**
+     * @return The number of managed instances in the group.
      * 
      */
     private Integer managedInstanceCount;
     /**
-     * @return The list of managed instances OCIDs attached to the managed instance group.
+     * @return The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
      * 
      */
     private List<String> managedInstanceIds;
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    private String notificationTopicId;
+    /**
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     private String osFamily;
@@ -71,7 +93,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
      */
     private Integer pendingJobCount;
     /**
-     * @return The list of software sources that the managed instance group will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      * 
      */
     private List<String> softwareSourceIds;
@@ -81,7 +103,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
      */
     private List<GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource> softwareSources;
     /**
-     * @return A filter to return only resources their lifecycle state matches the given lifecycle state.
+     * @return A filter to return only managed instance groups that are in the specified state.
      * 
      */
     private String state;
@@ -91,17 +113,17 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeModified;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the group.
      * 
      */
     private String vendorName;
@@ -115,7 +137,14 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         return this.archType;
     }
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return Settings for the Autonomous Linux service.
+     * 
+     */
+    public List<GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting> autonomousSettings() {
+        return this.autonomousSettings;
+    }
+    /**
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -150,28 +179,49 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The number of Managed Instances in the managed instance group.
+     * @return Indicates whether to list only resources managed by the Autonomous Linux service.
+     * 
+     */
+    public Boolean isManagedByAutonomousLinux() {
+        return this.isManagedByAutonomousLinux;
+    }
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public String location() {
+        return this.location;
+    }
+    /**
+     * @return The number of managed instances in the group.
      * 
      */
     public Integer managedInstanceCount() {
         return this.managedInstanceCount;
     }
     /**
-     * @return The list of managed instances OCIDs attached to the managed instance group.
+     * @return The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
      * 
      */
     public List<String> managedInstanceIds() {
         return this.managedInstanceIds;
     }
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    public String notificationTopicId() {
+        return this.notificationTopicId;
+    }
+    /**
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public String osFamily() {
@@ -185,7 +235,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         return this.pendingJobCount;
     }
     /**
-     * @return The list of software sources that the managed instance group will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      * 
      */
     public List<String> softwareSourceIds() {
@@ -199,7 +249,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         return this.softwareSources;
     }
     /**
-     * @return A filter to return only resources their lifecycle state matches the given lifecycle state.
+     * @return A filter to return only managed instance groups that are in the specified state.
      * 
      */
     public String state() {
@@ -213,21 +263,21 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeModified() {
         return this.timeModified;
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the group.
      * 
      */
     public String vendorName() {
@@ -244,14 +294,18 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String archType;
+        private List<GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting> autonomousSettings;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isManagedByAutonomousLinux;
+        private String location;
         private Integer managedInstanceCount;
         private List<String> managedInstanceIds;
+        private String notificationTopicId;
         private String osFamily;
         private Integer pendingJobCount;
         private List<String> softwareSourceIds;
@@ -265,14 +319,18 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         public Builder(GetManagedInstanceGroupsManagedInstanceGroupCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.archType = defaults.archType;
+    	      this.autonomousSettings = defaults.autonomousSettings;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isManagedByAutonomousLinux = defaults.isManagedByAutonomousLinux;
+    	      this.location = defaults.location;
     	      this.managedInstanceCount = defaults.managedInstanceCount;
     	      this.managedInstanceIds = defaults.managedInstanceIds;
+    	      this.notificationTopicId = defaults.notificationTopicId;
     	      this.osFamily = defaults.osFamily;
     	      this.pendingJobCount = defaults.pendingJobCount;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
@@ -291,6 +349,17 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
             }
             this.archType = archType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder autonomousSettings(List<GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting> autonomousSettings) {
+            if (autonomousSettings == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsManagedInstanceGroupCollectionItem", "autonomousSettings");
+            }
+            this.autonomousSettings = autonomousSettings;
+            return this;
+        }
+        public Builder autonomousSettings(GetManagedInstanceGroupsManagedInstanceGroupCollectionItemAutonomousSetting... autonomousSettings) {
+            return autonomousSettings(List.of(autonomousSettings));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -341,6 +410,22 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            if (isManagedByAutonomousLinux == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsManagedInstanceGroupCollectionItem", "isManagedByAutonomousLinux");
+            }
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsManagedInstanceGroupCollectionItem", "location");
+            }
+            this.location = location;
+            return this;
+        }
+        @CustomType.Setter
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             if (managedInstanceCount == null) {
               throw new MissingRequiredPropertyException("GetManagedInstanceGroupsManagedInstanceGroupCollectionItem", "managedInstanceCount");
@@ -358,6 +443,14 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         }
         public Builder managedInstanceIds(String... managedInstanceIds) {
             return managedInstanceIds(List.of(managedInstanceIds));
+        }
+        @CustomType.Setter
+        public Builder notificationTopicId(String notificationTopicId) {
+            if (notificationTopicId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsManagedInstanceGroupCollectionItem", "notificationTopicId");
+            }
+            this.notificationTopicId = notificationTopicId;
+            return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
@@ -440,14 +533,18 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
         public GetManagedInstanceGroupsManagedInstanceGroupCollectionItem build() {
             final var _resultValue = new GetManagedInstanceGroupsManagedInstanceGroupCollectionItem();
             _resultValue.archType = archType;
+            _resultValue.autonomousSettings = autonomousSettings;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            _resultValue.location = location;
             _resultValue.managedInstanceCount = managedInstanceCount;
             _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.notificationTopicId = notificationTopicId;
             _resultValue.osFamily = osFamily;
             _resultValue.pendingJobCount = pendingJobCount;
             _resultValue.softwareSourceIds = softwareSourceIds;

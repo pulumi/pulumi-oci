@@ -16,7 +16,7 @@ public final class GetLifecycleEnvironmentManagedInstanceId {
      */
     private String displayName;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
@@ -30,7 +30,7 @@ public final class GetLifecycleEnvironmentManagedInstanceId {
         return this.displayName;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {

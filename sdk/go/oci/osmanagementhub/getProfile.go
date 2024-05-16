@@ -52,7 +52,7 @@ func LookupProfile(ctx *pulumi.Context, args *LookupProfileArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getProfile.
 type LookupProfileArgs struct {
-	// The OCID of the registration profile.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
 	ProfileId string `pulumi:"profileId"`
 }
 
@@ -60,7 +60,7 @@ type LookupProfileArgs struct {
 type LookupProfileResult struct {
 	// The architecture type.
 	ArchType string `pulumi:"archType"`
-	// The OCID of the tenancy containing the registration profile.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -70,23 +70,29 @@ type LookupProfileResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
-	// Identifying information for the specified lifecycle environment.
+	// Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+	IsDefaultProfile bool `pulumi:"isDefaultProfile"`
+	// Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+	IsServiceProvidedProfile bool `pulumi:"isServiceProvidedProfile"`
+	// Provides identifying information for the specified lifecycle environment.
 	LifecycleEnvironments []GetProfileLifecycleEnvironment `pulumi:"lifecycleEnvironments"`
 	LifecycleStageId      string                           `pulumi:"lifecycleStageId"`
-	// Identifying information for the specified lifecycle stage.
+	// Provides identifying information for the specified lifecycle stage.
 	LifecycleStages        []GetProfileLifecycleStage `pulumi:"lifecycleStages"`
 	ManagedInstanceGroupId string                     `pulumi:"managedInstanceGroupId"`
-	// Identifying information for the specified managed instance group.
+	// Provides identifying information for the specified managed instance group.
 	ManagedInstanceGroups []GetProfileManagedInstanceGroup `pulumi:"managedInstanceGroups"`
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
 	ManagementStationId string `pulumi:"managementStationId"`
 	// The operating system family.
 	OsFamily  string `pulumi:"osFamily"`
 	ProfileId string `pulumi:"profileId"`
-	// The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
-	ProfileType       string   `pulumi:"profileType"`
+	// The type of profile.
+	ProfileType string `pulumi:"profileType"`
+	// The type of instance to register.
+	RegistrationType  string   `pulumi:"registrationType"`
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the registration profile will use.
 	SoftwareSources []GetProfileSoftwareSource `pulumi:"softwareSources"`
@@ -94,9 +100,9 @@ type LookupProfileResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the registration profile was created. An RFC3339 formatted datetime string.
+	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The software source vendor name.
+	// The vendor of the operating system for the instance.
 	VendorName string `pulumi:"vendorName"`
 }
 
@@ -115,7 +121,7 @@ func LookupProfileOutput(ctx *pulumi.Context, args LookupProfileOutputArgs, opts
 
 // A collection of arguments for invoking getProfile.
 type LookupProfileOutputArgs struct {
-	// The OCID of the registration profile.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
 	ProfileId pulumi.StringInput `pulumi:"profileId"`
 }
 
@@ -143,7 +149,7 @@ func (o LookupProfileResultOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the registration profile.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
 func (o LookupProfileResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -168,12 +174,22 @@ func (o LookupProfileResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the software source.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o LookupProfileResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Identifying information for the specified lifecycle environment.
+// Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+func (o LookupProfileResultOutput) IsDefaultProfile() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupProfileResult) bool { return v.IsDefaultProfile }).(pulumi.BoolOutput)
+}
+
+// Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+func (o LookupProfileResultOutput) IsServiceProvidedProfile() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupProfileResult) bool { return v.IsServiceProvidedProfile }).(pulumi.BoolOutput)
+}
+
+// Provides identifying information for the specified lifecycle environment.
 func (o LookupProfileResultOutput) LifecycleEnvironments() GetProfileLifecycleEnvironmentArrayOutput {
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileLifecycleEnvironment { return v.LifecycleEnvironments }).(GetProfileLifecycleEnvironmentArrayOutput)
 }
@@ -182,7 +198,7 @@ func (o LookupProfileResultOutput) LifecycleStageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.LifecycleStageId }).(pulumi.StringOutput)
 }
 
-// Identifying information for the specified lifecycle stage.
+// Provides identifying information for the specified lifecycle stage.
 func (o LookupProfileResultOutput) LifecycleStages() GetProfileLifecycleStageArrayOutput {
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileLifecycleStage { return v.LifecycleStages }).(GetProfileLifecycleStageArrayOutput)
 }
@@ -191,12 +207,12 @@ func (o LookupProfileResultOutput) ManagedInstanceGroupId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
 }
 
-// Identifying information for the specified managed instance group.
+// Provides identifying information for the specified managed instance group.
 func (o LookupProfileResultOutput) ManagedInstanceGroups() GetProfileManagedInstanceGroupArrayOutput {
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileManagedInstanceGroup { return v.ManagedInstanceGroups }).(GetProfileManagedInstanceGroupArrayOutput)
 }
 
-// The OCID of the management station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
 func (o LookupProfileResultOutput) ManagementStationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ManagementStationId }).(pulumi.StringOutput)
 }
@@ -210,9 +226,14 @@ func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ProfileId }).(pulumi.StringOutput)
 }
 
-// The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+// The type of profile.
 func (o LookupProfileResultOutput) ProfileType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.ProfileType }).(pulumi.StringOutput)
+}
+
+// The type of instance to register.
+func (o LookupProfileResultOutput) RegistrationType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProfileResult) string { return v.RegistrationType }).(pulumi.StringOutput)
 }
 
 func (o LookupProfileResultOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
@@ -234,12 +255,12 @@ func (o LookupProfileResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the registration profile was created. An RFC3339 formatted datetime string.
+// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupProfileResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The software source vendor name.
+// The vendor of the operating system for the instance.
 func (o LookupProfileResultOutput) VendorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.VendorName }).(pulumi.StringOutput)
 }

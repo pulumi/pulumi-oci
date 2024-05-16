@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationMirror {
     /**
-     * @return Directory for the mirroring
+     * @return Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     private String directory;
     /**
-     * @return Port that the proxy will use
+     * @return Listening port used for the proxy.
      * 
      */
     private String port;
     /**
-     * @return Local path for the sslcert
+     * @return Path to the SSL cerfificate.
      * 
      */
     private String sslcert;
     /**
-     * @return Default sslport for the mirror
+     * @return Default mirror listening port for https.
      * 
      */
     private String sslport;
 
     private GetManagementStationMirror() {}
     /**
-     * @return Directory for the mirroring
+     * @return Path to the data volume on the management station where software source mirrors are stored.
      * 
      */
     public String directory() {
         return this.directory;
     }
     /**
-     * @return Port that the proxy will use
+     * @return Listening port used for the proxy.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return Local path for the sslcert
+     * @return Path to the SSL cerfificate.
      * 
      */
     public String sslcert() {
         return this.sslcert;
     }
     /**
-     * @return Default sslport for the mirror
+     * @return Default mirror listening port for https.
      * 
      */
     public String sslport() {

@@ -56,14 +56,14 @@ func GetSoftwareSourceSoftwarePackages(ctx *pulumi.Context, args *GetSoftwareSou
 
 // A collection of arguments for invoking getSoftwareSourceSoftwarePackages.
 type GetSoftwareSourceSoftwarePackagesArgs struct {
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName *string `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string                                   `pulumi:"displayNameContains"`
 	Filters             []GetSoftwareSourceSoftwarePackagesFilter `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest *bool `pulumi:"isLatest"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -97,14 +97,14 @@ func GetSoftwareSourceSoftwarePackagesOutput(ctx *pulumi.Context, args GetSoftwa
 
 // A collection of arguments for invoking getSoftwareSourceSoftwarePackages.
 type GetSoftwareSourceSoftwarePackagesOutputArgs struct {
-	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+	// A filter to return resources that match the given user-friendly name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput                             `pulumi:"displayNameContains"`
 	Filters             GetSoftwareSourceSoftwarePackagesFilterArrayInput `pulumi:"filters"`
-	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+	// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 

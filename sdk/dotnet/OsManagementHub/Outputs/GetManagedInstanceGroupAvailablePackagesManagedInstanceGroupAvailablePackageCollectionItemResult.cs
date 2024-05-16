@@ -22,11 +22,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         public readonly bool IsLatest;
         /// <summary>
-        /// Unique identifier for the package. NOTE - This is not an OCID.
+        /// Unique identifier for the package. Note that this is not an OCID.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Version of the installed package.
+        /// Version of the available package.
         /// </summary>
         public readonly string Version;
 

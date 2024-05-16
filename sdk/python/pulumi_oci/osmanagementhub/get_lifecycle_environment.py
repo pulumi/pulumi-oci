@@ -22,7 +22,7 @@ class GetLifecycleEnvironmentResult:
     """
     A collection of values returned by getLifecycleEnvironment.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_environment_id=None, managed_instance_ids=None, os_family=None, stages=None, state=None, system_tags=None, time_created=None, time_modified=None, vendor_name=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_environment_id=None, location=None, managed_instance_ids=None, os_family=None, stages=None, state=None, system_tags=None, time_created=None, time_modified=None, vendor_name=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -47,6 +47,9 @@ class GetLifecycleEnvironmentResult:
         if lifecycle_environment_id and not isinstance(lifecycle_environment_id, str):
             raise TypeError("Expected argument 'lifecycle_environment_id' to be a str")
         pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if location and not isinstance(location, str):
+            raise TypeError("Expected argument 'location' to be a str")
+        pulumi.set(__self__, "location", location)
         if managed_instance_ids and not isinstance(managed_instance_ids, list):
             raise TypeError("Expected argument 'managed_instance_ids' to be a list")
         pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
@@ -76,7 +79,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="archType")
     def arch_type(self) -> str:
         """
-        The CPU architecture of the target instances.
+        The CPU architecture of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "arch_type")
 
@@ -84,7 +87,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy containing the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -124,7 +127,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
 
@@ -132,15 +135,23 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> str:
         """
-        The OCID of the lifecycle environment for the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_environment_id")
+
+    @property
+    @pulumi.getter
+    def location(self) -> str:
+        """
+        The location of managed instances associated with the lifecycle stage.
+        """
+        return pulumi.get(self, "location")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentManagedInstanceIdResult']:
         """
-        The list of managed instances specified lifecycle stage.
+        The list of managed instances associated with the lifecycle stage.
         """
         return pulumi.get(self, "managed_instance_ids")
 
@@ -148,7 +159,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> str:
         """
-        The operating system type of the target instances.
+        The operating system of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "os_family")
 
@@ -156,7 +167,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter
     def stages(self) -> Sequence['outputs.GetLifecycleEnvironmentStageResult']:
         """
-        User specified list of lifecycle stages to be created for the lifecycle environment.
+        User-specified list of lifecycle stages used within the lifecycle environment.
         """
         return pulumi.get(self, "stages")
 
@@ -180,7 +191,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+        The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -188,7 +199,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> str:
         """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+        The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
@@ -196,7 +207,7 @@ class GetLifecycleEnvironmentResult:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> str:
         """
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the lifecycle environment.
         """
         return pulumi.get(self, "vendor_name")
 
@@ -215,6 +226,7 @@ class AwaitableGetLifecycleEnvironmentResult(GetLifecycleEnvironmentResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_environment_id=self.lifecycle_environment_id,
+            location=self.location,
             managed_instance_ids=self.managed_instance_ids,
             os_family=self.os_family,
             stages=self.stages,
@@ -242,7 +254,7 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
     ```
 
 
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
+    :param str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
     """
     __args__ = dict()
     __args__['lifecycleEnvironmentId'] = lifecycle_environment_id
@@ -258,6 +270,7 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_environment_id=pulumi.get(__ret__, 'lifecycle_environment_id'),
+        location=pulumi.get(__ret__, 'location'),
         managed_instance_ids=pulumi.get(__ret__, 'managed_instance_ids'),
         os_family=pulumi.get(__ret__, 'os_family'),
         stages=pulumi.get(__ret__, 'stages'),
@@ -286,6 +299,6 @@ def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.I
     ```
 
 
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
+    :param str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
     """
     ...

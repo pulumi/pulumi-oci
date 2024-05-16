@@ -5,7 +5,6 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,18 +16,18 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs ext
     public static final SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs Empty = new SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs();
 
     /**
-     * (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * (Updatable) The type of the filter.
      * 
      */
-    @Import(name="filterType", required=true)
-    private Output<String> filterType;
+    @Import(name="filterType")
+    private @Nullable Output<String> filterType;
 
     /**
-     * @return (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * @return (Updatable) The type of the filter.
      * 
      */
-    public Output<String> filterType() {
-        return this.filterType;
+    public Optional<Output<String>> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
 
     /**
@@ -104,18 +103,18 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs ext
         }
 
         /**
-         * @param filterType (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * @param filterType (Updatable) The type of the filter.
          * 
          * @return builder
          * 
          */
-        public Builder filterType(Output<String> filterType) {
+        public Builder filterType(@Nullable Output<String> filterType) {
             $.filterType = filterType;
             return this;
         }
 
         /**
-         * @param filterType (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * @param filterType (Updatable) The type of the filter.
          * 
          * @return builder
          * 
@@ -188,9 +187,6 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs ext
         }
 
         public SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs build() {
-            if ($.filterType == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs", "filterType");
-            }
             return $;
         }
     }

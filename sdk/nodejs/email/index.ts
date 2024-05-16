@@ -15,6 +15,11 @@ export type EmailDomain = import("./emailDomain").EmailDomain;
 export const EmailDomain: typeof import("./emailDomain").EmailDomain = null as any;
 utilities.lazyLoad(exports, ["EmailDomain"], () => require("./emailDomain"));
 
+export { EmailReturnPathArgs, EmailReturnPathState } from "./emailReturnPath";
+export type EmailReturnPath = import("./emailReturnPath").EmailReturnPath;
+export const EmailReturnPath: typeof import("./emailReturnPath").EmailReturnPath = null as any;
+utilities.lazyLoad(exports, ["EmailReturnPath"], () => require("./emailReturnPath"));
+
 export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
 export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
 export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
@@ -39,6 +44,16 @@ export { GetEmailDomainsArgs, GetEmailDomainsResult, GetEmailDomainsOutputArgs }
 export const getEmailDomains: typeof import("./getEmailDomains").getEmailDomains = null as any;
 export const getEmailDomainsOutput: typeof import("./getEmailDomains").getEmailDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getEmailDomains","getEmailDomainsOutput"], () => require("./getEmailDomains"));
+
+export { GetEmailReturnPathArgs, GetEmailReturnPathResult, GetEmailReturnPathOutputArgs } from "./getEmailReturnPath";
+export const getEmailReturnPath: typeof import("./getEmailReturnPath").getEmailReturnPath = null as any;
+export const getEmailReturnPathOutput: typeof import("./getEmailReturnPath").getEmailReturnPathOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailReturnPath","getEmailReturnPathOutput"], () => require("./getEmailReturnPath"));
+
+export { GetEmailReturnPathsArgs, GetEmailReturnPathsResult, GetEmailReturnPathsOutputArgs } from "./getEmailReturnPaths";
+export const getEmailReturnPaths: typeof import("./getEmailReturnPaths").getEmailReturnPaths = null as any;
+export const getEmailReturnPathsOutput: typeof import("./getEmailReturnPaths").getEmailReturnPathsOutput = null as any;
+utilities.lazyLoad(exports, ["getEmailReturnPaths","getEmailReturnPathsOutput"], () => require("./getEmailReturnPaths"));
 
 export { GetSenderArgs, GetSenderResult, GetSenderOutputArgs } from "./getSender";
 export const getSender: typeof import("./getSender").getSender = null as any;
@@ -79,6 +94,8 @@ const _module = {
                 return new Dkim(name, <any>undefined, { urn })
             case "oci:Email/emailDomain:EmailDomain":
                 return new EmailDomain(name, <any>undefined, { urn })
+            case "oci:Email/emailReturnPath:EmailReturnPath":
+                return new EmailReturnPath(name, <any>undefined, { urn })
             case "oci:Email/sender:Sender":
                 return new Sender(name, <any>undefined, { urn })
             case "oci:Email/suppression:Suppression":
@@ -90,5 +107,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Email/dkim", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/emailDomain", _module)
+pulumi.runtime.registerResourceModule("oci", "Email/emailReturnPath", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/sender", _module)
 pulumi.runtime.registerResourceModule("oci", "Email/suppression", _module)

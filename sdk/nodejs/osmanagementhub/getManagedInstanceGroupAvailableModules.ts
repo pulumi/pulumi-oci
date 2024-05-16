@@ -9,8 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists available modules that for the specified managed instance group. Filter the list against a variety of
- * criteria including but not limited to its name.
+ * List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
  *
  * ## Example Usage
  *
@@ -43,12 +42,12 @@ export function getManagedInstanceGroupAvailableModules(args: GetManagedInstance
  */
 export interface GetManagedInstanceGroupAvailableModulesArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     filters?: inputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesFilter[];
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: string;
     /**
@@ -77,7 +76,7 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
     readonly managedInstanceGroupAvailableModuleCollections: outputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection[];
     readonly managedInstanceGroupId: string;
     /**
-     * The name of the module that is available to be enabled on the managed instance group.
+     * The name of the module that is available to the managed instance group.
      */
     readonly name?: string;
     readonly nameContains?: string;
@@ -85,8 +84,7 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
 /**
  * This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists available modules that for the specified managed instance group. Filter the list against a variety of
- * criteria including but not limited to its name.
+ * List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
  *
  * ## Example Usage
  *
@@ -111,12 +109,12 @@ export function getManagedInstanceGroupAvailableModulesOutput(args: GetManagedIn
  */
 export interface GetManagedInstanceGroupAvailableModulesOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesFilterArgs>[]>;
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: pulumi.Input<string>;
     /**

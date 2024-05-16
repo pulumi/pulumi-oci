@@ -30,6 +30,14 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        /// </summary>
+        public readonly string DomainVerificationId;
+        /// <summary>
+        /// The current domain verification status.
+        /// </summary>
+        public readonly string DomainVerificationStatus;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -68,6 +76,10 @@ namespace Pulumi.Oci.Email.Outputs
 
             string description,
 
+            string domainVerificationId,
+
+            string domainVerificationStatus,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -86,6 +98,8 @@ namespace Pulumi.Oci.Email.Outputs
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
+            DomainVerificationId = domainVerificationId;
+            DomainVerificationStatus = domainVerificationStatus;
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;

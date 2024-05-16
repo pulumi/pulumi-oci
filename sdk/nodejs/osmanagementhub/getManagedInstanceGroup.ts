@@ -35,7 +35,7 @@ export function getManagedInstanceGroup(args: GetManagedInstanceGroupArgs, opts?
  */
 export interface GetManagedInstanceGroupArgs {
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: string;
 }
@@ -49,7 +49,11 @@ export interface GetManagedInstanceGroupResult {
      */
     readonly archType: string;
     /**
-     * The OCID of the tenancy containing the managed instance group.
+     * Settings for the Autonomous Linux service.
+     */
+    readonly autonomousSettings: outputs.OsManagementHub.GetManagedInstanceGroupAutonomousSetting[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      */
     readonly compartmentId: string;
     /**
@@ -69,18 +73,30 @@ export interface GetManagedInstanceGroupResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     readonly id: string;
     /**
-     * The number of Managed Instances in the managed instance group.
+     * Indicates whether the Autonomous Linux service manages the group.
+     */
+    readonly isManagedByAutonomousLinux: boolean;
+    /**
+     * The location of managed instances attached to the group.
+     */
+    readonly location: string;
+    /**
+     * The number of managed instances in the group.
      */
     readonly managedInstanceCount: number;
     readonly managedInstanceGroupId: string;
     /**
-     * The list of managed instances OCIDs attached to the managed instance group.
+     * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
      */
     readonly managedInstanceIds: string[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     */
+    readonly notificationTopicId: string;
     /**
      * The operating system type of the instances in the managed instance group.
      */
@@ -106,15 +122,15 @@ export interface GetManagedInstanceGroupResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
     /**
-     * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeModified: string;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the group.
      */
     readonly vendorName: string;
 }
@@ -143,7 +159,7 @@ export function getManagedInstanceGroupOutput(args: GetManagedInstanceGroupOutpu
  */
 export interface GetManagedInstanceGroupOutputArgs {
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: pulumi.Input<string>;
 }

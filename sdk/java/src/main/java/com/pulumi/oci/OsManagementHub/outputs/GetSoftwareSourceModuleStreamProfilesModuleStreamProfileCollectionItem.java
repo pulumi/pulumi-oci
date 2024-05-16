@@ -38,7 +38,7 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
      */
     private List<String> packages;
     /**
-     * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * @return The name of the module stream. This parameter is required if a profile name is specified.
      * 
      */
     private String streamName;
@@ -80,7 +80,7 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
         return this.packages;
     }
     /**
-     * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * @return The name of the module stream. This parameter is required if a profile name is specified.
      * 
      */
     public String streamName() {

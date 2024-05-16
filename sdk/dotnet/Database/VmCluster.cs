@@ -43,6 +43,14 @@ namespace Pulumi.Oci.Database
     ///         DbNodeStorageSizeInGbs = vmClusterDbNodeStorageSizeInGbs,
     ///         DbServers = vmClusterDbServers,
     ///         DefinedTags = vmClusterDefinedTags,
+    ///         FileSystemConfigurationDetails = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.VmClusterFileSystemConfigurationDetailArgs
+    ///             {
+    ///                 FileSystemSizeGb = vmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
+    ///                 MountPoint = vmClusterFileSystemConfigurationDetailsMountPoint,
+    ///             },
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -137,6 +145,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("exadataInfrastructureId")]
         public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        [Output("fileSystemConfigurationDetails")]
+        public Output<ImmutableArray<Outputs.VmClusterFileSystemConfigurationDetail>> FileSystemConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -353,6 +367,18 @@ namespace Pulumi.Oci.Database
         [Input("exadataInfrastructureId", required: true)]
         public Input<string> ExadataInfrastructureId { get; set; } = null!;
 
+        [Input("fileSystemConfigurationDetails")]
+        private InputList<Inputs.VmClusterFileSystemConfigurationDetailArgs>? _fileSystemConfigurationDetails;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.VmClusterFileSystemConfigurationDetailArgs> FileSystemConfigurationDetails
+        {
+            get => _fileSystemConfigurationDetails ?? (_fileSystemConfigurationDetails = new InputList<Inputs.VmClusterFileSystemConfigurationDetailArgs>());
+            set => _fileSystemConfigurationDetails = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -520,6 +546,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("exadataInfrastructureId")]
         public Input<string>? ExadataInfrastructureId { get; set; }
+
+        [Input("fileSystemConfigurationDetails")]
+        private InputList<Inputs.VmClusterFileSystemConfigurationDetailGetArgs>? _fileSystemConfigurationDetails;
+
+        /// <summary>
+        /// (Updatable) Details of the file system configuration of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.VmClusterFileSystemConfigurationDetailGetArgs> FileSystemConfigurationDetails
+        {
+            get => _fileSystemConfigurationDetails ?? (_fileSystemConfigurationDetails = new InputList<Inputs.VmClusterFileSystemConfigurationDetailGetArgs>());
+            set => _fileSystemConfigurationDetails = value;
+        }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

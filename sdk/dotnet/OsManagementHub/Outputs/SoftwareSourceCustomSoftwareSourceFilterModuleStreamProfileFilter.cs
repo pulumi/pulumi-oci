@@ -14,13 +14,13 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter
     {
         /// <summary>
-        /// (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// (Updatable) The type of the filter.
         /// </summary>
-        public readonly string FilterType;
+        public readonly string? FilterType;
         /// <summary>
         /// (Updatable) Module name.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// (Updatable) Profile name.
         /// </summary>
@@ -32,9 +32,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter(
-            string filterType,
+            string? filterType,
 
-            string moduleName,
+            string? moduleName,
 
             string? profileName,
 

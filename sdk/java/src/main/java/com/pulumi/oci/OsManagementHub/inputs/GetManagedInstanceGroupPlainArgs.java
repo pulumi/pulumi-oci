@@ -14,14 +14,14 @@ public final class GetManagedInstanceGroupPlainArgs extends com.pulumi.resources
     public static final GetManagedInstanceGroupPlainArgs Empty = new GetManagedInstanceGroupPlainArgs();
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     @Import(name="managedInstanceGroupId", required=true)
     private String managedInstanceGroupId;
 
     /**
-     * @return The managed instance group OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * 
      */
     public String managedInstanceGroupId() {
@@ -53,7 +53,7 @@ public final class GetManagedInstanceGroupPlainArgs extends com.pulumi.resources
         }
 
         /**
-         * @param managedInstanceGroupId The managed instance group OCID.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * 
          * @return builder
          * 

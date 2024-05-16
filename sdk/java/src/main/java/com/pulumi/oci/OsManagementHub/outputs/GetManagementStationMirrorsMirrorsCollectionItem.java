@@ -17,7 +17,7 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
      */
     private String archType;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
@@ -66,7 +66,7 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
         return this.archType;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {

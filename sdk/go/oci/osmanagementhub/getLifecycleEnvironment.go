@@ -52,15 +52,15 @@ func LookupLifecycleEnvironment(ctx *pulumi.Context, args *LookupLifecycleEnviro
 
 // A collection of arguments for invoking getLifecycleEnvironment.
 type LookupLifecycleEnvironmentArgs struct {
-	// The OCID of the lifecycle environment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
 }
 
 // A collection of values returned by getLifecycleEnvironment.
 type LookupLifecycleEnvironmentResult struct {
-	// The CPU architecture of the target instances.
+	// The CPU architecture of the managed instances in the lifecycle stage.
 	ArchType string `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -70,25 +70,27 @@ type LookupLifecycleEnvironmentResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
-	// The OCID of the lifecycle environment for the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
 	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
-	// The list of managed instances specified lifecycle stage.
+	// The location of managed instances associated with the lifecycle stage.
+	Location string `pulumi:"location"`
+	// The list of managed instances associated with the lifecycle stage.
 	ManagedInstanceIds []GetLifecycleEnvironmentManagedInstanceId `pulumi:"managedInstanceIds"`
-	// The operating system type of the target instances.
+	// The operating system of the managed instances in the lifecycle stage.
 	OsFamily string `pulumi:"osFamily"`
-	// User specified list of lifecycle stages to be created for the lifecycle environment.
+	// User-specified list of lifecycle stages used within the lifecycle environment.
 	Stages []GetLifecycleEnvironmentStage `pulumi:"stages"`
 	// The current state of the lifecycle environment.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+	// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeModified string `pulumi:"timeModified"`
-	// The software source vendor name.
+	// The vendor of the operating system used by the managed instances in the lifecycle environment.
 	VendorName string `pulumi:"vendorName"`
 }
 
@@ -107,7 +109,7 @@ func LookupLifecycleEnvironmentOutput(ctx *pulumi.Context, args LookupLifecycleE
 
 // A collection of arguments for invoking getLifecycleEnvironment.
 type LookupLifecycleEnvironmentOutputArgs struct {
-	// The OCID of the lifecycle environment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
 }
 
@@ -130,12 +132,12 @@ func (o LookupLifecycleEnvironmentResultOutput) ToLookupLifecycleEnvironmentResu
 	return o
 }
 
-// The CPU architecture of the target instances.
+// The CPU architecture of the managed instances in the lifecycle stage.
 func (o LookupLifecycleEnvironmentResultOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// The OCID of the tenancy containing the lifecycle stage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 func (o LookupLifecycleEnvironmentResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -160,29 +162,34 @@ func (o LookupLifecycleEnvironmentResultOutput) FreeformTags() pulumi.MapOutput 
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the software source.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 func (o LookupLifecycleEnvironmentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The OCID of the lifecycle environment for the lifecycle stage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
 func (o LookupLifecycleEnvironmentResultOutput) LifecycleEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.LifecycleEnvironmentId }).(pulumi.StringOutput)
 }
 
-// The list of managed instances specified lifecycle stage.
+// The location of managed instances associated with the lifecycle stage.
+func (o LookupLifecycleEnvironmentResultOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// The list of managed instances associated with the lifecycle stage.
 func (o LookupLifecycleEnvironmentResultOutput) ManagedInstanceIds() GetLifecycleEnvironmentManagedInstanceIdArrayOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) []GetLifecycleEnvironmentManagedInstanceId {
 		return v.ManagedInstanceIds
 	}).(GetLifecycleEnvironmentManagedInstanceIdArrayOutput)
 }
 
-// The operating system type of the target instances.
+// The operating system of the managed instances in the lifecycle stage.
 func (o LookupLifecycleEnvironmentResultOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.OsFamily }).(pulumi.StringOutput)
 }
 
-// User specified list of lifecycle stages to be created for the lifecycle environment.
+// User-specified list of lifecycle stages used within the lifecycle environment.
 func (o LookupLifecycleEnvironmentResultOutput) Stages() GetLifecycleEnvironmentStageArrayOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) []GetLifecycleEnvironmentStage { return v.Stages }).(GetLifecycleEnvironmentStageArrayOutput)
 }
@@ -197,17 +204,17 @@ func (o LookupLifecycleEnvironmentResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupLifecycleEnvironmentResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o LookupLifecycleEnvironmentResultOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.TimeModified }).(pulumi.StringOutput)
 }
 
-// The software source vendor name.
+// The vendor of the operating system used by the managed instances in the lifecycle environment.
 func (o LookupLifecycleEnvironmentResultOutput) VendorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) string { return v.VendorName }).(pulumi.StringOutput)
 }

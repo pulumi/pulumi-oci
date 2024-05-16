@@ -14,23 +14,23 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationMirrorSyncStatusResult
     {
         /// <summary>
-        /// Total of mirrors in 'failed' state
+        /// Total number of software sources that failed to sync.
         /// </summary>
         public readonly int Failed;
         /// <summary>
-        /// Total of mirrors in 'queued' state
+        /// Total number of software sources that are queued for sync.
         /// </summary>
         public readonly int Queued;
         /// <summary>
-        /// Total of mirrors in 'synced' state
+        /// Total number of software sources that successfully synced.
         /// </summary>
         public readonly int Synced;
         /// <summary>
-        /// Total of mirrors in 'syncing' state
+        /// Total number of software sources currently syncing.
         /// </summary>
         public readonly int Syncing;
         /// <summary>
-        /// Total of mirrors in 'failed' state
+        /// Total number of software sources that have not yet been synced.
         /// </summary>
         public readonly int Unsynced;
 

@@ -130,9 +130,9 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
     ```
 
 
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str management_station_id: The OCID of the management station.
+    :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
     :param Sequence[str] mirror_states: List of Mirror state to filter by
     """
     __args__ = dict()
@@ -179,9 +179,9 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
     ```
 
 
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str management_station_id: The OCID of the management station.
+    :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
     :param Sequence[str] mirror_states: List of Mirror state to filter by
     """
     ...

@@ -37,6 +37,7 @@ import (
 //				Port:                  pulumi.Any(listenerPort),
 //				Protocol:              pulumi.Any(listenerProtocol),
 //				IpVersion:             pulumi.Any(listenerIpVersion),
+//				IsPpv2enabled:         pulumi.Any(listenerIsPpv2enabled),
 //			})
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type Listener struct {
 	DefaultBackendSetName pulumi.StringOutput `pulumi:"defaultBackendSetName"`
 	// (Updatable) IP version associated with the listener.
 	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
+	// (Updatable) Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled pulumi.BoolOutput `pulumi:"isPpv2enabled"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -120,6 +123,8 @@ type listenerState struct {
 	DefaultBackendSetName *string `pulumi:"defaultBackendSetName"`
 	// (Updatable) IP version associated with the listener.
 	IpVersion *string `pulumi:"ipVersion"`
+	// (Updatable) Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled *bool `pulumi:"isPpv2enabled"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -138,6 +143,8 @@ type ListenerState struct {
 	DefaultBackendSetName pulumi.StringPtrInput
 	// (Updatable) IP version associated with the listener.
 	IpVersion pulumi.StringPtrInput
+	// (Updatable) Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled pulumi.BoolPtrInput
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -160,6 +167,8 @@ type listenerArgs struct {
 	DefaultBackendSetName string `pulumi:"defaultBackendSetName"`
 	// (Updatable) IP version associated with the listener.
 	IpVersion *string `pulumi:"ipVersion"`
+	// (Updatable) Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled *bool `pulumi:"isPpv2enabled"`
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -179,6 +188,8 @@ type ListenerArgs struct {
 	DefaultBackendSetName pulumi.StringInput
 	// (Updatable) IP version associated with the listener.
 	IpVersion pulumi.StringPtrInput
+	// (Updatable) Property to enable/disable PPv2 feature for this listener.
+	IsPpv2enabled pulumi.BoolPtrInput
 	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -287,6 +298,11 @@ func (o ListenerOutput) DefaultBackendSetName() pulumi.StringOutput {
 // (Updatable) IP version associated with the listener.
 func (o ListenerOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.IpVersion }).(pulumi.StringOutput)
+}
+
+// (Updatable) Property to enable/disable PPv2 feature for this listener.
+func (o ListenerOutput) IsPpv2enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Listener) pulumi.BoolOutput { return v.IsPpv2enabled }).(pulumi.BoolOutput)
 }
 
 // A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

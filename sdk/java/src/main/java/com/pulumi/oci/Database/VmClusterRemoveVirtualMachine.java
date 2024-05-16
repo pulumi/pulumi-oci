@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.VmClusterRemoveVirtualMachineArgs;
 import com.pulumi.oci.Database.inputs.VmClusterRemoveVirtualMachineState;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDataCollectionOption;
 import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineDbServer;
+import com.pulumi.oci.Database.outputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -215,6 +216,20 @@ public class VmClusterRemoveVirtualMachine extends com.pulumi.resources.CustomRe
      */
     public Output<String> exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * Details of the file system configuration of the VM cluster.
+     * 
+     */
+    @Export(name="fileSystemConfigurationDetails", refs={List.class,VmClusterRemoveVirtualMachineFileSystemConfigurationDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterRemoveVirtualMachineFileSystemConfigurationDetail>> fileSystemConfigurationDetails;
+
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public Output<List<VmClusterRemoveVirtualMachineFileSystemConfigurationDetail>> fileSystemConfigurationDetails() {
+        return this.fileSystemConfigurationDetails;
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

@@ -18,13 +18,17 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+        /// </summary>
+        public readonly bool IsMandatoryForAutonomousLinux;
         /// <summary>
         /// Type of the software source.
         /// </summary>
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string id,
 
+            bool isMandatoryForAutonomousLinux,
+
             string softwareSourceType)
         {
             Description = description;
             DisplayName = displayName;
             Id = id;
+            IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             SoftwareSourceType = softwareSourceType;
         }
     }

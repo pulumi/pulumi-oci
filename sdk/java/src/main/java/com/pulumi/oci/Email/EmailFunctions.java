@@ -17,6 +17,10 @@ import com.pulumi.oci.Email.inputs.GetEmailDomainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainPlainArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainsArgs;
 import com.pulumi.oci.Email.inputs.GetEmailDomainsPlainArgs;
+import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
+import com.pulumi.oci.Email.inputs.GetEmailReturnPathPlainArgs;
+import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+import com.pulumi.oci.Email.inputs.GetEmailReturnPathsPlainArgs;
 import com.pulumi.oci.Email.inputs.GetSenderArgs;
 import com.pulumi.oci.Email.inputs.GetSenderPlainArgs;
 import com.pulumi.oci.Email.inputs.GetSendersArgs;
@@ -30,6 +34,8 @@ import com.pulumi.oci.Email.outputs.GetDkimResult;
 import com.pulumi.oci.Email.outputs.GetDkimsResult;
 import com.pulumi.oci.Email.outputs.GetEmailDomainResult;
 import com.pulumi.oci.Email.outputs.GetEmailDomainsResult;
+import com.pulumi.oci.Email.outputs.GetEmailReturnPathResult;
+import com.pulumi.oci.Email.outputs.GetEmailReturnPathsResult;
 import com.pulumi.oci.Email.outputs.GetSenderResult;
 import com.pulumi.oci.Email.outputs.GetSendersResult;
 import com.pulumi.oci.Email.outputs.GetSuppressionResult;
@@ -941,6 +947,470 @@ public final class EmailFunctions {
      */
     public static CompletableFuture<GetEmailDomainsResult> getEmailDomainsPlain(GetEmailDomainsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Email/getEmailDomains:getEmailDomains", TypeShape.of(GetEmailDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified email return path.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEmailReturnPathResult> getEmailReturnPath(GetEmailReturnPathArgs args) {
+        return getEmailReturnPath(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified email return path.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetEmailReturnPathResult> getEmailReturnPathPlain(GetEmailReturnPathPlainArgs args) {
+        return getEmailReturnPathPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified email return path.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEmailReturnPathResult> getEmailReturnPath(GetEmailReturnPathArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailReturnPath:getEmailReturnPath", TypeShape.of(GetEmailReturnPathResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Email Return Path resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Retrieves the specified email return path.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPath = EmailFunctions.getEmailReturnPath(GetEmailReturnPathArgs.builder()
+     *             .emailReturnPathId(testEmailReturnPathOciEmailEmailReturnPath.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetEmailReturnPathResult> getEmailReturnPathPlain(GetEmailReturnPathPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getEmailReturnPath:getEmailReturnPath", TypeShape.of(GetEmailReturnPathResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEmailReturnPathsResult> getEmailReturnPaths() {
+        return getEmailReturnPaths(GetEmailReturnPathsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetEmailReturnPathsResult> getEmailReturnPathsPlain() {
+        return getEmailReturnPathsPlain(GetEmailReturnPathsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEmailReturnPathsResult> getEmailReturnPaths(GetEmailReturnPathsArgs args) {
+        return getEmailReturnPaths(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetEmailReturnPathsResult> getEmailReturnPathsPlain(GetEmailReturnPathsPlainArgs args) {
+        return getEmailReturnPathsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetEmailReturnPathsResult> getEmailReturnPaths(GetEmailReturnPathsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getEmailReturnPaths:getEmailReturnPaths", TypeShape.of(GetEmailReturnPathsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
+     * 
+     * Lists email return paths in the specified compartment or emaildomain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetEmailReturnPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmailReturnPaths = EmailFunctions.getEmailReturnPaths(GetEmailReturnPathsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(emailReturnPathId)
+     *             .name(emailReturnPathName)
+     *             .parentResourceId(testResource.id())
+     *             .state(emailReturnPathState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetEmailReturnPathsResult> getEmailReturnPathsPlain(GetEmailReturnPathsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getEmailReturnPaths:getEmailReturnPaths", TypeShape.of(GetEmailReturnPathsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.

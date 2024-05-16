@@ -52,50 +52,53 @@ func LookupManagementStation(ctx *pulumi.Context, args *LookupManagementStationA
 
 // A collection of arguments for invoking getManagementStation.
 type LookupManagementStationArgs struct {
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId string `pulumi:"managementStationId"`
 }
 
 // A collection of values returned by getManagementStation.
 type LookupManagementStationResult struct {
-	// The OCID of the tenancy containing the Management Station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Details describing the ManagementStation config.
+	// Explanation of the health status.
 	Description string `pulumi:"description"`
-	// ManagementStation name
+	// A user-friendly name for the management station.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Name of the host
+	// Overall health information of the management station.
+	Healths []GetManagementStationHealth `pulumi:"healths"`
+	// Hostname of the management station.
 	Hostname string `pulumi:"hostname"`
-	// OCID for the ManagementStation config
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	Id string `pulumi:"id"`
-	// OCID for the Instance associated with the Management Station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 	ManagedInstanceId   string `pulumi:"managedInstanceId"`
 	ManagementStationId string `pulumi:"managementStationId"`
-	// A decimal number representing the mirror capacity
+	// A decimal number representing the amount of mirror capacity used by the sync.
 	MirrorCapacity int `pulumi:"mirrorCapacity"`
-	// Status summary of all repos
+	// Status summary of the mirror sync.
 	MirrorSyncStatuses []GetManagementStationMirrorSyncStatus `pulumi:"mirrorSyncStatuses"`
-	// Information for a mirror configuration
+	// Mirror information used for the management station configuration.
 	Mirrors []GetManagementStationMirror `pulumi:"mirrors"`
-	// A decimal number representing the completeness percentage
+	// A decimal number representing the progress of the current mirror sync.
 	OverallPercentage int `pulumi:"overallPercentage"`
-	// Current state of the mirroring
+	// Current state of the mirror sync for the management station.
 	OverallState string `pulumi:"overallState"`
-	// OCID of the Profile associated with the Station
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
 	ProfileId string `pulumi:"profileId"`
-	// Information for a proxy configuration
-	Proxies []GetManagementStationProxy `pulumi:"proxies"`
-	// OCID of the Scheduled Job for mirror sync
+	// Proxy information used for the management station configuration.
+	Proxies        []GetManagementStationProxy `pulumi:"proxies"`
+	RefreshTrigger int                         `pulumi:"refreshTrigger"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
 	ScheduledJobId string `pulumi:"scheduledJobId"`
-	// The current state of the Management Station config.
+	// The current state of the management station.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// A decimal number representing the total of repos
+	// The number of software sources that the station is mirroring.
 	TotalMirrors int `pulumi:"totalMirrors"`
 }
 
@@ -114,7 +117,7 @@ func LookupManagementStationOutput(ctx *pulumi.Context, args LookupManagementSta
 
 // A collection of arguments for invoking getManagementStation.
 type LookupManagementStationOutputArgs struct {
-	// The OCID of the management station.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId pulumi.StringInput `pulumi:"managementStationId"`
 }
 
@@ -137,7 +140,7 @@ func (o LookupManagementStationResultOutput) ToLookupManagementStationResultOutp
 	return o
 }
 
-// The OCID of the tenancy containing the Management Station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 func (o LookupManagementStationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -147,12 +150,12 @@ func (o LookupManagementStationResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Details describing the ManagementStation config.
+// Explanation of the health status.
 func (o LookupManagementStationResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ManagementStation name
+// A user-friendly name for the management station.
 func (o LookupManagementStationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -162,17 +165,22 @@ func (o LookupManagementStationResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Name of the host
+// Overall health information of the management station.
+func (o LookupManagementStationResultOutput) Healths() GetManagementStationHealthArrayOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationHealth { return v.Healths }).(GetManagementStationHealthArrayOutput)
+}
+
+// Hostname of the management station.
 func (o LookupManagementStationResultOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// OCID for the ManagementStation config
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 func (o LookupManagementStationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// OCID for the Instance associated with the Management Station.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
 func (o LookupManagementStationResultOutput) ManagedInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
 }
@@ -181,49 +189,53 @@ func (o LookupManagementStationResultOutput) ManagementStationId() pulumi.String
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ManagementStationId }).(pulumi.StringOutput)
 }
 
-// A decimal number representing the mirror capacity
+// A decimal number representing the amount of mirror capacity used by the sync.
 func (o LookupManagementStationResultOutput) MirrorCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) int { return v.MirrorCapacity }).(pulumi.IntOutput)
 }
 
-// Status summary of all repos
+// Status summary of the mirror sync.
 func (o LookupManagementStationResultOutput) MirrorSyncStatuses() GetManagementStationMirrorSyncStatusArrayOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationMirrorSyncStatus {
 		return v.MirrorSyncStatuses
 	}).(GetManagementStationMirrorSyncStatusArrayOutput)
 }
 
-// Information for a mirror configuration
+// Mirror information used for the management station configuration.
 func (o LookupManagementStationResultOutput) Mirrors() GetManagementStationMirrorArrayOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationMirror { return v.Mirrors }).(GetManagementStationMirrorArrayOutput)
 }
 
-// A decimal number representing the completeness percentage
+// A decimal number representing the progress of the current mirror sync.
 func (o LookupManagementStationResultOutput) OverallPercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) int { return v.OverallPercentage }).(pulumi.IntOutput)
 }
 
-// Current state of the mirroring
+// Current state of the mirror sync for the management station.
 func (o LookupManagementStationResultOutput) OverallState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.OverallState }).(pulumi.StringOutput)
 }
 
-// OCID of the Profile associated with the Station
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
 func (o LookupManagementStationResultOutput) ProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ProfileId }).(pulumi.StringOutput)
 }
 
-// Information for a proxy configuration
+// Proxy information used for the management station configuration.
 func (o LookupManagementStationResultOutput) Proxies() GetManagementStationProxyArrayOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) []GetManagementStationProxy { return v.Proxies }).(GetManagementStationProxyArrayOutput)
 }
 
-// OCID of the Scheduled Job for mirror sync
+func (o LookupManagementStationResultOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
 func (o LookupManagementStationResultOutput) ScheduledJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.ScheduledJobId }).(pulumi.StringOutput)
 }
 
-// The current state of the Management Station config.
+// The current state of the management station.
 func (o LookupManagementStationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -233,7 +245,7 @@ func (o LookupManagementStationResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// A decimal number representing the total of repos
+// The number of software sources that the station is mirroring.
 func (o LookupManagementStationResultOutput) TotalMirrors() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupManagementStationResult) int { return v.TotalMirrors }).(pulumi.IntOutput)
 }

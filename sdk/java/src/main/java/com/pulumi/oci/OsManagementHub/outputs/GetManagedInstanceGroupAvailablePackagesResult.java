@@ -30,7 +30,7 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
      */
     private String id;
     /**
-     * @return Flag to return only latest package versions.
+     * @return Indicates whether this is the latest package version.
      * 
      */
     private @Nullable Boolean isLatest;
@@ -66,7 +66,7 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
         return this.id;
     }
     /**
-     * @return Flag to return only latest package versions.
+     * @return Indicates whether this is the latest package version.
      * 
      */
     public Optional<Boolean> isLatest() {

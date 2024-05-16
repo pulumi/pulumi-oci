@@ -6,6 +6,7 @@ package com.pulumi.oci.OsManagementHub;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -35,14 +36,14 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     public Output<String> compartmentId() {
@@ -65,14 +66,14 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The description of the registration profile.
+     * (Updatable) User-specified description of the registration profile.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the registration profile.
+     * @return (Updatable) User-specified description of the registration profile.
      * 
      */
     public Optional<Output<String>> description() {
@@ -110,14 +111,29 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    @Import(name="isDefaultProfile")
+    private @Nullable Output<Boolean> isDefaultProfile;
+
+    /**
+     * @return (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    public Optional<Output<Boolean>> isDefaultProfile() {
+        return Optional.ofNullable(this.isDefaultProfile);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      * 
      */
     @Import(name="lifecycleStageId")
     private @Nullable Output<String> lifecycleStageId;
 
     /**
-     * @return The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      * 
      */
     public Optional<Output<String>> lifecycleStageId() {
@@ -125,14 +141,14 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      * 
      */
     @Import(name="managedInstanceGroupId")
     private @Nullable Output<String> managedInstanceGroupId;
 
     /**
-     * @return The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      * 
      */
     public Optional<Output<String>> managedInstanceGroupId() {
@@ -140,14 +156,14 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     @Import(name="managementStationId")
     private @Nullable Output<String> managementStationId;
 
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     public Optional<Output<String>> managementStationId() {
@@ -170,14 +186,14 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      * 
      */
     @Import(name="profileType", required=true)
     private Output<String> profileType;
 
     /**
-     * @return The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     public Output<String> profileType() {
@@ -185,14 +201,29 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The type of instance to register.
+     * 
+     */
+    @Import(name="registrationType")
+    private @Nullable Output<String> registrationType;
+
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    public Optional<Output<String>> registrationType() {
+        return Optional.ofNullable(this.registrationType);
+    }
+
+    /**
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      * 
      */
     @Import(name="softwareSourceIds")
     private @Nullable Output<List<String>> softwareSourceIds;
 
     /**
-     * @return The list of software source OCIDs that the registration profile will use.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      * 
      */
     public Optional<Output<List<String>>> softwareSourceIds() {
@@ -200,7 +231,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,7 +241,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -229,11 +260,13 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isDefaultProfile = $.isDefaultProfile;
         this.lifecycleStageId = $.lifecycleStageId;
         this.managedInstanceGroupId = $.managedInstanceGroupId;
         this.managementStationId = $.managementStationId;
         this.osFamily = $.osFamily;
         this.profileType = $.profileType;
+        this.registrationType = $.registrationType;
         this.softwareSourceIds = $.softwareSourceIds;
         this.vendorName = $.vendorName;
     }
@@ -278,7 +311,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the registration profile.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
          * 
          * @return builder
          * 
@@ -289,7 +322,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the registration profile.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
          * 
          * @return builder
          * 
@@ -320,7 +353,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The description of the registration profile.
+         * @param description (Updatable) User-specified description of the registration profile.
          * 
          * @return builder
          * 
@@ -331,7 +364,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The description of the registration profile.
+         * @param description (Updatable) User-specified description of the registration profile.
          * 
          * @return builder
          * 
@@ -383,7 +416,28 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+         * @param isDefaultProfile (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultProfile(@Nullable Output<Boolean> isDefaultProfile) {
+            $.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+
+        /**
+         * @param isDefaultProfile (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            return isDefaultProfile(Output.of(isDefaultProfile));
+        }
+
+        /**
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
          * 
          * @return builder
          * 
@@ -394,7 +448,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
          * 
          * @return builder
          * 
@@ -404,7 +458,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managedInstanceGroupId The OCID of the managed instance group from which the registration profile will inherit its software sources.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
          * 
          * @return builder
          * 
@@ -415,7 +469,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managedInstanceGroupId The OCID of the managed instance group from which the registration profile will inherit its software sources.
+         * @param managedInstanceGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
          * 
          * @return builder
          * 
@@ -425,7 +479,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId The OCID of the management station.
+         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
          * 
          * @return builder
          * 
@@ -436,7 +490,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param managementStationId The OCID of the management station.
+         * @param managementStationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
          * 
          * @return builder
          * 
@@ -467,7 +521,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param profileType The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+         * @param profileType The type of profile.
          * 
          * @return builder
          * 
@@ -478,7 +532,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param profileType The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+         * @param profileType The type of profile.
          * 
          * @return builder
          * 
@@ -488,7 +542,28 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs that the registration profile will use.
+         * @param registrationType The type of instance to register.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registrationType(@Nullable Output<String> registrationType) {
+            $.registrationType = registrationType;
+            return this;
+        }
+
+        /**
+         * @param registrationType The type of instance to register.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registrationType(String registrationType) {
+            return registrationType(Output.of(registrationType));
+        }
+
+        /**
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
          * 
          * @return builder
          * 
@@ -499,7 +574,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs that the registration profile will use.
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
          * 
          * @return builder
          * 
@@ -509,7 +584,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param softwareSourceIds The list of software source OCIDs that the registration profile will use.
+         * @param softwareSourceIds The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
          * 
          * @return builder
          * 
@@ -519,7 +594,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system for the instance.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -533,7 +608,7 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vendorName The software source vendor name.
+         * @param vendorName The vendor of the operating system for the instance.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

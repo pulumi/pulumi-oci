@@ -61,15 +61,20 @@ public final class GetSoftwareSourceSoftwarePackageResult {
      */
     private Boolean isLatest;
     /**
-     * @return Date of the last update to the package.
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String lastModifiedDate;
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     private String name;
+    /**
+     * @return The OS families the package belongs to.
+     * 
+     */
+    private List<String> osFamilies;
     /**
      * @return Size of the package in bytes.
      * 
@@ -78,7 +83,7 @@ public final class GetSoftwareSourceSoftwarePackageResult {
     private String softwarePackageName;
     private String softwareSourceId;
     /**
-     * @return List of software sources that provide the software package.
+     * @return List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      * 
      */
     private List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources;
@@ -158,18 +163,25 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         return this.isLatest;
     }
     /**
-     * @return Date of the last update to the package.
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String lastModifiedDate() {
         return this.lastModifiedDate;
     }
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return The OS families the package belongs to.
+     * 
+     */
+    public List<String> osFamilies() {
+        return this.osFamilies;
     }
     /**
      * @return Size of the package in bytes.
@@ -185,7 +197,7 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         return this.softwareSourceId;
     }
     /**
-     * @return List of software sources that provide the software package.
+     * @return List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      * 
      */
     public List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources() {
@@ -226,6 +238,7 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         private Boolean isLatest;
         private String lastModifiedDate;
         private String name;
+        private List<String> osFamilies;
         private String sizeInBytes;
         private String softwarePackageName;
         private String softwareSourceId;
@@ -246,6 +259,7 @@ public final class GetSoftwareSourceSoftwarePackageResult {
     	      this.isLatest = defaults.isLatest;
     	      this.lastModifiedDate = defaults.lastModifiedDate;
     	      this.name = defaults.name;
+    	      this.osFamilies = defaults.osFamilies;
     	      this.sizeInBytes = defaults.sizeInBytes;
     	      this.softwarePackageName = defaults.softwarePackageName;
     	      this.softwareSourceId = defaults.softwareSourceId;
@@ -349,6 +363,17 @@ public final class GetSoftwareSourceSoftwarePackageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder osFamilies(List<String> osFamilies) {
+            if (osFamilies == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "osFamilies");
+            }
+            this.osFamilies = osFamilies;
+            return this;
+        }
+        public Builder osFamilies(String... osFamilies) {
+            return osFamilies(List.of(osFamilies));
+        }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             if (sizeInBytes == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackageResult", "sizeInBytes");
@@ -412,6 +437,7 @@ public final class GetSoftwareSourceSoftwarePackageResult {
             _resultValue.isLatest = isLatest;
             _resultValue.lastModifiedDate = lastModifiedDate;
             _resultValue.name = name;
+            _resultValue.osFamilies = osFamilies;
             _resultValue.sizeInBytes = sizeInBytes;
             _resultValue.softwarePackageName = softwarePackageName;
             _resultValue.softwareSourceId = softwareSourceId;

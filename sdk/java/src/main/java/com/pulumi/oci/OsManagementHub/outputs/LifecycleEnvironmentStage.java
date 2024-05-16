@@ -19,12 +19,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LifecycleEnvironmentStage {
     /**
-     * @return The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * @return The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     private @Nullable String archType;
     /**
-     * @return The OCID of the tenancy containing the lifecycle environment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     private @Nullable String compartmentId;
@@ -34,7 +34,7 @@ public final class LifecycleEnvironmentStage {
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -44,32 +44,37 @@ public final class LifecycleEnvironmentStage {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private @Nullable String id;
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     private @Nullable String lifecycleEnvironmentId;
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    private @Nullable String location;
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     private @Nullable List<LifecycleEnvironmentStageManagedInstanceId> managedInstanceIds;
     /**
-     * @return The operating system type of the managed instance(s) in the lifecycle environment.
+     * @return The operating system of the managed instances in the lifecycle environment.
      * 
      */
     private @Nullable String osFamily;
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     private Integer rank;
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     private @Nullable List<LifecycleEnvironmentStageSoftwareSourceId> softwareSourceIds;
@@ -84,17 +89,17 @@ public final class LifecycleEnvironmentStage {
      */
     private @Nullable Map<String,Object> systemTags;
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private @Nullable String timeCreated;
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private @Nullable String timeModified;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,14 +109,14 @@ public final class LifecycleEnvironmentStage {
 
     private LifecycleEnvironmentStage() {}
     /**
-     * @return The CPU architecture of the managed instance(s) in the lifecycle environment.
+     * @return The CPU architecture of the managed instances in the lifecycle environment.
      * 
      */
     public Optional<String> archType() {
         return Optional.ofNullable(this.archType);
     }
     /**
-     * @return The OCID of the tenancy containing the lifecycle environment.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public Optional<String> compartmentId() {
@@ -125,7 +130,7 @@ public final class LifecycleEnvironmentStage {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -139,42 +144,49 @@ public final class LifecycleEnvironmentStage {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     public Optional<String> lifecycleEnvironmentId() {
         return Optional.ofNullable(this.lifecycleEnvironmentId);
     }
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances attached to the lifecycle environment. If no location is provided, the default is &#39;ON_PREMISE.&#39;
+     * 
+     */
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
+    }
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     public List<LifecycleEnvironmentStageManagedInstanceId> managedInstanceIds() {
         return this.managedInstanceIds == null ? List.of() : this.managedInstanceIds;
     }
     /**
-     * @return The operating system type of the managed instance(s) in the lifecycle environment.
+     * @return The operating system of the managed instances in the lifecycle environment.
      * 
      */
     public Optional<String> osFamily() {
         return Optional.ofNullable(this.osFamily);
     }
     /**
-     * @return User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * @return User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      * 
      */
     public Integer rank() {
         return this.rank;
     }
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     public List<LifecycleEnvironmentStageSoftwareSourceId> softwareSourceIds() {
@@ -195,21 +207,21 @@ public final class LifecycleEnvironmentStage {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Optional<String> timeModified() {
         return Optional.ofNullable(this.timeModified);
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -235,6 +247,7 @@ public final class LifecycleEnvironmentStage {
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String id;
         private @Nullable String lifecycleEnvironmentId;
+        private @Nullable String location;
         private @Nullable List<LifecycleEnvironmentStageManagedInstanceId> managedInstanceIds;
         private @Nullable String osFamily;
         private Integer rank;
@@ -254,6 +267,7 @@ public final class LifecycleEnvironmentStage {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleEnvironmentId = defaults.lifecycleEnvironmentId;
+    	      this.location = defaults.location;
     	      this.managedInstanceIds = defaults.managedInstanceIds;
     	      this.osFamily = defaults.osFamily;
     	      this.rank = defaults.rank;
@@ -307,6 +321,12 @@ public final class LifecycleEnvironmentStage {
         public Builder lifecycleEnvironmentId(@Nullable String lifecycleEnvironmentId) {
 
             this.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(@Nullable String location) {
+
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -380,6 +400,7 @@ public final class LifecycleEnvironmentStage {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.location = location;
             _resultValue.managedInstanceIds = managedInstanceIds;
             _resultValue.osFamily = osFamily;
             _resultValue.rank = rank;

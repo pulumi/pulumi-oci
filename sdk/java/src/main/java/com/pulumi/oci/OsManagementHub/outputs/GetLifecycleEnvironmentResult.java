@@ -16,12 +16,12 @@ import java.util.Objects;
 @CustomType
 public final class GetLifecycleEnvironmentResult {
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     private String archType;
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     private String compartmentId;
@@ -46,27 +46,32 @@ public final class GetLifecycleEnvironmentResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     private String lifecycleEnvironmentId;
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    private String location;
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     private List<GetLifecycleEnvironmentManagedInstanceId> managedInstanceIds;
     /**
-     * @return The operating system type of the target instances.
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     private String osFamily;
     /**
-     * @return User specified list of lifecycle stages to be created for the lifecycle environment.
+     * @return User-specified list of lifecycle stages used within the lifecycle environment.
      * 
      */
     private List<GetLifecycleEnvironmentStage> stages;
@@ -81,31 +86,31 @@ public final class GetLifecycleEnvironmentResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeModified;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      */
     private String vendorName;
 
     private GetLifecycleEnvironmentResult() {}
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     public String archType() {
         return this.archType;
     }
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public String compartmentId() {
@@ -140,35 +145,42 @@ public final class GetLifecycleEnvironmentResult {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The OCID of the lifecycle environment for the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * 
      */
     public String lifecycleEnvironmentId() {
         return this.lifecycleEnvironmentId;
     }
     /**
-     * @return The list of managed instances specified lifecycle stage.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    public String location() {
+        return this.location;
+    }
+    /**
+     * @return The list of managed instances associated with the lifecycle stage.
      * 
      */
     public List<GetLifecycleEnvironmentManagedInstanceId> managedInstanceIds() {
         return this.managedInstanceIds;
     }
     /**
-     * @return The operating system type of the target instances.
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return User specified list of lifecycle stages to be created for the lifecycle environment.
+     * @return User-specified list of lifecycle stages used within the lifecycle environment.
      * 
      */
     public List<GetLifecycleEnvironmentStage> stages() {
@@ -189,21 +201,21 @@ public final class GetLifecycleEnvironmentResult {
         return this.systemTags;
     }
     /**
-     * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * @return The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeModified() {
         return this.timeModified;
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system used by the managed instances in the lifecycle environment.
      * 
      */
     public String vendorName() {
@@ -227,6 +239,7 @@ public final class GetLifecycleEnvironmentResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleEnvironmentId;
+        private String location;
         private List<GetLifecycleEnvironmentManagedInstanceId> managedInstanceIds;
         private String osFamily;
         private List<GetLifecycleEnvironmentStage> stages;
@@ -246,6 +259,7 @@ public final class GetLifecycleEnvironmentResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleEnvironmentId = defaults.lifecycleEnvironmentId;
+    	      this.location = defaults.location;
     	      this.managedInstanceIds = defaults.managedInstanceIds;
     	      this.osFamily = defaults.osFamily;
     	      this.stages = defaults.stages;
@@ -318,6 +332,14 @@ public final class GetLifecycleEnvironmentResult {
               throw new MissingRequiredPropertyException("GetLifecycleEnvironmentResult", "lifecycleEnvironmentId");
             }
             this.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentResult", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -400,6 +422,7 @@ public final class GetLifecycleEnvironmentResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.location = location;
             _resultValue.managedInstanceIds = managedInstanceIds;
             _resultValue.osFamily = osFamily;
             _resultValue.stages = stages;

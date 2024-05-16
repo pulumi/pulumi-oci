@@ -24,12 +24,12 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
      */
     private String displayName;
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     private Boolean isLatest;
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     private String name;
@@ -44,7 +44,7 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
      */
     private String type;
     /**
-     * @return Version of the installed package.
+     * @return Version of the available package.
      * 
      */
     private String version;
@@ -65,14 +65,14 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
         return this.displayName;
     }
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Boolean isLatest() {
         return this.isLatest;
     }
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public String name() {
@@ -93,7 +93,7 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
         return this.type;
     }
     /**
-     * @return Version of the installed package.
+     * @return Version of the available package.
      * 
      */
     public String version() {

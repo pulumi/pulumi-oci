@@ -131,14 +131,14 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      * 
      */
     @Export(name="dnsSubdomainName", refs={String.class}, tree="[0]")
     private Output<String> dnsSubdomainName;
 
     /**
-     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      * 
      */
     public Output<String> dnsSubdomainName() {

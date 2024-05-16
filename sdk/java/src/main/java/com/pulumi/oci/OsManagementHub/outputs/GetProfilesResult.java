@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfilesProfileCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +22,7 @@ public final class GetProfilesResult {
      */
     private @Nullable String archType;
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     private @Nullable String compartmentId;
@@ -38,6 +39,16 @@ public final class GetProfilesResult {
      */
     private String id;
     /**
+     * @return Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    private @Nullable Boolean isDefaultProfile;
+    /**
+     * @return Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    private @Nullable Boolean isServiceProvidedProfile;
+    /**
      * @return The operating system family.
      * 
      */
@@ -49,17 +60,22 @@ public final class GetProfilesResult {
     private List<GetProfilesProfileCollection> profileCollections;
     private @Nullable String profileId;
     /**
-     * @return The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     private @Nullable List<String> profileTypes;
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    private @Nullable List<String> registrationTypes;
     /**
      * @return The current state of the registration profile.
      * 
      */
     private @Nullable String state;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      */
     private @Nullable String vendorName;
@@ -73,7 +89,7 @@ public final class GetProfilesResult {
         return Optional.ofNullable(this.archType);
     }
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     public Optional<String> compartmentId() {
@@ -100,6 +116,20 @@ public final class GetProfilesResult {
         return this.id;
     }
     /**
+     * @return Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    public Optional<Boolean> isDefaultProfile() {
+        return Optional.ofNullable(this.isDefaultProfile);
+    }
+    /**
+     * @return Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    public Optional<Boolean> isServiceProvidedProfile() {
+        return Optional.ofNullable(this.isServiceProvidedProfile);
+    }
+    /**
      * @return The operating system family.
      * 
      */
@@ -117,11 +147,18 @@ public final class GetProfilesResult {
         return Optional.ofNullable(this.profileId);
     }
     /**
-     * @return The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     public List<String> profileTypes() {
         return this.profileTypes == null ? List.of() : this.profileTypes;
+    }
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    public List<String> registrationTypes() {
+        return this.registrationTypes == null ? List.of() : this.registrationTypes;
     }
     /**
      * @return The current state of the registration profile.
@@ -131,7 +168,7 @@ public final class GetProfilesResult {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      */
     public Optional<String> vendorName() {
@@ -153,10 +190,13 @@ public final class GetProfilesResult {
         private @Nullable List<String> displayNames;
         private @Nullable List<GetProfilesFilter> filters;
         private String id;
+        private @Nullable Boolean isDefaultProfile;
+        private @Nullable Boolean isServiceProvidedProfile;
         private @Nullable String osFamily;
         private List<GetProfilesProfileCollection> profileCollections;
         private @Nullable String profileId;
         private @Nullable List<String> profileTypes;
+        private @Nullable List<String> registrationTypes;
         private @Nullable String state;
         private @Nullable String vendorName;
         public Builder() {}
@@ -168,10 +208,13 @@ public final class GetProfilesResult {
     	      this.displayNames = defaults.displayNames;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isDefaultProfile = defaults.isDefaultProfile;
+    	      this.isServiceProvidedProfile = defaults.isServiceProvidedProfile;
     	      this.osFamily = defaults.osFamily;
     	      this.profileCollections = defaults.profileCollections;
     	      this.profileId = defaults.profileId;
     	      this.profileTypes = defaults.profileTypes;
+    	      this.registrationTypes = defaults.registrationTypes;
     	      this.state = defaults.state;
     	      this.vendorName = defaults.vendorName;
         }
@@ -221,6 +264,18 @@ public final class GetProfilesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDefaultProfile(@Nullable Boolean isDefaultProfile) {
+
+            this.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isServiceProvidedProfile(@Nullable Boolean isServiceProvidedProfile) {
+
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
 
             this.osFamily = osFamily;
@@ -253,6 +308,15 @@ public final class GetProfilesResult {
             return profileTypes(List.of(profileTypes));
         }
         @CustomType.Setter
+        public Builder registrationTypes(@Nullable List<String> registrationTypes) {
+
+            this.registrationTypes = registrationTypes;
+            return this;
+        }
+        public Builder registrationTypes(String... registrationTypes) {
+            return registrationTypes(List.of(registrationTypes));
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -272,10 +336,13 @@ public final class GetProfilesResult {
             _resultValue.displayNames = displayNames;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isDefaultProfile = isDefaultProfile;
+            _resultValue.isServiceProvidedProfile = isServiceProvidedProfile;
             _resultValue.osFamily = osFamily;
             _resultValue.profileCollections = profileCollections;
             _resultValue.profileId = profileId;
             _resultValue.profileTypes = profileTypes;
+            _resultValue.registrationTypes = registrationTypes;
             _resultValue.state = state;
             _resultValue.vendorName = vendorName;
             return _resultValue;

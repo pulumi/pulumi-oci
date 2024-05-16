@@ -5,9 +5,9 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -22,37 +22,32 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
      */
     private String archType;
     /**
-     * @return The availabilities of the software source for a tenant.
+     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
      * 
      */
     private String availability;
     /**
-     * @return The yum repository checksum type used by this software source.
+     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
-    private String checksumType;
+    private String availabilityAtOci;
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
-    /**
-     * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-     * 
-     */
-    private List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter> customSoftwareSourceFilters;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Information specified by the user about the software source.
+     * @return User-specified description for the software source.
      * 
      */
     private String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
@@ -62,45 +57,35 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Fingerprint of the GPG key for this software source.
-     * 
-     */
-    private String gpgKeyFingerprint;
-    /**
-     * @return ID of the GPG key for this software source.
-     * 
-     */
-    private String gpgKeyId;
-    /**
-     * @return URL of the GPG key for this software source.
-     * 
-     */
-    private String gpgKeyUrl;
-    /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     private String id;
     /**
-     * @return Indicates whether service should automatically update the custom software source for the user.
+     * @return Indicates whether the software source is mandatory for the Autonomous Linux service.
      * 
      */
-    private Boolean isAutomaticallyUpdated;
+    private Boolean isMandatoryForAutonomousLinux;
     /**
-     * @return A filter to return only instances whose OS family type matches the given OS family.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     private String osFamily;
     /**
-     * @return Number of packages.
+     * @return Number of packages the software source contains.
      * 
      */
     private String packageCount;
     /**
-     * @return The Repo ID for the software source.
+     * @return The repository ID for the software source.
      * 
      */
     private String repoId;
+    /**
+     * @return The size of the software source in gigabytes (GB).
+     * 
+     */
+    private Double size;
     /**
      * @return The type of the software source.
      * 
@@ -112,7 +97,7 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
      */
     private String softwareSourceVersion;
     /**
-     * @return A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * @return A filter to return only software sources whose state matches the given state.
      * 
      */
     private String state;
@@ -122,22 +107,23 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
+    private String timeUpdated;
     /**
-     * @return URL for the repository.
+     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     private String url;
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     private String vendorName;
     /**
-     * @return List of vendor software sources.
+     * @return List of vendor software sources that are used for the basis of the versioned custom software source.
      * 
      */
     private List<GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource> vendorSoftwareSources;
@@ -151,32 +137,25 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
         return this.archType;
     }
     /**
-     * @return The availabilities of the software source for a tenant.
+     * @return The availabilities of the software source in a non-OCI environment for a tenancy.
      * 
      */
     public String availability() {
         return this.availability;
     }
     /**
-     * @return The yum repository checksum type used by this software source.
+     * @return The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
      * 
      */
-    public String checksumType() {
-        return this.checksumType;
+    public String availabilityAtOci() {
+        return this.availabilityAtOci;
     }
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
-    }
-    /**
-     * @return Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-     * 
-     */
-    public List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter> customSoftwareSourceFilters() {
-        return this.customSoftwareSourceFilters;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -186,14 +165,14 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Information specified by the user about the software source.
+     * @return User-specified description for the software source.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {
@@ -207,60 +186,46 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Fingerprint of the GPG key for this software source.
-     * 
-     */
-    public String gpgKeyFingerprint() {
-        return this.gpgKeyFingerprint;
-    }
-    /**
-     * @return ID of the GPG key for this software source.
-     * 
-     */
-    public String gpgKeyId() {
-        return this.gpgKeyId;
-    }
-    /**
-     * @return URL of the GPG key for this software source.
-     * 
-     */
-    public String gpgKeyUrl() {
-        return this.gpgKeyUrl;
-    }
-    /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Indicates whether service should automatically update the custom software source for the user.
+     * @return Indicates whether the software source is mandatory for the Autonomous Linux service.
      * 
      */
-    public Boolean isAutomaticallyUpdated() {
-        return this.isAutomaticallyUpdated;
+    public Boolean isMandatoryForAutonomousLinux() {
+        return this.isMandatoryForAutonomousLinux;
     }
     /**
-     * @return A filter to return only instances whose OS family type matches the given OS family.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public String osFamily() {
         return this.osFamily;
     }
     /**
-     * @return Number of packages.
+     * @return Number of packages the software source contains.
      * 
      */
     public String packageCount() {
         return this.packageCount;
     }
     /**
-     * @return The Repo ID for the software source.
+     * @return The repository ID for the software source.
      * 
      */
     public String repoId() {
         return this.repoId;
+    }
+    /**
+     * @return The size of the software source in gigabytes (GB).
+     * 
+     */
+    public Double size() {
+        return this.size;
     }
     /**
      * @return The type of the software source.
@@ -277,7 +242,7 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
         return this.softwareSourceVersion;
     }
     /**
-     * @return A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * @return A filter to return only software sources whose state matches the given state.
      * 
      */
     public String state() {
@@ -291,28 +256,31 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * @return The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
+    public String timeUpdated() {
+        return this.timeUpdated;
+    }
     /**
-     * @return URL for the repository.
+     * @return URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is &#39;custom/&lt;repoId&gt;&#39;.
      * 
      */
     public String url() {
         return this.url;
     }
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     public String vendorName() {
         return this.vendorName;
     }
     /**
-     * @return List of vendor software sources.
+     * @return List of vendor software sources that are used for the basis of the versioned custom software source.
      * 
      */
     public List<GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource> vendorSoftwareSources() {
@@ -330,26 +298,24 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
     public static final class Builder {
         private String archType;
         private String availability;
-        private String checksumType;
+        private String availabilityAtOci;
         private String compartmentId;
-        private List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter> customSoftwareSourceFilters;
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
-        private String gpgKeyFingerprint;
-        private String gpgKeyId;
-        private String gpgKeyUrl;
         private String id;
-        private Boolean isAutomaticallyUpdated;
+        private Boolean isMandatoryForAutonomousLinux;
         private String osFamily;
         private String packageCount;
         private String repoId;
+        private Double size;
         private String softwareSourceType;
         private String softwareSourceVersion;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
+        private String timeUpdated;
         private String url;
         private String vendorName;
         private List<GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource> vendorSoftwareSources;
@@ -358,26 +324,24 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.archType = defaults.archType;
     	      this.availability = defaults.availability;
-    	      this.checksumType = defaults.checksumType;
+    	      this.availabilityAtOci = defaults.availabilityAtOci;
     	      this.compartmentId = defaults.compartmentId;
-    	      this.customSoftwareSourceFilters = defaults.customSoftwareSourceFilters;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
-    	      this.gpgKeyFingerprint = defaults.gpgKeyFingerprint;
-    	      this.gpgKeyId = defaults.gpgKeyId;
-    	      this.gpgKeyUrl = defaults.gpgKeyUrl;
     	      this.id = defaults.id;
-    	      this.isAutomaticallyUpdated = defaults.isAutomaticallyUpdated;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.osFamily = defaults.osFamily;
     	      this.packageCount = defaults.packageCount;
     	      this.repoId = defaults.repoId;
+    	      this.size = defaults.size;
     	      this.softwareSourceType = defaults.softwareSourceType;
     	      this.softwareSourceVersion = defaults.softwareSourceVersion;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeUpdated = defaults.timeUpdated;
     	      this.url = defaults.url;
     	      this.vendorName = defaults.vendorName;
     	      this.vendorSoftwareSources = defaults.vendorSoftwareSources;
@@ -400,11 +364,11 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder checksumType(String checksumType) {
-            if (checksumType == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "checksumType");
+        public Builder availabilityAtOci(String availabilityAtOci) {
+            if (availabilityAtOci == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "availabilityAtOci");
             }
-            this.checksumType = checksumType;
+            this.availabilityAtOci = availabilityAtOci;
             return this;
         }
         @CustomType.Setter
@@ -414,17 +378,6 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             }
             this.compartmentId = compartmentId;
             return this;
-        }
-        @CustomType.Setter
-        public Builder customSoftwareSourceFilters(List<GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter> customSoftwareSourceFilters) {
-            if (customSoftwareSourceFilters == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "customSoftwareSourceFilters");
-            }
-            this.customSoftwareSourceFilters = customSoftwareSourceFilters;
-            return this;
-        }
-        public Builder customSoftwareSourceFilters(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter... customSoftwareSourceFilters) {
-            return customSoftwareSourceFilters(List.of(customSoftwareSourceFilters));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -459,30 +412,6 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
-            if (gpgKeyFingerprint == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "gpgKeyFingerprint");
-            }
-            this.gpgKeyFingerprint = gpgKeyFingerprint;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder gpgKeyId(String gpgKeyId) {
-            if (gpgKeyId == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "gpgKeyId");
-            }
-            this.gpgKeyId = gpgKeyId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder gpgKeyUrl(String gpgKeyUrl) {
-            if (gpgKeyUrl == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "gpgKeyUrl");
-            }
-            this.gpgKeyUrl = gpgKeyUrl;
-            return this;
-        }
-        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "id");
@@ -491,11 +420,11 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomaticallyUpdated(Boolean isAutomaticallyUpdated) {
-            if (isAutomaticallyUpdated == null) {
-              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "isAutomaticallyUpdated");
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            if (isMandatoryForAutonomousLinux == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "isMandatoryForAutonomousLinux");
             }
-            this.isAutomaticallyUpdated = isAutomaticallyUpdated;
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             return this;
         }
         @CustomType.Setter
@@ -520,6 +449,14 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
               throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "repoId");
             }
             this.repoId = repoId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder size(Double size) {
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
@@ -563,6 +500,14 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
+            return this;
+        }
+        @CustomType.Setter
         public Builder url(String url) {
             if (url == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSourceCollectionItem", "url");
@@ -593,26 +538,24 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItem {
             final var _resultValue = new GetSoftwareSourcesSoftwareSourceCollectionItem();
             _resultValue.archType = archType;
             _resultValue.availability = availability;
-            _resultValue.checksumType = checksumType;
+            _resultValue.availabilityAtOci = availabilityAtOci;
             _resultValue.compartmentId = compartmentId;
-            _resultValue.customSoftwareSourceFilters = customSoftwareSourceFilters;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
-            _resultValue.gpgKeyFingerprint = gpgKeyFingerprint;
-            _resultValue.gpgKeyId = gpgKeyId;
-            _resultValue.gpgKeyUrl = gpgKeyUrl;
             _resultValue.id = id;
-            _resultValue.isAutomaticallyUpdated = isAutomaticallyUpdated;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.osFamily = osFamily;
             _resultValue.packageCount = packageCount;
             _resultValue.repoId = repoId;
+            _resultValue.size = size;
             _resultValue.softwareSourceType = softwareSourceType;
             _resultValue.softwareSourceVersion = softwareSourceVersion;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
             _resultValue.url = url;
             _resultValue.vendorName = vendorName;
             _resultValue.vendorSoftwareSources = vendorSoftwareSources;

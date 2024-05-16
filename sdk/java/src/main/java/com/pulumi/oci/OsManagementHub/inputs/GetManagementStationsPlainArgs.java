@@ -17,14 +17,14 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     public static final GetManagementStationsPlainArgs Empty = new GetManagementStationsPlainArgs();
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -32,14 +32,14 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public Optional<String> displayName() {
@@ -69,14 +69,14 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      * 
      */
     public Optional<String> id() {
@@ -84,14 +84,14 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The OCID of the managed instance for which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
     @Import(name="managedInstanceId")
     private @Nullable String managedInstanceId;
 
     /**
-     * @return The OCID of the managed instance for which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
     public Optional<String> managedInstanceId() {
@@ -99,14 +99,14 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The current lifecycle state for the object.
+     * A filter that returns information for management stations in the specified state.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return The current lifecycle state for the object.
+     * @return A filter that returns information for management stations in the specified state.
      * 
      */
     public Optional<String> state() {
@@ -144,7 +144,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+         * @param displayName A filter to return resources that match the given user-friendly name.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param id The OCID of the management station.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param managedInstanceId The OCID of the managed instance for which to list resources.
+         * @param managedInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class GetManagementStationsPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param state The current lifecycle state for the object.
+         * @param state A filter that returns information for management stations in the specified state.
          * 
          * @return builder
          * 

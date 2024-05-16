@@ -5,20 +5,18 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsManagementStationCollectionItemMirror;
-import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatus;
-import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationsManagementStationCollectionItemProxy;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItem {
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
@@ -28,12 +26,12 @@ public final class GetManagementStationsManagementStationCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Details describing the ManagementStation config.
+     * @return Explanation of the health status.
      * 
      */
     private String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
@@ -42,63 +40,49 @@ public final class GetManagementStationsManagementStationCollectionItem {
      * 
      */
     private Map<String,Object> freeformTags;
+    private String healthState;
     /**
-     * @return Name of the host
+     * @return Hostname of the management station.
      * 
      */
     private String hostname;
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      * 
      */
     private String id;
     /**
-     * @return The OCID of the managed instance for which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
     private String managedInstanceId;
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     private Integer mirrorCapacity;
     /**
-     * @return Status summary of all repos
-     * 
-     */
-    private List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
-    /**
-     * @return Information for a mirror configuration
-     * 
-     */
-    private List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
-    /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     private Integer overallPercentage;
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     private String overallState;
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     private String profileId;
     /**
-     * @return Information for a proxy configuration
-     * 
-     */
-    private List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
-    /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     private String scheduledJobId;
     /**
-     * @return The current lifecycle state for the object.
+     * @return A filter that returns information for management stations in the specified state.
      * 
      */
     private String state;
@@ -107,15 +91,11 @@ public final class GetManagementStationsManagementStationCollectionItem {
      * 
      */
     private Map<String,Object> systemTags;
-    /**
-     * @return A decimal number representing the total of repos
-     * 
-     */
-    private Integer totalMirrors;
+    private @Nullable String timeNextExecution;
 
     private GetManagementStationsManagementStationCollectionItem() {}
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -129,14 +109,14 @@ public final class GetManagementStationsManagementStationCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Details describing the ManagementStation config.
+     * @return Explanation of the health status.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {
@@ -149,85 +129,67 @@ public final class GetManagementStationsManagementStationCollectionItem {
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
+    public String healthState() {
+        return this.healthState;
+    }
     /**
-     * @return Name of the host
+     * @return Hostname of the management station.
      * 
      */
     public String hostname() {
         return this.hostname;
     }
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station. A filter that returns information about the specified management station.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The OCID of the managed instance for which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      * 
      */
     public String managedInstanceId() {
         return this.managedInstanceId;
     }
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     public Integer mirrorCapacity() {
         return this.mirrorCapacity;
     }
     /**
-     * @return Status summary of all repos
-     * 
-     */
-    public List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses() {
-        return this.mirrorSyncStatuses;
-    }
-    /**
-     * @return Information for a mirror configuration
-     * 
-     */
-    public List<GetManagementStationsManagementStationCollectionItemMirror> mirrors() {
-        return this.mirrors;
-    }
-    /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     public Integer overallPercentage() {
         return this.overallPercentage;
     }
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     public String overallState() {
         return this.overallState;
     }
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     public String profileId() {
         return this.profileId;
     }
     /**
-     * @return Information for a proxy configuration
-     * 
-     */
-    public List<GetManagementStationsManagementStationCollectionItemProxy> proxies() {
-        return this.proxies;
-    }
-    /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     public String scheduledJobId() {
         return this.scheduledJobId;
     }
     /**
-     * @return The current lifecycle state for the object.
+     * @return A filter that returns information for management stations in the specified state.
      * 
      */
     public String state() {
@@ -240,12 +202,8 @@ public final class GetManagementStationsManagementStationCollectionItem {
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }
-    /**
-     * @return A decimal number representing the total of repos
-     * 
-     */
-    public Integer totalMirrors() {
-        return this.totalMirrors;
+    public Optional<String> timeNextExecution() {
+        return Optional.ofNullable(this.timeNextExecution);
     }
 
     public static Builder builder() {
@@ -262,20 +220,18 @@ public final class GetManagementStationsManagementStationCollectionItem {
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private String healthState;
         private String hostname;
         private String id;
         private String managedInstanceId;
         private Integer mirrorCapacity;
-        private List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
-        private List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
         private Integer overallPercentage;
         private String overallState;
         private String profileId;
-        private List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
         private String scheduledJobId;
         private String state;
         private Map<String,Object> systemTags;
-        private Integer totalMirrors;
+        private @Nullable String timeNextExecution;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -284,20 +240,18 @@ public final class GetManagementStationsManagementStationCollectionItem {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.healthState = defaults.healthState;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.managedInstanceId = defaults.managedInstanceId;
     	      this.mirrorCapacity = defaults.mirrorCapacity;
-    	      this.mirrorSyncStatuses = defaults.mirrorSyncStatuses;
-    	      this.mirrors = defaults.mirrors;
     	      this.overallPercentage = defaults.overallPercentage;
     	      this.overallState = defaults.overallState;
     	      this.profileId = defaults.profileId;
-    	      this.proxies = defaults.proxies;
     	      this.scheduledJobId = defaults.scheduledJobId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
-    	      this.totalMirrors = defaults.totalMirrors;
+    	      this.timeNextExecution = defaults.timeNextExecution;
         }
 
         @CustomType.Setter
@@ -341,6 +295,14 @@ public final class GetManagementStationsManagementStationCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder healthState(String healthState) {
+            if (healthState == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "healthState");
+            }
+            this.healthState = healthState;
+            return this;
+        }
+        @CustomType.Setter
         public Builder hostname(String hostname) {
             if (hostname == null) {
               throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "hostname");
@@ -373,28 +335,6 @@ public final class GetManagementStationsManagementStationCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorSyncStatuses(List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses) {
-            if (mirrorSyncStatuses == null) {
-              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "mirrorSyncStatuses");
-            }
-            this.mirrorSyncStatuses = mirrorSyncStatuses;
-            return this;
-        }
-        public Builder mirrorSyncStatuses(GetManagementStationsManagementStationCollectionItemMirrorSyncStatus... mirrorSyncStatuses) {
-            return mirrorSyncStatuses(List.of(mirrorSyncStatuses));
-        }
-        @CustomType.Setter
-        public Builder mirrors(List<GetManagementStationsManagementStationCollectionItemMirror> mirrors) {
-            if (mirrors == null) {
-              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "mirrors");
-            }
-            this.mirrors = mirrors;
-            return this;
-        }
-        public Builder mirrors(GetManagementStationsManagementStationCollectionItemMirror... mirrors) {
-            return mirrors(List.of(mirrors));
-        }
-        @CustomType.Setter
         public Builder overallPercentage(Integer overallPercentage) {
             if (overallPercentage == null) {
               throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "overallPercentage");
@@ -417,17 +357,6 @@ public final class GetManagementStationsManagementStationCollectionItem {
             }
             this.profileId = profileId;
             return this;
-        }
-        @CustomType.Setter
-        public Builder proxies(List<GetManagementStationsManagementStationCollectionItemProxy> proxies) {
-            if (proxies == null) {
-              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "proxies");
-            }
-            this.proxies = proxies;
-            return this;
-        }
-        public Builder proxies(GetManagementStationsManagementStationCollectionItemProxy... proxies) {
-            return proxies(List.of(proxies));
         }
         @CustomType.Setter
         public Builder scheduledJobId(String scheduledJobId) {
@@ -454,11 +383,9 @@ public final class GetManagementStationsManagementStationCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder totalMirrors(Integer totalMirrors) {
-            if (totalMirrors == null) {
-              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItem", "totalMirrors");
-            }
-            this.totalMirrors = totalMirrors;
+        public Builder timeNextExecution(@Nullable String timeNextExecution) {
+
+            this.timeNextExecution = timeNextExecution;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItem build() {
@@ -468,20 +395,18 @@ public final class GetManagementStationsManagementStationCollectionItem {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.healthState = healthState;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.managedInstanceId = managedInstanceId;
             _resultValue.mirrorCapacity = mirrorCapacity;
-            _resultValue.mirrorSyncStatuses = mirrorSyncStatuses;
-            _resultValue.mirrors = mirrors;
             _resultValue.overallPercentage = overallPercentage;
             _resultValue.overallState = overallState;
             _resultValue.profileId = profileId;
-            _resultValue.proxies = proxies;
             _resultValue.scheduledJobId = scheduledJobId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
-            _resultValue.totalMirrors = totalMirrors;
+            _resultValue.timeNextExecution = timeNextExecution;
             return _resultValue;
         }
     }

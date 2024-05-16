@@ -14,8 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists available software sources for a specified managed instance group. Filter the list against a variety of 
-        /// criteria including but not limited to its name.
+        /// Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
         /// 
         /// 
         /// ## Example Usage
@@ -45,8 +44,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists available software sources for a specified managed instance group. Filter the list against a variety of 
-        /// criteria including but not limited to its name.
+        /// Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +76,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailableSoftwareSourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -110,7 +108,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public string ManagedInstanceGroupId { get; set; } = null!;
@@ -124,7 +122,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagedInstanceGroupAvailableSoftwareSourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -156,7 +154,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The managed instance group OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         /// </summary>
         [Input("managedInstanceGroupId", required: true)]
         public Input<string> ManagedInstanceGroupId { get; set; } = null!;
@@ -176,12 +174,12 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult> AvailableSoftwareSourceCollections;
         /// <summary>
-        /// The OCID for the compartment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         public readonly string? CompartmentId;
         public readonly string? DisplayNameContains;
         /// <summary>
-        /// User friendly name for the software source.
+        /// User-friendly name for the software source.
         /// </summary>
         public readonly ImmutableArray<string> DisplayNames;
         public readonly ImmutableArray<Outputs.GetManagedInstanceGroupAvailableSoftwareSourcesFilterResult> Filters;

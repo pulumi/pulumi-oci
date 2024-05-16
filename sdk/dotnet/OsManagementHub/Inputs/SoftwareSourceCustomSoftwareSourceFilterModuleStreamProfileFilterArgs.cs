@@ -13,16 +13,16 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// (Updatable) The type of the filter.
         /// </summary>
-        [Input("filterType", required: true)]
-        public Input<string> FilterType { get; set; } = null!;
+        [Input("filterType")]
+        public Input<string>? FilterType { get; set; }
 
         /// <summary>
         /// (Updatable) Module name.
         /// </summary>
-        [Input("moduleName", required: true)]
-        public Input<string> ModuleName { get; set; } = null!;
+        [Input("moduleName")]
+        public Input<string>? ModuleName { get; set; }
 
         /// <summary>
         /// (Updatable) Profile name.

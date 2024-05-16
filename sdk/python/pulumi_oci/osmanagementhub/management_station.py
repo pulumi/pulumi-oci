@@ -23,17 +23,23 @@ class ManagementStationArgs:
                  proxy: pulumi.Input['ManagementStationProxyArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a ManagementStation resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the Management Station.
-        :param pulumi.Input[str] display_name: (Updatable) Management Station name
-        :param pulumi.Input[str] hostname: (Updatable) Name of the host
-        :param pulumi.Input['ManagementStationMirrorArgs'] mirror: (Updatable) Information for creating a mirror configuration
-        :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information for creating a proxy configuration
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
+        :param pulumi.Input['ManagementStationMirrorArgs'] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details describing the Management Station config.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -46,12 +52,14 @@ class ManagementStationArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the tenancy containing the Management Station.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -63,7 +71,7 @@ class ManagementStationArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Management Station name
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -75,7 +83,7 @@ class ManagementStationArgs:
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
         """
-        (Updatable) Name of the host
+        (Updatable) Hostname of the management station.
         """
         return pulumi.get(self, "hostname")
 
@@ -87,7 +95,7 @@ class ManagementStationArgs:
     @pulumi.getter
     def mirror(self) -> pulumi.Input['ManagementStationMirrorArgs']:
         """
-        (Updatable) Information for creating a mirror configuration
+        (Updatable) Information used to create the mirror configuration for a management station.
         """
         return pulumi.get(self, "mirror")
 
@@ -99,7 +107,7 @@ class ManagementStationArgs:
     @pulumi.getter
     def proxy(self) -> pulumi.Input['ManagementStationProxyArgs']:
         """
-        (Updatable) Information for creating a proxy configuration
+        (Updatable) Information used to create the proxy configuration for a management station.
         """
         return pulumi.get(self, "proxy")
 
@@ -123,7 +131,7 @@ class ManagementStationArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details describing the Management Station config.
+        (Updatable) User-specified description of the management station. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -143,6 +151,22 @@ class ManagementStationArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "refresh_trigger", value)
+
 
 @pulumi.input_type
 class _ManagementStationState:
@@ -152,6 +176,7 @@ class _ManagementStationState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 healths: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationHealthArgs']]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  managed_instance_id: Optional[pulumi.Input[str]] = None,
                  mirror: Optional[pulumi.Input['ManagementStationMirrorArgs']] = None,
@@ -161,30 +186,37 @@ class _ManagementStationState:
                  overall_state: Optional[pulumi.Input[str]] = None,
                  profile_id: Optional[pulumi.Input[str]] = None,
                  proxy: Optional[pulumi.Input['ManagementStationProxyArgs']] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
                  scheduled_job_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  total_mirrors: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering ManagementStation resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the Management Station.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details describing the Management Station config.
-        :param pulumi.Input[str] display_name: (Updatable) Management Station name
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: (Updatable) Name of the host
-        :param pulumi.Input[str] managed_instance_id: OCID for the Instance associated with the Management Station.
-        :param pulumi.Input['ManagementStationMirrorArgs'] mirror: (Updatable) Information for creating a mirror configuration
-        :param pulumi.Input[int] mirror_capacity: A decimal number representing the mirror capacity
-        :param pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]] mirror_sync_statuses: Status summary of all repos
-        :param pulumi.Input[int] overall_percentage: A decimal number representing the completeness percentage
-        :param pulumi.Input[str] overall_state: Current state of the mirroring
-        :param pulumi.Input[str] profile_id: OCID of the Profile associated with the Station
-        :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information for creating a proxy configuration
-        :param pulumi.Input[str] scheduled_job_id: OCID of the Scheduled Job for mirror sync
-        :param pulumi.Input[str] state: The current state of the Management Station config.
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementStationHealthArgs']]] healths: Overall health information of the management station.
+        :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
+        :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
+        :param pulumi.Input['ManagementStationMirrorArgs'] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[int] mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]] mirror_sync_statuses: Status summary of the mirror sync.
+        :param pulumi.Input[int] overall_percentage: A decimal number representing the progress of the current mirror sync.
+        :param pulumi.Input[str] overall_state: Current state of the mirror sync for the management station.
+        :param pulumi.Input[str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
+        :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
+        :param pulumi.Input[str] state: The current state of the management station.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] total_mirrors: A decimal number representing the total of repos
+        :param pulumi.Input[int] total_mirrors: The number of software sources that the station is mirroring.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -196,6 +228,8 @@ class _ManagementStationState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if healths is not None:
+            pulumi.set(__self__, "healths", healths)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if managed_instance_id is not None:
@@ -214,6 +248,8 @@ class _ManagementStationState:
             pulumi.set(__self__, "profile_id", profile_id)
         if proxy is not None:
             pulumi.set(__self__, "proxy", proxy)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
         if scheduled_job_id is not None:
             pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
         if state is not None:
@@ -227,7 +263,7 @@ class _ManagementStationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the tenancy containing the Management Station.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -251,7 +287,7 @@ class _ManagementStationState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details describing the Management Station config.
+        (Updatable) User-specified description of the management station. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -263,7 +299,7 @@ class _ManagementStationState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Management Station name
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -285,9 +321,21 @@ class _ManagementStationState:
 
     @property
     @pulumi.getter
+    def healths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationHealthArgs']]]]:
+        """
+        Overall health information of the management station.
+        """
+        return pulumi.get(self, "healths")
+
+    @healths.setter
+    def healths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationHealthArgs']]]]):
+        pulumi.set(self, "healths", value)
+
+    @property
+    @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the host
+        (Updatable) Hostname of the management station.
         """
         return pulumi.get(self, "hostname")
 
@@ -299,7 +347,7 @@ class _ManagementStationState:
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[pulumi.Input[str]]:
         """
-        OCID for the Instance associated with the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         """
         return pulumi.get(self, "managed_instance_id")
 
@@ -311,7 +359,7 @@ class _ManagementStationState:
     @pulumi.getter
     def mirror(self) -> Optional[pulumi.Input['ManagementStationMirrorArgs']]:
         """
-        (Updatable) Information for creating a mirror configuration
+        (Updatable) Information used to create the mirror configuration for a management station.
         """
         return pulumi.get(self, "mirror")
 
@@ -323,7 +371,7 @@ class _ManagementStationState:
     @pulumi.getter(name="mirrorCapacity")
     def mirror_capacity(self) -> Optional[pulumi.Input[int]]:
         """
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
         """
         return pulumi.get(self, "mirror_capacity")
 
@@ -335,7 +383,7 @@ class _ManagementStationState:
     @pulumi.getter(name="mirrorSyncStatuses")
     def mirror_sync_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementStationMirrorSyncStatusArgs']]]]:
         """
-        Status summary of all repos
+        Status summary of the mirror sync.
         """
         return pulumi.get(self, "mirror_sync_statuses")
 
@@ -347,7 +395,7 @@ class _ManagementStationState:
     @pulumi.getter(name="overallPercentage")
     def overall_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
         """
         return pulumi.get(self, "overall_percentage")
 
@@ -359,7 +407,7 @@ class _ManagementStationState:
     @pulumi.getter(name="overallState")
     def overall_state(self) -> Optional[pulumi.Input[str]]:
         """
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
         """
         return pulumi.get(self, "overall_state")
 
@@ -371,7 +419,7 @@ class _ManagementStationState:
     @pulumi.getter(name="profileId")
     def profile_id(self) -> Optional[pulumi.Input[str]]:
         """
-        OCID of the Profile associated with the Station
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         """
         return pulumi.get(self, "profile_id")
 
@@ -383,7 +431,7 @@ class _ManagementStationState:
     @pulumi.getter
     def proxy(self) -> Optional[pulumi.Input['ManagementStationProxyArgs']]:
         """
-        (Updatable) Information for creating a proxy configuration
+        (Updatable) Information used to create the proxy configuration for a management station.
         """
         return pulumi.get(self, "proxy")
 
@@ -392,10 +440,26 @@ class _ManagementStationState:
         pulumi.set(self, "proxy", value)
 
     @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "refresh_trigger", value)
+
+    @property
     @pulumi.getter(name="scheduledJobId")
     def scheduled_job_id(self) -> Optional[pulumi.Input[str]]:
         """
-        OCID of the Scheduled Job for mirror sync
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         """
         return pulumi.get(self, "scheduled_job_id")
 
@@ -407,7 +471,7 @@ class _ManagementStationState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the Management Station config.
+        The current state of the management station.
         """
         return pulumi.get(self, "state")
 
@@ -431,7 +495,7 @@ class _ManagementStationState:
     @pulumi.getter(name="totalMirrors")
     def total_mirrors(self) -> Optional[pulumi.Input[int]]:
         """
-        A decimal number representing the total of repos
+        The number of software sources that the station is mirroring.
         """
         return pulumi.get(self, "total_mirrors")
 
@@ -453,11 +517,12 @@ class ManagementStation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[str]] = None,
                  mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
                  proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Creates a management station.
+        Create a management station. You must provide proxy and mirror configuration information.
 
         ## Example Usage
 
@@ -500,14 +565,19 @@ class ManagementStation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the Management Station.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details describing the Management Station config.
-        :param pulumi.Input[str] display_name: (Updatable) Management Station name
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: (Updatable) Name of the host
-        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information for creating a mirror configuration
-        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information for creating a proxy configuration
+        :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
+        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -518,7 +588,7 @@ class ManagementStation(pulumi.CustomResource):
         """
         This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-        Creates a management station.
+        Create a management station. You must provide proxy and mirror configuration information.
 
         ## Example Usage
 
@@ -582,6 +652,7 @@ class ManagementStation(pulumi.CustomResource):
                  hostname: Optional[pulumi.Input[str]] = None,
                  mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
                  proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+                 refresh_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -609,6 +680,8 @@ class ManagementStation(pulumi.CustomResource):
             if proxy is None and not opts.urn:
                 raise TypeError("Missing required property 'proxy'")
             __props__.__dict__["proxy"] = proxy
+            __props__.__dict__["refresh_trigger"] = refresh_trigger
+            __props__.__dict__["healths"] = None
             __props__.__dict__["managed_instance_id"] = None
             __props__.__dict__["mirror_capacity"] = None
             __props__.__dict__["mirror_sync_statuses"] = None
@@ -634,6 +707,7 @@ class ManagementStation(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            healths: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationHealthArgs']]]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             managed_instance_id: Optional[pulumi.Input[str]] = None,
             mirror: Optional[pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']]] = None,
@@ -643,6 +717,7 @@ class ManagementStation(pulumi.CustomResource):
             overall_state: Optional[pulumi.Input[str]] = None,
             profile_id: Optional[pulumi.Input[str]] = None,
             proxy: Optional[pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']]] = None,
+            refresh_trigger: Optional[pulumi.Input[int]] = None,
             scheduled_job_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -654,24 +729,30 @@ class ManagementStation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the Management Station.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details describing the Management Station config.
-        :param pulumi.Input[str] display_name: (Updatable) Management Station name
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the management station. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: (Updatable) Name of the host
-        :param pulumi.Input[str] managed_instance_id: OCID for the Instance associated with the Management Station.
-        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information for creating a mirror configuration
-        :param pulumi.Input[int] mirror_capacity: A decimal number representing the mirror capacity
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationMirrorSyncStatusArgs']]]] mirror_sync_statuses: Status summary of all repos
-        :param pulumi.Input[int] overall_percentage: A decimal number representing the completeness percentage
-        :param pulumi.Input[str] overall_state: Current state of the mirroring
-        :param pulumi.Input[str] profile_id: OCID of the Profile associated with the Station
-        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information for creating a proxy configuration
-        :param pulumi.Input[str] scheduled_job_id: OCID of the Scheduled Job for mirror sync
-        :param pulumi.Input[str] state: The current state of the Management Station config.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationHealthArgs']]]] healths: Overall health information of the management station.
+        :param pulumi.Input[str] hostname: (Updatable) Hostname of the management station.
+        :param pulumi.Input[str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
+        :param pulumi.Input[pulumi.InputType['ManagementStationMirrorArgs']] mirror: (Updatable) Information used to create the mirror configuration for a management station.
+        :param pulumi.Input[int] mirror_capacity: A decimal number representing the amount of mirror capacity used by the sync.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementStationMirrorSyncStatusArgs']]]] mirror_sync_statuses: Status summary of the mirror sync.
+        :param pulumi.Input[int] overall_percentage: A decimal number representing the progress of the current mirror sync.
+        :param pulumi.Input[str] overall_state: Current state of the mirror sync for the management station.
+        :param pulumi.Input[str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
+        :param pulumi.Input[pulumi.InputType['ManagementStationProxyArgs']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
+        :param pulumi.Input[int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] scheduled_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
+        :param pulumi.Input[str] state: The current state of the management station.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[int] total_mirrors: A decimal number representing the total of repos
+        :param pulumi.Input[int] total_mirrors: The number of software sources that the station is mirroring.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -682,6 +763,7 @@ class ManagementStation(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["healths"] = healths
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["managed_instance_id"] = managed_instance_id
         __props__.__dict__["mirror"] = mirror
@@ -691,6 +773,7 @@ class ManagementStation(pulumi.CustomResource):
         __props__.__dict__["overall_state"] = overall_state
         __props__.__dict__["profile_id"] = profile_id
         __props__.__dict__["proxy"] = proxy
+        __props__.__dict__["refresh_trigger"] = refresh_trigger
         __props__.__dict__["scheduled_job_id"] = scheduled_job_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -701,7 +784,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the tenancy containing the Management Station.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -717,7 +800,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Details describing the Management Station config.
+        (Updatable) User-specified description of the management station. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -725,7 +808,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Management Station name
+        (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -739,9 +822,17 @@ class ManagementStation(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    def healths(self) -> pulumi.Output[Sequence['outputs.ManagementStationHealth']]:
+        """
+        Overall health information of the management station.
+        """
+        return pulumi.get(self, "healths")
+
+    @property
+    @pulumi.getter
     def hostname(self) -> pulumi.Output[str]:
         """
-        (Updatable) Name of the host
+        (Updatable) Hostname of the management station.
         """
         return pulumi.get(self, "hostname")
 
@@ -749,7 +840,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> pulumi.Output[str]:
         """
-        OCID for the Instance associated with the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         """
         return pulumi.get(self, "managed_instance_id")
 
@@ -757,7 +848,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter
     def mirror(self) -> pulumi.Output['outputs.ManagementStationMirror']:
         """
-        (Updatable) Information for creating a mirror configuration
+        (Updatable) Information used to create the mirror configuration for a management station.
         """
         return pulumi.get(self, "mirror")
 
@@ -765,7 +856,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="mirrorCapacity")
     def mirror_capacity(self) -> pulumi.Output[int]:
         """
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
         """
         return pulumi.get(self, "mirror_capacity")
 
@@ -773,7 +864,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="mirrorSyncStatuses")
     def mirror_sync_statuses(self) -> pulumi.Output[Sequence['outputs.ManagementStationMirrorSyncStatus']]:
         """
-        Status summary of all repos
+        Status summary of the mirror sync.
         """
         return pulumi.get(self, "mirror_sync_statuses")
 
@@ -781,7 +872,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="overallPercentage")
     def overall_percentage(self) -> pulumi.Output[int]:
         """
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
         """
         return pulumi.get(self, "overall_percentage")
 
@@ -789,7 +880,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="overallState")
     def overall_state(self) -> pulumi.Output[str]:
         """
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
         """
         return pulumi.get(self, "overall_state")
 
@@ -797,7 +888,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="profileId")
     def profile_id(self) -> pulumi.Output[str]:
         """
-        OCID of the Profile associated with the Station
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         """
         return pulumi.get(self, "profile_id")
 
@@ -805,15 +896,27 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter
     def proxy(self) -> pulumi.Output['outputs.ManagementStationProxy']:
         """
-        (Updatable) Information for creating a proxy configuration
+        (Updatable) Information used to create the proxy configuration for a management station.
         """
         return pulumi.get(self, "proxy")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "refresh_trigger")
 
     @property
     @pulumi.getter(name="scheduledJobId")
     def scheduled_job_id(self) -> pulumi.Output[str]:
         """
-        OCID of the Scheduled Job for mirror sync
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         """
         return pulumi.get(self, "scheduled_job_id")
 
@@ -821,7 +924,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the Management Station config.
+        The current state of the management station.
         """
         return pulumi.get(self, "state")
 
@@ -837,7 +940,7 @@ class ManagementStation(pulumi.CustomResource):
     @pulumi.getter(name="totalMirrors")
     def total_mirrors(self) -> pulumi.Output[int]:
         """
-        A decimal number representing the total of repos
+        The number of software sources that the station is mirroring.
         """
         return pulumi.get(self, "total_mirrors")
 

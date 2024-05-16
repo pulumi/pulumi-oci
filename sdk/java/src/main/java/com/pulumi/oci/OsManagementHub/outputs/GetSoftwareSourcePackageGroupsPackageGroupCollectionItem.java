@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
     /**
-     * @return description of the package group.
+     * @return Description of the package group.
      * 
      */
     private String description;
@@ -39,7 +39,7 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
      */
     private Boolean isDefault;
     /**
-     * @return Indicates if this package group is visible by users.
+     * @return Indicates if this package group is visible to users.
      * 
      */
     private Boolean isUserVisible;
@@ -54,14 +54,14 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
      */
     private List<String> packages;
     /**
-     * @return the IDs of the package group&#39;s repositories.
+     * @return The repository IDs of the package group&#39;s repositories.
      * 
      */
     private List<String> repositories;
 
     private GetSoftwareSourcePackageGroupsPackageGroupCollectionItem() {}
     /**
-     * @return description of the package group.
+     * @return Description of the package group.
      * 
      */
     public String description() {
@@ -96,7 +96,7 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
         return this.isDefault;
     }
     /**
-     * @return Indicates if this package group is visible by users.
+     * @return Indicates if this package group is visible to users.
      * 
      */
     public Boolean isUserVisible() {
@@ -117,7 +117,7 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
         return this.packages;
     }
     /**
-     * @return the IDs of the package group&#39;s repositories.
+     * @return The repository IDs of the package group&#39;s repositories.
      * 
      */
     public List<String> repositories() {

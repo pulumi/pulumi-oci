@@ -33,14 +33,14 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -85,14 +85,14 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      * 
      */
     @Import(name="lifecycleStageId")
     private @Nullable Output<String> lifecycleStageId;
 
     /**
-     * @return The OCID of the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      * 
      */
     public Optional<Output<String>> lifecycleStageId() {
@@ -100,14 +100,44 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    @Import(name="locationNotEqualTos")
+    private @Nullable Output<List<String>> locationNotEqualTos;
+
+    /**
+     * @return A filter to return only resources whose location does not match the given value.
+     * 
+     */
+    public Optional<Output<List<String>>> locationNotEqualTos() {
+        return Optional.ofNullable(this.locationNotEqualTos);
+    }
+
+    /**
+     * A filter to return only resources whose location matches the given value.
+     * 
+     */
+    @Import(name="locations")
+    private @Nullable Output<List<String>> locations;
+
+    /**
+     * @return A filter to return only resources whose location matches the given value.
+     * 
+     */
+    public Optional<Output<List<String>>> locations() {
+        return Optional.ofNullable(this.locations);
+    }
+
+    /**
+     * A filter to return only resources that match the given operating system family.
      * 
      */
     @Import(name="osFamily")
     private @Nullable Output<String> osFamily;
 
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public Optional<Output<String>> osFamily() {
@@ -115,14 +145,14 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      * 
      */
     @Import(name="softwareSourceId")
     private @Nullable Output<String> softwareSourceId;
 
     /**
-     * @return The OCID for the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      * 
      */
     public Optional<Output<String>> softwareSourceId() {
@@ -130,14 +160,14 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * @return A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -153,6 +183,8 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         this.displayNames = $.displayNames;
         this.filters = $.filters;
         this.lifecycleStageId = $.lifecycleStageId;
+        this.locationNotEqualTos = $.locationNotEqualTos;
+        this.locations = $.locations;
         this.osFamily = $.osFamily;
         this.softwareSourceId = $.softwareSourceId;
         this.state = $.state;
@@ -198,7 +230,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -209,7 +241,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -284,7 +316,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage.
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * 
          * @return builder
          * 
@@ -295,7 +327,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage.
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * 
          * @return builder
          * 
@@ -305,7 +337,69 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(@Nullable Output<List<String>> locationNotEqualTos) {
+            $.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(List<String> locationNotEqualTos) {
+            return locationNotEqualTos(Output.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locationNotEqualTos A filter to return only resources whose location does not match the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(@Nullable Output<List<String>> locations) {
+            $.locations = locations;
+            return this;
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(List<String> locations) {
+            return locations(Output.of(locations));
+        }
+
+        /**
+         * @param locations A filter to return only resources whose location matches the given value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+
+        /**
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -316,7 +410,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -326,7 +420,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param softwareSourceId The OCID for the software source.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          * 
          * @return builder
          * 
@@ -337,7 +431,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param softwareSourceId The OCID for the software source.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          * 
          * @return builder
          * 
@@ -347,7 +441,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+         * @param state A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
          * 
          * @return builder
          * 
@@ -358,7 +452,7 @@ public final class GetLifecycleStagesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+         * @param state A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
          * 
          * @return builder
          * 

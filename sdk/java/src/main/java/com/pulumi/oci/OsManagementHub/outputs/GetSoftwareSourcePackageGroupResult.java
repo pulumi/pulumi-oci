@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourcePackageGroupResult {
     /**
-     * @return description of the package group.
+     * @return Description of the package group.
      * 
      */
     private String description;
@@ -24,7 +24,7 @@ public final class GetSoftwareSourcePackageGroupResult {
      */
     private Integer displayOrder;
     /**
-     * @return Indicates if this is a group, category or environment.
+     * @return Indicates if this is a group, category, or environment.
      * 
      */
     private String groupType;
@@ -39,7 +39,7 @@ public final class GetSoftwareSourcePackageGroupResult {
      */
     private Boolean isDefault;
     /**
-     * @return Indicates if this package group is visible by users.
+     * @return Indicates if this package group is visible to users.
      * 
      */
     private Boolean isUserVisible;
@@ -55,7 +55,7 @@ public final class GetSoftwareSourcePackageGroupResult {
      */
     private List<String> packages;
     /**
-     * @return the IDs of the package group&#39;s repositories.
+     * @return The repository IDs of the package group&#39;s repositories.
      * 
      */
     private List<String> repositories;
@@ -63,7 +63,7 @@ public final class GetSoftwareSourcePackageGroupResult {
 
     private GetSoftwareSourcePackageGroupResult() {}
     /**
-     * @return description of the package group.
+     * @return Description of the package group.
      * 
      */
     public String description() {
@@ -77,7 +77,7 @@ public final class GetSoftwareSourcePackageGroupResult {
         return this.displayOrder;
     }
     /**
-     * @return Indicates if this is a group, category or environment.
+     * @return Indicates if this is a group, category, or environment.
      * 
      */
     public String groupType() {
@@ -98,7 +98,7 @@ public final class GetSoftwareSourcePackageGroupResult {
         return this.isDefault;
     }
     /**
-     * @return Indicates if this package group is visible by users.
+     * @return Indicates if this package group is visible to users.
      * 
      */
     public Boolean isUserVisible() {
@@ -122,7 +122,7 @@ public final class GetSoftwareSourcePackageGroupResult {
         return this.packages;
     }
     /**
-     * @return the IDs of the package group&#39;s repositories.
+     * @return The repository IDs of the package group&#39;s repositories.
      * 
      */
     public List<String> repositories() {

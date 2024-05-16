@@ -14,19 +14,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagementStationProxyResult
     {
         /// <summary>
-        /// URL that the proxy will forward to
+        /// The URL the proxy will forward to.
         /// </summary>
         public readonly string Forward;
         /// <summary>
-        /// List of hosts
+        /// List of hosts.
         /// </summary>
         public readonly ImmutableArray<string> Hosts;
         /// <summary>
-        /// To enable or disable the proxy (default true)
+        /// Indicates if the proxy should be enabled or disabled. Default is enabled.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// Port that the proxy will use
+        /// Listening port used for the proxy.
         /// </summary>
         public readonly string Port;
 

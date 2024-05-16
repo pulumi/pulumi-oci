@@ -14,11 +14,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetSoftwareSourceVendorSoftwareSourceResult
     {
         /// <summary>
-        /// User friendly name.
+        /// User-friendly name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The OCID of the resource that is immutable on creation.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         /// </summary>
         public readonly string Id;
 

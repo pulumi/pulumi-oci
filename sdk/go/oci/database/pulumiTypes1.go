@@ -13,6 +13,962 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetKeyStoresKeyStoreAssociatedDatabase struct {
+	// The name of the database that is associated with the key store.
+	DbName string `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoresKeyStoreAssociatedDatabaseInput is an input type that accepts GetKeyStoresKeyStoreAssociatedDatabaseArgs and GetKeyStoresKeyStoreAssociatedDatabaseOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedDatabaseInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedDatabaseArgs{...}
+type GetKeyStoresKeyStoreAssociatedDatabaseInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedDatabaseOutput() GetKeyStoresKeyStoreAssociatedDatabaseOutput
+	ToGetKeyStoresKeyStoreAssociatedDatabaseOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedDatabaseOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedDatabaseArgs struct {
+	// The name of the database that is associated with the key store.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoresKeyStoreAssociatedDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedDatabaseArgs) ToGetKeyStoresKeyStoreAssociatedDatabaseOutput() GetKeyStoresKeyStoreAssociatedDatabaseOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedDatabaseArgs) ToGetKeyStoresKeyStoreAssociatedDatabaseOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedDatabaseOutput)
+}
+
+// GetKeyStoresKeyStoreAssociatedDatabaseArrayInput is an input type that accepts GetKeyStoresKeyStoreAssociatedDatabaseArray and GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreAssociatedDatabaseArrayInput` via:
+//
+//	GetKeyStoresKeyStoreAssociatedDatabaseArray{ GetKeyStoresKeyStoreAssociatedDatabaseArgs{...} }
+type GetKeyStoresKeyStoreAssociatedDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput
+	ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput
+}
+
+type GetKeyStoresKeyStoreAssociatedDatabaseArray []GetKeyStoresKeyStoreAssociatedDatabaseInput
+
+func (GetKeyStoresKeyStoreAssociatedDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreAssociatedDatabaseArray) ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
+	return i.ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreAssociatedDatabaseArray) ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) ToGetKeyStoresKeyStoreAssociatedDatabaseOutput() GetKeyStoresKeyStoreAssociatedDatabaseOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) ToGetKeyStoresKeyStoreAssociatedDatabaseOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedDatabaseOutput {
+	return o
+}
+
+// The name of the database that is associated with the key store.
+func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput) ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput) ToGetKeyStoresKeyStoreAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreAssociatedDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreAssociatedDatabase {
+		return vs[0].([]GetKeyStoresKeyStoreAssociatedDatabase)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreAssociatedDatabaseOutput)
+}
+
+type GetKeyStoresKeyStoreTypeDetail struct {
+	// The administrator username to connect to Oracle Key Vault
+	AdminUsername string `pulumi:"adminUsername"`
+	// The list of Oracle Key Vault connection IP addresses.
+	ConnectionIps []string `pulumi:"connectionIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SecretId string `pulumi:"secretId"`
+	// The type of key store.
+	Type string `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetKeyStoresKeyStoreTypeDetailInput is an input type that accepts GetKeyStoresKeyStoreTypeDetailArgs and GetKeyStoresKeyStoreTypeDetailOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreTypeDetailInput` via:
+//
+//	GetKeyStoresKeyStoreTypeDetailArgs{...}
+type GetKeyStoresKeyStoreTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreTypeDetailOutput() GetKeyStoresKeyStoreTypeDetailOutput
+	ToGetKeyStoresKeyStoreTypeDetailOutputWithContext(context.Context) GetKeyStoresKeyStoreTypeDetailOutput
+}
+
+type GetKeyStoresKeyStoreTypeDetailArgs struct {
+	// The administrator username to connect to Oracle Key Vault
+	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	// The list of Oracle Key Vault connection IP addresses.
+	ConnectionIps pulumi.StringArrayInput `pulumi:"connectionIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// The type of key store.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetKeyStoresKeyStoreTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreTypeDetailArgs) ToGetKeyStoresKeyStoreTypeDetailOutput() GetKeyStoresKeyStoreTypeDetailOutput {
+	return i.ToGetKeyStoresKeyStoreTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreTypeDetailArgs) ToGetKeyStoresKeyStoreTypeDetailOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreTypeDetailOutput)
+}
+
+// GetKeyStoresKeyStoreTypeDetailArrayInput is an input type that accepts GetKeyStoresKeyStoreTypeDetailArray and GetKeyStoresKeyStoreTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreTypeDetailArrayInput` via:
+//
+//	GetKeyStoresKeyStoreTypeDetailArray{ GetKeyStoresKeyStoreTypeDetailArgs{...} }
+type GetKeyStoresKeyStoreTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreTypeDetailArrayOutput() GetKeyStoresKeyStoreTypeDetailArrayOutput
+	ToGetKeyStoresKeyStoreTypeDetailArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreTypeDetailArrayOutput
+}
+
+type GetKeyStoresKeyStoreTypeDetailArray []GetKeyStoresKeyStoreTypeDetailInput
+
+func (GetKeyStoresKeyStoreTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreTypeDetailArray) ToGetKeyStoresKeyStoreTypeDetailArrayOutput() GetKeyStoresKeyStoreTypeDetailArrayOutput {
+	return i.ToGetKeyStoresKeyStoreTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreTypeDetailArray) ToGetKeyStoresKeyStoreTypeDetailArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreTypeDetailArrayOutput)
+}
+
+type GetKeyStoresKeyStoreTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreTypeDetailOutput) ToGetKeyStoresKeyStoreTypeDetailOutput() GetKeyStoresKeyStoreTypeDetailOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreTypeDetailOutput) ToGetKeyStoresKeyStoreTypeDetailOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreTypeDetailOutput {
+	return o
+}
+
+// The administrator username to connect to Oracle Key Vault
+func (o GetKeyStoresKeyStoreTypeDetailOutput) AdminUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.AdminUsername }).(pulumi.StringOutput)
+}
+
+// The list of Oracle Key Vault connection IP addresses.
+func (o GetKeyStoresKeyStoreTypeDetailOutput) ConnectionIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) []string { return v.ConnectionIps }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetKeyStoresKeyStoreTypeDetailOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// The type of key store.
+func (o GetKeyStoresKeyStoreTypeDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetKeyStoresKeyStoreTypeDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreTypeDetail) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetKeyStoresKeyStoreTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreTypeDetailArrayOutput) ToGetKeyStoresKeyStoreTypeDetailArrayOutput() GetKeyStoresKeyStoreTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreTypeDetailArrayOutput) ToGetKeyStoresKeyStoreTypeDetailArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreTypeDetailArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStoreTypeDetail {
+		return vs[0].([]GetKeyStoresKeyStoreTypeDetail)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreTypeDetailOutput)
+}
+
+type GetMaintenanceRunEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetMaintenanceRunEstimatedPatchingTimeInput is an input type that accepts GetMaintenanceRunEstimatedPatchingTimeArgs and GetMaintenanceRunEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunEstimatedPatchingTimeInput` via:
+//
+//	GetMaintenanceRunEstimatedPatchingTimeArgs{...}
+type GetMaintenanceRunEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunEstimatedPatchingTimeOutput
+	ToGetMaintenanceRunEstimatedPatchingTimeOutputWithContext(context.Context) GetMaintenanceRunEstimatedPatchingTimeOutput
+}
+
+type GetMaintenanceRunEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetMaintenanceRunEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunEstimatedPatchingTimeOutput {
+	return i.ToGetMaintenanceRunEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintenanceRunEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetMaintenanceRunEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunEstimatedPatchingTimeOutput)
+}
+
+// GetMaintenanceRunEstimatedPatchingTimeArrayInput is an input type that accepts GetMaintenanceRunEstimatedPatchingTimeArray and GetMaintenanceRunEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunEstimatedPatchingTimeArrayInput` via:
+//
+//	GetMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunEstimatedPatchingTimeArgs{...} }
+type GetMaintenanceRunEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunEstimatedPatchingTimeArrayOutput
+	ToGetMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetMaintenanceRunEstimatedPatchingTimeArrayOutput
+}
+
+type GetMaintenanceRunEstimatedPatchingTimeArray []GetMaintenanceRunEstimatedPatchingTimeInput
+
+func (GetMaintenanceRunEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunEstimatedPatchingTimeArray) ToGetMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return i.ToGetMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunEstimatedPatchingTimeArray) ToGetMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunEstimatedPatchingTimeArrayOutput)
+}
+
+type GetMaintenanceRunEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) ToGetMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) ToGetMaintenanceRunEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetMaintenanceRunEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunEstimatedPatchingTime) int { return v.EstimatedDbServerPatchingTime }).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunEstimatedPatchingTime) int { return v.EstimatedNetworkSwitchesPatchingTime }).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunEstimatedPatchingTime) int { return v.EstimatedStorageServerPatchingTime }).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetMaintenanceRunEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunEstimatedPatchingTime) int { return v.TotalEstimatedPatchingTime }).(pulumi.IntOutput)
+}
+
+type GetMaintenanceRunEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunEstimatedPatchingTimeArrayOutput) ToGetMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunEstimatedPatchingTimeArrayOutput) ToGetMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunEstimatedPatchingTime {
+		return vs[0].([]GetMaintenanceRunEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetMaintenanceRunEstimatedPatchingTimeOutput)
+}
+
+type GetMaintenanceRunsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaintenanceRunsFilterInput is an input type that accepts GetMaintenanceRunsFilterArgs and GetMaintenanceRunsFilterOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsFilterInput` via:
+//
+//	GetMaintenanceRunsFilterArgs{...}
+type GetMaintenanceRunsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsFilterOutput() GetMaintenanceRunsFilterOutput
+	ToGetMaintenanceRunsFilterOutputWithContext(context.Context) GetMaintenanceRunsFilterOutput
+}
+
+type GetMaintenanceRunsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaintenanceRunsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsFilter)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsFilterArgs) ToGetMaintenanceRunsFilterOutput() GetMaintenanceRunsFilterOutput {
+	return i.ToGetMaintenanceRunsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsFilterArgs) ToGetMaintenanceRunsFilterOutputWithContext(ctx context.Context) GetMaintenanceRunsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsFilterOutput)
+}
+
+// GetMaintenanceRunsFilterArrayInput is an input type that accepts GetMaintenanceRunsFilterArray and GetMaintenanceRunsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsFilterArrayInput` via:
+//
+//	GetMaintenanceRunsFilterArray{ GetMaintenanceRunsFilterArgs{...} }
+type GetMaintenanceRunsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsFilterArrayOutput() GetMaintenanceRunsFilterArrayOutput
+	ToGetMaintenanceRunsFilterArrayOutputWithContext(context.Context) GetMaintenanceRunsFilterArrayOutput
+}
+
+type GetMaintenanceRunsFilterArray []GetMaintenanceRunsFilterInput
+
+func (GetMaintenanceRunsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsFilter)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsFilterArray) ToGetMaintenanceRunsFilterArrayOutput() GetMaintenanceRunsFilterArrayOutput {
+	return i.ToGetMaintenanceRunsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsFilterArray) ToGetMaintenanceRunsFilterArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsFilterArrayOutput)
+}
+
+type GetMaintenanceRunsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsFilter)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsFilterOutput) ToGetMaintenanceRunsFilterOutput() GetMaintenanceRunsFilterOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsFilterOutput) ToGetMaintenanceRunsFilterOutputWithContext(ctx context.Context) GetMaintenanceRunsFilterOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceRunsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaintenanceRunsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaintenanceRunsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsFilter)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsFilterArrayOutput) ToGetMaintenanceRunsFilterArrayOutput() GetMaintenanceRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsFilterArrayOutput) ToGetMaintenanceRunsFilterArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsFilterArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunsFilter {
+		return vs[0].([]GetMaintenanceRunsFilter)[vs[1].(int)]
+	}).(GetMaintenanceRunsFilterOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRun struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins int `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent string `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description string `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName string `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime string `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes []GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id string `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The sub-type of the maintenance run.
+	MaintenanceSubtype string `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType string `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount int `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId   string `pulumi:"patchId"`
+	PatchType string `pulumi:"patchType"`
+	// The time when the patching operation ended.
+	PatchingEndTime string `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime string `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus string `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId string `pulumi:"peerMaintenanceRunId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion string `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId string `pulumi:"targetResourceId"`
+	// The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
+	TargetResourceType string `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion string `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled string `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetMaintenanceRunsMaintenanceRunInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArgs and GetMaintenanceRunsMaintenanceRunOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunArgs{...}
+type GetMaintenanceRunsMaintenanceRunInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunOutput() GetMaintenanceRunsMaintenanceRunOutput
+	ToGetMaintenanceRunsMaintenanceRunOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+	CurrentCustomActionTimeoutInMins pulumi.IntInput `pulumi:"currentCustomActionTimeoutInMins"`
+	// The name of the current infrastruture component that is getting patched.
+	CurrentPatchingComponent pulumi.StringInput `pulumi:"currentPatchingComponent"`
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Description of the maintenance run.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The user-friendly name for the maintenance run.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The estimated start time of the next infrastruture component patching operation.
+	EstimatedComponentPatchingStartTime pulumi.StringInput `pulumi:"estimatedComponentPatchingStartTime"`
+	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+	EstimatedPatchingTimes GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput `pulumi:"estimatedPatchingTimes"`
+	// The OCID of the maintenance run.
+	Id pulumi.StringInput `pulumi:"id"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+	IsDstFileUpdateEnabled pulumi.BoolInput `pulumi:"isDstFileUpdateEnabled"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The sub-type of the maintenance run.
+	MaintenanceSubtype pulumi.StringInput `pulumi:"maintenanceSubtype"`
+	// The maintenance type.
+	MaintenanceType pulumi.StringInput `pulumi:"maintenanceType"`
+	// Contain the patch failure count.
+	PatchFailureCount pulumi.IntInput `pulumi:"patchFailureCount"`
+	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+	PatchId   pulumi.StringInput `pulumi:"patchId"`
+	PatchType pulumi.StringInput `pulumi:"patchType"`
+	// The time when the patching operation ended.
+	PatchingEndTime pulumi.StringInput `pulumi:"patchingEndTime"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The time when the patching operation started.
+	PatchingStartTime pulumi.StringInput `pulumi:"patchingStartTime"`
+	// The status of the patching operation.
+	PatchingStatus pulumi.StringInput `pulumi:"patchingStatus"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+	PeerMaintenanceRunId pulumi.StringInput `pulumi:"peerMaintenanceRunId"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The target software version for the database server patching operation.
+	TargetDbServerVersion pulumi.StringInput `pulumi:"targetDbServerVersion"`
+	// The target resource ID.
+	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
+	// The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
+	TargetResourceType pulumi.StringInput `pulumi:"targetResourceType"`
+	// The target Cell version that is to be patched to.
+	TargetStorageServerVersion pulumi.StringInput `pulumi:"targetStorageServerVersion"`
+	// The date and time the maintenance run was completed.
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the maintenance run is scheduled to occur.
+	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
+	// The date and time the maintenance run starts.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetMaintenanceRunsMaintenanceRunArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRun)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunArgs) ToGetMaintenanceRunsMaintenanceRunOutput() GetMaintenanceRunsMaintenanceRunOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunArgs) ToGetMaintenanceRunsMaintenanceRunOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunOutput)
+}
+
+// GetMaintenanceRunsMaintenanceRunArrayInput is an input type that accepts GetMaintenanceRunsMaintenanceRunArray and GetMaintenanceRunsMaintenanceRunArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunArrayInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunArray{ GetMaintenanceRunsMaintenanceRunArgs{...} }
+type GetMaintenanceRunsMaintenanceRunArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunArrayOutput() GetMaintenanceRunsMaintenanceRunArrayOutput
+	ToGetMaintenanceRunsMaintenanceRunArrayOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunArrayOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunArray []GetMaintenanceRunsMaintenanceRunInput
+
+func (GetMaintenanceRunsMaintenanceRunArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRun)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunArray) ToGetMaintenanceRunsMaintenanceRunArrayOutput() GetMaintenanceRunsMaintenanceRunArrayOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunArray) ToGetMaintenanceRunsMaintenanceRunArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunArrayOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRun)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunOutput) ToGetMaintenanceRunsMaintenanceRunOutput() GetMaintenanceRunsMaintenanceRunOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunOutput) ToGetMaintenanceRunsMaintenanceRunOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetMaintenanceRunsMaintenanceRunOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+func (o GetMaintenanceRunsMaintenanceRunOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.CurrentCustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// The name of the current infrastruture component that is getting patched.
+func (o GetMaintenanceRunsMaintenanceRunOutput) CurrentPatchingComponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.CurrentPatchingComponent }).(pulumi.StringOutput)
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
+func (o GetMaintenanceRunsMaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+}
+
+// Description of the maintenance run.
+func (o GetMaintenanceRunsMaintenanceRunOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The user-friendly name for the maintenance run.
+func (o GetMaintenanceRunsMaintenanceRunOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The estimated start time of the next infrastruture component patching operation.
+func (o GetMaintenanceRunsMaintenanceRunOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.EstimatedComponentPatchingStartTime }).(pulumi.StringOutput)
+}
+
+// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
+func (o GetMaintenanceRunsMaintenanceRunOutput) EstimatedPatchingTimes() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) []GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime {
+		return v.EstimatedPatchingTimes
+	}).(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput)
+}
+
+// The OCID of the maintenance run.
+func (o GetMaintenanceRunsMaintenanceRunOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+func (o GetMaintenanceRunsMaintenanceRunOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) bool { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+func (o GetMaintenanceRunsMaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetMaintenanceRunsMaintenanceRunOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The sub-type of the maintenance run.
+func (o GetMaintenanceRunsMaintenanceRunOutput) MaintenanceSubtype() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.MaintenanceSubtype }).(pulumi.StringOutput)
+}
+
+// The maintenance type.
+func (o GetMaintenanceRunsMaintenanceRunOutput) MaintenanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.MaintenanceType }).(pulumi.StringOutput)
+}
+
+// Contain the patch failure count.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchFailureCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) int { return v.PatchFailureCount }).(pulumi.IntOutput)
+}
+
+// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchId }).(pulumi.StringOutput)
+}
+
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchType }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation ended.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchingEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchingEndTime }).(pulumi.StringOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchingMode }).(pulumi.StringOutput)
+}
+
+// The time when the patching operation started.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchingStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchingStartTime }).(pulumi.StringOutput)
+}
+
+// The status of the patching operation.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PatchingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PatchingStatus }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+func (o GetMaintenanceRunsMaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetMaintenanceRunsMaintenanceRunOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The target software version for the database server patching operation.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TargetDbServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TargetDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The target resource ID.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TargetResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TargetResourceId }).(pulumi.StringOutput)
+}
+
+// The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
+func (o GetMaintenanceRunsMaintenanceRunOutput) TargetResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TargetResourceType }).(pulumi.StringOutput)
+}
+
+// The target Cell version that is to be patched to.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TargetStorageServerVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TargetStorageServerVersion }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run was completed.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run is scheduled to occur.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TimeScheduled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TimeScheduled }).(pulumi.StringOutput)
+}
+
+// The date and time the maintenance run starts.
+func (o GetMaintenanceRunsMaintenanceRunOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRun) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRun)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunArrayOutput) ToGetMaintenanceRunsMaintenanceRunArrayOutput() GetMaintenanceRunsMaintenanceRunArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunArrayOutput) ToGetMaintenanceRunsMaintenanceRunArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunsMaintenanceRunOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunsMaintenanceRun {
+		return vs[0].([]GetMaintenanceRunsMaintenanceRun)[vs[1].(int)]
+	}).(GetMaintenanceRunsMaintenanceRunOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime int `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime int `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime int `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime int `pulumi:"totalEstimatedPatchingTime"`
+}
+
+// GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput is an input type that accepts GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs and GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...}
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput
+	ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs struct {
+	// The estimated time required in minutes for database server patching.
+	EstimatedDbServerPatchingTime pulumi.IntInput `pulumi:"estimatedDbServerPatchingTime"`
+	// The estimated time required in minutes for network switch patching.
+	EstimatedNetworkSwitchesPatchingTime pulumi.IntInput `pulumi:"estimatedNetworkSwitchesPatchingTime"`
+	// The estimated time required in minutes for storage server patching.
+	EstimatedStorageServerPatchingTime pulumi.IntInput `pulumi:"estimatedStorageServerPatchingTime"`
+	// The estimated total time required in minutes for all patching operations.
+	TotalEstimatedPatchingTime pulumi.IntInput `pulumi:"totalEstimatedPatchingTime"`
+}
+
+func (GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput)
+}
+
+// GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput is an input type that accepts GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray and GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput values.
+// You can construct a concrete instance of `GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput` via:
+//
+//	GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray{ GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{...} }
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput
+	ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput
+}
+
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray []GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput
+
+func (GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (i GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return i.ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput {
+	return o
+}
+
+// The estimated time required in minutes for database server patching.
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) EstimatedDbServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime) int {
+		return v.EstimatedDbServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for network switch patching.
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) EstimatedNetworkSwitchesPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime) int {
+		return v.EstimatedNetworkSwitchesPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated time required in minutes for storage server patching.
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) EstimatedStorageServerPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime) int {
+		return v.EstimatedStorageServerPatchingTime
+	}).(pulumi.IntOutput)
+}
+
+// The estimated total time required in minutes for all patching operations.
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput) TotalEstimatedPatchingTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime) int { return v.TotalEstimatedPatchingTime }).(pulumi.IntOutput)
+}
+
+type GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)(nil)).Elem()
+}
+
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput() GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput) ToGetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutputWithContext(ctx context.Context) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput {
+	return o
+}
+
+func (o GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput) Index(i pulumi.IntInput) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime {
+		return vs[0].([]GetMaintenanceRunsMaintenanceRunEstimatedPatchingTime)[vs[1].(int)]
+	}).(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput)
+}
+
 type GetManagedPreferredCredentialsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -2834,6 +3790,112 @@ func (o GetVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterDataCollectionOption {
 		return vs[0].([]GetVmClusterDataCollectionOption)[vs[1].(int)]
 	}).(GetVmClusterDataCollectionOptionOutput)
+}
+
+type GetVmClusterFileSystemConfigurationDetail struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb int `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetVmClusterFileSystemConfigurationDetailInput is an input type that accepts GetVmClusterFileSystemConfigurationDetailArgs and GetVmClusterFileSystemConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetVmClusterFileSystemConfigurationDetailInput` via:
+//
+//	GetVmClusterFileSystemConfigurationDetailArgs{...}
+type GetVmClusterFileSystemConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClusterFileSystemConfigurationDetailOutput() GetVmClusterFileSystemConfigurationDetailOutput
+	ToGetVmClusterFileSystemConfigurationDetailOutputWithContext(context.Context) GetVmClusterFileSystemConfigurationDetailOutput
+}
+
+type GetVmClusterFileSystemConfigurationDetailArgs struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb pulumi.IntInput `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetVmClusterFileSystemConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterFileSystemConfigurationDetailArgs) ToGetVmClusterFileSystemConfigurationDetailOutput() GetVmClusterFileSystemConfigurationDetailOutput {
+	return i.ToGetVmClusterFileSystemConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterFileSystemConfigurationDetailArgs) ToGetVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterFileSystemConfigurationDetailOutput)
+}
+
+// GetVmClusterFileSystemConfigurationDetailArrayInput is an input type that accepts GetVmClusterFileSystemConfigurationDetailArray and GetVmClusterFileSystemConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterFileSystemConfigurationDetailArrayInput` via:
+//
+//	GetVmClusterFileSystemConfigurationDetailArray{ GetVmClusterFileSystemConfigurationDetailArgs{...} }
+type GetVmClusterFileSystemConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClusterFileSystemConfigurationDetailArrayOutput
+	ToGetVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Context) GetVmClusterFileSystemConfigurationDetailArrayOutput
+}
+
+type GetVmClusterFileSystemConfigurationDetailArray []GetVmClusterFileSystemConfigurationDetailInput
+
+func (GetVmClusterFileSystemConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterFileSystemConfigurationDetailArray) ToGetVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClusterFileSystemConfigurationDetailArrayOutput {
+	return i.ToGetVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterFileSystemConfigurationDetailArray) ToGetVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetVmClusterFileSystemConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterFileSystemConfigurationDetailArrayOutput)
+}
+
+type GetVmClusterFileSystemConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterFileSystemConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterFileSystemConfigurationDetailOutput) ToGetVmClusterFileSystemConfigurationDetailOutput() GetVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+func (o GetVmClusterFileSystemConfigurationDetailOutput) ToGetVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+// The file system size to be allocated in GBs.
+func (o GetVmClusterFileSystemConfigurationDetailOutput) FileSystemSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterFileSystemConfigurationDetail) int { return v.FileSystemSizeGb }).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetVmClusterFileSystemConfigurationDetailOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterFileSystemConfigurationDetail) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetVmClusterFileSystemConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterFileSystemConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterFileSystemConfigurationDetailArrayOutput) ToGetVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterFileSystemConfigurationDetailArrayOutput) ToGetVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterFileSystemConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterFileSystemConfigurationDetail {
+		return vs[0].([]GetVmClusterFileSystemConfigurationDetail)[vs[1].(int)]
+	}).(GetVmClusterFileSystemConfigurationDetailOutput)
 }
 
 type GetVmClusterNetworkDrScan struct {
@@ -6128,6 +7190,8 @@ type GetVmClustersVmCluster struct {
 	DisplayName string `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []GetVmClustersVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -6199,6 +7263,8 @@ type GetVmClustersVmClusterArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -6345,6 +7411,13 @@ func (o GetVmClustersVmClusterOutput) DisplayName() pulumi.StringOutput {
 // If provided, filters the results for the given Exadata Infrastructure.
 func (o GetVmClustersVmClusterOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the VM cluster.
+func (o GetVmClustersVmClusterOutput) FileSystemConfigurationDetails() GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) []GetVmClustersVmClusterFileSystemConfigurationDetail {
+		return v.FileSystemConfigurationDetails
+	}).(GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -6570,7 +7643,125 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.In
 	}).(GetVmClustersVmClusterDataCollectionOptionOutput)
 }
 
+type GetVmClustersVmClusterFileSystemConfigurationDetail struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb int `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetVmClustersVmClusterFileSystemConfigurationDetailInput is an input type that accepts GetVmClustersVmClusterFileSystemConfigurationDetailArgs and GetVmClustersVmClusterFileSystemConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterFileSystemConfigurationDetailInput` via:
+//
+//	GetVmClustersVmClusterFileSystemConfigurationDetailArgs{...}
+type GetVmClustersVmClusterFileSystemConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterFileSystemConfigurationDetailOutput() GetVmClustersVmClusterFileSystemConfigurationDetailOutput
+	ToGetVmClustersVmClusterFileSystemConfigurationDetailOutputWithContext(context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailOutput
+}
+
+type GetVmClustersVmClusterFileSystemConfigurationDetailArgs struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb pulumi.IntInput `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetVmClustersVmClusterFileSystemConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterFileSystemConfigurationDetailArgs) ToGetVmClustersVmClusterFileSystemConfigurationDetailOutput() GetVmClustersVmClusterFileSystemConfigurationDetailOutput {
+	return i.ToGetVmClustersVmClusterFileSystemConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterFileSystemConfigurationDetailArgs) ToGetVmClustersVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterFileSystemConfigurationDetailOutput)
+}
+
+// GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput is an input type that accepts GetVmClustersVmClusterFileSystemConfigurationDetailArray and GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput` via:
+//
+//	GetVmClustersVmClusterFileSystemConfigurationDetailArray{ GetVmClustersVmClusterFileSystemConfigurationDetailArgs{...} }
+type GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput
+	ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput
+}
+
+type GetVmClustersVmClusterFileSystemConfigurationDetailArray []GetVmClustersVmClusterFileSystemConfigurationDetailInput
+
+func (GetVmClustersVmClusterFileSystemConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterFileSystemConfigurationDetailArray) ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput {
+	return i.ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterFileSystemConfigurationDetailArray) ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput)
+}
+
+type GetVmClustersVmClusterFileSystemConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterFileSystemConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailOutput) ToGetVmClustersVmClusterFileSystemConfigurationDetailOutput() GetVmClustersVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailOutput) ToGetVmClustersVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+// The file system size to be allocated in GBs.
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailOutput) FileSystemSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterFileSystemConfigurationDetail) int { return v.FileSystemSizeGb }).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterFileSystemConfigurationDetail) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput() GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) ToGetVmClustersVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterFileSystemConfigurationDetail {
+		return vs[0].([]GetVmClustersVmClusterFileSystemConfigurationDetail)[vs[1].(int)]
+	}).(GetVmClustersVmClusterFileSystemConfigurationDetailOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTimeInput)(nil)).Elem(), GetMaintenanceRunEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetMaintenanceRunEstimatedPatchingTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsFilterInput)(nil)).Elem(), GetMaintenanceRunsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsFilterArrayInput)(nil)).Elem(), GetMaintenanceRunsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunArrayInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayInput)(nil)).Elem(), GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsFilterArrayInput)(nil)).Elem(), GetManagedPreferredCredentialsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedPreferredCredentialsPreferredCredentialCollectionInput)(nil)).Elem(), GetManagedPreferredCredentialsPreferredCredentialCollectionArgs{})
@@ -6617,6 +7808,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemVersionsSystemVersionCollectionItemArrayInput)(nil)).Elem(), GetSystemVersionsSystemVersionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClusterFileSystemConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClusterFileSystemConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanInput)(nil)).Elem(), GetVmClusterNetworkDrScanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanArrayInput)(nil)).Elem(), GetVmClusterNetworkDrScanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanInput)(nil)).Elem(), GetVmClusterNetworkScanArgs{})
@@ -6669,6 +7862,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunEstimatedPatchingTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunArrayOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeOutput{})
+	pulumi.RegisterOutputType(GetMaintenanceRunsMaintenanceRunEstimatedPatchingTimeArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedPreferredCredentialsPreferredCredentialCollectionOutput{})
@@ -6715,6 +7922,8 @@ func init() {
 	pulumi.RegisterOutputType(GetSystemVersionsSystemVersionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterFileSystemConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClusterFileSystemConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkScanOutput{})
@@ -6767,4 +7976,6 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClustersVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterFileSystemConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput{})
 }

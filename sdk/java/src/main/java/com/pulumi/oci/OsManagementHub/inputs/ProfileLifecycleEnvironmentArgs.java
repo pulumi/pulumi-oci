@@ -31,14 +31,14 @@ public final class ProfileLifecycleEnvironmentArgs extends com.pulumi.resources.
     }
 
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<Output<String>> id() {
@@ -92,7 +92,7 @@ public final class ProfileLifecycleEnvironmentArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ProfileLifecycleEnvironmentArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

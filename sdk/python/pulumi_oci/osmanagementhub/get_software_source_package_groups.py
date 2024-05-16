@@ -63,7 +63,7 @@ class GetSoftwareSourcePackageGroupsResult:
     @pulumi.getter(name="groupTypes")
     def group_types(self) -> Optional[Sequence[str]]:
         """
-        Indicates if this is a group, category or environment.
+        Indicates if this is a group, category, or environment.
         """
         return pulumi.get(self, "group_types")
 
@@ -128,7 +128,7 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists package groups that associate with the specified software source OCID. Filter the list against a
+    Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
     variety of criteria including but not limited to its name, and package group type.
 
     ## Example Usage
@@ -145,11 +145,11 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param Sequence[str] group_types: A filter to return only package groups of the specified type.
     :param str name: The name of the entity to be queried.
     :param str name_contains: A filter to return resources that may partially match the name given.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -183,7 +183,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     """
     This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists package groups that associate with the specified software source OCID. Filter the list against a
+    Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
     variety of criteria including but not limited to its name, and package group type.
 
     ## Example Usage
@@ -200,10 +200,10 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param Sequence[str] group_types: A filter to return only package groups of the specified type.
     :param str name: The name of the entity to be queried.
     :param str name_contains: A filter to return resources that may partially match the name given.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

@@ -15,56 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ManagementStationProxy {
     /**
-     * @return (Updatable) URL that the proxy will forward to
+     * @return (Updatable) The URL the proxy will forward to.
      * 
      */
     private @Nullable String forward;
     /**
-     * @return (Updatable) List of hosts
+     * @return (Updatable) List of hosts.
      * 
      */
     private @Nullable List<String> hosts;
     /**
-     * @return (Updatable) To enable or disable the proxy (default true)
+     * @return (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     private @Nullable String port;
 
     private ManagementStationProxy() {}
     /**
-     * @return (Updatable) URL that the proxy will forward to
+     * @return (Updatable) The URL the proxy will forward to.
      * 
      */
     public Optional<String> forward() {
         return Optional.ofNullable(this.forward);
     }
     /**
-     * @return (Updatable) List of hosts
+     * @return (Updatable) List of hosts.
      * 
      */
     public List<String> hosts() {
         return this.hosts == null ? List.of() : this.hosts;
     }
     /**
-     * @return (Updatable) To enable or disable the proxy (default true)
+     * @return (Updatable) Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return (Updatable) Port that the proxy will use
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Listening port used for the proxy.
      * 
      */
     public Optional<String> port() {

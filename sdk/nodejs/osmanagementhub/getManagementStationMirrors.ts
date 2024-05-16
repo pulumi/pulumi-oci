@@ -42,7 +42,7 @@ export function getManagementStationMirrors(args: GetManagementStationMirrorsArg
  */
 export interface GetManagementStationMirrorsArgs {
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: string;
     /**
@@ -51,7 +51,7 @@ export interface GetManagementStationMirrorsArgs {
     displayNameContains?: string;
     filters?: inputs.OsManagementHub.GetManagementStationMirrorsFilter[];
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     managementStationId: string;
     /**
@@ -109,7 +109,7 @@ export function getManagementStationMirrorsOutput(args: GetManagementStationMirr
  */
 export interface GetManagementStationMirrorsOutputArgs {
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -118,7 +118,7 @@ export interface GetManagementStationMirrorsOutputArgs {
     displayNameContains?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagementStationMirrorsFilterArgs>[]>;
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     managementStationId: pulumi.Input<string>;
     /**

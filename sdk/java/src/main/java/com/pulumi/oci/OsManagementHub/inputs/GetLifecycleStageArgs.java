@@ -15,14 +15,14 @@ public final class GetLifecycleStageArgs extends com.pulumi.resources.InvokeArgs
     public static final GetLifecycleStageArgs Empty = new GetLifecycleStageArgs();
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      * 
      */
     @Import(name="lifecycleStageId", required=true)
     private Output<String> lifecycleStageId;
 
     /**
-     * @return The OCID of the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      * 
      */
     public Output<String> lifecycleStageId() {
@@ -54,7 +54,7 @@ public final class GetLifecycleStageArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage.
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetLifecycleStageArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param lifecycleStageId The OCID of the lifecycle stage.
+         * @param lifecycleStageId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * 
          * @return builder
          * 

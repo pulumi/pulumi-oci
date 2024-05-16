@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult
     {
         /// <summary>
-        /// List of module stream profile.
+        /// List of available modules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult> Items;
 

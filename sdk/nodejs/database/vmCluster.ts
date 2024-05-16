@@ -34,6 +34,10 @@ import * as utilities from "../utilities";
  *     dbNodeStorageSizeInGbs: vmClusterDbNodeStorageSizeInGbs,
  *     dbServers: vmClusterDbServers,
  *     definedTags: vmClusterDefinedTags,
+ *     fileSystemConfigurationDetails: [{
+ *         fileSystemSizeGb: vmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
+ *         mountPoint: vmClusterFileSystemConfigurationDetailsMountPoint,
+ *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -128,6 +132,10 @@ export class VmCluster extends pulumi.CustomResource {
      */
     public readonly exadataInfrastructureId!: pulumi.Output<string>;
     /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    public readonly fileSystemConfigurationDetails!: pulumi.Output<outputs.Database.VmClusterFileSystemConfigurationDetail[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -219,6 +227,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["giVersion"] = state ? state.giVersion : undefined;
             resourceInputs["isLocalBackupEnabled"] = state ? state.isLocalBackupEnabled : undefined;
@@ -269,6 +278,7 @@ export class VmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = args ? args.exadataInfrastructureId : undefined;
+            resourceInputs["fileSystemConfigurationDetails"] = args ? args.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["giVersion"] = args ? args.giVersion : undefined;
             resourceInputs["isLocalBackupEnabled"] = args ? args.isLocalBackupEnabled : undefined;
@@ -343,6 +353,10 @@ export interface VmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterFileSystemConfigurationDetail>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -452,6 +466,10 @@ export interface VmClusterArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     */
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterFileSystemConfigurationDetail>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

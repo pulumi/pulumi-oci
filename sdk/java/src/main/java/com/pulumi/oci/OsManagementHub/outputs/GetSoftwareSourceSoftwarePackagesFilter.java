@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSoftwareSourceSoftwarePackagesFilter {
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetSoftwareSourceSoftwarePackagesFilter {
 
     private GetSoftwareSourceSoftwarePackagesFilter() {}
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public String name() {

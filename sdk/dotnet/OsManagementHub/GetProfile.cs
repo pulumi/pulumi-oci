@@ -68,7 +68,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetProfileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the registration profile.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
         /// </summary>
         [Input("profileId", required: true)]
         public string ProfileId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetProfileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the registration profile.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
         /// </summary>
         [Input("profileId", required: true)]
         public Input<string> ProfileId { get; set; } = null!;
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the registration profile.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -122,25 +122,33 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Identifying information for the specified lifecycle environment.
+        /// Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+        /// </summary>
+        public readonly bool IsDefaultProfile;
+        /// <summary>
+        /// Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+        /// </summary>
+        public readonly bool IsServiceProvidedProfile;
+        /// <summary>
+        /// Provides identifying information for the specified lifecycle environment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileLifecycleEnvironmentResult> LifecycleEnvironments;
         public readonly string LifecycleStageId;
         /// <summary>
-        /// Identifying information for the specified lifecycle stage.
+        /// Provides identifying information for the specified lifecycle stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileLifecycleStageResult> LifecycleStages;
         public readonly string ManagedInstanceGroupId;
         /// <summary>
-        /// Identifying information for the specified managed instance group.
+        /// Provides identifying information for the specified managed instance group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileManagedInstanceGroupResult> ManagedInstanceGroups;
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
         /// </summary>
         public readonly string ManagementStationId;
         /// <summary>
@@ -149,9 +157,13 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly string OsFamily;
         public readonly string ProfileId;
         /// <summary>
-        /// The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+        /// The type of profile.
         /// </summary>
         public readonly string ProfileType;
+        /// <summary>
+        /// The type of instance to register.
+        /// </summary>
+        public readonly string RegistrationType;
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>
         /// The list of software sources that the registration profile will use.
@@ -166,11 +178,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the registration profile was created. An RFC3339 formatted datetime string.
+        /// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system for the instance.
         /// </summary>
         public readonly string VendorName;
 
@@ -190,6 +202,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             string id,
 
+            bool isDefaultProfile,
+
+            bool isServiceProvidedProfile,
+
             ImmutableArray<Outputs.GetProfileLifecycleEnvironmentResult> lifecycleEnvironments,
 
             string lifecycleStageId,
@@ -207,6 +223,8 @@ namespace Pulumi.Oci.OsManagementHub
             string profileId,
 
             string profileType,
+
+            string registrationType,
 
             ImmutableArray<string> softwareSourceIds,
 
@@ -227,6 +245,8 @@ namespace Pulumi.Oci.OsManagementHub
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsDefaultProfile = isDefaultProfile;
+            IsServiceProvidedProfile = isServiceProvidedProfile;
             LifecycleEnvironments = lifecycleEnvironments;
             LifecycleStageId = lifecycleStageId;
             LifecycleStages = lifecycleStages;
@@ -236,6 +256,7 @@ namespace Pulumi.Oci.OsManagementHub
             OsFamily = osFamily;
             ProfileId = profileId;
             ProfileType = profileType;
+            RegistrationType = registrationType;
             SoftwareSourceIds = softwareSourceIds;
             SoftwareSources = softwareSources;
             State = state;

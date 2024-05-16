@@ -142,7 +142,7 @@ def get_software_source_module_stream_profile(module_name: Optional[str] = None,
     """
     This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified module stream profile in a software source.
+    Returns information about the specified module stream profile in a software source.
 
     ## Example Usage
 
@@ -158,8 +158,8 @@ def get_software_source_module_stream_profile(module_name: Optional[str] = None,
 
 
     :param str module_name: The name of a module.
-    :param str profile_name: The name of the profile of the containing module stream.
-    :param str software_source_id: The software source OCID.
+    :param str profile_name: The name of the module stream profile.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     :param str stream_name: The name of the stream of the containing module.
     """
     __args__ = dict()
@@ -191,7 +191,7 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     """
     This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified module stream profile in a software source.
+    Returns information about the specified module stream profile in a software source.
 
     ## Example Usage
 
@@ -207,8 +207,8 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
 
 
     :param str module_name: The name of a module.
-    :param str profile_name: The name of the profile of the containing module stream.
-    :param str software_source_id: The software source OCID.
+    :param str profile_name: The name of the module stream profile.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     :param str stream_name: The name of the stream of the containing module.
     """
     ...

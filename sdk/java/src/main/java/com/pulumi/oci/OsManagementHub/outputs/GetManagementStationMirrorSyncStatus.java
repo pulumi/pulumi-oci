@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationMirrorSyncStatus {
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that failed to sync.
      * 
      */
     private Integer failed;
     /**
-     * @return Total of mirrors in &#39;queued&#39; state
+     * @return Total number of software sources that are queued for sync.
      * 
      */
     private Integer queued;
     /**
-     * @return Total of mirrors in &#39;synced&#39; state
+     * @return Total number of software sources that successfully synced.
      * 
      */
     private Integer synced;
     /**
-     * @return Total of mirrors in &#39;syncing&#39; state
+     * @return Total number of software sources currently syncing.
      * 
      */
     private Integer syncing;
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that have not yet been synced.
      * 
      */
     private Integer unsynced;
 
     private GetManagementStationMirrorSyncStatus() {}
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that failed to sync.
      * 
      */
     public Integer failed() {
         return this.failed;
     }
     /**
-     * @return Total of mirrors in &#39;queued&#39; state
+     * @return Total number of software sources that are queued for sync.
      * 
      */
     public Integer queued() {
         return this.queued;
     }
     /**
-     * @return Total of mirrors in &#39;synced&#39; state
+     * @return Total number of software sources that successfully synced.
      * 
      */
     public Integer synced() {
         return this.synced;
     }
     /**
-     * @return Total of mirrors in &#39;syncing&#39; state
+     * @return Total number of software sources currently syncing.
      * 
      */
     public Integer syncing() {
         return this.syncing;
     }
     /**
-     * @return Total of mirrors in &#39;failed&#39; state
+     * @return Total number of software sources that have not yet been synced.
      * 
      */
     public Integer unsynced() {

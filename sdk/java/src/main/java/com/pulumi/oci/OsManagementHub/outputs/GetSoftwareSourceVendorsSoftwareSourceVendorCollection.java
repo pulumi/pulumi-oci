@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
     /**
-     * @return List of SoftwareSourceVendor.
+     * @return List of software source vendors.
      * 
      */
     private List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items;
 
     private GetSoftwareSourceVendorsSoftwareSourceVendorCollection() {}
     /**
-     * @return List of SoftwareSourceVendor.
+     * @return List of software source vendors.
      * 
      */
     public List<GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem> items() {

@@ -22,7 +22,7 @@ class GetProfileResult:
     """
     A collection of values returned by getProfile.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_environments=None, lifecycle_stage_id=None, lifecycle_stages=None, managed_instance_group_id=None, managed_instance_groups=None, management_station_id=None, os_family=None, profile_id=None, profile_type=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, vendor_name=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_default_profile=None, is_service_provided_profile=None, lifecycle_environments=None, lifecycle_stage_id=None, lifecycle_stages=None, managed_instance_group_id=None, managed_instance_groups=None, management_station_id=None, os_family=None, profile_id=None, profile_type=None, registration_type=None, software_source_ids=None, software_sources=None, state=None, system_tags=None, time_created=None, vendor_name=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -44,6 +44,12 @@ class GetProfileResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_default_profile and not isinstance(is_default_profile, bool):
+            raise TypeError("Expected argument 'is_default_profile' to be a bool")
+        pulumi.set(__self__, "is_default_profile", is_default_profile)
+        if is_service_provided_profile and not isinstance(is_service_provided_profile, bool):
+            raise TypeError("Expected argument 'is_service_provided_profile' to be a bool")
+        pulumi.set(__self__, "is_service_provided_profile", is_service_provided_profile)
         if lifecycle_environments and not isinstance(lifecycle_environments, list):
             raise TypeError("Expected argument 'lifecycle_environments' to be a list")
         pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
@@ -71,6 +77,9 @@ class GetProfileResult:
         if profile_type and not isinstance(profile_type, str):
             raise TypeError("Expected argument 'profile_type' to be a str")
         pulumi.set(__self__, "profile_type", profile_type)
+        if registration_type and not isinstance(registration_type, str):
+            raise TypeError("Expected argument 'registration_type' to be a str")
+        pulumi.set(__self__, "registration_type", registration_type)
         if software_source_ids and not isinstance(software_source_ids, list):
             raise TypeError("Expected argument 'software_source_ids' to be a list")
         pulumi.set(__self__, "software_source_ids", software_source_ids)
@@ -102,7 +111,7 @@ class GetProfileResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy containing the registration profile.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -142,15 +151,31 @@ class GetProfileResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isDefaultProfile")
+    def is_default_profile(self) -> bool:
+        """
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+        """
+        return pulumi.get(self, "is_default_profile")
+
+    @property
+    @pulumi.getter(name="isServiceProvidedProfile")
+    def is_service_provided_profile(self) -> bool:
+        """
+        Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+        """
+        return pulumi.get(self, "is_service_provided_profile")
 
     @property
     @pulumi.getter(name="lifecycleEnvironments")
     def lifecycle_environments(self) -> Sequence['outputs.GetProfileLifecycleEnvironmentResult']:
         """
-        Identifying information for the specified lifecycle environment.
+        Provides identifying information for the specified lifecycle environment.
         """
         return pulumi.get(self, "lifecycle_environments")
 
@@ -163,7 +188,7 @@ class GetProfileResult:
     @pulumi.getter(name="lifecycleStages")
     def lifecycle_stages(self) -> Sequence['outputs.GetProfileLifecycleStageResult']:
         """
-        Identifying information for the specified lifecycle stage.
+        Provides identifying information for the specified lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_stages")
 
@@ -176,7 +201,7 @@ class GetProfileResult:
     @pulumi.getter(name="managedInstanceGroups")
     def managed_instance_groups(self) -> Sequence['outputs.GetProfileManagedInstanceGroupResult']:
         """
-        Identifying information for the specified managed instance group.
+        Provides identifying information for the specified managed instance group.
         """
         return pulumi.get(self, "managed_instance_groups")
 
@@ -184,7 +209,7 @@ class GetProfileResult:
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> str:
         """
-        The OCID of the management station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
         """
         return pulumi.get(self, "management_station_id")
 
@@ -205,9 +230,17 @@ class GetProfileResult:
     @pulumi.getter(name="profileType")
     def profile_type(self) -> str:
         """
-        The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+        The type of profile.
         """
         return pulumi.get(self, "profile_type")
+
+    @property
+    @pulumi.getter(name="registrationType")
+    def registration_type(self) -> str:
+        """
+        The type of instance to register.
+        """
+        return pulumi.get(self, "registration_type")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
@@ -242,7 +275,7 @@ class GetProfileResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the registration profile was created. An RFC3339 formatted datetime string.
+        The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -250,7 +283,7 @@ class GetProfileResult:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> str:
         """
-        The software source vendor name.
+        The vendor of the operating system for the instance.
         """
         return pulumi.get(self, "vendor_name")
 
@@ -268,6 +301,8 @@ class AwaitableGetProfileResult(GetProfileResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_default_profile=self.is_default_profile,
+            is_service_provided_profile=self.is_service_provided_profile,
             lifecycle_environments=self.lifecycle_environments,
             lifecycle_stage_id=self.lifecycle_stage_id,
             lifecycle_stages=self.lifecycle_stages,
@@ -277,6 +312,7 @@ class AwaitableGetProfileResult(GetProfileResult):
             os_family=self.os_family,
             profile_id=self.profile_id,
             profile_type=self.profile_type,
+            registration_type=self.registration_type,
             software_source_ids=self.software_source_ids,
             software_sources=self.software_sources,
             state=self.state,
@@ -302,7 +338,7 @@ def get_profile(profile_id: Optional[str] = None,
     ```
 
 
-    :param str profile_id: The OCID of the registration profile.
+    :param str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
     """
     __args__ = dict()
     __args__['profileId'] = profile_id
@@ -317,6 +353,8 @@ def get_profile(profile_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_default_profile=pulumi.get(__ret__, 'is_default_profile'),
+        is_service_provided_profile=pulumi.get(__ret__, 'is_service_provided_profile'),
         lifecycle_environments=pulumi.get(__ret__, 'lifecycle_environments'),
         lifecycle_stage_id=pulumi.get(__ret__, 'lifecycle_stage_id'),
         lifecycle_stages=pulumi.get(__ret__, 'lifecycle_stages'),
@@ -326,6 +364,7 @@ def get_profile(profile_id: Optional[str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         profile_type=pulumi.get(__ret__, 'profile_type'),
+        registration_type=pulumi.get(__ret__, 'registration_type'),
         software_source_ids=pulumi.get(__ret__, 'software_source_ids'),
         software_sources=pulumi.get(__ret__, 'software_sources'),
         state=pulumi.get(__ret__, 'state'),
@@ -352,6 +391,6 @@ def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str profile_id: The OCID of the registration profile.
+    :param str profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
     """
     ...

@@ -81,6 +81,8 @@ type LookupVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []GetVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
@@ -213,6 +215,13 @@ func (o LookupVmClusterResultOutput) DisplayName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o LookupVmClusterResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the VM cluster.
+func (o LookupVmClusterResultOutput) FileSystemConfigurationDetails() GetVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) []GetVmClusterFileSystemConfigurationDetail {
+		return v.FileSystemConfigurationDetails
+	}).(GetVmClusterFileSystemConfigurationDetailArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

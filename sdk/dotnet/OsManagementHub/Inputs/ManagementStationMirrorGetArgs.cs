@@ -13,29 +13,25 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ManagementStationMirrorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Directory for the mirroring
+        /// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
         /// </summary>
         [Input("directory", required: true)]
         public Input<string> Directory { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Port that the proxy will use
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Listening port used for the proxy.
         /// </summary>
         [Input("port", required: true)]
         public Input<string> Port { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Local path for the sslcert
+        /// (Updatable) Path to the SSL cerfificate.
         /// </summary>
         [Input("sslcert")]
         public Input<string>? Sslcert { get; set; }
 
         /// <summary>
-        /// (Updatable) Default sslport for the mirror
+        /// (Updatable) Default mirror listening port for https.
         /// </summary>
         [Input("sslport", required: true)]
         public Input<string> Sslport { get; set; } = null!;

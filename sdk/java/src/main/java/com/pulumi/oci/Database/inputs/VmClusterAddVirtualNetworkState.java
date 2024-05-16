@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDataCollectionOptionArgs;
 import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDbServerArgs;
+import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -186,6 +187,21 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
      */
     public Optional<Output<String>> exadataInfrastructureId() {
         return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     * 
+     */
+    @Import(name="fileSystemConfigurationDetails")
+    private @Nullable Output<List<VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs>> fileSystemConfigurationDetails;
+
+    /**
+     * @return Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public Optional<Output<List<VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs>>> fileSystemConfigurationDetails() {
+        return Optional.ofNullable(this.fileSystemConfigurationDetails);
     }
 
     /**
@@ -455,6 +471,7 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
+        this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
@@ -741,6 +758,37 @@ public final class VmClusterAddVirtualNetworkState extends com.pulumi.resources.
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             return exadataInfrastructureId(Output.of(exadataInfrastructureId));
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(@Nullable Output<List<VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs>> fileSystemConfigurationDetails) {
+            $.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(List<VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs> fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(Output.of(fileSystemConfigurationDetails));
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(VmClusterAddVirtualNetworkFileSystemConfigurationDetailArgs... fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
 
         /**

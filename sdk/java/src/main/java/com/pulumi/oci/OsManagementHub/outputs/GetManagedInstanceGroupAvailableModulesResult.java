@@ -29,7 +29,7 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
     private List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections;
     private String managedInstanceGroupId;
     /**
-     * @return The name of the module that is available to be enabled on the managed instance group.
+     * @return The name of the module that is available to the managed instance group.
      * 
      */
     private @Nullable String name;
@@ -60,7 +60,7 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
         return this.managedInstanceGroupId;
     }
     /**
-     * @return The name of the module that is available to be enabled on the managed instance group.
+     * @return The name of the module that is available to the managed instance group.
      * 
      */
     public Optional<String> name() {

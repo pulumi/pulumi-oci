@@ -860,6 +860,8 @@ class ListenerSslConfiguration(dict):
             suggest = "certificate_name"
         elif key == "cipherSuiteName":
             suggest = "cipher_suite_name"
+        elif key == "hasSessionResumption":
+            suggest = "has_session_resumption"
         elif key == "serverOrderPreference":
             suggest = "server_order_preference"
         elif key == "trustedCertificateAuthorityIds":
@@ -884,6 +886,7 @@ class ListenerSslConfiguration(dict):
                  certificate_ids: Optional[Sequence[str]] = None,
                  certificate_name: Optional[str] = None,
                  cipher_suite_name: Optional[str] = None,
+                 has_session_resumption: Optional[bool] = None,
                  protocols: Optional[Sequence[str]] = None,
                  server_order_preference: Optional[str] = None,
                  trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
@@ -906,6 +909,7 @@ class ListenerSslConfiguration(dict):
                *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
                
                example: `example_cipher_suite`
+        :param bool has_session_resumption: (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
         :param Sequence[str] protocols: (Updatable) A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
                
                The load balancer uses SSL protocols to establish a secure connection between a client and a server. A secure connection ensures that all data passed between the client and the server is private.
@@ -942,6 +946,8 @@ class ListenerSslConfiguration(dict):
             pulumi.set(__self__, "certificate_name", certificate_name)
         if cipher_suite_name is not None:
             pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
+        if has_session_resumption is not None:
+            pulumi.set(__self__, "has_session_resumption", has_session_resumption)
         if protocols is not None:
             pulumi.set(__self__, "protocols", protocols)
         if server_order_preference is not None:
@@ -989,6 +995,14 @@ class ListenerSslConfiguration(dict):
         example: `example_cipher_suite`
         """
         return pulumi.get(self, "cipher_suite_name")
+
+    @property
+    @pulumi.getter(name="hasSessionResumption")
+    def has_session_resumption(self) -> Optional[bool]:
+        """
+        (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+        """
+        return pulumi.get(self, "has_session_resumption")
 
     @property
     @pulumi.getter

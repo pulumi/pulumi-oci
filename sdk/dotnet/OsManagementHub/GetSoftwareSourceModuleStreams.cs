@@ -14,8 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module streams from the specified software source OCID. Filter the list against a variety of 
-        /// criteria including but not limited to its module name and (stream) name.
+        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
+        /// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
         /// 
         /// 
         /// ## Example Usage
@@ -46,8 +46,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists module streams from the specified software source OCID. Filter the list against a variety of 
-        /// criteria including but not limited to its module name and (stream) name.
+        /// Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
+        /// Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
         /// 
         /// 
         /// ## Example Usage
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public bool? IsLatest { get; set; }
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string? Name { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+        /// Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
         /// </summary>
         [Input("isLatest")]
         public Input<bool>? IsLatest { get; set; }
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The OCID of the software source that provides this module stream.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
         /// </summary>
         public readonly string SoftwareSourceId;
 

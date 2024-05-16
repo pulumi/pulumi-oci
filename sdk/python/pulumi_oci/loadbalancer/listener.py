@@ -457,6 +457,7 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
                 certificate_name=test_certificate["name"],
+                has_session_resumption=listener_ssl_configuration_has_session_resumption,
                 certificate_ids=listener_ssl_configuration_certificate_ids,
                 cipher_suite_name=listener_ssl_configuration_cipher_suite_name,
                 protocols=listener_ssl_configuration_protocols,
@@ -528,6 +529,7 @@ class Listener(pulumi.CustomResource):
             rule_set_names=[test_rule_set["name"]],
             ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
                 certificate_name=test_certificate["name"],
+                has_session_resumption=listener_ssl_configuration_has_session_resumption,
                 certificate_ids=listener_ssl_configuration_certificate_ids,
                 cipher_suite_name=listener_ssl_configuration_cipher_suite_name,
                 protocols=listener_ssl_configuration_protocols,

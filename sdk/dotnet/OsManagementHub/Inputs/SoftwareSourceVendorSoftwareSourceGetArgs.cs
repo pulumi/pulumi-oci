@@ -13,20 +13,20 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class SoftwareSourceVendorSoftwareSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) User friendly name.
+        /// (Updatable) User-friendly name.
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the resource that is immutable on creation.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("id", required: true)]
-        public Input<string> Id { get; set; } = null!;
+        [Input("id")]
+        public Input<string>? Id { get; set; }
 
         public SoftwareSourceVendorSoftwareSourceGetArgs()
         {

@@ -66,6 +66,7 @@ import javax.annotation.Nullable;
  *             .ruleSetNames(testRuleSet.name())
  *             .sslConfiguration(ListenerSslConfigurationArgs.builder()
  *                 .certificateName(testCertificate.name())
+ *                 .hasSessionResumption(listenerSslConfigurationHasSessionResumption)
  *                 .certificateIds(listenerSslConfigurationCertificateIds)
  *                 .cipherSuiteName(listenerSslConfigurationCipherSuiteName)
  *                 .protocols(listenerSslConfigurationProtocols)

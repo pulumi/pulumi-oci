@@ -23,13 +23,19 @@ class GetSoftwareSourcesResult:
     """
     A collection of values returned by getSoftwareSources.
     """
-    def __init__(__self__, arch_types=None, availabilities=None, compartment_id=None, display_name=None, display_name_contains=None, display_name_not_equal_tos=None, filters=None, id=None, os_families=None, software_source_collections=None, software_source_id=None, software_source_types=None, states=None, vendor_name=None):
+    def __init__(__self__, arch_types=None, availabilities=None, availability_anywheres=None, availability_at_ocis=None, compartment_id=None, display_name=None, display_name_contains=None, display_name_not_equal_tos=None, filters=None, id=None, is_mandatory_for_autonomous_linux=None, os_families=None, software_source_collections=None, software_source_id=None, software_source_types=None, states=None, vendor_name=None):
         if arch_types and not isinstance(arch_types, list):
             raise TypeError("Expected argument 'arch_types' to be a list")
         pulumi.set(__self__, "arch_types", arch_types)
         if availabilities and not isinstance(availabilities, list):
             raise TypeError("Expected argument 'availabilities' to be a list")
         pulumi.set(__self__, "availabilities", availabilities)
+        if availability_anywheres and not isinstance(availability_anywheres, list):
+            raise TypeError("Expected argument 'availability_anywheres' to be a list")
+        pulumi.set(__self__, "availability_anywheres", availability_anywheres)
+        if availability_at_ocis and not isinstance(availability_at_ocis, list):
+            raise TypeError("Expected argument 'availability_at_ocis' to be a list")
+        pulumi.set(__self__, "availability_at_ocis", availability_at_ocis)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +54,9 @@ class GetSoftwareSourcesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_mandatory_for_autonomous_linux and not isinstance(is_mandatory_for_autonomous_linux, bool):
+            raise TypeError("Expected argument 'is_mandatory_for_autonomous_linux' to be a bool")
+        pulumi.set(__self__, "is_mandatory_for_autonomous_linux", is_mandatory_for_autonomous_linux)
         if os_families and not isinstance(os_families, list):
             raise TypeError("Expected argument 'os_families' to be a list")
         pulumi.set(__self__, "os_families", os_families)
@@ -79,15 +88,28 @@ class GetSoftwareSourcesResult:
     @pulumi.getter
     def availabilities(self) -> Optional[Sequence[str]]:
         """
-        Possible availabilities of a software source.
+        Availability of the software source (for non-OCI environments).
         """
         return pulumi.get(self, "availabilities")
+
+    @property
+    @pulumi.getter(name="availabilityAnywheres")
+    def availability_anywheres(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "availability_anywheres")
+
+    @property
+    @pulumi.getter(name="availabilityAtOcis")
+    def availability_at_ocis(self) -> Optional[Sequence[str]]:
+        """
+        Availability of the software source (for Oracle Cloud Infrastructure environments).
+        """
+        return pulumi.get(self, "availability_at_ocis")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the tenancy containing the software source.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -95,7 +117,7 @@ class GetSoftwareSourcesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        User friendly name.
+        User-friendly name.
         """
         return pulumi.get(self, "display_name")
 
@@ -123,6 +145,14 @@ class GetSoftwareSourcesResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isMandatoryForAutonomousLinux")
+    def is_mandatory_for_autonomous_linux(self) -> Optional[bool]:
+        """
+        Indicates whether the software source is required for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "is_mandatory_for_autonomous_linux")
+
+    @property
     @pulumi.getter(name="osFamilies")
     def os_families(self) -> Optional[Sequence[str]]:
         """
@@ -147,7 +177,7 @@ class GetSoftwareSourcesResult:
     @pulumi.getter(name="softwareSourceTypes")
     def software_source_types(self) -> Optional[Sequence[str]]:
         """
-        Type of the software source.
+        Type of software source.
         """
         return pulumi.get(self, "software_source_types")
 
@@ -176,12 +206,15 @@ class AwaitableGetSoftwareSourcesResult(GetSoftwareSourcesResult):
         return GetSoftwareSourcesResult(
             arch_types=self.arch_types,
             availabilities=self.availabilities,
+            availability_anywheres=self.availability_anywheres,
+            availability_at_ocis=self.availability_at_ocis,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             display_name_contains=self.display_name_contains,
             display_name_not_equal_tos=self.display_name_not_equal_tos,
             filters=self.filters,
             id=self.id,
+            is_mandatory_for_autonomous_linux=self.is_mandatory_for_autonomous_linux,
             os_families=self.os_families,
             software_source_collections=self.software_source_collections,
             software_source_id=self.software_source_id,
@@ -192,11 +225,14 @@ class AwaitableGetSoftwareSourcesResult(GetSoftwareSourcesResult):
 
 def get_software_sources(arch_types: Optional[Sequence[str]] = None,
                          availabilities: Optional[Sequence[str]] = None,
+                         availability_anywheres: Optional[Sequence[str]] = None,
+                         availability_at_ocis: Optional[Sequence[str]] = None,
                          compartment_id: Optional[str] = None,
                          display_name: Optional[str] = None,
                          display_name_contains: Optional[str] = None,
                          display_name_not_equal_tos: Optional[Sequence[str]] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetSoftwareSourcesFilterArgs']]] = None,
+                         is_mandatory_for_autonomous_linux: Optional[bool] = None,
                          os_families: Optional[Sequence[str]] = None,
                          software_source_id: Optional[str] = None,
                          software_source_types: Optional[Sequence[str]] = None,
@@ -206,7 +242,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
     """
     This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+    Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
     variety of criteria including but not limited to its name, status, architecture, and OS family.
 
     ## Example Usage
@@ -217,10 +253,13 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
 
     test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
         availabilities=software_source_availability,
+        availability_anywheres=software_source_availability_anywhere,
+        availability_at_ocis=software_source_availability_at_oci,
         compartment_id=compartment_id,
         display_name=software_source_display_name,
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
+        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,
@@ -230,25 +269,31 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source for a tenant.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
-    :param Sequence[str] os_families: A filter to return only instances whose OS family type matches the given OS family.
-    :param str software_source_id: The OCID for the software source.
+    :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is mandatory for the Autonomous Linux service.
+    :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
     :param Sequence[str] software_source_types: The type of the software source.
-    :param Sequence[str] states: A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    :param Sequence[str] states: A filter to return only software sources whose state matches the given state.
+    :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
     __args__ = dict()
     __args__['archTypes'] = arch_types
     __args__['availabilities'] = availabilities
+    __args__['availabilityAnywheres'] = availability_anywheres
+    __args__['availabilityAtOcis'] = availability_at_ocis
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['displayNameContains'] = display_name_contains
     __args__['displayNameNotEqualTos'] = display_name_not_equal_tos
     __args__['filters'] = filters
+    __args__['isMandatoryForAutonomousLinux'] = is_mandatory_for_autonomous_linux
     __args__['osFamilies'] = os_families
     __args__['softwareSourceId'] = software_source_id
     __args__['softwareSourceTypes'] = software_source_types
@@ -260,12 +305,15 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
     return AwaitableGetSoftwareSourcesResult(
         arch_types=pulumi.get(__ret__, 'arch_types'),
         availabilities=pulumi.get(__ret__, 'availabilities'),
+        availability_anywheres=pulumi.get(__ret__, 'availability_anywheres'),
+        availability_at_ocis=pulumi.get(__ret__, 'availability_at_ocis'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         display_name_contains=pulumi.get(__ret__, 'display_name_contains'),
         display_name_not_equal_tos=pulumi.get(__ret__, 'display_name_not_equal_tos'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_mandatory_for_autonomous_linux=pulumi.get(__ret__, 'is_mandatory_for_autonomous_linux'),
         os_families=pulumi.get(__ret__, 'os_families'),
         software_source_collections=pulumi.get(__ret__, 'software_source_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
@@ -277,11 +325,14 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
 @_utilities.lift_output_func(get_software_sources)
 def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 availabilities: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                availability_anywheres: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                availability_at_ocis: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                 display_name_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSoftwareSourcesFilterArgs']]]]] = None,
+                                is_mandatory_for_autonomous_linux: Optional[pulumi.Input[Optional[bool]]] = None,
                                 os_families: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 software_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 software_source_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -291,7 +342,7 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     """
     This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+    Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
     variety of criteria including but not limited to its name, status, architecture, and OS family.
 
     ## Example Usage
@@ -302,10 +353,13 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
 
     test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
         availabilities=software_source_availability,
+        availability_anywheres=software_source_availability_anywhere,
+        availability_at_ocis=software_source_availability_at_oci,
         compartment_id=compartment_id,
         display_name=software_source_display_name,
         display_name_contains=software_source_display_name_contains,
         display_name_not_equal_tos=software_source_display_name_not_equal_to,
+        is_mandatory_for_autonomous_linux=software_source_is_mandatory_for_autonomous_linux,
         os_families=software_source_os_family,
         software_source_id=test_software_source["id"],
         software_source_types=software_source_software_source_type,
@@ -315,15 +369,18 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source for a tenant.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+    :param Sequence[str] availabilities: The availabilities of the software source in a non-OCI environment for a tenancy.
+    :param Sequence[str] availability_anywheres: The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+    :param Sequence[str] availability_at_ocis: The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+    :param str display_name: A filter to return resources that match the given user-friendly name.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
-    :param Sequence[str] os_families: A filter to return only instances whose OS family type matches the given OS family.
-    :param str software_source_id: The OCID for the software source.
+    :param bool is_mandatory_for_autonomous_linux: Indicates whether the software source is mandatory for the Autonomous Linux service.
+    :param Sequence[str] os_families: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
     :param Sequence[str] software_source_types: The type of the software source.
-    :param Sequence[str] states: A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    :param Sequence[str] states: A filter to return only software sources whose state matches the given state.
+    :param str vendor_name: A filter to return only resources that match the given vendor name.
     """
     ...

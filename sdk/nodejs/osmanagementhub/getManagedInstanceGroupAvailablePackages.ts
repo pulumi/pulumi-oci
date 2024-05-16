@@ -45,7 +45,7 @@ export function getManagedInstanceGroupAvailablePackages(args: GetManagedInstanc
  */
 export interface GetManagedInstanceGroupAvailablePackagesArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
@@ -58,11 +58,11 @@ export interface GetManagedInstanceGroupAvailablePackagesArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesFilter[];
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
     isLatest?: boolean;
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: string;
 }
@@ -83,7 +83,7 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
      */
     readonly id: string;
     /**
-     * Flag to return only latest package versions.
+     * Indicates whether this is the latest package version.
      */
     readonly isLatest?: boolean;
     /**
@@ -122,7 +122,7 @@ export function getManagedInstanceGroupAvailablePackagesOutput(args: GetManagedI
  */
 export interface GetManagedInstanceGroupAvailablePackagesOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -135,11 +135,11 @@ export interface GetManagedInstanceGroupAvailablePackagesOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailablePackagesFilterArgs>[]>;
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
     isLatest?: pulumi.Input<boolean>;
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: pulumi.Input<string>;
 }

@@ -33,6 +33,16 @@ public final class GetEmailDomainResult {
      * 
      */
     private String description;
+    /**
+     * @return Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    private String domainVerificationId;
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    private String domainVerificationStatus;
     private String emailDomainId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -98,6 +108,20 @@ public final class GetEmailDomainResult {
      */
     public String description() {
         return this.description;
+    }
+    /**
+     * @return Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    public String domainVerificationId() {
+        return this.domainVerificationId;
+    }
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    public String domainVerificationStatus() {
+        return this.domainVerificationStatus;
     }
     public String emailDomainId() {
         return this.emailDomainId;
@@ -165,6 +189,8 @@ public final class GetEmailDomainResult {
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String description;
+        private String domainVerificationId;
+        private String domainVerificationStatus;
         private String emailDomainId;
         private Map<String,Object> freeformTags;
         private String id;
@@ -180,6 +206,8 @@ public final class GetEmailDomainResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.domainVerificationId = defaults.domainVerificationId;
+    	      this.domainVerificationStatus = defaults.domainVerificationStatus;
     	      this.emailDomainId = defaults.emailDomainId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -220,6 +248,22 @@ public final class GetEmailDomainResult {
               throw new MissingRequiredPropertyException("GetEmailDomainResult", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainVerificationId(String domainVerificationId) {
+            if (domainVerificationId == null) {
+              throw new MissingRequiredPropertyException("GetEmailDomainResult", "domainVerificationId");
+            }
+            this.domainVerificationId = domainVerificationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainVerificationStatus(String domainVerificationStatus) {
+            if (domainVerificationStatus == null) {
+              throw new MissingRequiredPropertyException("GetEmailDomainResult", "domainVerificationStatus");
+            }
+            this.domainVerificationStatus = domainVerificationStatus;
             return this;
         }
         @CustomType.Setter
@@ -292,6 +336,8 @@ public final class GetEmailDomainResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.domainVerificationId = domainVerificationId;
+            _resultValue.domainVerificationStatus = domainVerificationStatus;
             _resultValue.emailDomainId = emailDomainId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

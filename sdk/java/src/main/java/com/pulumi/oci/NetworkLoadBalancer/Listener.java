@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.NetworkLoadBalancer.ListenerArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.ListenerState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
@@ -51,6 +52,7 @@ import javax.annotation.Nullable;
  *             .port(listenerPort)
  *             .protocol(listenerProtocol)
  *             .ipVersion(listenerIpVersion)
+ *             .isPpv2enabled(listenerIsPpv2enabled)
  *             .build());
  * 
  *     }
@@ -97,6 +99,20 @@ public class Listener extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
+    }
+    /**
+     * (Updatable) Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    @Export(name="isPpv2enabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isPpv2enabled;
+
+    /**
+     * @return (Updatable) Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    public Output<Boolean> isPpv2enabled() {
+        return this.isPpv2enabled;
     }
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

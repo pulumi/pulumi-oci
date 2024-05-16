@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetListenersListenerCollectionItem {
      * 
      */
     private String ipVersion;
+    /**
+     * @return Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    private Boolean isPpv2enabled;
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
@@ -60,6 +66,13 @@ public final class GetListenersListenerCollectionItem {
      */
     public String ipVersion() {
         return this.ipVersion;
+    }
+    /**
+     * @return Property to enable/disable PPv2 feature for this listener.
+     * 
+     */
+    public Boolean isPpv2enabled() {
+        return this.isPpv2enabled;
     }
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
@@ -102,6 +115,7 @@ public final class GetListenersListenerCollectionItem {
         private String defaultBackendSetName;
         private String id;
         private String ipVersion;
+        private Boolean isPpv2enabled;
         private String name;
         private String networkLoadBalancerId;
         private Integer port;
@@ -112,6 +126,7 @@ public final class GetListenersListenerCollectionItem {
     	      this.defaultBackendSetName = defaults.defaultBackendSetName;
     	      this.id = defaults.id;
     	      this.ipVersion = defaults.ipVersion;
+    	      this.isPpv2enabled = defaults.isPpv2enabled;
     	      this.name = defaults.name;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
     	      this.port = defaults.port;
@@ -140,6 +155,14 @@ public final class GetListenersListenerCollectionItem {
               throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "ipVersion");
             }
             this.ipVersion = ipVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPpv2enabled(Boolean isPpv2enabled) {
+            if (isPpv2enabled == null) {
+              throw new MissingRequiredPropertyException("GetListenersListenerCollectionItem", "isPpv2enabled");
+            }
+            this.isPpv2enabled = isPpv2enabled;
             return this;
         }
         @CustomType.Setter
@@ -179,6 +202,7 @@ public final class GetListenersListenerCollectionItem {
             _resultValue.defaultBackendSetName = defaultBackendSetName;
             _resultValue.id = id;
             _resultValue.ipVersion = ipVersion;
+            _resultValue.isPpv2enabled = isPpv2enabled;
             _resultValue.name = name;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;
             _resultValue.port = port;

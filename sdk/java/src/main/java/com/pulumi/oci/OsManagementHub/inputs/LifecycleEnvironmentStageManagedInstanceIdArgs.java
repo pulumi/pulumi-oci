@@ -16,14 +16,14 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
     public static final LifecycleEnvironmentStageManagedInstanceIdArgs Empty = new LifecycleEnvironmentStageManagedInstanceIdArgs();
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -31,14 +31,14 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
     }
 
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<Output<String>> id() {
@@ -71,7 +71,7 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LifecycleEnvironmentStageManagedInstanceIdArgs extends com.pu
         }
 
         /**
-         * @param id The OCID of the software source.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 

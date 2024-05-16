@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Email
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         Description = emailDomainDescription,
+    ///         DomainVerificationId = testDomainVerification.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -76,6 +77,18 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        /// </summary>
+        [Output("domainVerificationId")]
+        public Output<string> DomainVerificationId { get; private set; } = null!;
+
+        /// <summary>
+        /// The current domain verification status.
+        /// </summary>
+        [Output("domainVerificationStatus")]
+        public Output<string> DomainVerificationStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -187,6 +200,12 @@ namespace Pulumi.Oci.Email
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        /// </summary>
+        [Input("domainVerificationId")]
+        public Input<string>? DomainVerificationId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -246,6 +265,18 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        /// </summary>
+        [Input("domainVerificationId")]
+        public Input<string>? DomainVerificationId { get; set; }
+
+        /// <summary>
+        /// The current domain verification status.
+        /// </summary>
+        [Input("domainVerificationStatus")]
+        public Input<string>? DomainVerificationStatus { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;

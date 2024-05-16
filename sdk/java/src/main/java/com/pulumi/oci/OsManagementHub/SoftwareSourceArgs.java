@@ -23,14 +23,14 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     public static final SoftwareSourceArgs Empty = new SoftwareSourceArgs();
 
     /**
-     * (Updatable) The OCID of the tenancy containing the software source.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the tenancy containing the software source.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     public Output<String> compartmentId() {
@@ -38,14 +38,14 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     @Import(name="customSoftwareSourceFilter")
     private @Nullable Output<SoftwareSourceCustomSoftwareSourceFilterArgs> customSoftwareSourceFilter;
 
     /**
-     * @return (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+     * @return (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
      * 
      */
     public Optional<Output<SoftwareSourceCustomSoftwareSourceFilterArgs>> customSoftwareSourceFilter() {
@@ -68,14 +68,14 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Information specified by the user about the software source.
+     * (Updatable) User-specified description for the software source. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Information specified by the user about the software source.
+     * @return (Updatable) User-specified description for the software source. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -83,18 +83,18 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) User friendly name.
+     * (Updatable) User-friendly name.
      * 
      */
-    @Import(name="displayName", required=true)
-    private Output<String> displayName;
+    @Import(name="displayName")
+    private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) User friendly name.
+     * @return (Updatable) User-friendly name.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Optional<Output<String>> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     /**
@@ -113,14 +113,29 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    @Import(name="isAutoResolveDependencies")
+    private @Nullable Output<Boolean> isAutoResolveDependencies;
+
+    /**
+     * @return (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoResolveDependencies() {
+        return Optional.ofNullable(this.isAutoResolveDependencies);
+    }
+
+    /**
+     * (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     @Import(name="isAutomaticallyUpdated")
     private @Nullable Output<Boolean> isAutomaticallyUpdated;
 
     /**
-     * @return (Updatable) Indicates whether service should automatically update the custom software source for the user.
+     * @return (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * 
      */
     public Optional<Output<Boolean>> isAutomaticallyUpdated() {
@@ -128,14 +143,59 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Type of the software source.
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    @Import(name="isCreatedFromPackageList")
+    private @Nullable Output<Boolean> isCreatedFromPackageList;
+
+    /**
+     * @return Indicates whether the service should create the software source from a list of packages provided by the user.
+     * 
+     */
+    public Optional<Output<Boolean>> isCreatedFromPackageList() {
+        return Optional.ofNullable(this.isCreatedFromPackageList);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     * 
+     */
+    @Import(name="originSoftwareSourceId")
+    private @Nullable Output<String> originSoftwareSourceId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+     * 
+     */
+    public Optional<Output<String>> originSoftwareSourceId() {
+        return Optional.ofNullable(this.originSoftwareSourceId);
+    }
+
+    /**
+     * A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     * 
+     */
+    @Import(name="packages")
+    private @Nullable Output<List<String>> packages;
+
+    /**
+     * @return A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     * 
+     */
+    public Optional<Output<List<String>>> packages() {
+        return Optional.ofNullable(this.packages);
+    }
+
+    /**
+     * (Updatable) Type of software source.
      * 
      */
     @Import(name="softwareSourceType", required=true)
     private Output<String> softwareSourceType;
 
     /**
-     * @return (Updatable) Type of the software source.
+     * @return (Updatable) Type of software source.
      * 
      */
     public Output<String> softwareSourceType() {
@@ -161,15 +221,15 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
      * (Updatable) List of vendor software sources.
      * 
      */
-    @Import(name="vendorSoftwareSources", required=true)
-    private Output<List<SoftwareSourceVendorSoftwareSourceArgs>> vendorSoftwareSources;
+    @Import(name="vendorSoftwareSources")
+    private @Nullable Output<List<SoftwareSourceVendorSoftwareSourceArgs>> vendorSoftwareSources;
 
     /**
      * @return (Updatable) List of vendor software sources.
      * 
      */
-    public Output<List<SoftwareSourceVendorSoftwareSourceArgs>> vendorSoftwareSources() {
-        return this.vendorSoftwareSources;
+    public Optional<Output<List<SoftwareSourceVendorSoftwareSourceArgs>>> vendorSoftwareSources() {
+        return Optional.ofNullable(this.vendorSoftwareSources);
     }
 
     private SoftwareSourceArgs() {}
@@ -181,7 +241,11 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isAutoResolveDependencies = $.isAutoResolveDependencies;
         this.isAutomaticallyUpdated = $.isAutomaticallyUpdated;
+        this.isCreatedFromPackageList = $.isCreatedFromPackageList;
+        this.originSoftwareSourceId = $.originSoftwareSourceId;
+        this.packages = $.packages;
         this.softwareSourceType = $.softwareSourceType;
         this.softwareSourceVersion = $.softwareSourceVersion;
         this.vendorSoftwareSources = $.vendorSoftwareSources;
@@ -206,7 +270,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the tenancy containing the software source.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
          * 
          * @return builder
          * 
@@ -217,7 +281,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the tenancy containing the software source.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
          * 
          * @return builder
          * 
@@ -227,7 +291,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param customSoftwareSourceFilter (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+         * @param customSoftwareSourceFilter (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
          * 
          * @return builder
          * 
@@ -238,7 +302,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param customSoftwareSourceFilter (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+         * @param customSoftwareSourceFilter (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
          * 
          * @return builder
          * 
@@ -269,7 +333,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Information specified by the user about the software source.
+         * @param description (Updatable) User-specified description for the software source. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -280,7 +344,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Information specified by the user about the software source.
+         * @param description (Updatable) User-specified description for the software source. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -290,18 +354,18 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) User friendly name.
+         * @param displayName (Updatable) User-friendly name.
          * 
          * @return builder
          * 
          */
-        public Builder displayName(Output<String> displayName) {
+        public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
         /**
-         * @param displayName (Updatable) User friendly name.
+         * @param displayName (Updatable) User-friendly name.
          * 
          * @return builder
          * 
@@ -332,7 +396,28 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isAutomaticallyUpdated (Updatable) Indicates whether service should automatically update the custom software source for the user.
+         * @param isAutoResolveDependencies (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoResolveDependencies(@Nullable Output<Boolean> isAutoResolveDependencies) {
+            $.isAutoResolveDependencies = isAutoResolveDependencies;
+            return this;
+        }
+
+        /**
+         * @param isAutoResolveDependencies (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            return isAutoResolveDependencies(Output.of(isAutoResolveDependencies));
+        }
+
+        /**
+         * @param isAutomaticallyUpdated (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          * 
          * @return builder
          * 
@@ -343,7 +428,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isAutomaticallyUpdated (Updatable) Indicates whether service should automatically update the custom software source for the user.
+         * @param isAutomaticallyUpdated (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          * 
          * @return builder
          * 
@@ -353,7 +438,80 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param softwareSourceType (Updatable) Type of the software source.
+         * @param isCreatedFromPackageList Indicates whether the service should create the software source from a list of packages provided by the user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCreatedFromPackageList(@Nullable Output<Boolean> isCreatedFromPackageList) {
+            $.isCreatedFromPackageList = isCreatedFromPackageList;
+            return this;
+        }
+
+        /**
+         * @param isCreatedFromPackageList Indicates whether the service should create the software source from a list of packages provided by the user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            return isCreatedFromPackageList(Output.of(isCreatedFromPackageList));
+        }
+
+        /**
+         * @param originSoftwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originSoftwareSourceId(@Nullable Output<String> originSoftwareSourceId) {
+            $.originSoftwareSourceId = originSoftwareSourceId;
+            return this;
+        }
+
+        /**
+         * @param originSoftwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originSoftwareSourceId(String originSoftwareSourceId) {
+            return originSoftwareSourceId(Output.of(originSoftwareSourceId));
+        }
+
+        /**
+         * @param packages A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packages(@Nullable Output<List<String>> packages) {
+            $.packages = packages;
+            return this;
+        }
+
+        /**
+         * @param packages A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packages(List<String> packages) {
+            return packages(Output.of(packages));
+        }
+
+        /**
+         * @param packages A property used for compatibility only. It doesn&#39;t provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder packages(String... packages) {
+            return packages(List.of(packages));
+        }
+
+        /**
+         * @param softwareSourceType (Updatable) Type of software source.
          * 
          * @return builder
          * 
@@ -364,7 +522,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param softwareSourceType (Updatable) Type of the software source.
+         * @param softwareSourceType (Updatable) Type of software source.
          * 
          * @return builder
          * 
@@ -400,7 +558,7 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder vendorSoftwareSources(Output<List<SoftwareSourceVendorSoftwareSourceArgs>> vendorSoftwareSources) {
+        public Builder vendorSoftwareSources(@Nullable Output<List<SoftwareSourceVendorSoftwareSourceArgs>> vendorSoftwareSources) {
             $.vendorSoftwareSources = vendorSoftwareSources;
             return this;
         }
@@ -429,14 +587,8 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("SoftwareSourceArgs", "compartmentId");
             }
-            if ($.displayName == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "displayName");
-            }
             if ($.softwareSourceType == null) {
                 throw new MissingRequiredPropertyException("SoftwareSourceArgs", "softwareSourceType");
-            }
-            if ($.vendorSoftwareSources == null) {
-                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "vendorSoftwareSources");
             }
             return $;
         }

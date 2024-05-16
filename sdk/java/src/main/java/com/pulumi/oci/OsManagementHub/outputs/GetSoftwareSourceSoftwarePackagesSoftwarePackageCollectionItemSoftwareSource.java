@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -16,15 +17,20 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
      */
     private String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    private Boolean isMandatoryForAutonomousLinux;
     /**
      * @return Type of the software source.
      * 
@@ -40,18 +46,25 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    public Boolean isMandatoryForAutonomousLinux() {
+        return this.isMandatoryForAutonomousLinux;
     }
     /**
      * @return Type of the software source.
@@ -73,6 +86,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         private String description;
         private String displayName;
         private String id;
+        private Boolean isMandatoryForAutonomousLinux;
         private String softwareSourceType;
         public Builder() {}
         public Builder(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource defaults) {
@@ -80,6 +94,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.softwareSourceType = defaults.softwareSourceType;
         }
 
@@ -108,6 +123,14 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             return this;
         }
         @CustomType.Setter
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            if (isMandatoryForAutonomousLinux == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "isMandatoryForAutonomousLinux");
+            }
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceType(String softwareSourceType) {
             if (softwareSourceType == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "softwareSourceType");
@@ -120,6 +143,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.softwareSourceType = softwareSourceType;
             return _resultValue;
         }

@@ -72,7 +72,7 @@ type Dkim struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
 	DnsSubdomainName pulumi.StringOutput `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringOutput `pulumi:"emailDomainId"`
@@ -142,7 +142,7 @@ type dkimState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
 	DnsSubdomainName *string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId *string `pulumi:"emailDomainId"`
@@ -180,7 +180,7 @@ type DkimState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
 	DnsSubdomainName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringPtrInput
@@ -361,7 +361,7 @@ func (o DkimOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
 func (o DkimOutput) DnsSubdomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.DnsSubdomainName }).(pulumi.StringOutput)
 }

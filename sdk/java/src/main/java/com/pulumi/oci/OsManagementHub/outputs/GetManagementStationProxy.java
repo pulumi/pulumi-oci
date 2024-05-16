@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationProxy {
     /**
-     * @return URL that the proxy will forward to
+     * @return The URL the proxy will forward to.
      * 
      */
     private String forward;
     /**
-     * @return List of hosts
+     * @return List of hosts.
      * 
      */
     private List<String> hosts;
     /**
-     * @return To enable or disable the proxy (default true)
+     * @return Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return Port that the proxy will use
+     * @return Listening port used for the proxy.
      * 
      */
     private String port;
 
     private GetManagementStationProxy() {}
     /**
-     * @return URL that the proxy will forward to
+     * @return The URL the proxy will forward to.
      * 
      */
     public String forward() {
         return this.forward;
     }
     /**
-     * @return List of hosts
+     * @return List of hosts.
      * 
      */
     public List<String> hosts() {
         return this.hosts;
     }
     /**
-     * @return To enable or disable the proxy (default true)
+     * @return Indicates if the proxy should be enabled or disabled. Default is enabled.
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return Port that the proxy will use
+     * @return Listening port used for the proxy.
      * 
      */
     public String port() {

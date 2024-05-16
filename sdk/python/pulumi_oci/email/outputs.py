@@ -17,6 +17,9 @@ __all__ = [
     'GetEmailDomainsEmailDomainCollectionResult',
     'GetEmailDomainsEmailDomainCollectionItemResult',
     'GetEmailDomainsFilterResult',
+    'GetEmailReturnPathsEmailReturnPathCollectionResult',
+    'GetEmailReturnPathsEmailReturnPathCollectionItemResult',
+    'GetEmailReturnPathsFilterResult',
     'GetSendersFilterResult',
     'GetSendersSenderResult',
     'GetSuppressionsFilterResult',
@@ -259,6 +262,8 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
+                 domain_verification_id: str,
+                 domain_verification_status: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_spf: bool,
@@ -271,6 +276,8 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         :param str compartment_id: The OCID for the compartment.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of an email domain.
+        :param str domain_verification_id: Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        :param str domain_verification_status: The current domain verification status.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: A filter to only return resources that match the given id exactly.
         :param bool is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -283,6 +290,8 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "domain_verification_id", domain_verification_id)
+        pulumi.set(__self__, "domain_verification_status", domain_verification_status)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_spf", is_spf)
@@ -322,6 +331,22 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         The description of an email domain.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="domainVerificationId")
+    def domain_verification_id(self) -> str:
+        """
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+        """
+        return pulumi.get(self, "domain_verification_id")
+
+    @property
+    @pulumi.getter(name="domainVerificationStatus")
+    def domain_verification_status(self) -> str:
+        """
+        The current domain verification status.
+        """
+        return pulumi.get(self, "domain_verification_status")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -382,6 +407,212 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
 
 @pulumi.output_type
 class GetEmailDomainsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to only return resources that match the given name exactly.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetEmailReturnPathsEmailReturnPathCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetEmailReturnPathsEmailReturnPathCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetEmailReturnPathsEmailReturnPathCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cname_record_value: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 dns_subdomain_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 name: str,
+                 parent_resource_id: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str cname_record_value: The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+        :param str compartment_id: The OCID for the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the email return path. Avoid entering confidential information.
+        :param str dns_subdomain_name: The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: A filter to only return resources that match the given id exactly.
+        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+        :param str name: A filter to only return resources that match the given name exactly.
+        :param str parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+        :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param str time_updated: The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+        """
+        pulumi.set(__self__, "cname_record_value", cname_record_value)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "dns_subdomain_name", dns_subdomain_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parent_resource_id", parent_resource_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="cnameRecordValue")
+    def cname_record_value(self) -> str:
+        """
+        The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
+        """
+        return pulumi.get(self, "cname_record_value")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the email return path. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="dnsSubdomainName")
+    def dns_subdomain_name(self) -> str:
+        """
+        The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
+        """
+        return pulumi.get(self, "dns_subdomain_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        A filter to only return resources that match the given id exactly.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to only return resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="parentResourceId")
+    def parent_resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+        """
+        return pulumi.get(self, "parent_resource_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetEmailReturnPathsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

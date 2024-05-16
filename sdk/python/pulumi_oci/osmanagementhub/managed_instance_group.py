@@ -20,49 +20,62 @@ class ManagedInstanceGroupArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  os_family: pulumi.Input[str],
-                 software_source_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
                  vendor_name: pulumi.Input[str],
+                 autonomous_settings: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 location: Optional[pulumi.Input[str]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 notification_topic_id: Optional[pulumi.Input[str]] = None,
+                 software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroup resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source OCIDs available to the managed instances in the managed instance group.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
+        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] os_family: The operating system type of the managed instances that will be attached to this group.
+        :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
+        :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
+        :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         """
         pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
         pulumi.set(__self__, "vendor_name", vendor_name)
+        if autonomous_settings is not None:
+            pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if managed_instance_ids is not None:
             pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if notification_topic_id is not None:
+            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
 
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Input[str]:
         """
-        The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+        The CPU architecture type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "arch_type")
 
@@ -74,7 +87,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the tenancy containing the managed instance group.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -86,7 +99,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -98,7 +111,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Input[str]:
         """
-        The operating system type of the managed instance(s) that this managed instance group will contain.
+        The operating system type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "os_family")
 
@@ -107,22 +120,10 @@ class ManagedInstanceGroupArgs:
         pulumi.set(self, "os_family", value)
 
     @property
-    @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        The list of software source OCIDs available to the managed instances in the managed instance group.
-        """
-        return pulumi.get(self, "software_source_ids")
-
-    @software_source_ids.setter
-    def software_source_ids(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        pulumi.set(self, "software_source_ids", value)
-
-    @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[str]:
         """
-        The software source vendor name.
+        The vendor of the operating system that will be used by the managed instances in the group. 
 
 
         ** IMPORTANT **
@@ -133,6 +134,18 @@ class ManagedInstanceGroupArgs:
     @vendor_name.setter
     def vendor_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "vendor_name", value)
+
+    @property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]:
+        """
+        (Updatable) Updatable settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, value: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]):
+        pulumi.set(self, "autonomous_settings", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -150,7 +163,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details about the managed instance group.
+        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -171,10 +184,22 @@ class ManagedInstanceGroupArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of managed instance OCIDs to be added to the managed instance group.
+        The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
         """
         return pulumi.get(self, "managed_instance_ids")
 
@@ -182,18 +207,46 @@ class ManagedInstanceGroupArgs:
     def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "managed_instance_ids", value)
 
+    @property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notification_topic_id", value)
+
+    @property
+    @pulumi.getter(name="softwareSourceIds")
+    def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
+        """
+        return pulumi.get(self, "software_source_ids")
+
+    @software_source_ids.setter
+    def software_source_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "software_source_ids", value)
+
 
 @pulumi.input_type
 class _ManagedInstanceGroupState:
     def __init__(__self__, *,
                  arch_type: Optional[pulumi.Input[str]] = None,
+                 autonomous_settings: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_managed_by_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
                  managed_instance_count: Optional[pulumi.Input[int]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 notification_topic_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  pending_job_count: Optional[pulumi.Input[int]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -205,23 +258,27 @@ class _ManagedInstanceGroupState:
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroup resources.
-        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the managed instance group.
+        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
+        :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] managed_instance_count: The number of Managed Instances in the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) that this managed instance group will contain.
+        :param pulumi.Input[bool] is_managed_by_autonomous_linux: Indicates whether the Autonomous Linux service manages the group.
+        :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        :param pulumi.Input[int] managed_instance_count: The number of managed instances in the group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
+        :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param pulumi.Input[str] os_family: The operating system type of the managed instances that will be attached to this group.
         :param pulumi.Input[int] pending_job_count: The number of scheduled jobs pending against the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source OCIDs available to the managed instances in the managed instance group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupSoftwareSourceArgs']]] software_sources: The list of software sources that the managed instance group will use.
         :param pulumi.Input[str] state: The current state of the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the managed instance group was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
+        :param pulumi.Input[str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
                
                
                ** IMPORTANT **
@@ -229,6 +286,8 @@ class _ManagedInstanceGroupState:
         """
         if arch_type is not None:
             pulumi.set(__self__, "arch_type", arch_type)
+        if autonomous_settings is not None:
+            pulumi.set(__self__, "autonomous_settings", autonomous_settings)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -239,10 +298,16 @@ class _ManagedInstanceGroupState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_managed_by_autonomous_linux is not None:
+            pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if managed_instance_count is not None:
             pulumi.set(__self__, "managed_instance_count", managed_instance_count)
         if managed_instance_ids is not None:
             pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if notification_topic_id is not None:
+            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         if os_family is not None:
             pulumi.set(__self__, "os_family", os_family)
         if pending_job_count is not None:
@@ -266,7 +331,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+        The CPU architecture type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "arch_type")
 
@@ -275,10 +340,22 @@ class _ManagedInstanceGroupState:
         pulumi.set(self, "arch_type", value)
 
     @property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]:
+        """
+        (Updatable) Updatable settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, value: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']]):
+        pulumi.set(self, "autonomous_settings", value)
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the tenancy containing the managed instance group.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -302,7 +379,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Details about the managed instance group.
+        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -314,7 +391,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -335,10 +412,34 @@ class _ManagedInstanceGroupState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the Autonomous Linux service manages the group.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_managed_by_autonomous_linux", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[str]]:
+        """
+        The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "location", value)
+
+    @property
     @pulumi.getter(name="managedInstanceCount")
     def managed_instance_count(self) -> Optional[pulumi.Input[int]]:
         """
-        The number of Managed Instances in the managed instance group.
+        The number of managed instances in the group.
         """
         return pulumi.get(self, "managed_instance_count")
 
@@ -350,7 +451,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of managed instance OCIDs to be added to the managed instance group.
+        The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
         """
         return pulumi.get(self, "managed_instance_ids")
 
@@ -359,10 +460,22 @@ class _ManagedInstanceGroupState:
         pulumi.set(self, "managed_instance_ids", value)
 
     @property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notification_topic_id", value)
+
+    @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The operating system type of the managed instance(s) that this managed instance group will contain.
+        The operating system type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "os_family")
 
@@ -386,7 +499,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of software source OCIDs available to the managed instances in the managed instance group.
+        The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         """
         return pulumi.get(self, "software_source_ids")
 
@@ -434,7 +547,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
+        The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -446,7 +559,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
@@ -458,7 +571,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The software source vendor name.
+        The vendor of the operating system that will be used by the managed instances in the group. 
 
 
         ** IMPORTANT **
@@ -477,12 +590,15 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  arch_type: Optional[pulumi.Input[str]] = None,
+                 autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 notification_topic_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None,
@@ -505,6 +621,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             display_name=managed_instance_group_display_name,
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
+            autonomous_settings=oci.os_management_hub.ManagedInstanceGroupAutonomousSettingsArgs(
+                is_data_collection_authorized=managed_instance_group_autonomous_settings_is_data_collection_authorized,
+            ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -512,7 +631,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_instance_ids=managed_instance_group_managed_instance_ids)
+            location=managed_instance_group_location,
+            managed_instance_ids=managed_instance_group_managed_instance_ids,
+            notification_topic_id=test_notification_topic["id"])
         ```
 
         ## Import
@@ -525,16 +646,19 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the managed instance group.
+        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
+        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source OCIDs available to the managed instances in the managed instance group.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
+        :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
+        :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param pulumi.Input[str] os_family: The operating system type of the managed instances that will be attached to this group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
+        :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
                
                
                ** IMPORTANT **
@@ -564,6 +688,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             display_name=managed_instance_group_display_name,
             os_family=managed_instance_group_os_family,
             vendor_name=managed_instance_group_vendor_name,
+            autonomous_settings=oci.os_management_hub.ManagedInstanceGroupAutonomousSettingsArgs(
+                is_data_collection_authorized=managed_instance_group_autonomous_settings_is_data_collection_authorized,
+            ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -571,7 +698,9 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_instance_ids=managed_instance_group_managed_instance_ids)
+            location=managed_instance_group_location,
+            managed_instance_ids=managed_instance_group_managed_instance_ids,
+            notification_topic_id=test_notification_topic["id"])
         ```
 
         ## Import
@@ -598,12 +727,15 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  arch_type: Optional[pulumi.Input[str]] = None,
+                 autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 notification_topic_id: Optional[pulumi.Input[str]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None,
@@ -619,6 +751,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             if arch_type is None and not opts.urn:
                 raise TypeError("Missing required property 'arch_type'")
             __props__.__dict__["arch_type"] = arch_type
+            __props__.__dict__["autonomous_settings"] = autonomous_settings
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -628,16 +761,17 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["location"] = location
             __props__.__dict__["managed_instance_ids"] = managed_instance_ids
+            __props__.__dict__["notification_topic_id"] = notification_topic_id
             if os_family is None and not opts.urn:
                 raise TypeError("Missing required property 'os_family'")
             __props__.__dict__["os_family"] = os_family
-            if software_source_ids is None and not opts.urn:
-                raise TypeError("Missing required property 'software_source_ids'")
             __props__.__dict__["software_source_ids"] = software_source_ids
             if vendor_name is None and not opts.urn:
                 raise TypeError("Missing required property 'vendor_name'")
             __props__.__dict__["vendor_name"] = vendor_name
+            __props__.__dict__["is_managed_by_autonomous_linux"] = None
             __props__.__dict__["managed_instance_count"] = None
             __props__.__dict__["pending_job_count"] = None
             __props__.__dict__["software_sources"] = None
@@ -656,13 +790,17 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             arch_type: Optional[pulumi.Input[str]] = None,
+            autonomous_settings: Optional[pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_managed_by_autonomous_linux: Optional[pulumi.Input[bool]] = None,
+            location: Optional[pulumi.Input[str]] = None,
             managed_instance_count: Optional[pulumi.Input[int]] = None,
             managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            notification_topic_id: Optional[pulumi.Input[str]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
             pending_job_count: Optional[pulumi.Input[int]] = None,
             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -679,23 +817,27 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instance(s) that this managed instance group will contain.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the managed instance group.
+        :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
+        :param pulumi.Input[pulumi.InputType['ManagedInstanceGroupAutonomousSettingsArgs']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] managed_instance_count: The number of Managed Instances in the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) that this managed instance group will contain.
+        :param pulumi.Input[bool] is_managed_by_autonomous_linux: Indicates whether the Autonomous Linux service manages the group.
+        :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        :param pulumi.Input[int] managed_instance_count: The number of managed instances in the group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
+        :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        :param pulumi.Input[str] os_family: The operating system type of the managed instances that will be attached to this group.
         :param pulumi.Input[int] pending_job_count: The number of scheduled jobs pending against the managed instance group.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source OCIDs available to the managed instances in the managed instance group.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupSoftwareSourceArgs']]]] software_sources: The list of software sources that the managed instance group will use.
         :param pulumi.Input[str] state: The current state of the managed instance group.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the managed instance group was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
+        :param pulumi.Input[str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+        :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
                
                
                ** IMPORTANT **
@@ -706,13 +848,17 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         __props__ = _ManagedInstanceGroupState.__new__(_ManagedInstanceGroupState)
 
         __props__.__dict__["arch_type"] = arch_type
+        __props__.__dict__["autonomous_settings"] = autonomous_settings
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_managed_by_autonomous_linux"] = is_managed_by_autonomous_linux
+        __props__.__dict__["location"] = location
         __props__.__dict__["managed_instance_count"] = managed_instance_count
         __props__.__dict__["managed_instance_ids"] = managed_instance_ids
+        __props__.__dict__["notification_topic_id"] = notification_topic_id
         __props__.__dict__["os_family"] = os_family
         __props__.__dict__["pending_job_count"] = pending_job_count
         __props__.__dict__["software_source_ids"] = software_source_ids
@@ -728,15 +874,23 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[str]:
         """
-        The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+        The CPU architecture type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "arch_type")
+
+    @property
+    @pulumi.getter(name="autonomousSettings")
+    def autonomous_settings(self) -> pulumi.Output['outputs.ManagedInstanceGroupAutonomousSettings']:
+        """
+        (Updatable) Updatable settings for the Autonomous Linux service.
+        """
+        return pulumi.get(self, "autonomous_settings")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the tenancy containing the managed instance group.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -752,7 +906,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Details about the managed instance group.
+        (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -760,7 +914,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -773,10 +927,26 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether the Autonomous Linux service manages the group.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @property
+    @pulumi.getter
+    def location(self) -> pulumi.Output[str]:
+        """
+        The location of managed instances attached to the group. If no location is provided, the default is on premises.
+        """
+        return pulumi.get(self, "location")
+
+    @property
     @pulumi.getter(name="managedInstanceCount")
     def managed_instance_count(self) -> pulumi.Output[int]:
         """
-        The number of Managed Instances in the managed instance group.
+        The number of managed instances in the group.
         """
         return pulumi.get(self, "managed_instance_count")
 
@@ -784,15 +954,23 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of managed instance OCIDs to be added to the managed instance group.
+        The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
         """
         return pulumi.get(self, "managed_instance_ids")
+
+    @property
+    @pulumi.getter(name="notificationTopicId")
+    def notification_topic_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+        """
+        return pulumi.get(self, "notification_topic_id")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Output[str]:
         """
-        The operating system type of the managed instance(s) that this managed instance group will contain.
+        The operating system type of the managed instances that will be attached to this group.
         """
         return pulumi.get(self, "os_family")
 
@@ -808,7 +986,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of software source OCIDs available to the managed instances in the managed instance group.
+        The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         """
         return pulumi.get(self, "software_source_ids")
 
@@ -840,7 +1018,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
+        The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_created")
 
@@ -848,7 +1026,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> pulumi.Output[str]:
         """
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         """
         return pulumi.get(self, "time_modified")
 
@@ -856,7 +1034,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Output[str]:
         """
-        The software source vendor name.
+        The vendor of the operating system that will be used by the managed instances in the group. 
 
 
         ** IMPORTANT **

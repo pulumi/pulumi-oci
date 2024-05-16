@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists package groups that associate with the specified software source OCID. Filter the list against a
+// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
 // variety of criteria including but not limited to its name, and package group type.
 //
 // ## Example Usage
@@ -57,7 +57,7 @@ func GetSoftwareSourcePackageGroups(ctx *pulumi.Context, args *GetSoftwareSource
 
 // A collection of arguments for invoking getSoftwareSourcePackageGroups.
 type GetSoftwareSourcePackageGroupsArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string                                `pulumi:"compartmentId"`
 	Filters       []GetSoftwareSourcePackageGroupsFilter `pulumi:"filters"`
 	// A filter to return only package groups of the specified type.
@@ -66,7 +66,7 @@ type GetSoftwareSourcePackageGroupsArgs struct {
 	Name *string `pulumi:"name"`
 	// A filter to return resources that may partially match the name given.
 	NameContains *string `pulumi:"nameContains"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -74,7 +74,7 @@ type GetSoftwareSourcePackageGroupsArgs struct {
 type GetSoftwareSourcePackageGroupsResult struct {
 	CompartmentId *string                                `pulumi:"compartmentId"`
 	Filters       []GetSoftwareSourcePackageGroupsFilter `pulumi:"filters"`
-	// Indicates if this is a group, category or environment.
+	// Indicates if this is a group, category, or environment.
 	GroupTypes []string `pulumi:"groupTypes"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -101,7 +101,7 @@ func GetSoftwareSourcePackageGroupsOutput(ctx *pulumi.Context, args GetSoftwareS
 
 // A collection of arguments for invoking getSoftwareSourcePackageGroups.
 type GetSoftwareSourcePackageGroupsOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput                          `pulumi:"compartmentId"`
 	Filters       GetSoftwareSourcePackageGroupsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only package groups of the specified type.
@@ -110,7 +110,7 @@ type GetSoftwareSourcePackageGroupsOutputArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return resources that may partially match the name given.
 	NameContains pulumi.StringPtrInput `pulumi:"nameContains"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 
@@ -141,7 +141,7 @@ func (o GetSoftwareSourcePackageGroupsResultOutput) Filters() GetSoftwareSourceP
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsResult) []GetSoftwareSourcePackageGroupsFilter { return v.Filters }).(GetSoftwareSourcePackageGroupsFilterArrayOutput)
 }
 
-// Indicates if this is a group, category or environment.
+// Indicates if this is a group, category, or environment.
 func (o GetSoftwareSourcePackageGroupsResultOutput) GroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsResult) []string { return v.GroupTypes }).(pulumi.StringArrayOutput)
 }

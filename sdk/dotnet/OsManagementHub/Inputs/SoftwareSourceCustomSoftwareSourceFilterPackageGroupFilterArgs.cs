@@ -13,10 +13,10 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// (Updatable) The type of the filter.
         /// </summary>
-        [Input("filterType", required: true)]
-        public Input<string> FilterType { get; set; } = null!;
+        [Input("filterType")]
+        public Input<string>? FilterType { get; set; }
 
         [Input("packageGroups")]
         private InputList<string>? _packageGroups;

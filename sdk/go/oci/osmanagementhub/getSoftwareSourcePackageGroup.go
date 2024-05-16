@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified package group from a software source.
+// Returns information about the specified package group from a software source.
 //
 // ## Example Usage
 //
@@ -55,30 +55,30 @@ func GetSoftwareSourcePackageGroup(ctx *pulumi.Context, args *GetSoftwareSourceP
 type GetSoftwareSourcePackageGroupArgs struct {
 	// The unique package group identifier.
 	PackageGroupId string `pulumi:"packageGroupId"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
 // A collection of values returned by getSoftwareSourcePackageGroup.
 type GetSoftwareSourcePackageGroupResult struct {
-	// description of the package group.
+	// Description of the package group.
 	Description string `pulumi:"description"`
 	// Indicates the order to display category or environment.
 	DisplayOrder int `pulumi:"displayOrder"`
-	// Indicates if this is a group, category or environment.
+	// Indicates if this is a group, category, or environment.
 	GroupType string `pulumi:"groupType"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Indicates if this package group is the default.
 	IsDefault bool `pulumi:"isDefault"`
-	// Indicates if this package group is visible by users.
+	// Indicates if this package group is visible to users.
 	IsUserVisible bool `pulumi:"isUserVisible"`
 	// Package group name.
 	Name           string `pulumi:"name"`
 	PackageGroupId string `pulumi:"packageGroupId"`
 	// The list of packages in the package group.
 	Packages []string `pulumi:"packages"`
-	// the IDs of the package group's repositories.
+	// The repository IDs of the package group's repositories.
 	Repositories     []string `pulumi:"repositories"`
 	SoftwareSourceId string   `pulumi:"softwareSourceId"`
 }
@@ -100,7 +100,7 @@ func GetSoftwareSourcePackageGroupOutput(ctx *pulumi.Context, args GetSoftwareSo
 type GetSoftwareSourcePackageGroupOutputArgs struct {
 	// The unique package group identifier.
 	PackageGroupId pulumi.StringInput `pulumi:"packageGroupId"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 
@@ -123,7 +123,7 @@ func (o GetSoftwareSourcePackageGroupResultOutput) ToGetSoftwareSourcePackageGro
 	return o
 }
 
-// description of the package group.
+// Description of the package group.
 func (o GetSoftwareSourcePackageGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -133,7 +133,7 @@ func (o GetSoftwareSourcePackageGroupResultOutput) DisplayOrder() pulumi.IntOutp
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) int { return v.DisplayOrder }).(pulumi.IntOutput)
 }
 
-// Indicates if this is a group, category or environment.
+// Indicates if this is a group, category, or environment.
 func (o GetSoftwareSourcePackageGroupResultOutput) GroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.GroupType }).(pulumi.StringOutput)
 }
@@ -148,7 +148,7 @@ func (o GetSoftwareSourcePackageGroupResultOutput) IsDefault() pulumi.BoolOutput
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
 
-// Indicates if this package group is visible by users.
+// Indicates if this package group is visible to users.
 func (o GetSoftwareSourcePackageGroupResultOutput) IsUserVisible() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) bool { return v.IsUserVisible }).(pulumi.BoolOutput)
 }
@@ -167,7 +167,7 @@ func (o GetSoftwareSourcePackageGroupResultOutput) Packages() pulumi.StringArray
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) []string { return v.Packages }).(pulumi.StringArrayOutput)
 }
 
-// the IDs of the package group's repositories.
+// The repository IDs of the package group's repositories.
 func (o GetSoftwareSourcePackageGroupResultOutput) Repositories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) []string { return v.Repositories }).(pulumi.StringArrayOutput)
 }

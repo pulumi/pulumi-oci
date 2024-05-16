@@ -13,31 +13,31 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class ManagementStationMirrorSyncStatusArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Total of mirrors in 'failed' state
+        /// Total number of software sources that failed to sync.
         /// </summary>
         [Input("failed")]
         public Input<int>? Failed { get; set; }
 
         /// <summary>
-        /// Total of mirrors in 'queued' state
+        /// Total number of software sources that are queued for sync.
         /// </summary>
         [Input("queued")]
         public Input<int>? Queued { get; set; }
 
         /// <summary>
-        /// Total of mirrors in 'synced' state
+        /// Total number of software sources that successfully synced.
         /// </summary>
         [Input("synced")]
         public Input<int>? Synced { get; set; }
 
         /// <summary>
-        /// Total of mirrors in 'syncing' state
+        /// Total number of software sources currently syncing.
         /// </summary>
         [Input("syncing")]
         public Input<int>? Syncing { get; set; }
 
         /// <summary>
-        /// Total of mirrors in 'failed' state
+        /// Total number of software sources that have not yet been synced.
         /// </summary>
         [Input("unsynced")]
         public Input<int>? Unsynced { get; set; }

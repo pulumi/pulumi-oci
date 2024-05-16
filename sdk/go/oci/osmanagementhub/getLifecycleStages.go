@@ -13,8 +13,42 @@ import (
 
 // This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
-// a variety of criteria including but not limited to its name, status, architecture, and OS family.
+// Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/OsManagementHub"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := OsManagementHub.GetLifecycleStages(ctx, &osmanagementhub.GetLifecycleStagesArgs{
+//				ArchType:            pulumi.StringRef(lifecycleStageArchType),
+//				CompartmentId:       pulumi.StringRef(compartmentId),
+//				DisplayNames:        lifecycleStageDisplayName,
+//				DisplayNameContains: pulumi.StringRef(lifecycleStageDisplayNameContains),
+//				LifecycleStageId:    pulumi.StringRef(testLifecycleStage.Id),
+//				Locations:           lifecycleStageLocation,
+//				LocationNotEqualTos: lifecycleStageLocationNotEqualTo,
+//				OsFamily:            pulumi.StringRef(lifecycleStageOsFamily),
+//				SoftwareSourceId:    pulumi.StringRef(lifecycleStageSoftwareSourceId),
+//				State:               pulumi.StringRef(lifecycleStageState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetLifecycleStages(ctx *pulumi.Context, args *GetLifecycleStagesArgs, opts ...pulumi.InvokeOption) (*GetLifecycleStagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLifecycleStagesResult
@@ -29,28 +63,32 @@ func GetLifecycleStages(ctx *pulumi.Context, args *GetLifecycleStagesArgs, opts 
 type GetLifecycleStagesArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames []string                   `pulumi:"displayNames"`
 	Filters      []GetLifecycleStagesFilter `pulumi:"filters"`
-	// The OCID of the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId *string `pulumi:"lifecycleStageId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos []string `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations []string `pulumi:"locations"`
+	// A filter to return only resources that match the given operating system family.
 	OsFamily *string `pulumi:"osFamily"`
-	// The OCID for the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
 	SoftwareSourceId *string `pulumi:"softwareSourceId"`
-	// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+	// A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getLifecycleStages.
 type GetLifecycleStagesResult struct {
-	// The CPU architecture of the target instances.
+	// The CPU architecture of the managed instances in the lifecycle stage.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId       *string `pulumi:"compartmentId"`
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// Software source name.
@@ -61,9 +99,12 @@ type GetLifecycleStagesResult struct {
 	// The list of lifecycle_stage_collection.
 	LifecycleStageCollections []GetLifecycleStagesLifecycleStageCollection `pulumi:"lifecycleStageCollections"`
 	LifecycleStageId          *string                                      `pulumi:"lifecycleStageId"`
-	// The operating system type of the target instances.
+	LocationNotEqualTos       []string                                     `pulumi:"locationNotEqualTos"`
+	// The location of managed instances associated with the lifecycle stage.
+	Locations []string `pulumi:"locations"`
+	// The operating system of the managed instances in the lifecycle stage.
 	OsFamily *string `pulumi:"osFamily"`
-	// Identifying information for the specified software source.
+	// Provides identifying information for the specified software source.
 	SoftwareSourceId *string `pulumi:"softwareSourceId"`
 	// The current state of the lifecycle stage.
 	State *string `pulumi:"state"`
@@ -86,20 +127,24 @@ func GetLifecycleStagesOutput(ctx *pulumi.Context, args GetLifecycleStagesOutput
 type GetLifecycleStagesOutputArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType pulumi.StringPtrInput `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput            `pulumi:"displayNames"`
 	Filters      GetLifecycleStagesFilterArrayInput `pulumi:"filters"`
-	// The OCID of the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId pulumi.StringPtrInput `pulumi:"lifecycleStageId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos pulumi.StringArrayInput `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
-	// The OCID for the software source.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
 	SoftwareSourceId pulumi.StringPtrInput `pulumi:"softwareSourceId"`
-	// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+	// A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -122,12 +167,12 @@ func (o GetLifecycleStagesResultOutput) ToGetLifecycleStagesResultOutputWithCont
 	return o
 }
 
-// The CPU architecture of the target instances.
+// The CPU architecture of the managed instances in the lifecycle stage.
 func (o GetLifecycleStagesResultOutput) ArchType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the tenancy containing the lifecycle stage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 func (o GetLifecycleStagesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -161,12 +206,21 @@ func (o GetLifecycleStagesResultOutput) LifecycleStageId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.LifecycleStageId }).(pulumi.StringPtrOutput)
 }
 
-// The operating system type of the target instances.
+func (o GetLifecycleStagesResultOutput) LocationNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLifecycleStagesResult) []string { return v.LocationNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+// The location of managed instances associated with the lifecycle stage.
+func (o GetLifecycleStagesResultOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLifecycleStagesResult) []string { return v.Locations }).(pulumi.StringArrayOutput)
+}
+
+// The operating system of the managed instances in the lifecycle stage.
 func (o GetLifecycleStagesResultOutput) OsFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
-// Identifying information for the specified software source.
+// Provides identifying information for the specified software source.
 func (o GetLifecycleStagesResultOutput) SoftwareSourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.SoftwareSourceId }).(pulumi.StringPtrOutput)
 }

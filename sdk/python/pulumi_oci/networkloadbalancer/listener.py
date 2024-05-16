@@ -19,6 +19,7 @@ class ListenerArgs:
                  port: pulumi.Input[int],
                  protocol: pulumi.Input[str],
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Listener resource.
@@ -31,6 +32,7 @@ class ListenerArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
+        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
@@ -39,6 +41,8 @@ class ListenerArgs:
         pulumi.set(__self__, "protocol", protocol)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
+        if is_ppv2enabled is not None:
+            pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -107,6 +111,18 @@ class ListenerArgs:
         pulumi.set(self, "ip_version", value)
 
     @property
+    @pulumi.getter(name="isPpv2enabled")
+    def is_ppv2enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Property to enable/disable PPv2 feature for this listener.
+        """
+        return pulumi.get(self, "is_ppv2enabled")
+
+    @is_ppv2enabled.setter
+    def is_ppv2enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ppv2enabled", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -124,6 +140,7 @@ class _ListenerState:
     def __init__(__self__, *,
                  default_backend_set_name: Optional[pulumi.Input[str]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -132,6 +149,7 @@ class _ListenerState:
         Input properties used for looking up and filtering Listener resources.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
+        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
@@ -145,6 +163,8 @@ class _ListenerState:
             pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
+        if is_ppv2enabled is not None:
+            pulumi.set(__self__, "is_ppv2enabled", is_ppv2enabled)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if network_load_balancer_id is not None:
@@ -177,6 +197,18 @@ class _ListenerState:
     @ip_version.setter
     def ip_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_version", value)
+
+    @property
+    @pulumi.getter(name="isPpv2enabled")
+    def is_ppv2enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Property to enable/disable PPv2 feature for this listener.
+        """
+        return pulumi.get(self, "is_ppv2enabled")
+
+    @is_ppv2enabled.setter
+    def is_ppv2enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ppv2enabled", value)
 
     @property
     @pulumi.getter
@@ -238,6 +270,7 @@ class Listener(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  default_backend_set_name: Optional[pulumi.Input[str]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -260,7 +293,8 @@ class Listener(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             port=listener_port,
             protocol=listener_protocol,
-            ip_version=listener_ip_version)
+            ip_version=listener_ip_version,
+            is_ppv2enabled=listener_is_ppv2enabled)
         ```
 
         ## Import
@@ -275,6 +309,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
+        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
@@ -307,7 +342,8 @@ class Listener(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             port=listener_port,
             protocol=listener_protocol,
-            ip_version=listener_ip_version)
+            ip_version=listener_ip_version,
+            is_ppv2enabled=listener_is_ppv2enabled)
         ```
 
         ## Import
@@ -335,6 +371,7 @@ class Listener(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  default_backend_set_name: Optional[pulumi.Input[str]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -352,6 +389,7 @@ class Listener(pulumi.CustomResource):
                 raise TypeError("Missing required property 'default_backend_set_name'")
             __props__.__dict__["default_backend_set_name"] = default_backend_set_name
             __props__.__dict__["ip_version"] = ip_version
+            __props__.__dict__["is_ppv2enabled"] = is_ppv2enabled
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_load_balancer_id'")
@@ -374,6 +412,7 @@ class Listener(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             default_backend_set_name: Optional[pulumi.Input[str]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
+            is_ppv2enabled: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
             port: Optional[pulumi.Input[int]] = None,
@@ -387,6 +426,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
+        :param pulumi.Input[bool] is_ppv2enabled: (Updatable) Property to enable/disable PPv2 feature for this listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
@@ -402,6 +442,7 @@ class Listener(pulumi.CustomResource):
 
         __props__.__dict__["default_backend_set_name"] = default_backend_set_name
         __props__.__dict__["ip_version"] = ip_version
+        __props__.__dict__["is_ppv2enabled"] = is_ppv2enabled
         __props__.__dict__["name"] = name
         __props__.__dict__["network_load_balancer_id"] = network_load_balancer_id
         __props__.__dict__["port"] = port
@@ -423,6 +464,14 @@ class Listener(pulumi.CustomResource):
         (Updatable) IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isPpv2enabled")
+    def is_ppv2enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Property to enable/disable PPv2 feature for this listener.
+        """
+        return pulumi.get(self, "is_ppv2enabled")
 
     @property
     @pulumi.getter

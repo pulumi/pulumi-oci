@@ -23,7 +23,7 @@ class GetLifecycleEnvironmentsResult:
     """
     A collection of values returned by getLifecycleEnvironments.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, lifecycle_environment_collections=None, lifecycle_environment_id=None, os_family=None, state=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, lifecycle_environment_collections=None, lifecycle_environment_id=None, location_not_equal_tos=None, locations=None, os_family=None, state=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -48,6 +48,12 @@ class GetLifecycleEnvironmentsResult:
         if lifecycle_environment_id and not isinstance(lifecycle_environment_id, str):
             raise TypeError("Expected argument 'lifecycle_environment_id' to be a str")
         pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if location_not_equal_tos and not isinstance(location_not_equal_tos, list):
+            raise TypeError("Expected argument 'location_not_equal_tos' to be a list")
+        pulumi.set(__self__, "location_not_equal_tos", location_not_equal_tos)
+        if locations and not isinstance(locations, list):
+            raise TypeError("Expected argument 'locations' to be a list")
+        pulumi.set(__self__, "locations", locations)
         if os_family and not isinstance(os_family, str):
             raise TypeError("Expected argument 'os_family' to be a str")
         pulumi.set(__self__, "os_family", os_family)
@@ -59,7 +65,7 @@ class GetLifecycleEnvironmentsResult:
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
         """
-        The CPU architecture of the target instances.
+        The CPU architecture of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "arch_type")
 
@@ -67,7 +73,7 @@ class GetLifecycleEnvironmentsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the tenancy containing the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -109,15 +115,28 @@ class GetLifecycleEnvironmentsResult:
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> Optional[str]:
         """
-        The OCID of the lifecycle environment for the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_environment_id")
+
+    @property
+    @pulumi.getter(name="locationNotEqualTos")
+    def location_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "location_not_equal_tos")
+
+    @property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence[str]]:
+        """
+        The location of managed instances associated with the lifecycle stage.
+        """
+        return pulumi.get(self, "locations")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
         """
-        The operating system type of the target instances.
+        The operating system of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "os_family")
 
@@ -144,6 +163,8 @@ class AwaitableGetLifecycleEnvironmentsResult(GetLifecycleEnvironmentsResult):
             id=self.id,
             lifecycle_environment_collections=self.lifecycle_environment_collections,
             lifecycle_environment_id=self.lifecycle_environment_id,
+            location_not_equal_tos=self.location_not_equal_tos,
+            locations=self.locations,
             os_family=self.os_family,
             state=self.state)
 
@@ -154,6 +175,8 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
                                display_names: Optional[Sequence[str]] = None,
                                filters: Optional[Sequence[pulumi.InputType['GetLifecycleEnvironmentsFilterArgs']]] = None,
                                lifecycle_environment_id: Optional[str] = None,
+                               location_not_equal_tos: Optional[Sequence[str]] = None,
+                               locations: Optional[Sequence[str]] = None,
                                os_family: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLifecycleEnvironmentsResult:
@@ -174,17 +197,21 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,
         lifecycle_environment_id=test_lifecycle_environment["id"],
+        locations=lifecycle_environment_location,
+        location_not_equal_tos=lifecycle_environment_location_not_equal_to,
         os_family=lifecycle_environment_os_family,
         state=lifecycle_environment_state)
     ```
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
+    :param str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str os_family: A filter to return only resources that match the given operating system family.
     :param str state: A filter to return only the lifecycle environments that match the display name given.
     """
     __args__ = dict()
@@ -194,6 +221,8 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
     __args__['lifecycleEnvironmentId'] = lifecycle_environment_id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
     __args__['osFamily'] = os_family
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -208,6 +237,8 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_environment_collections=pulumi.get(__ret__, 'lifecycle_environment_collections'),
         lifecycle_environment_id=pulumi.get(__ret__, 'lifecycle_environment_id'),
+        location_not_equal_tos=pulumi.get(__ret__, 'location_not_equal_tos'),
+        locations=pulumi.get(__ret__, 'locations'),
         os_family=pulumi.get(__ret__, 'os_family'),
         state=pulumi.get(__ret__, 'state'))
 
@@ -219,6 +250,8 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
                                       display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLifecycleEnvironmentsFilterArgs']]]]] = None,
                                       lifecycle_environment_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                      location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                      locations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLifecycleEnvironmentsResult]:
@@ -239,17 +272,21 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,
         lifecycle_environment_id=test_lifecycle_environment["id"],
+        locations=lifecycle_environment_location,
+        location_not_equal_tos=lifecycle_environment_location_not_equal_to,
         os_family=lifecycle_environment_os_family,
         state=lifecycle_environment_state)
     ```
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
+    :param str lifecycle_environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str os_family: A filter to return only resources that match the given operating system family.
     :param str state: A filter to return only the lifecycle environments that match the display name given.
     """
     ...

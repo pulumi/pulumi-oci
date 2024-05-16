@@ -14,11 +14,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class LifecycleEnvironmentManagedInstanceId
     {
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string? Id;
 

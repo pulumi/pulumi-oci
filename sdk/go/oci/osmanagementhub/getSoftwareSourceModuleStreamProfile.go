@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified module stream profile in a software source.
+// Returns information about the specified module stream profile in a software source.
 //
 // ## Example Usage
 //
@@ -57,9 +57,9 @@ func GetSoftwareSourceModuleStreamProfile(ctx *pulumi.Context, args *GetSoftware
 type GetSoftwareSourceModuleStreamProfileArgs struct {
 	// The name of a module.
 	ModuleName string `pulumi:"moduleName"`
-	// The name of the profile of the containing module stream.
+	// The name of the module stream profile.
 	ProfileName string `pulumi:"profileName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 	// The name of the stream of the containing module.
 	StreamName string `pulumi:"streamName"`
@@ -102,9 +102,9 @@ func GetSoftwareSourceModuleStreamProfileOutput(ctx *pulumi.Context, args GetSof
 type GetSoftwareSourceModuleStreamProfileOutputArgs struct {
 	// The name of a module.
 	ModuleName pulumi.StringInput `pulumi:"moduleName"`
-	// The name of the profile of the containing module stream.
+	// The name of the module stream profile.
 	ProfileName pulumi.StringInput `pulumi:"profileName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 	// The name of the stream of the containing module.
 	StreamName pulumi.StringInput `pulumi:"streamName"`

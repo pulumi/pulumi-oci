@@ -13,7 +13,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class GetSoftwareSourceSoftwarePackagesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Unique identifier for the package. NOTE - This is not an OCID.
+        /// Unique identifier for the package. Note that this is not an OCID.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

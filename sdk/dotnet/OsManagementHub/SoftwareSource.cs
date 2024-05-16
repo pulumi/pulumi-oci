@@ -14,76 +14,6 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// Creates a new versioned or custom software source.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testSoftwareSource = new Oci.OsManagementHub.SoftwareSource("test_software_source", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DisplayName = softwareSourceDisplayName,
-    ///         SoftwareSourceType = softwareSourceSoftwareSourceType,
-    ///         VendorSoftwareSources = new[]
-    ///         {
-    ///             new Oci.OsManagementHub.Inputs.SoftwareSourceVendorSoftwareSourceArgs
-    ///             {
-    ///                 DisplayName = softwareSourceVendorSoftwareSourcesDisplayName,
-    ///                 Id = softwareSourceVendorSoftwareSourcesId,
-    ///             },
-    ///         },
-    ///         CustomSoftwareSourceFilter = new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterArgs
-    ///         {
-    ///             ModuleStreamProfileFilters = new[]
-    ///             {
-    ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs
-    ///                 {
-    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType,
-    ///                     ModuleName = softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName,
-    ///                     ProfileName = testProfile.Name,
-    ///                     StreamName = testStream.Name,
-    ///                 },
-    ///             },
-    ///             PackageFilters = new[]
-    ///             {
-    ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs
-    ///                 {
-    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType,
-    ///                     PackageName = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName,
-    ///                     PackageNamePattern = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern,
-    ///                     PackageVersion = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion,
-    ///                 },
-    ///             },
-    ///             PackageGroupFilters = new[]
-    ///             {
-    ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs
-    ///                 {
-    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType,
-    ///                     PackageGroups = softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups,
-    ///                 },
-    ///             },
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = softwareSourceDescription,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         IsAutomaticallyUpdated = softwareSourceIsAutomaticallyUpdated,
-    ///         SoftwareSourceVersion = softwareSourceSoftwareSourceVersion,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// SoftwareSources can be imported using the `id`, e.g.
@@ -102,10 +32,16 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> ArchType { get; private set; } = null!;
 
         /// <summary>
-        /// Possible availabilities of a software source.
+        /// Availability of the software source (for non-OCI environments).
         /// </summary>
         [Output("availability")]
         public Output<string> Availability { get; private set; } = null!;
+
+        /// <summary>
+        /// Availability of the software source (for Oracle Cloud Infrastructure environments).
+        /// </summary>
+        [Output("availabilityAtOci")]
+        public Output<string> AvailabilityAtOci { get; private set; } = null!;
 
         /// <summary>
         /// The yum repository checksum type used by this software source.
@@ -114,13 +50,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> ChecksumType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the tenancy containing the software source.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+        /// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         /// </summary>
         [Output("customSoftwareSourceFilter")]
         public Output<Outputs.SoftwareSourceCustomSoftwareSourceFilter> CustomSoftwareSourceFilter { get; private set; } = null!;
@@ -132,13 +68,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information specified by the user about the software source.
+        /// (Updatable) User-specified description for the software source. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User friendly name.
+        /// (Updatable) User-friendly name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -168,10 +104,34 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> GpgKeyUrl { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether service should automatically update the custom software source for the user.
+        /// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+        /// </summary>
+        [Output("isAutoResolveDependencies")]
+        public Output<bool> IsAutoResolveDependencies { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         /// </summary>
         [Output("isAutomaticallyUpdated")]
         public Output<bool> IsAutomaticallyUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the service should create the software source from a list of packages provided by the user.
+        /// </summary>
+        [Output("isCreatedFromPackageList")]
+        public Output<bool> IsCreatedFromPackageList { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the software source is required for the Autonomous Linux service.
+        /// </summary>
+        [Output("isMandatoryForAutonomousLinux")]
+        public Output<bool> IsMandatoryForAutonomousLinux { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+        /// </summary>
+        [Output("originSoftwareSourceId")]
+        public Output<string> OriginSoftwareSourceId { get; private set; } = null!;
 
         /// <summary>
         /// The OS family the software source belongs to.
@@ -180,19 +140,31 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> OsFamily { get; private set; } = null!;
 
         /// <summary>
-        /// Number of packages.
+        /// Number of packages the software source contains.
         /// </summary>
         [Output("packageCount")]
         public Output<string> PackageCount { get; private set; } = null!;
 
         /// <summary>
-        /// The Repo ID for the software source.
+        /// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+        /// </summary>
+        [Output("packages")]
+        public Output<ImmutableArray<string>> Packages { get; private set; } = null!;
+
+        /// <summary>
+        /// The repository ID for the software source.
         /// </summary>
         [Output("repoId")]
         public Output<string> RepoId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of the software source.
+        /// The size of the software source in gigabytes (GB).
+        /// </summary>
+        [Output("size")]
+        public Output<double> Size { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Type of software source.
         /// </summary>
         [Output("softwareSourceType")]
         public Output<string> SoftwareSourceType { get; private set; } = null!;
@@ -216,13 +188,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        /// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// URL for the repository.
+        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
         /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
@@ -286,13 +258,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class SoftwareSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the tenancy containing the software source.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+        /// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         /// </summary>
         [Input("customSoftwareSourceFilter")]
         public Input<Inputs.SoftwareSourceCustomSoftwareSourceFilterArgs>? CustomSoftwareSourceFilter { get; set; }
@@ -310,16 +282,16 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Information specified by the user about the software source.
+        /// (Updatable) User-specified description for the software source. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) User friendly name.
+        /// (Updatable) User-friendly name.
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -334,13 +306,43 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Indicates whether service should automatically update the custom software source for the user.
+        /// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+        /// </summary>
+        [Input("isAutoResolveDependencies")]
+        public Input<bool>? IsAutoResolveDependencies { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         /// </summary>
         [Input("isAutomaticallyUpdated")]
         public Input<bool>? IsAutomaticallyUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the software source.
+        /// Indicates whether the service should create the software source from a list of packages provided by the user.
+        /// </summary>
+        [Input("isCreatedFromPackageList")]
+        public Input<bool>? IsCreatedFromPackageList { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+        /// </summary>
+        [Input("originSoftwareSourceId")]
+        public Input<string>? OriginSoftwareSourceId { get; set; }
+
+        [Input("packages")]
+        private InputList<string>? _packages;
+
+        /// <summary>
+        /// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+        /// </summary>
+        public InputList<string> Packages
+        {
+            get => _packages ?? (_packages = new InputList<string>());
+            set => _packages = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Type of software source.
         /// </summary>
         [Input("softwareSourceType", required: true)]
         public Input<string> SoftwareSourceType { get; set; } = null!;
@@ -351,7 +353,7 @@ namespace Pulumi.Oci.OsManagementHub
         [Input("softwareSourceVersion")]
         public Input<string>? SoftwareSourceVersion { get; set; }
 
-        [Input("vendorSoftwareSources", required: true)]
+        [Input("vendorSoftwareSources")]
         private InputList<Inputs.SoftwareSourceVendorSoftwareSourceArgs>? _vendorSoftwareSources;
 
         /// <summary>
@@ -378,10 +380,16 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// Possible availabilities of a software source.
+        /// Availability of the software source (for non-OCI environments).
         /// </summary>
         [Input("availability")]
         public Input<string>? Availability { get; set; }
+
+        /// <summary>
+        /// Availability of the software source (for Oracle Cloud Infrastructure environments).
+        /// </summary>
+        [Input("availabilityAtOci")]
+        public Input<string>? AvailabilityAtOci { get; set; }
 
         /// <summary>
         /// The yum repository checksum type used by this software source.
@@ -390,13 +398,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? ChecksumType { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the tenancy containing the software source.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+        /// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         /// </summary>
         [Input("customSoftwareSourceFilter")]
         public Input<Inputs.SoftwareSourceCustomSoftwareSourceFilterGetArgs>? CustomSoftwareSourceFilter { get; set; }
@@ -414,13 +422,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) Information specified by the user about the software source.
+        /// (Updatable) User-specified description for the software source. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) User friendly name.
+        /// (Updatable) User-friendly name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -456,10 +464,34 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? GpgKeyUrl { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether service should automatically update the custom software source for the user.
+        /// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+        /// </summary>
+        [Input("isAutoResolveDependencies")]
+        public Input<bool>? IsAutoResolveDependencies { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
         /// </summary>
         [Input("isAutomaticallyUpdated")]
         public Input<bool>? IsAutomaticallyUpdated { get; set; }
+
+        /// <summary>
+        /// Indicates whether the service should create the software source from a list of packages provided by the user.
+        /// </summary>
+        [Input("isCreatedFromPackageList")]
+        public Input<bool>? IsCreatedFromPackageList { get; set; }
+
+        /// <summary>
+        /// Indicates whether the software source is required for the Autonomous Linux service.
+        /// </summary>
+        [Input("isMandatoryForAutonomousLinux")]
+        public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment that is being replicated.
+        /// </summary>
+        [Input("originSoftwareSourceId")]
+        public Input<string>? OriginSoftwareSourceId { get; set; }
 
         /// <summary>
         /// The OS family the software source belongs to.
@@ -468,19 +500,37 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? OsFamily { get; set; }
 
         /// <summary>
-        /// Number of packages.
+        /// Number of packages the software source contains.
         /// </summary>
         [Input("packageCount")]
         public Input<string>? PackageCount { get; set; }
 
+        [Input("packages")]
+        private InputList<string>? _packages;
+
         /// <summary>
-        /// The Repo ID for the software source.
+        /// A property used for compatibility only. It doesn't provide a complete list of packages. See [AddPackagesToSoftwareSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/AddPackagesToSoftwareSourceDetails) for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+        /// </summary>
+        public InputList<string> Packages
+        {
+            get => _packages ?? (_packages = new InputList<string>());
+            set => _packages = value;
+        }
+
+        /// <summary>
+        /// The repository ID for the software source.
         /// </summary>
         [Input("repoId")]
         public Input<string>? RepoId { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the software source.
+        /// The size of the software source in gigabytes (GB).
+        /// </summary>
+        [Input("size")]
+        public Input<double>? Size { get; set; }
+
+        /// <summary>
+        /// (Updatable) Type of software source.
         /// </summary>
         [Input("softwareSourceType")]
         public Input<string>? SoftwareSourceType { get; set; }
@@ -510,13 +560,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+        /// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// URL for the repository.
+        /// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/&lt;repoId&gt;'.
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }

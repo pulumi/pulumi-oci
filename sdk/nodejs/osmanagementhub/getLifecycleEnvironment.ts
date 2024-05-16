@@ -35,7 +35,7 @@ export function getLifecycleEnvironment(args: GetLifecycleEnvironmentArgs, opts?
  */
 export interface GetLifecycleEnvironmentArgs {
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      */
     lifecycleEnvironmentId: string;
 }
@@ -45,11 +45,11 @@ export interface GetLifecycleEnvironmentArgs {
  */
 export interface GetLifecycleEnvironmentResult {
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      */
     readonly archType: string;
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      */
     readonly compartmentId: string;
     /**
@@ -69,23 +69,27 @@ export interface GetLifecycleEnvironmentResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     readonly id: string;
     /**
-     * The OCID of the lifecycle environment for the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      */
     readonly lifecycleEnvironmentId: string;
     /**
-     * The list of managed instances specified lifecycle stage.
+     * The location of managed instances associated with the lifecycle stage.
+     */
+    readonly location: string;
+    /**
+     * The list of managed instances associated with the lifecycle stage.
      */
     readonly managedInstanceIds: outputs.OsManagementHub.GetLifecycleEnvironmentManagedInstanceId[];
     /**
-     * The operating system type of the target instances.
+     * The operating system of the managed instances in the lifecycle stage.
      */
     readonly osFamily: string;
     /**
-     * User specified list of lifecycle stages to be created for the lifecycle environment.
+     * User-specified list of lifecycle stages used within the lifecycle environment.
      */
     readonly stages: outputs.OsManagementHub.GetLifecycleEnvironmentStage[];
     /**
@@ -97,15 +101,15 @@ export interface GetLifecycleEnvironmentResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+     * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeCreated: string;
     /**
-     * The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+     * The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     readonly timeModified: string;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle environment.
      */
     readonly vendorName: string;
 }
@@ -134,7 +138,7 @@ export function getLifecycleEnvironmentOutput(args: GetLifecycleEnvironmentOutpu
  */
 export interface GetLifecycleEnvironmentOutputArgs {
     /**
-     * The OCID of the lifecycle environment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
      */
     lifecycleEnvironmentId: pulumi.Input<string>;
 }

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureContact;
+import com.pulumi.oci.Database.outputs.GetExadataInfrastructureDefinedFileSystemConfiguration;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureNetworkBondingModeDetail;
 import java.lang.Boolean;
@@ -106,6 +107,11 @@ public final class GetExadataInfrastructureResult {
      * 
      */
     private String dbServerVersion;
+    /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    private List<GetExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -380,6 +386,13 @@ public final class GetExadataInfrastructureResult {
         return this.dbServerVersion;
     }
     /**
+     * @return Details of the file system configuration of the Exadata infrastructure.
+     * 
+     */
+    public List<GetExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations() {
+        return this.definedFileSystemConfigurations;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -614,6 +627,7 @@ public final class GetExadataInfrastructureResult {
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
         private String dbServerVersion;
+        private List<GetExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
         private Map<String,Object> definedTags;
         private String displayName;
         private List<String> dnsServers;
@@ -666,6 +680,7 @@ public final class GetExadataInfrastructureResult {
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
     	      this.dbServerVersion = defaults.dbServerVersion;
+    	      this.definedFileSystemConfigurations = defaults.definedFileSystemConfigurations;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.dnsServers = defaults.dnsServers;
@@ -852,6 +867,17 @@ public final class GetExadataInfrastructureResult {
             }
             this.dbServerVersion = dbServerVersion;
             return this;
+        }
+        @CustomType.Setter
+        public Builder definedFileSystemConfigurations(List<GetExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            if (definedFileSystemConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureResult", "definedFileSystemConfigurations");
+            }
+            this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            return this;
+        }
+        public Builder definedFileSystemConfigurations(GetExadataInfrastructureDefinedFileSystemConfiguration... definedFileSystemConfigurations) {
+            return definedFileSystemConfigurations(List.of(definedFileSystemConfigurations));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -1126,6 +1152,7 @@ public final class GetExadataInfrastructureResult {
             _resultValue.dataStorageSizeInTbs = dataStorageSizeInTbs;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             _resultValue.dbServerVersion = dbServerVersion;
+            _resultValue.definedFileSystemConfigurations = definedFileSystemConfigurations;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.dnsServers = dnsServers;

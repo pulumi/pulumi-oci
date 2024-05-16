@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.OsManagementHub.ManagementStationArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationState;
+import com.pulumi.oci.OsManagementHub.outputs.ManagementStationHealth;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationMirrorSyncStatus;
 import com.pulumi.oci.OsManagementHub.outputs.ManagementStationProxy;
@@ -18,12 +19,13 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
  * 
- * Creates a management station.
+ * Create a management station. You must provide proxy and mirror configuration information.
  * 
  * ## Example Usage
  * 
@@ -91,14 +93,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/managementStation:ManagementStation")
 public class ManagementStation extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     public Output<String> compartmentId() {
@@ -119,28 +121,28 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Details describing the Management Station config.
+     * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Details describing the Management Station config.
+     * @return (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Management Station name
+     * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Management Station name
+     * @return (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -161,154 +163,188 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) Name of the host
+     * Overall health information of the management station.
+     * 
+     */
+    @Export(name="healths", refs={List.class,ManagementStationHealth.class}, tree="[0,1]")
+    private Output<List<ManagementStationHealth>> healths;
+
+    /**
+     * @return Overall health information of the management station.
+     * 
+     */
+    public Output<List<ManagementStationHealth>> healths() {
+        return this.healths;
+    }
+    /**
+     * (Updatable) Hostname of the management station.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
-     * @return (Updatable) Name of the host
+     * @return (Updatable) Hostname of the management station.
      * 
      */
     public Output<String> hostname() {
         return this.hostname;
     }
     /**
-     * OCID for the Instance associated with the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     @Export(name="managedInstanceId", refs={String.class}, tree="[0]")
     private Output<String> managedInstanceId;
 
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     public Output<String> managedInstanceId() {
         return this.managedInstanceId;
     }
     /**
-     * (Updatable) Information for creating a mirror configuration
+     * (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     @Export(name="mirror", refs={ManagementStationMirror.class}, tree="[0]")
     private Output<ManagementStationMirror> mirror;
 
     /**
-     * @return (Updatable) Information for creating a mirror configuration
+     * @return (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     public Output<ManagementStationMirror> mirror() {
         return this.mirror;
     }
     /**
-     * A decimal number representing the mirror capacity
+     * A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     @Export(name="mirrorCapacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> mirrorCapacity;
 
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     public Output<Integer> mirrorCapacity() {
         return this.mirrorCapacity;
     }
     /**
-     * Status summary of all repos
+     * Status summary of the mirror sync.
      * 
      */
     @Export(name="mirrorSyncStatuses", refs={List.class,ManagementStationMirrorSyncStatus.class}, tree="[0,1]")
     private Output<List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses;
 
     /**
-     * @return Status summary of all repos
+     * @return Status summary of the mirror sync.
      * 
      */
     public Output<List<ManagementStationMirrorSyncStatus>> mirrorSyncStatuses() {
         return this.mirrorSyncStatuses;
     }
     /**
-     * A decimal number representing the completeness percentage
+     * A decimal number representing the progress of the current mirror sync.
      * 
      */
     @Export(name="overallPercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> overallPercentage;
 
     /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     public Output<Integer> overallPercentage() {
         return this.overallPercentage;
     }
     /**
-     * Current state of the mirroring
+     * Current state of the mirror sync for the management station.
      * 
      */
     @Export(name="overallState", refs={String.class}, tree="[0]")
     private Output<String> overallState;
 
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     public Output<String> overallState() {
         return this.overallState;
     }
     /**
-     * OCID of the Profile associated with the Station
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     @Export(name="profileId", refs={String.class}, tree="[0]")
     private Output<String> profileId;
 
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     public Output<String> profileId() {
         return this.profileId;
     }
     /**
-     * (Updatable) Information for creating a proxy configuration
+     * (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     @Export(name="proxy", refs={ManagementStationProxy.class}, tree="[0]")
     private Output<ManagementStationProxy> proxy;
 
     /**
-     * @return (Updatable) Information for creating a proxy configuration
+     * @return (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     public Output<ManagementStationProxy> proxy() {
         return this.proxy;
     }
     /**
-     * OCID of the Scheduled Job for mirror sync
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="refreshTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> refreshTrigger() {
+        return Codegen.optional(this.refreshTrigger);
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     @Export(name="scheduledJobId", refs={String.class}, tree="[0]")
     private Output<String> scheduledJobId;
 
     /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     public Output<String> scheduledJobId() {
         return this.scheduledJobId;
     }
     /**
-     * The current state of the Management Station config.
+     * The current state of the management station.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     public Output<String> state() {
@@ -329,14 +365,14 @@ public class ManagementStation extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * A decimal number representing the total of repos
+     * The number of software sources that the station is mirroring.
      * 
      */
     @Export(name="totalMirrors", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalMirrors;
 
     /**
-     * @return A decimal number representing the total of repos
+     * @return The number of software sources that the station is mirroring.
      * 
      */
     public Output<Integer> totalMirrors() {

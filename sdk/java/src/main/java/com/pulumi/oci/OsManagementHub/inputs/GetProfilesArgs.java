@@ -6,6 +6,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.OsManagementHub.inputs.GetProfilesFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -33,14 +34,14 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -85,14 +86,44 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A boolean variable that is used to list only the default profile resources.
+     * 
+     */
+    @Import(name="isDefaultProfile")
+    private @Nullable Output<Boolean> isDefaultProfile;
+
+    /**
+     * @return A boolean variable that is used to list only the default profile resources.
+     * 
+     */
+    public Optional<Output<Boolean>> isDefaultProfile() {
+        return Optional.ofNullable(this.isDefaultProfile);
+    }
+
+    /**
+     * A filter to return only service-provided profiles.
+     * 
+     */
+    @Import(name="isServiceProvidedProfile")
+    private @Nullable Output<Boolean> isServiceProvidedProfile;
+
+    /**
+     * @return A filter to return only service-provided profiles.
+     * 
+     */
+    public Optional<Output<Boolean>> isServiceProvidedProfile() {
+        return Optional.ofNullable(this.isServiceProvidedProfile);
+    }
+
+    /**
+     * A filter to return only resources that match the given operating system family.
      * 
      */
     @Import(name="osFamily")
     private @Nullable Output<String> osFamily;
 
     /**
-     * @return A filter to return only profiles that match the given osFamily.
+     * @return A filter to return only resources that match the given operating system family.
      * 
      */
     public Optional<Output<String>> osFamily() {
@@ -100,14 +131,14 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      * 
      */
     @Import(name="profileId")
     private @Nullable Output<String> profileId;
 
     /**
-     * @return The OCID of the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      * 
      */
     public Optional<Output<String>> profileId() {
@@ -115,14 +146,14 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return registration profiles that match the given profileType.
+     * A filter to return registration profiles that match the given profile type.
      * 
      */
     @Import(name="profileTypes")
     private @Nullable Output<List<String>> profileTypes;
 
     /**
-     * @return A filter to return registration profiles that match the given profileType.
+     * @return A filter to return registration profiles that match the given profile type.
      * 
      */
     public Optional<Output<List<String>>> profileTypes() {
@@ -130,14 +161,29 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * A filter to return profiles that match the given instance type.
+     * 
+     */
+    @Import(name="registrationTypes")
+    private @Nullable Output<List<String>> registrationTypes;
+
+    /**
+     * @return A filter to return profiles that match the given instance type.
+     * 
+     */
+    public Optional<Output<List<String>>> registrationTypes() {
+        return Optional.ofNullable(this.registrationTypes);
+    }
+
+    /**
+     * A filter to return only registration profiles in the given state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * @return A filter to return only registration profiles in the given state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -145,14 +191,14 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      * 
      */
     @Import(name="vendorName")
     private @Nullable Output<String> vendorName;
 
     /**
-     * @return A filter to return only profiles that match the given vendorName.
+     * @return A filter to return only resources that match the given vendor name.
      * 
      */
     public Optional<Output<String>> vendorName() {
@@ -167,9 +213,12 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         this.displayNameContains = $.displayNameContains;
         this.displayNames = $.displayNames;
         this.filters = $.filters;
+        this.isDefaultProfile = $.isDefaultProfile;
+        this.isServiceProvidedProfile = $.isServiceProvidedProfile;
         this.osFamily = $.osFamily;
         this.profileId = $.profileId;
         this.profileTypes = $.profileTypes;
+        this.registrationTypes = $.registrationTypes;
         this.state = $.state;
         this.vendorName = $.vendorName;
     }
@@ -214,7 +263,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -225,7 +274,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the resources to list.
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * 
          * @return builder
          * 
@@ -300,7 +349,49 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param isDefaultProfile A boolean variable that is used to list only the default profile resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultProfile(@Nullable Output<Boolean> isDefaultProfile) {
+            $.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+
+        /**
+         * @param isDefaultProfile A boolean variable that is used to list only the default profile resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            return isDefaultProfile(Output.of(isDefaultProfile));
+        }
+
+        /**
+         * @param isServiceProvidedProfile A filter to return only service-provided profiles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isServiceProvidedProfile(@Nullable Output<Boolean> isServiceProvidedProfile) {
+            $.isServiceProvidedProfile = isServiceProvidedProfile;
+            return this;
+        }
+
+        /**
+         * @param isServiceProvidedProfile A filter to return only service-provided profiles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            return isServiceProvidedProfile(Output.of(isServiceProvidedProfile));
+        }
+
+        /**
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -311,7 +402,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param osFamily A filter to return only profiles that match the given osFamily.
+         * @param osFamily A filter to return only resources that match the given operating system family.
          * 
          * @return builder
          * 
@@ -321,7 +412,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileId The OCID of the registration profile.
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          * 
          * @return builder
          * 
@@ -332,7 +423,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileId The OCID of the registration profile.
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          * 
          * @return builder
          * 
@@ -342,7 +433,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileTypes A filter to return registration profiles that match the given profileType.
+         * @param profileTypes A filter to return registration profiles that match the given profile type.
          * 
          * @return builder
          * 
@@ -353,7 +444,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileTypes A filter to return registration profiles that match the given profileType.
+         * @param profileTypes A filter to return registration profiles that match the given profile type.
          * 
          * @return builder
          * 
@@ -363,7 +454,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param profileTypes A filter to return registration profiles that match the given profileType.
+         * @param profileTypes A filter to return registration profiles that match the given profile type.
          * 
          * @return builder
          * 
@@ -373,7 +464,38 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+         * @param registrationTypes A filter to return profiles that match the given instance type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registrationTypes(@Nullable Output<List<String>> registrationTypes) {
+            $.registrationTypes = registrationTypes;
+            return this;
+        }
+
+        /**
+         * @param registrationTypes A filter to return profiles that match the given instance type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registrationTypes(List<String> registrationTypes) {
+            return registrationTypes(Output.of(registrationTypes));
+        }
+
+        /**
+         * @param registrationTypes A filter to return profiles that match the given instance type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registrationTypes(String... registrationTypes) {
+            return registrationTypes(List.of(registrationTypes));
+        }
+
+        /**
+         * @param state A filter to return only registration profiles in the given state.
          * 
          * @return builder
          * 
@@ -384,7 +506,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+         * @param state A filter to return only registration profiles in the given state.
          * 
          * @return builder
          * 
@@ -394,7 +516,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param vendorName A filter to return only profiles that match the given vendorName.
+         * @param vendorName A filter to return only resources that match the given vendor name.
          * 
          * @return builder
          * 
@@ -405,7 +527,7 @@ public final class GetProfilesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param vendorName A filter to return only profiles that match the given vendorName.
+         * @param vendorName A filter to return only resources that match the given vendor name.
          * 
          * @return builder
          * 

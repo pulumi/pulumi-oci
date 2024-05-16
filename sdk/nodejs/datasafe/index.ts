@@ -675,6 +675,11 @@ export type MaskingPolicy = import("./maskingPolicy").MaskingPolicy;
 export const MaskingPolicy: typeof import("./maskingPolicy").MaskingPolicy = null as any;
 utilities.lazyLoad(exports, ["MaskingPolicy"], () => require("./maskingPolicy"));
 
+export { MaskingReportManagementArgs, MaskingReportManagementState } from "./maskingReportManagement";
+export type MaskingReportManagement = import("./maskingReportManagement").MaskingReportManagement;
+export const MaskingReportManagement: typeof import("./maskingReportManagement").MaskingReportManagement = null as any;
+utilities.lazyLoad(exports, ["MaskingReportManagement"], () => require("./maskingReportManagement"));
+
 export { OnPremConnectorArgs, OnPremConnectorState } from "./onPremConnector";
 export type OnPremConnector = import("./onPremConnector").OnPremConnector;
 export const OnPremConnector: typeof import("./onPremConnector").OnPremConnector = null as any;
@@ -844,6 +849,8 @@ const _module = {
                 return new MaskingPoliciesMaskingColumn(name, <any>undefined, { urn })
             case "oci:DataSafe/maskingPolicy:MaskingPolicy":
                 return new MaskingPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/maskingReportManagement:MaskingReportManagement":
+                return new MaskingReportManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/onPremConnector:OnPremConnector":
                 return new OnPremConnector(name, <any>undefined, { urn })
             case "oci:DataSafe/report:Report":
@@ -919,6 +926,7 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/maskData", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPoliciesMaskingColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/maskingReportManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/onPremConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/report", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/reportDefinition", _module)

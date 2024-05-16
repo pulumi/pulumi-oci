@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -38,42 +38,54 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Identifying information for the specified lifecycle environment.
+        /// A boolean variable that is used to list only the default profile resources.
+        /// </summary>
+        public readonly bool IsDefaultProfile;
+        /// <summary>
+        /// A filter to return only service-provided profiles.
+        /// </summary>
+        public readonly bool IsServiceProvidedProfile;
+        /// <summary>
+        /// Provides identifying information for the specified lifecycle environment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult> LifecycleEnvironments;
         public readonly string LifecycleStageId;
         /// <summary>
-        /// Identifying information for the specified lifecycle stage.
+        /// Provides identifying information for the specified lifecycle stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleStageResult> LifecycleStages;
         public readonly string ManagedInstanceGroupId;
         /// <summary>
-        /// Identifying information for the specified managed instance group.
+        /// Provides identifying information for the specified managed instance group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult> ManagedInstanceGroups;
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
         /// </summary>
         public readonly string ManagementStationId;
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// A filter to return registration profiles that match the given profileType.
+        /// A filter to return registration profiles that match the given profile type.
         /// </summary>
         public readonly string ProfileType;
+        /// <summary>
+        /// A filter to return profiles that match the given instance type.
+        /// </summary>
+        public readonly string RegistrationType;
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>
         /// The list of software sources that the registration profile will use.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfilesProfileCollectionItemSoftwareSourceResult> SoftwareSources;
         /// <summary>
-        /// A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+        /// A filter to return only registration profiles in the given state.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -81,11 +93,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the registration profile was created. An RFC3339 formatted datetime string.
+        /// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// A filter to return only profiles that match the given vendorName.
+        /// A filter to return only resources that match the given vendor name.
         /// </summary>
         public readonly string VendorName;
 
@@ -105,6 +117,10 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string id,
 
+            bool isDefaultProfile,
+
+            bool isServiceProvidedProfile,
+
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult> lifecycleEnvironments,
 
             string lifecycleStageId,
@@ -120,6 +136,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             string osFamily,
 
             string profileType,
+
+            string registrationType,
 
             ImmutableArray<string> softwareSourceIds,
 
@@ -140,6 +158,8 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsDefaultProfile = isDefaultProfile;
+            IsServiceProvidedProfile = isServiceProvidedProfile;
             LifecycleEnvironments = lifecycleEnvironments;
             LifecycleStageId = lifecycleStageId;
             LifecycleStages = lifecycleStages;
@@ -148,6 +168,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             ManagementStationId = managementStationId;
             OsFamily = osFamily;
             ProfileType = profileType;
+            RegistrationType = registrationType;
             SoftwareSourceIds = softwareSourceIds;
             SoftwareSources = softwareSources;
             State = state;

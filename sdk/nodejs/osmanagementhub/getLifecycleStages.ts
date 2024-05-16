@@ -9,8 +9,27 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
- * a variety of criteria including but not limited to its name, status, architecture, and OS family.
+ * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLifecycleStages = oci.OsManagementHub.getLifecycleStages({
+ *     archType: lifecycleStageArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: lifecycleStageDisplayName,
+ *     displayNameContains: lifecycleStageDisplayNameContains,
+ *     lifecycleStageId: testLifecycleStage.id,
+ *     locations: lifecycleStageLocation,
+ *     locationNotEqualTos: lifecycleStageLocationNotEqualTo,
+ *     osFamily: lifecycleStageOsFamily,
+ *     softwareSourceId: lifecycleStageSoftwareSourceId,
+ *     state: lifecycleStageState,
+ * });
+ * ```
  */
 export function getLifecycleStages(args?: GetLifecycleStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleStagesResult> {
     args = args || {};
@@ -23,6 +42,8 @@ export function getLifecycleStages(args?: GetLifecycleStagesArgs, opts?: pulumi.
         "displayNames": args.displayNames,
         "filters": args.filters,
         "lifecycleStageId": args.lifecycleStageId,
+        "locationNotEqualTos": args.locationNotEqualTos,
+        "locations": args.locations,
         "osFamily": args.osFamily,
         "softwareSourceId": args.softwareSourceId,
         "state": args.state,
@@ -38,7 +59,7 @@ export interface GetLifecycleStagesArgs {
      */
     archType?: string;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
@@ -51,19 +72,27 @@ export interface GetLifecycleStagesArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetLifecycleStagesFilter[];
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     lifecycleStageId?: string;
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: string[];
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: string[];
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: string;
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     softwareSourceId?: string;
     /**
-     * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      */
     state?: string;
 }
@@ -73,11 +102,11 @@ export interface GetLifecycleStagesArgs {
  */
 export interface GetLifecycleStagesResult {
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      */
     readonly archType?: string;
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      */
     readonly compartmentId?: string;
     readonly displayNameContains?: string;
@@ -95,12 +124,17 @@ export interface GetLifecycleStagesResult {
      */
     readonly lifecycleStageCollections: outputs.OsManagementHub.GetLifecycleStagesLifecycleStageCollection[];
     readonly lifecycleStageId?: string;
+    readonly locationNotEqualTos?: string[];
     /**
-     * The operating system type of the target instances.
+     * The location of managed instances associated with the lifecycle stage.
+     */
+    readonly locations?: string[];
+    /**
+     * The operating system of the managed instances in the lifecycle stage.
      */
     readonly osFamily?: string;
     /**
-     * Identifying information for the specified software source.
+     * Provides identifying information for the specified software source.
      */
     readonly softwareSourceId?: string;
     /**
@@ -111,8 +145,27 @@ export interface GetLifecycleStagesResult {
 /**
  * This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
- * a variety of criteria including but not limited to its name, status, architecture, and OS family.
+ * Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLifecycleStages = oci.OsManagementHub.getLifecycleStages({
+ *     archType: lifecycleStageArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: lifecycleStageDisplayName,
+ *     displayNameContains: lifecycleStageDisplayNameContains,
+ *     lifecycleStageId: testLifecycleStage.id,
+ *     locations: lifecycleStageLocation,
+ *     locationNotEqualTos: lifecycleStageLocationNotEqualTo,
+ *     osFamily: lifecycleStageOsFamily,
+ *     softwareSourceId: lifecycleStageSoftwareSourceId,
+ *     state: lifecycleStageState,
+ * });
+ * ```
  */
 export function getLifecycleStagesOutput(args?: GetLifecycleStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleStagesResult> {
     return pulumi.output(args).apply((a: any) => getLifecycleStages(a, opts))
@@ -127,7 +180,7 @@ export interface GetLifecycleStagesOutputArgs {
      */
     archType?: pulumi.Input<string>;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -140,19 +193,27 @@ export interface GetLifecycleStagesOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetLifecycleStagesFilterArgs>[]>;
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     lifecycleStageId?: pulumi.Input<string>;
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources whose location does not match the given value.
+     */
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
+    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamily?: pulumi.Input<string>;
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     softwareSourceId?: pulumi.Input<string>;
     /**
-     * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      */
     state?: pulumi.Input<string>;
 }

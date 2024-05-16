@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string? Id;
 

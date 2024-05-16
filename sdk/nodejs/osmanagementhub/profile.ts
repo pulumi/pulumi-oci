@@ -9,9 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Creates a registration profile.\
- * A profile is a supplementary file for the OS Management Hub agentry
- * that dictates the content for a managed instance at registration time.
+ * Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
  *
  * ## Example Usage
  *
@@ -31,10 +29,12 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isDefaultProfile: profileIsDefaultProfile,
  *     lifecycleStageId: testLifecycleStage.id,
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     managementStationId: testManagementStation.id,
  *     osFamily: profileOsFamily,
+ *     registrationType: profileRegistrationType,
  *     softwareSourceIds: profileSoftwareSourceIds,
  *     vendorName: profileVendorName,
  * });
@@ -81,7 +81,7 @@ export class Profile extends pulumi.CustomResource {
      */
     public readonly archType!: pulumi.Output<string>;
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -89,7 +89,7 @@ export class Profile extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the registration profile.
+     * (Updatable) User-specified description of the registration profile.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -101,27 +101,35 @@ export class Profile extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Identifying information for the specified lifecycle environment.
+     * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     */
+    public readonly isDefaultProfile!: pulumi.Output<boolean>;
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     */
+    public /*out*/ readonly isServiceProvidedProfile!: pulumi.Output<boolean>;
+    /**
+     * Provides identifying information for the specified lifecycle environment.
      */
     public /*out*/ readonly lifecycleEnvironments!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleEnvironment[]>;
     /**
-     * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
     public readonly lifecycleStageId!: pulumi.Output<string>;
     /**
-     * Identifying information for the specified lifecycle stage.
+     * Provides identifying information for the specified lifecycle stage.
      */
     public /*out*/ readonly lifecycleStages!: pulumi.Output<outputs.OsManagementHub.ProfileLifecycleStage[]>;
     /**
-     * The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
     public readonly managedInstanceGroupId!: pulumi.Output<string>;
     /**
-     * Identifying information for the specified managed instance group.
+     * Provides identifying information for the specified managed instance group.
      */
     public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagementHub.ProfileManagedInstanceGroup[]>;
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      */
     public readonly managementStationId!: pulumi.Output<string>;
     /**
@@ -129,11 +137,15 @@ export class Profile extends pulumi.CustomResource {
      */
     public readonly osFamily!: pulumi.Output<string>;
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      */
     public readonly profileType!: pulumi.Output<string>;
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The type of instance to register.
+     */
+    public readonly registrationType!: pulumi.Output<string>;
+    /**
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
     public readonly softwareSourceIds!: pulumi.Output<string[]>;
     /**
@@ -149,11 +161,11 @@ export class Profile extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      *
      *
      * ** IMPORTANT **
@@ -180,6 +192,8 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isDefaultProfile"] = state ? state.isDefaultProfile : undefined;
+            resourceInputs["isServiceProvidedProfile"] = state ? state.isServiceProvidedProfile : undefined;
             resourceInputs["lifecycleEnvironments"] = state ? state.lifecycleEnvironments : undefined;
             resourceInputs["lifecycleStageId"] = state ? state.lifecycleStageId : undefined;
             resourceInputs["lifecycleStages"] = state ? state.lifecycleStages : undefined;
@@ -188,6 +202,7 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["managementStationId"] = state ? state.managementStationId : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
             resourceInputs["profileType"] = state ? state.profileType : undefined;
+            resourceInputs["registrationType"] = state ? state.registrationType : undefined;
             resourceInputs["softwareSourceIds"] = state ? state.softwareSourceIds : undefined;
             resourceInputs["softwareSources"] = state ? state.softwareSources : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -211,13 +226,16 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isDefaultProfile"] = args ? args.isDefaultProfile : undefined;
             resourceInputs["lifecycleStageId"] = args ? args.lifecycleStageId : undefined;
             resourceInputs["managedInstanceGroupId"] = args ? args.managedInstanceGroupId : undefined;
             resourceInputs["managementStationId"] = args ? args.managementStationId : undefined;
             resourceInputs["osFamily"] = args ? args.osFamily : undefined;
             resourceInputs["profileType"] = args ? args.profileType : undefined;
+            resourceInputs["registrationType"] = args ? args.registrationType : undefined;
             resourceInputs["softwareSourceIds"] = args ? args.softwareSourceIds : undefined;
             resourceInputs["vendorName"] = args ? args.vendorName : undefined;
+            resourceInputs["isServiceProvidedProfile"] = undefined /*out*/;
             resourceInputs["lifecycleEnvironments"] = undefined /*out*/;
             resourceInputs["lifecycleStages"] = undefined /*out*/;
             resourceInputs["managedInstanceGroups"] = undefined /*out*/;
@@ -240,7 +258,7 @@ export interface ProfileState {
      */
     archType?: pulumi.Input<string>;
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -248,7 +266,7 @@ export interface ProfileState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the registration profile.
+     * (Updatable) User-specified description of the registration profile.
      */
     description?: pulumi.Input<string>;
     /**
@@ -260,27 +278,35 @@ export interface ProfileState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Identifying information for the specified lifecycle environment.
+     * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     */
+    isDefaultProfile?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     */
+    isServiceProvidedProfile?: pulumi.Input<boolean>;
+    /**
+     * Provides identifying information for the specified lifecycle environment.
      */
     lifecycleEnvironments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleEnvironment>[]>;
     /**
-     * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
     lifecycleStageId?: pulumi.Input<string>;
     /**
-     * Identifying information for the specified lifecycle stage.
+     * Provides identifying information for the specified lifecycle stage.
      */
     lifecycleStages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileLifecycleStage>[]>;
     /**
-     * The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
     managedInstanceGroupId?: pulumi.Input<string>;
     /**
-     * Identifying information for the specified managed instance group.
+     * Provides identifying information for the specified managed instance group.
      */
     managedInstanceGroups?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ProfileManagedInstanceGroup>[]>;
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      */
     managementStationId?: pulumi.Input<string>;
     /**
@@ -288,11 +314,15 @@ export interface ProfileState {
      */
     osFamily?: pulumi.Input<string>;
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      */
     profileType?: pulumi.Input<string>;
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The type of instance to register.
+     */
+    registrationType?: pulumi.Input<string>;
+    /**
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
     softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -308,11 +338,11 @@ export interface ProfileState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      *
      *
      * ** IMPORTANT **
@@ -330,7 +360,7 @@ export interface ProfileArgs {
      */
     archType?: pulumi.Input<string>;
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -338,7 +368,7 @@ export interface ProfileArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the registration profile.
+     * (Updatable) User-specified description of the registration profile.
      */
     description?: pulumi.Input<string>;
     /**
@@ -350,15 +380,19 @@ export interface ProfileArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+     * (Updatable) Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     */
+    isDefaultProfile?: pulumi.Input<boolean>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
      */
     lifecycleStageId?: pulumi.Input<string>;
     /**
-     * The OCID of the managed instance group from which the registration profile will inherit its software sources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will join after registration.
      */
     managedInstanceGroupId?: pulumi.Input<string>;
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      */
     managementStationId?: pulumi.Input<string>;
     /**
@@ -366,15 +400,19 @@ export interface ProfileArgs {
      */
     osFamily?: pulumi.Input<string>;
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of profile.
      */
     profileType: pulumi.Input<string>;
     /**
-     * The list of software source OCIDs that the registration profile will use.
+     * The type of instance to register.
+     */
+    registrationType?: pulumi.Input<string>;
+    /**
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
      */
     softwareSourceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      *
      *
      * ** IMPORTANT **

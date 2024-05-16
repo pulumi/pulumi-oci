@@ -23,7 +23,7 @@ class GetManagedInstanceGroupsResult:
     """
     A collection of values returned by getManagedInstanceGroups.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, managed_instance_group_collections=None, managed_instance_group_id=None, os_family=None, software_source_id=None, state=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, is_managed_by_autonomous_linux=None, location_not_equal_tos=None, locations=None, managed_instance_group_collections=None, managed_instance_group_id=None, os_family=None, software_source_id=None, state=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -42,6 +42,15 @@ class GetManagedInstanceGroupsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_managed_by_autonomous_linux and not isinstance(is_managed_by_autonomous_linux, bool):
+            raise TypeError("Expected argument 'is_managed_by_autonomous_linux' to be a bool")
+        pulumi.set(__self__, "is_managed_by_autonomous_linux", is_managed_by_autonomous_linux)
+        if location_not_equal_tos and not isinstance(location_not_equal_tos, list):
+            raise TypeError("Expected argument 'location_not_equal_tos' to be a list")
+        pulumi.set(__self__, "location_not_equal_tos", location_not_equal_tos)
+        if locations and not isinstance(locations, list):
+            raise TypeError("Expected argument 'locations' to be a list")
+        pulumi.set(__self__, "locations", locations)
         if managed_instance_group_collections and not isinstance(managed_instance_group_collections, list):
             raise TypeError("Expected argument 'managed_instance_group_collections' to be a list")
         pulumi.set(__self__, "managed_instance_group_collections", managed_instance_group_collections)
@@ -70,7 +79,7 @@ class GetManagedInstanceGroupsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the tenancy containing the managed instance group.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -99,6 +108,27 @@ class GetManagedInstanceGroupsResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isManagedByAutonomousLinux")
+    def is_managed_by_autonomous_linux(self) -> Optional[bool]:
+        """
+        Indicates whether the Autonomous Linux service manages the group.
+        """
+        return pulumi.get(self, "is_managed_by_autonomous_linux")
+
+    @property
+    @pulumi.getter(name="locationNotEqualTos")
+    def location_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "location_not_equal_tos")
+
+    @property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence[str]]:
+        """
+        The location of managed instances attached to the group.
+        """
+        return pulumi.get(self, "locations")
 
     @property
     @pulumi.getter(name="managedInstanceGroupCollections")
@@ -147,6 +177,9 @@ class AwaitableGetManagedInstanceGroupsResult(GetManagedInstanceGroupsResult):
             display_names=self.display_names,
             filters=self.filters,
             id=self.id,
+            is_managed_by_autonomous_linux=self.is_managed_by_autonomous_linux,
+            location_not_equal_tos=self.location_not_equal_tos,
+            locations=self.locations,
             managed_instance_group_collections=self.managed_instance_group_collections,
             managed_instance_group_id=self.managed_instance_group_id,
             os_family=self.os_family,
@@ -159,6 +192,9 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
                                 display_name_contains: Optional[str] = None,
                                 display_names: Optional[Sequence[str]] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetManagedInstanceGroupsFilterArgs']]] = None,
+                                is_managed_by_autonomous_linux: Optional[bool] = None,
+                                location_not_equal_tos: Optional[Sequence[str]] = None,
+                                locations: Optional[Sequence[str]] = None,
                                 managed_instance_group_id: Optional[str] = None,
                                 os_family: Optional[str] = None,
                                 software_source_id: Optional[str] = None,
@@ -167,8 +203,7 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
     """
     This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-    list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+    Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
 
     ## Example Usage
 
@@ -180,6 +215,9 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        locations=managed_instance_group_location,
+        location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],
         os_family=managed_instance_group_os_family,
         software_source_id=test_software_source["id"],
@@ -188,13 +226,16 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The OCID of the managed instance group for which to list resources.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only resources their lifecycle state matches the given lifecycle state.
+    :param bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
+    :param str os_family: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+    :param str state: A filter to return only managed instance groups that are in the specified state.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -202,6 +243,9 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
     __args__['displayNameContains'] = display_name_contains
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
+    __args__['isManagedByAutonomousLinux'] = is_managed_by_autonomous_linux
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
     __args__['managedInstanceGroupId'] = managed_instance_group_id
     __args__['osFamily'] = os_family
     __args__['softwareSourceId'] = software_source_id
@@ -216,6 +260,9 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
         display_names=pulumi.get(__ret__, 'display_names'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_managed_by_autonomous_linux=pulumi.get(__ret__, 'is_managed_by_autonomous_linux'),
+        location_not_equal_tos=pulumi.get(__ret__, 'location_not_equal_tos'),
+        locations=pulumi.get(__ret__, 'locations'),
         managed_instance_group_collections=pulumi.get(__ret__, 'managed_instance_group_collections'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
         os_family=pulumi.get(__ret__, 'os_family'),
@@ -229,6 +276,9 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
                                        display_name_contains: Optional[pulumi.Input[Optional[str]]] = None,
                                        display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetManagedInstanceGroupsFilterArgs']]]]] = None,
+                                       is_managed_by_autonomous_linux: Optional[pulumi.Input[Optional[bool]]] = None,
+                                       location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                       locations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                        managed_instance_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                        software_source_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -237,8 +287,7 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
     """
     This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-    list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+    Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
 
     ## Example Usage
 
@@ -250,6 +299,9 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        locations=managed_instance_group_location,
+        location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],
         os_family=managed_instance_group_os_family,
         software_source_id=test_software_source["id"],
@@ -258,12 +310,15 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The OCID of the managed instance group for which to list resources.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only resources their lifecycle state matches the given lifecycle state.
+    :param bool is_managed_by_autonomous_linux: Indicates whether to list only resources managed by the Autonomous Linux service.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str managed_instance_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
+    :param str os_family: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+    :param str state: A filter to return only managed instance groups that are in the specified state.
     """
     ...

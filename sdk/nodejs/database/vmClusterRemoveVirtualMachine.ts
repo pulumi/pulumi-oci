@@ -102,6 +102,10 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
      */
     public /*out*/ readonly exadataInfrastructureId!: pulumi.Output<string>;
     /**
+     * Details of the file system configuration of the VM cluster.
+     */
+    public /*out*/ readonly fileSystemConfigurationDetails!: pulumi.Output<outputs.Database.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail[]>;
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -193,6 +197,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["fileSystemConfigurationDetails"] = state ? state.fileSystemConfigurationDetails : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["giVersion"] = state ? state.giVersion : undefined;
             resourceInputs["isLocalBackupEnabled"] = state ? state.isLocalBackupEnabled : undefined;
@@ -228,6 +233,7 @@ export class VmClusterRemoveVirtualMachine extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["exadataInfrastructureId"] = undefined /*out*/;
+            resourceInputs["fileSystemConfigurationDetails"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["giVersion"] = undefined /*out*/;
             resourceInputs["isLocalBackupEnabled"] = undefined /*out*/;
@@ -293,6 +299,10 @@ export interface VmClusterRemoveVirtualMachineState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * Details of the file system configuration of the VM cluster.
+     */
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail>[]>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

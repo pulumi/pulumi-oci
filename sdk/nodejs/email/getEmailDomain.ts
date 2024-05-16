@@ -58,6 +58,14 @@ export interface GetEmailDomainResult {
      * The description of an email domain.
      */
     readonly description: string;
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     */
+    readonly domainVerificationId: string;
+    /**
+     * The current domain verification status.
+     */
+    readonly domainVerificationStatus: string;
     readonly emailDomainId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

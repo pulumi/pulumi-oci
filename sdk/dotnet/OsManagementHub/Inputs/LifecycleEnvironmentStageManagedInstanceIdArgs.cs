@@ -13,13 +13,13 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class LifecycleEnvironmentStageManagedInstanceIdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

@@ -21,13 +21,13 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      */
     private List<GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection> availableSoftwareSourceCollections;
     /**
-     * @return The OCID for the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     private @Nullable String compartmentId;
     private @Nullable String displayNameContains;
     /**
-     * @return User friendly name for the software source.
+     * @return User-friendly name for the software source.
      * 
      */
     private @Nullable List<String> displayNames;
@@ -48,7 +48,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         return this.availableSoftwareSourceCollections;
     }
     /**
-     * @return The OCID for the compartment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * 
      */
     public Optional<String> compartmentId() {
@@ -58,7 +58,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
         return Optional.ofNullable(this.displayNameContains);
     }
     /**
-     * @return User friendly name for the software source.
+     * @return User-friendly name for the software source.
      * 
      */
     public List<String> displayNames() {

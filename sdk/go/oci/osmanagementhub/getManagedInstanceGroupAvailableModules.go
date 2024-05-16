@@ -13,8 +13,7 @@ import (
 
 // This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Lists available modules that for the specified managed instance group. Filter the list against a variety of
-// criteria including but not limited to its name.
+// List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
 //
 // ## Example Usage
 //
@@ -56,10 +55,10 @@ func GetManagedInstanceGroupAvailableModules(ctx *pulumi.Context, args *GetManag
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableModules.
 type GetManagedInstanceGroupAvailableModulesArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string                                         `pulumi:"compartmentId"`
 	Filters       []GetManagedInstanceGroupAvailableModulesFilter `pulumi:"filters"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
 	// The resource name.
 	Name *string `pulumi:"name"`
@@ -76,7 +75,7 @@ type GetManagedInstanceGroupAvailableModulesResult struct {
 	// The list of managed_instance_group_available_module_collection.
 	ManagedInstanceGroupAvailableModuleCollections []GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection `pulumi:"managedInstanceGroupAvailableModuleCollections"`
 	ManagedInstanceGroupId                         string                                                                                 `pulumi:"managedInstanceGroupId"`
-	// The name of the module that is available to be enabled on the managed instance group.
+	// The name of the module that is available to the managed instance group.
 	Name         *string `pulumi:"name"`
 	NameContains *string `pulumi:"nameContains"`
 }
@@ -96,10 +95,10 @@ func GetManagedInstanceGroupAvailableModulesOutput(ctx *pulumi.Context, args Get
 
 // A collection of arguments for invoking getManagedInstanceGroupAvailableModules.
 type GetManagedInstanceGroupAvailableModulesOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list.
+	// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput                                   `pulumi:"compartmentId"`
 	Filters       GetManagedInstanceGroupAvailableModulesFilterArrayInput `pulumi:"filters"`
-	// The managed instance group OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId pulumi.StringInput `pulumi:"managedInstanceGroupId"`
 	// The resource name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -152,7 +151,7 @@ func (o GetManagedInstanceGroupAvailableModulesResultOutput) ManagedInstanceGrou
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesResult) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
 }
 
-// The name of the module that is available to be enabled on the managed instance group.
+// The name of the module that is available to the managed instance group.
 func (o GetManagedInstanceGroupAvailableModulesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

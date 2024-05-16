@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified module stream profile in a software source.
+        /// Returns information about the specified module stream profile in a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified module stream profile in a software source.
+        /// Returns information about the specified module stream profile in a software source.
         /// 
         /// 
         /// ## Example Usage
@@ -82,13 +82,13 @@ namespace Pulumi.Oci.OsManagementHub
         public string ModuleName { get; set; } = null!;
 
         /// <summary>
-        /// The name of the profile of the containing module stream.
+        /// The name of the module stream profile.
         /// </summary>
         [Input("profileName", required: true)]
         public string ProfileName { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -114,13 +114,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string> ModuleName { get; set; } = null!;
 
         /// <summary>
-        /// The name of the profile of the containing module stream.
+        /// The name of the module stream profile.
         /// </summary>
         [Input("profileName", required: true)]
         public Input<string> ProfileName { get; set; } = null!;
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;

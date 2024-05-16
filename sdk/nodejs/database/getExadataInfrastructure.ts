@@ -105,6 +105,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly dbServerVersion: string;
     /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     */
+    readonly definedFileSystemConfigurations: outputs.Database.GetExadataInfrastructureDefinedFileSystemConfiguration[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     readonly definedTags: {[key: string]: any};

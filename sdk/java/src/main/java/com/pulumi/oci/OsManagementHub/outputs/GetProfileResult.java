@@ -9,6 +9,7 @@ import com.pulumi.oci.OsManagementHub.outputs.GetProfileLifecycleEnvironment;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfileLifecycleStage;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfileManagedInstanceGroup;
 import com.pulumi.oci.OsManagementHub.outputs.GetProfileSoftwareSource;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -23,7 +24,7 @@ public final class GetProfileResult {
      */
     private String archType;
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     private String compartmentId;
@@ -48,29 +49,39 @@ public final class GetProfileResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
     /**
-     * @return Identifying information for the specified lifecycle environment.
+     * @return Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    private Boolean isDefaultProfile;
+    /**
+     * @return Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    private Boolean isServiceProvidedProfile;
+    /**
+     * @return Provides identifying information for the specified lifecycle environment.
      * 
      */
     private List<GetProfileLifecycleEnvironment> lifecycleEnvironments;
     private String lifecycleStageId;
     /**
-     * @return Identifying information for the specified lifecycle stage.
+     * @return Provides identifying information for the specified lifecycle stage.
      * 
      */
     private List<GetProfileLifecycleStage> lifecycleStages;
     private String managedInstanceGroupId;
     /**
-     * @return Identifying information for the specified managed instance group.
+     * @return Provides identifying information for the specified managed instance group.
      * 
      */
     private List<GetProfileManagedInstanceGroup> managedInstanceGroups;
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     private String managementStationId;
@@ -81,10 +92,15 @@ public final class GetProfileResult {
     private String osFamily;
     private String profileId;
     /**
-     * @return The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     private String profileType;
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    private String registrationType;
     private List<String> softwareSourceIds;
     /**
      * @return The list of software sources that the registration profile will use.
@@ -102,12 +118,12 @@ public final class GetProfileResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * @return The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String timeCreated;
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      */
     private String vendorName;
@@ -121,7 +137,7 @@ public final class GetProfileResult {
         return this.archType;
     }
     /**
-     * @return The OCID of the tenancy containing the registration profile.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * 
      */
     public String compartmentId() {
@@ -156,14 +172,28 @@ public final class GetProfileResult {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Identifying information for the specified lifecycle environment.
+     * @return Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     * 
+     */
+    public Boolean isDefaultProfile() {
+        return this.isDefaultProfile;
+    }
+    /**
+     * @return Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     * 
+     */
+    public Boolean isServiceProvidedProfile() {
+        return this.isServiceProvidedProfile;
+    }
+    /**
+     * @return Provides identifying information for the specified lifecycle environment.
      * 
      */
     public List<GetProfileLifecycleEnvironment> lifecycleEnvironments() {
@@ -173,7 +203,7 @@ public final class GetProfileResult {
         return this.lifecycleStageId;
     }
     /**
-     * @return Identifying information for the specified lifecycle stage.
+     * @return Provides identifying information for the specified lifecycle stage.
      * 
      */
     public List<GetProfileLifecycleStage> lifecycleStages() {
@@ -183,14 +213,14 @@ public final class GetProfileResult {
         return this.managedInstanceGroupId;
     }
     /**
-     * @return Identifying information for the specified managed instance group.
+     * @return Provides identifying information for the specified managed instance group.
      * 
      */
     public List<GetProfileManagedInstanceGroup> managedInstanceGroups() {
         return this.managedInstanceGroups;
     }
     /**
-     * @return The OCID of the management station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * 
      */
     public String managementStationId() {
@@ -207,11 +237,18 @@ public final class GetProfileResult {
         return this.profileId;
     }
     /**
-     * @return The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * @return The type of profile.
      * 
      */
     public String profileType() {
         return this.profileType;
+    }
+    /**
+     * @return The type of instance to register.
+     * 
+     */
+    public String registrationType() {
+        return this.registrationType;
     }
     public List<String> softwareSourceIds() {
         return this.softwareSourceIds;
@@ -238,14 +275,14 @@ public final class GetProfileResult {
         return this.systemTags;
     }
     /**
-     * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
+     * @return The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system for the instance.
      * 
      */
     public String vendorName() {
@@ -268,6 +305,8 @@ public final class GetProfileResult {
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isDefaultProfile;
+        private Boolean isServiceProvidedProfile;
         private List<GetProfileLifecycleEnvironment> lifecycleEnvironments;
         private String lifecycleStageId;
         private List<GetProfileLifecycleStage> lifecycleStages;
@@ -277,6 +316,7 @@ public final class GetProfileResult {
         private String osFamily;
         private String profileId;
         private String profileType;
+        private String registrationType;
         private List<String> softwareSourceIds;
         private List<GetProfileSoftwareSource> softwareSources;
         private String state;
@@ -293,6 +333,8 @@ public final class GetProfileResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isDefaultProfile = defaults.isDefaultProfile;
+    	      this.isServiceProvidedProfile = defaults.isServiceProvidedProfile;
     	      this.lifecycleEnvironments = defaults.lifecycleEnvironments;
     	      this.lifecycleStageId = defaults.lifecycleStageId;
     	      this.lifecycleStages = defaults.lifecycleStages;
@@ -302,6 +344,7 @@ public final class GetProfileResult {
     	      this.osFamily = defaults.osFamily;
     	      this.profileId = defaults.profileId;
     	      this.profileType = defaults.profileType;
+    	      this.registrationType = defaults.registrationType;
     	      this.softwareSourceIds = defaults.softwareSourceIds;
     	      this.softwareSources = defaults.softwareSources;
     	      this.state = defaults.state;
@@ -364,6 +407,22 @@ public final class GetProfileResult {
               throw new MissingRequiredPropertyException("GetProfileResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            if (isDefaultProfile == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "isDefaultProfile");
+            }
+            this.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            if (isServiceProvidedProfile == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "isServiceProvidedProfile");
+            }
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
             return this;
         }
         @CustomType.Setter
@@ -448,6 +507,14 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder registrationType(String registrationType) {
+            if (registrationType == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "registrationType");
+            }
+            this.registrationType = registrationType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceIds(List<String> softwareSourceIds) {
             if (softwareSourceIds == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "softwareSourceIds");
@@ -510,6 +577,8 @@ public final class GetProfileResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isDefaultProfile = isDefaultProfile;
+            _resultValue.isServiceProvidedProfile = isServiceProvidedProfile;
             _resultValue.lifecycleEnvironments = lifecycleEnvironments;
             _resultValue.lifecycleStageId = lifecycleStageId;
             _resultValue.lifecycleStages = lifecycleStages;
@@ -519,6 +588,7 @@ public final class GetProfileResult {
             _resultValue.osFamily = osFamily;
             _resultValue.profileId = profileId;
             _resultValue.profileType = profileType;
+            _resultValue.registrationType = registrationType;
             _resultValue.softwareSourceIds = softwareSourceIds;
             _resultValue.softwareSources = softwareSources;
             _resultValue.state = state;

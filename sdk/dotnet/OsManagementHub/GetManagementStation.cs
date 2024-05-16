@@ -70,7 +70,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         [Input("managementStationId", required: true)]
         public string ManagementStationId { get; set; } = null!;
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the management station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         [Input("managementStationId", required: true)]
         public Input<string> ManagementStationId { get; set; } = null!;
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetManagementStationResult
     {
         /// <summary>
-        /// The OCID of the tenancy containing the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -108,11 +108,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Details describing the ManagementStation config.
+        /// Explanation of the health status.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ManagementStation name
+        /// A user-friendly name for the management station.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -120,52 +120,57 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Name of the host
+        /// Overall health information of the management station.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetManagementStationHealthResult> Healths;
+        /// <summary>
+        /// Hostname of the management station.
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// OCID for the ManagementStation config
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// OCID for the Instance associated with the Management Station.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         /// </summary>
         public readonly string ManagedInstanceId;
         public readonly string ManagementStationId;
         /// <summary>
-        /// A decimal number representing the mirror capacity
+        /// A decimal number representing the amount of mirror capacity used by the sync.
         /// </summary>
         public readonly int MirrorCapacity;
         /// <summary>
-        /// Status summary of all repos
+        /// Status summary of the mirror sync.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagementStationMirrorSyncStatusResult> MirrorSyncStatuses;
         /// <summary>
-        /// Information for a mirror configuration
+        /// Mirror information used for the management station configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagementStationMirrorResult> Mirrors;
         /// <summary>
-        /// A decimal number representing the completeness percentage
+        /// A decimal number representing the progress of the current mirror sync.
         /// </summary>
         public readonly int OverallPercentage;
         /// <summary>
-        /// Current state of the mirroring
+        /// Current state of the mirror sync for the management station.
         /// </summary>
         public readonly string OverallState;
         /// <summary>
-        /// OCID of the Profile associated with the Station
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         /// </summary>
         public readonly string ProfileId;
         /// <summary>
-        /// Information for a proxy configuration
+        /// Proxy information used for the management station configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagementStationProxyResult> Proxies;
+        public readonly int RefreshTrigger;
         /// <summary>
-        /// OCID of the Scheduled Job for mirror sync
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         /// </summary>
         public readonly string ScheduledJobId;
         /// <summary>
-        /// The current state of the Management Station config.
+        /// The current state of the management station.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -173,7 +178,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// A decimal number representing the total of repos
+        /// The number of software sources that the station is mirroring.
         /// </summary>
         public readonly int TotalMirrors;
 
@@ -188,6 +193,8 @@ namespace Pulumi.Oci.OsManagementHub
             string displayName,
 
             ImmutableDictionary<string, object> freeformTags,
+
+            ImmutableArray<Outputs.GetManagementStationHealthResult> healths,
 
             string hostname,
 
@@ -211,6 +218,8 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagementStationProxyResult> proxies,
 
+            int refreshTrigger,
+
             string scheduledJobId,
 
             string state,
@@ -224,6 +233,7 @@ namespace Pulumi.Oci.OsManagementHub
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            Healths = healths;
             Hostname = hostname;
             Id = id;
             ManagedInstanceId = managedInstanceId;
@@ -235,6 +245,7 @@ namespace Pulumi.Oci.OsManagementHub
             OverallState = overallState;
             ProfileId = profileId;
             Proxies = proxies;
+            RefreshTrigger = refreshTrigger;
             ScheduledJobId = scheduledJobId;
             State = state;
             SystemTags = systemTags;

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -38,19 +38,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of managed instances specified lifecycle stage.
+        /// A filter to return only resources whose location matches the given value.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult> ManagedInstanceIds;
+        public readonly string Location;
         /// <summary>
-        /// A filter to return only profiles that match the given osFamily.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// User specified list of lifecycle stages to be created for the lifecycle environment.
+        /// User-specified list of lifecycle stages used within the lifecycle environment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult> Stages;
         /// <summary>
@@ -62,15 +62,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeModified;
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the lifecycle environment.
         /// </summary>
         public readonly string VendorName;
 
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
             string id,
 
-            ImmutableArray<Outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult> managedInstanceIds,
+            string location,
 
             string osFamily,
 
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
-            ManagedInstanceIds = managedInstanceIds;
+            Location = location;
             OsFamily = osFamily;
             Stages = stages;
             State = state;

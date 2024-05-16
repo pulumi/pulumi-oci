@@ -19,14 +19,14 @@ public final class GetManagedInstanceGroupAvailablePackagesFilterArgs extends co
     public static final GetManagedInstanceGroupAvailablePackagesFilterArgs Empty = new GetManagedInstanceGroupAvailablePackagesFilterArgs();
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetManagedInstanceGroupAvailablePackagesFilterArgs extends co
         }
 
         /**
-         * @param name Unique identifier for the package. NOTE - This is not an OCID.
+         * @param name Unique identifier for the package. Note that this is not an OCID.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetManagedInstanceGroupAvailablePackagesFilterArgs extends co
         }
 
         /**
-         * @param name Unique identifier for the package. NOTE - This is not an OCID.
+         * @param name Unique identifier for the package. Note that this is not an OCID.
          * 
          * @return builder
          * 

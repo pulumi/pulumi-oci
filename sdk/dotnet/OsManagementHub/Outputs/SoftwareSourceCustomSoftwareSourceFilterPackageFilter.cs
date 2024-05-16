@@ -14,9 +14,9 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
     public sealed class SoftwareSourceCustomSoftwareSourceFilterPackageFilter
     {
         /// <summary>
-        /// (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        /// (Updatable) The type of the filter.
         /// </summary>
-        public readonly string FilterType;
+        public readonly string? FilterType;
         /// <summary>
         /// (Updatable) The package name.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private SoftwareSourceCustomSoftwareSourceFilterPackageFilter(
-            string filterType,
+            string? filterType,
 
             string? packageName,
 

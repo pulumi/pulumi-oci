@@ -49,6 +49,12 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         [Input("cipherSuiteName")]
         public Input<string>? CipherSuiteName { get; set; }
 
+        /// <summary>
+        /// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+        /// </summary>
+        [Input("hasSessionResumption")]
+        public Input<bool>? HasSessionResumption { get; set; }
+
         [Input("protocols")]
         private InputList<string>? _protocols;
 

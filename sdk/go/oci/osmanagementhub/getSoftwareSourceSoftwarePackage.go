@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Software Source Software Package resource in Oracle Cloud Infrastructure Os Management Hub service.
 //
-// Gets information about the specified software package.
+// Returns information about the specified software package.
 //
 // ## Example Usage
 //
@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetSoftwareSourceSoftwarePackage(ctx, &osmanagementhub.GetSoftwareSourceSoftwarePackageArgs{
-//				SoftwarePackageName: softwareSourceSoftwarePackageSoftwarePackageName,
+//				SoftwarePackageName: testSoftwarePackage.Name,
 //				SoftwareSourceId:    testSoftwareSource.Id,
 //			}, nil)
 //			if err != nil {
@@ -55,7 +55,7 @@ func GetSoftwareSourceSoftwarePackage(ctx *pulumi.Context, args *GetSoftwareSour
 type GetSoftwareSourceSoftwarePackageArgs struct {
 	// The name of the software package.
 	SoftwarePackageName string `pulumi:"softwarePackageName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId string `pulumi:"softwareSourceId"`
 }
 
@@ -79,15 +79,17 @@ type GetSoftwareSourceSoftwarePackageResult struct {
 	Id string `pulumi:"id"`
 	// Indicates whether this package is the latest version.
 	IsLatest bool `pulumi:"isLatest"`
-	// Date of the last update to the package.
+	// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	LastModifiedDate string `pulumi:"lastModifiedDate"`
-	// Unique identifier for the package. NOTE - This is not an OCID.
+	// Unique identifier for the package. Note that this is not an OCID.
 	Name string `pulumi:"name"`
+	// The OS families the package belongs to.
+	OsFamilies []string `pulumi:"osFamilies"`
 	// Size of the package in bytes.
 	SizeInBytes         string `pulumi:"sizeInBytes"`
 	SoftwarePackageName string `pulumi:"softwarePackageName"`
 	SoftwareSourceId    string `pulumi:"softwareSourceId"`
-	// List of software sources that provide the software package.
+	// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
 	SoftwareSources []GetSoftwareSourceSoftwarePackageSoftwareSource `pulumi:"softwareSources"`
 	// Type of the package.
 	Type string `pulumi:"type"`
@@ -112,7 +114,7 @@ func GetSoftwareSourceSoftwarePackageOutput(ctx *pulumi.Context, args GetSoftwar
 type GetSoftwareSourceSoftwarePackageOutputArgs struct {
 	// The name of the software package.
 	SoftwarePackageName pulumi.StringInput `pulumi:"softwarePackageName"`
-	// The software source OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
 }
 
@@ -182,14 +184,19 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) IsLatest() pulumi.BoolOutp
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) bool { return v.IsLatest }).(pulumi.BoolOutput)
 }
 
-// Date of the last update to the package.
+// The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 func (o GetSoftwareSourceSoftwarePackageResultOutput) LastModifiedDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.LastModifiedDate }).(pulumi.StringOutput)
 }
 
-// Unique identifier for the package. NOTE - This is not an OCID.
+// Unique identifier for the package. Note that this is not an OCID.
 func (o GetSoftwareSourceSoftwarePackageResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The OS families the package belongs to.
+func (o GetSoftwareSourceSoftwarePackageResultOutput) OsFamilies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) []string { return v.OsFamilies }).(pulumi.StringArrayOutput)
 }
 
 // Size of the package in bytes.
@@ -205,7 +212,7 @@ func (o GetSoftwareSourceSoftwarePackageResultOutput) SoftwareSourceId() pulumi.
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
 }
 
-// List of software sources that provide the software package.
+// List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
 func (o GetSoftwareSourceSoftwarePackageResultOutput) SoftwareSources() GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageResult) []GetSoftwareSourceSoftwarePackageSoftwareSource {
 		return v.SoftwareSources

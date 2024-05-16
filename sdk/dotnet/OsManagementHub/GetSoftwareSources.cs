@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+        /// Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
@@ -32,10 +32,13 @@ namespace Pulumi.Oci.OsManagementHub
         ///     {
         ///         ArchTypes = softwareSourceArchType,
         ///         Availabilities = softwareSourceAvailability,
+        ///         AvailabilityAnywheres = softwareSourceAvailabilityAnywhere,
+        ///         AvailabilityAtOcis = softwareSourceAvailabilityAtOci,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = softwareSourceDisplayName,
         ///         DisplayNameContains = softwareSourceDisplayNameContains,
         ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
+        ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
         ///         OsFamilies = softwareSourceOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
         ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
@@ -52,7 +55,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+        /// Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
         /// 
@@ -70,10 +73,13 @@ namespace Pulumi.Oci.OsManagementHub
         ///     {
         ///         ArchTypes = softwareSourceArchType,
         ///         Availabilities = softwareSourceAvailability,
+        ///         AvailabilityAnywheres = softwareSourceAvailabilityAnywhere,
+        ///         AvailabilityAtOcis = softwareSourceAvailabilityAtOci,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = softwareSourceDisplayName,
         ///         DisplayNameContains = softwareSourceDisplayNameContains,
         ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
+        ///         IsMandatoryForAutonomousLinux = softwareSourceIsMandatoryForAutonomousLinux,
         ///         OsFamilies = softwareSourceOsFamily,
         ///         SoftwareSourceId = testSoftwareSource.Id,
         ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
@@ -107,7 +113,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source for a tenant.
+        /// The availabilities of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public List<string> Availabilities
         {
@@ -115,14 +121,38 @@ namespace Pulumi.Oci.OsManagementHub
             set => _availabilities = value;
         }
 
+        [Input("availabilityAnywheres")]
+        private List<string>? _availabilityAnywheres;
+
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// </summary>
+        public List<string> AvailabilityAnywheres
+        {
+            get => _availabilityAnywheres ?? (_availabilityAnywheres = new List<string>());
+            set => _availabilityAnywheres = value;
+        }
+
+        [Input("availabilityAtOcis")]
+        private List<string>? _availabilityAtOcis;
+
+        /// <summary>
+        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// </summary>
+        public List<string> AvailabilityAtOcis
+        {
+            get => _availabilityAtOcis ?? (_availabilityAtOcis = new List<string>());
+            set => _availabilityAtOcis = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -153,11 +183,17 @@ namespace Pulumi.Oci.OsManagementHub
             set => _filters = value;
         }
 
+        /// <summary>
+        /// Indicates whether the software source is mandatory for the Autonomous Linux service.
+        /// </summary>
+        [Input("isMandatoryForAutonomousLinux")]
+        public bool? IsMandatoryForAutonomousLinux { get; set; }
+
         [Input("osFamilies")]
         private List<string>? _osFamilies;
 
         /// <summary>
-        /// A filter to return only instances whose OS family type matches the given OS family.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public List<string> OsFamilies
         {
@@ -166,7 +202,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
         /// </summary>
         [Input("softwareSourceId")]
         public string? SoftwareSourceId { get; set; }
@@ -187,7 +223,7 @@ namespace Pulumi.Oci.OsManagementHub
         private List<string>? _states;
 
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+        /// A filter to return only software sources whose state matches the given state.
         /// </summary>
         public List<string> States
         {
@@ -196,7 +232,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A filter to return only profiles that match the given vendorName.
+        /// A filter to return only resources that match the given vendor name.
         /// </summary>
         [Input("vendorName")]
         public string? VendorName { get; set; }
@@ -225,7 +261,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _availabilities;
 
         /// <summary>
-        /// The availabilities of the software source for a tenant.
+        /// The availabilities of the software source in a non-OCI environment for a tenancy.
         /// </summary>
         public InputList<string> Availabilities
         {
@@ -233,14 +269,38 @@ namespace Pulumi.Oci.OsManagementHub
             set => _availabilities = value;
         }
 
+        [Input("availabilityAnywheres")]
+        private InputList<string>? _availabilityAnywheres;
+
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+        /// </summary>
+        public InputList<string> AvailabilityAnywheres
+        {
+            get => _availabilityAnywheres ?? (_availabilityAnywheres = new InputList<string>());
+            set => _availabilityAnywheres = value;
+        }
+
+        [Input("availabilityAtOcis")]
+        private InputList<string>? _availabilityAtOcis;
+
+        /// <summary>
+        /// The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+        /// </summary>
+        public InputList<string> AvailabilityAtOcis
+        {
+            get => _availabilityAtOcis ?? (_availabilityAtOcis = new InputList<string>());
+            set => _availabilityAtOcis = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+        /// A filter to return resources that match the given user-friendly name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -271,11 +331,17 @@ namespace Pulumi.Oci.OsManagementHub
             set => _filters = value;
         }
 
+        /// <summary>
+        /// Indicates whether the software source is mandatory for the Autonomous Linux service.
+        /// </summary>
+        [Input("isMandatoryForAutonomousLinux")]
+        public Input<bool>? IsMandatoryForAutonomousLinux { get; set; }
+
         [Input("osFamilies")]
         private InputList<string>? _osFamilies;
 
         /// <summary>
-        /// A filter to return only instances whose OS family type matches the given OS family.
+        /// A filter to return only resources that match the given operating system family.
         /// </summary>
         public InputList<string> OsFamilies
         {
@@ -284,7 +350,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The OCID for the software source.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
         /// </summary>
         [Input("softwareSourceId")]
         public Input<string>? SoftwareSourceId { get; set; }
@@ -305,7 +371,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<string>? _states;
 
         /// <summary>
-        /// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+        /// A filter to return only software sources whose state matches the given state.
         /// </summary>
         public InputList<string> States
         {
@@ -314,7 +380,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// A filter to return only profiles that match the given vendorName.
+        /// A filter to return only resources that match the given vendor name.
         /// </summary>
         [Input("vendorName")]
         public Input<string>? VendorName { get; set; }
@@ -334,15 +400,20 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableArray<string> ArchTypes;
         /// <summary>
-        /// Possible availabilities of a software source.
+        /// Availability of the software source (for non-OCI environments).
         /// </summary>
         public readonly ImmutableArray<string> Availabilities;
+        public readonly ImmutableArray<string> AvailabilityAnywheres;
         /// <summary>
-        /// The OCID of the tenancy containing the software source.
+        /// Availability of the software source (for Oracle Cloud Infrastructure environments).
+        /// </summary>
+        public readonly ImmutableArray<string> AvailabilityAtOcis;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// User friendly name.
+        /// User-friendly name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly string? DisplayNameContains;
@@ -353,6 +424,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether the software source is required for the Autonomous Linux service.
+        /// </summary>
+        public readonly bool? IsMandatoryForAutonomousLinux;
+        /// <summary>
         /// The OS family the software source belongs to.
         /// </summary>
         public readonly ImmutableArray<string> OsFamilies;
@@ -362,7 +437,7 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionResult> SoftwareSourceCollections;
         public readonly string? SoftwareSourceId;
         /// <summary>
-        /// Type of the software source.
+        /// Type of software source.
         /// </summary>
         public readonly ImmutableArray<string> SoftwareSourceTypes;
         /// <summary>
@@ -380,6 +455,10 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<string> availabilities,
 
+            ImmutableArray<string> availabilityAnywheres,
+
+            ImmutableArray<string> availabilityAtOcis,
+
             string? compartmentId,
 
             string? displayName,
@@ -391,6 +470,8 @@ namespace Pulumi.Oci.OsManagementHub
             ImmutableArray<Outputs.GetSoftwareSourcesFilterResult> filters,
 
             string id,
+
+            bool? isMandatoryForAutonomousLinux,
 
             ImmutableArray<string> osFamilies,
 
@@ -406,12 +487,15 @@ namespace Pulumi.Oci.OsManagementHub
         {
             ArchTypes = archTypes;
             Availabilities = availabilities;
+            AvailabilityAnywheres = availabilityAnywheres;
+            AvailabilityAtOcis = availabilityAtOcis;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             DisplayNameContains = displayNameContains;
             DisplayNameNotEqualTos = displayNameNotEqualTos;
             Filters = filters;
             Id = id;
+            IsMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             OsFamilies = osFamilies;
             SoftwareSourceCollections = softwareSourceCollections;
             SoftwareSourceId = softwareSourceId;

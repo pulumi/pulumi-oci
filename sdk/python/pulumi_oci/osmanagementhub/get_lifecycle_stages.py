@@ -23,7 +23,7 @@ class GetLifecycleStagesResult:
     """
     A collection of values returned by getLifecycleStages.
     """
-    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, lifecycle_stage_collections=None, lifecycle_stage_id=None, os_family=None, software_source_id=None, state=None):
+    def __init__(__self__, arch_type=None, compartment_id=None, display_name_contains=None, display_names=None, filters=None, id=None, lifecycle_stage_collections=None, lifecycle_stage_id=None, location_not_equal_tos=None, locations=None, os_family=None, software_source_id=None, state=None):
         if arch_type and not isinstance(arch_type, str):
             raise TypeError("Expected argument 'arch_type' to be a str")
         pulumi.set(__self__, "arch_type", arch_type)
@@ -48,6 +48,12 @@ class GetLifecycleStagesResult:
         if lifecycle_stage_id and not isinstance(lifecycle_stage_id, str):
             raise TypeError("Expected argument 'lifecycle_stage_id' to be a str")
         pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
+        if location_not_equal_tos and not isinstance(location_not_equal_tos, list):
+            raise TypeError("Expected argument 'location_not_equal_tos' to be a list")
+        pulumi.set(__self__, "location_not_equal_tos", location_not_equal_tos)
+        if locations and not isinstance(locations, list):
+            raise TypeError("Expected argument 'locations' to be a list")
+        pulumi.set(__self__, "locations", locations)
         if os_family and not isinstance(os_family, str):
             raise TypeError("Expected argument 'os_family' to be a str")
         pulumi.set(__self__, "os_family", os_family)
@@ -62,7 +68,7 @@ class GetLifecycleStagesResult:
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
         """
-        The CPU architecture of the target instances.
+        The CPU architecture of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "arch_type")
 
@@ -70,7 +76,7 @@ class GetLifecycleStagesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The OCID of the tenancy containing the lifecycle stage.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -114,10 +120,23 @@ class GetLifecycleStagesResult:
         return pulumi.get(self, "lifecycle_stage_id")
 
     @property
+    @pulumi.getter(name="locationNotEqualTos")
+    def location_not_equal_tos(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "location_not_equal_tos")
+
+    @property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence[str]]:
+        """
+        The location of managed instances associated with the lifecycle stage.
+        """
+        return pulumi.get(self, "locations")
+
+    @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
         """
-        The operating system type of the target instances.
+        The operating system of the managed instances in the lifecycle stage.
         """
         return pulumi.get(self, "os_family")
 
@@ -125,7 +144,7 @@ class GetLifecycleStagesResult:
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> Optional[str]:
         """
-        Identifying information for the specified software source.
+        Provides identifying information for the specified software source.
         """
         return pulumi.get(self, "software_source_id")
 
@@ -152,6 +171,8 @@ class AwaitableGetLifecycleStagesResult(GetLifecycleStagesResult):
             id=self.id,
             lifecycle_stage_collections=self.lifecycle_stage_collections,
             lifecycle_stage_id=self.lifecycle_stage_id,
+            location_not_equal_tos=self.location_not_equal_tos,
+            locations=self.locations,
             os_family=self.os_family,
             software_source_id=self.software_source_id,
             state=self.state)
@@ -163,6 +184,8 @@ def get_lifecycle_stages(arch_type: Optional[str] = None,
                          display_names: Optional[Sequence[str]] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetLifecycleStagesFilterArgs']]] = None,
                          lifecycle_stage_id: Optional[str] = None,
+                         location_not_equal_tos: Optional[Sequence[str]] = None,
+                         locations: Optional[Sequence[str]] = None,
                          os_family: Optional[str] = None,
                          software_source_id: Optional[str] = None,
                          state: Optional[str] = None,
@@ -170,18 +193,37 @@ def get_lifecycle_stages(arch_type: Optional[str] = None,
     """
     This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
-    a variety of criteria including but not limited to its name, status, architecture, and OS family.
+    Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_lifecycle_stages = oci.OsManagementHub.get_lifecycle_stages(arch_type=lifecycle_stage_arch_type,
+        compartment_id=compartment_id,
+        display_names=lifecycle_stage_display_name,
+        display_name_contains=lifecycle_stage_display_name_contains,
+        lifecycle_stage_id=test_lifecycle_stage["id"],
+        locations=lifecycle_stage_location,
+        location_not_equal_tos=lifecycle_stage_location_not_equal_to,
+        os_family=lifecycle_stage_os_family,
+        software_source_id=lifecycle_stage_software_source_id,
+        state=lifecycle_stage_state)
+    ```
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_stage_id: The OCID of the lifecycle stage.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+    :param str lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str os_family: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+    :param str state: A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -190,6 +232,8 @@ def get_lifecycle_stages(arch_type: Optional[str] = None,
     __args__['displayNames'] = display_names
     __args__['filters'] = filters
     __args__['lifecycleStageId'] = lifecycle_stage_id
+    __args__['locationNotEqualTos'] = location_not_equal_tos
+    __args__['locations'] = locations
     __args__['osFamily'] = os_family
     __args__['softwareSourceId'] = software_source_id
     __args__['state'] = state
@@ -205,6 +249,8 @@ def get_lifecycle_stages(arch_type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_stage_collections=pulumi.get(__ret__, 'lifecycle_stage_collections'),
         lifecycle_stage_id=pulumi.get(__ret__, 'lifecycle_stage_id'),
+        location_not_equal_tos=pulumi.get(__ret__, 'location_not_equal_tos'),
+        locations=pulumi.get(__ret__, 'locations'),
         os_family=pulumi.get(__ret__, 'os_family'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         state=pulumi.get(__ret__, 'state'))
@@ -217,6 +263,8 @@ def get_lifecycle_stages_output(arch_type: Optional[pulumi.Input[Optional[str]]]
                                 display_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetLifecycleStagesFilterArgs']]]]] = None,
                                 lifecycle_stage_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                locations: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                 os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                 software_source_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
@@ -224,17 +272,36 @@ def get_lifecycle_stages_output(arch_type: Optional[pulumi.Input[Optional[str]]]
     """
     This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter the list against
-    a variety of criteria including but not limited to its name, status, architecture, and OS family.
+    Lists lifecycle stages that match the specified compartment or lifecycle stage [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_lifecycle_stages = oci.OsManagementHub.get_lifecycle_stages(arch_type=lifecycle_stage_arch_type,
+        compartment_id=compartment_id,
+        display_names=lifecycle_stage_display_name,
+        display_name_contains=lifecycle_stage_display_name_contains,
+        lifecycle_stage_id=test_lifecycle_stage["id"],
+        locations=lifecycle_stage_location,
+        location_not_equal_tos=lifecycle_stage_location_not_equal_to,
+        os_family=lifecycle_stage_os_family,
+        software_source_id=lifecycle_stage_software_source_id,
+        state=lifecycle_stage_state)
+    ```
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
+    :param str compartment_id: The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
     :param str display_name_contains: A filter to return resources that may partially match the given display name.
     :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_stage_id: The OCID of the lifecycle stage.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+    :param str lifecycle_stage_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
+    :param Sequence[str] location_not_equal_tos: A filter to return only resources whose location does not match the given value.
+    :param Sequence[str] locations: A filter to return only resources whose location matches the given value.
+    :param str os_family: A filter to return only resources that match the given operating system family.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
+    :param str state: A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
     """
     ...

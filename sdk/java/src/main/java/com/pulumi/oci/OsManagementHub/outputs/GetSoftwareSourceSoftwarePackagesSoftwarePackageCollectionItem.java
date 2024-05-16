@@ -41,7 +41,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
      */
     private String description;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     private String displayName;
@@ -51,27 +51,32 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
      */
     private List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile> files;
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     private Boolean isLatest;
     /**
-     * @return Date of the last update to the package.
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     private String lastModifiedDate;
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     private String name;
+    /**
+     * @return The OS families the package belongs to.
+     * 
+     */
+    private List<String> osFamilies;
     /**
      * @return Size of the package in bytes.
      * 
      */
     private String sizeInBytes;
     /**
-     * @return List of software sources that provide the software package.
+     * @return List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      * 
      */
     private List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource> softwareSources;
@@ -123,7 +128,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         return this.description;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
+     * @return A filter to return resources that match the given user-friendly name.
      * 
      */
     public String displayName() {
@@ -137,25 +142,32 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         return this.files;
     }
     /**
-     * @return A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
+     * @return Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      * 
      */
     public Boolean isLatest() {
         return this.isLatest;
     }
     /**
-     * @return Date of the last update to the package.
+     * @return The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public String lastModifiedDate() {
         return this.lastModifiedDate;
     }
     /**
-     * @return Unique identifier for the package. NOTE - This is not an OCID.
+     * @return Unique identifier for the package. Note that this is not an OCID.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return The OS families the package belongs to.
+     * 
+     */
+    public List<String> osFamilies() {
+        return this.osFamilies;
     }
     /**
      * @return Size of the package in bytes.
@@ -165,7 +177,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         return this.sizeInBytes;
     }
     /**
-     * @return List of software sources that provide the software package.
+     * @return List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      * 
      */
     public List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource> softwareSources() {
@@ -205,6 +217,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         private Boolean isLatest;
         private String lastModifiedDate;
         private String name;
+        private List<String> osFamilies;
         private String sizeInBytes;
         private List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource> softwareSources;
         private String type;
@@ -222,6 +235,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
     	      this.isLatest = defaults.isLatest;
     	      this.lastModifiedDate = defaults.lastModifiedDate;
     	      this.name = defaults.name;
+    	      this.osFamilies = defaults.osFamilies;
     	      this.sizeInBytes = defaults.sizeInBytes;
     	      this.softwareSources = defaults.softwareSources;
     	      this.type = defaults.type;
@@ -315,6 +329,17 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             return this;
         }
         @CustomType.Setter
+        public Builder osFamilies(List<String> osFamilies) {
+            if (osFamilies == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem", "osFamilies");
+            }
+            this.osFamilies = osFamilies;
+            return this;
+        }
+        public Builder osFamilies(String... osFamilies) {
+            return osFamilies(List.of(osFamilies));
+        }
+        @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
             if (sizeInBytes == null) {
               throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem", "sizeInBytes");
@@ -361,6 +386,7 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             _resultValue.isLatest = isLatest;
             _resultValue.lastModifiedDate = lastModifiedDate;
             _resultValue.name = name;
+            _resultValue.osFamilies = osFamilies;
             _resultValue.sizeInBytes = sizeInBytes;
             _resultValue.softwareSources = softwareSources;
             _resultValue.type = type;

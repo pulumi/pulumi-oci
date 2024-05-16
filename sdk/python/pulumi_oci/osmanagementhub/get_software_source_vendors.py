@@ -109,7 +109,7 @@ def get_software_source_vendors(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str name: The name of the entity to be queried.
     """
     __args__ = dict()
@@ -149,7 +149,7 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str
     ```
 
 
-    :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
     :param str name: The name of the entity to be queried.
     """
     ...

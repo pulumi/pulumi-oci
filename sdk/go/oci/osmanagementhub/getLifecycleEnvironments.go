@@ -36,6 +36,8 @@ import (
 //				DisplayNames:           lifecycleEnvironmentDisplayName,
 //				DisplayNameContains:    pulumi.StringRef(lifecycleEnvironmentDisplayNameContains),
 //				LifecycleEnvironmentId: pulumi.StringRef(testLifecycleEnvironment.Id),
+//				Locations:              lifecycleEnvironmentLocation,
+//				LocationNotEqualTos:    lifecycleEnvironmentLocationNotEqualTo,
 //				OsFamily:               pulumi.StringRef(lifecycleEnvironmentOsFamily),
 //				State:                  pulumi.StringRef(lifecycleEnvironmentState),
 //			}, nil)
@@ -61,16 +63,20 @@ func GetLifecycleEnvironments(ctx *pulumi.Context, args *GetLifecycleEnvironment
 type GetLifecycleEnvironmentsArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames []string                         `pulumi:"displayNames"`
 	Filters      []GetLifecycleEnvironmentsFilter `pulumi:"filters"`
-	// The OCID of the lifecycle environment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos []string `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations []string `pulumi:"locations"`
+	// A filter to return only resources that match the given operating system family.
 	OsFamily *string `pulumi:"osFamily"`
 	// A filter to return only the lifecycle environments that match the display name given.
 	State *string `pulumi:"state"`
@@ -78,9 +84,9 @@ type GetLifecycleEnvironmentsArgs struct {
 
 // A collection of values returned by getLifecycleEnvironments.
 type GetLifecycleEnvironmentsResult struct {
-	// The CPU architecture of the target instances.
+	// The CPU architecture of the managed instances in the lifecycle stage.
 	ArchType *string `pulumi:"archType"`
-	// The OCID of the tenancy containing the lifecycle stage.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId       *string `pulumi:"compartmentId"`
 	DisplayNameContains *string `pulumi:"displayNameContains"`
 	// Software source name.
@@ -90,9 +96,12 @@ type GetLifecycleEnvironmentsResult struct {
 	Id string `pulumi:"id"`
 	// The list of lifecycle_environment_collection.
 	LifecycleEnvironmentCollections []GetLifecycleEnvironmentsLifecycleEnvironmentCollection `pulumi:"lifecycleEnvironmentCollections"`
-	// The OCID of the lifecycle environment for the lifecycle stage.
-	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
-	// The operating system type of the target instances.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
+	LifecycleEnvironmentId *string  `pulumi:"lifecycleEnvironmentId"`
+	LocationNotEqualTos    []string `pulumi:"locationNotEqualTos"`
+	// The location of managed instances associated with the lifecycle stage.
+	Locations []string `pulumi:"locations"`
+	// The operating system of the managed instances in the lifecycle stage.
 	OsFamily *string `pulumi:"osFamily"`
 	// The current state of the lifecycle environment.
 	State *string `pulumi:"state"`
@@ -115,16 +124,20 @@ func GetLifecycleEnvironmentsOutput(ctx *pulumi.Context, args GetLifecycleEnviro
 type GetLifecycleEnvironmentsOutputArgs struct {
 	// A filter to return only profiles that match the given archType.
 	ArchType pulumi.StringPtrInput `pulumi:"archType"`
-	// The OCID of the compartment that contains the resources to list.
+	// (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that may partially match the given display name.
 	DisplayNameContains pulumi.StringPtrInput `pulumi:"displayNameContains"`
 	// A filter to return resources that match the given display names.
 	DisplayNames pulumi.StringArrayInput                  `pulumi:"displayNames"`
 	Filters      GetLifecycleEnvironmentsFilterArrayInput `pulumi:"filters"`
-	// The OCID of the lifecycle environment.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment.
 	LifecycleEnvironmentId pulumi.StringPtrInput `pulumi:"lifecycleEnvironmentId"`
-	// A filter to return only profiles that match the given osFamily.
+	// A filter to return only resources whose location does not match the given value.
+	LocationNotEqualTos pulumi.StringArrayInput `pulumi:"locationNotEqualTos"`
+	// A filter to return only resources whose location matches the given value.
+	Locations pulumi.StringArrayInput `pulumi:"locations"`
+	// A filter to return only resources that match the given operating system family.
 	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// A filter to return only the lifecycle environments that match the display name given.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -149,12 +162,12 @@ func (o GetLifecycleEnvironmentsResultOutput) ToGetLifecycleEnvironmentsResultOu
 	return o
 }
 
-// The CPU architecture of the target instances.
+// The CPU architecture of the managed instances in the lifecycle stage.
 func (o GetLifecycleEnvironmentsResultOutput) ArchType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the tenancy containing the lifecycle stage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 func (o GetLifecycleEnvironmentsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -184,12 +197,21 @@ func (o GetLifecycleEnvironmentsResultOutput) LifecycleEnvironmentCollections() 
 	}).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput)
 }
 
-// The OCID of the lifecycle environment for the lifecycle stage.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
 func (o GetLifecycleEnvironmentsResultOutput) LifecycleEnvironmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) *string { return v.LifecycleEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
-// The operating system type of the target instances.
+func (o GetLifecycleEnvironmentsResultOutput) LocationNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) []string { return v.LocationNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+// The location of managed instances associated with the lifecycle stage.
+func (o GetLifecycleEnvironmentsResultOutput) Locations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) []string { return v.Locations }).(pulumi.StringArrayOutput)
+}
+
+// The operating system of the managed instances in the lifecycle stage.
 func (o GetLifecycleEnvironmentsResultOutput) OsFamily() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleEnvironmentsResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }

@@ -14,7 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified lifecycle stage.
+        /// Returns information about the specified lifecycle stage.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +41,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides details about a specific Lifecycle Stage resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Gets information about the specified lifecycle stage.
+        /// Returns information about the specified lifecycle stage.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +70,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetLifecycleStageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         /// </summary>
         [Input("lifecycleStageId", required: true)]
         public string LifecycleStageId { get; set; } = null!;
@@ -82,7 +84,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetLifecycleStageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         /// </summary>
         [Input("lifecycleStageId", required: true)]
         public Input<string> LifecycleStageId { get; set; } = null!;
@@ -98,11 +100,11 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetLifecycleStageResult
     {
         /// <summary>
-        /// The CPU architecture of the target instances.
+        /// The CPU architecture of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string ArchType;
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -122,24 +124,28 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the lifecycle environment for the lifecycle stage.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
         /// </summary>
         public readonly string LifecycleEnvironmentId;
         public readonly string LifecycleStageId;
         /// <summary>
-        /// The list of managed instances specified lifecycle stage.
+        /// The location of managed instances associated with the lifecycle stage.
+        /// </summary>
+        public readonly string Location;
+        /// <summary>
+        /// The list of managed instances associated with the lifecycle stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLifecycleStageManagedInstanceIdResult> ManagedInstanceIds;
         /// <summary>
-        /// The operating system type of the target instances.
+        /// The operating system of the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        /// User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
         /// </summary>
         public readonly int Rank;
         /// <summary>
-        /// Identifying information for the specified software source.
+        /// Provides identifying information for the specified software source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLifecycleStageSoftwareSourceIdResult> SoftwareSourceIds;
         /// <summary>
@@ -151,15 +157,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+        /// The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+        /// The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         public readonly string TimeModified;
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the lifecycle stage.
         /// </summary>
         public readonly string VendorName;
 
@@ -180,6 +186,8 @@ namespace Pulumi.Oci.OsManagementHub
             string lifecycleEnvironmentId,
 
             string lifecycleStageId,
+
+            string location,
 
             ImmutableArray<Outputs.GetLifecycleStageManagedInstanceIdResult> managedInstanceIds,
 
@@ -207,6 +215,7 @@ namespace Pulumi.Oci.OsManagementHub
             Id = id;
             LifecycleEnvironmentId = lifecycleEnvironmentId;
             LifecycleStageId = lifecycleStageId;
+            Location = location;
             ManagedInstanceIds = managedInstanceIds;
             OsFamily = osFamily;
             Rank = rank;

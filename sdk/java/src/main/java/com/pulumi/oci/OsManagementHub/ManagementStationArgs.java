@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationProxyArgs;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -21,14 +22,14 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     public static final ManagementStationArgs Empty = new ManagementStationArgs();
 
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     public Output<String> compartmentId() {
@@ -51,14 +52,14 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Details describing the Management Station config.
+     * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Details describing the Management Station config.
+     * @return (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -66,14 +67,14 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Management Station name
+     * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Management Station name
+     * @return (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -96,14 +97,14 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Name of the host
+     * (Updatable) Hostname of the management station.
      * 
      */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
     /**
-     * @return (Updatable) Name of the host
+     * @return (Updatable) Hostname of the management station.
      * 
      */
     public Output<String> hostname() {
@@ -111,14 +112,14 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Information for creating a mirror configuration
+     * (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     @Import(name="mirror", required=true)
     private Output<ManagementStationMirrorArgs> mirror;
 
     /**
-     * @return (Updatable) Information for creating a mirror configuration
+     * @return (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     public Output<ManagementStationMirrorArgs> mirror() {
@@ -126,18 +127,39 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Information for creating a proxy configuration
+     * (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     @Import(name="proxy", required=true)
     private Output<ManagementStationProxyArgs> proxy;
 
     /**
-     * @return (Updatable) Information for creating a proxy configuration
+     * @return (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     public Output<ManagementStationProxyArgs> proxy() {
         return this.proxy;
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
     }
 
     private ManagementStationArgs() {}
@@ -151,6 +173,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         this.hostname = $.hostname;
         this.mirror = $.mirror;
         this.proxy = $.proxy;
+        this.refreshTrigger = $.refreshTrigger;
     }
 
     public static Builder builder() {
@@ -172,7 +195,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the Management Station.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
          * 
          * @return builder
          * 
@@ -183,7 +206,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the Management Station.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
          * 
          * @return builder
          * 
@@ -214,7 +237,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) Details describing the Management Station config.
+         * @param description (Updatable) User-specified description of the management station. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -225,7 +248,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) Details describing the Management Station config.
+         * @param description (Updatable) User-specified description of the management station. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -235,7 +258,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) Management Station name
+         * @param displayName (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -246,7 +269,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) Management Station name
+         * @param displayName (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -277,7 +300,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hostname (Updatable) Name of the host
+         * @param hostname (Updatable) Hostname of the management station.
          * 
          * @return builder
          * 
@@ -288,7 +311,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hostname (Updatable) Name of the host
+         * @param hostname (Updatable) Hostname of the management station.
          * 
          * @return builder
          * 
@@ -298,7 +321,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param mirror (Updatable) Information for creating a mirror configuration
+         * @param mirror (Updatable) Information used to create the mirror configuration for a management station.
          * 
          * @return builder
          * 
@@ -309,7 +332,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param mirror (Updatable) Information for creating a mirror configuration
+         * @param mirror (Updatable) Information used to create the mirror configuration for a management station.
          * 
          * @return builder
          * 
@@ -319,7 +342,7 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param proxy (Updatable) Information for creating a proxy configuration
+         * @param proxy (Updatable) Information used to create the proxy configuration for a management station.
          * 
          * @return builder
          * 
@@ -330,13 +353,40 @@ public final class ManagementStationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param proxy (Updatable) Information for creating a proxy configuration
+         * @param proxy (Updatable) Information used to create the proxy configuration for a management station.
          * 
          * @return builder
          * 
          */
         public Builder proxy(ManagementStationProxyArgs proxy) {
             return proxy(Output.of(proxy));
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
         }
 
         public ManagementStationArgs build() {

@@ -34,7 +34,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Packages;
         /// <summary>
-        /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+        /// The name of the module stream. This parameter is required if a profile name is specified.
         /// </summary>
         public readonly string StreamName;
 

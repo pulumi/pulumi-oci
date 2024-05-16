@@ -12,7 +12,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// <summary>
     /// This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
     /// 
-    /// Creates a new lifecycle environment.
+    /// Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to deliver curated, versioned content in a prescribed, methodical manner.
     /// 
     /// ## Example Usage
     /// 
@@ -34,8 +34,21 @@ namespace Pulumi.Oci.OsManagementHub
     ///         {
     ///             new Oci.OsManagementHub.Inputs.LifecycleEnvironmentStageArgs
     ///             {
-    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName,
-    ///                 Rank = lifecycleEnvironmentStagesRank,
+    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName1,
+    ///                 Rank = lifecycleEnvironmentStagesRank1,
+    ///                 DefinedTags = 
+    ///                 {
+    ///                     { "Operations.CostCenter", "42" },
+    ///                 },
+    ///                 FreeformTags = 
+    ///                 {
+    ///                     { "Department", "Finance" },
+    ///                 },
+    ///             },
+    ///             new Oci.OsManagementHub.Inputs.LifecycleEnvironmentStageArgs
+    ///             {
+    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName2,
+    ///                 Rank = lifecycleEnvironmentStagesRank2,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },
@@ -56,6 +69,7 @@ namespace Pulumi.Oci.OsManagementHub
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Location = lifecycleEnvironmentLocation,
     ///     });
     /// 
     /// });
@@ -73,13 +87,13 @@ namespace Pulumi.Oci.OsManagementHub
     public partial class LifecycleEnvironment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The CPU architecture of the managed instance(s) in the lifecycle environment.
+        /// The CPU architecture of the managed instances in the lifecycle environment.
         /// </summary>
         [Output("archType")]
         public Output<string> ArchType { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle environment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -91,13 +105,13 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User specified information about the lifecycle environment.
+        /// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -109,19 +123,25 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The list of managed instances specified lifecycle stage.
+        /// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        /// </summary>
+        [Output("location")]
+        public Output<string> Location { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of managed instances associated with the lifecycle stage.
         /// </summary>
         [Output("managedInstanceIds")]
         public Output<ImmutableArray<Outputs.LifecycleEnvironmentManagedInstanceId>> ManagedInstanceIds { get; private set; } = null!;
 
         /// <summary>
-        /// The operating system type of the managed instance(s) in the lifecycle environment.
+        /// The operating system of the managed instances in the lifecycle environment.
         /// </summary>
         [Output("osFamily")]
         public Output<string> OsFamily { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+        /// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         /// </summary>
         [Output("stages")]
         public Output<ImmutableArray<Outputs.LifecycleEnvironmentStage>> Stages { get; private set; } = null!;
@@ -139,19 +159,19 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Output("timeModified")]
         public Output<string> TimeModified { get; private set; } = null!;
 
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the lifecycle environment.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -207,13 +227,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class LifecycleEnvironmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The CPU architecture of the managed instance(s) in the lifecycle environment.
+        /// The CPU architecture of the managed instances in the lifecycle environment.
         /// </summary>
         [Input("archType", required: true)]
         public Input<string> ArchType { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle environment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -231,13 +251,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) User specified information about the lifecycle environment.
+        /// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -255,7 +275,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The operating system type of the managed instance(s) in the lifecycle environment.
+        /// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        /// </summary>
+        [Input("location")]
+        public Input<string>? Location { get; set; }
+
+        /// <summary>
+        /// The operating system of the managed instances in the lifecycle environment.
         /// </summary>
         [Input("osFamily", required: true)]
         public Input<string> OsFamily { get; set; } = null!;
@@ -264,7 +290,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<Inputs.LifecycleEnvironmentStageArgs>? _stages;
 
         /// <summary>
-        /// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+        /// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         /// </summary>
         public InputList<Inputs.LifecycleEnvironmentStageArgs> Stages
         {
@@ -273,7 +299,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the lifecycle environment.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -291,13 +317,13 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class LifecycleEnvironmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The CPU architecture of the managed instance(s) in the lifecycle environment.
+        /// The CPU architecture of the managed instances in the lifecycle environment.
         /// </summary>
         [Input("archType")]
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// The OCID of the tenancy containing the lifecycle environment.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -315,13 +341,13 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// (Updatable) User specified information about the lifecycle environment.
+        /// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -338,11 +364,17 @@ namespace Pulumi.Oci.OsManagementHub
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
+        /// </summary>
+        [Input("location")]
+        public Input<string>? Location { get; set; }
+
         [Input("managedInstanceIds")]
         private InputList<Inputs.LifecycleEnvironmentManagedInstanceIdGetArgs>? _managedInstanceIds;
 
         /// <summary>
-        /// The list of managed instances specified lifecycle stage.
+        /// The list of managed instances associated with the lifecycle stage.
         /// </summary>
         public InputList<Inputs.LifecycleEnvironmentManagedInstanceIdGetArgs> ManagedInstanceIds
         {
@@ -351,7 +383,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The operating system type of the managed instance(s) in the lifecycle environment.
+        /// The operating system of the managed instances in the lifecycle environment.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
@@ -360,7 +392,7 @@ namespace Pulumi.Oci.OsManagementHub
         private InputList<Inputs.LifecycleEnvironmentStageGetArgs>? _stages;
 
         /// <summary>
-        /// (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
+        /// (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
         /// </summary>
         public InputList<Inputs.LifecycleEnvironmentStageGetArgs> Stages
         {
@@ -387,19 +419,19 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
+        /// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         /// </summary>
         [Input("timeModified")]
         public Input<string>? TimeModified { get; set; }
 
         /// <summary>
-        /// The software source vendor name.
+        /// The vendor of the operating system used by the managed instances in the lifecycle environment.
         /// 
         /// 
         /// ** IMPORTANT **

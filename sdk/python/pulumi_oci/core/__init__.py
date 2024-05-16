@@ -120,6 +120,9 @@ from .get_instance_pool_load_balancer_attachment import *
 from .get_instance_pools import *
 from .get_instances import *
 from .get_internet_gateways import *
+from .get_ip_inventory_subnet import *
+from .get_ip_inventory_subnet_cidr import *
+from .get_ip_inventory_vcn_overlaps import *
 from .get_ipsec_algorithm import *
 from .get_ipsec_config import *
 from .get_ipsec_connection_tunnel import *

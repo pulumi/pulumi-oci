@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.OsManagementHub.inputs.ManagementStationHealthArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationMirrorSyncStatusArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagementStationProxyArgs;
@@ -23,14 +24,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     public static final ManagementStationState Empty = new ManagementStationState();
 
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -53,14 +54,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Details describing the Management Station config.
+     * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Details describing the Management Station config.
+     * @return (Updatable) User-specified description of the management station. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -68,14 +69,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Management Station name
+     * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Management Station name
+     * @return (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -98,14 +99,29 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Name of the host
+     * Overall health information of the management station.
+     * 
+     */
+    @Import(name="healths")
+    private @Nullable Output<List<ManagementStationHealthArgs>> healths;
+
+    /**
+     * @return Overall health information of the management station.
+     * 
+     */
+    public Optional<Output<List<ManagementStationHealthArgs>>> healths() {
+        return Optional.ofNullable(this.healths);
+    }
+
+    /**
+     * (Updatable) Hostname of the management station.
      * 
      */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
     /**
-     * @return (Updatable) Name of the host
+     * @return (Updatable) Hostname of the management station.
      * 
      */
     public Optional<Output<String>> hostname() {
@@ -113,14 +129,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * OCID for the Instance associated with the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     @Import(name="managedInstanceId")
     private @Nullable Output<String> managedInstanceId;
 
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     public Optional<Output<String>> managedInstanceId() {
@@ -128,14 +144,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Information for creating a mirror configuration
+     * (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     @Import(name="mirror")
     private @Nullable Output<ManagementStationMirrorArgs> mirror;
 
     /**
-     * @return (Updatable) Information for creating a mirror configuration
+     * @return (Updatable) Information used to create the mirror configuration for a management station.
      * 
      */
     public Optional<Output<ManagementStationMirrorArgs>> mirror() {
@@ -143,14 +159,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * A decimal number representing the mirror capacity
+     * A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     @Import(name="mirrorCapacity")
     private @Nullable Output<Integer> mirrorCapacity;
 
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     public Optional<Output<Integer>> mirrorCapacity() {
@@ -158,14 +174,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Status summary of all repos
+     * Status summary of the mirror sync.
      * 
      */
     @Import(name="mirrorSyncStatuses")
     private @Nullable Output<List<ManagementStationMirrorSyncStatusArgs>> mirrorSyncStatuses;
 
     /**
-     * @return Status summary of all repos
+     * @return Status summary of the mirror sync.
      * 
      */
     public Optional<Output<List<ManagementStationMirrorSyncStatusArgs>>> mirrorSyncStatuses() {
@@ -173,14 +189,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * A decimal number representing the completeness percentage
+     * A decimal number representing the progress of the current mirror sync.
      * 
      */
     @Import(name="overallPercentage")
     private @Nullable Output<Integer> overallPercentage;
 
     /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     public Optional<Output<Integer>> overallPercentage() {
@@ -188,14 +204,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Current state of the mirroring
+     * Current state of the mirror sync for the management station.
      * 
      */
     @Import(name="overallState")
     private @Nullable Output<String> overallState;
 
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     public Optional<Output<String>> overallState() {
@@ -203,14 +219,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * OCID of the Profile associated with the Station
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     @Import(name="profileId")
     private @Nullable Output<String> profileId;
 
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     public Optional<Output<String>> profileId() {
@@ -218,14 +234,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Information for creating a proxy configuration
+     * (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     @Import(name="proxy")
     private @Nullable Output<ManagementStationProxyArgs> proxy;
 
     /**
-     * @return (Updatable) Information for creating a proxy configuration
+     * @return (Updatable) Information used to create the proxy configuration for a management station.
      * 
      */
     public Optional<Output<ManagementStationProxyArgs>> proxy() {
@@ -233,14 +249,35 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * OCID of the Scheduled Job for mirror sync
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="refreshTrigger")
+    private @Nullable Output<Integer> refreshTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> refreshTrigger() {
+        return Optional.ofNullable(this.refreshTrigger);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     @Import(name="scheduledJobId")
     private @Nullable Output<String> scheduledJobId;
 
     /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     public Optional<Output<String>> scheduledJobId() {
@@ -248,14 +285,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The current state of the Management Station config.
+     * The current state of the management station.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     public Optional<Output<String>> state() {
@@ -278,14 +315,14 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * A decimal number representing the total of repos
+     * The number of software sources that the station is mirroring.
      * 
      */
     @Import(name="totalMirrors")
     private @Nullable Output<Integer> totalMirrors;
 
     /**
-     * @return A decimal number representing the total of repos
+     * @return The number of software sources that the station is mirroring.
      * 
      */
     public Optional<Output<Integer>> totalMirrors() {
@@ -300,6 +337,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.healths = $.healths;
         this.hostname = $.hostname;
         this.managedInstanceId = $.managedInstanceId;
         this.mirror = $.mirror;
@@ -309,6 +347,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         this.overallState = $.overallState;
         this.profileId = $.profileId;
         this.proxy = $.proxy;
+        this.refreshTrigger = $.refreshTrigger;
         this.scheduledJobId = $.scheduledJobId;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -334,7 +373,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the Management Station.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
          * 
          * @return builder
          * 
@@ -345,7 +384,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param compartmentId The OCID of the tenancy containing the Management Station.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
          * 
          * @return builder
          * 
@@ -376,7 +415,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param description (Updatable) Details describing the Management Station config.
+         * @param description (Updatable) User-specified description of the management station. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -387,7 +426,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param description (Updatable) Details describing the Management Station config.
+         * @param description (Updatable) User-specified description of the management station. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -397,7 +436,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param displayName (Updatable) Management Station name
+         * @param displayName (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -408,7 +447,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param displayName (Updatable) Management Station name
+         * @param displayName (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -439,7 +478,38 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param hostname (Updatable) Name of the host
+         * @param healths Overall health information of the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healths(@Nullable Output<List<ManagementStationHealthArgs>> healths) {
+            $.healths = healths;
+            return this;
+        }
+
+        /**
+         * @param healths Overall health information of the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healths(List<ManagementStationHealthArgs> healths) {
+            return healths(Output.of(healths));
+        }
+
+        /**
+         * @param healths Overall health information of the management station.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder healths(ManagementStationHealthArgs... healths) {
+            return healths(List.of(healths));
+        }
+
+        /**
+         * @param hostname (Updatable) Hostname of the management station.
          * 
          * @return builder
          * 
@@ -450,7 +520,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param hostname (Updatable) Name of the host
+         * @param hostname (Updatable) Hostname of the management station.
          * 
          * @return builder
          * 
@@ -460,7 +530,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param managedInstanceId OCID for the Instance associated with the Management Station.
+         * @param managedInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
          * 
          * @return builder
          * 
@@ -471,7 +541,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param managedInstanceId OCID for the Instance associated with the Management Station.
+         * @param managedInstanceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
          * 
          * @return builder
          * 
@@ -481,7 +551,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirror (Updatable) Information for creating a mirror configuration
+         * @param mirror (Updatable) Information used to create the mirror configuration for a management station.
          * 
          * @return builder
          * 
@@ -492,7 +562,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirror (Updatable) Information for creating a mirror configuration
+         * @param mirror (Updatable) Information used to create the mirror configuration for a management station.
          * 
          * @return builder
          * 
@@ -502,7 +572,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirrorCapacity A decimal number representing the mirror capacity
+         * @param mirrorCapacity A decimal number representing the amount of mirror capacity used by the sync.
          * 
          * @return builder
          * 
@@ -513,7 +583,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirrorCapacity A decimal number representing the mirror capacity
+         * @param mirrorCapacity A decimal number representing the amount of mirror capacity used by the sync.
          * 
          * @return builder
          * 
@@ -523,7 +593,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirrorSyncStatuses Status summary of all repos
+         * @param mirrorSyncStatuses Status summary of the mirror sync.
          * 
          * @return builder
          * 
@@ -534,7 +604,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirrorSyncStatuses Status summary of all repos
+         * @param mirrorSyncStatuses Status summary of the mirror sync.
          * 
          * @return builder
          * 
@@ -544,7 +614,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param mirrorSyncStatuses Status summary of all repos
+         * @param mirrorSyncStatuses Status summary of the mirror sync.
          * 
          * @return builder
          * 
@@ -554,7 +624,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overallPercentage A decimal number representing the completeness percentage
+         * @param overallPercentage A decimal number representing the progress of the current mirror sync.
          * 
          * @return builder
          * 
@@ -565,7 +635,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overallPercentage A decimal number representing the completeness percentage
+         * @param overallPercentage A decimal number representing the progress of the current mirror sync.
          * 
          * @return builder
          * 
@@ -575,7 +645,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overallState Current state of the mirroring
+         * @param overallState Current state of the mirror sync for the management station.
          * 
          * @return builder
          * 
@@ -586,7 +656,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param overallState Current state of the mirroring
+         * @param overallState Current state of the mirror sync for the management station.
          * 
          * @return builder
          * 
@@ -596,7 +666,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param profileId OCID of the Profile associated with the Station
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
          * 
          * @return builder
          * 
@@ -607,7 +677,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param profileId OCID of the Profile associated with the Station
+         * @param profileId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
          * 
          * @return builder
          * 
@@ -617,7 +687,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param proxy (Updatable) Information for creating a proxy configuration
+         * @param proxy (Updatable) Information used to create the proxy configuration for a management station.
          * 
          * @return builder
          * 
@@ -628,7 +698,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param proxy (Updatable) Information for creating a proxy configuration
+         * @param proxy (Updatable) Information used to create the proxy configuration for a management station.
          * 
          * @return builder
          * 
@@ -638,7 +708,34 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param scheduledJobId OCID of the Scheduled Job for mirror sync
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(@Nullable Output<Integer> refreshTrigger) {
+            $.refreshTrigger = refreshTrigger;
+            return this;
+        }
+
+        /**
+         * @param refreshTrigger (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            return refreshTrigger(Output.of(refreshTrigger));
+        }
+
+        /**
+         * @param scheduledJobId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
          * 
          * @return builder
          * 
@@ -649,7 +746,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param scheduledJobId OCID of the Scheduled Job for mirror sync
+         * @param scheduledJobId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
          * 
          * @return builder
          * 
@@ -659,7 +756,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state The current state of the Management Station config.
+         * @param state The current state of the management station.
          * 
          * @return builder
          * 
@@ -670,7 +767,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state The current state of the Management Station config.
+         * @param state The current state of the management station.
          * 
          * @return builder
          * 
@@ -701,7 +798,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param totalMirrors A decimal number representing the total of repos
+         * @param totalMirrors The number of software sources that the station is mirroring.
          * 
          * @return builder
          * 
@@ -712,7 +809,7 @@ public final class ManagementStationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param totalMirrors A decimal number representing the total of repos
+         * @param totalMirrors The number of software sources that the station is mirroring.
          * 
          * @return builder
          * 

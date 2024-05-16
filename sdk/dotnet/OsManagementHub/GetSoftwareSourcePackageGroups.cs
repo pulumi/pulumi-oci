@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists package groups that associate with the specified software source OCID. Filter the list against a 
+        /// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, and package group type.
         /// 
         /// 
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists package groups that associate with the specified software source OCID. Filter the list against a 
+        /// Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
         /// variety of criteria including but not limited to its name, and package group type.
         /// 
         /// 
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourcePackageGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.OsManagementHub
         public string? NameContains { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public string SoftwareSourceId { get; set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.OsManagementHub
     public sealed class GetSoftwareSourcePackageGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the compartment that contains the resources to list.
+        /// The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? NameContains { get; set; }
 
         /// <summary>
-        /// The software source OCID.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         /// </summary>
         [Input("softwareSourceId", required: true)]
         public Input<string> SoftwareSourceId { get; set; } = null!;
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.OsManagementHub
         public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetSoftwareSourcePackageGroupsFilterResult> Filters;
         /// <summary>
-        /// Indicates if this is a group, category or environment.
+        /// Indicates if this is a group, category, or environment.
         /// </summary>
         public readonly ImmutableArray<string> GroupTypes;
         /// <summary>

@@ -60,7 +60,7 @@ class GetSoftwareSourcePackageGroupResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        description of the package group.
+        Description of the package group.
         """
         return pulumi.get(self, "description")
 
@@ -76,7 +76,7 @@ class GetSoftwareSourcePackageGroupResult:
     @pulumi.getter(name="groupType")
     def group_type(self) -> str:
         """
-        Indicates if this is a group, category or environment.
+        Indicates if this is a group, category, or environment.
         """
         return pulumi.get(self, "group_type")
 
@@ -100,7 +100,7 @@ class GetSoftwareSourcePackageGroupResult:
     @pulumi.getter(name="isUserVisible")
     def is_user_visible(self) -> bool:
         """
-        Indicates if this package group is visible by users.
+        Indicates if this package group is visible to users.
         """
         return pulumi.get(self, "is_user_visible")
 
@@ -129,7 +129,7 @@ class GetSoftwareSourcePackageGroupResult:
     @pulumi.getter
     def repositories(self) -> Sequence[str]:
         """
-        the IDs of the package group's repositories.
+        The repository IDs of the package group's repositories.
         """
         return pulumi.get(self, "repositories")
 
@@ -164,7 +164,7 @@ def get_software_source_package_group(package_group_id: Optional[str] = None,
     """
     This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified package group from a software source.
+    Returns information about the specified package group from a software source.
 
     ## Example Usage
 
@@ -178,7 +178,7 @@ def get_software_source_package_group(package_group_id: Optional[str] = None,
 
 
     :param str package_group_id: The unique package group identifier.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     __args__ = dict()
     __args__['packageGroupId'] = package_group_id
@@ -207,7 +207,7 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
     """
     This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
 
-    Gets information about the specified package group from a software source.
+    Returns information about the specified package group from a software source.
 
     ## Example Usage
 
@@ -221,6 +221,6 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
 
 
     :param str package_group_id: The unique package group identifier.
-    :param str software_source_id: The software source OCID.
+    :param str software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
     """
     ...

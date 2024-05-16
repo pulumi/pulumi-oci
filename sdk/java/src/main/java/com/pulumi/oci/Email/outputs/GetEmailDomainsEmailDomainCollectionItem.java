@@ -34,6 +34,16 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
      */
     private String description;
     /**
+     * @return Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    private String domainVerificationId;
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    private String domainVerificationStatus;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -99,6 +109,20 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
         return this.description;
     }
     /**
+     * @return Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * 
+     */
+    public String domainVerificationId() {
+        return this.domainVerificationId;
+    }
+    /**
+     * @return The current domain verification status.
+     * 
+     */
+    public String domainVerificationStatus() {
+        return this.domainVerificationStatus;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -161,6 +185,8 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String description;
+        private String domainVerificationId;
+        private String domainVerificationStatus;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isSpf;
@@ -175,6 +201,8 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.domainVerificationId = defaults.domainVerificationId;
+    	      this.domainVerificationStatus = defaults.domainVerificationStatus;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSpf = defaults.isSpf;
@@ -214,6 +242,22 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
               throw new MissingRequiredPropertyException("GetEmailDomainsEmailDomainCollectionItem", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainVerificationId(String domainVerificationId) {
+            if (domainVerificationId == null) {
+              throw new MissingRequiredPropertyException("GetEmailDomainsEmailDomainCollectionItem", "domainVerificationId");
+            }
+            this.domainVerificationId = domainVerificationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainVerificationStatus(String domainVerificationStatus) {
+            if (domainVerificationStatus == null) {
+              throw new MissingRequiredPropertyException("GetEmailDomainsEmailDomainCollectionItem", "domainVerificationStatus");
+            }
+            this.domainVerificationStatus = domainVerificationStatus;
             return this;
         }
         @CustomType.Setter
@@ -278,6 +322,8 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.domainVerificationId = domainVerificationId;
+            _resultValue.domainVerificationStatus = domainVerificationStatus;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSpf = isSpf;

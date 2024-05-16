@@ -54,7 +54,7 @@ func GetSoftwareSourceVendors(ctx *pulumi.Context, args *GetSoftwareSourceVendor
 
 // A collection of arguments for invoking getSoftwareSourceVendors.
 type GetSoftwareSourceVendorsArgs struct {
-	// The OCID of the compartment that contains the resources to list. This parameter is required.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetSoftwareSourceVendorsFilter `pulumi:"filters"`
 	// The name of the entity to be queried.
@@ -88,7 +88,7 @@ func GetSoftwareSourceVendorsOutput(ctx *pulumi.Context, args GetSoftwareSourceV
 
 // A collection of arguments for invoking getSoftwareSourceVendors.
 type GetSoftwareSourceVendorsOutputArgs struct {
-	// The OCID of the compartment that contains the resources to list. This parameter is required.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
 	CompartmentId pulumi.StringInput                       `pulumi:"compartmentId"`
 	Filters       GetSoftwareSourceVendorsFilterArrayInput `pulumi:"filters"`
 	// The name of the entity to be queried.

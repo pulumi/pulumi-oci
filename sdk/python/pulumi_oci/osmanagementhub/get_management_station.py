@@ -22,7 +22,7 @@ class GetManagementStationResult:
     """
     A collection of values returned by getManagementStation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, hostname=None, id=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_sync_statuses=None, mirrors=None, overall_percentage=None, overall_state=None, profile_id=None, proxies=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, healths=None, hostname=None, id=None, managed_instance_id=None, management_station_id=None, mirror_capacity=None, mirror_sync_statuses=None, mirrors=None, overall_percentage=None, overall_state=None, profile_id=None, proxies=None, refresh_trigger=None, scheduled_job_id=None, state=None, system_tags=None, total_mirrors=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetManagementStationResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if healths and not isinstance(healths, list):
+            raise TypeError("Expected argument 'healths' to be a list")
+        pulumi.set(__self__, "healths", healths)
         if hostname and not isinstance(hostname, str):
             raise TypeError("Expected argument 'hostname' to be a str")
         pulumi.set(__self__, "hostname", hostname)
@@ -71,6 +74,9 @@ class GetManagementStationResult:
         if proxies and not isinstance(proxies, list):
             raise TypeError("Expected argument 'proxies' to be a list")
         pulumi.set(__self__, "proxies", proxies)
+        if refresh_trigger and not isinstance(refresh_trigger, int):
+            raise TypeError("Expected argument 'refresh_trigger' to be a int")
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
         if scheduled_job_id and not isinstance(scheduled_job_id, str):
             raise TypeError("Expected argument 'scheduled_job_id' to be a str")
         pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
@@ -88,7 +94,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the tenancy containing the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -104,7 +110,7 @@ class GetManagementStationResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Details describing the ManagementStation config.
+        Explanation of the health status.
         """
         return pulumi.get(self, "description")
 
@@ -112,7 +118,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ManagementStation name
+        A user-friendly name for the management station.
         """
         return pulumi.get(self, "display_name")
 
@@ -126,9 +132,17 @@ class GetManagementStationResult:
 
     @property
     @pulumi.getter
+    def healths(self) -> Sequence['outputs.GetManagementStationHealthResult']:
+        """
+        Overall health information of the management station.
+        """
+        return pulumi.get(self, "healths")
+
+    @property
+    @pulumi.getter
     def hostname(self) -> str:
         """
-        Name of the host
+        Hostname of the management station.
         """
         return pulumi.get(self, "hostname")
 
@@ -136,7 +150,7 @@ class GetManagementStationResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        OCID for the ManagementStation config
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         """
         return pulumi.get(self, "id")
 
@@ -144,7 +158,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> str:
         """
-        OCID for the Instance associated with the Management Station.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
         """
         return pulumi.get(self, "managed_instance_id")
 
@@ -157,7 +171,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="mirrorCapacity")
     def mirror_capacity(self) -> int:
         """
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
         """
         return pulumi.get(self, "mirror_capacity")
 
@@ -165,7 +179,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="mirrorSyncStatuses")
     def mirror_sync_statuses(self) -> Sequence['outputs.GetManagementStationMirrorSyncStatusResult']:
         """
-        Status summary of all repos
+        Status summary of the mirror sync.
         """
         return pulumi.get(self, "mirror_sync_statuses")
 
@@ -173,7 +187,7 @@ class GetManagementStationResult:
     @pulumi.getter
     def mirrors(self) -> Sequence['outputs.GetManagementStationMirrorResult']:
         """
-        Information for a mirror configuration
+        Mirror information used for the management station configuration.
         """
         return pulumi.get(self, "mirrors")
 
@@ -181,7 +195,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="overallPercentage")
     def overall_percentage(self) -> int:
         """
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
         """
         return pulumi.get(self, "overall_percentage")
 
@@ -189,7 +203,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="overallState")
     def overall_state(self) -> str:
         """
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
         """
         return pulumi.get(self, "overall_state")
 
@@ -197,7 +211,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="profileId")
     def profile_id(self) -> str:
         """
-        OCID of the Profile associated with the Station
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         """
         return pulumi.get(self, "profile_id")
 
@@ -205,15 +219,20 @@ class GetManagementStationResult:
     @pulumi.getter
     def proxies(self) -> Sequence['outputs.GetManagementStationProxyResult']:
         """
-        Information for a proxy configuration
+        Proxy information used for the management station configuration.
         """
         return pulumi.get(self, "proxies")
+
+    @property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> int:
+        return pulumi.get(self, "refresh_trigger")
 
     @property
     @pulumi.getter(name="scheduledJobId")
     def scheduled_job_id(self) -> str:
         """
-        OCID of the Scheduled Job for mirror sync
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
         """
         return pulumi.get(self, "scheduled_job_id")
 
@@ -221,7 +240,7 @@ class GetManagementStationResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Management Station config.
+        The current state of the management station.
         """
         return pulumi.get(self, "state")
 
@@ -237,7 +256,7 @@ class GetManagementStationResult:
     @pulumi.getter(name="totalMirrors")
     def total_mirrors(self) -> int:
         """
-        A decimal number representing the total of repos
+        The number of software sources that the station is mirroring.
         """
         return pulumi.get(self, "total_mirrors")
 
@@ -253,6 +272,7 @@ class AwaitableGetManagementStationResult(GetManagementStationResult):
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            healths=self.healths,
             hostname=self.hostname,
             id=self.id,
             managed_instance_id=self.managed_instance_id,
@@ -264,6 +284,7 @@ class AwaitableGetManagementStationResult(GetManagementStationResult):
             overall_state=self.overall_state,
             profile_id=self.profile_id,
             proxies=self.proxies,
+            refresh_trigger=self.refresh_trigger,
             scheduled_job_id=self.scheduled_job_id,
             state=self.state,
             system_tags=self.system_tags,
@@ -287,7 +308,7 @@ def get_management_station(management_station_id: Optional[str] = None,
     ```
 
 
-    :param str management_station_id: The OCID of the management station.
+    :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
     """
     __args__ = dict()
     __args__['managementStationId'] = management_station_id
@@ -300,6 +321,7 @@ def get_management_station(management_station_id: Optional[str] = None,
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        healths=pulumi.get(__ret__, 'healths'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
@@ -311,6 +333,7 @@ def get_management_station(management_station_id: Optional[str] = None,
         overall_state=pulumi.get(__ret__, 'overall_state'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         proxies=pulumi.get(__ret__, 'proxies'),
+        refresh_trigger=pulumi.get(__ret__, 'refresh_trigger'),
         scheduled_job_id=pulumi.get(__ret__, 'scheduled_job_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -335,6 +358,6 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
     ```
 
 
-    :param str management_station_id: The OCID of the management station.
+    :param str management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
     """
     ...

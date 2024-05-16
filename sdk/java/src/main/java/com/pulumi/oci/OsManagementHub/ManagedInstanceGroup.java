@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.OsManagementHub.ManagedInstanceGroupArgs;
 import com.pulumi.oci.OsManagementHub.inputs.ManagedInstanceGroupState;
+import com.pulumi.oci.OsManagementHub.outputs.ManagedInstanceGroupAutonomousSettings;
 import com.pulumi.oci.OsManagementHub.outputs.ManagedInstanceGroupSoftwareSource;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -35,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.OsManagementHub.ManagedInstanceGroup;
  * import com.pulumi.oci.OsManagementHub.ManagedInstanceGroupArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.ManagedInstanceGroupAutonomousSettingsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -55,10 +58,15 @@ import javax.annotation.Nullable;
  *             .displayName(managedInstanceGroupDisplayName)
  *             .osFamily(managedInstanceGroupOsFamily)
  *             .vendorName(managedInstanceGroupVendorName)
+ *             .autonomousSettings(ManagedInstanceGroupAutonomousSettingsArgs.builder()
+ *                 .isDataCollectionAuthorized(managedInstanceGroupAutonomousSettingsIsDataCollectionAuthorized)
+ *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(managedInstanceGroupDescription)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .location(managedInstanceGroupLocation)
  *             .managedInstanceIds(managedInstanceGroupManagedInstanceIds)
+ *             .notificationTopicId(testNotificationTopic.id())
  *             .build());
  * 
  *     }
@@ -79,28 +87,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup")
 public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
     /**
-     * The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+     * The CPU architecture type of the managed instances that will be attached to this group.
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
-     * @return The CPU architecture type of the managed instance(s) that this managed instance group will contain.
+     * @return The CPU architecture type of the managed instances that will be attached to this group.
      * 
      */
     public Output<String> archType() {
         return this.archType;
     }
     /**
-     * The OCID of the tenancy containing the managed instance group.
+     * (Updatable) Updatable settings for the Autonomous Linux service.
+     * 
+     */
+    @Export(name="autonomousSettings", refs={ManagedInstanceGroupAutonomousSettings.class}, tree="[0]")
+    private Output<ManagedInstanceGroupAutonomousSettings> autonomousSettings;
+
+    /**
+     * @return (Updatable) Updatable settings for the Autonomous Linux service.
+     * 
+     */
+    public Output<ManagedInstanceGroupAutonomousSettings> autonomousSettings() {
+        return this.autonomousSettings;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OCID of the tenancy containing the managed instance group.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * 
      */
     public Output<String> compartmentId() {
@@ -121,28 +143,28 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Details about the managed instance group.
+     * (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Details about the managed instance group.
+     * @return (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -163,42 +185,84 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The number of Managed Instances in the managed instance group.
+     * Indicates whether the Autonomous Linux service manages the group.
+     * 
+     */
+    @Export(name="isManagedByAutonomousLinux", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isManagedByAutonomousLinux;
+
+    /**
+     * @return Indicates whether the Autonomous Linux service manages the group.
+     * 
+     */
+    public Output<Boolean> isManagedByAutonomousLinux() {
+        return this.isManagedByAutonomousLinux;
+    }
+    /**
+     * The location of managed instances attached to the group. If no location is provided, the default is on premises.
+     * 
+     */
+    @Export(name="location", refs={String.class}, tree="[0]")
+    private Output<String> location;
+
+    /**
+     * @return The location of managed instances attached to the group. If no location is provided, the default is on premises.
+     * 
+     */
+    public Output<String> location() {
+        return this.location;
+    }
+    /**
+     * The number of managed instances in the group.
      * 
      */
     @Export(name="managedInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> managedInstanceCount;
 
     /**
-     * @return The number of Managed Instances in the managed instance group.
+     * @return The number of managed instances in the group.
      * 
      */
     public Output<Integer> managedInstanceCount() {
         return this.managedInstanceCount;
     }
     /**
-     * The list of managed instance OCIDs to be added to the managed instance group.
+     * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      * 
      */
     @Export(name="managedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> managedInstanceIds;
 
     /**
-     * @return The list of managed instance OCIDs to be added to the managed instance group.
+     * @return The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
      * 
      */
     public Output<List<String>> managedInstanceIds() {
         return this.managedInstanceIds;
     }
     /**
-     * The operating system type of the managed instance(s) that this managed instance group will contain.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    @Export(name="notificationTopicId", refs={String.class}, tree="[0]")
+    private Output<String> notificationTopicId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * 
+     */
+    public Output<String> notificationTopicId() {
+        return this.notificationTopicId;
+    }
+    /**
+     * The operating system type of the managed instances that will be attached to this group.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
-     * @return The operating system type of the managed instance(s) that this managed instance group will contain.
+     * @return The operating system type of the managed instances that will be attached to this group.
      * 
      */
     public Output<String> osFamily() {
@@ -219,14 +283,14 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.pendingJobCount;
     }
     /**
-     * The list of software source OCIDs available to the managed instances in the managed instance group.
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      * 
      */
     @Export(name="softwareSourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> softwareSourceIds;
 
     /**
-     * @return The list of software source OCIDs available to the managed instances in the managed instance group.
+     * @return The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
      * 
      */
     public Output<List<String>> softwareSourceIds() {
@@ -275,35 +339,35 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     @Export(name="timeModified", refs={String.class}, tree="[0]")
     private Output<String> timeModified;
 
     /**
-     * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * @return The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
      */
     public Output<String> timeModified() {
         return this.timeModified;
     }
     /**
-     * The software source vendor name.
+     * The vendor of the operating system that will be used by the managed instances in the group.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -313,7 +377,7 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
     private Output<String> vendorName;
 
     /**
-     * @return The software source vendor name.
+     * @return The vendor of the operating system that will be used by the managed instances in the group.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

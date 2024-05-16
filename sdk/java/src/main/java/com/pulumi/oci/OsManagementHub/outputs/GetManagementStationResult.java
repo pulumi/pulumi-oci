@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationHealth;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorSyncStatus;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationProxy;
@@ -18,7 +19,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagementStationResult {
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     private String compartmentId;
@@ -28,12 +29,12 @@ public final class GetManagementStationResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Details describing the ManagementStation config.
+     * @return Explanation of the health status.
      * 
      */
     private String description;
     /**
-     * @return ManagementStation name
+     * @return A user-friendly name for the management station.
      * 
      */
     private String displayName;
@@ -43,63 +44,69 @@ public final class GetManagementStationResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Name of the host
+     * @return Overall health information of the management station.
+     * 
+     */
+    private List<GetManagementStationHealth> healths;
+    /**
+     * @return Hostname of the management station.
      * 
      */
     private String hostname;
     /**
-     * @return OCID for the ManagementStation config
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     private String id;
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     private String managedInstanceId;
     private String managementStationId;
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     private Integer mirrorCapacity;
     /**
-     * @return Status summary of all repos
+     * @return Status summary of the mirror sync.
      * 
      */
     private List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses;
     /**
-     * @return Information for a mirror configuration
+     * @return Mirror information used for the management station configuration.
      * 
      */
     private List<GetManagementStationMirror> mirrors;
     /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     private Integer overallPercentage;
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     private String overallState;
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     private String profileId;
     /**
-     * @return Information for a proxy configuration
+     * @return Proxy information used for the management station configuration.
      * 
      */
     private List<GetManagementStationProxy> proxies;
+    private Integer refreshTrigger;
     /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     private String scheduledJobId;
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     private String state;
@@ -109,14 +116,14 @@ public final class GetManagementStationResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return A decimal number representing the total of repos
+     * @return The number of software sources that the station is mirroring.
      * 
      */
     private Integer totalMirrors;
 
     private GetManagementStationResult() {}
     /**
-     * @return The OCID of the tenancy containing the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      * 
      */
     public String compartmentId() {
@@ -130,14 +137,14 @@ public final class GetManagementStationResult {
         return this.definedTags;
     }
     /**
-     * @return Details describing the ManagementStation config.
+     * @return Explanation of the health status.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ManagementStation name
+     * @return A user-friendly name for the management station.
      * 
      */
     public String displayName() {
@@ -151,21 +158,28 @@ public final class GetManagementStationResult {
         return this.freeformTags;
     }
     /**
-     * @return Name of the host
+     * @return Overall health information of the management station.
+     * 
+     */
+    public List<GetManagementStationHealth> healths() {
+        return this.healths;
+    }
+    /**
+     * @return Hostname of the management station.
      * 
      */
     public String hostname() {
         return this.hostname;
     }
     /**
-     * @return OCID for the ManagementStation config
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return OCID for the Instance associated with the Management Station.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      * 
      */
     public String managedInstanceId() {
@@ -175,63 +189,66 @@ public final class GetManagementStationResult {
         return this.managementStationId;
     }
     /**
-     * @return A decimal number representing the mirror capacity
+     * @return A decimal number representing the amount of mirror capacity used by the sync.
      * 
      */
     public Integer mirrorCapacity() {
         return this.mirrorCapacity;
     }
     /**
-     * @return Status summary of all repos
+     * @return Status summary of the mirror sync.
      * 
      */
     public List<GetManagementStationMirrorSyncStatus> mirrorSyncStatuses() {
         return this.mirrorSyncStatuses;
     }
     /**
-     * @return Information for a mirror configuration
+     * @return Mirror information used for the management station configuration.
      * 
      */
     public List<GetManagementStationMirror> mirrors() {
         return this.mirrors;
     }
     /**
-     * @return A decimal number representing the completeness percentage
+     * @return A decimal number representing the progress of the current mirror sync.
      * 
      */
     public Integer overallPercentage() {
         return this.overallPercentage;
     }
     /**
-     * @return Current state of the mirroring
+     * @return Current state of the mirror sync for the management station.
      * 
      */
     public String overallState() {
         return this.overallState;
     }
     /**
-     * @return OCID of the Profile associated with the Station
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      * 
      */
     public String profileId() {
         return this.profileId;
     }
     /**
-     * @return Information for a proxy configuration
+     * @return Proxy information used for the management station configuration.
      * 
      */
     public List<GetManagementStationProxy> proxies() {
         return this.proxies;
     }
+    public Integer refreshTrigger() {
+        return this.refreshTrigger;
+    }
     /**
-     * @return OCID of the Scheduled Job for mirror sync
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      * 
      */
     public String scheduledJobId() {
         return this.scheduledJobId;
     }
     /**
-     * @return The current state of the Management Station config.
+     * @return The current state of the management station.
      * 
      */
     public String state() {
@@ -245,7 +262,7 @@ public final class GetManagementStationResult {
         return this.systemTags;
     }
     /**
-     * @return A decimal number representing the total of repos
+     * @return The number of software sources that the station is mirroring.
      * 
      */
     public Integer totalMirrors() {
@@ -266,6 +283,7 @@ public final class GetManagementStationResult {
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private List<GetManagementStationHealth> healths;
         private String hostname;
         private String id;
         private String managedInstanceId;
@@ -277,6 +295,7 @@ public final class GetManagementStationResult {
         private String overallState;
         private String profileId;
         private List<GetManagementStationProxy> proxies;
+        private Integer refreshTrigger;
         private String scheduledJobId;
         private String state;
         private Map<String,Object> systemTags;
@@ -289,6 +308,7 @@ public final class GetManagementStationResult {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.healths = defaults.healths;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.managedInstanceId = defaults.managedInstanceId;
@@ -300,6 +320,7 @@ public final class GetManagementStationResult {
     	      this.overallState = defaults.overallState;
     	      this.profileId = defaults.profileId;
     	      this.proxies = defaults.proxies;
+    	      this.refreshTrigger = defaults.refreshTrigger;
     	      this.scheduledJobId = defaults.scheduledJobId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -345,6 +366,17 @@ public final class GetManagementStationResult {
             }
             this.freeformTags = freeformTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder healths(List<GetManagementStationHealth> healths) {
+            if (healths == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "healths");
+            }
+            this.healths = healths;
+            return this;
+        }
+        public Builder healths(GetManagementStationHealth... healths) {
+            return healths(List.of(healths));
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
@@ -444,6 +476,14 @@ public final class GetManagementStationResult {
             return proxies(List.of(proxies));
         }
         @CustomType.Setter
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            if (refreshTrigger == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationResult", "refreshTrigger");
+            }
+            this.refreshTrigger = refreshTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder scheduledJobId(String scheduledJobId) {
             if (scheduledJobId == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "scheduledJobId");
@@ -482,6 +522,7 @@ public final class GetManagementStationResult {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.healths = healths;
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.managedInstanceId = managedInstanceId;
@@ -493,6 +534,7 @@ public final class GetManagementStationResult {
             _resultValue.overallState = overallState;
             _resultValue.profileId = profileId;
             _resultValue.proxies = proxies;
+            _resultValue.refreshTrigger = refreshTrigger;
             _resultValue.scheduledJobId = scheduledJobId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

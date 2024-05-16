@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     description: emailDomainDescription,
+ *     domainVerificationId: testDomainVerification.id,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -81,6 +82,14 @@ export class EmailDomain extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     */
+    public readonly domainVerificationId!: pulumi.Output<string>;
+    /**
+     * The current domain verification status.
+     */
+    public /*out*/ readonly domainVerificationStatus!: pulumi.Output<string>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
@@ -126,6 +135,8 @@ export class EmailDomain extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["domainVerificationId"] = state ? state.domainVerificationId : undefined;
+            resourceInputs["domainVerificationStatus"] = state ? state.domainVerificationStatus : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isSpf"] = state ? state.isSpf : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
@@ -140,9 +151,11 @@ export class EmailDomain extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["domainVerificationId"] = args ? args.domainVerificationId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["activeDkimId"] = undefined /*out*/;
+            resourceInputs["domainVerificationStatus"] = undefined /*out*/;
             resourceInputs["isSpf"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -173,6 +186,14 @@ export interface EmailDomainState {
      * (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     */
+    domainVerificationId?: pulumi.Input<string>;
+    /**
+     * The current domain verification status.
+     */
+    domainVerificationStatus?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -219,6 +240,10 @@ export interface EmailDomainArgs {
      * (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     */
+    domainVerificationId?: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

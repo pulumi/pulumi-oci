@@ -55,14 +55,14 @@ public final class GetSoftwareSourceModuleStreamProfilesPlainArgs extends com.pu
     }
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     @Import(name="softwareSourceId", required=true)
     private String softwareSourceId;
 
     /**
-     * @return The software source OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String softwareSourceId() {
@@ -70,14 +70,14 @@ public final class GetSoftwareSourceModuleStreamProfilesPlainArgs extends com.pu
     }
 
     /**
-     * The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * The name of the module stream. This parameter is required if a profile name is specified.
      * 
      */
     @Import(name="streamName")
     private @Nullable String streamName;
 
     /**
-     * @return The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+     * @return The name of the module stream. This parameter is required if a profile name is specified.
      * 
      */
     public Optional<String> streamName() {
@@ -144,7 +144,7 @@ public final class GetSoftwareSourceModuleStreamProfilesPlainArgs extends com.pu
         }
 
         /**
-         * @param softwareSourceId The software source OCID.
+         * @param softwareSourceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class GetSoftwareSourceModuleStreamProfilesPlainArgs extends com.pu
         }
 
         /**
-         * @param streamName The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+         * @param streamName The name of the module stream. This parameter is required if a profile name is specified.
          * 
          * @return builder
          * 

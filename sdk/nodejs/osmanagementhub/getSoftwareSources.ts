@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+ * Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
  * variety of criteria including but not limited to its name, status, architecture, and OS family.
  *
  * ## Example Usage
@@ -21,10 +21,13 @@ import * as utilities from "../utilities";
  * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
+ *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
+ *     availabilityAtOcis: softwareSourceAvailabilityAtOci,
  *     compartmentId: compartmentId,
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -40,11 +43,14 @@ export function getSoftwareSources(args?: GetSoftwareSourcesArgs, opts?: pulumi.
     return pulumi.runtime.invoke("oci:OsManagementHub/getSoftwareSources:getSoftwareSources", {
         "archTypes": args.archTypes,
         "availabilities": args.availabilities,
+        "availabilityAnywheres": args.availabilityAnywheres,
+        "availabilityAtOcis": args.availabilityAtOcis,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "displayNameContains": args.displayNameContains,
         "displayNameNotEqualTos": args.displayNameNotEqualTos,
         "filters": args.filters,
+        "isMandatoryForAutonomousLinux": args.isMandatoryForAutonomousLinux,
         "osFamilies": args.osFamilies,
         "softwareSourceId": args.softwareSourceId,
         "softwareSourceTypes": args.softwareSourceTypes,
@@ -62,15 +68,23 @@ export interface GetSoftwareSourcesArgs {
      */
     archTypes?: string[];
     /**
-     * The availabilities of the software source for a tenant.
+     * The availabilities of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: string[];
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     */
+    availabilityAnywheres?: string[];
+    /**
+     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     */
+    availabilityAtOcis?: string[];
+    /**
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: string;
     /**
@@ -83,11 +97,15 @@ export interface GetSoftwareSourcesArgs {
     displayNameNotEqualTos?: string[];
     filters?: inputs.OsManagementHub.GetSoftwareSourcesFilter[];
     /**
-     * A filter to return only instances whose OS family type matches the given OS family.
+     * Indicates whether the software source is mandatory for the Autonomous Linux service.
+     */
+    isMandatoryForAutonomousLinux?: boolean;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamilies?: string[];
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
      */
     softwareSourceId?: string;
     /**
@@ -95,11 +113,11 @@ export interface GetSoftwareSourcesArgs {
      */
     softwareSourceTypes?: string[];
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * A filter to return only software sources whose state matches the given state.
      */
     states?: string[];
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      */
     vendorName?: string;
 }
@@ -113,15 +131,20 @@ export interface GetSoftwareSourcesResult {
      */
     readonly archTypes?: string[];
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      */
     readonly availabilities?: string[];
+    readonly availabilityAnywheres?: string[];
     /**
-     * The OCID of the tenancy containing the software source.
+     * Availability of the software source (for Oracle Cloud Infrastructure environments).
+     */
+    readonly availabilityAtOcis?: string[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     readonly compartmentId?: string;
     /**
-     * User friendly name.
+     * User-friendly name.
      */
     readonly displayName?: string;
     readonly displayNameContains?: string;
@@ -132,6 +155,10 @@ export interface GetSoftwareSourcesResult {
      */
     readonly id: string;
     /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     */
+    readonly isMandatoryForAutonomousLinux?: boolean;
+    /**
      * The OS family the software source belongs to.
      */
     readonly osFamilies?: string[];
@@ -141,7 +168,7 @@ export interface GetSoftwareSourcesResult {
     readonly softwareSourceCollections: outputs.OsManagementHub.GetSoftwareSourcesSoftwareSourceCollection[];
     readonly softwareSourceId?: string;
     /**
-     * Type of the software source.
+     * Type of software source.
      */
     readonly softwareSourceTypes?: string[];
     /**
@@ -156,7 +183,7 @@ export interface GetSoftwareSourcesResult {
 /**
  * This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+ * Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
  * variety of criteria including but not limited to its name, status, architecture, and OS family.
  *
  * ## Example Usage
@@ -168,10 +195,13 @@ export interface GetSoftwareSourcesResult {
  * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
  *     archTypes: softwareSourceArchType,
  *     availabilities: softwareSourceAvailability,
+ *     availabilityAnywheres: softwareSourceAvailabilityAnywhere,
+ *     availabilityAtOcis: softwareSourceAvailabilityAtOci,
  *     compartmentId: compartmentId,
  *     displayName: softwareSourceDisplayName,
  *     displayNameContains: softwareSourceDisplayNameContains,
  *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
+ *     isMandatoryForAutonomousLinux: softwareSourceIsMandatoryForAutonomousLinux,
  *     osFamilies: softwareSourceOsFamily,
  *     softwareSourceId: testSoftwareSource.id,
  *     softwareSourceTypes: softwareSourceSoftwareSourceType,
@@ -193,15 +223,23 @@ export interface GetSoftwareSourcesOutputArgs {
      */
     archTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The availabilities of the software source for a tenant.
+     * The availabilities of the software source in a non-OCI environment for a tenancy.
      */
     availabilities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+     */
+    availabilityAnywheres?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The availabilities of the software source in an Oracle Cloud Infrastructure environment for a tenancy.
+     */
+    availabilityAtOcis?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
+     * A filter to return resources that match the given user-friendly name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -214,11 +252,15 @@ export interface GetSoftwareSourcesOutputArgs {
     displayNameNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourcesFilterArgs>[]>;
     /**
-     * A filter to return only instances whose OS family type matches the given OS family.
+     * Indicates whether the software source is mandatory for the Autonomous Linux service.
+     */
+    isMandatoryForAutonomousLinux?: pulumi.Input<boolean>;
+    /**
+     * A filter to return only resources that match the given operating system family.
      */
     osFamilies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the software source.
      */
     softwareSourceId?: pulumi.Input<string>;
     /**
@@ -226,11 +268,11 @@ export interface GetSoftwareSourcesOutputArgs {
      */
     softwareSourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return only resources whose lifecycleState matches the given lifecycleStates.
+     * A filter to return only software sources whose state matches the given state.
      */
     states?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      */
     vendorName?: pulumi.Input<string>;
 }

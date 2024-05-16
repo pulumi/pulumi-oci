@@ -24,10 +24,10 @@ import * as utilities from "../utilities";
  *
  * ## Import
  *
- * Namespace can be imported using the `namespace`, e.g.
+ * Namespace can be imported using the `compartment_id` and `namespace`, e.g.
  *
  * ```sh
- * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
+ * $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/<compartment_id>/namespace/<namespace>"
  * ```
  */
 export class Namespace extends pulumi.CustomResource {

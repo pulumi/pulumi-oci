@@ -85,7 +85,7 @@ export class Dkim extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      */
     public /*out*/ readonly dnsSubdomainName!: pulumi.Output<string>;
     /**
@@ -206,7 +206,7 @@ export interface DkimState {
      */
     description?: pulumi.Input<string>;
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
      */
     dnsSubdomainName?: pulumi.Input<string>;
     /**

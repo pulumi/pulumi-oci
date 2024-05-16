@@ -9,8 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists available software sources for a specified managed instance group. Filter the list against a variety of
- * criteria including but not limited to its name.
+ * Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
  *
  * ## Example Usage
  *
@@ -43,7 +42,7 @@ export function getManagedInstanceGroupAvailableSoftwareSources(args: GetManaged
  */
 export interface GetManagedInstanceGroupAvailableSoftwareSourcesArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: string;
     /**
@@ -56,7 +55,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesArgs {
     displayNames?: string[];
     filters?: inputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesFilter[];
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: string;
 }
@@ -70,12 +69,12 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
      */
     readonly availableSoftwareSourceCollections: outputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection[];
     /**
-     * The OCID for the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      */
     readonly compartmentId?: string;
     readonly displayNameContains?: string;
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      */
     readonly displayNames?: string[];
     readonly filters?: outputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesFilter[];
@@ -88,8 +87,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
 /**
  * This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
  *
- * Lists available software sources for a specified managed instance group. Filter the list against a variety of
- * criteria including but not limited to its name.
+ * Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
  *
  * ## Example Usage
  *
@@ -114,7 +112,7 @@ export function getManagedInstanceGroupAvailableSoftwareSourcesOutput(args: GetM
  */
 export interface GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs {
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -127,7 +125,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs {
     displayNames?: pulumi.Input<pulumi.Input<string>[]>;
     filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs>[]>;
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     managedInstanceGroupId: pulumi.Input<string>;
 }

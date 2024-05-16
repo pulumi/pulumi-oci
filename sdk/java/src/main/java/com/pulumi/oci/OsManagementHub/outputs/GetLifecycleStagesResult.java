@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetLifecycleStagesResult {
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     private @Nullable String archType;
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     private @Nullable String compartmentId;
@@ -43,13 +43,19 @@ public final class GetLifecycleStagesResult {
      */
     private List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
     private @Nullable String lifecycleStageId;
+    private @Nullable List<String> locationNotEqualTos;
     /**
-     * @return The operating system type of the target instances.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    private @Nullable List<String> locations;
+    /**
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     private @Nullable String osFamily;
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     private @Nullable String softwareSourceId;
@@ -61,14 +67,14 @@ public final class GetLifecycleStagesResult {
 
     private GetLifecycleStagesResult() {}
     /**
-     * @return The CPU architecture of the target instances.
+     * @return The CPU architecture of the managed instances in the lifecycle stage.
      * 
      */
     public Optional<String> archType() {
         return Optional.ofNullable(this.archType);
     }
     /**
-     * @return The OCID of the tenancy containing the lifecycle stage.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * 
      */
     public Optional<String> compartmentId() {
@@ -104,15 +110,25 @@ public final class GetLifecycleStagesResult {
     public Optional<String> lifecycleStageId() {
         return Optional.ofNullable(this.lifecycleStageId);
     }
+    public List<String> locationNotEqualTos() {
+        return this.locationNotEqualTos == null ? List.of() : this.locationNotEqualTos;
+    }
     /**
-     * @return The operating system type of the target instances.
+     * @return The location of managed instances associated with the lifecycle stage.
+     * 
+     */
+    public List<String> locations() {
+        return this.locations == null ? List.of() : this.locations;
+    }
+    /**
+     * @return The operating system of the managed instances in the lifecycle stage.
      * 
      */
     public Optional<String> osFamily() {
         return Optional.ofNullable(this.osFamily);
     }
     /**
-     * @return Identifying information for the specified software source.
+     * @return Provides identifying information for the specified software source.
      * 
      */
     public Optional<String> softwareSourceId() {
@@ -143,6 +159,8 @@ public final class GetLifecycleStagesResult {
         private String id;
         private List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
         private @Nullable String lifecycleStageId;
+        private @Nullable List<String> locationNotEqualTos;
+        private @Nullable List<String> locations;
         private @Nullable String osFamily;
         private @Nullable String softwareSourceId;
         private @Nullable String state;
@@ -157,6 +175,8 @@ public final class GetLifecycleStagesResult {
     	      this.id = defaults.id;
     	      this.lifecycleStageCollections = defaults.lifecycleStageCollections;
     	      this.lifecycleStageId = defaults.lifecycleStageId;
+    	      this.locationNotEqualTos = defaults.locationNotEqualTos;
+    	      this.locations = defaults.locations;
     	      this.osFamily = defaults.osFamily;
     	      this.softwareSourceId = defaults.softwareSourceId;
     	      this.state = defaults.state;
@@ -224,6 +244,24 @@ public final class GetLifecycleStagesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locationNotEqualTos(@Nullable List<String> locationNotEqualTos) {
+
+            this.locationNotEqualTos = locationNotEqualTos;
+            return this;
+        }
+        public Builder locationNotEqualTos(String... locationNotEqualTos) {
+            return locationNotEqualTos(List.of(locationNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder locations(@Nullable List<String> locations) {
+
+            this.locations = locations;
+            return this;
+        }
+        public Builder locations(String... locations) {
+            return locations(List.of(locations));
+        }
+        @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
 
             this.osFamily = osFamily;
@@ -251,6 +289,8 @@ public final class GetLifecycleStagesResult {
             _resultValue.id = id;
             _resultValue.lifecycleStageCollections = lifecycleStageCollections;
             _resultValue.lifecycleStageId = lifecycleStageId;
+            _resultValue.locationNotEqualTos = locationNotEqualTos;
+            _resultValue.locations = locations;
             _resultValue.osFamily = osFamily;
             _resultValue.softwareSourceId = softwareSourceId;
             _resultValue.state = state;

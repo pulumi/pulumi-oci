@@ -57,6 +57,10 @@ export interface GetListenerResult {
      * IP version associated with the listener.
      */
     readonly ipVersion: string;
+    /**
+     * Property to enable/disable PPv2 feature for this listener.
+     */
+    readonly isPpv2enabled: boolean;
     readonly listenerName: string;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`

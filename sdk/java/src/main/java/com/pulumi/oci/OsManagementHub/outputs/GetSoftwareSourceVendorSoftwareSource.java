@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSoftwareSourceVendorSoftwareSource {
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     private String displayName;
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     private String id;
 
     private GetSoftwareSourceVendorSoftwareSource() {}
     /**
-     * @return User friendly name.
+     * @return User-friendly name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The OCID of the resource that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
      * 
      */
     public String id() {

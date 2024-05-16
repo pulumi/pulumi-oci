@@ -139,6 +139,7 @@ from .mask_data import *
 from .masking_policies_apply_difference_to_masking_columns import *
 from .masking_policies_masking_column import *
 from .masking_policy import *
+from .masking_report_management import *
 from .on_prem_connector import *
 from .report import *
 from .report_definition import *

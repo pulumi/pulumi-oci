@@ -72,6 +72,7 @@ class _VmClusterRemoveVirtualMachineState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -100,6 +101,7 @@ class _VmClusterRemoveVirtualMachineState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -141,6 +143,8 @@ class _VmClusterRemoveVirtualMachineState:
             pulumi.set(__self__, "display_name", display_name)
         if exadata_infrastructure_id is not None:
             pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if file_system_configuration_details is not None:
+            pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gi_version is not None:
@@ -293,6 +297,18 @@ class _VmClusterRemoveVirtualMachineState:
     @exadata_infrastructure_id.setter
     def exadata_infrastructure_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]:
+        """
+        Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]):
+        pulumi.set(self, "file_system_configuration_details", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -607,6 +623,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["display_name"] = None
             __props__.__dict__["exadata_infrastructure_id"] = None
+            __props__.__dict__["file_system_configuration_details"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["gi_version"] = None
             __props__.__dict__["is_local_backup_enabled"] = None
@@ -642,6 +659,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -675,6 +693,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -710,6 +729,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["exadata_infrastructure_id"] = exadata_infrastructure_id
+        __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
         __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
@@ -807,6 +827,14 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> pulumi.Output[Sequence['outputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail']]:
+        """
+        Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")

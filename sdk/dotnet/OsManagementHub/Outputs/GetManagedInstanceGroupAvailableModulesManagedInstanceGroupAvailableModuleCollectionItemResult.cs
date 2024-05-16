@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The OCID of the software source that provides this module.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module.
         /// </summary>
         public readonly string SoftwareSourceId;
 

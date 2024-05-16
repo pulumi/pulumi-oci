@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -12,20 +13,25 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ManagedInstanceGroupSoftwareSource {
     /**
-     * @return (Updatable) Details about the managed instance group.
+     * @return (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private @Nullable String id;
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    private @Nullable Boolean isMandatoryForAutonomousLinux;
     /**
      * @return Type of the software source.
      * 
@@ -34,25 +40,32 @@ public final class ManagedInstanceGroupSoftwareSource {
 
     private ManagedInstanceGroupSoftwareSource() {}
     /**
-     * @return (Updatable) Details about the managed instance group.
+     * @return (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The OCID of the software source.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
+    }
+    /**
+     * @return Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can&#39;t unselect it.
+     * 
+     */
+    public Optional<Boolean> isMandatoryForAutonomousLinux() {
+        return Optional.ofNullable(this.isMandatoryForAutonomousLinux);
     }
     /**
      * @return Type of the software source.
@@ -74,6 +87,7 @@ public final class ManagedInstanceGroupSoftwareSource {
         private @Nullable String description;
         private @Nullable String displayName;
         private @Nullable String id;
+        private @Nullable Boolean isMandatoryForAutonomousLinux;
         private @Nullable String softwareSourceType;
         public Builder() {}
         public Builder(ManagedInstanceGroupSoftwareSource defaults) {
@@ -81,6 +95,7 @@ public final class ManagedInstanceGroupSoftwareSource {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.isMandatoryForAutonomousLinux = defaults.isMandatoryForAutonomousLinux;
     	      this.softwareSourceType = defaults.softwareSourceType;
         }
 
@@ -103,6 +118,12 @@ public final class ManagedInstanceGroupSoftwareSource {
             return this;
         }
         @CustomType.Setter
+        public Builder isMandatoryForAutonomousLinux(@Nullable Boolean isMandatoryForAutonomousLinux) {
+
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            return this;
+        }
+        @CustomType.Setter
         public Builder softwareSourceType(@Nullable String softwareSourceType) {
 
             this.softwareSourceType = softwareSourceType;
@@ -113,6 +134,7 @@ public final class ManagedInstanceGroupSoftwareSource {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             _resultValue.softwareSourceType = softwareSourceType;
             return _resultValue;
         }

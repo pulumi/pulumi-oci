@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem {
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     private String compartmentId;
@@ -21,14 +21,14 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
      */
     private String displayName;
     /**
-     * @return unique identifier that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     private String id;
 
     private GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem() {}
     /**
-     * @return The OCID of the compartment that contains the resources to list.
+     * @return The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      * 
      */
     public String compartmentId() {
@@ -42,7 +42,7 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
         return this.displayName;
     }
     /**
-     * @return unique identifier that is immutable on creation.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
      */
     public String id() {

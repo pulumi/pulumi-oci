@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()        
+ *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()
  *             .condition(ruleCondition)
  *             .idcsEndpoint(testDomain.url())
  *             .name(ruleName)

@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuditTrailManagement = new AuditTrailManagement("testAuditTrailManagement", AuditTrailManagementArgs.builder()        
+ *         var testAuditTrailManagement = new AuditTrailManagement("testAuditTrailManagement", AuditTrailManagementArgs.builder()
  *             .compartmentId(compartmentId)
  *             .targetId(testTargetDatabase.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

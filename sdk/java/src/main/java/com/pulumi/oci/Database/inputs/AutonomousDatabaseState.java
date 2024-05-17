@@ -269,6 +269,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     @Import(name="cloneType")
@@ -276,6 +278,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * @return The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     public Optional<Output<String>> cloneType() {
@@ -2638,6 +2642,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cloneType The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+         * * `FULL` - This option creates a new database that includes all source database data.
+         * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
          * 
          * @return builder
          * 
@@ -2649,6 +2655,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cloneType The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+         * * `FULL` - This option creates a new database that includes all source database data.
+         * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
          * 
          * @return builder
          * 

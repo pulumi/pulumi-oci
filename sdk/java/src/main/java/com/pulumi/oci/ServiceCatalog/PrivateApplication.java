@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPrivateApplication = new PrivateApplication("testPrivateApplication", PrivateApplicationArgs.builder()        
+ *         var testPrivateApplication = new PrivateApplication("testPrivateApplication", PrivateApplicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(privateApplicationDisplayName)
  *             .packageDetails(PrivateApplicationPackageDetailsArgs.builder()

@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()        
+ *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()
  *             .action(databaseUpgradeAction)
  *             .databaseId(testDatabase.id())
  *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApiKey = new ApiKey("testApiKey", ApiKeyArgs.builder()        
+ *         var testApiKey = new ApiKey("testApiKey", ApiKeyArgs.builder()
  *             .keyValue(apiKeyKeyValue)
  *             .userId(testUser.id())
  *             .build());

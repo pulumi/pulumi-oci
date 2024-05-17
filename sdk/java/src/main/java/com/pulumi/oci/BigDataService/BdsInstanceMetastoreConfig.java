@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstanceMetastoreConfig = new BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", BdsInstanceMetastoreConfigArgs.builder()        
+ *         var testBdsInstanceMetastoreConfig = new BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", BdsInstanceMetastoreConfigArgs.builder()
  *             .bdsApiKeyId(testApiKey.id())
  *             .bdsApiKeyPassphrase(bdsInstanceMetastoreConfigBdsApiKeyPassphrase)
  *             .bdsInstanceId(testBdsInstance.id())

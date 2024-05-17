@@ -29,53 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsMyApiKey;
- * import com.pulumi.oci.Identity.DomainsMyApiKeyArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyApiKeyTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyApiKeyUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testMyApiKey = new DomainsMyApiKey("testMyApiKey", DomainsMyApiKeyArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .key(myApiKeyKey)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
- *             .authorization(myApiKeyAuthorization)
- *             .description(myApiKeyDescription)
- *             .id(myApiKeyId)
- *             .ocid(myApiKeyOcid)
- *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
- *             .tags(DomainsMyApiKeyTagArgs.builder()
- *                 .key(myApiKeyTagsKey)
- *                 .value(myApiKeyTagsValue)
- *                 .build())
- *             .user(DomainsMyApiKeyUserArgs.builder()
- *                 .ocid(myApiKeyUserOcid)
- *                 .value(myApiKeyUserValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -30,59 +30,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsApiKey;
- * import com.pulumi.oci.Identity.DomainsApiKeyArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testApiKey = new DomainsApiKey("testApiKey", DomainsApiKeyArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .key(apiKeyKey)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
- *             .attributeSets()
- *             .attributes("")
- *             .authorization(apiKeyAuthorization)
- *             .description(apiKeyDescription)
- *             .id(apiKeyId)
- *             .ocid(apiKeyOcid)
- *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
- *             .tags(DomainsApiKeyTagArgs.builder()
- *                 .key(apiKeyTagsKey)
- *                 .value(apiKeyTagsValue)
- *                 .build())
- *             .urnietfparamsscimschemasoracleidcsextensionselfChangeUser(DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs.builder()
- *                 .allowSelfChange(apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
- *                 .build())
- *             .user(DomainsApiKeyUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

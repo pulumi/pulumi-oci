@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModelVersionSet = new ModelVersionSet("testModelVersionSet", ModelVersionSetArgs.builder()        
+ *         var testModelVersionSet = new ModelVersionSet("testModelVersionSet", ModelVersionSetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(modelVersionSetName)
  *             .projectId(testProject.id())

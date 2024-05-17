@@ -14,6 +14,11 @@ namespace Pulumi.Oci.AiDocument.Inputs
     {
         /// <summary>
         /// The type of document analysis requested. The allowed values are:
+        /// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        /// * `TEXT_EXTRACTION`: Recognize text.
+        /// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        /// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        /// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         /// </summary>
         [Input("featureType", required: true)]
         public Input<string> FeatureType { get; set; } = null!;

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCertificate = new Certificate("testCertificate", CertificateArgs.builder()        
+ *         var testCertificate = new Certificate("testCertificate", CertificateArgs.builder()
  *             .certificate(certificateCertificate)
  *             .compartmentId(compartmentId)
  *             .privateKey(certificatePrivateKey)

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVnicAttachment = new VnicAttachment("testVnicAttachment", VnicAttachmentArgs.builder()        
+ *         var testVnicAttachment = new VnicAttachment("testVnicAttachment", VnicAttachmentArgs.builder()
  *             .createVnicDetails(VnicAttachmentCreateVnicDetailsArgs.builder()
  *                 .assignIpv6ip(vnicAttachmentCreateVnicDetailsAssignIpv6ip)
  *                 .assignPrivateDnsRecord(vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord)

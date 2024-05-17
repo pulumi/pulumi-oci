@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCatalog = new Catalog("testCatalog", CatalogArgs.builder()        
+ *         var testCatalog = new Catalog("testCatalog", CatalogArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(catalogDisplayName)

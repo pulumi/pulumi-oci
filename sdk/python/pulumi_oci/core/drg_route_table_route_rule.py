@@ -25,6 +25,7 @@ class DrgRouteTableRouteRuleArgs:
                Potential values:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
                
                Potential values:
@@ -59,6 +60,7 @@ class DrgRouteTableRouteRuleArgs:
     def destination_type(self) -> pulumi.Input[str]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         """
         return pulumi.get(self, "destination_type")
 
@@ -117,6 +119,7 @@ class _DrgRouteTableRouteRuleState:
                Potential values:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
                
                Potential values:
@@ -181,6 +184,7 @@ class _DrgRouteTableRouteRuleState:
     def destination_type(self) -> Optional[pulumi.Input[str]]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         """
         return pulumi.get(self, "destination_type")
 
@@ -310,6 +314,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                Potential values:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
                
                Potential values:
@@ -428,6 +433,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                Potential values:
                * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
         :param pulumi.Input[str] destination_type: Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         :param pulumi.Input[str] drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
                
                Potential values:
@@ -480,6 +486,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def destination_type(self) -> pulumi.Output[str]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         """
         return pulumi.get(self, "destination_type")
 

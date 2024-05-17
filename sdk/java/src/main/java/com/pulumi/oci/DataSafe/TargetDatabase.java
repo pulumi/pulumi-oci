@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetDatabase = new TargetDatabase("testTargetDatabase", TargetDatabaseArgs.builder()        
+ *         var testTargetDatabase = new TargetDatabase("testTargetDatabase", TargetDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .databaseDetails(TargetDatabaseDatabaseDetailsArgs.builder()
  *                 .databaseType(targetDatabaseDatabaseDetailsDatabaseType)

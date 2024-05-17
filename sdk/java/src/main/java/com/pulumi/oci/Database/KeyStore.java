@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testKeyStore = new KeyStore("testKeyStore", KeyStoreArgs.builder()        
+ *         var testKeyStore = new KeyStore("testKeyStore", KeyStoreArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(keyStoreDisplayName)
  *             .typeDetails(KeyStoreTypeDetailsArgs.builder()

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOauthClientCertificate = new DomainsOauthClientCertificate("testOauthClientCertificate", DomainsOauthClientCertificateArgs.builder()        
+ *         var testOauthClientCertificate = new DomainsOauthClientCertificate("testOauthClientCertificate", DomainsOauthClientCertificateArgs.builder()
  *             .certificateAlias(oauthClientCertificateCertificateAlias)
  *             .idcsEndpoint(testDomain.url())
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate")

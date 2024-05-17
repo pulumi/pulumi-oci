@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaPrivateEndpointScanProxy = new OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy", OdaPrivateEndpointScanProxyArgs.builder()        
+ *         var testOdaPrivateEndpointScanProxy = new OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy", OdaPrivateEndpointScanProxyArgs.builder()
  *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
  *             .protocol(odaPrivateEndpointScanProxyProtocol)
  *             .scanListenerInfos(OdaPrivateEndpointScanProxyScanListenerInfoArgs.builder()

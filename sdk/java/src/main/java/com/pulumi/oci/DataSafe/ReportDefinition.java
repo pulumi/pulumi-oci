@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReportDefinition = new ReportDefinition("testReportDefinition", ReportDefinitionArgs.builder()        
+ *         var testReportDefinition = new ReportDefinition("testReportDefinition", ReportDefinitionArgs.builder()
  *             .columnFilters(ReportDefinitionColumnFilterArgs.builder()
  *                 .expressions(reportDefinitionColumnFiltersExpressions)
  *                 .fieldName(reportDefinitionColumnFiltersFieldName)

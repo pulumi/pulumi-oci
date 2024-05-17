@@ -111,6 +111,11 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
      * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
      * 
      * The following values are supported:
+     * * `NONE`: Creates an instance configuration using the list of settings that you specify.
+     * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="source")
@@ -126,6 +131,11 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
      * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
      * 
      * The following values are supported:
+     * * `NONE`: Creates an instance configuration using the list of settings that you specify.
+     * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> source() {
@@ -286,6 +296,11 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
          * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
          * 
          * The following values are supported:
+         * * `NONE`: Creates an instance configuration using the list of settings that you specify.
+         * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -305,6 +320,11 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
          * To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
          * 
          * The following values are supported:
+         * * `NONE`: Creates an instance configuration using the list of settings that you specify.
+         * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

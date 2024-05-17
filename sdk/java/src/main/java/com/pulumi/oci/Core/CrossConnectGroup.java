@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCrossConnectGroup = new CrossConnectGroup("testCrossConnectGroup", CrossConnectGroupArgs.builder()        
+ *         var testCrossConnectGroup = new CrossConnectGroup("testCrossConnectGroup", CrossConnectGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .customerReferenceName(crossConnectGroupCustomerReferenceName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -4744,6 +4744,8 @@ class ImageImageSourceDetails(dict):
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         :param str source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+               * `QCOW2`
+               * `VMDK`
         :param str source_uri: The Object Storage URL for the image.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -4815,6 +4817,8 @@ class ImageImageSourceDetails(dict):
     def source_image_type(self) -> Optional[str]:
         """
         The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+        * `QCOW2`
+        * `VMDK`
         """
         return pulumi.get(self, "source_image_type")
 
@@ -4863,11 +4867,26 @@ class ImageLaunchOption(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -4887,6 +4906,11 @@ class ImageLaunchOption(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -4895,6 +4919,8 @@ class ImageLaunchOption(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -4919,6 +4945,9 @@ class ImageLaunchOption(dict):
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -4927,6 +4956,11 @@ class ImageLaunchOption(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -5114,6 +5148,8 @@ class InstanceAvailabilityConfig(dict):
         """
         :param bool is_live_migration_preferred: (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -5133,6 +5169,8 @@ class InstanceAvailabilityConfig(dict):
     def recovery_action(self) -> Optional[str]:
         """
         (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -5884,6 +5922,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
@@ -5917,6 +5959,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -6132,6 +6176,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def launch_mode(self) -> Optional[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -6200,6 +6248,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def preferred_maintenance_action(self) -> Optional[str]:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -6416,6 +6466,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -6435,6 +6487,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
     def recovery_action(self) -> Optional[str]:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -6749,11 +6803,26 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -6773,6 +6842,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -6781,6 +6855,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -6805,6 +6881,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -6813,6 +6892,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -7126,6 +7210,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -7149,6 +7236,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -8108,6 +8198,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
@@ -8141,6 +8235,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -8356,6 +8452,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def launch_mode(self) -> Optional[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -8424,6 +8524,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def preferred_maintenance_action(self) -> Optional[str]:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -8640,6 +8742,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig(
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -8659,6 +8763,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig(
     def recovery_action(self) -> Optional[str]:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -8973,11 +9079,26 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -8997,6 +9118,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -9005,6 +9131,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -9029,6 +9157,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -9037,6 +9168,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -9336,6 +9472,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -9359,6 +9498,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -10556,11 +10698,26 @@ class InstanceLaunchOptions(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: (Updatable) Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param str network_type: (Updatable) Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -10580,6 +10737,11 @@ class InstanceLaunchOptions(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         (Updatable) Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -10588,6 +10750,8 @@ class InstanceLaunchOptions(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -10612,6 +10776,9 @@ class InstanceLaunchOptions(dict):
     def network_type(self) -> Optional[str]:
         """
         (Updatable) Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -10620,6 +10787,11 @@ class InstanceLaunchOptions(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -11744,6 +11916,9 @@ class InstanceShapeConfig(dict):
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param str gpu_description: A short description of the instance's graphics processing unit (GPU).
         :param int gpus: The number of GPUs available to the instance.
         :param str local_disk_description: A short description of the local disks available to this instance.
@@ -11791,6 +11966,9 @@ class InstanceShapeConfig(dict):
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -13100,6 +13278,8 @@ class RouteTableRouteRule(dict):
                * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param str destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param str route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
         pulumi.set(__self__, "network_entity_id", network_entity_id)
@@ -13164,6 +13344,8 @@ class RouteTableRouteRule(dict):
     def destination_type(self) -> Optional[str]:
         """
         (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -13221,6 +13403,8 @@ class SecurityListEgressSecurityRule(dict):
         :param str destination_type: (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
                
                Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param 'SecurityListEgressSecurityRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
@@ -13280,6 +13464,8 @@ class SecurityListEgressSecurityRule(dict):
         (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
 
         Allowed values:
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -13576,6 +13762,8 @@ class SecurityListIngressSecurityRule(dict):
                
                If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param str source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListIngressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'SecurityListIngressSecurityRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -13640,6 +13828,8 @@ class SecurityListIngressSecurityRule(dict):
     def source_type(self) -> Optional[str]:
         """
         (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 
@@ -14674,6 +14864,12 @@ class VolumeBackupPolicySchedule(dict):
                For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
         :param str time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
+               - `UTC`
+               - `REGIONAL_DATA_CENTER_TIME`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "period", period)
@@ -14785,6 +14981,12 @@ class VolumeBackupPolicySchedule(dict):
         """
         (Updatable) Specifies what time zone is the schedule in
         enum:
+        - `UTC`
+        - `REGIONAL_DATA_CENTER_TIME`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
@@ -25259,11 +25461,26 @@ class GetImageLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -25277,6 +25494,11 @@ class GetImageLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -25285,6 +25507,8 @@ class GetImageLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -25309,6 +25533,9 @@ class GetImageLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -25317,6 +25544,11 @@ class GetImageLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -25575,6 +25807,10 @@ class GetImagesImageResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the image.
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetImagesImageLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param str listing_type: The listing type of the image. The default value is "NONE".
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
@@ -25690,6 +25926,10 @@ class GetImagesImageResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -25861,11 +26101,26 @@ class GetImagesImageLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -25879,6 +26134,11 @@ class GetImagesImageLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -25887,6 +26147,8 @@ class GetImagesImageLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -25911,6 +26173,9 @@ class GetImagesImageLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -25919,6 +26184,11 @@ class GetImagesImageLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -26011,6 +26281,8 @@ class GetInstanceAvailabilityConfigResult(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -26028,6 +26300,8 @@ class GetInstanceAvailabilityConfigResult(dict):
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -26508,11 +26782,17 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -26675,6 +26955,10 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -26715,6 +26999,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -26828,6 +27114,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -26845,6 +27133,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -27046,11 +27336,26 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -27064,6 +27369,11 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -27072,6 +27382,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -27096,6 +27408,9 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -27104,6 +27419,11 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -27945,11 +28265,17 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -28112,6 +28438,10 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -28152,6 +28482,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -28265,6 +28597,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -28282,6 +28616,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -28483,11 +28819,26 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -28501,6 +28852,11 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -28509,6 +28865,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -28533,6 +28891,9 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -28541,6 +28902,11 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -29947,11 +30313,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -30114,6 +30486,10 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -30154,6 +30530,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -30267,6 +30645,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAv
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -30284,6 +30664,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAv
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -30485,11 +30867,26 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -30503,6 +30900,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -30511,6 +30913,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -30535,6 +30939,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -30543,6 +30950,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -31384,11 +31796,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -31551,6 +31969,10 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -31591,6 +32013,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -31704,6 +32128,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -31721,6 +32147,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -31922,11 +32350,26 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -31940,6 +32383,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -31948,6 +32396,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -31972,6 +32422,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -31980,6 +32433,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -33151,11 +33609,26 @@ class GetInstanceLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -33169,6 +33642,11 @@ class GetInstanceLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -33177,6 +33655,8 @@ class GetInstanceLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -33201,6 +33681,9 @@ class GetInstanceLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -33209,6 +33692,11 @@ class GetInstanceLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -35005,6 +35493,10 @@ class GetInstancesInstanceResult(dict):
         :param bool is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata that you provide.
         :param Sequence['GetInstancesInstancePlatformConfigArgs'] platform_configs: The platform configuration for the instance.
@@ -35257,6 +35749,10 @@ class GetInstancesInstanceResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -35483,6 +35979,8 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -35500,6 +35998,8 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -35662,11 +36162,26 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -35680,6 +36195,11 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -35688,6 +36208,8 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -35712,6 +36234,9 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -35720,6 +36245,11 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -39152,6 +39682,9 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. Required if `direction` = `INGRESS`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+               * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param str time_created: The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -39251,6 +39784,9 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. Required if `direction` = `INGRESS`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "source_type")
 
@@ -40091,6 +40627,8 @@ class GetPublicIpsPublicIpResult(dict):
         :param str private_ip_id: Deprecated. Use `assignedEntityId` instead.
         :param str public_ip_pool_id: A filter to return only resources that belong to the given public IP pool.
         :param str scope: Whether the public IP is regional or specific to a particular availability domain.
+               * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+               * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         :param str state: The public IP's current state.
         :param str time_created: The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -40211,6 +40749,8 @@ class GetPublicIpsPublicIpResult(dict):
     def scope(self) -> str:
         """
         Whether the public IP is regional or specific to a particular availability domain.
+        * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         """
         return pulumi.get(self, "scope")
 
@@ -40555,6 +41095,8 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         :param str description: An optional description of your choice for the rule.
         :param str destination: Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         :param str destination_type: Type of destination for the rule. Required if you provide a `destination`.
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param str network_entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         :param str route_type: A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
@@ -40597,6 +41139,8 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
     def destination_type(self) -> str:
         """
         Type of destination for the rule. Required if you provide a `destination`.
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -41042,6 +41586,8 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. The default is `CIDR_BLOCK`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
@@ -41096,6 +41642,8 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. The default is `CIDR_BLOCK`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 

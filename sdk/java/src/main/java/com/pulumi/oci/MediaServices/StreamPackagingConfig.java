@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamPackagingConfig = new StreamPackagingConfig("testStreamPackagingConfig", StreamPackagingConfigArgs.builder()        
+ *         var testStreamPackagingConfig = new StreamPackagingConfig("testStreamPackagingConfig", StreamPackagingConfigArgs.builder()
  *             .displayName(streamPackagingConfigDisplayName)
  *             .distributionChannelId(testChannel.id())
  *             .segmentTimeInSeconds(streamPackagingConfigSegmentTimeInSeconds)

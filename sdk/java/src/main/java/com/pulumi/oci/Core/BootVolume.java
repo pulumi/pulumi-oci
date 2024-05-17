@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBootVolume = new BootVolume("testBootVolume", BootVolumeArgs.builder()        
+ *         var testBootVolume = new BootVolume("testBootVolume", BootVolumeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceDetails(BootVolumeSourceDetailsArgs.builder()
  *                 .id(bootVolumeSourceDetailsId)

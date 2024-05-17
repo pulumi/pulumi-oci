@@ -1536,6 +1536,8 @@ type ProcessorJobInputLocation struct {
 	// The list of ObjectLocations.
 	ObjectLocations []ProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1556,6 +1558,8 @@ type ProcessorJobInputLocationArgs struct {
 	// The list of ObjectLocations.
 	ObjectLocations ProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1647,6 +1651,8 @@ func (o ProcessorJobInputLocationOutput) ObjectLocations() ProcessorJobInputLoca
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o ProcessorJobInputLocationOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProcessorJobInputLocation) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1696,6 +1702,8 @@ func (o ProcessorJobInputLocationPtrOutput) ObjectLocations() ProcessorJobInputL
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o ProcessorJobInputLocationPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProcessorJobInputLocation) *string {
 		if v == nil {
@@ -2222,6 +2230,11 @@ func (o ProcessorJobProcessorConfigPtrOutput) ProcessorType() pulumi.StringPtrOu
 
 type ProcessorJobProcessorConfigFeature struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf *bool `pulumi:"generateSearchablePdf"`
@@ -2246,6 +2259,11 @@ type ProcessorJobProcessorConfigFeatureInput interface {
 
 type ProcessorJobProcessorConfigFeatureArgs struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolPtrInput `pulumi:"generateSearchablePdf"`
@@ -2309,6 +2327,11 @@ func (o ProcessorJobProcessorConfigFeatureOutput) ToProcessorJobProcessorConfigF
 }
 
 // The type of document analysis requested. The allowed values are:
+// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+// * `TEXT_EXTRACTION`: Recognize text.
+// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 func (o ProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }
@@ -5395,6 +5418,8 @@ type GetProcessorJobInputLocation struct {
 	// The list of ObjectLocations.
 	ObjectLocations []GetProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -5415,6 +5440,8 @@ type GetProcessorJobInputLocationArgs struct {
 	// The list of ObjectLocations.
 	ObjectLocations GetProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -5482,6 +5509,8 @@ func (o GetProcessorJobInputLocationOutput) ObjectLocations() GetProcessorJobInp
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o GetProcessorJobInputLocationOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobInputLocation) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -5871,6 +5900,11 @@ func (o GetProcessorJobProcessorConfigArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetProcessorJobProcessorConfigFeature struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf bool `pulumi:"generateSearchablePdf"`
@@ -5895,6 +5929,11 @@ type GetProcessorJobProcessorConfigFeatureInput interface {
 
 type GetProcessorJobProcessorConfigFeatureArgs struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolInput `pulumi:"generateSearchablePdf"`
@@ -5958,6 +5997,11 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) ToGetProcessorJobProcessorC
 }
 
 // The type of document analysis requested. The allowed values are:
+// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+// * `TEXT_EXTRACTION`: Recognize text.
+// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 func (o GetProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }

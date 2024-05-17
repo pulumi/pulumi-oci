@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", UsageStatementEmailRecipientsGroupArgs.builder()        
+ *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", UsageStatementEmailRecipientsGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .recipientsLists(UsageStatementEmailRecipientsGroupRecipientsListArgs.builder()
  *                 .emailId(testEmail.id())

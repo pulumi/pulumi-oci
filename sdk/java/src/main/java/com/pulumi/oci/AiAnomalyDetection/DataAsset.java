@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataAsset = new DataAsset("testDataAsset", DataAssetArgs.builder()        
+ *         var testDataAsset = new DataAsset("testDataAsset", DataAssetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataSourceDetails(DataAssetDataSourceDetailsArgs.builder()
  *                 .dataSourceType(dataAssetDataSourceDetailsDataSourceType)

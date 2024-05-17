@@ -70,7 +70,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeployment = new Deployment("testDeployment", DeploymentArgs.builder()        
+ *         var testDeployment = new Deployment("testDeployment", DeploymentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .gatewayId(testGateway.id())
  *             .pathPrefix(deploymentPathPrefix)

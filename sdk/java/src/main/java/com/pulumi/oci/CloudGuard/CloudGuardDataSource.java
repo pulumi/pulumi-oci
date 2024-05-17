@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSource = new CloudGuardDataSource("testDataSource", CloudGuardDataSourceArgs.builder()        
+ *         var testDataSource = new CloudGuardDataSource("testDataSource", CloudGuardDataSourceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataSourceFeedProvider(dataSourceDataSourceFeedProvider)
  *             .displayName(dataSourceDisplayName)

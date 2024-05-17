@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch("testWorkspaceApplicationPatch", WorkspaceApplicationPatchArgs.builder()        
+ *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch("testWorkspaceApplicationPatch", WorkspaceApplicationPatchArgs.builder()
  *             .applicationKey(workspaceApplicationPatchApplicationKey)
  *             .identifier(workspaceApplicationPatchIdentifier)
  *             .name(workspaceApplicationPatchName)

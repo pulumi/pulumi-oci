@@ -92,6 +92,14 @@ type LookupEventResult struct {
 	// The date and time that the event was updated (in [RFC 3339](https://tools.ietf.org/html/rfc3339) format). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type string `pulumi:"type"`
 }
 
@@ -218,6 +226,14 @@ func (o LookupEventResultOutput) TimeUpdated() pulumi.StringOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o LookupEventResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEventResult) string { return v.Type }).(pulumi.StringOutput)
 }

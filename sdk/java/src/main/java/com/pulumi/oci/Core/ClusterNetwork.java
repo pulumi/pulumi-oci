@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterNetwork = new ClusterNetwork("testClusterNetwork", ClusterNetworkArgs.builder()        
+ *         var testClusterNetwork = new ClusterNetwork("testClusterNetwork", ClusterNetworkArgs.builder()
  *             .compartmentId(compartmentId)
  *             .instancePools(ClusterNetworkInstancePoolArgs.builder()
  *                 .instanceConfigurationId(testInstanceConfiguration.id())

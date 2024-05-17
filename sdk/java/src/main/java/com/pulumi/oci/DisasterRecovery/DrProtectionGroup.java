@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         final var config = ctx.config();
  *         final var disassociateTrigger = config.get("disassociateTrigger").orElse(0);
- *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()        
+ *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(drProtectionGroupDisplayName)
  *             .logLocation(DrProtectionGroupLogLocationArgs.builder()

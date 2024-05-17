@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSubscriptionRedeemableUser = new SubscriptionRedeemableUser("testSubscriptionRedeemableUser", SubscriptionRedeemableUserArgs.builder()        
+ *         var testSubscriptionRedeemableUser = new SubscriptionRedeemableUser("testSubscriptionRedeemableUser", SubscriptionRedeemableUserArgs.builder()
  *             .subscriptionId(testSubscription.id())
  *             .tenancyId(testTenancy.id())
  *             .items(SubscriptionRedeemableUserItemArgs.builder()

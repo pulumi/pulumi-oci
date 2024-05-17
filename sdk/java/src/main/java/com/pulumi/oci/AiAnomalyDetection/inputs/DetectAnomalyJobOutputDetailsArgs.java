@@ -48,6 +48,7 @@ public final class DetectAnomalyJobOutputDetailsArgs extends com.pulumi.resource
 
     /**
      * The type of output location. Allowed values are:
+     * * `OBJECT_STORAGE`: Object store output location.
      * 
      */
     @Import(name="outputType", required=true)
@@ -55,6 +56,7 @@ public final class DetectAnomalyJobOutputDetailsArgs extends com.pulumi.resource
 
     /**
      * @return The type of output location. Allowed values are:
+     * * `OBJECT_STORAGE`: Object store output location.
      * 
      */
     public Output<String> outputType() {
@@ -147,6 +149,7 @@ public final class DetectAnomalyJobOutputDetailsArgs extends com.pulumi.resource
 
         /**
          * @param outputType The type of output location. Allowed values are:
+         * * `OBJECT_STORAGE`: Object store output location.
          * 
          * @return builder
          * 
@@ -158,6 +161,7 @@ public final class DetectAnomalyJobOutputDetailsArgs extends com.pulumi.resource
 
         /**
          * @param outputType The type of output location. Allowed values are:
+         * * `OBJECT_STORAGE`: Object store output location.
          * 
          * @return builder
          * 

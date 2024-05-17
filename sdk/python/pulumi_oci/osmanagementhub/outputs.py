@@ -534,6 +534,14 @@ class EventDataContent(dict):
         :param str exploit_object_store_location: The location of the exploit detection log within object storage.
         :param int size: Size of the event content.
         :param str type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         if content_availability is not None:
             pulumi.set(__self__, "content_availability", content_availability)
@@ -598,6 +606,14 @@ class EventDataContent(dict):
     def type(self) -> Optional[str]:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 
@@ -4904,6 +4920,14 @@ class GetEventDataContentResult(dict):
         :param str exploit_object_store_location: The location of the exploit detection log within object storage.
         :param int size: Size of the event content.
         :param str type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         pulumi.set(__self__, "content_availability", content_availability)
         pulumi.set(__self__, "content_location", content_location)
@@ -4962,6 +4986,14 @@ class GetEventDataContentResult(dict):
     def type(self) -> str:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 

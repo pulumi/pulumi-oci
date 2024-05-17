@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeployEnvironment = new DeployEnvironment("testDeployEnvironment", DeployEnvironmentArgs.builder()        
+ *         var testDeployEnvironment = new DeployEnvironment("testDeployEnvironment", DeployEnvironmentArgs.builder()
  *             .deployEnvironmentType(deployEnvironmentDeployEnvironmentType)
  *             .projectId(testProject.id())
  *             .clusterId(testCluster.id())

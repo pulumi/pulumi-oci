@@ -127,6 +127,10 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     private @Nullable String launchMode;
@@ -180,6 +184,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
      * 
      */
     private @Nullable String preferredMaintenanceAction;
@@ -338,6 +344,10 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     }
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     public Optional<String> launchMode() {
@@ -401,6 +411,8 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     }
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
      * 
      */
     public Optional<String> preferredMaintenanceAction() {

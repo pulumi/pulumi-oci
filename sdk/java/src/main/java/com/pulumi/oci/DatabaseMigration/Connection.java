@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()        
+ *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
  *             .adminCredentials(ConnectionAdminCredentialsArgs.builder()
  *                 .password(connectionAdminCredentialsPassword)
  *                 .username(connectionAdminCredentialsUsername)

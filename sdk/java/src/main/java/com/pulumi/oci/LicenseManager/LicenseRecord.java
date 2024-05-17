@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLicenseRecord = new LicenseRecord("testLicenseRecord", LicenseRecordArgs.builder()        
+ *         var testLicenseRecord = new LicenseRecord("testLicenseRecord", LicenseRecordArgs.builder()
  *             .displayName(licenseRecordDisplayName)
  *             .isPerpetual(licenseRecordIsPerpetual)
  *             .isUnlimited(licenseRecordIsUnlimited)

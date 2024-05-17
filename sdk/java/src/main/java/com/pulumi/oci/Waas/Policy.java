@@ -78,7 +78,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWaasPolicy = new Policy("testWaasPolicy", PolicyArgs.builder()        
+ *         var testWaasPolicy = new Policy("testWaasPolicy", PolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .domain(waasPolicyDomain)
  *             .additionalDomains(waasPolicyAdditionalDomains)

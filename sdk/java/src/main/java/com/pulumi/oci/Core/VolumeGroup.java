@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeGroup = new VolumeGroup("testVolumeGroup", VolumeGroupArgs.builder()        
+ *         var testVolumeGroup = new VolumeGroup("testVolumeGroup", VolumeGroupArgs.builder()
  *             .availabilityDomain(volumeGroupAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .sourceDetails(VolumeGroupSourceDetailsArgs.builder()

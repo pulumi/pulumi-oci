@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSoftwareSourceAddPackagesManagement = new SoftwareSourceAddPackagesManagement("testSoftwareSourceAddPackagesManagement", SoftwareSourceAddPackagesManagementArgs.builder()        
+ *         var testSoftwareSourceAddPackagesManagement = new SoftwareSourceAddPackagesManagement("testSoftwareSourceAddPackagesManagement", SoftwareSourceAddPackagesManagementArgs.builder()
  *             .packages(softwareSourceAddPackagesManagementPackages)
  *             .softwareSourceId(testSoftwareSource.id())
  *             .build());

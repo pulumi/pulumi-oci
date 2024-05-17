@@ -30,6 +30,10 @@ class AutonomousDatabaseWalletArgs:
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+               * `SINGLE` - used to generate a wallet for a single database
+               * `ALL` - used to generate wallet for all databases in the region
+               
+               **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -85,6 +89,10 @@ class AutonomousDatabaseWalletArgs:
         The type of wallet to generate.
 
         **Serverless instance usage:**
+        * `SINGLE` - used to generate a wallet for a single database
+        * `ALL` - used to generate wallet for all databases in the region
+
+        **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         """
         return pulumi.get(self, "generate_type")
 
@@ -121,6 +129,10 @@ class _AutonomousDatabaseWalletState:
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+               * `SINGLE` - used to generate a wallet for a single database
+               * `ALL` - used to generate wallet for all databases in the region
+               
+               **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
@@ -181,6 +193,10 @@ class _AutonomousDatabaseWalletState:
         The type of wallet to generate.
 
         **Serverless instance usage:**
+        * `SINGLE` - used to generate a wallet for a single database
+        * `ALL` - used to generate wallet for all databases in the region
+
+        **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         """
         return pulumi.get(self, "generate_type")
 
@@ -262,6 +278,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+               * `SINGLE` - used to generate a wallet for a single database
+               * `ALL` - used to generate wallet for all databases in the region
+               
+               **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
@@ -372,6 +392,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+               * `SINGLE` - used to generate a wallet for a single database
+               * `ALL` - used to generate wallet for all databases in the region
+               
+               **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
@@ -419,6 +443,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         The type of wallet to generate.
 
         **Serverless instance usage:**
+        * `SINGLE` - used to generate a wallet for a single database
+        * `ALL` - used to generate wallet for all databases in the region
+
+        **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
         """
         return pulumi.get(self, "generate_type")
 

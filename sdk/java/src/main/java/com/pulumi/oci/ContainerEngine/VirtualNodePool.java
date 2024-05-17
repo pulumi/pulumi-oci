@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualNodePool = new VirtualNodePool("testVirtualNodePool", VirtualNodePoolArgs.builder()        
+ *         var testVirtualNodePool = new VirtualNodePool("testVirtualNodePool", VirtualNodePoolArgs.builder()
  *             .clusterId(testCluster.id())
  *             .compartmentId(compartmentId)
  *             .displayName(virtualNodePoolDisplayName)

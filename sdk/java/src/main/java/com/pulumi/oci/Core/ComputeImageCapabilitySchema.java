@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeImageCapabilitySchema = new ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", ComputeImageCapabilitySchemaArgs.builder()        
+ *         var testComputeImageCapabilitySchema = new ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", ComputeImageCapabilitySchemaArgs.builder()
  *             .compartmentId(compartmentId)
  *             .computeGlobalImageCapabilitySchemaVersionName(computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName)
  *             .imageId(testImage.id())

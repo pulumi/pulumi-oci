@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()        
+ *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()
  *             .compartmentId(compartmentId)
  *             .projectId(testProject.id())
  *             .stepDetails(PipelineStepDetailArgs.builder()

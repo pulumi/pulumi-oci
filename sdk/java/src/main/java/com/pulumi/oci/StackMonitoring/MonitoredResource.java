@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResource = new MonitoredResource("testMonitoredResource", MonitoredResourceArgs.builder()        
+ *         var testMonitoredResource = new MonitoredResource("testMonitoredResource", MonitoredResourceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(monitoredResourceName)
  *             .type(monitoredResourceType)

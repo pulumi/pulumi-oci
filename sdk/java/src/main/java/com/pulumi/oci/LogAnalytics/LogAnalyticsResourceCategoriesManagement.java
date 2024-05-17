@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsResourceCategoriesManagement = new LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", LogAnalyticsResourceCategoriesManagementArgs.builder()        
+ *         var testLogAnalyticsResourceCategoriesManagement = new LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", LogAnalyticsResourceCategoriesManagementArgs.builder()
  *             .namespace(logAnalyticsResourceCategoriesManagementNamespace)
  *             .resourceId(ociLogAnalyticsResourceCategoriesManagementResourceId)
  *             .resourceType(logAnalyticsResourceCategoriesManagementResourceType)

@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabase = new Database("testDatabase", DatabaseArgs.builder()        
+ *         var testDatabase = new Database("testDatabase", DatabaseArgs.builder()
  *             .database(DatabaseDatabaseArgs.builder()
  *                 .adminPassword(databaseDatabaseAdminPassword)
  *                 .dbName(databaseDatabaseDbName)

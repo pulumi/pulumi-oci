@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModel = new Model("testModel", ModelArgs.builder()        
+ *         var testModel = new Model("testModel", ModelArgs.builder()
  *             .compartmentId(compartmentId)
  *             .modelDetails(ModelModelDetailsArgs.builder()
  *                 .modelType(modelModelDetailsModelType)

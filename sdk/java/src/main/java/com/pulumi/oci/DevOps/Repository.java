@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRepository = new Repository("testRepository", RepositoryArgs.builder()        
+ *         var testRepository = new Repository("testRepository", RepositoryArgs.builder()
  *             .name(repositoryName)
  *             .projectId(testProject.id())
  *             .repositoryType(repositoryRepositoryType)

@@ -115,6 +115,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     public readonly characterSet!: pulumi.Output<string>;
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      */
     public readonly cloneType!: pulumi.Output<string>;
     /**
@@ -1002,6 +1004,8 @@ export interface AutonomousDatabaseState {
     characterSet?: pulumi.Input<string>;
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      */
     cloneType?: pulumi.Input<string>;
     /**
@@ -1581,6 +1585,8 @@ export interface AutonomousDatabaseArgs {
     characterSet?: pulumi.Input<string>;
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      */
     cloneType?: pulumi.Input<string>;
     /**

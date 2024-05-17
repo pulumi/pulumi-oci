@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTarget = new Target("testTarget", TargetArgs.builder()        
+ *         var testTarget = new Target("testTarget", TargetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(targetDisplayName)
  *             .targetResourceId(testTargetResource.id())

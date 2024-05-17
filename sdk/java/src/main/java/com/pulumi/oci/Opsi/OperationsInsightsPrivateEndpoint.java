@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsPrivateEndpoint = new OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", OperationsInsightsPrivateEndpointArgs.builder()        
+ *         var testOperationsInsightsPrivateEndpoint = new OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", OperationsInsightsPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(operationsInsightsPrivateEndpointDisplayName)
  *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)

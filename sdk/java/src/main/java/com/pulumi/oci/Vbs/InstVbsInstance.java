@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVbsInstance = new InstVbsInstance("testVbsInstance", InstVbsInstanceArgs.builder()        
+ *         var testVbsInstance = new InstVbsInstance("testVbsInstance", InstVbsInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(vbsInstanceDisplayName)
  *             .name(vbsInstanceName)

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testScript = new Script("testScript", ScriptArgs.builder()        
+ *         var testScript = new Script("testScript", ScriptArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .content(scriptContent)
  *             .contentType(scriptContentType)

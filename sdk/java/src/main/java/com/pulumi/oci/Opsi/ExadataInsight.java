@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataInsight = new ExadataInsight("testExadataInsight", ExadataInsightArgs.builder()        
+ *         var testExadataInsight = new ExadataInsight("testExadataInsight", ExadataInsightArgs.builder()
  *             .compartmentId(compartmentId)
  *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
  *             .enterpriseManagerEntityIdentifier(exadataInsightEnterpriseManagerEntityIdentifier)

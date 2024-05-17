@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceProject = new WorkspaceProject("testWorkspaceProject", WorkspaceProjectArgs.builder()        
+ *         var testWorkspaceProject = new WorkspaceProject("testWorkspaceProject", WorkspaceProjectArgs.builder()
  *             .identifier(workspaceProjectIdentifier)
  *             .name(workspaceProjectName)
  *             .workspaceId(testWorkspace.id())

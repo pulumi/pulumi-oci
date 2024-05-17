@@ -20,6 +20,11 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
 
     /**
      * The type of document analysis requested. The allowed values are:
+     * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+     * * `TEXT_EXTRACTION`: Recognize text.
+     * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+     * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+     * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
      * 
      */
     @Import(name="featureType", required=true)
@@ -27,6 +32,11 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
 
     /**
      * @return The type of document analysis requested. The allowed values are:
+     * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+     * * `TEXT_EXTRACTION`: Recognize text.
+     * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+     * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+     * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
      * 
      */
     public Output<String> featureType() {
@@ -123,6 +133,11 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
 
         /**
          * @param featureType The type of document analysis requested. The allowed values are:
+         * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+         * * `TEXT_EXTRACTION`: Recognize text.
+         * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+         * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+         * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
          * 
          * @return builder
          * 
@@ -134,6 +149,11 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
 
         /**
          * @param featureType The type of document analysis requested. The allowed values are:
+         * * `LANGUAGE_CLASSIFICATION`: Detect the language.
+         * * `TEXT_EXTRACTION`: Recognize text.
+         * * `TABLE_EXTRACTION`: Detect and extract data in tables.
+         * * `KEY_VALUE_EXTRACTION`: Extract form fields.
+         * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
          * 
          * @return builder
          * 

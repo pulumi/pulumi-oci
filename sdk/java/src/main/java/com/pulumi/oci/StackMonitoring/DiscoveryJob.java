@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDiscoveryJob = new DiscoveryJob("testDiscoveryJob", DiscoveryJobArgs.builder()        
+ *         var testDiscoveryJob = new DiscoveryJob("testDiscoveryJob", DiscoveryJobArgs.builder()
  *             .compartmentId(compartmentId)
  *             .discoveryDetails(DiscoveryJobDiscoveryDetailsArgs.builder()
  *                 .agentId(managementAgentId)

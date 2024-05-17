@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnalyticsInstanceVanityUrl = new AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", AnalyticsInstanceVanityUrlArgs.builder()        
+ *         var testAnalyticsInstanceVanityUrl = new AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", AnalyticsInstanceVanityUrlArgs.builder()
  *             .analyticsInstanceId(testAnalyticsInstance.id())
  *             .caCertificate(analyticsInstanceVanityUrlCaCertificate)
  *             .hosts(analyticsInstanceVanityUrlHosts)

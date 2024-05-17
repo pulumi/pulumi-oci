@@ -77,7 +77,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSubnet = new Subnet("testSubnet", SubnetArgs.builder()        
+ *         var testSubnet = new Subnet("testSubnet", SubnetArgs.builder()
  *             .cidrBlock(subnetCidrBlock)
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())

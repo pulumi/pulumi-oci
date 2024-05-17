@@ -3409,6 +3409,9 @@ type TargetAssetRecommendedSpecShapeConfig struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
@@ -3431,6 +3434,9 @@ type TargetAssetRecommendedSpecShapeConfigArgs struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
@@ -3492,6 +3498,9 @@ func (o TargetAssetRecommendedSpecShapeConfigOutput) ToTargetAssetRecommendedSpe
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 //
 // The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 func (o TargetAssetRecommendedSpecShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetRecommendedSpecShapeConfig) *string { return v.BaselineOcpuUtilization }).(pulumi.StringPtrOutput)
 }
@@ -4854,6 +4863,9 @@ type TargetAssetTestSpecShapeConfig struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
@@ -4876,6 +4888,9 @@ type TargetAssetTestSpecShapeConfigArgs struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
@@ -4937,6 +4952,9 @@ func (o TargetAssetTestSpecShapeConfigOutput) ToTargetAssetTestSpecShapeConfigOu
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 //
 // The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 func (o TargetAssetTestSpecShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetTestSpecShapeConfig) *string { return v.BaselineOcpuUtilization }).(pulumi.StringPtrOutput)
 }
@@ -6911,6 +6929,9 @@ type TargetAssetUserSpecShapeConfig struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization *string `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
@@ -6933,6 +6954,9 @@ type TargetAssetUserSpecShapeConfigArgs struct {
 	// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 	//
 	// The following values are supported:
+	// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+	// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+	// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 	BaselineOcpuUtilization pulumi.StringPtrInput `pulumi:"baselineOcpuUtilization"`
 	// (Updatable) The total amount of memory in gigabytes that is available to the instance.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
@@ -7020,6 +7044,9 @@ func (o TargetAssetUserSpecShapeConfigOutput) ToTargetAssetUserSpecShapeConfigPt
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 //
 // The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 func (o TargetAssetUserSpecShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetAssetUserSpecShapeConfig) *string { return v.BaselineOcpuUtilization }).(pulumi.StringPtrOutput)
 }
@@ -7061,6 +7088,9 @@ func (o TargetAssetUserSpecShapeConfigPtrOutput) Elem() TargetAssetUserSpecShape
 // (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 //
 // The following values are supported:
+// * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+// * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+// * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 func (o TargetAssetUserSpecShapeConfigPtrOutput) BaselineOcpuUtilization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetAssetUserSpecShapeConfig) *string {
 		if v == nil {

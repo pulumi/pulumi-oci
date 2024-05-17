@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSnapshot = new Snapshot("testSnapshot", SnapshotArgs.builder()        
+ *         var testSnapshot = new Snapshot("testSnapshot", SnapshotArgs.builder()
  *             .fileSystemId(testFileSystem.id())
  *             .name(snapshotName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

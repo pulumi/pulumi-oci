@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalExadataStorageConnector = new ExternalExadataStorageConnector("testExternalExadataStorageConnector", ExternalExadataStorageConnectorArgs.builder()        
+ *         var testExternalExadataStorageConnector = new ExternalExadataStorageConnector("testExternalExadataStorageConnector", ExternalExadataStorageConnectorArgs.builder()
  *             .agentId(testAgent.id())
  *             .connectionUri(externalExadataStorageConnectorConnectionUri)
  *             .connectorName(externalExadataStorageConnectorConnectorName)

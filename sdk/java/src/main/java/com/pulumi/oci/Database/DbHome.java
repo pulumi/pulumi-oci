@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbHome = new DbHome("testDbHome", DbHomeArgs.builder()        
+ *         var testDbHome = new DbHome("testDbHome", DbHomeArgs.builder()
  *             .dbVersion()
  *             .database(DbHomeDatabaseArgs.builder()
  *                 .adminPassword(dbHomeDatabaseAdminPassword)

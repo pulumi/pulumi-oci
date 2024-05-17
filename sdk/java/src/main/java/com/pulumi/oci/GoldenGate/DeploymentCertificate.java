@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeploymentCertificate = new DeploymentCertificate("testDeploymentCertificate", DeploymentCertificateArgs.builder()        
+ *         var testDeploymentCertificate = new DeploymentCertificate("testDeploymentCertificate", DeploymentCertificateArgs.builder()
  *             .certificateContent(deploymentCertificateCertificateContent)
  *             .deploymentId(testDeployment.id())
  *             .key(deploymentCertificateKey)

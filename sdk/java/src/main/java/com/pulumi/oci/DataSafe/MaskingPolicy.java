@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaskingPolicy = new MaskingPolicy("testMaskingPolicy", MaskingPolicyArgs.builder()        
+ *         var testMaskingPolicy = new MaskingPolicy("testMaskingPolicy", MaskingPolicyArgs.builder()
  *             .columnSources(MaskingPolicyColumnSourceArgs.builder()
  *                 .columnSource(maskingPolicyColumnSourceColumnSource)
  *                 .sensitiveDataModelId(testSensitiveDataModel.id())

@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfig = new Config("testConfig", ConfigArgs.builder()        
+ *         var testConfig = new Config("testConfig", ConfigArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .configType(configConfigType)
  *             .displayName(configDisplayName)

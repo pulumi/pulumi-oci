@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIdentityPropagationTrust = new DomainsIdentityPropagationTrust("testIdentityPropagationTrust", DomainsIdentityPropagationTrustArgs.builder()        
+ *         var testIdentityPropagationTrust = new DomainsIdentityPropagationTrust("testIdentityPropagationTrust", DomainsIdentityPropagationTrustArgs.builder()
  *             .idcsEndpoint(testDomain.url())
  *             .issuer(identityPropagationTrustIssuer)
  *             .name(identityPropagationTrustName)

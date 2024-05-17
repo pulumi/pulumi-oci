@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCapacityTopology = new ComputeCapacityTopology("testComputeCapacityTopology", ComputeCapacityTopologyArgs.builder()        
+ *         var testComputeCapacityTopology = new ComputeCapacityTopology("testComputeCapacityTopology", ComputeCapacityTopologyArgs.builder()
  *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
  *             .capacitySource(ComputeCapacityTopologyCapacitySourceArgs.builder()
  *                 .capacityType(computeCapacityTopologyCapacitySourceCapacityType)

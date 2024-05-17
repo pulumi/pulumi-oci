@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMediaWorkflow = new MediaWorkflow("testMediaWorkflow", MediaWorkflowArgs.builder()        
+ *         var testMediaWorkflow = new MediaWorkflow("testMediaWorkflow", MediaWorkflowArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(mediaWorkflowDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

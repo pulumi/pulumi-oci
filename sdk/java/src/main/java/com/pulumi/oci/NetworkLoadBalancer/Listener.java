@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testListener = new Listener("testListener", ListenerArgs.builder()        
+ *         var testListener = new Listener("testListener", ListenerArgs.builder()
  *             .defaultBackendSetName(testBackendSet.name())
  *             .name(listenerName)
  *             .networkLoadBalancerId(testNetworkLoadBalancer.id())

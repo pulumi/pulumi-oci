@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsEntity = new LogAnalyticsEntity("testLogAnalyticsEntity", LogAnalyticsEntityArgs.builder()        
+ *         var testLogAnalyticsEntity = new LogAnalyticsEntity("testLogAnalyticsEntity", LogAnalyticsEntityArgs.builder()
  *             .compartmentId(compartmentId)
  *             .entityTypeName(logAnalyticsEntityEntityTypeName)
  *             .name(logAnalyticsEntityName)

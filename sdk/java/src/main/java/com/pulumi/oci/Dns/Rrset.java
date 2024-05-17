@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()        
+ *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()
  *             .domain(rrsetDomain)
  *             .rtype(rrsetRtype)
  *             .zoneNameOrId(testZone.id())

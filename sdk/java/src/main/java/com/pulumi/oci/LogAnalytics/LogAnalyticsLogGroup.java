@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsLogGroup = new LogAnalyticsLogGroup("testLogAnalyticsLogGroup", LogAnalyticsLogGroupArgs.builder()        
+ *         var testLogAnalyticsLogGroup = new LogAnalyticsLogGroup("testLogAnalyticsLogGroup", LogAnalyticsLogGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(logAnalyticsLogGroupDisplayName)
  *             .namespace(logAnalyticsLogGroupNamespace)

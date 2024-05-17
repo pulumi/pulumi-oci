@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPolicy = new DomainsPolicy("testPolicy", DomainsPolicyArgs.builder()        
+ *         var testPolicy = new DomainsPolicy("testPolicy", DomainsPolicyArgs.builder()
  *             .idcsEndpoint(testDomain.url())
  *             .name(policyName)
  *             .policyType(DomainsPolicyPolicyTypeArgs.builder()

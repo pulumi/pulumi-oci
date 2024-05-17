@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProfile = new Profile("testProfile", ProfileArgs.builder()        
+ *         var testProfile = new Profile("testProfile", ProfileArgs.builder()
  *             .compartmentId(compartmentId)
  *             .description(profileDescription)
  *             .levelsConfiguration(ProfileLevelsConfigurationArgs.builder()

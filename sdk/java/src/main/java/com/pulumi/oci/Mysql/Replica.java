@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplica = new Replica("testReplica", ReplicaArgs.builder()        
+ *         var testReplica = new Replica("testReplica", ReplicaArgs.builder()
  *             .dbSystemId(testMysqlDbSystem.id())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(replicaDescription)

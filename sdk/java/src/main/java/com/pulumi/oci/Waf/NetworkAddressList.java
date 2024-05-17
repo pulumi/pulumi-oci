@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkAddressList = new NetworkAddressList("testNetworkAddressList", NetworkAddressListArgs.builder()        
+ *         var testNetworkAddressList = new NetworkAddressList("testNetworkAddressList", NetworkAddressListArgs.builder()
  *             .compartmentId(compartmentId)
  *             .type(networkAddressListType)
  *             .addresses(networkAddressListAddresses)

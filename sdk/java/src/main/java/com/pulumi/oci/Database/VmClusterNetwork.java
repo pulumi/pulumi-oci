@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmClusterNetwork = new VmClusterNetwork("testVmClusterNetwork", VmClusterNetworkArgs.builder()        
+ *         var testVmClusterNetwork = new VmClusterNetwork("testVmClusterNetwork", VmClusterNetworkArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(vmClusterNetworkDisplayName)
  *             .exadataInfrastructureId(testExadataInfrastructure.id())

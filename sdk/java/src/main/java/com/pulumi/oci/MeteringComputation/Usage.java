@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsage = new Usage("testUsage", UsageArgs.builder()        
+ *         var testUsage = new Usage("testUsage", UsageArgs.builder()
  *             .granularity(usageGranularity)
  *             .tenantId(testTenant.id())
  *             .timeUsageEnded(usageTimeUsageEnded)

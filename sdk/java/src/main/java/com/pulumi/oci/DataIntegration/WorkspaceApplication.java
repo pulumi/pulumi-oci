@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplication = new WorkspaceApplication("testWorkspaceApplication", WorkspaceApplicationArgs.builder()        
+ *         var testWorkspaceApplication = new WorkspaceApplication("testWorkspaceApplication", WorkspaceApplicationArgs.builder()
  *             .identifier(workspaceApplicationIdentifier)
  *             .name(workspaceApplicationName)
  *             .workspaceId(testWorkspace.id())

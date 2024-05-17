@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()        
+ *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbVersion(dbSystemDbVersion)
  *             .displayName(dbSystemDisplayName)

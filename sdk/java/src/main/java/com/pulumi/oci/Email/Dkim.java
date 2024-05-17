@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDkim = new Dkim("testDkim", DkimArgs.builder()        
+ *         var testDkim = new Dkim("testDkim", DkimArgs.builder()
  *             .emailDomainId(testEmailDomain.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dkimDescription)

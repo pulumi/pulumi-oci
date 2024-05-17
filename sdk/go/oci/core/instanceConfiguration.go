@@ -448,6 +448,11 @@ type InstanceConfiguration struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
+	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringOutput `pulumi:"source"`
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -508,6 +513,11 @@ type instanceConfigurationState struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
+	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source *string `pulumi:"source"`
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -536,6 +546,11 @@ type InstanceConfigurationState struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
+	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringPtrInput
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -566,6 +581,11 @@ type instanceConfigurationArgs struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
+	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source *string `pulumi:"source"`
 }
 
@@ -591,6 +611,11 @@ type InstanceConfigurationArgs struct {
 	// To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 	//
 	// The following values are supported:
+	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Source pulumi.StringPtrInput
 }
 
@@ -724,6 +749,11 @@ func (o InstanceConfigurationOutput) InstanceId() pulumi.StringOutput {
 // To include block volume contents with an instance configuration, first create a backup of the attached block volumes (see [CreateVolumeBackup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VolumeBackup/CreateVolumeBackup)). Then, create the instance configuration by specifying the list of settings, using [InstanceConfigurationVolumeSourceFromVolumeBackupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationVolumeSourceFromVolumeBackupDetails) to include the block volume backups in the list of settings.
 //
 // The following values are supported:
+// * `NONE`: Creates an instance configuration using the list of settings that you specify.
+// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o InstanceConfigurationOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }

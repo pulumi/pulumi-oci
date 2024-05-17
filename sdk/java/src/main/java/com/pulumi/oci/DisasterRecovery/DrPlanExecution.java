@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrPlanExecution = new DrPlanExecution("testDrPlanExecution", DrPlanExecutionArgs.builder()        
+ *         var testDrPlanExecution = new DrPlanExecution("testDrPlanExecution", DrPlanExecutionArgs.builder()
  *             .executionOptions(DrPlanExecutionExecutionOptionsArgs.builder()
  *                 .planExecutionType(drPlanExecutionExecutionOptionsPlanExecutionType)
  *                 .arePrechecksEnabled(drPlanExecutionExecutionOptionsArePrechecksEnabled)

@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironment = new FusionEnvironment("testFusionEnvironment", FusionEnvironmentArgs.builder()        
+ *         var testFusionEnvironment = new FusionEnvironment("testFusionEnvironment", FusionEnvironmentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .createFusionEnvironmentAdminUserDetails(FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs.builder()
  *                 .emailAddress(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsEmailAddress)

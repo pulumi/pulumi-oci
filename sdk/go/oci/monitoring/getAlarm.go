@@ -86,6 +86,9 @@ type LookupAlarmResult struct {
 	// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
 	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId string `pulumi:"metricCompartmentId"`
@@ -209,6 +212,9 @@ func (o LookupAlarmResultOutput) IsNotificationsPerMetricDimensionEnabled() pulu
 }
 
 // The format to use for alarm notifications. The formats are:
+// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 func (o LookupAlarmResultOutput) MessageFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.MessageFormat }).(pulumi.StringOutput)
 }

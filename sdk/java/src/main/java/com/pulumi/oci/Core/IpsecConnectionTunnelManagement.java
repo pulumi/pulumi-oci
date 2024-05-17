@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()        
+ *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()
  *             .ipsecId(testIpsec.id())
  *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
  *             .routing(ipSecConnectionTunnelManagementRouting)

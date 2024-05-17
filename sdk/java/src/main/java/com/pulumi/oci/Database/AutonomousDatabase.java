@@ -271,6 +271,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     }
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     @Export(name="cloneType", refs={String.class}, tree="[0]")
@@ -278,6 +280,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     public Output<String> cloneType() {

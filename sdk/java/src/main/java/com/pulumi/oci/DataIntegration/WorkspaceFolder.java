@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceFolder = new WorkspaceFolder("testWorkspaceFolder", WorkspaceFolderArgs.builder()        
+ *         var testWorkspaceFolder = new WorkspaceFolder("testWorkspaceFolder", WorkspaceFolderArgs.builder()
  *             .identifier(workspaceFolderIdentifier)
  *             .name(workspaceFolderName)
  *             .registryMetadata(WorkspaceFolderRegistryMetadataArgs.builder()

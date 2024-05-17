@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentFamily = new FusionEnvironmentFamily("testFusionEnvironmentFamily", FusionEnvironmentFamilyArgs.builder()        
+ *         var testFusionEnvironmentFamily = new FusionEnvironmentFamily("testFusionEnvironmentFamily", FusionEnvironmentFamilyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(fusionEnvironmentFamilyDisplayName)
  *             .subscriptionIds(fusionEnvironmentFamilySubscriptionIds)

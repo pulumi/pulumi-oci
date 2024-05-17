@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLifecycleEnvironment = new LifecycleEnvironment("testLifecycleEnvironment", LifecycleEnvironmentArgs.builder()        
+ *         var testLifecycleEnvironment = new LifecycleEnvironment("testLifecycleEnvironment", LifecycleEnvironmentArgs.builder()
  *             .archType(lifecycleEnvironmentArchType)
  *             .compartmentId(compartmentId)
  *             .displayName(lifecycleEnvironmentDisplayName)

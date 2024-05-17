@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublication = new Publication("testPublication", PublicationArgs.builder()        
+ *         var testPublication = new Publication("testPublication", PublicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .isAgreementAcknowledged(publicationIsAgreementAcknowledged)
  *             .listingType(publicationListingType)

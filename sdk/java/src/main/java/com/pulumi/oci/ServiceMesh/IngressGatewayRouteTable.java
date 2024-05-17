@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable("testIngressGatewayRouteTable", IngressGatewayRouteTableArgs.builder()        
+ *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable("testIngressGatewayRouteTable", IngressGatewayRouteTableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ingressGatewayId(testIngressGateway.id())
  *             .name(ingressGatewayRouteTableName)

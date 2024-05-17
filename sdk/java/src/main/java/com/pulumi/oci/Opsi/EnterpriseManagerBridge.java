@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEnterpriseManagerBridge = new EnterpriseManagerBridge("testEnterpriseManagerBridge", EnterpriseManagerBridgeArgs.builder()        
+ *         var testEnterpriseManagerBridge = new EnterpriseManagerBridge("testEnterpriseManagerBridge", EnterpriseManagerBridgeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(enterpriseManagerBridgeDisplayName)
  *             .objectStorageBucketName(testBucket.name())

@@ -654,6 +654,7 @@ class DetectAnomalyJobOutputDetailsArgs:
         :param pulumi.Input[str] bucket: Object Storage bucket name.
         :param pulumi.Input[str] namespace: Object Storage namespace.
         :param pulumi.Input[str] output_type: The type of output location. Allowed values are:
+               * `OBJECT_STORAGE`: Object store output location.
         :param pulumi.Input[str] prefix: Object Storage folder name.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -691,6 +692,7 @@ class DetectAnomalyJobOutputDetailsArgs:
     def output_type(self) -> pulumi.Input[str]:
         """
         The type of output location. Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
         """
         return pulumi.get(self, "output_type")
 

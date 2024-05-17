@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetDatabasePeerTargetDatabase = new TargetDatabasePeerTargetDatabase("testTargetDatabasePeerTargetDatabase", TargetDatabasePeerTargetDatabaseArgs.builder()        
+ *         var testTargetDatabasePeerTargetDatabase = new TargetDatabasePeerTargetDatabase("testTargetDatabasePeerTargetDatabase", TargetDatabasePeerTargetDatabaseArgs.builder()
  *             .databaseDetails(TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs.builder()
  *                 .databaseType(targetDatabasePeerTargetDatabaseDatabaseDetailsDatabaseType)
  *                 .infrastructureType(targetDatabasePeerTargetDatabaseDatabaseDetailsInfrastructureType)

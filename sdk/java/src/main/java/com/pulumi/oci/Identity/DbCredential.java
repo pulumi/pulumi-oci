@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbCredential = new DbCredential("testDbCredential", DbCredentialArgs.builder()        
+ *         var testDbCredential = new DbCredential("testDbCredential", DbCredentialArgs.builder()
  *             .description(dbCredentialDescription)
  *             .password(dbCredentialPassword)
  *             .userId(testUser.id())

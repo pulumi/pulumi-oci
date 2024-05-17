@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAssetSource = new AssetSource("testAssetSource", AssetSourceArgs.builder()        
+ *         var testAssetSource = new AssetSource("testAssetSource", AssetSourceArgs.builder()
  *             .assetsCompartmentId(testCompartment.id())
  *             .compartmentId(compartmentId)
  *             .discoveryCredentials(AssetSourceDiscoveryCredentialsArgs.builder()

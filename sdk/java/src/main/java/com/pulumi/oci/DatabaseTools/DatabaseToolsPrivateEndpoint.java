@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", DatabaseToolsPrivateEndpointArgs.builder()        
+ *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", DatabaseToolsPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(databaseToolsPrivateEndpointDisplayName)
  *             .endpointServiceId(testService.id())

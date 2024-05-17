@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamCdnConfig = new StreamCdnConfig("testStreamCdnConfig", StreamCdnConfigArgs.builder()        
+ *         var testStreamCdnConfig = new StreamCdnConfig("testStreamCdnConfig", StreamCdnConfigArgs.builder()
  *             .config(StreamCdnConfigConfigArgs.builder()
  *                 .type(streamCdnConfigConfigType)
  *                 .edgeHostname(streamCdnConfigConfigEdgeHostname)

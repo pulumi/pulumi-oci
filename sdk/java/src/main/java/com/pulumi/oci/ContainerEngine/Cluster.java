@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()        
+ *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .kubernetesVersion(clusterKubernetesVersion)
  *             .name(clusterName)

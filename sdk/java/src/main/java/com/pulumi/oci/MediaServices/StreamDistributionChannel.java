@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamDistributionChannel = new StreamDistributionChannel("testStreamDistributionChannel", StreamDistributionChannelArgs.builder()        
+ *         var testStreamDistributionChannel = new StreamDistributionChannel("testStreamDistributionChannel", StreamDistributionChannelArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(streamDistributionChannelDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

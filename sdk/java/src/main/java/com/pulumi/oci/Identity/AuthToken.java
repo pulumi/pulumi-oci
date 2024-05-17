@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuthToken = new AuthToken("testAuthToken", AuthTokenArgs.builder()        
+ *         var testAuthToken = new AuthToken("testAuthToken", AuthTokenArgs.builder()
  *             .description(authTokenDescription)
  *             .userId(testUser.id())
  *             .build());

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNewsReport = new NewsReport("testNewsReport", NewsReportArgs.builder()        
+ *         var testNewsReport = new NewsReport("testNewsReport", NewsReportArgs.builder()
  *             .compartmentId(compartmentId)
  *             .contentTypes(NewsReportContentTypesArgs.builder()
  *                 .capacityPlanningResources(newsReportContentTypesCapacityPlanningResources)

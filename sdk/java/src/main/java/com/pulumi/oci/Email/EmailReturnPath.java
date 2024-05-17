@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEmailReturnPath = new EmailReturnPath("testEmailReturnPath", EmailReturnPathArgs.builder()        
+ *         var testEmailReturnPath = new EmailReturnPath("testEmailReturnPath", EmailReturnPathArgs.builder()
  *             .parentResourceId(testResource.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(emailReturnPathDescription)

@@ -420,6 +420,14 @@ type EventDataContent struct {
 	// Size of the event content.
 	Size *int `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type *string `pulumi:"type"`
 }
 
@@ -451,6 +459,14 @@ type EventDataContentArgs struct {
 	// Size of the event content.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -536,6 +552,14 @@ func (o EventDataContentOutput) Size() pulumi.IntPtrOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o EventDataContentOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventDataContent) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -9878,6 +9902,14 @@ type GetEventDataContent struct {
 	// Size of the event content.
 	Size int `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type string `pulumi:"type"`
 }
 
@@ -9909,6 +9941,14 @@ type GetEventDataContentArgs struct {
 	// Size of the event content.
 	Size pulumi.IntInput `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -9994,6 +10034,14 @@ func (o GetEventDataContentOutput) Size() pulumi.IntOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o GetEventDataContentOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventDataContent) string { return v.Type }).(pulumi.StringOutput)
 }

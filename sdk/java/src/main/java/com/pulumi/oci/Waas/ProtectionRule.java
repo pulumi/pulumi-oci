@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProtectionRule = new ProtectionRule("testProtectionRule", ProtectionRuleArgs.builder()        
+ *         var testProtectionRule = new ProtectionRule("testProtectionRule", ProtectionRuleArgs.builder()
  *             .waasPolicyId(testWaasPolicy.id())
  *             .key(key)
  *             .action("DETECT")

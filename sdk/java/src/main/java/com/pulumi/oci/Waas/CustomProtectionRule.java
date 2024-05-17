@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCustomProtectionRule = new CustomProtectionRule("testCustomProtectionRule", CustomProtectionRuleArgs.builder()        
+ *         var testCustomProtectionRule = new CustomProtectionRule("testCustomProtectionRule", CustomProtectionRuleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(customProtectionRuleDisplayName)
  *             .template(customProtectionRuleTemplate)

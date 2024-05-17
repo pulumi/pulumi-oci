@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", NetworkSecurityGroupSecurityRuleArgs.builder()        
+ *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", NetworkSecurityGroupSecurityRuleArgs.builder()
  *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
  *             .direction(networkSecurityGroupSecurityRuleDirection)
  *             .protocol(networkSecurityGroupSecurityRuleProtocol)
@@ -150,6 +150,9 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
      * 
      * Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
@@ -159,6 +162,9 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * @return Type of destination for the rule. Required if `direction` = `EGRESS`.
      * 
      * Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `destination` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     public Output<String> destinationType() {
@@ -268,6 +274,9 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
     }
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
+     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
@@ -275,6 +284,9 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
 
     /**
      * @return Type of source for the rule. Required if `direction` = `INGRESS`.
+     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     public Output<String> sourceType() {

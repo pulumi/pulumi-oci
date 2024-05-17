@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDiscoverySchedule = new DiscoverySchedule("testDiscoverySchedule", DiscoveryScheduleArgs.builder()        
+ *         var testDiscoverySchedule = new DiscoverySchedule("testDiscoverySchedule", DiscoveryScheduleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .executionRecurrences(discoveryScheduleExecutionRecurrences)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

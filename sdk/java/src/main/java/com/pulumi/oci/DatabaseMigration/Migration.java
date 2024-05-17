@@ -89,7 +89,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMigration = new Migration("testMigration", MigrationArgs.builder()        
+ *         var testMigration = new Migration("testMigration", MigrationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceDatabaseConnectionId(testConnection.id())
  *             .targetDatabaseConnectionId(testConnection.id())

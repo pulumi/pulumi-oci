@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()        
+ *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()
  *             .conditionLanguageVersion(loadBalancerRoutingPolicyConditionLanguageVersion)
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(loadBalancerRoutingPolicyName)

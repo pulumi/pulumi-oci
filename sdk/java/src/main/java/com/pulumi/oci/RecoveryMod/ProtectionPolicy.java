@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProtectionPolicy = new ProtectionPolicy("testProtectionPolicy", ProtectionPolicyArgs.builder()        
+ *         var testProtectionPolicy = new ProtectionPolicy("testProtectionPolicy", ProtectionPolicyArgs.builder()
  *             .backupRetentionPeriodInDays(protectionPolicyBackupRetentionPeriodInDays)
  *             .compartmentId(compartmentId)
  *             .displayName(protectionPolicyDisplayName)

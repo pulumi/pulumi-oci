@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceConnector = new Connector("testServiceConnector", ConnectorArgs.builder()        
+ *         var testServiceConnector = new Connector("testServiceConnector", ConnectorArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(serviceConnectorDisplayName)
  *             .source(ConnectorSourceArgs.builder()

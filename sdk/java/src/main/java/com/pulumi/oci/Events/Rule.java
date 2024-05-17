@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new Rule("testRule", RuleArgs.builder()        
+ *         var testRule = new Rule("testRule", RuleArgs.builder()
  *             .actions(RuleActionsArgs.builder()
  *                 .actions(RuleActionsActionArgs.builder()
  *                     .actionType(ruleActionsActionsActionType)

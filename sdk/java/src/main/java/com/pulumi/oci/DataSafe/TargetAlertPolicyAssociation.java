@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", TargetAlertPolicyAssociationArgs.builder()        
+ *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", TargetAlertPolicyAssociationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .isEnabled(targetAlertPolicyAssociationIsEnabled)
  *             .policyId(testPolicy.id())

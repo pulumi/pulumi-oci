@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamespaceScheduledTask = new NamespaceScheduledTask("testNamespaceScheduledTask", NamespaceScheduledTaskArgs.builder()        
+ *         var testNamespaceScheduledTask = new NamespaceScheduledTask("testNamespaceScheduledTask", NamespaceScheduledTaskArgs.builder()
  *             .compartmentId(compartmentId)
  *             .kind(namespaceScheduledTaskKind)
  *             .namespace(namespaceScheduledTaskNamespace)

@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGateway = new Gateway("testGateway", GatewayArgs.builder()        
+ *         var testGateway = new Gateway("testGateway", GatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .endpointType(gatewayEndpointType)
  *             .subnetId(testSubnet.id())

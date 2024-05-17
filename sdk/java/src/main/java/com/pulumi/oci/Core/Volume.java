@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolume = new Volume("testVolume", VolumeArgs.builder()        
+ *         var testVolume = new Volume("testVolume", VolumeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .autotunePolicies(VolumeAutotunePolicyArgs.builder()
  *                 .autotuneType(volumeAutotunePoliciesAutotuneType)

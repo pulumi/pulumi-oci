@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCrossConnect = new CrossConnect("testCrossConnect", CrossConnectArgs.builder()        
+ *         var testCrossConnect = new CrossConnect("testCrossConnect", CrossConnectArgs.builder()
  *             .compartmentId(compartmentId)
  *             .locationName(crossConnectLocationName)
  *             .portSpeedShapeName(crossConnectPortSpeedShapeName)

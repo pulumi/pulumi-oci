@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMetricExtension = new MetricExtension("testMetricExtension", MetricExtensionArgs.builder()        
+ *         var testMetricExtension = new MetricExtension("testMetricExtension", MetricExtensionArgs.builder()
  *             .collectionRecurrences(metricExtensionCollectionRecurrences)
  *             .compartmentId(compartmentId)
  *             .displayName(metricExtensionDisplayName)

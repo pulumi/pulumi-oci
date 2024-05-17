@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataIormConfig = new ExadataIormConfig("testExadataIormConfig", ExadataIormConfigArgs.builder()        
+ *         var testExadataIormConfig = new ExadataIormConfig("testExadataIormConfig", ExadataIormConfigArgs.builder()
  *             .dbPlans(ExadataIormConfigDbPlanArgs.builder()
  *                 .dbName(exadataIormConfigDbPlansDbName)
  *                 .share(exadataIormConfigDbPlansShare)

@@ -31,67 +31,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsOauth2clientCredential;
- * import com.pulumi.oci.Identity.DomainsOauth2clientCredentialArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialScopeArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsOauth2clientCredentialUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testOauth2clientCredential = new DomainsOauth2clientCredential("testOauth2clientCredential", DomainsOauth2clientCredentialArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .name(oauth2clientCredentialName)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential")
- *             .scopes(DomainsOauth2clientCredentialScopeArgs.builder()
- *                 .audience(oauth2clientCredentialScopesAudience)
- *                 .scope(oauth2clientCredentialScopesScope)
- *                 .build())
- *             .attributeSets()
- *             .attributes("")
- *             .authorization(oauth2clientCredentialAuthorization)
- *             .description(oauth2clientCredentialDescription)
- *             .expiresOn(oauth2clientCredentialExpiresOn)
- *             .id(oauth2clientCredentialId)
- *             .isResetSecret(oauth2clientCredentialIsResetSecret)
- *             .ocid(oauth2clientCredentialOcid)
- *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
- *             .status(oauth2clientCredentialStatus)
- *             .tags(DomainsOauth2clientCredentialTagArgs.builder()
- *                 .key(oauth2clientCredentialTagsKey)
- *                 .value(oauth2clientCredentialTagsValue)
- *                 .build())
- *             .urnietfparamsscimschemasoracleidcsextensionselfChangeUser(DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs.builder()
- *                 .allowSelfChange(oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
- *                 .build())
- *             .user(DomainsOauth2clientCredentialUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

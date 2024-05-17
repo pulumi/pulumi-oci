@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()        
+ *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()
  *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterPublicKey(bdsInstanceClusterPublicKey)
  *             .clusterVersion(bdsInstanceClusterVersion)

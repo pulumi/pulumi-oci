@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitor = new Config("testMonitor", ConfigArgs.builder()        
+ *         var testMonitor = new Config("testMonitor", ConfigArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .displayName(monitorDisplayName)
  *             .monitorType(monitorMonitorType)

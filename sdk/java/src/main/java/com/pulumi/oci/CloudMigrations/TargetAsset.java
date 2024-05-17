@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetAsset = new TargetAsset("testTargetAsset", TargetAssetArgs.builder()        
+ *         var testTargetAsset = new TargetAsset("testTargetAsset", TargetAssetArgs.builder()
  *             .isExcludedFromExecution(targetAssetIsExcludedFromExecution)
  *             .migrationPlanId(testMigrationPlan.id())
  *             .preferredShapeType(targetAssetPreferredShapeType)

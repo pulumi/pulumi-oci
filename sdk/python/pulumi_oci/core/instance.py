@@ -795,6 +795,10 @@ class _InstanceState:
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -1265,6 +1269,10 @@ class _InstanceState:
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -2020,6 +2028,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -2351,6 +2363,10 @@ class Instance(pulumi.CustomResource):
     def launch_mode(self) -> pulumi.Output[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 

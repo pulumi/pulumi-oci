@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnnouncementSubscription = new AnnouncementSubscription("testAnnouncementSubscription", AnnouncementSubscriptionArgs.builder()        
+ *         var testAnnouncementSubscription = new AnnouncementSubscription("testAnnouncementSubscription", AnnouncementSubscriptionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(announcementSubscriptionDisplayName)
  *             .onsTopicId(testNotificationTopic.id())

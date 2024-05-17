@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJavaDownloadToken = new JavaDownloadsJavaDownloadToken("testJavaDownloadToken", JavaDownloadsJavaDownloadTokenArgs.builder()        
+ *         var testJavaDownloadToken = new JavaDownloadsJavaDownloadToken("testJavaDownloadToken", JavaDownloadsJavaDownloadTokenArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(javaDownloadTokenDescription)
  *             .displayName(javaDownloadTokenDisplayName)

@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEncryptedData = new EncryptedData("testEncryptedData", EncryptedDataArgs.builder()        
+ *         var testEncryptedData = new EncryptedData("testEncryptedData", EncryptedDataArgs.builder()
  *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
  *             .keyId(testKey.id())
  *             .plaintext(encryptedDataPlaintext)

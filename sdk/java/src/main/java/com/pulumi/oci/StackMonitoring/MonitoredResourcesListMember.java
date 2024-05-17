@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember("testMonitoredResourcesListMember", MonitoredResourcesListMemberArgs.builder()        
+ *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember("testMonitoredResourcesListMember", MonitoredResourcesListMemberArgs.builder()
  *             .monitoredResourceId(testMonitoredResource.id())
  *             .destinationResourceId(testDestinationResource.id())
  *             .limitLevel(monitoredResourcesListMemberLimitLevel)

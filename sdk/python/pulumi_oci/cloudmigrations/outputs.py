@@ -2633,6 +2633,9 @@ class TargetAssetRecommendedSpecShapeConfig(dict):
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -2650,6 +2653,9 @@ class TargetAssetRecommendedSpecShapeConfig(dict):
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -3639,6 +3645,9 @@ class TargetAssetTestSpecShapeConfig(dict):
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -3656,6 +3665,9 @@ class TargetAssetTestSpecShapeConfig(dict):
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -4641,6 +4653,9 @@ class TargetAssetUserSpecShapeConfig(dict):
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param float memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param float ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
@@ -4658,6 +4673,9 @@ class TargetAssetUserSpecShapeConfig(dict):
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 

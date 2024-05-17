@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJob = new Job("testJob", JobArgs.builder()        
+ *         var testJob = new Job("testJob", JobArgs.builder()
  *             .compartmentId(compartmentId)
  *             .jobConfigurationDetails(JobJobConfigurationDetailsArgs.builder()
  *                 .jobType(jobJobConfigurationDetailsJobType)

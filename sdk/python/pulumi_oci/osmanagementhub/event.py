@@ -135,6 +135,14 @@ class _EventState:
         :param pulumi.Input[str] time_occurred: The date and time that the event occurred.
         :param pulumi.Input[str] time_updated: The date and time that the event was updated (in [RFC 3339](https://tools.ietf.org/html/rfc3339) format). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -372,6 +380,14 @@ class _EventState:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 
@@ -535,6 +551,14 @@ class Event(pulumi.CustomResource):
         :param pulumi.Input[str] time_occurred: The date and time that the event occurred.
         :param pulumi.Input[str] time_updated: The date and time that the event was updated (in [RFC 3339](https://tools.ietf.org/html/rfc3339) format). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -696,6 +720,14 @@ class Event(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 

@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCaptureFilter = new CaptureFilter("testCaptureFilter", CaptureFilterArgs.builder()        
+ *         var testCaptureFilter = new CaptureFilter("testCaptureFilter", CaptureFilterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .filterType(captureFilterFilterType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

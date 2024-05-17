@@ -183,6 +183,11 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Specifies what time zone is the schedule in
      * enum:
+     * - `UTC`
+     * - `REGIONAL_DATA_CENTER_TIME`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="timeZone")
@@ -191,6 +196,11 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
+     * - `UTC`
+     * - `REGIONAL_DATA_CENTER_TIME`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -450,6 +460,11 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         /**
          * @param timeZone (Updatable) Specifies what time zone is the schedule in
          * enum:
+         * - `UTC`
+         * - `REGIONAL_DATA_CENTER_TIME`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -462,6 +477,11 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         /**
          * @param timeZone (Updatable) Specifies what time zone is the schedule in
          * enum:
+         * - `UTC`
+         * - `REGIONAL_DATA_CENTER_TIME`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -811,6 +811,8 @@ class ProcessorJobInputLocation(dict):
                  object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None):
         """
         :param str source_type: The type of input location. The allowed values are:
+               * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+               * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         :param str data: Raw document data with Base64 encoding.
         :param Sequence['ProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
         """
@@ -825,6 +827,8 @@ class ProcessorJobInputLocation(dict):
     def source_type(self) -> str:
         """
         The type of input location. The allowed values are:
+        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         return pulumi.get(self, "source_type")
 
@@ -1057,6 +1061,11 @@ class ProcessorJobProcessorConfigFeature(dict):
                  tenancy_id: Optional[str] = None):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
+               * `LANGUAGE_CLASSIFICATION`: Detect the language.
+               * `TEXT_EXTRACTION`: Recognize text.
+               * `TABLE_EXTRACTION`: Detect and extract data in tables.
+               * `KEY_VALUE_EXTRACTION`: Extract form fields.
+               * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
@@ -1077,6 +1086,11 @@ class ProcessorJobProcessorConfigFeature(dict):
     def feature_type(self) -> str:
         """
         The type of document analysis requested. The allowed values are:
+        * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        * `TEXT_EXTRACTION`: Recognize text.
+        * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         """
         return pulumi.get(self, "feature_type")
 
@@ -2475,6 +2489,8 @@ class GetProcessorJobInputLocationResult(dict):
         :param str data: Raw document data with Base64 encoding.
         :param Sequence['GetProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
         :param str source_type: The type of input location. The allowed values are:
+               * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+               * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         pulumi.set(__self__, "data", data)
         pulumi.set(__self__, "object_locations", object_locations)
@@ -2501,6 +2517,8 @@ class GetProcessorJobInputLocationResult(dict):
     def source_type(self) -> str:
         """
         The type of input location. The allowed values are:
+        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         return pulumi.get(self, "source_type")
 
@@ -2657,6 +2675,11 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
                  tenancy_id: str):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
+               * `LANGUAGE_CLASSIFICATION`: Detect the language.
+               * `TEXT_EXTRACTION`: Recognize text.
+               * `TABLE_EXTRACTION`: Detect and extract data in tables.
+               * `KEY_VALUE_EXTRACTION`: Extract form fields.
+               * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
@@ -2673,6 +2696,11 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
     def feature_type(self) -> str:
         """
         The type of document analysis requested. The allowed values are:
+        * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        * `TEXT_EXTRACTION`: Recognize text.
+        * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         """
         return pulumi.get(self, "feature_type")
 

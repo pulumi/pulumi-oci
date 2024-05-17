@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstancePool = new InstancePool("testInstancePool", InstancePoolArgs.builder()        
+ *         var testInstancePool = new InstancePool("testInstancePool", InstancePoolArgs.builder()
  *             .compartmentId(compartmentId)
  *             .instanceConfigurationId(testInstanceConfiguration.id())
  *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()

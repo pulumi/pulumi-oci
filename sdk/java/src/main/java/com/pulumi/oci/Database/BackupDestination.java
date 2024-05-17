@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackupDestination = new BackupDestination("testBackupDestination", BackupDestinationArgs.builder()        
+ *         var testBackupDestination = new BackupDestination("testBackupDestination", BackupDestinationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(backupDestinationDisplayName)
  *             .type(backupDestinationType)

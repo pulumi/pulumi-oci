@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVerify = new Verify("testVerify", VerifyArgs.builder()        
+ *         var testVerify = new Verify("testVerify", VerifyArgs.builder()
  *             .cryptoEndpoint(verifyMessageCryptoEndpoint)
  *             .keyId(testKey.id())
  *             .keyVersionId(testKeyVersion.id())

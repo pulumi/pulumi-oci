@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMesh = new Mesh("testMesh", MeshArgs.builder()        
+ *         var testMesh = new Mesh("testMesh", MeshArgs.builder()
  *             .certificateAuthorities(MeshCertificateAuthorityArgs.builder()
  *                 .id(meshCertificateAuthoritiesId)
  *                 .build())

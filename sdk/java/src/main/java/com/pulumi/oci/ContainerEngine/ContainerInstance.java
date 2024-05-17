@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testContainerInstance = new ContainerInstance("testContainerInstance", ContainerInstanceArgs.builder()        
+ *         var testContainerInstance = new ContainerInstance("testContainerInstance", ContainerInstanceArgs.builder()
  *             .availabilityDomain(containerInstanceAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .containers(ContainerInstanceContainerArgs.builder()

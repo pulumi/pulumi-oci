@@ -33,6 +33,8 @@ namespace Pulumi.Oci.Integration.Inputs
 
         /// <summary>
         /// The role of the target attachment.
+        /// * `PARENT` - The target instance is the parent of this attachment.
+        /// * `CHILD` - The target instance is the child of this attachment.
         /// </summary>
         [Input("targetRole")]
         public Input<string>? TargetRole { get; set; }

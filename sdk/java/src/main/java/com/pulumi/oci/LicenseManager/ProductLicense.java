@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProductLicense = new ProductLicense("testProductLicense", ProductLicenseArgs.builder()        
+ *         var testProductLicense = new ProductLicense("testProductLicense", ProductLicenseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(productLicenseDisplayName)
  *             .isVendorOracle(productLicenseIsVendorOracle)

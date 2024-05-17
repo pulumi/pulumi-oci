@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplicationSchedule = new ReplicationSchedule("testReplicationSchedule", ReplicationScheduleArgs.builder()        
+ *         var testReplicationSchedule = new ReplicationSchedule("testReplicationSchedule", ReplicationScheduleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(replicationScheduleDisplayName)
  *             .executionRecurrences(replicationScheduleExecutionRecurrences)

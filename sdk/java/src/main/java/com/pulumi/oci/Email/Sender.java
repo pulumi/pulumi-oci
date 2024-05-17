@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSender = new Sender("testSender", SenderArgs.builder()        
+ *         var testSender = new Sender("testSender", SenderArgs.builder()
  *             .compartmentId(compartmentId)
  *             .emailAddress(senderEmailAddress)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

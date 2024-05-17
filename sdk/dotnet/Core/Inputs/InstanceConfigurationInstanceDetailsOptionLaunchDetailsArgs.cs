@@ -150,6 +150,10 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        /// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        /// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// </summary>
         [Input("launchMode")]
         public Input<string>? LaunchMode { get; set; }
@@ -214,6 +218,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        /// * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        /// * `REBOOT` - Run maintenance using a reboot.
         /// </summary>
         [Input("preferredMaintenanceAction")]
         public Input<string>? PreferredMaintenanceAction { get; set; }

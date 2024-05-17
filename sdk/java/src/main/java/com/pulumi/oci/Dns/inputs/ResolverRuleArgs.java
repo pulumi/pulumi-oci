@@ -19,6 +19,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+     * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
      * 
      */
     @Import(name="action", required=true)
@@ -26,6 +27,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+     * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
      * 
      */
     public Output<String> action() {
@@ -122,6 +124,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+         * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
          * 
          * @return builder
          * 
@@ -133,6 +136,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+         * * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
          * 
          * @return builder
          * 

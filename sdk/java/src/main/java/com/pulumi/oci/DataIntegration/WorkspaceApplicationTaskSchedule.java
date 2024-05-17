@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationTaskSchedule = new WorkspaceApplicationTaskSchedule("testWorkspaceApplicationTaskSchedule", WorkspaceApplicationTaskScheduleArgs.builder()        
+ *         var testWorkspaceApplicationTaskSchedule = new WorkspaceApplicationTaskSchedule("testWorkspaceApplicationTaskSchedule", WorkspaceApplicationTaskScheduleArgs.builder()
  *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
  *             .identifier(workspaceApplicationTaskScheduleIdentifier)
  *             .name(workspaceApplicationTaskScheduleName)

@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()        
+ *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()
  *             .columnName(maskingPoliciesMaskingColumnColumnName)
  *             .maskingPolicyId(testMaskingPolicy.id())
  *             .object(maskingPoliciesMaskingColumnObject)

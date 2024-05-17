@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDbSystemDatabaseManagementsManagement = new ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement", ExternalDbSystemDatabaseManagementsManagementArgs.builder()        
+ *         var testExternalDbSystemDatabaseManagementsManagement = new ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement", ExternalDbSystemDatabaseManagementsManagementArgs.builder()
  *             .externalDbSystemId(testExternalDbSystem.id())
  *             .enableDatabaseManagement(enableDatabaseManagement)
  *             .licenseModel(externalDbSystemDatabaseManagementsManagementLicenseModel)

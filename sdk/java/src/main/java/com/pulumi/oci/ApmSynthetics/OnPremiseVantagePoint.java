@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOnPremiseVantagePoint = new OnPremiseVantagePoint("testOnPremiseVantagePoint", OnPremiseVantagePointArgs.builder()        
+ *         var testOnPremiseVantagePoint = new OnPremiseVantagePoint("testOnPremiseVantagePoint", OnPremiseVantagePointArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .name(onPremiseVantagePointName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

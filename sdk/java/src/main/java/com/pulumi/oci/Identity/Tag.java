@@ -70,7 +70,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTag = new Tag("testTag", TagArgs.builder()        
+ *         var testTag = new Tag("testTag", TagArgs.builder()
  *             .description(tagDescription)
  *             .name(tagName)
  *             .tagNamespaceId(testTagNamespace.id())

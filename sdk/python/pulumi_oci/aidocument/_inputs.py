@@ -762,6 +762,8 @@ class ProcessorJobInputLocationArgs:
                  object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None):
         """
         :param pulumi.Input[str] source_type: The type of input location. The allowed values are:
+               * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+               * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         :param pulumi.Input[str] data: Raw document data with Base64 encoding.
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]] object_locations: The list of ObjectLocations.
         """
@@ -776,6 +778,8 @@ class ProcessorJobInputLocationArgs:
     def source_type(self) -> pulumi.Input[str]:
         """
         The type of input location. The allowed values are:
+        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         return pulumi.get(self, "source_type")
 
@@ -1018,6 +1022,11 @@ class ProcessorJobProcessorConfigFeatureArgs:
                  tenancy_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] feature_type: The type of document analysis requested. The allowed values are:
+               * `LANGUAGE_CLASSIFICATION`: Detect the language.
+               * `TEXT_EXTRACTION`: Recognize text.
+               * `TABLE_EXTRACTION`: Detect and extract data in tables.
+               * `KEY_VALUE_EXTRACTION`: Extract form fields.
+               * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         :param pulumi.Input[bool] generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param pulumi.Input[int] max_results: The maximum number of results to return.
         :param pulumi.Input[str] model_id: The custom model ID.
@@ -1038,6 +1047,11 @@ class ProcessorJobProcessorConfigFeatureArgs:
     def feature_type(self) -> pulumi.Input[str]:
         """
         The type of document analysis requested. The allowed values are:
+        * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        * `TEXT_EXTRACTION`: Recognize text.
+        * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         """
         return pulumi.get(self, "feature_type")
 

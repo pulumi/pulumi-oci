@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousExadataInfrastructure = new AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", AutonomousExadataInfrastructureArgs.builder()        
+ *         var testAutonomousExadataInfrastructure = new AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", AutonomousExadataInfrastructureArgs.builder()
  *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shape(autonomousExadataInfrastructureShape)

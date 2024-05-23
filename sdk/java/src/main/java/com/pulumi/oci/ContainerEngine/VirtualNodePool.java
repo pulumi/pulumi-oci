@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualNodePool = new VirtualNodePool("testVirtualNodePool", VirtualNodePoolArgs.builder()        
+ *         var testVirtualNodePool = new VirtualNodePool("testVirtualNodePool", VirtualNodePoolArgs.builder()
  *             .clusterId(testCluster.id())
  *             .compartmentId(compartmentId)
  *             .displayName(virtualNodePoolDisplayName)
@@ -166,18 +166,12 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -226,14 +220,14 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) List of network security group IDs applied to the Pod VNIC.
+     * (Updatable) List of network security group id&#39;s applied to the Virtual Node VNIC.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) List of network security group IDs applied to the Pod VNIC.
+     * @return (Updatable) List of network security group id&#39;s applied to the Virtual Node VNIC.
      * 
      */
     public Output<List<String>> nsgIds() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) ConnectorBundle display name
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) ConnectorBundle URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,13 +43,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+        /// (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
         /// 
-        /// **Added In:** 18.1.6
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsDefaultValue: AccountObjectClass
+        /// * idcsDefaultValue: ConnectorBundle
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: immutable
@@ -62,28 +62,25 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) ConnectorBundle identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Unique well-known identifier used to reference connector bundle.
+        /// (Updatable) Unique Well-known identifier used to reference connector bundle.
         /// 
-        /// **Added In:** 19.1.4
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

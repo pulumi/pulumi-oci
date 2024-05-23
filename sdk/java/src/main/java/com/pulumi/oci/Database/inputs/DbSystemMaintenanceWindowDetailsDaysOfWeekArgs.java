@@ -16,14 +16,14 @@ public final class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs extends com.pu
     public static final DbSystemMaintenanceWindowDetailsDaysOfWeekArgs Empty = new DbSystemMaintenanceWindowDetailsDaysOfWeekArgs();
 
     /**
-     * (Updatable) Name of the month of the year.
+     * (Updatable) Name of the day of the week.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     public Optional<Output<String>> name() {
@@ -55,7 +55,7 @@ public final class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs extends com.pu
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) Name of the day of the week.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DbSystemMaintenanceWindowDetailsDaysOfWeekArgs extends com.pu
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) Name of the day of the week.
          * 
          * @return builder
          * 

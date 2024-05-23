@@ -20,7 +20,7 @@ public final class BdsInstanceUtilNode {
      */
     private @Nullable String blockVolumeSizeInGbs;
     /**
-     * @return The amount of worker nodes should be created
+     * @return The amount of utility nodes should be created.
      * 
      */
     private Integer numberOfNodes;
@@ -49,7 +49,7 @@ public final class BdsInstanceUtilNode {
         return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
-     * @return The amount of worker nodes should be created
+     * @return The amount of utility nodes should be created.
      * 
      */
     public Integer numberOfNodes() {

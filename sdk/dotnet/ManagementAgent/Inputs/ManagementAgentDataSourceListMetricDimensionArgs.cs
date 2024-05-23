@@ -12,9 +12,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
 
     public sealed class ManagementAgentDataSourceListMetricDimensionArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Name of the property
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

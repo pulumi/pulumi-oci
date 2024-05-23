@@ -43,19 +43,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
      */
     private String namespace;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -98,19 +98,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
         return this.namespace;
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

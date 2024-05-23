@@ -127,14 +127,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment containing images to search
+     * (Updatable) The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The OCID of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -202,14 +202,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -396,14 +396,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -412,6 +412,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     @Import(name="launchMode")
@@ -419,6 +423,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     public Optional<Output<String>> launchMode() {
@@ -569,14 +577,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+     * (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
     @Import(name="preserveBootVolume")
     private @Nullable Output<Boolean> preserveBootVolume;
 
     /**
-     * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+     * @return (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      * 
      */
     public Optional<Output<Boolean>> preserveBootVolume() {
@@ -591,22 +599,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-     * 
-     * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-     * 
-     * Example: `10.0.3.3`
+     * The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
-     * @return A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-     * 
-     * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-     * 
-     * Example: `10.0.3.3`
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -998,7 +998,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -1009,7 +1009,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -1103,7 +1103,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -1114,7 +1114,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -1353,7 +1353,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
          * 
          * @return builder
          * 
@@ -1364,7 +1364,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
          * 
          * @return builder
          * 
@@ -1375,6 +1375,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchMode Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+         * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+         * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
          * 
          * @return builder
          * 
@@ -1386,6 +1390,10 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchMode Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+         * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+         * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+         * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
          * 
          * @return builder
          * 
@@ -1580,7 +1588,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param preserveBootVolume Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         * @param preserveBootVolume (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
          * 
          * @return builder
          * 
@@ -1591,7 +1599,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param preserveBootVolume Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+         * @param preserveBootVolume (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
          * 
          * @return builder
          * 
@@ -1610,11 +1618,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-         * 
-         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-         * 
-         * Example: `10.0.3.3`
+         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
          * 
          * @return builder
          * 
@@ -1625,11 +1629,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC&#39;s *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-         * 
-         * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-         * 
-         * Example: `10.0.3.3`
+         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
          * 
          * @return builder
          * 

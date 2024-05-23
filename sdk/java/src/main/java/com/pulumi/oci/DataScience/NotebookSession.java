@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNotebookSession = new NotebookSession("testNotebookSession", NotebookSessionArgs.builder()        
+ *         var testNotebookSession = new NotebookSession("testNotebookSession", NotebookSessionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .projectId(testProject.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

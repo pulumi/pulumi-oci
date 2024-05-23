@@ -14,27 +14,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class TargetDatabasePeerTargetDatabaseDetailTlsConfig
     {
         /// <summary>
-        /// (Updatable) The format of the certificate store.
+        /// The format of the certificate store.
         /// </summary>
         public readonly string? CertificateStoreType;
         /// <summary>
-        /// (Updatable) Base64 encoded string of key store file content.
+        /// Base64 encoded string of key store file content.
         /// </summary>
         public readonly string? KeyStoreContent;
         /// <summary>
-        /// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        /// Status to represent whether the database connection is TLS enabled or not.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// (Updatable) The password to read the trust store and key store files, if they are password protected.
+        /// The password to read the trust store and key store files, if they are password protected.
         /// </summary>
         public readonly string? StorePassword;
         /// <summary>
-        /// (Updatable) Base64 encoded string of trust store file content.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Base64 encoded string of trust store file content.
         /// </summary>
         public readonly string? TrustStoreContent;
 

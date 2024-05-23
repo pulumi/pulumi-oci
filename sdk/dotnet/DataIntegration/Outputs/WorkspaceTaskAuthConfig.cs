@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskAuthConfig
     {
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify this object.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
         /// </summary>
         public readonly string? ModelType;
         /// <summary>

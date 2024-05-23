@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<Outputs.WorkspaceTaskCancelRestCallConfig> CancelRestCallConfig { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The information about the configuration provider.
+        /// (Updatable) The type to create a config provider.
         /// </summary>
         [Output("configProviderDelegate")]
         public Output<Outputs.WorkspaceTaskConfigProviderDelegate> ConfigProviderDelegate { get; private set; } = null!;
@@ -80,31 +80,31 @@ namespace Pulumi.Oci.DataIntegration
         public Output<bool> IsSingleLoad { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
         [Output("keyMap")]
         public Output<ImmutableDictionary<string, object>> KeyMap { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
         [Output("metadatas")]
         public Output<ImmutableArray<Outputs.WorkspaceTaskMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The type of the task.
         /// </summary>
         [Output("modelType")]
         public Output<string> ModelType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The model version of an object.
+        /// (Updatable) The object's model version.
         /// </summary>
         [Output("modelVersion")]
         public Output<string> ModelVersion { get; private set; } = null!;
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<int> ObjectStatus { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        /// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         /// </summary>
         [Output("objectVersion")]
         public Output<int> ObjectVersion { get; private set; } = null!;
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<int> ParallelLoadLimit { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        /// (Updatable) An array of parameters.
         /// </summary>
         [Output("parameters")]
         public Output<ImmutableArray<Outputs.WorkspaceTaskParameter>> Parameters { get; private set; } = null!;
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<Inputs.WorkspaceTaskCancelRestCallConfigArgs>? CancelRestCallConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The information about the configuration provider.
+        /// (Updatable) The type to create a config provider.
         /// </summary>
         [Input("configProviderDelegate")]
         public Input<Inputs.WorkspaceTaskConfigProviderDelegateArgs>? ConfigProviderDelegate { get; set; }
@@ -298,19 +298,19 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsSingleLoad { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The type of the task.
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The model version of an object.
+        /// (Updatable) The object's model version.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.DataIntegration
         private InputList<Inputs.WorkspaceTaskParameterArgs>? _parameters;
 
         /// <summary>
-        /// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        /// (Updatable) An array of parameters.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskParameterArgs> Parameters
         {
@@ -436,7 +436,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<Inputs.WorkspaceTaskCancelRestCallConfigGetArgs>? CancelRestCallConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The information about the configuration provider.
+        /// (Updatable) The type to create a config provider.
         /// </summary>
         [Input("configProviderDelegate")]
         public Input<Inputs.WorkspaceTaskConfigProviderDelegateGetArgs>? ConfigProviderDelegate { get; set; }
@@ -478,7 +478,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsSingleLoad { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -487,7 +487,7 @@ namespace Pulumi.Oci.DataIntegration
         private InputMap<object>? _keyMap;
 
         /// <summary>
-        /// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
         public InputMap<object> KeyMap
         {
@@ -499,7 +499,7 @@ namespace Pulumi.Oci.DataIntegration
         private InputList<Inputs.WorkspaceTaskMetadataGetArgs>? _metadatas;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskMetadataGetArgs> Metadatas
         {
@@ -508,13 +508,13 @@ namespace Pulumi.Oci.DataIntegration
         }
 
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The type of the task.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
 
         /// <summary>
-        /// (Updatable) The model version of an object.
+        /// (Updatable) The object's model version.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
@@ -532,7 +532,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<int>? ObjectStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        /// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         /// </summary>
         [Input("objectVersion")]
         public Input<int>? ObjectVersion { get; set; }
@@ -571,7 +571,7 @@ namespace Pulumi.Oci.DataIntegration
         private InputList<Inputs.WorkspaceTaskParameterGetArgs>? _parameters;
 
         /// <summary>
-        /// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        /// (Updatable) An array of parameters.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskParameterGetArgs> Parameters
         {

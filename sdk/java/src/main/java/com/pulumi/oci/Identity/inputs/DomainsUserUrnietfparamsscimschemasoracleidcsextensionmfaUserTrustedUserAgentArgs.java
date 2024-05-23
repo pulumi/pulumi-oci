@@ -17,12 +17,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,12 +35,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -50,9 +54,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the corresponding trusted user agent resource.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -68,9 +72,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding trusted user agent resource.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -87,38 +91,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The user&#39;s trusted user agent identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s trusted user agent identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -152,12 +156,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -172,12 +178,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable identifier for this trusted user agent, used primarily for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -191,9 +199,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding trusted user agent resource.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -213,9 +221,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding trusted user agent resource.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -234,19 +242,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s trusted user agent identifier.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -257,19 +265,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s trusted user agent identifier.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

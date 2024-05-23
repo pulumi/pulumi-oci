@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string? CertificateAuthorityId;
         /// <summary>
-        /// (Updatable) Type of the Response Cache.
+        /// (Updatable) Type of the CA bundle
         /// </summary>
         public readonly string Type;
 

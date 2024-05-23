@@ -94,6 +94,8 @@ type Vtap struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled pulumi.BoolOutput `pulumi:"isVtapEnabled"`
 	// The VTAP's current running state.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
@@ -183,6 +185,8 @@ type vtapState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled *bool `pulumi:"isVtapEnabled"`
 	// The VTAP's current running state.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
@@ -231,6 +235,8 @@ type VtapState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled pulumi.BoolPtrInput
 	// The VTAP's current running state.
 	LifecycleStateDetails pulumi.StringPtrInput
@@ -283,6 +289,8 @@ type vtapArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled *bool `pulumi:"isVtapEnabled"`
 	// (Updatable) The maximum size of the packets to be included in the filter.
 	MaxPacketSize *int `pulumi:"maxPacketSize"`
@@ -326,6 +334,8 @@ type VtapArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled pulumi.BoolPtrInput
 	// (Updatable) The maximum size of the packets to be included in the filter.
 	MaxPacketSize pulumi.IntPtrInput
@@ -472,6 +482,8 @@ func (o VtapOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Used to start or stop a `Vtap` resource.
+// * `TRUE` directs the VTAP to start mirroring traffic.
+// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 func (o VtapOutput) IsVtapEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Vtap) pulumi.BoolOutput { return v.IsVtapEnabled }).(pulumi.BoolOutput)
 }

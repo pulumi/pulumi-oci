@@ -126,7 +126,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     * (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      * 
      * @deprecated
      * The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
@@ -137,7 +137,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> localMountPointPath;
 
     /**
-     * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     * @return (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      * 
      * @deprecated
      * The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
@@ -194,14 +194,14 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * IP addresses for NFS Auto mount.
+     * Host names or IP addresses for NFS Auto mount.
      * 
      */
     @Import(name="nfsServers")
     private @Nullable Output<List<String>> nfsServers;
 
     /**
-     * @return IP addresses for NFS Auto mount.
+     * @return Host names or IP addresses for NFS Auto mount.
      * 
      */
     public Optional<Output<List<String>>> nfsServers() {
@@ -471,7 +471,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param localMountPointPath The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         * @param localMountPointPath (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param localMountPointPath The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+         * @param localMountPointPath (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nfsServers IP addresses for NFS Auto mount.
+         * @param nfsServers Host names or IP addresses for NFS Auto mount.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nfsServers IP addresses for NFS Auto mount.
+         * @param nfsServers Host names or IP addresses for NFS Auto mount.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class BackupDestinationState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param nfsServers IP addresses for NFS Auto mount.
+         * @param nfsServers Host names or IP addresses for NFS Auto mount.
          * 
          * @return builder
          * 

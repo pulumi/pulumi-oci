@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight {
     /**
-     * @return (Updatable) Unique key of referenced protection capability.
+     * @return (Updatable) Unique key of collaborative capability for which weight will be overridden.
      * 
      */
     private String key;
@@ -24,7 +24,7 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
 
     private AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight() {}
     /**
-     * @return (Updatable) Unique key of referenced protection capability.
+     * @return (Updatable) Unique key of collaborative capability for which weight will be overridden.
      * 
      */
     public String key() {

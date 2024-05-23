@@ -14,59 +14,59 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceApplicationTaskScheduleMetadata
     {
         /// <summary>
-        /// (Updatable) The owning object key for this object.
+        /// The owning object key for this object.
         /// </summary>
         public readonly string? AggregatorKey;
         /// <summary>
-        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        /// A summary type containing information about the object's aggregator including its type, key, name and description.
         /// </summary>
         public readonly ImmutableArray<Outputs.WorkspaceApplicationTaskScheduleMetadataAggregator> Aggregators;
         /// <summary>
-        /// (Updatable) A count statistics.
+        /// A count statistics.
         /// </summary>
         public readonly ImmutableArray<Outputs.WorkspaceApplicationTaskScheduleMetadataCountStatistic> CountStatistics;
         /// <summary>
-        /// (Updatable) The user that created the object.
+        /// The user that created the object.
         /// </summary>
         public readonly string? CreatedBy;
         /// <summary>
-        /// (Updatable) The user that created the object.
+        /// The user that created the object.
         /// </summary>
         public readonly string? CreatedByName;
         /// <summary>
-        /// (Updatable) The full path to identify this object.
+        /// The full path to identify this object.
         /// </summary>
         public readonly string? IdentifierPath;
         /// <summary>
-        /// (Updatable) Information property fields.
+        /// Information property fields.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? InfoFields;
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// Specifies whether this object is a favorite or not.
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
-        /// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        /// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// (Updatable) The registry version of the object.
+        /// The registry version of the object.
         /// </summary>
         public readonly int? RegistryVersion;
         /// <summary>
-        /// (Updatable) The date and time that the object was created.
+        /// The date and time that the object was created.
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// (Updatable) The date and time that the object was updated.
+        /// The date and time that the object was updated.
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
-        /// (Updatable) The user that updated the object.
+        /// The user that updated the object.
         /// </summary>
         public readonly string? UpdatedBy;
         /// <summary>
-        /// (Updatable) The user that updated the object.
+        /// The user that updated the object.
         /// </summary>
         public readonly string? UpdatedByName;
 

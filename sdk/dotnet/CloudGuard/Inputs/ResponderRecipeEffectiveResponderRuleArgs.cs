@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.ResponderRecipeEffectiveResponderRuleDetailArgs>? _details;
 
         /// <summary>
-        /// (Updatable) Details of UpdateResponderRuleDetails.
+        /// Details of ResponderRule.
         /// </summary>
         public InputList<Inputs.ResponderRecipeEffectiveResponderRuleDetailArgs> Details
         {
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) ResponderRecipeRule Identifier
+        /// Identifier for ResponderRule.
         /// </summary>
         [Input("responderRuleId")]
         public Input<string>? ResponderRuleId { get; set; }

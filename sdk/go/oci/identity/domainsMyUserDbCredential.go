@@ -184,19 +184,18 @@ type DomainsMyUserDbCredential struct {
 	// * returned: default
 	// * required: false
 	MixedSalt pulumi.StringOutput `pulumi:"mixedSalt"`
-	// (Updatable) The username.
+	// (Updatable) Name
+	//
+	// **Added In:** 2109090424
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
+	// * type: string
 	// * mutability: readOnly
 	// * required: false
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -204,9 +203,9 @@ type DomainsMyUserDbCredential struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
@@ -487,19 +486,18 @@ type domainsMyUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedSalt *string `pulumi:"mixedSalt"`
-	// (Updatable) The username.
+	// (Updatable) Name
+	//
+	// **Added In:** 2109090424
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
+	// * type: string
 	// * mutability: readOnly
 	// * required: false
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Name *string `pulumi:"name"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -507,9 +505,9 @@ type domainsMyUserDbCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -745,19 +743,18 @@ type DomainsMyUserDbCredentialState struct {
 	// * returned: default
 	// * required: false
 	MixedSalt pulumi.StringPtrInput
-	// (Updatable) The username.
+	// (Updatable) Name
+	//
+	// **Added In:** 2109090424
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
+	// * type: string
 	// * mutability: readOnly
 	// * required: false
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Name pulumi.StringPtrInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -765,9 +762,9 @@ type DomainsMyUserDbCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -886,7 +883,7 @@ type domainsMyUserDbCredentialArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -894,9 +891,9 @@ type domainsMyUserDbCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -992,7 +989,7 @@ type DomainsMyUserDbCredentialArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -1000,9 +997,9 @@ type DomainsMyUserDbCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -1359,22 +1356,21 @@ func (o DomainsMyUserDbCredentialOutput) MixedSalt() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyUserDbCredential) pulumi.StringOutput { return v.MixedSalt }).(pulumi.StringOutput)
 }
 
-// (Updatable) The username.
+// (Updatable) Name
+//
+// **Added In:** 2109090424
 //
 // **SCIM++ Properties:**
 // * caseExact: false
-// * idcsSearchable: false
-// * multiValued: false
+// * type: string
 // * mutability: readOnly
 // * required: false
 // * returned: default
-// * type: string
-// * uniqueness: none
 func (o DomainsMyUserDbCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyUserDbCredential) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The user's OCID.
+// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1382,9 +1378,9 @@ func (o DomainsMyUserDbCredentialOutput) Name() pulumi.StringOutput {
 // * multiValued: false
 // * mutability: immutable
 // * required: false
-// * returned: always
+// * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: global
 func (o DomainsMyUserDbCredentialOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyUserDbCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }

@@ -16,14 +16,14 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
     public static final ConfigScriptParameterMonitorScriptParameterArgs Empty = new ConfigScriptParameterMonitorScriptParameterArgs();
 
     /**
-     * (Updatable) Name of the parameter.
+     * Name of the parameter.
      * 
      */
     @Import(name="paramName")
     private @Nullable Output<String> paramName;
 
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     public Optional<Output<String>> paramName() {
@@ -31,14 +31,14 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
     }
 
     /**
-     * (Updatable) Value of the parameter.
+     * Value of the parameter.
      * 
      */
     @Import(name="paramValue")
     private @Nullable Output<String> paramValue;
 
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return Value of the parameter.
      * 
      */
     public Optional<Output<String>> paramValue() {
@@ -71,7 +71,7 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName Name of the parameter.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName Name of the parameter.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
+         * @param paramValue Value of the parameter.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigScriptParameterMonitorScriptParameterArgs extends com.p
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
+         * @param paramValue Value of the parameter.
          * 
          * @return builder
          * 

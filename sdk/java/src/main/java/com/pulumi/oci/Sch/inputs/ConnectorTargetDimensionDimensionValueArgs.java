@@ -17,14 +17,14 @@ public final class ConnectorTargetDimensionDimensionValueArgs extends com.pulumi
     public static final ConnectorTargetDimensionDimensionValueArgs Empty = new ConnectorTargetDimensionDimensionValueArgs();
 
     /**
-     * (Updatable) The type descriminator.
+     * (Updatable) The type of dimension value: static or evaluated.
      * 
      */
     @Import(name="kind", required=true)
     private Output<String> kind;
 
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type of dimension value: static or evaluated.
      * 
      */
     public Output<String> kind() {
@@ -88,7 +88,7 @@ public final class ConnectorTargetDimensionDimensionValueArgs extends com.pulumi
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type of dimension value: static or evaluated.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class ConnectorTargetDimensionDimensionValueArgs extends com.pulumi
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type of dimension value: static or evaluated.
          * 
          * @return builder
          * 

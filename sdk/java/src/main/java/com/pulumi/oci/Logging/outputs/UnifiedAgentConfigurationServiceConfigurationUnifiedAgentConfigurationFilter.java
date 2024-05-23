@@ -87,7 +87,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      */
     private @Nullable String keyName;
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     private String name;
@@ -233,7 +233,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         return Optional.ofNullable(this.keyName);
     }
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     public String name() {

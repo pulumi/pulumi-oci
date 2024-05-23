@@ -22,10 +22,7 @@ type MediaAssetLock struct {
 	RelatedResourceId *string `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) The type of the media asset.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Type of the lock.
 	Type string `pulumi:"type"`
 }
 
@@ -49,10 +46,7 @@ type MediaAssetLockArgs struct {
 	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// (Updatable) The type of the media asset.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -127,10 +121,7 @@ func (o MediaAssetLockOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MediaAssetLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the media asset.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Type of the lock.
 func (o MediaAssetLockOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v MediaAssetLock) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -156,10 +147,7 @@ func (o MediaAssetLockArrayOutput) Index(i pulumi.IntInput) MediaAssetLockOutput
 }
 
 type MediaAssetMediaAssetTag struct {
-	// (Updatable) The type of the media asset.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) Type of the tag.
 	Type *string `pulumi:"type"`
 	// (Updatable) Tag of the MediaAsset.
 	Value string `pulumi:"value"`
@@ -177,10 +165,7 @@ type MediaAssetMediaAssetTagInput interface {
 }
 
 type MediaAssetMediaAssetTagArgs struct {
-	// (Updatable) The type of the media asset.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) Type of the tag.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// (Updatable) Tag of the MediaAsset.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -237,10 +222,7 @@ func (o MediaAssetMediaAssetTagOutput) ToMediaAssetMediaAssetTagOutputWithContex
 	return o
 }
 
-// (Updatable) The type of the media asset.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) Type of the tag.
 func (o MediaAssetMediaAssetTagOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MediaAssetMediaAssetTag) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -890,7 +872,7 @@ type MediaWorkflowLock struct {
 	RelatedResourceId *string `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	// Type of the lock.
 	Type string `pulumi:"type"`
 }
 
@@ -914,7 +896,7 @@ type MediaWorkflowLockArgs struct {
 	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -989,7 +971,7 @@ func (o MediaWorkflowLockOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MediaWorkflowLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+// Type of the lock.
 func (o MediaWorkflowLockOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v MediaWorkflowLock) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1197,10 +1179,7 @@ type StreamCdnConfigConfig struct {
 	OriginAuthSignEncryption *string `pulumi:"originAuthSignEncryption"`
 	// (Updatable) The type of data used to compute the signature.
 	OriginAuthSignType *string `pulumi:"originAuthSignType"`
-	// Type of the lock.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the CDN configuration type.
 	Type string `pulumi:"type"`
 }
 
@@ -1238,10 +1217,7 @@ type StreamCdnConfigConfigArgs struct {
 	OriginAuthSignEncryption pulumi.StringPtrInput `pulumi:"originAuthSignEncryption"`
 	// (Updatable) The type of data used to compute the signature.
 	OriginAuthSignType pulumi.StringPtrInput `pulumi:"originAuthSignType"`
-	// Type of the lock.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the CDN configuration type.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1377,10 +1353,7 @@ func (o StreamCdnConfigConfigOutput) OriginAuthSignType() pulumi.StringPtrOutput
 	return o.ApplyT(func(v StreamCdnConfigConfig) *string { return v.OriginAuthSignType }).(pulumi.StringPtrOutput)
 }
 
-// Type of the lock.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the CDN configuration type.
 func (o StreamCdnConfigConfigOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v StreamCdnConfigConfig) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1519,10 +1492,7 @@ func (o StreamCdnConfigConfigPtrOutput) OriginAuthSignType() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the lock.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the CDN configuration type.
 func (o StreamCdnConfigConfigPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *StreamCdnConfigConfig) *string {
 		if v == nil {

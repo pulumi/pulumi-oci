@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEndpoint = new Endpoint("testEndpoint", EndpointArgs.builder()        
+ *         var testEndpoint = new Endpoint("testEndpoint", EndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dedicatedAiClusterId(testDedicatedAiCluster.id())
  *             .modelId(testModel.id())

@@ -16,14 +16,14 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
     public static final NamespaceScheduledTaskActionMetricExtractionArgs Empty = new NamespaceScheduledTaskActionMetricExtractionArgs();
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -46,14 +46,14 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
+     * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -103,7 +103,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class NamespaceScheduledTaskActionMetricExtractionArgs extends com.
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
+         * @param namespace The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
          * 
          * @return builder
          * 

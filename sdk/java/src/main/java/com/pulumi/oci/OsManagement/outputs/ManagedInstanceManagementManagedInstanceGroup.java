@@ -17,7 +17,7 @@ public final class ManagedInstanceManagementManagedInstanceGroup {
      */
     private @Nullable String displayName;
     /**
-     * @return software source identifier
+     * @return unique identifier that is immutable on creation
      * 
      */
     private @Nullable String id;
@@ -31,7 +31,7 @@ public final class ManagedInstanceManagementManagedInstanceGroup {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return software source identifier
+     * @return unique identifier that is immutable on creation
      * 
      */
     public Optional<String> id() {

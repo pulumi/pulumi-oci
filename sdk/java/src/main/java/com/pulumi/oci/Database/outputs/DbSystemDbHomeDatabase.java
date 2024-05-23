@@ -46,7 +46,7 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable String databaseId;
     /**
-     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     private @Nullable String databaseSoftwareImageId;
@@ -84,7 +84,7 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     private @Nullable String id;
@@ -186,7 +186,7 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.databaseId);
     }
     /**
-     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Optional<String> databaseSoftwareImageId() {
@@ -240,7 +240,7 @@ public final class DbSystemDbHomeDatabase {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     public Optional<String> id() {

@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudGuardConfiguration = new CloudGuardConfiguration("testCloudGuardConfiguration", CloudGuardConfigurationArgs.builder()        
+ *         var testCloudGuardConfiguration = new CloudGuardConfiguration("testCloudGuardConfiguration", CloudGuardConfigurationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .reportingRegion(cloudGuardConfigurationReportingRegion)
  *             .status(cloudGuardConfigurationStatus)

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TableReplica {
     /**
-     * @return (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+     * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
     private @Nullable String capacityMode;
@@ -23,10 +23,7 @@ public final class TableReplica {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return (Updatable) Maximum sustained write throughput limit for the table.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Maximum sustained write throughput limit for the table.
      * 
      */
     private @Nullable Integer maxWriteUnits;
@@ -48,7 +45,7 @@ public final class TableReplica {
 
     private TableReplica() {}
     /**
-     * @return (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+     * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
     public Optional<String> capacityMode() {
@@ -62,10 +59,7 @@ public final class TableReplica {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return (Updatable) Maximum sustained write throughput limit for the table.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Maximum sustained write throughput limit for the table.
      * 
      */
     public Optional<Integer> maxWriteUnits() {

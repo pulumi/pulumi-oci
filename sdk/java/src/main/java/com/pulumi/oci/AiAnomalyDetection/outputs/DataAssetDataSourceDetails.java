@@ -24,7 +24,7 @@ public final class DataAssetDataSourceDetails {
      */
     private @Nullable String atpUserName;
     /**
-     * @return Bucket Name for influx connection
+     * @return Object storage bucket name
      * 
      */
     private @Nullable String bucket;
@@ -39,7 +39,7 @@ public final class DataAssetDataSourceDetails {
      */
     private String dataSourceType;
     /**
-     * @return DB Name for influx connection
+     * @return atp database name
      * 
      */
     private @Nullable String databaseName;
@@ -130,7 +130,7 @@ public final class DataAssetDataSourceDetails {
         return Optional.ofNullable(this.atpUserName);
     }
     /**
-     * @return Bucket Name for influx connection
+     * @return Object storage bucket name
      * 
      */
     public Optional<String> bucket() {
@@ -151,7 +151,7 @@ public final class DataAssetDataSourceDetails {
         return this.dataSourceType;
     }
     /**
-     * @return DB Name for influx connection
+     * @return atp database name
      * 
      */
     public Optional<String> databaseName() {

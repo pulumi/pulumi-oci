@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceGroup = new ManagedInstanceGroup("testManagedInstanceGroup", ManagedInstanceGroupArgs.builder()        
+ *         var testManagedInstanceGroup = new ManagedInstanceGroup("testManagedInstanceGroup", ManagedInstanceGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(managedInstanceGroupDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

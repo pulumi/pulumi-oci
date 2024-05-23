@@ -17,14 +17,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     public static final UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs Empty = new UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs();
 
     /**
-     * (Updatable) A list of filtering rules to include logs
+     * (Updatable) List of metrics regex to be allowed.
      * 
      */
     @Import(name="allowLists")
     private @Nullable Output<List<String>> allowLists;
 
     /**
-     * @return (Updatable) A list of filtering rules to include logs
+     * @return (Updatable) List of metrics regex to be allowed.
      * 
      */
     public Optional<Output<List<String>>> allowLists() {
@@ -32,14 +32,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) A list of filtering rules to reject logs
+     * (Updatable) List of metrics regex to be denied.
      * 
      */
     @Import(name="denyLists")
     private @Nullable Output<List<String>> denyLists;
 
     /**
-     * @return (Updatable) A list of filtering rules to reject logs
+     * @return (Updatable) List of metrics regex to be denied.
      * 
      */
     public Optional<Output<List<String>>> denyLists() {
@@ -62,14 +62,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) The name key to tag this Grok pattern.
+     * (Updatable) Unique name for the filter.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     public Optional<Output<String>> name() {
@@ -104,7 +104,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param allowLists (Updatable) A list of filtering rules to include logs
+         * @param allowLists (Updatable) List of metrics regex to be allowed.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param allowLists (Updatable) A list of filtering rules to include logs
+         * @param allowLists (Updatable) List of metrics regex to be allowed.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param allowLists (Updatable) A list of filtering rules to include logs
+         * @param allowLists (Updatable) List of metrics regex to be allowed.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param denyLists (Updatable) A list of filtering rules to reject logs
+         * @param denyLists (Updatable) List of metrics regex to be denied.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param denyLists (Updatable) A list of filtering rules to reject logs
+         * @param denyLists (Updatable) List of metrics regex to be denied.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param denyLists (Updatable) A list of filtering rules to reject logs
+         * @param denyLists (Updatable) List of metrics regex to be denied.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the filter.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the filter.
          * 
          * @return builder
          * 

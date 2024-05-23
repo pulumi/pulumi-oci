@@ -109,14 +109,14 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     }
 
     /**
-     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      * 
      */
     @Import(name="dpdMode")
     private @Nullable Output<String> dpdMode;
 
     /**
-     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * @return Dead peer detection (DPD) mode set on the Oracle side of the connection.
      * 
      */
     public Optional<Output<String>> dpdMode() {
@@ -124,14 +124,14 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
     }
 
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * DPD timeout in seconds.
      * 
      */
     @Import(name="dpdTimeoutInSec")
     private @Nullable Output<Integer> dpdTimeoutInSec;
 
     /**
-     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * @return DPD timeout in seconds.
      * 
      */
     public Optional<Output<Integer>> dpdTimeoutInSec() {
@@ -570,7 +570,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param dpdMode This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+         * @param dpdMode Dead peer detection (DPD) mode set on the Oracle side of the connection.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param dpdMode This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+         * @param dpdMode Dead peer detection (DPD) mode set on the Oracle side of the connection.
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param dpdTimeoutInSec DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         * @param dpdTimeoutInSec DPD timeout in seconds.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class IpsecConnectionTunnelManagementState extends com.pulumi.resou
         }
 
         /**
-         * @param dpdTimeoutInSec DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         * @param dpdTimeoutInSec DPD timeout in seconds.
          * 
          * @return builder
          * 

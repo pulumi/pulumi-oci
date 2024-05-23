@@ -52,34 +52,32 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -157,40 +155,34 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
     }
 
     /**
-     * (Updatable) name of the attribute
+     * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -267,17 +259,16 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -288,17 +279,16 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -390,20 +380,17 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -414,20 +401,17 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedByArgs extends 
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

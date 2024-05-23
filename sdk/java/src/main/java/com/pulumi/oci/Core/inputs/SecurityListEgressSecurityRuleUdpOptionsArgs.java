@@ -17,14 +17,14 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
     public static final SecurityListEgressSecurityRuleUdpOptionsArgs Empty = new SecurityListEgressSecurityRuleUdpOptionsArgs();
 
     /**
-     * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     @Import(name="max")
     private @Nullable Output<Integer> max;
 
     /**
-     * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     public Optional<Output<Integer>> max() {
@@ -32,14 +32,14 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     @Import(name="min")
     private @Nullable Output<Integer> min;
 
     /**
-     * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     public Optional<Output<Integer>> min() {
@@ -88,7 +88,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
         }
 
         /**
-         * @param max (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         * @param max The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
         }
 
         /**
-         * @param max (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         * @param max The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
         }
 
         /**
-         * @param min (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * @param min The minimum port number. Must not be greater than the maximum port number.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsArgs extends com.pulu
         }
 
         /**
-         * @param min (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * @param min The minimum port number. Must not be greater than the maximum port number.
          * 
          * @return builder
          * 

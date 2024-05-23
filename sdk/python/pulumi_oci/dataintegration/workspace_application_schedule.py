@@ -41,7 +41,7 @@ class WorkspaceApplicationScheduleArgs:
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsArgs'] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -153,7 +153,7 @@ class WorkspaceApplicationScheduleArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -260,9 +260,9 @@ class _WorkspaceApplicationScheduleState:
         :param pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsArgs'] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the model
+        :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -373,7 +373,7 @@ class _WorkspaceApplicationScheduleState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -397,7 +397,7 @@ class _WorkspaceApplicationScheduleState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the model
+        The type of the object.
         """
         return pulumi.get(self, "model_type")
 
@@ -586,7 +586,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -756,9 +756,9 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleFrequencyDetailsArgs']] frequency_details: (Updatable) The model that holds the frequency details.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationScheduleMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the model
+        :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -838,7 +838,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -854,7 +854,7 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of the model
+        The type of the object.
         """
         return pulumi.get(self, "model_type")
 

@@ -24,7 +24,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
      */
     private @Nullable String displayName;
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
@@ -39,7 +39,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
      */
     private @Nullable Boolean isShareable;
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     private String type;
@@ -65,7 +65,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
     public Optional<Boolean> isPvEncryptionInTransitEnabled() {
@@ -86,7 +86,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails 
         return Optional.ofNullable(this.isShareable);
     }
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     public String type() {

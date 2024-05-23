@@ -27,7 +27,7 @@ public final class PublicationIcon {
      */
     private @Nullable String mimeType;
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     private @Nullable String name;
@@ -55,7 +55,7 @@ public final class PublicationIcon {
         return Optional.ofNullable(this.mimeType);
     }
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     public Optional<String> name() {

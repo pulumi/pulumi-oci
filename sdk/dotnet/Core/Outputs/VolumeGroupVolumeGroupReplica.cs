@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The OCID of the volume group replica.
+        /// The volume group replica's Oracle ID (OCID).
         /// </summary>
         public readonly string? VolumeGroupReplicaId;
 

@@ -17,14 +17,14 @@ public final class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageAr
     public static final DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs Empty = new DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs();
 
     /**
-     * (Updatable) List of parameters defined for a deployment pipeline.
+     * List of parameters defined for a deployment pipeline.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs>> items;
 
     /**
-     * @return (Updatable) List of parameters defined for a deployment pipeline.
+     * @return List of parameters defined for a deployment pipeline.
      * 
      */
     public Optional<Output<List<DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageAr
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageAr
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeployPipelineDeployPipelineArtifactItemDeployPipelineStageAr
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 

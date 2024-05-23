@@ -44,20 +44,17 @@ public final class DomainsSelfRegistrationProfileConsentText {
      */
     private String locale;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Localized value of consent text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -98,20 +95,17 @@ public final class DomainsSelfRegistrationProfileConsentText {
         return this.locale;
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Localized value of consent text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

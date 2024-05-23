@@ -275,17 +275,15 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsPolicyMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Rule name
-        /// 
-        /// **Added In:** 17.4.2
+        /// (Updatable) Policy name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: request
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -536,17 +534,15 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Rule name
-        /// 
-        /// **Added In:** 17.4.2
+        /// (Updatable) Policy name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: request
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -904,17 +900,15 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) Rule name
-        /// 
-        /// **Added In:** 17.4.2
+        /// (Updatable) Policy name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: request
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

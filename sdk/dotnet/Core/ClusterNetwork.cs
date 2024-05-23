@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.ClusterNetworkClusterConfiguration> ClusterConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         /// </summary>
         [Output("hpcIslandId")]
         public Output<string> HpcIslandId { get; private set; } = null!;
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.ClusterNetworkInstancePool>> InstancePools { get; private set; } = null!;
 
         /// <summary>
-        /// The list of network block OCIDs.
+        /// The list of network block OCIDs of the HPC island.
         /// </summary>
         [Output("networkBlockIds")]
         public Output<ImmutableArray<string>> NetworkBlockIds { get; private set; } = null!;
@@ -251,7 +251,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.ClusterNetworkClusterConfigurationArgs>? ClusterConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.ClusterNetworkClusterConfigurationGetArgs>? ClusterConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -359,7 +359,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         /// </summary>
         [Input("hpcIslandId")]
         public Input<string>? HpcIslandId { get; set; }
@@ -382,7 +382,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _networkBlockIds;
 
         /// <summary>
-        /// The list of network block OCIDs.
+        /// The list of network block OCIDs of the HPC island.
         /// </summary>
         public InputList<string> NetworkBlockIds
         {

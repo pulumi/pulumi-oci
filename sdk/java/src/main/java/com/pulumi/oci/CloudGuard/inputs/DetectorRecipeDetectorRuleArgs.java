@@ -36,14 +36,14 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The id of the attached DataSource.
+     * The id of the attached DataSource.
      * 
      */
     @Import(name="dataSourceId")
     private @Nullable Output<String> dataSourceId;
 
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     public Optional<Output<String>> dataSourceId() {
@@ -51,14 +51,18 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -130,14 +134,14 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Data Source entities mapping for a Detector Rule
+     * Data Source entities mapping for a Detector Rule
      * 
      */
     @Import(name="entitiesMappings")
     private @Nullable Output<List<DetectorRecipeDetectorRuleEntitiesMappingArgs>> entitiesMappings;
 
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
@@ -175,14 +179,14 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * Recommendation for DetectorRecipeDetectorRule
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -335,7 +339,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId The id of the attached DataSource.
          * 
          * @return builder
          * 
@@ -346,7 +350,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId The id of the attached DataSource.
          * 
          * @return builder
          * 
@@ -356,7 +360,9 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -367,7 +373,9 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -465,7 +473,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -476,7 +484,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -486,7 +494,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -548,7 +556,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 
@@ -559,7 +567,7 @@ public final class DetectorRecipeDetectorRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 

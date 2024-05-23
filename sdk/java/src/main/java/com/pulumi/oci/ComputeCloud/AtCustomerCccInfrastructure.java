@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCccInfrastructure = new AtCustomerCccInfrastructure("testCccInfrastructure", AtCustomerCccInfrastructureArgs.builder()        
+ *         var testCccInfrastructure = new AtCustomerCccInfrastructure("testCccInfrastructure", AtCustomerCccInfrastructureArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(cccInfrastructureDisplayName)
  *             .subnetId(testSubnet.id())

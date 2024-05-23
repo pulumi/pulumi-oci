@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublicIpPool = new PublicIpPool("testPublicIpPool", PublicIpPoolArgs.builder()        
+ *         var testPublicIpPool = new PublicIpPool("testPublicIpPool", PublicIpPoolArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(publicIpPoolDisplayName)

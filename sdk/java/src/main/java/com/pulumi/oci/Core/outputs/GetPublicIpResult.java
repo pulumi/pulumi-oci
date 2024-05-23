@@ -59,6 +59,8 @@ public final class GetPublicIpResult {
     private String ipAddress;
     /**
      * @return Defines when the public IP is deleted and released back to Oracle&#39;s public IP pool.
+     * * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
+     * * `RESERVED`: You control the public IP&#39;s lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
      * 
      */
     private String lifetime;
@@ -74,6 +76,8 @@ public final class GetPublicIpResult {
     private String publicIpPoolId;
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
+     * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
+     * * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it&#39;s assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      * 
      */
     private String scope;
@@ -154,6 +158,8 @@ public final class GetPublicIpResult {
     }
     /**
      * @return Defines when the public IP is deleted and released back to Oracle&#39;s public IP pool.
+     * * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
+     * * `RESERVED`: You control the public IP&#39;s lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
      * 
      */
     public String lifetime() {
@@ -175,6 +181,8 @@ public final class GetPublicIpResult {
     }
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
+     * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
+     * * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it&#39;s assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      * 
      */
     public String scope() {

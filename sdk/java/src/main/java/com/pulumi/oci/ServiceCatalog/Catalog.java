@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceCatalog = new Catalog("testServiceCatalog", CatalogArgs.builder()        
+ *         var testServiceCatalog = new Catalog("testServiceCatalog", CatalogArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(serviceCatalogDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

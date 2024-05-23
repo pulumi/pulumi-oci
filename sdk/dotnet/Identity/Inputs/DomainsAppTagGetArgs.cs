@@ -13,37 +13,33 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag key
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Key or name of the tag.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * type: string
-        /// * required: true
-        /// * mutability: readWrite
-        /// * returned: default
         /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

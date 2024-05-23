@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()        
+ *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()
  *             .domain(rrsetDomain)
  *             .rtype(rrsetRtype)
  *             .zoneNameOrId(testZone.id())
@@ -101,14 +101,14 @@ public class Rrset extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The fully qualified domain name where the record can be located.
+     * The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return The fully qualified domain name where the record can be located.
+     * @return The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
     public Output<String> domain() {

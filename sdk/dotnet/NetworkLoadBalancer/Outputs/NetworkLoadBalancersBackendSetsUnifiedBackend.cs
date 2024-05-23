@@ -30,15 +30,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly bool? IsOffline;
         /// <summary>
-        /// A user-friendly name for the backend set that must be unique and cannot be changed.
-        /// 
-        /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-        /// 
-        /// Example: `example_backend_set`
+        /// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        /// (Updatable) The communication port for the backend server.  Example: `8080`
         /// </summary>
         public readonly int Port;
         /// <summary>

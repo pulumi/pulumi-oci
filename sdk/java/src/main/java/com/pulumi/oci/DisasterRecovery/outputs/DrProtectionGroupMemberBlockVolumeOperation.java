@@ -24,7 +24,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperation {
      */
     private @Nullable String blockVolumeId;
     /**
-     * @return (Updatable) The details for creating a file system mount.
+     * @return (Updatable) The details for creating a mount for a file system on a block volume.
      * 
      */
     private @Nullable DrProtectionGroupMemberBlockVolumeOperationMountDetails mountDetails;
@@ -45,7 +45,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperation {
         return Optional.ofNullable(this.blockVolumeId);
     }
     /**
-     * @return (Updatable) The details for creating a file system mount.
+     * @return (Updatable) The details for creating a mount for a file system on a block volume.
      * 
      */
     public Optional<DrProtectionGroupMemberBlockVolumeOperationMountDetails> mountDetails() {

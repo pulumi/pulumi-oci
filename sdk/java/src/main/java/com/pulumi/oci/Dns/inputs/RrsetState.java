@@ -33,14 +33,14 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The fully qualified domain name where the record can be located.
+     * The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return The fully qualified domain name where the record can be located.
+     * @return The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -184,7 +184,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain The fully qualified domain name where the record can be located.
+         * @param domain The target fully-qualified domain name (FQDN) within the target zone.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class RrsetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain The fully qualified domain name where the record can be located.
+         * @param domain The target fully-qualified domain name (FQDN) within the target zone.
          * 
          * @return builder
          * 

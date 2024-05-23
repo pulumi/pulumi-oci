@@ -17,14 +17,14 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
     public static final WorkspaceTaskAuthConfigArgs Empty = new WorkspaceTaskAuthConfigArgs();
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify this object.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify this object.
      * 
      */
     public Optional<Output<String>> key() {
@@ -32,14 +32,14 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The specific authentication configuration to be used for Generic REST invocation.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The specific authentication configuration to be used for Generic REST invocation.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -120,7 +120,7 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify this object.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify this object.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The specific authentication configuration to be used for Generic REST invocation.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class WorkspaceTaskAuthConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The specific authentication configuration to be used for Generic REST invocation.
          * 
          * @return builder
          * 

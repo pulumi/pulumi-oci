@@ -20,7 +20,7 @@ public final class WorkspaceTaskPollRestCallConfig {
      */
     private @Nullable WorkspaceTaskPollRestCallConfigConfigValues configValues;
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -30,7 +30,7 @@ public final class WorkspaceTaskPollRestCallConfig {
      */
     private @Nullable String methodType;
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     private @Nullable String modelType;
@@ -49,7 +49,7 @@ public final class WorkspaceTaskPollRestCallConfig {
         return Optional.ofNullable(this.configValues);
     }
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -63,7 +63,7 @@ public final class WorkspaceTaskPollRestCallConfig {
         return Optional.ofNullable(this.methodType);
     }
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<String> modelType() {

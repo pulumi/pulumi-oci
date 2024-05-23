@@ -44,7 +44,7 @@ class WorkspaceApplicationTaskScheduleArgs:
         """
         The set of arguments for constructing a WorkspaceApplicationTaskSchedule resource.
         :param pulumi.Input[str] application_key: The application key.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
                
@@ -52,14 +52,14 @@ class WorkspaceApplicationTaskScheduleArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] auth_mode: (Updatable) The authorization mode for the task.
         :param pulumi.Input[str] config_provider_delegate: (Updatable) The information about the configuration provider.
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] end_time_millis: (Updatable) The end time in milliseconds.
         :param pulumi.Input[float] expected_duration: (Updatable) The expected duration of the task execution.
         :param pulumi.Input[str] expected_duration_unit: (Updatable) The expected duration unit of the task execution.
         :param pulumi.Input[bool] is_backfill_enabled: (Updatable) Whether the backfill is enabled.
         :param pulumi.Input[bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the task schedule is enabled.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
@@ -136,7 +136,7 @@ class WorkspaceApplicationTaskScheduleArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -188,7 +188,7 @@ class WorkspaceApplicationTaskScheduleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -272,7 +272,7 @@ class WorkspaceApplicationTaskScheduleArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -459,18 +459,18 @@ class _WorkspaceApplicationTaskScheduleState:
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] auth_mode: (Updatable) The authorization mode for the task.
         :param pulumi.Input[str] config_provider_delegate: (Updatable) The information about the configuration provider.
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] end_time_millis: (Updatable) The end time in milliseconds.
         :param pulumi.Input[float] expected_duration: (Updatable) The expected duration of the task execution.
         :param pulumi.Input[str] expected_duration_unit: (Updatable) The expected duration unit of the task execution.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_backfill_enabled: (Updatable) Whether the backfill is enabled.
         :param pulumi.Input[bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the task schedule is enabled.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]] last_run_details: The last run details for the task run.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]] metadatas: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the object.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
@@ -588,7 +588,7 @@ class _WorkspaceApplicationTaskScheduleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -636,7 +636,7 @@ class _WorkspaceApplicationTaskScheduleState:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -684,7 +684,7 @@ class _WorkspaceApplicationTaskScheduleState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -708,7 +708,7 @@ class _WorkspaceApplicationTaskScheduleState:
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -720,7 +720,7 @@ class _WorkspaceApplicationTaskScheduleState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the object.
+        The type of the object.
         """
         return pulumi.get(self, "model_type")
 
@@ -1045,15 +1045,15 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] auth_mode: (Updatable) The authorization mode for the task.
         :param pulumi.Input[str] config_provider_delegate: (Updatable) The information about the configuration provider.
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] end_time_millis: (Updatable) The end time in milliseconds.
         :param pulumi.Input[float] expected_duration: (Updatable) The expected duration of the task execution.
         :param pulumi.Input[str] expected_duration_unit: (Updatable) The expected duration unit of the task execution.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_backfill_enabled: (Updatable) Whether the backfill is enabled.
         :param pulumi.Input[bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the task schedule is enabled.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
@@ -1321,18 +1321,18 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] auth_mode: (Updatable) The authorization mode for the task.
         :param pulumi.Input[str] config_provider_delegate: (Updatable) The information about the configuration provider.
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] end_time_millis: (Updatable) The end time in milliseconds.
         :param pulumi.Input[float] expected_duration: (Updatable) The expected duration of the task execution.
         :param pulumi.Input[str] expected_duration_unit: (Updatable) The expected duration unit of the task execution.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_backfill_enabled: (Updatable) Whether the backfill is enabled.
         :param pulumi.Input[bool] is_concurrent_allowed: (Updatable) Whether the same task can be executed concurrently.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether the task schedule is enabled.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]] last_run_details: The last run details for the task run.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleMetadataArgs']]]] metadatas: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the object.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationTaskScheduleMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] number_of_retries: (Updatable) The number of retries.
@@ -1414,7 +1414,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -1446,7 +1446,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -1478,7 +1478,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -1494,7 +1494,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     @pulumi.getter
     def metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceApplicationTaskScheduleMetadata']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -1502,7 +1502,7 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of the object.
+        The type of the object.
         """
         return pulumi.get(self, "model_type")
 

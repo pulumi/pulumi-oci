@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch("testMonitoredResourcesSearch", MonitoredResourcesSearchArgs.builder()        
+ *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch("testMonitoredResourcesSearch", MonitoredResourcesSearchArgs.builder()
  *             .compartmentId(compartmentId)
  *             .compartmentIds(monitoredResourcesSearchCompartmentIds)
  *             .excludeFields(monitoredResourcesSearchExcludeFields)

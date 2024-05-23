@@ -18,14 +18,14 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
     public static final NamespaceIngestTimeRuleActionArgs Empty = new NamespaceIngestTimeRuleActionArgs();
 
     /**
-     * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     public Output<String> compartmentId() {
@@ -63,20 +63,14 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
     }
 
     /**
-     * The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     public Output<String> namespace() {
@@ -143,7 +137,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
          * 
          * @return builder
          * 
@@ -154,7 +148,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
          * 
          * @return builder
          * 
@@ -216,10 +210,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param namespace (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
          * 
          * @return builder
          * 
@@ -230,10 +221,7 @@ public final class NamespaceIngestTimeRuleActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param namespace The Logging Analytics namespace used for the request.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param namespace (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
          * 
          * @return builder
          * 

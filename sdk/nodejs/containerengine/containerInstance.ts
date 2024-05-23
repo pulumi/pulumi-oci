@@ -178,11 +178,11 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly containers!: pulumi.Output<outputs.ContainerEngine.ContainerInstanceContainer[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -194,7 +194,7 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     public readonly faultDomain!: pulumi.Output<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -360,11 +360,11 @@ export interface ContainerInstanceState {
      */
     containers?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -376,7 +376,7 @@ export interface ContainerInstanceState {
      */
     faultDomain?: pulumi.Input<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -456,11 +456,11 @@ export interface ContainerInstanceArgs {
      */
     containers: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceContainer>[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -472,7 +472,7 @@ export interface ContainerInstanceArgs {
      */
     faultDomain?: pulumi.Input<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class KeyExternalKeyReferenceDetail {
     /**
-     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
     private @Nullable String externalKeyId;
@@ -24,7 +24,7 @@ public final class KeyExternalKeyReferenceDetail {
 
     private KeyExternalKeyReferenceDetail() {}
     /**
-     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
     public Optional<String> externalKeyId() {

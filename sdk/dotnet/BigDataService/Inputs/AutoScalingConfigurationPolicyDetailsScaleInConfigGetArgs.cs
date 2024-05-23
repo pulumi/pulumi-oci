@@ -25,7 +25,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<int>? MinNodeCount { get; set; }
 
         /// <summary>
-        /// (Updatable) This value is the number of nodes to add during a scale-out event.
+        /// (Updatable) This value is the number of nodes to remove during a scale-in event.
         /// </summary>
         [Input("stepSize")]
         public Input<int>? StepSize { get; set; }

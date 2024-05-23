@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     private @Nullable String name;
@@ -25,7 +25,7 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
 
     private MigrationDataTransferMediumDetailsDatabaseLinkDetails() {}
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     public Optional<String> name() {

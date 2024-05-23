@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsIdentitySettingPosixGidGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The number at which the Posix Uid Manual assignment ends.
+        /// (Updatable) The number at which the Posix Gid Manual assignment ends.
         /// 
         /// **Added In:** 17.4.6
         /// 
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? ManualAssignmentEndsAt { get; set; }
 
         /// <summary>
-        /// (Updatable) The number from which the Posix Uid Manual assignment starts.
+        /// (Updatable) The number from which the Posix Gid Manual assignment starts.
         /// 
         /// **Added In:** 17.4.6
         /// 

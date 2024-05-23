@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
     /**
-     * @return Name of the parameter (case-sensitive).
+     * @return Name of the step.
      * 
      */
     private @Nullable String name;
@@ -34,7 +34,7 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
 
     private DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep() {}
     /**
-     * @return Name of the parameter (case-sensitive).
+     * @return Name of the step.
      * 
      */
     public Optional<String> name() {

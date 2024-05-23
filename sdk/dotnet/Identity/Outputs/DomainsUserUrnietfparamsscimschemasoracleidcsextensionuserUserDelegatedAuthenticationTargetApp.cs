@@ -14,12 +14,15 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) App Display Name
+        /// 
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -27,9 +30,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) App URI
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -42,33 +45,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) A label that indicates whether this is an App or IdentitySource.
+        /// 
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
+        /// * idcsDefaultValue: IdentitySource
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) App identifier
+        /// 
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

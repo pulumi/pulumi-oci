@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRouteDistribution = new DrgRouteDistribution("testDrgRouteDistribution", DrgRouteDistributionArgs.builder()        
+ *         var testDrgRouteDistribution = new DrgRouteDistribution("testDrgRouteDistribution", DrgRouteDistributionArgs.builder()
  *             .distributionType(drgRouteDistributionDistributionType)
  *             .drgId(testDrg.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly int? CoresCount;
         /// <summary>
-        /// (Updatable) The tag description.
+        /// (Updatable) GPU device description.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string? Manufacturer;
         /// <summary>
-        /// (Updatable) Memory size in MBs.
+        /// (Updatable) GPU memory size in MBs.
         /// </summary>
         public readonly string? MemoryInMbs;
         /// <summary>
-        /// (Updatable) The tag name.
+        /// (Updatable) GPU device name.
         /// </summary>
         public readonly string? Name;
 

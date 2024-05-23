@@ -17,12 +17,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) Group display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,12 +36,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) Group display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -89,17 +95,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The OCID of the user&#39;s support account.
+     * (Updatable) The ocid of a Group the AppRole Grant is limited to
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2202230830
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsCsvAttributeName: Group Ocid
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -108,17 +114,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The ocid of a Group the AppRole Grant is limited to
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2202230830
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsCsvAttributeName: Group Ocid
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -128,9 +134,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the SCIM resource representing the Group manager.  RECOMMENDED.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -146,9 +152,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the SCIM resource representing the Group manager.  RECOMMENDED.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -165,38 +171,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The id of a Group the AppRole Grant is limited to
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsCsvAttributeName: Group Name
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The id of a Group the AppRole Grant is limited to
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsCsvAttributeName: Group Name
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -232,12 +238,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) Group display name
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -252,12 +261,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) Group display name
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -316,17 +328,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
+         * @param ocid (Updatable) The ocid of a Group the AppRole Grant is limited to
          * 
-         * **Added In:** 2103141444
+         * **Added In:** 2202230830
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * idcsCsvAttributeName: Group Ocid
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -339,17 +351,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
+         * @param ocid (Updatable) The ocid of a Group the AppRole Grant is limited to
          * 
-         * **Added In:** 2103141444
+         * **Added In:** 2202230830
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * idcsCsvAttributeName: Group Ocid
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -361,9 +373,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the SCIM resource representing the Group manager.  RECOMMENDED.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -383,9 +395,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the SCIM resource representing the Group manager.  RECOMMENDED.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -404,19 +416,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The id of a Group the AppRole Grant is limited to
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsCsvAttributeName: Group Name
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -427,19 +439,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The id of a Group the AppRole Grant is limited to
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsCsvAttributeName: Group Name
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

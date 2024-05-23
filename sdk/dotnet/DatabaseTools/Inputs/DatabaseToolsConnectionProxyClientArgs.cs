@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The database user name.
+        /// (Updatable) The user name.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DataSafe.Inputs
     public sealed class TargetDatabasePeerTargetDatabaseDetailTlsConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The format of the certificate store.
+        /// The format of the certificate store.
         /// </summary>
         [Input("certificateStoreType")]
         public Input<string>? CertificateStoreType { get; set; }
 
         /// <summary>
-        /// (Updatable) Base64 encoded string of key store file content.
+        /// Base64 encoded string of key store file content.
         /// </summary>
         [Input("keyStoreContent")]
         public Input<string>? KeyStoreContent { get; set; }
 
         /// <summary>
-        /// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        /// Status to represent whether the database connection is TLS enabled or not.
         /// </summary>
         [Input("status", required: true)]
         public Input<string> Status { get; set; } = null!;
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         private Input<string>? _storePassword;
 
         /// <summary>
-        /// (Updatable) The password to read the trust store and key store files, if they are password protected.
+        /// The password to read the trust store and key store files, if they are password protected.
         /// </summary>
         public Input<string>? StorePassword
         {
@@ -47,11 +47,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Base64 encoded string of trust store file content.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Base64 encoded string of trust store file content.
         /// </summary>
         [Input("trustStoreContent")]
         public Input<string>? TrustStoreContent { get; set; }

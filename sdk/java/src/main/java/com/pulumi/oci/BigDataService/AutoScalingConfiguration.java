@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()        
+ *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(autoScalingConfigurationClusterAdminPassword)
  *             .isEnabled(autoScalingConfigurationIsEnabled)

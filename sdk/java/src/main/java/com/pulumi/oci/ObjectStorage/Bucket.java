@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBucket = new Bucket("testBucket", BucketArgs.builder()        
+ *         var testBucket = new Bucket("testBucket", BucketArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(bucketName)
  *             .namespace(bucketNamespace)

@@ -28,17 +28,16 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
@@ -73,20 +72,17 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedBy {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -110,17 +106,16 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -161,20 +156,17 @@ public final class DomainsSelfRegistrationProfileIdcsLastModifiedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

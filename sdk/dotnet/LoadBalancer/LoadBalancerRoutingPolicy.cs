@@ -75,11 +75,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -152,11 +148,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -194,11 +186,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

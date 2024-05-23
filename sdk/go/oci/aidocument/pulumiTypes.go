@@ -14,6 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ModelComponentModel struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId *string `pulumi:"modelId"`
 }
 
@@ -29,6 +30,7 @@ type ModelComponentModelInput interface {
 }
 
 type ModelComponentModelArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 }
 
@@ -83,6 +85,7 @@ func (o ModelComponentModelOutput) ToModelComponentModelOutputWithContext(ctx co
 	return o
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o ModelComponentModelOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelComponentModel) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }
@@ -865,9 +868,6 @@ type ModelTestingDataset struct {
 	// The namespace name of the Object Storage bucket that contains the input data file.
 	Namespace *string `pulumi:"namespace"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object *string `pulumi:"object"`
 }
 
@@ -892,9 +892,6 @@ type ModelTestingDatasetArgs struct {
 	// The namespace name of the Object Storage bucket that contains the input data file.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -996,9 +993,6 @@ func (o ModelTestingDatasetOutput) Namespace() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestingDatasetOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -1068,9 +1062,6 @@ func (o ModelTestingDatasetPtrOutput) Namespace() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -1090,9 +1081,6 @@ type ModelTrainingDataset struct {
 	// The namespace name of the Object Storage bucket that contains the input data file.
 	Namespace *string `pulumi:"namespace"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object *string `pulumi:"object"`
 }
 
@@ -1117,9 +1105,6 @@ type ModelTrainingDatasetArgs struct {
 	// The namespace name of the Object Storage bucket that contains the input data file.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -1221,9 +1206,6 @@ func (o ModelTrainingDatasetOutput) Namespace() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTrainingDatasetOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -1293,9 +1275,6 @@ func (o ModelTrainingDatasetPtrOutput) Namespace() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTrainingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -1536,6 +1515,8 @@ type ProcessorJobInputLocation struct {
 	// The list of ObjectLocations.
 	ObjectLocations []ProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1556,6 +1537,8 @@ type ProcessorJobInputLocationArgs struct {
 	// The list of ObjectLocations.
 	ObjectLocations ProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1647,6 +1630,8 @@ func (o ProcessorJobInputLocationOutput) ObjectLocations() ProcessorJobInputLoca
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o ProcessorJobInputLocationOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProcessorJobInputLocation) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1696,6 +1681,8 @@ func (o ProcessorJobInputLocationPtrOutput) ObjectLocations() ProcessorJobInputL
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o ProcessorJobInputLocationPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProcessorJobInputLocation) *string {
 		if v == nil {
@@ -1708,7 +1695,7 @@ func (o ProcessorJobInputLocationPtrOutput) SourceType() pulumi.StringPtrOutput 
 type ProcessorJobInputLocationObjectLocation struct {
 	// The Object Storage bucket name.
 	Bucket *string `pulumi:"bucket"`
-	// The Object Storage namespace.
+	// The Object Storage namespace name.
 	Namespace *string `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object *string `pulumi:"object"`
@@ -1728,7 +1715,7 @@ type ProcessorJobInputLocationObjectLocationInput interface {
 type ProcessorJobInputLocationObjectLocationArgs struct {
 	// The Object Storage bucket name.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The Object Storage namespace.
+	// The Object Storage namespace name.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -1790,7 +1777,7 @@ func (o ProcessorJobInputLocationObjectLocationOutput) Bucket() pulumi.StringPtr
 	return o.ApplyT(func(v ProcessorJobInputLocationObjectLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The Object Storage namespace.
+// The Object Storage namespace name.
 func (o ProcessorJobInputLocationObjectLocationOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProcessorJobInputLocationObjectLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -2222,6 +2209,11 @@ func (o ProcessorJobProcessorConfigPtrOutput) ProcessorType() pulumi.StringPtrOu
 
 type ProcessorJobProcessorConfigFeature struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf *bool `pulumi:"generateSearchablePdf"`
@@ -2246,6 +2238,11 @@ type ProcessorJobProcessorConfigFeatureInput interface {
 
 type ProcessorJobProcessorConfigFeatureArgs struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolPtrInput `pulumi:"generateSearchablePdf"`
@@ -2309,6 +2306,11 @@ func (o ProcessorJobProcessorConfigFeatureOutput) ToProcessorJobProcessorConfigF
 }
 
 // The type of document analysis requested. The allowed values are:
+// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+// * `TEXT_EXTRACTION`: Recognize text.
+// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 func (o ProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }
@@ -5395,6 +5397,8 @@ type GetProcessorJobInputLocation struct {
 	// The list of ObjectLocations.
 	ObjectLocations []GetProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -5415,6 +5419,8 @@ type GetProcessorJobInputLocationArgs struct {
 	// The list of ObjectLocations.
 	ObjectLocations GetProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
 	// The type of input location. The allowed values are:
+	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -5482,6 +5488,8 @@ func (o GetProcessorJobInputLocationOutput) ObjectLocations() GetProcessorJobInp
 }
 
 // The type of input location. The allowed values are:
+// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
 func (o GetProcessorJobInputLocationOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobInputLocation) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -5871,6 +5879,11 @@ func (o GetProcessorJobProcessorConfigArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetProcessorJobProcessorConfigFeature struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf bool `pulumi:"generateSearchablePdf"`
@@ -5895,6 +5908,11 @@ type GetProcessorJobProcessorConfigFeatureInput interface {
 
 type GetProcessorJobProcessorConfigFeatureArgs struct {
 	// The type of document analysis requested. The allowed values are:
+	// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+	// * `TEXT_EXTRACTION`: Recognize text.
+	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolInput `pulumi:"generateSearchablePdf"`
@@ -5958,6 +5976,11 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) ToGetProcessorJobProcessorC
 }
 
 // The type of document analysis requested. The allowed values are:
+// * `LANGUAGE_CLASSIFICATION`: Detect the language.
+// * `TEXT_EXTRACTION`: Recognize text.
+// * `TABLE_EXTRACTION`: Detect and extract data in tables.
+// * `KEY_VALUE_EXTRACTION`: Extract form fields.
+// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
 func (o GetProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }

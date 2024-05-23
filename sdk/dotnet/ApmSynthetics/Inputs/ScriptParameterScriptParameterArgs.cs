@@ -13,23 +13,19 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ScriptParameterScriptParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+        /// If the parameter value is secret and should be kept confidential, then set isSecret to true.
         /// </summary>
         [Input("isSecret")]
         public Input<bool>? IsSecret { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the parameter.
+        /// Name of the parameter.
         /// </summary>
         [Input("paramName")]
         public Input<string>? ParamName { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the parameter.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Value of the parameter.
         /// </summary>
         [Input("paramValue")]
         public Input<string>? ParamValue { get; set; }

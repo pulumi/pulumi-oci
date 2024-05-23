@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Waas.Outputs
     public sealed class PolicyWafConfigAccessRuleResponseHeaderManipulation
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string Header;
         /// <summary>
-        /// (Updatable) The value of the header.
+        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
         /// </summary>
         public readonly string? Value;
 

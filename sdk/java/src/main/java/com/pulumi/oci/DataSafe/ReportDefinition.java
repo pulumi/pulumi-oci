@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReportDefinition = new ReportDefinition("testReportDefinition", ReportDefinitionArgs.builder()        
+ *         var testReportDefinition = new ReportDefinition("testReportDefinition", ReportDefinitionArgs.builder()
  *             .columnFilters(ReportDefinitionColumnFilterArgs.builder()
  *                 .expressions(reportDefinitionColumnFiltersExpressions)
  *                 .fieldName(reportDefinitionColumnFiltersFieldName)
@@ -250,14 +250,14 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Specifies the order in which the summary must be displayed.
+     * Specifies the order in which the summary must be displayed.
      * 
      */
     @Export(name="displayOrder", refs={Integer.class}, tree="[0]")
     private Output<Integer> displayOrder;
 
     /**
-     * @return (Updatable) Specifies the order in which the summary must be displayed.
+     * @return Specifies the order in which the summary must be displayed.
      * 
      */
     public Output<Integer> displayOrder() {
@@ -390,20 +390,14 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.scheduledReportRowLimit;
     }
     /**
-     * (Updatable) Additional scim filters used to get the specific summary.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Additional scim filters used to get the specific summary.
      * 
      */
     @Export(name="scimFilter", refs={String.class}, tree="[0]")
     private Output<String> scimFilter;
 
     /**
-     * @return (Updatable) Additional scim filters used to get the specific summary.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Additional scim filters used to get the specific summary.
      * 
      */
     public Output<String> scimFilter() {

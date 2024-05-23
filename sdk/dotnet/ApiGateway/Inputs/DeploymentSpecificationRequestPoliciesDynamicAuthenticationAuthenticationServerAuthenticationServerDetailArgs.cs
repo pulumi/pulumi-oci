@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<string>? _cacheKeys;
 
         /// <summary>
-        /// (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
+        /// A list of keys from "parameters" attribute value whose values will be added to the cache key.
         /// </summary>
         public InputList<string> CacheKeys
         {
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputMap<object>? _parameters;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         /// </summary>
         public InputMap<object> Parameters
         {
@@ -103,11 +103,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string>? TokenQueryParam { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the authentication policy to use.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

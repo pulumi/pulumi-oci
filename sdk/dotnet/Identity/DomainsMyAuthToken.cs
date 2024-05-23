@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsMyAuthTokenMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -202,9 +202,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -389,7 +389,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -397,9 +397,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -689,7 +689,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -697,9 +697,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }

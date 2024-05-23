@@ -17,14 +17,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     public static final VmClusterNetworkVmNetworkNodeArgs Empty = new VmClusterNetworkVmNetworkNodeArgs();
 
     /**
-     * (Updatable) The Db server associated with the node.
+     * The Db server associated with the node.
      * 
      */
     @Import(name="dbServerId")
     private @Nullable Output<String> dbServerId;
 
     /**
-     * @return (Updatable) The Db server associated with the node.
+     * @return The Db server associated with the node.
      * 
      */
     public Optional<Output<String>> dbServerId() {
@@ -32,14 +32,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The node host name.
+     * The node host name.
      * 
      */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
     /**
-     * @return (Updatable) The node host name.
+     * @return The node host name.
      * 
      */
     public Output<String> hostname() {
@@ -47,14 +47,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The node IP address.
+     * The node IP address.
      * 
      */
     @Import(name="ip", required=true)
     private Output<String> ip;
 
     /**
-     * @return (Updatable) The node IP address.
+     * @return The node IP address.
      * 
      */
     public Output<String> ip() {
@@ -62,14 +62,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Optional<Output<String>> state() {
@@ -77,14 +77,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The node virtual IP (VIP) address.
+     * The node virtual IP (VIP) address.
      * 
      */
     @Import(name="vip")
     private @Nullable Output<String> vip;
 
     /**
-     * @return (Updatable) The node virtual IP (VIP) address.
+     * @return The node virtual IP (VIP) address.
      * 
      */
     public Optional<Output<String>> vip() {
@@ -92,14 +92,14 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The node virtual IP (VIP) host name.
+     * The node virtual IP (VIP) host name.
      * 
      */
     @Import(name="vipHostname")
     private @Nullable Output<String> vipHostname;
 
     /**
-     * @return (Updatable) The node virtual IP (VIP) host name.
+     * @return The node virtual IP (VIP) host name.
      * 
      */
     public Optional<Output<String>> vipHostname() {
@@ -136,7 +136,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbServerId (Updatable) The Db server associated with the node.
+         * @param dbServerId The Db server associated with the node.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param dbServerId (Updatable) The Db server associated with the node.
+         * @param dbServerId The Db server associated with the node.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname The node host name.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname The node host name.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ip (Updatable) The node IP address.
+         * @param ip The node IP address.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ip (Updatable) The node IP address.
+         * @param ip The node IP address.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * @param state The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * @param state The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vip (Updatable) The node virtual IP (VIP) address.
+         * @param vip The node virtual IP (VIP) address.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vip (Updatable) The node virtual IP (VIP) address.
+         * @param vip The node virtual IP (VIP) address.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vipHostname (Updatable) The node virtual IP (VIP) host name.
+         * @param vipHostname The node virtual IP (VIP) host name.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
         }
 
         /**
-         * @param vipHostname (Updatable) The node virtual IP (VIP) host name.
+         * @param vipHostname The node virtual IP (VIP) host name.
          * 
          * @return builder
          * 

@@ -125,13 +125,13 @@ public final class DomainsPolicyRuleArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Rule identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -142,13 +142,13 @@ public final class DomainsPolicyRuleArgs extends com.pulumi.resources.ResourceAr
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Rule identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -312,13 +312,13 @@ public final class DomainsPolicyRuleArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Rule identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -333,13 +333,13 @@ public final class DomainsPolicyRuleArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Rule identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

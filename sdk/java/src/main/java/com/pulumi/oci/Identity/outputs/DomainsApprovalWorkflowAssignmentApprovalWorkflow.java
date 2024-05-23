@@ -13,75 +13,75 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsApprovalWorkflowAssignmentApprovalWorkflow {
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Display name of the approval workflow
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return Unique Oracle Cloud Infrastructure Identifier of the approval workflow
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the approval workflow
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: reference
      * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Indicates type of the entity that is associated with this assignment (for ARM validation)
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: ApprovalWorkflow
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return Identifier of the approval workflow
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -90,15 +90,15 @@ public final class DomainsApprovalWorkflowAssignmentApprovalWorkflow {
 
     private DomainsApprovalWorkflowAssignmentApprovalWorkflow() {}
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Display name of the approval workflow
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -107,32 +107,31 @@ public final class DomainsApprovalWorkflowAssignmentApprovalWorkflow {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return Unique Oracle Cloud Infrastructure Identifier of the approval workflow
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the approval workflow
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: reference
      * * uniqueness: none
      * 
@@ -141,15 +140,16 @@ public final class DomainsApprovalWorkflowAssignmentApprovalWorkflow {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Indicates type of the entity that is associated with this assignment (for ARM validation)
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: ApprovalWorkflow
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -158,15 +158,15 @@ public final class DomainsApprovalWorkflowAssignmentApprovalWorkflow {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return Identifier of the approval workflow
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

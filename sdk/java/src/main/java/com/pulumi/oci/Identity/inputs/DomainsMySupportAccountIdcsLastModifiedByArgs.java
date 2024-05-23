@@ -17,11 +17,11 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     public static final DomainsMySupportAccountIdcsLastModifiedByArgs Empty = new DomainsMySupportAccountIdcsLastModifiedByArgs();
 
     /**
-     * (Updatable) User display name
+     * The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -34,11 +34,11 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) User display name
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -52,15 +52,14 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     }
 
     /**
-     * User&#39;s ocid
+     * The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -69,15 +68,14 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -87,7 +85,7 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     }
 
     /**
-     * (Updatable) The URI that corresponds to the user linked to this Support Account
+     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this Support Account
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -157,15 +155,15 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     }
 
     /**
-     * User&#39;s id
+     * The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -174,15 +172,15 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
     private Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -220,11 +218,11 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -241,11 +239,11 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -261,15 +259,14 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -282,15 +279,14 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -302,7 +298,7 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this Support Account
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -323,7 +319,7 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this Support Account
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -384,15 +380,15 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -405,15 +401,15 @@ public final class DomainsMySupportAccountIdcsLastModifiedByArgs extends com.pul
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 

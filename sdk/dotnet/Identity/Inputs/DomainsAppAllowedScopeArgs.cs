@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppAllowedScopeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
+        /// (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
+        /// * mutability: readWrite
+        /// * required: true
         /// * returned: default
         /// * type: string
-        /// * uniqueness: server
+        /// * uniqueness: none
         /// </summary>
         [Input("fqs", required: true)]
         public Input<string> Fqs { get; set; } = null!;
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: request
+        /// * returned: default
         /// * type: boolean
         /// * uniqueness: none
         /// </summary>

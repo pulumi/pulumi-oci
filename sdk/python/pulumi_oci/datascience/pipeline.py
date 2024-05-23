@@ -35,7 +35,7 @@ class PipelineArgs:
         :param pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]] step_details: (Updatable) Array of step details for each step.
         :param pulumi.Input['PipelineConfigurationDetailsArgs'] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
+        :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
@@ -136,7 +136,7 @@ class PipelineArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A short description of the step.
+        (Updatable) A short description of the pipeline.
         """
         return pulumi.get(self, "description")
 
@@ -229,7 +229,7 @@ class _PipelineState:
         :param pulumi.Input['PipelineConfigurationDetailsArgs'] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
+        :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
@@ -340,7 +340,7 @@ class _PipelineState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A short description of the step.
+        (Updatable) A short description of the pipeline.
         """
         return pulumi.get(self, "description")
 
@@ -586,7 +586,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
         :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
+        :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
@@ -772,7 +772,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['PipelineConfigurationDetailsArgs']] configuration_details: (Updatable) The configuration details of a pipeline.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the step.
+        :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
@@ -850,7 +850,7 @@ class Pipeline(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) A short description of the step.
+        (Updatable) A short description of the pipeline.
         """
         return pulumi.get(self, "description")
 

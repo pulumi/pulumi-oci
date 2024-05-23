@@ -126,18 +126,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
     }
 
     /**
-     * (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-     * 
-     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     @Import(name="isSymmetricMultiThreadingEnabled")
     private @Nullable Output<Boolean> isSymmetricMultiThreadingEnabled;
 
     /**
-     * @return (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-     * 
-     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+     * @return Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
      * 
      */
     public Optional<Output<Boolean>> isSymmetricMultiThreadingEnabled() {
@@ -391,9 +387,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
         }
 
         /**
-         * @param isSymmetricMultiThreadingEnabled (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-         * 
-         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          * 
          * @return builder
          * 
@@ -404,9 +398,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
         }
 
         /**
-         * @param isSymmetricMultiThreadingEnabled (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-         * 
-         * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+         * @param isSymmetricMultiThreadingEnabled Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
          * 
          * @return builder
          * 

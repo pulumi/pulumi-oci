@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOsn = new Osn("testOsn", OsnArgs.builder()        
+ *         var testOsn = new Osn("testOsn", OsnArgs.builder()
  *             .ad(osnAd)
  *             .blockchainPlatformId(testBlockchainPlatform.id())
  *             .ocpuAllocationParam(OsnOcpuAllocationParamArgs.builder()

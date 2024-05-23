@@ -93,9 +93,6 @@ export class DbHome extends pulumi.CustomResource {
      * The user-provided name of the Database Home.
      */
     public readonly displayName!: pulumi.Output<string>;
-    /**
-     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     */
     public readonly enableDatabaseDelete!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -247,9 +244,6 @@ export interface DbHomeState {
      * The user-provided name of the Database Home.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     */
     enableDatabaseDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -333,9 +327,6 @@ export interface DbHomeArgs {
      * The user-provided name of the Database Home.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     */
     enableDatabaseDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

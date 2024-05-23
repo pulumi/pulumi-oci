@@ -20,6 +20,7 @@ public final class GetRetrievePasswordResult {
     private String sddcId;
     /**
      * @return SDDC vCenter/NSX/HCX password.
+     * * `passwordType` - SDDC password type.
      * 
      */
     private Map<String,Object> sddcPassword;
@@ -38,6 +39,7 @@ public final class GetRetrievePasswordResult {
     }
     /**
      * @return SDDC vCenter/NSX/HCX password.
+     * * `passwordType` - SDDC password type.
      * 
      */
     public Map<String,Object> sddcPassword() {

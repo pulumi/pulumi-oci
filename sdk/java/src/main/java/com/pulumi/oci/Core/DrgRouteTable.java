@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRouteTable = new DrgRouteTable("testDrgRouteTable", DrgRouteTableArgs.builder()        
+ *         var testDrgRouteTable = new DrgRouteTable("testDrgRouteTable", DrgRouteTableArgs.builder()
  *             .drgId(testDrg.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(drgRouteTableDisplayName)

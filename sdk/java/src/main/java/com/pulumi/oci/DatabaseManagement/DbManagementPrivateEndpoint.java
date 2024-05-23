@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", DbManagementPrivateEndpointArgs.builder()        
+ *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", DbManagementPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(dbManagementPrivateEndpointName)
  *             .subnetId(testSubnet.id())

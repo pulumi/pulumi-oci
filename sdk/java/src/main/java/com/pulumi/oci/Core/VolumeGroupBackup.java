@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeGroupBackup = new VolumeGroupBackup("testVolumeGroupBackup", VolumeGroupBackupArgs.builder()        
+ *         var testVolumeGroupBackup = new VolumeGroupBackup("testVolumeGroupBackup", VolumeGroupBackupArgs.builder()
  *             .volumeGroupId(testVolumeGroup.id())
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

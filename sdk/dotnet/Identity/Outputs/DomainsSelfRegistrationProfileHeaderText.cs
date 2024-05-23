@@ -42,10 +42,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Locale;
         /// <summary>
-        /// (Updatable) name of the attribute
+        /// (Updatable) Localized value of header text in corresponding locale
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
@@ -53,10 +53,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

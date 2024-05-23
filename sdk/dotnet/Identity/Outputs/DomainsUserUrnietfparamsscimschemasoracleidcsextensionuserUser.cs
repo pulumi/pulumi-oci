@@ -367,17 +367,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? UserFlowControlledByExternalClient;
         /// <summary>
-        /// (Updatable) User Support Account Provider
-        /// 
-        /// **Added In:** 2103141444
+        /// (Updatable) Registration provider
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>

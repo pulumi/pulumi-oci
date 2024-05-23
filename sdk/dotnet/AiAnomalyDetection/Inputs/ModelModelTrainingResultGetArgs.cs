@@ -70,7 +70,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public Input<string>? Warning { get; set; }
 
         /// <summary>
-        /// This value would determine the window size of the training algorithm.
+        /// Window size defined during training or deduced by the algorithm.
         /// </summary>
         [Input("windowSize")]
         public Input<int>? WindowSize { get; set; }

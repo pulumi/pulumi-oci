@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCertificate = new Certificate("testCertificate", CertificateArgs.builder()        
+ *         var testCertificate = new Certificate("testCertificate", CertificateArgs.builder()
  *             .certificateConfig(CertificateCertificateConfigArgs.builder()
  *                 .configType(certificateCertificateConfigConfigType)
  *                 .certChainPem(certificateCertificateConfigCertChainPem)
@@ -197,14 +197,14 @@ public class Certificate extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The origin of the certificate.
+     * The origin of the certificate.
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the certificate.
+     * @return The origin of the certificate.
      * 
      */
     public Output<String> configType() {
@@ -267,28 +267,28 @@ public class Certificate extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The OCID of the private CA.
+     * The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
     @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
     private Output<String> issuerCertificateAuthorityId;
 
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
     public Output<String> issuerCertificateAuthorityId() {
         return this.issuerCertificateAuthorityId;
     }
     /**
-     * The algorithm to use to create key pairs.
+     * The algorithm used to create key pairs.
      * 
      */
     @Export(name="keyAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> keyAlgorithm;
 
     /**
-     * @return The algorithm to use to create key pairs.
+     * @return The algorithm used to create key pairs.
      * 
      */
     public Output<String> keyAlgorithm() {
@@ -329,14 +329,14 @@ public class Certificate extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * The algorithm to use to sign the public key certificate.
+     * The algorithm used to sign the public key certificate.
      * 
      */
     @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signatureAlgorithm;
 
     /**
-     * @return The algorithm to use to sign the public key certificate.
+     * @return The algorithm used to sign the public key certificate.
      * 
      */
     public Output<String> signatureAlgorithm() {

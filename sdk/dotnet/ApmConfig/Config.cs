@@ -116,7 +116,7 @@ namespace Pulumi.Oci.ApmConfig
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A description of the metric.
+        /// (Updatable) An optional string that describes what the options are intended or used for.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -288,7 +288,7 @@ namespace Pulumi.Oci.ApmConfig
         }
 
         /// <summary>
-        /// (Updatable) A description of the metric.
+        /// (Updatable) An optional string that describes what the options are intended or used for.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.ApmConfig
         }
 
         /// <summary>
-        /// (Updatable) A description of the metric.
+        /// (Updatable) An optional string that describes what the options are intended or used for.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

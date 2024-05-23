@@ -41,11 +41,10 @@ public final class DomainsRuleReturn {
      */
     private @Nullable String returnGroovy;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Attribute value of some attribute to be returned.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -90,11 +89,10 @@ public final class DomainsRuleReturn {
         return Optional.ofNullable(this.returnGroovy);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Attribute value of some attribute to be returned.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true

@@ -32,14 +32,14 @@ public final class ModelModelDetailsClassificationModeArgs extends com.pulumi.re
     }
 
     /**
-     * Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * @return Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
      * 
      */
     public Optional<Output<String>> version() {
@@ -93,7 +93,7 @@ public final class ModelModelDetailsClassificationModeArgs extends com.pulumi.re
         }
 
         /**
-         * @param version Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+         * @param version Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ModelModelDetailsClassificationModeArgs extends com.pulumi.re
         }
 
         /**
-         * @param version Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+         * @param version Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
          * 
          * @return builder
          * 

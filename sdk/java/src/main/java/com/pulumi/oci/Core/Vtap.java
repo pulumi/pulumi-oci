@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVtap = new Vtap("testVtap", VtapArgs.builder()        
+ *         var testVtap = new Vtap("testVtap", VtapArgs.builder()
  *             .captureFilterId(testCaptureFilter.id())
  *             .compartmentId(compartmentId)
  *             .sourceId(testSource.id())
@@ -179,6 +179,8 @@ public class Vtap extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     @Export(name="isVtapEnabled", refs={Boolean.class}, tree="[0]")
@@ -186,6 +188,8 @@ public class Vtap extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      * 
      */
     public Output<Boolean> isVtapEnabled() {

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        /// (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         /// </summary>
         [Input("max", required: true)]
         public Input<int> Max { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        /// (Updatable) The minimum port number. Must not be greater than the maximum port number.
         /// </summary>
         [Input("min", required: true)]
         public Input<int> Min { get; set; } = null!;

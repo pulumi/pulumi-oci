@@ -15,14 +15,14 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
     public static final MonitoredResourceAliasesCredentialArgs Empty = new MonitoredResourceAliasesCredentialArgs();
 
     /**
-     * (Updatable) Property Name.
+     * (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
      * 
      */
     public Output<String> name() {
@@ -45,14 +45,14 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public Output<String> source() {
@@ -86,7 +86,7 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 

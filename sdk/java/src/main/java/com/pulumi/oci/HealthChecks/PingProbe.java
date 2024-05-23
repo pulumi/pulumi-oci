@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPingProbe = new PingProbe("testPingProbe", PingProbeArgs.builder()        
+ *         var testPingProbe = new PingProbe("testPingProbe", PingProbeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .protocol(pingProbeProtocol)
  *             .targets(pingProbeTargets)

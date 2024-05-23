@@ -119,9 +119,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) The display-name of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -135,9 +136,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The display-name of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -222,9 +224,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) The URI of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -238,9 +241,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -255,17 +259,13 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -275,17 +275,13 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -296,38 +292,34 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The id of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -486,9 +478,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) The display-name of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -506,9 +499,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) The display-name of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -607,9 +601,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -627,9 +622,10 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -646,17 +642,13 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-         * 
-         * **Added In:** 18.1.6
+         * @param type (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -670,17 +662,13 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-         * 
-         * **Added In:** 18.1.6
+         * @param type (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -693,19 +681,17 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The id of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -716,19 +702,17 @@ public final class DomainsAppGrantedAppRoleArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The id of an AppRole that is granted to this App.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

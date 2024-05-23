@@ -32,7 +32,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> Bucket { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> MediaWorkflowJobId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) JSON string containing the technial metadata for the media asset.
+        /// (Updatable) List of Metadata.
         /// </summary>
         [Output("metadatas")]
         public Output<ImmutableArray<Outputs.MediaAssetMetadata>> Metadatas { get; private set; } = null!;
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -301,7 +301,7 @@ namespace Pulumi.Oci.MediaServices
         private InputList<Inputs.MediaAssetMetadataArgs>? _metadatas;
 
         /// <summary>
-        /// (Updatable) JSON string containing the technial metadata for the media asset.
+        /// (Updatable) List of Metadata.
         /// </summary>
         public InputList<Inputs.MediaAssetMetadataArgs> Metadatas
         {
@@ -382,7 +382,7 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -460,7 +460,7 @@ namespace Pulumi.Oci.MediaServices
         private InputList<Inputs.MediaAssetMetadataGetArgs>? _metadatas;
 
         /// <summary>
-        /// (Updatable) JSON string containing the technial metadata for the media asset.
+        /// (Updatable) List of Metadata.
         /// </summary>
         public InputList<Inputs.MediaAssetMetadataGetArgs> Metadatas
         {
@@ -535,7 +535,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

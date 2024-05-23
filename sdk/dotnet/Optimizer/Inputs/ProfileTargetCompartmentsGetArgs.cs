@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Optimizer.Inputs
         private InputList<string>? _items;
 
         /// <summary>
-        /// (Updatable) The list of tags specified in the current profile override.
+        /// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
         /// </summary>
         public InputList<string> Items
         {

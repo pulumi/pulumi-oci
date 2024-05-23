@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class DeployStageDeployStagePredecessorCollection {
     /**
-     * @return (Updatable) List of parameters defined to set helm value.
+     * @return (Updatable) A list of stage predecessors for a stage.
      * 
      */
     private List<DeployStageDeployStagePredecessorCollectionItem> items;
 
     private DeployStageDeployStagePredecessorCollection() {}
     /**
-     * @return (Updatable) List of parameters defined to set helm value.
+     * @return (Updatable) A list of stage predecessors for a stage.
      * 
      */
     public List<DeployStageDeployStagePredecessorCollectionItem> items() {

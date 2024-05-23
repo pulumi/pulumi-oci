@@ -38,14 +38,14 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -165,14 +165,14 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      * 
      */
     @Import(name="metadatas")
     private @Nullable Output<List<MediaAssetMetadataArgs>> metadatas;
 
     /**
-     * @return (Updatable) JSON string containing the technial metadata for the media asset.
+     * @return (Updatable) List of Metadata.
      * 
      */
     public Optional<Output<List<MediaAssetMetadataArgs>>> metadatas() {
@@ -330,14 +330,14 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * When the lock was created.
+     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -449,7 +449,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 
@@ -657,7 +657,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 
@@ -887,7 +887,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the MediaAsset was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -898,7 +898,7 @@ public final class MediaAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the MediaAsset was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

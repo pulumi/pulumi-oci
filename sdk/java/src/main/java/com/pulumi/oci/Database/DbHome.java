@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbHome = new DbHome("testDbHome", DbHomeArgs.builder()        
+ *         var testDbHome = new DbHome("testDbHome", DbHomeArgs.builder()
  *             .dbVersion()
  *             .database(DbHomeDatabaseArgs.builder()
  *                 .adminPassword(dbHomeDatabaseAdminPassword)
@@ -246,17 +246,9 @@ public class DbHome extends com.pulumi.resources.CustomResource {
     public Output<String> displayName() {
         return this.displayName;
     }
-    /**
-     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     * 
-     */
     @Export(name="enableDatabaseDelete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enableDatabaseDelete;
 
-    /**
-     * @return Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     * 
-     */
     public Output<Optional<Boolean>> enableDatabaseDelete() {
         return Codegen.optional(this.enableDatabaseDelete);
     }

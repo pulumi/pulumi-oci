@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTrigger = new Trigger("testTrigger", TriggerArgs.builder()        
+ *         var testTrigger = new Trigger("testTrigger", TriggerArgs.builder()
  *             .actions(TriggerActionArgs.builder()
  *                 .buildPipelineId(testBuildPipeline.id())
  *                 .type(triggerActionsType)

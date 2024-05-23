@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()        
+ *         var testAutoScalingConfiguration = new AutoScalingConfiguration("testAutoScalingConfiguration", AutoScalingConfigurationArgs.builder()
  *             .autoScalingResources(AutoScalingConfigurationAutoScalingResourcesArgs.builder()
  *                 .id(autoScalingConfigurationAutoScalingResourcesId)
  *                 .type(autoScalingConfigurationAutoScalingResourcesType)
@@ -182,9 +182,17 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
+    /**
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
+    /**
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
@@ -203,14 +211,14 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
         return this.freeformTags;
     }
     /**
-     * Whether the autoscaling policy is enabled.
+     * (Updatable) Whether the autoscaling configuration is enabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
-     * @return Whether the autoscaling policy is enabled.
+     * @return (Updatable) Whether the autoscaling configuration is enabled.
      * 
      */
     public Output<Boolean> isEnabled() {

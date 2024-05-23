@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeployStageProductionLoadBalancerConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Listen port for the backend server.
+        /// Listen port for the backend server.
         /// </summary>
         [Input("backendPort")]
         public Input<int>? BackendPort { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the load balancer listener.
+        /// Name of the load balancer listener.
         /// </summary>
         [Input("listenerName")]
         public Input<string>? ListenerName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the load balancer.
+        /// The OCID of the load balancer.
         /// </summary>
         [Input("loadBalancerId")]
         public Input<string>? LoadBalancerId { get; set; }

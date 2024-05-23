@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTarget = new Target("testTarget", TargetArgs.builder()        
+ *         var testTarget = new Target("testTarget", TargetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(targetDisplayName)
  *             .targetResourceId(testTargetResource.id())
@@ -108,14 +108,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/target:Target")
 public class Target extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Output<String> compartmentId() {

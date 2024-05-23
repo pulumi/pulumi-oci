@@ -18,15 +18,9 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         [Input("key")]
         public Input<string>? Key { get; set; }
 
-        /// <summary>
-        /// Name of the property
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The type of the DataSource.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

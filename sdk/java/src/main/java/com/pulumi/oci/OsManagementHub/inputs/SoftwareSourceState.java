@@ -143,14 +143,14 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) User-friendly name.
+     * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) User-friendly name.
+     * @return (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -710,7 +710,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) User-friendly name.
+         * @param displayName (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class SoftwareSourceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) User-friendly name.
+         * @param displayName (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 

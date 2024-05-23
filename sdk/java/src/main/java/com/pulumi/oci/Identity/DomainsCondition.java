@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCondition = new DomainsCondition("testCondition", DomainsConditionArgs.builder()        
+ *         var testCondition = new DomainsCondition("testCondition", DomainsConditionArgs.builder()
  *             .attributeName(conditionAttributeName)
  *             .attributeValue(conditionAttributeValue)
  *             .idcsEndpoint(testDomain.url())

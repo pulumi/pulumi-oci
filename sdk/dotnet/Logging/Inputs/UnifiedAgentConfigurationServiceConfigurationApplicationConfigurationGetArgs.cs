@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Unified monitoring agent operational metrics destination object.
+        /// (Updatable) Kubernetes destination object.
         /// </summary>
         [Input("destination", required: true)]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationGetArgs> Destination { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Unified monitoring agent operational metrics source object.
+        /// (Updatable) Kubernetes source object.
         /// </summary>
         [Input("source")]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceGetArgs>? Source { get; set; }
 
         /// <summary>
-        /// (Updatable) Unified schema logging source type.
+        /// (Updatable) Type of source of metrics
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceGetArgs>? _sources;
 
         /// <summary>
-        /// (Updatable) Logging source object.
+        /// (Updatable) Tail log source objects.
         /// </summary>
         public InputList<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceGetArgs> Sources
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Logging filter object.
+        /// (Updatable) Kubernetes filter object
         /// </summary>
         [Input("unifiedAgentConfigurationFilter")]
         public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterGetArgs>? UnifiedAgentConfigurationFilter { get; set; }

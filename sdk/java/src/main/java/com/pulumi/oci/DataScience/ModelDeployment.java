@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModelDeployment = new ModelDeployment("testModelDeployment", ModelDeploymentArgs.builder()        
+ *         var testModelDeployment = new ModelDeployment("testModelDeployment", ModelDeploymentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .modelDeploymentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsArgs.builder()
  *                 .deploymentType(modelDeploymentModelDeploymentConfigurationDetailsDeploymentType)

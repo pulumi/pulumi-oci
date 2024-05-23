@@ -170,7 +170,7 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly trainingDataset!: pulumi.Output<outputs.AiLanguage.ModelTrainingDataset>;
     /**
-     * Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
 
@@ -304,7 +304,7 @@ export interface ModelState {
      */
     trainingDataset?: pulumi.Input<inputs.AiLanguage.ModelTrainingDataset>;
     /**
-     * Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
      */
     version?: pulumi.Input<string>;
 }

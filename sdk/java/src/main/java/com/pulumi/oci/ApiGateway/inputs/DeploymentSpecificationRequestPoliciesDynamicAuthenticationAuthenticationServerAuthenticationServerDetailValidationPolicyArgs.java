@@ -114,20 +114,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the token validation policy.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the token validation policy.
      * 
      */
     public Output<String> type() {
@@ -317,10 +311,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the token validation policy.
          * 
          * @return builder
          * 
@@ -331,10 +322,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the token validation policy.
          * 
          * @return builder
          * 

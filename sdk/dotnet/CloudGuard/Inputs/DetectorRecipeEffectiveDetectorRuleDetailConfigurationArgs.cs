@@ -13,25 +13,25 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Unique name of the configuration
+        /// Unique name of the configuration
         /// </summary>
         [Input("configKey")]
         public Input<string>? ConfigKey { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration data type
+        /// configuration data type
         /// </summary>
         [Input("dataType")]
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration name
+        /// configuration name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration value
+        /// configuration value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs>? _values;
 
         /// <summary>
-        /// (Updatable) List of configuration values
+        /// List of configuration values
         /// </summary>
         public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs> Values
         {

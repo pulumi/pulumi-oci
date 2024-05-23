@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly Outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics Metrics;
         /// <summary>
-        /// (Updatable) The namespace.
+        /// (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
         /// </summary>
         public readonly string Namespace;
 

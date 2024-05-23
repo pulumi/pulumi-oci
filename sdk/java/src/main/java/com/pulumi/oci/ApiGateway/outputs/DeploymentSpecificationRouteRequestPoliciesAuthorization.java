@@ -18,10 +18,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
      */
     private @Nullable List<String> allowedScopes;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Indicates how authorization should be applied. For a type of ANY_OF, an &#34;allowedScope&#34; property must also be specified. Otherwise, only a type is required. For a type of ANONYMOUS, an authenticated API must have the &#34;isAnonymousAccessAllowed&#34; property set to &#34;true&#34; in the authentication policy.
      * 
      */
     private @Nullable String type;
@@ -35,10 +32,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
         return this.allowedScopes == null ? List.of() : this.allowedScopes;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Indicates how authorization should be applied. For a type of ANY_OF, an &#34;allowedScope&#34; property must also be specified. Otherwise, only a type is required. For a type of ANONYMOUS, an authenticated API must have the &#34;isAnonymousAccessAllowed&#34; property set to &#34;true&#34; in the authentication policy.
      * 
      */
     public Optional<String> type() {

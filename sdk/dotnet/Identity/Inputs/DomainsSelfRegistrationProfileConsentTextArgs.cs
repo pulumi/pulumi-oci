@@ -45,21 +45,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Locale { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) name of the attribute
+        /// (Updatable) Localized value of consent text in corresponding locale
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

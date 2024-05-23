@@ -136,14 +136,15 @@ class DomainsRuleArgs:
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) Attribute name of an individual value to be returned.
+        :param pulumi.Input[str] name: (Updatable) Rule name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: true
+               * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
                * required: true
-               * returned: default
+               * returned: always
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -460,14 +461,15 @@ class DomainsRuleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Attribute name of an individual value to be returned.
+        (Updatable) Rule name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: true
+        * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
         * required: true
-        * returned: default
+        * returned: always
         * type: string
         * uniqueness: none
         """
@@ -739,14 +741,15 @@ class _DomainsRuleState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] name: (Updatable) Attribute name of an individual value to be returned.
+        :param pulumi.Input[str] name: (Updatable) Rule name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: true
+               * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
                * required: true
-               * returned: default
+               * returned: always
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1239,14 +1242,15 @@ class _DomainsRuleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Attribute name of an individual value to be returned.
+        (Updatable) Rule name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: true
+        * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
         * required: true
-        * returned: default
+        * returned: always
         * type: string
         * uniqueness: none
         """
@@ -1572,14 +1576,15 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) Attribute name of an individual value to be returned.
+        :param pulumi.Input[str] name: (Updatable) Rule name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: true
+               * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
                * required: true
-               * returned: default
+               * returned: always
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1981,14 +1986,15 @@ class DomainsRule(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] name: (Updatable) Attribute name of an individual value to be returned.
+        :param pulumi.Input[str] name: (Updatable) Rule name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: true
+               * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
                * required: true
-               * returned: default
+               * returned: always
                * type: string
                * uniqueness: none
         :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -2387,14 +2393,15 @@ class DomainsRule(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Attribute name of an individual value to be returned.
+        (Updatable) Rule name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: true
+        * idcsSearchable: true
         * multiValued: false
         * mutability: readWrite
         * required: true
-        * returned: default
+        * returned: always
         * type: string
         * uniqueness: none
         """

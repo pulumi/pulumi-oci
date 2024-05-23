@@ -46,14 +46,14 @@ public final class WorkspaceProjectMetadataAggregatorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     public Optional<Output<String>> key() {
@@ -161,7 +161,7 @@ public final class WorkspaceProjectMetadataAggregatorArgs extends com.pulumi.res
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify project.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class WorkspaceProjectMetadataAggregatorArgs extends com.pulumi.res
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify project.
          * 
          * @return builder
          * 

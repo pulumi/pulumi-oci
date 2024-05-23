@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// software source identifier
+        /// unique identifier that is immutable on creation
         /// </summary>
         public readonly string? Id;
 

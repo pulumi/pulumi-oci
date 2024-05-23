@@ -164,13 +164,13 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// A user-provided description of the database instance node.
+        /// (Updatable) A user-provided description of a database system.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Display name of the database instance node. Avoid entering confidential information.
+        /// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -376,13 +376,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// A user-provided description of the database instance node.
+        /// (Updatable) A user-provided description of a database system.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the database instance node. Avoid entering confidential information.
+        /// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -538,13 +538,13 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// A user-provided description of the database instance node.
+        /// (Updatable) A user-provided description of a database system.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the database instance node. Avoid entering confidential information.
+        /// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

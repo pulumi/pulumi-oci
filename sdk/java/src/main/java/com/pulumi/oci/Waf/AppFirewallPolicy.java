@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppFirewallPolicy = new AppFirewallPolicy("testWebAppFirewallPolicy", AppFirewallPolicyArgs.builder()        
+ *         var testWebAppFirewallPolicy = new AppFirewallPolicy("testWebAppFirewallPolicy", AppFirewallPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .actions(AppFirewallPolicyActionArgs.builder()
  *                 .name(webAppFirewallPolicyActionsName)

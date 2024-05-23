@@ -29,7 +29,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable Boolean adminRole;
     /**
-     * @return (Updatable) App identifier
+     * @return (Updatable) ID of parent App. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -37,7 +37,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -59,16 +59,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable String appName;
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -89,42 +88,37 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable String legacyGroupName;
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding appRole resource to which the user belongs
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: reference
      * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;direct&#39; or &#39;indirect&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The identifier of the appRole
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -132,7 +126,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -158,7 +152,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.adminRole);
     }
     /**
-     * @return (Updatable) App identifier
+     * @return (Updatable) ID of parent App. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -166,7 +160,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -192,16 +186,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.appName);
     }
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -226,16 +219,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.legacyGroupName);
     }
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding appRole resource to which the user belongs
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: reference
      * * uniqueness: none
      * 
@@ -244,17 +236,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;direct&#39; or &#39;indirect&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -263,9 +253,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The identifier of the appRole
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -273,7 +261,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

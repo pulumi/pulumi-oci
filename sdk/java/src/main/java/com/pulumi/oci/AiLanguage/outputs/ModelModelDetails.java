@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelModelDetails {
     /**
-     * @return classification Modes
+     * @return possible text classification modes
      * 
      */
     private @Nullable ModelModelDetailsClassificationMode classificationMode;
@@ -36,7 +36,7 @@ public final class ModelModelDetails {
 
     private ModelModelDetails() {}
     /**
-     * @return classification Modes
+     * @return possible text classification modes
      * 
      */
     public Optional<ModelModelDetailsClassificationMode> classificationMode() {

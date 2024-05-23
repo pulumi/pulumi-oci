@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// The OCID of the compartment that contains the volume.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

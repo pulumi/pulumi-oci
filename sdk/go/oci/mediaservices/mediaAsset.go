@@ -28,7 +28,7 @@ type MediaAsset struct {
 
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -45,7 +45,7 @@ type MediaAsset struct {
 	MediaAssetTags MediaAssetMediaAssetTagArrayOutput `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset.
 	MediaWorkflowJobId pulumi.StringOutput `pulumi:"mediaWorkflowJobId"`
-	// (Updatable) JSON string containing the technial metadata for the media asset.
+	// (Updatable) List of Metadata.
 	Metadatas MediaAssetMetadataArrayOutput `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
@@ -67,7 +67,7 @@ type MediaAsset struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -116,7 +116,7 @@ func GetMediaAsset(ctx *pulumi.Context,
 type mediaAssetState struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket *string `pulumi:"bucket"`
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -133,7 +133,7 @@ type mediaAssetState struct {
 	MediaAssetTags []MediaAssetMediaAssetTag `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset.
 	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
-	// (Updatable) JSON string containing the technial metadata for the media asset.
+	// (Updatable) List of Metadata.
 	Metadatas []MediaAssetMetadata `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
 	Namespace *string `pulumi:"namespace"`
@@ -155,7 +155,7 @@ type mediaAssetState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -169,7 +169,7 @@ type mediaAssetState struct {
 type MediaAssetState struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringPtrInput
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -186,7 +186,7 @@ type MediaAssetState struct {
 	MediaAssetTags MediaAssetMediaAssetTagArrayInput
 	// The ID of the MediaWorkflowJob used to produce this asset.
 	MediaWorkflowJobId pulumi.StringPtrInput
-	// (Updatable) JSON string containing the technial metadata for the media asset.
+	// (Updatable) List of Metadata.
 	Metadatas MediaAssetMetadataArrayInput
 	// The object storage namespace where this asset is located.
 	Namespace pulumi.StringPtrInput
@@ -208,7 +208,7 @@ type MediaAssetState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -226,7 +226,7 @@ func (MediaAssetState) ElementType() reflect.Type {
 type mediaAssetArgs struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket *string `pulumi:"bucket"`
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -243,7 +243,7 @@ type mediaAssetArgs struct {
 	MediaAssetTags []MediaAssetMediaAssetTag `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset.
 	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
-	// (Updatable) JSON string containing the technial metadata for the media asset.
+	// (Updatable) List of Metadata.
 	Metadatas []MediaAssetMetadata `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
 	Namespace *string `pulumi:"namespace"`
@@ -272,7 +272,7 @@ type mediaAssetArgs struct {
 type MediaAssetArgs struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket pulumi.StringPtrInput
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -289,7 +289,7 @@ type MediaAssetArgs struct {
 	MediaAssetTags MediaAssetMediaAssetTagArrayInput
 	// The ID of the MediaWorkflowJob used to produce this asset.
 	MediaWorkflowJobId pulumi.StringPtrInput
-	// (Updatable) JSON string containing the technial metadata for the media asset.
+	// (Updatable) List of Metadata.
 	Metadatas MediaAssetMetadataArrayInput
 	// The object storage namespace where this asset is located.
 	Namespace pulumi.StringPtrInput
@@ -406,7 +406,7 @@ func (o MediaAssetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// (Updatable) The compartment ID of the lock.
+// (Updatable) Compartment Identifier.
 func (o MediaAssetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -450,7 +450,7 @@ func (o MediaAssetOutput) MediaWorkflowJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
 }
 
-// (Updatable) JSON string containing the technial metadata for the media asset.
+// (Updatable) List of Metadata.
 func (o MediaAssetOutput) Metadatas() MediaAssetMetadataArrayOutput {
 	return o.ApplyT(func(v *MediaAsset) MediaAssetMetadataArrayOutput { return v.Metadatas }).(MediaAssetMetadataArrayOutput)
 }
@@ -505,7 +505,7 @@ func (o MediaAssetOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 func (o MediaAssetOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

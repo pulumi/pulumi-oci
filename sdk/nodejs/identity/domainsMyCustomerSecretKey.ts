@@ -212,7 +212,7 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyCustomerSecretKeyMeta[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -220,9 +220,9 @@ export class DomainsMyCustomerSecretKey extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -540,7 +540,7 @@ export interface DomainsMyCustomerSecretKeyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyCustomerSecretKeyMeta>[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -548,9 +548,9 @@ export interface DomainsMyCustomerSecretKeyState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -682,7 +682,7 @@ export interface DomainsMyCustomerSecretKeyArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -690,9 +690,9 @@ export interface DomainsMyCustomerSecretKeyArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

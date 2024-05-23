@@ -29,11 +29,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? KeyId;
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the credential, within the context of the source.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) List of monitored resource properties.
+        /// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         /// </summary>
         public readonly ImmutableArray<Outputs.MonitoredResourceAdditionalCredentialProperty> Properties;
         /// <summary>
@@ -41,11 +41,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? Source;
         /// <summary>
-        /// Monitored Resource Type. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         /// </summary>
         public readonly string? Type;
 

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalContainerDatabase = new ExternalContainerDatabase("testExternalContainerDatabase", ExternalContainerDatabaseArgs.builder()        
+ *         var testExternalContainerDatabase = new ExternalContainerDatabase("testExternalContainerDatabase", ExternalContainerDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(externalContainerDatabaseDisplayName)
  *             .definedTags(externalContainerDatabaseDefinedTags)

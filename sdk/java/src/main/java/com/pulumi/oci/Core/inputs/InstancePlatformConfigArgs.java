@@ -194,14 +194,14 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The type of action to run when the instance is interrupted for eviction.
+     * The type of platform being configured.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of platform being configured.
      * 
      */
     public Output<String> type() {
@@ -483,7 +483,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of platform being configured.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of platform being configured.
          * 
          * @return builder
          * 

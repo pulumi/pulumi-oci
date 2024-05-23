@@ -133,7 +133,7 @@ type Model struct {
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDataset ModelTrainingDatasetOutput `pulumi:"trainingDataset"`
-	// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -209,7 +209,7 @@ type modelState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDataset *ModelTrainingDataset `pulumi:"trainingDataset"`
-	// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version *string `pulumi:"version"`
 }
 
@@ -244,7 +244,7 @@ type ModelState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// Possible data set type
 	TrainingDataset ModelTrainingDatasetPtrInput
-	// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringPtrInput
 }
 
@@ -457,7 +457,7 @@ func (o ModelOutput) TrainingDataset() ModelTrainingDatasetOutput {
 	return o.ApplyT(func(v *Model) ModelTrainingDatasetOutput { return v.TrainingDataset }).(ModelTrainingDatasetOutput)
 }
 
-// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o ModelOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

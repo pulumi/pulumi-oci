@@ -13,11 +13,13 @@ public final class DomainsSettingDefaultLoginText {
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -25,17 +27,17 @@ public final class DomainsSettingDefaultLoginText {
      */
     private String locale;
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Login text
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * idcsSanitize: true
      * 
      */
     private String value;
@@ -44,11 +46,13 @@ public final class DomainsSettingDefaultLoginText {
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -58,17 +62,17 @@ public final class DomainsSettingDefaultLoginText {
         return this.locale;
     }
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Login text
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * idcsSanitize: true
      * 
      */
     public String value() {

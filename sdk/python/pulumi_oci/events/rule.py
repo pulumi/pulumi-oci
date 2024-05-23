@@ -26,7 +26,7 @@ class RuleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Rule resource.
-        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
@@ -67,7 +67,7 @@ class RuleArgs:
     @pulumi.getter
     def actions(self) -> pulumi.Input['RuleActionsArgs']:
         """
-        (Updatable) A list of one or more ActionDetails objects.
+        (Updatable) A list of ActionDetails objects to create for a rule.
         """
         return pulumi.get(self, "actions")
 
@@ -192,7 +192,7 @@ class _RuleState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Rule resources.
-        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
@@ -247,7 +247,7 @@ class _RuleState:
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input['RuleActionsArgs']]:
         """
-        (Updatable) A list of one or more ActionDetails objects.
+        (Updatable) A list of ActionDetails objects to create for a rule.
         """
         return pulumi.get(self, "actions")
 
@@ -451,7 +451,7 @@ class Rule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
@@ -606,7 +606,7 @@ class Rule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input[pulumi.InputType['RuleActionsArgs']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
@@ -655,7 +655,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def actions(self) -> pulumi.Output['outputs.RuleActions']:
         """
-        (Updatable) A list of one or more ActionDetails objects.
+        (Updatable) A list of ActionDetails objects to create for a rule.
         """
         return pulumi.get(self, "actions")
 

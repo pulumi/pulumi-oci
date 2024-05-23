@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// The identifying key for the object.
+        /// (Updatable) Currently not used on application creation. Reserved for future.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

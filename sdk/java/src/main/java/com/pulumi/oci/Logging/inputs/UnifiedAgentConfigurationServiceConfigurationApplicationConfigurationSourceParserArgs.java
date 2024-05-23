@@ -55,14 +55,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     @Import(name="fieldTimeKey")
     private @Nullable Output<String> fieldTimeKey;
 
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     public Optional<Output<String>> fieldTimeKey() {
@@ -582,7 +582,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param fieldTimeKey (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+         * @param fieldTimeKey (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param fieldTimeKey (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+         * @param fieldTimeKey (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
          * 
          * @return builder
          * 

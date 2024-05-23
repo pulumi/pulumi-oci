@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIndex = new Index("testIndex", IndexArgs.builder()        
+ *         var testIndex = new Index("testIndex", IndexArgs.builder()
  *             .keys(IndexKeyArgs.builder()
  *                 .columnName(indexKeysColumnName)
  *                 .jsonFieldType(indexKeysJsonFieldType)

@@ -26,6 +26,8 @@ public final class ProcessorJobInputLocation {
     private @Nullable List<ProcessorJobInputLocationObjectLocation> objectLocations;
     /**
      * @return The type of input location. The allowed values are:
+     * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+     * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
      * 
      */
     private String sourceType;
@@ -47,6 +49,8 @@ public final class ProcessorJobInputLocation {
     }
     /**
      * @return The type of input location. The allowed values are:
+     * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+     * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
      * 
      */
     public String sourceType() {

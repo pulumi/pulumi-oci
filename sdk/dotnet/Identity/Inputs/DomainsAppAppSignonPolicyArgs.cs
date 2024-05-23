@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppAppSignonPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) URI of the policy.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,20 +28,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Identifier of the Policy.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

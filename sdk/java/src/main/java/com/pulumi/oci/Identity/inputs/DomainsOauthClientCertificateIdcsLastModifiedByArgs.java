@@ -52,34 +52,32 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -157,13 +155,13 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
     }
 
     /**
-     * Value of the tag.
+     * The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -174,13 +172,13 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -261,17 +259,16 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -282,17 +279,16 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -384,13 +380,13 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -405,13 +401,13 @@ public final class DomainsOauthClientCertificateIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

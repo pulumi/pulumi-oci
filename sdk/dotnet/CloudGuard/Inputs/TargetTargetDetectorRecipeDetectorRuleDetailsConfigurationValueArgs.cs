@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? ManagedListType { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration value
+        /// configuration value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

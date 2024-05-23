@@ -48,14 +48,14 @@ public final class ZoneExternalDownstreamArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The OCID of the TSIG key.
+     * (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
      * 
      */
     @Import(name="tsigKeyId")
     private @Nullable Output<String> tsigKeyId;
 
     /**
-     * @return (Updatable) The OCID of the TSIG key.
+     * @return (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
      * 
      */
     public Optional<Output<String>> tsigKeyId() {
@@ -131,7 +131,7 @@ public final class ZoneExternalDownstreamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param tsigKeyId (Updatable) The OCID of the TSIG key.
+         * @param tsigKeyId (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ZoneExternalDownstreamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param tsigKeyId (Updatable) The OCID of the TSIG key.
+         * @param tsigKeyId (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
          * 
          * @return builder
          * 

@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem {
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The case-sensitive name of the query parameter.
      * 
      */
     private String name;
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem() {}
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The case-sensitive name of the query parameter.
      * 
      */
     public String name() {

@@ -149,14 +149,14 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) User-friendly name.
+     * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) User-friendly name.
+     * @return (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {

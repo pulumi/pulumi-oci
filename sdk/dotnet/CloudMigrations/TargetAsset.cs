@@ -137,7 +137,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Output<int> BlockVolumesPerformance { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Output<string> CreatedResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -239,7 +239,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -327,7 +327,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<string> PreferredShapeType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -353,7 +353,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<int>? BlockVolumesPerformance { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -377,7 +377,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<string>? CreatedResourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -485,7 +485,7 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

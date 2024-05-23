@@ -32,16 +32,14 @@ public final class AutoScalingConfigurationPolicyRuleActionArgs extends com.pulu
     }
 
     /**
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<Integer> value;
 
     /**
-     * @return ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
      * 
      */
     public Optional<Output<Integer>> value() {
@@ -95,8 +93,7 @@ public final class AutoScalingConfigurationPolicyRuleActionArgs extends com.pulu
         }
 
         /**
-         * @param value ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
          * 
          * @return builder
          * 
@@ -107,8 +104,7 @@ public final class AutoScalingConfigurationPolicyRuleActionArgs extends com.pulu
         }
 
         /**
-         * @param value ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
          * 
          * @return builder
          * 

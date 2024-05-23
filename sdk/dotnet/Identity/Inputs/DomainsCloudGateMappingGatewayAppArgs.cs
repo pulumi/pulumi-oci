@@ -29,9 +29,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The URI to the upstream block entry
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The URI to the gateway application protected by this Cloud Gate
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -47,23 +45,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The id of the upstream block entry.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The id of the gateway application protected by this Cloud Gate.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

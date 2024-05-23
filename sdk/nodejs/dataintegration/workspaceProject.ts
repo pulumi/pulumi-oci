@@ -80,7 +80,7 @@ export class WorkspaceProject extends pulumi.CustomResource {
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify project.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -197,7 +197,7 @@ export interface WorkspaceProjectState {
      */
     identifier?: pulumi.Input<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify project.
      */
     key?: pulumi.Input<string>;
     /**
@@ -260,7 +260,7 @@ export interface WorkspaceProjectArgs {
      */
     identifier: pulumi.Input<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify project.
      */
     key?: pulumi.Input<string>;
     /**

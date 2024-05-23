@@ -19,12 +19,12 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      */
     private @Nullable Boolean isRequired;
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Name of the claim.
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
      * 
      */
     private @Nullable List<String> values;
@@ -38,14 +38,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         return Optional.ofNullable(this.isRequired);
     }
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Name of the claim.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
      * 
      */
     public List<String> values() {

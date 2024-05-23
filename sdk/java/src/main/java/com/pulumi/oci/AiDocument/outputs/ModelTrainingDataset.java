@@ -35,9 +35,6 @@ public final class ModelTrainingDataset {
     /**
      * @return The object name of the input data file.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private @Nullable String object;
 
@@ -72,9 +69,6 @@ public final class ModelTrainingDataset {
     }
     /**
      * @return The object name of the input data file.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> object() {

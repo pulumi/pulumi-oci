@@ -16,14 +16,14 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
     public static final DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs Empty = new DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs();
 
     /**
-     * Name of the parameter (case-sensitive).
+     * Name of the step.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Name of the parameter (case-sensitive).
+     * @return Name of the step.
      * 
      */
     public Optional<Output<String>> name() {
@@ -103,7 +103,7 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
         }
 
         /**
-         * @param name Name of the parameter (case-sensitive).
+         * @param name Name of the step.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
         }
 
         /**
-         * @param name Name of the parameter (case-sensitive).
+         * @param name Name of the step.
          * 
          * @return builder
          * 

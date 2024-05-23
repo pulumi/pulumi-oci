@@ -29,7 +29,7 @@ public final class ClusterNetworkInstancePool {
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -92,7 +92,7 @@ public final class ClusterNetworkInstancePool {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

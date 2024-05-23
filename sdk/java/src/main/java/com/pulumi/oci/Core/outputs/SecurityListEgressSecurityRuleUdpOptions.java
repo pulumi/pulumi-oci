@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SecurityListEgressSecurityRuleUdpOptions {
     /**
-     * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     private @Nullable Integer max;
     /**
-     * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     private @Nullable Integer min;
@@ -30,14 +30,14 @@ public final class SecurityListEgressSecurityRuleUdpOptions {
 
     private SecurityListEgressSecurityRuleUdpOptions() {}
     /**
-     * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * @return The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     public Optional<Integer> max() {
         return Optional.ofNullable(this.max);
     }
     /**
-     * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * @return The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     public Optional<Integer> min() {

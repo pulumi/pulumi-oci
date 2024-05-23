@@ -40,7 +40,7 @@ class DbSystemArgs:
         The set of arguments for constructing a DbSystem resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         :param pulumi.Input[str] db_version: Version of database system software.
-        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
         :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
@@ -48,7 +48,7 @@ class DbSystemArgs:
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: A user-provided description of the database instance node.
+        :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
@@ -126,7 +126,7 @@ class DbSystemArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        Display name of the database instance node. Avoid entering confidential information.
+        (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -222,7 +222,7 @@ class DbSystemArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A user-provided description of the database instance node.
+        (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
@@ -382,8 +382,8 @@ class _DbSystemState:
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: A user-provided description of the database instance node.
-        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
@@ -550,7 +550,7 @@ class _DbSystemState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        A user-provided description of the database instance node.
+        (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
@@ -562,7 +562,7 @@ class _DbSystemState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Display name of the database instance node. Avoid entering confidential information.
+        (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -909,8 +909,8 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: A user-provided description of the database instance node.
-        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
@@ -1152,8 +1152,8 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DbSystemCredentialsArgs']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: A user-provided description of the database instance node.
-        :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: (Updatable when patch_operations are specified) Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
@@ -1270,7 +1270,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        A user-provided description of the database instance node.
+        (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
@@ -1278,7 +1278,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        Display name of the database instance node. Avoid entering confidential information.
+        (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 

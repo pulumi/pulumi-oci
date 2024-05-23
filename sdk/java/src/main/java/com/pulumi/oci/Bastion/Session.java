@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSession = new Session("testSession", SessionArgs.builder()        
+ *         var testSession = new Session("testSession", SessionArgs.builder()
  *             .bastionId(testBastion.id())
  *             .keyDetails(SessionKeyDetailsArgs.builder()
  *                 .publicKeyContent(sessionKeyDetailsPublicKeyContent)

@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()        
+ *         var testPipeline = new Pipeline("testPipeline", PipelineArgs.builder()
  *             .compartmentId(compartmentId)
  *             .projectId(testProject.id())
  *             .stepDetails(PipelineStepDetailArgs.builder()
@@ -191,14 +191,14 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.deleteRelatedPipelineRuns);
     }
     /**
-     * (Updatable) A short description of the step.
+     * (Updatable) A short description of the pipeline.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the step.
+     * @return (Updatable) A short description of the pipeline.
      * 
      */
     public Output<String> description() {

@@ -24,10 +24,7 @@ public final class IngressGatewayHost {
      */
     private List<IngressGatewayHostListener> listeners;
     /**
-     * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
      * 
      */
     private String name;
@@ -48,10 +45,7 @@ public final class IngressGatewayHost {
         return this.listeners;
     }
     /**
-     * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
      * 
      */
     public String name() {

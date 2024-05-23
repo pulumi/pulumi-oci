@@ -28,7 +28,7 @@ class TargetAssetArgs:
         :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
         :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
         :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] type: (Updatable) The type of target asset.
         :param pulumi.Input['TargetAssetUserSpecArgs'] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
         :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
@@ -83,7 +83,7 @@ class TargetAssetArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        (Updatable) The type of target asset.
         """
         return pulumi.get(self, "type")
 
@@ -154,10 +154,10 @@ class _TargetAssetState:
         """
         Input properties used for looking up and filtering TargetAsset resources.
         :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]] compatibility_messages: Messages about the compatibility issues.
         :param pulumi.Input[str] created_resource_id: Created resource identifier
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]] estimated_costs: Cost estimation description
         :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -171,7 +171,7 @@ class _TargetAssetState:
         :param pulumi.Input[str] time_assessed: The time when the assessment was done. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_created: The time when the target asset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] type: (Updatable) The type of target asset.
         :param pulumi.Input['TargetAssetUserSpecArgs'] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         if block_volumes_performance is not None:
@@ -231,7 +231,7 @@ class _TargetAssetState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment.
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -267,7 +267,7 @@ class _TargetAssetState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -435,7 +435,7 @@ class _TargetAssetState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        (Updatable) The type of target asset.
         """
         return pulumi.get(self, "type")
 
@@ -570,7 +570,7 @@ class TargetAsset(pulumi.CustomResource):
         :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
         :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
         :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] type: (Updatable) The type of target asset.
         :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         ...
@@ -772,10 +772,10 @@ class TargetAsset(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetCompatibilityMessageArgs']]]] compatibility_messages: Messages about the compatibility issues.
         :param pulumi.Input[str] created_resource_id: Created resource identifier
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetEstimatedCostArgs']]]] estimated_costs: Cost estimation description
         :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -789,7 +789,7 @@ class TargetAsset(pulumi.CustomResource):
         :param pulumi.Input[str] time_assessed: The time when the assessment was done. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_created: The time when the target asset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[str] type: (Updatable) The type of target asset.
         :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -830,7 +830,7 @@ class TargetAsset(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment.
+        The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -854,7 +854,7 @@ class TargetAsset(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -966,7 +966,7 @@ class TargetAsset(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
+        (Updatable) The type of target asset.
         """
         return pulumi.get(self, "type")
 

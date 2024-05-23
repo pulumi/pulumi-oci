@@ -47,14 +47,14 @@ public final class VolumeGroupVolumeGroupReplicaArgs extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the volume group replica.
+     * The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
     @Import(name="volumeGroupReplicaId")
     private @Nullable Output<String> volumeGroupReplicaId;
 
     /**
-     * @return The OCID of the volume group replica.
+     * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
     public Optional<Output<String>> volumeGroupReplicaId() {
@@ -130,7 +130,7 @@ public final class VolumeGroupVolumeGroupReplicaArgs extends com.pulumi.resource
         }
 
         /**
-         * @param volumeGroupReplicaId The OCID of the volume group replica.
+         * @param volumeGroupReplicaId The volume group replica&#39;s Oracle ID (OCID).
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class VolumeGroupVolumeGroupReplicaArgs extends com.pulumi.resource
         }
 
         /**
-         * @param volumeGroupReplicaId The OCID of the volume group replica.
+         * @param volumeGroupReplicaId The volume group replica&#39;s Oracle ID (OCID).
          * 
          * @return builder
          * 

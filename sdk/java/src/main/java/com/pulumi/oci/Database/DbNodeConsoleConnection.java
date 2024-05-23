@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection("testDbNodeConsoleConnection", DbNodeConsoleConnectionArgs.builder()        
+ *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection("testDbNodeConsoleConnection", DbNodeConsoleConnectionArgs.builder()
  *             .dbNodeId(testDbNode.id())
  *             .publicKey(dbNodeConsoleConnectionPublicKey)
  *             .definedTags(dbNodeConsoleConnectionDefinedTags)

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDatabaseConnector = new ExternalDatabaseConnector("testExternalDatabaseConnector", ExternalDatabaseConnectorArgs.builder()        
+ *         var testExternalDatabaseConnector = new ExternalDatabaseConnector("testExternalDatabaseConnector", ExternalDatabaseConnectorArgs.builder()
  *             .connectionCredentials(ExternalDatabaseConnectorConnectionCredentialsArgs.builder()
  *                 .credentialName(externalDatabaseConnectorConnectionCredentialsCredentialName)
  *                 .credentialType(externalDatabaseConnectorConnectionCredentialsCredentialType)

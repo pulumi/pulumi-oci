@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testZone = new Zone("testZone", ZoneArgs.builder()        
+ *         var testZone = new Zone("testZone", ZoneArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(zoneName)
  *             .zoneType(zoneZoneType)

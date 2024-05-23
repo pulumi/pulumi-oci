@@ -13,10 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserImArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) A human-readable name, primarily used for display purposes
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: false
@@ -28,10 +29,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        /// (Updatable) A Boolean value that indicates the 'primary' or preferred attribute value for this attribute--for example, the preferred messenger or primary messenger. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: false
@@ -43,13 +45,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? Primary { get; set; }
 
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) A label that indicates the attribute's function--for example, 'aim', 'gtalk', or 'mobile'
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -58,20 +61,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) User's instant messaging address
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

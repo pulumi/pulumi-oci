@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \"isConfidential\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) If true, this bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \"isConfidential\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? Confidential { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) Display name of the bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \"helpMessage\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) Help message of the bundle configuration property. This attribute maps to \"helpMessage\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? HelpMessage { get; set; }
 
         /// <summary>
-        /// (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \"type\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) ICF data type of the bundle configuration property. This attribute maps to \"type\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -76,16 +76,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> IcfType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-        /// 
-        /// **Deprecated Since: 18.2.2**
+        /// (Updatable) Name of the bundle configuration property. This attribute maps to \"name\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string
@@ -111,7 +108,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? Order { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \"isRequired\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) If true, this bundle configuration property is required to connect to the target connected managed app. This attribute maps to \"isRequired\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: true
@@ -129,20 +126,18 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Value of the bundle configuration property. This attribute maps to \"value\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: true
+        /// * idcsSensitive: encrypt
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> Values
         {

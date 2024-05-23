@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale {
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     private @Nullable Integer intValue;
 
     private WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale() {}
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     public Optional<Integer> intValue() {

@@ -20,14 +20,14 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
     public static final TargetDatabasePeerTargetDatabaseArgs Empty = new TargetDatabasePeerTargetDatabaseArgs();
 
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Import(name="databaseDetails")
     private @Nullable Output<List<TargetDatabasePeerTargetDatabaseDatabaseDetailArgs>> databaseDetails;
 
     /**
-     * @return Details of the database for the registration in Data Safe.
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Optional<Output<List<TargetDatabasePeerTargetDatabaseDatabaseDetailArgs>>> databaseDetails() {
@@ -50,14 +50,14 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
     }
 
     /**
-     * The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+     * The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
      * 
      */
     @Import(name="dataguardAssociationId")
     private @Nullable Output<String> dataguardAssociationId;
 
     /**
-     * @return The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+     * @return The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
      * 
      */
     public Optional<Output<String>> dataguardAssociationId() {
@@ -65,14 +65,14 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
     }
 
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of the peer target database in Data Safe.
+     * @return (Updatable) The description of the target database in Data Safe.
      * 
      */
     public Optional<Output<String>> description() {
@@ -80,14 +80,14 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
     }
 
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -219,7 +219,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param databaseDetails Details of the database for the registration in Data Safe.
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param databaseDetails Details of the database for the registration in Data Safe.
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param databaseDetails Details of the database for the registration in Data Safe.
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dataguardAssociationId The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+         * @param dataguardAssociationId The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dataguardAssociationId The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+         * @param dataguardAssociationId The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The description of the peer target database in Data Safe.
+         * @param description (Updatable) The description of the target database in Data Safe.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The description of the peer target database in Data Safe.
+         * @param description (Updatable) The description of the target database in Data Safe.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class TargetDatabasePeerTargetDatabaseArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 

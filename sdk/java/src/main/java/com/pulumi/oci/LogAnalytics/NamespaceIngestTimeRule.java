@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamespaceIngestTimeRule = new NamespaceIngestTimeRule("testNamespaceIngestTimeRule", NamespaceIngestTimeRuleArgs.builder()        
+ *         var testNamespaceIngestTimeRule = new NamespaceIngestTimeRule("testNamespaceIngestTimeRule", NamespaceIngestTimeRuleArgs.builder()
  *             .actions(NamespaceIngestTimeRuleActionArgs.builder()
  *                 .compartmentId(compartmentId)
  *                 .metricName(testMetric.name())

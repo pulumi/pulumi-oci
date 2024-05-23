@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the format entry.
+        /// (Updatable) The description of the library masking format.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the format entry.
+        /// (Updatable) The description of the library masking format.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the format entry.
+        /// (Updatable) The description of the library masking format.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

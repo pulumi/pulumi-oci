@@ -37,7 +37,7 @@ class SoftwareSourceArgs:
         :param pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs'] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
@@ -138,7 +138,7 @@ class SoftwareSourceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-friendly name.
+        (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -287,7 +287,7 @@ class _SoftwareSourceState:
         :param pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterArgs'] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source.
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source.
@@ -474,7 +474,7 @@ class _SoftwareSourceState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-friendly name.
+        (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -786,7 +786,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_resolve_dependencies: (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
         :param pulumi.Input[bool] is_automatically_updated: (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
@@ -945,7 +945,7 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['SoftwareSourceCustomSoftwareSourceFilterArgs']] custom_software_source_filter: (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description for the software source. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly name.
+        :param pulumi.Input[str] display_name: (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source.
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source.
@@ -1074,7 +1074,7 @@ class SoftwareSource(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) User-friendly name.
+        (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 

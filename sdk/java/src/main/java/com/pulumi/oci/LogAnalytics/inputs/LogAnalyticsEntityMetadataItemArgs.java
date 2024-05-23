@@ -16,14 +16,14 @@ public final class LogAnalyticsEntityMetadataItemArgs extends com.pulumi.resourc
     public static final LogAnalyticsEntityMetadataItemArgs Empty = new LogAnalyticsEntityMetadataItemArgs();
 
     /**
-     * (Updatable) Log analytics entity name.
+     * (Updatable) The metadata name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Log analytics entity name.
+     * @return (Updatable) The metadata name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -87,7 +87,7 @@ public final class LogAnalyticsEntityMetadataItemArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name (Updatable) Log analytics entity name.
+         * @param name (Updatable) The metadata name.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class LogAnalyticsEntityMetadataItemArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name (Updatable) Log analytics entity name.
+         * @param name (Updatable) The metadata name.
          * 
          * @return builder
          * 

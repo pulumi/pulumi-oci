@@ -29,7 +29,7 @@ class DatasetDatasetFormatDetailsArgs:
                  format_type: pulumi.Input[str],
                  text_file_type_metadata: Optional[pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs']] = None):
         """
-        :param pulumi.Input[str] format_type: It defines the format type of text files.
+        :param pulumi.Input[str] format_type: The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         :param pulumi.Input['DatasetDatasetFormatDetailsTextFileTypeMetadataArgs'] text_file_type_metadata: Metadata for files with text content.
         """
         pulumi.set(__self__, "format_type", format_type)
@@ -40,7 +40,7 @@ class DatasetDatasetFormatDetailsArgs:
     @pulumi.getter(name="formatType")
     def format_type(self) -> pulumi.Input[str]:
         """
-        It defines the format type of text files.
+        The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         """
         return pulumi.get(self, "format_type")
 
@@ -170,9 +170,9 @@ class DatasetDatasetSourceDetailsArgs:
                  source_type: pulumi.Input[str],
                  prefix: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bucket: Bucket name
-        :param pulumi.Input[str] namespace: Bucket namespace name
-        :param pulumi.Input[str] source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        :param pulumi.Input[str] bucket: The object storage bucket that contains the dataset data source.
+        :param pulumi.Input[str] namespace: The namespace of the bucket that contains the dataset data source.
+        :param pulumi.Input[str] source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         :param pulumi.Input[str] prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -185,7 +185,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
         """
-        Bucket name
+        The object storage bucket that contains the dataset data source.
         """
         return pulumi.get(self, "bucket")
 
@@ -197,7 +197,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        Bucket namespace name
+        The namespace of the bucket that contains the dataset data source.
         """
         return pulumi.get(self, "namespace")
 
@@ -209,7 +209,7 @@ class DatasetDatasetSourceDetailsArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
         """
-        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         return pulumi.get(self, "source_type")
 
@@ -273,7 +273,7 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
                  name: pulumi.Input[str],
                  version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: An unique name for a label within its dataset.
+        :param pulumi.Input[str] name: Name of import format
         :param pulumi.Input[str] version: Version of import format
         """
         pulumi.set(__self__, "name", name)
@@ -284,7 +284,7 @@ class DatasetInitialImportDatasetConfigurationImportFormatArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        An unique name for a label within its dataset.
+        Name of import format
         """
         return pulumi.get(self, "name")
 

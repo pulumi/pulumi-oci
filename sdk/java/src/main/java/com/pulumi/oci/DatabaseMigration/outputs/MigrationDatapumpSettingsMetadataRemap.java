@@ -21,7 +21,7 @@ public final class MigrationDatapumpSettingsMetadataRemap {
      */
     private String oldValue;
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     private String type;
@@ -42,7 +42,7 @@ public final class MigrationDatapumpSettingsMetadataRemap {
         return this.oldValue;
     }
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     public String type() {

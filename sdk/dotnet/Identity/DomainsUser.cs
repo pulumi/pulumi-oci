@@ -26,14 +26,15 @@ namespace Pulumi.Oci.Identity
     public partial class DomainsUser : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Status of the account
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) User status
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Active
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -129,12 +130,16 @@ namespace Pulumi.Oci.Identity
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// (Updatable) Display name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -192,14 +197,15 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsUserEntitlement>> Entitlements { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -340,18 +346,16 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsUserMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the account assigned to the User.
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) A complex attribute that contains attributes representing the name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        /// * idcsPii: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
-        /// * type: string
+        /// * type: complex
         /// * uniqueness: none
         /// </summary>
         [Output("name")]
@@ -377,19 +381,17 @@ namespace Pulumi.Oci.Identity
         public Output<string> NickName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the user's support account.
-        /// 
-        /// **Added In:** 2103141444
+        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -815,14 +817,15 @@ namespace Pulumi.Oci.Identity
     public sealed class DomainsUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Status of the account
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) User status
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Active
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -898,12 +901,16 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// (Updatable) Display name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -957,14 +964,15 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -1020,18 +1028,16 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Locale { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the account assigned to the User.
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) A complex attribute that contains attributes representing the name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        /// * idcsPii: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
-        /// * type: string
+        /// * type: complex
         /// * uniqueness: none
         /// </summary>
         [Input("name")]
@@ -1057,19 +1063,17 @@ namespace Pulumi.Oci.Identity
         public Input<string>? NickName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the user's support account.
-        /// 
-        /// **Added In:** 2103141444
+        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -1465,14 +1469,15 @@ namespace Pulumi.Oci.Identity
     public sealed class DomainsUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Status of the account
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) User status
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Active
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -1580,12 +1585,16 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        /// (Updatable) Display name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Display Name
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -1655,14 +1664,15 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        /// * idcsPii: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -1839,18 +1849,16 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) Name of the account assigned to the User.
-        /// 
-        /// **Added In:** 17.4.6
+        /// (Updatable) A complex attribute that contains attributes representing the name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        /// * idcsPii: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
-        /// * type: string
+        /// * type: complex
         /// * uniqueness: none
         /// </summary>
         [Input("name")]
@@ -1876,19 +1884,17 @@ namespace Pulumi.Oci.Identity
         public Input<string>? NickName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the user's support account.
-        /// 
-        /// **Added In:** 2103141444
+        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }

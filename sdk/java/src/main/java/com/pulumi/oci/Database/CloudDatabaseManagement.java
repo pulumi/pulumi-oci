@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var test = new CloudDatabaseManagement("test", CloudDatabaseManagementArgs.builder()        
+ *         var test = new CloudDatabaseManagement("test", CloudDatabaseManagementArgs.builder()
  *             .databaseId(testDatabase.id())
  *             .managementType(databaseCloudDatabaseManagementDetailsManagementType)
  *             .privateEndPointId(databaseCloudDatabaseManagementDetailsPrivateEndPointId)
@@ -123,6 +123,8 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Specifies database management type
      * enum:
+     * - `BASIC`
+     * - `ADVANCED`
      * 
      */
     @Export(name="managementType", refs={String.class}, tree="[0]")
@@ -131,6 +133,8 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
     /**
      * @return (Updatable) Specifies database management type
      * enum:
+     * - `BASIC`
+     * - `ADVANCED`
      * 
      */
     public Output<String> managementType() {

@@ -63,14 +63,14 @@ public final class ExadataInfrastructureContactArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Name of the month of the year.
+     * (Updatable) The name of the Exadata Infrastructure contact.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) The name of the Exadata Infrastructure contact.
      * 
      */
     public Output<String> name() {
@@ -184,7 +184,7 @@ public final class ExadataInfrastructureContactArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) The name of the Exadata Infrastructure contact.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ExadataInfrastructureContactArgs extends com.pulumi.resources
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) The name of the Exadata Infrastructure contact.
          * 
          * @return builder
          * 

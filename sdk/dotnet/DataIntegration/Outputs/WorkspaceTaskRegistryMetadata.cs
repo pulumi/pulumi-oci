@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) The identifying key for the object.
         /// </summary>
         public readonly string? Key;
         /// <summary>

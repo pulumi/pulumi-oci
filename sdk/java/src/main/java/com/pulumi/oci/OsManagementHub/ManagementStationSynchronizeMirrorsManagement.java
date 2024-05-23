@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementStationSynchronizeMirrorsManagement = new ManagementStationSynchronizeMirrorsManagement("testManagementStationSynchronizeMirrorsManagement", ManagementStationSynchronizeMirrorsManagementArgs.builder()        
+ *         var testManagementStationSynchronizeMirrorsManagement = new ManagementStationSynchronizeMirrorsManagement("testManagementStationSynchronizeMirrorsManagement", ManagementStationSynchronizeMirrorsManagementArgs.builder()
  *             .managementStationId(testManagementStation.id())
  *             .softwareSourceLists(managementStationSynchronizeMirrorsManagementSoftwareSourceList)
  *             .build());

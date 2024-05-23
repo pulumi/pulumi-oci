@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<Inputs.DeploymentSpecificationRouteBackendHeaderArgs>? _headers;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The headers of the stock response from the mock backend.
         /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteBackendHeaderArgs> Headers
         {
@@ -103,11 +103,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<int>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the API backend.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

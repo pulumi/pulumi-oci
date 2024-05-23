@@ -107,8 +107,11 @@ class AppFirewallPolicyAction(dict):
                  code: Optional[int] = None,
                  headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None):
         """
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
+        :param str name: (Updatable) Action name. Can be used to reference the action.
+        :param str type: (Updatable) 
+               * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+               * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+               * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
         :param 'AppFirewallPolicyActionBodyArgs' body: (Updatable) Type of returned HTTP response body.
         :param int code: (Updatable) Response code.
                
@@ -152,7 +155,7 @@ class AppFirewallPolicyAction(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Rule name. Must be unique within the module.
+        (Updatable) Action name. Can be used to reference the action.
         """
         return pulumi.get(self, "name")
 
@@ -160,7 +163,10 @@ class AppFirewallPolicyAction(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of WebAppFirewallPolicyRule.
+        (Updatable) 
+        * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+        * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+        * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
         """
         return pulumi.get(self, "type")
 
@@ -222,7 +228,7 @@ class AppFirewallPolicyActionBody(dict):
                  type: str):
         """
         :param str text: (Updatable) Static response body text.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
+        :param str type: (Updatable) Type of HttpResponseBody.
         """
         pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
@@ -239,7 +245,7 @@ class AppFirewallPolicyActionBody(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of WebAppFirewallPolicyRule.
+        (Updatable) Type of HttpResponseBody.
         """
         return pulumi.get(self, "type")
 
@@ -250,7 +256,7 @@ class AppFirewallPolicyActionHeader(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Rule name. Must be unique within the module.
+        :param str name: (Updatable) The name of the header field.
         :param str value: (Updatable) The value of the header field.
         """
         if name is not None:
@@ -262,7 +268,7 @@ class AppFirewallPolicyActionHeader(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Rule name. Must be unique within the module.
+        (Updatable) The name of the header field.
         """
         return pulumi.get(self, "name")
 
@@ -301,7 +307,7 @@ class AppFirewallPolicyRequestAccessControl(dict):
         :param str default_action_name: (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
                * **ALLOW** continues execution of other modules and their rules.
                * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        :param Sequence['AppFirewallPolicyRequestAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        :param Sequence['AppFirewallPolicyRequestAccessControlRuleArgs'] rules: (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         pulumi.set(__self__, "default_action_name", default_action_name)
         if rules is not None:
@@ -321,7 +327,7 @@ class AppFirewallPolicyRequestAccessControl(dict):
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestAccessControlRule']]:
         """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
@@ -354,7 +360,7 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
         """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        :param str action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
         :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
@@ -373,7 +379,7 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
         """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         """
         return pulumi.get(self, "action_name")
 
@@ -448,7 +454,7 @@ class AppFirewallPolicyRequestProtection(dict):
                Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
                
                For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-        :param Sequence['AppFirewallPolicyRequestProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        :param Sequence['AppFirewallPolicyRequestProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
         """
         if body_inspection_size_limit_exceeded_action_name is not None:
             pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
@@ -486,7 +492,7 @@ class AppFirewallPolicyRequestProtection(dict):
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRule']]:
         """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
         """
         return pulumi.get(self, "rules")
 
@@ -528,7 +534,7 @@ class AppFirewallPolicyRequestProtectionRule(dict):
                  is_body_inspection_enabled: Optional[bool] = None,
                  protection_capability_settings: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings'] = None):
         """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        :param str action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param Sequence['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs'] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
@@ -555,7 +561,7 @@ class AppFirewallPolicyRequestProtectionRule(dict):
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
         """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         """
         return pulumi.get(self, "action_name")
 
@@ -721,7 +727,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
                  key: str,
                  weight: int):
         """
-        :param str key: (Updatable) Unique key of referenced protection capability.
+        :param str key: (Updatable) Unique key of collaborative capability for which weight will be overridden.
         :param int weight: (Updatable) The value of weight to set.
         """
         pulumi.set(__self__, "key", key)
@@ -731,7 +737,7 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
     @pulumi.getter
     def key(self) -> str:
         """
-        (Updatable) Unique key of referenced protection capability.
+        (Updatable) Unique key of collaborative capability for which weight will be overridden.
         """
         return pulumi.get(self, "key")
 
@@ -903,7 +909,7 @@ class AppFirewallPolicyRequestRateLimiting(dict):
     def __init__(__self__, *,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']] = None):
         """
-        :param Sequence['AppFirewallPolicyRequestRateLimitingRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        :param Sequence['AppFirewallPolicyRequestRateLimitingRuleArgs'] rules: (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
@@ -912,7 +918,7 @@ class AppFirewallPolicyRequestRateLimiting(dict):
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']]:
         """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
@@ -946,7 +952,7 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
         """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        :param str action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param Sequence['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs'] configurations: (Updatable) Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
@@ -967,7 +973,7 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
         """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         """
         return pulumi.get(self, "action_name")
 
@@ -1080,7 +1086,7 @@ class AppFirewallPolicyResponseAccessControl(dict):
     def __init__(__self__, *,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']] = None):
         """
-        :param Sequence['AppFirewallPolicyResponseAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        :param Sequence['AppFirewallPolicyResponseAccessControlRuleArgs'] rules: (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
@@ -1089,7 +1095,7 @@ class AppFirewallPolicyResponseAccessControl(dict):
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']]:
         """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         """
         return pulumi.get(self, "rules")
 
@@ -1122,7 +1128,7 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
         """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        :param str action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
         :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
@@ -1141,7 +1147,7 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
         """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         """
         return pulumi.get(self, "action_name")
 
@@ -1235,7 +1241,7 @@ class AppFirewallPolicyResponseProtectionRule(dict):
                  is_body_inspection_enabled: Optional[bool] = None,
                  protection_capability_settings: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings'] = None):
         """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        :param str action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param Sequence['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs'] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
@@ -1262,7 +1268,7 @@ class AppFirewallPolicyResponseProtectionRule(dict):
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
         """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         """
         return pulumi.get(self, "action_name")
 
@@ -1428,7 +1434,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
                  key: str,
                  weight: int):
         """
-        :param str key: (Updatable) Unique key of referenced protection capability.
+        :param str key: (Updatable) Unique key of collaborative capability for which weight will be overridden.
         :param int weight: (Updatable) The value of weight to set.
         """
         pulumi.set(__self__, "key", key)
@@ -1438,7 +1444,7 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
     @pulumi.getter
     def key(self) -> str:
         """
-        (Updatable) Unique key of referenced protection capability.
+        (Updatable) Unique key of collaborative capability for which weight will be overridden.
         """
         return pulumi.get(self, "key")
 

@@ -84,14 +84,14 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable)
+     * (Updatable) The headers of the stock response from the mock backend.
      * 
      */
     @Import(name="headers")
     private @Nullable Output<List<DeploymentSpecificationRouteBackendHeaderArgs>> headers;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The headers of the stock response from the mock backend.
      * 
      */
     public Optional<Output<List<DeploymentSpecificationRouteBackendHeaderArgs>>> headers() {
@@ -204,20 +204,14 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the API backend.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the API backend.
      * 
      */
     public Output<String> type() {
@@ -371,7 +365,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The headers of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -382,7 +376,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The headers of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -392,7 +386,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The headers of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -559,10 +553,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the API backend.
          * 
          * @return builder
          * 
@@ -573,10 +564,7 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the API backend.
          * 
          * @return builder
          * 

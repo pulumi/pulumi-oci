@@ -77,7 +77,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFileSystem = new FileSystem("testFileSystem", FileSystemArgs.builder()        
+ *         var testFileSystem = new FileSystem("testFileSystem", FileSystemArgs.builder()
  *             .availabilityDomain(fileSystemAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

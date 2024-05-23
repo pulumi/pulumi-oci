@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCluster = new ComputeCluster("testComputeCluster", ComputeClusterArgs.builder()        
+ *         var testComputeCluster = new ComputeCluster("testComputeCluster", ComputeClusterArgs.builder()
  *             .availabilityDomain(computeClusterAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -2023,7 +2023,7 @@ class MaskingPoliciesMaskingColumnMaskingFormat(dict):
         """
         :param Sequence['MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs'] format_entries: (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         :param str condition: (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
-        :param str description: (Updatable) The description of the format entry.
+        :param str description: (Updatable) The description of the masking format.
         """
         pulumi.set(__self__, "format_entries", format_entries)
         if condition is not None:
@@ -2051,7 +2051,7 @@ class MaskingPoliciesMaskingColumnMaskingFormat(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) The description of the format entry.
+        (Updatable) The description of the masking format.
         """
         return pulumi.get(self, "description")
 
@@ -2159,7 +2159,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
                
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
-        :param str schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+        :param str schema_name: (Updatable) The name of the schema that contains the substitution column.
         :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
@@ -2352,7 +2352,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> Optional[str]:
         """
-        The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+        (Updatable) The name of the schema that contains the substitution column.
         """
         return pulumi.get(self, "schema_name")
 
@@ -2507,9 +2507,9 @@ class ReportDefinitionColumnFilter(dict):
                  operator: str):
         """
         :param Sequence[str] expressions: (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
-        :param str field_name: (Updatable) Name of the column that must be sorted.
+        :param str field_name: (Updatable) Name of the column on which the filter must be applied.
         :param bool is_enabled: (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
-        :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        :param bool is_hidden: (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
         :param str operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
         """
         pulumi.set(__self__, "expressions", expressions)
@@ -2530,7 +2530,7 @@ class ReportDefinitionColumnFilter(dict):
     @pulumi.getter(name="fieldName")
     def field_name(self) -> str:
         """
-        (Updatable) Name of the column that must be sorted.
+        (Updatable) Name of the column on which the filter must be applied.
         """
         return pulumi.get(self, "field_name")
 
@@ -2546,7 +2546,7 @@ class ReportDefinitionColumnFilter(dict):
     @pulumi.getter(name="isHidden")
     def is_hidden(self) -> bool:
         """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_hidden")
 
@@ -2593,10 +2593,10 @@ class ReportDefinitionColumnInfo(dict):
                  is_hidden: bool,
                  data_type: Optional[str] = None):
         """
-        :param str display_name: (Updatable) Specifies the name of the report definition.
-        :param int display_order: (Updatable) Specifies the order in which the summary must be displayed.
-        :param str field_name: (Updatable) Name of the column that must be sorted.
-        :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        :param str display_name: (Updatable) Name of the column displayed on UI.
+        :param int display_order: (Updatable) Specifies the display order of the column.
+        :param str field_name: (Updatable) Specifies the corresponding field name in the data source.
+        :param bool is_hidden: (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
         :param str data_type: (Updatable) Specifies the data type of the column.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -2610,7 +2610,7 @@ class ReportDefinitionColumnInfo(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        (Updatable) Specifies the name of the report definition.
+        (Updatable) Name of the column displayed on UI.
         """
         return pulumi.get(self, "display_name")
 
@@ -2618,7 +2618,7 @@ class ReportDefinitionColumnInfo(dict):
     @pulumi.getter(name="displayOrder")
     def display_order(self) -> int:
         """
-        (Updatable) Specifies the order in which the summary must be displayed.
+        (Updatable) Specifies the display order of the column.
         """
         return pulumi.get(self, "display_order")
 
@@ -2626,7 +2626,7 @@ class ReportDefinitionColumnInfo(dict):
     @pulumi.getter(name="fieldName")
     def field_name(self) -> str:
         """
-        (Updatable) Name of the column that must be sorted.
+        (Updatable) Specifies the corresponding field name in the data source.
         """
         return pulumi.get(self, "field_name")
 
@@ -2634,7 +2634,7 @@ class ReportDefinitionColumnInfo(dict):
     @pulumi.getter(name="isHidden")
     def is_hidden(self) -> bool:
         """
-        (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
         """
         return pulumi.get(self, "is_hidden")
 
@@ -4041,15 +4041,15 @@ class TargetDatabaseDatabaseDetails(dict):
                  service_name: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None):
         """
-        :param str database_type: The database type.
-        :param str infrastructure_type: The infrastructure type the database is running on.
-        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
-        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
-        :param str instance_id: The OCID of the compute instance on which the database is running.
-        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        :param int listener_port: The port number of the database listener.
-        :param str service_name: The service name of the database registered as target database.
-        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        :param str database_type: (Updatable) The database type.
+        :param str infrastructure_type: (Updatable) The infrastructure type the database is running on.
+        :param str autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str db_system_id: (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+        :param str instance_id: (Updatable) The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: (Updatable) The port number of the database listener.
+        :param str service_name: (Updatable) The service name of the database registered as target database.
+        :param str vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
         pulumi.set(__self__, "database_type", database_type)
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
@@ -4072,7 +4072,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="databaseType")
     def database_type(self) -> str:
         """
-        The database type.
+        (Updatable) The database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -4080,7 +4080,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> str:
         """
-        The infrastructure type the database is running on.
+        (Updatable) The infrastructure type the database is running on.
         """
         return pulumi.get(self, "infrastructure_type")
 
@@ -4088,7 +4088,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[str]:
         """
-        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -4096,7 +4096,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
         """
-        The OCID of the cloud database registered as a target database in Data Safe.
+        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -4104,7 +4104,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
         """
-        The OCID of the compute instance on which the database is running.
+        (Updatable) The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
@@ -4112,7 +4112,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="ipAddresses")
     def ip_addresses(self) -> Optional[Sequence[str]]:
         """
-        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
@@ -4120,7 +4120,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[int]:
         """
-        The port number of the database listener.
+        (Updatable) The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
@@ -4128,7 +4128,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
         """
-        The service name of the database registered as target database.
+        (Updatable) The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
@@ -4136,7 +4136,7 @@ class TargetDatabaseDatabaseDetails(dict):
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[str]:
         """
-        The OCID of the VM cluster in which the database is running.
+        (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -4185,11 +4185,11 @@ class TargetDatabasePeerTargetDatabase(dict):
                  time_created: Optional[str] = None,
                  tls_configs: Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseTlsConfig']] = None):
         """
-        :param Sequence['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs'] database_details: Details of the database for the registration in Data Safe.
+        :param Sequence['TargetDatabasePeerTargetDatabaseDatabaseDetailArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param str database_unique_name: Unique name of the database associated to the peer target database.
-        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
-        :param str description: The description of the peer target database in Data Safe.
-        :param str display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+        :param str description: (Updatable) The description of the target database in Data Safe.
+        :param str display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         :param int key: The secondary key assigned for the peer target database in Data Safe.
         :param str lifecycle_details: Details about the current state of the peer target database in Data Safe.
         :param str role: Role of the database associated to the peer target database.
@@ -4224,7 +4224,7 @@ class TargetDatabasePeerTargetDatabase(dict):
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> Optional[Sequence['outputs.TargetDatabasePeerTargetDatabaseDatabaseDetail']]:
         """
-        Details of the database for the registration in Data Safe.
+        (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
@@ -4240,7 +4240,7 @@ class TargetDatabasePeerTargetDatabase(dict):
     @pulumi.getter(name="dataguardAssociationId")
     def dataguard_association_id(self) -> Optional[str]:
         """
-        The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
         """
         return pulumi.get(self, "dataguard_association_id")
 
@@ -4248,7 +4248,7 @@ class TargetDatabasePeerTargetDatabase(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        The description of the peer target database in Data Safe.
+        (Updatable) The description of the target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
@@ -4256,7 +4256,7 @@ class TargetDatabasePeerTargetDatabase(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -4355,15 +4355,15 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
                  service_name: Optional[str] = None,
                  vm_cluster_id: Optional[str] = None):
         """
-        :param str autonomous_database_id: The OCID of the Autonomous Database registered as a target database in Data Safe.
-        :param str database_type: The database type.
-        :param str db_system_id: The OCID of the cloud database registered as a target database in Data Safe.
-        :param str infrastructure_type: The infrastructure type the database is running on.
-        :param str instance_id: The OCID of the compute instance on which the database is running.
-        :param Sequence[str] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
-        :param int listener_port: The port number of the database listener.
-        :param str service_name: The service name of the database registered as target database.
-        :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
+        :param str autonomous_database_id: (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
+        :param str database_type: (Updatable) The database type.
+        :param str db_system_id: (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
+        :param str infrastructure_type: (Updatable) The infrastructure type the database is running on.
+        :param str instance_id: (Updatable) The OCID of the compute instance on which the database is running.
+        :param Sequence[str] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        :param int listener_port: (Updatable) The port number of the database listener.
+        :param str service_name: (Updatable) The service name of the database registered as target database.
+        :param str vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -4388,7 +4388,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[str]:
         """
-        The OCID of the Autonomous Database registered as a target database in Data Safe.
+        (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "autonomous_database_id")
 
@@ -4396,7 +4396,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[str]:
         """
-        The database type.
+        (Updatable) The database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -4404,7 +4404,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
         """
-        The OCID of the cloud database registered as a target database in Data Safe.
+        (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         """
         return pulumi.get(self, "db_system_id")
 
@@ -4412,7 +4412,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> Optional[str]:
         """
-        The infrastructure type the database is running on.
+        (Updatable) The infrastructure type the database is running on.
         """
         return pulumi.get(self, "infrastructure_type")
 
@@ -4420,7 +4420,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
         """
-        The OCID of the compute instance on which the database is running.
+        (Updatable) The OCID of the compute instance on which the database is running.
         """
         return pulumi.get(self, "instance_id")
 
@@ -4428,7 +4428,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="ipAddresses")
     def ip_addresses(self) -> Optional[Sequence[str]]:
         """
-        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         """
         return pulumi.get(self, "ip_addresses")
 
@@ -4436,7 +4436,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[int]:
         """
-        The port number of the database listener.
+        (Updatable) The port number of the database listener.
         """
         return pulumi.get(self, "listener_port")
 
@@ -4444,7 +4444,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
         """
-        The service name of the database registered as target database.
+        (Updatable) The service name of the database registered as target database.
         """
         return pulumi.get(self, "service_name")
 
@@ -4452,7 +4452,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetail(dict):
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[str]:
         """
-        The OCID of the VM cluster in which the database is running.
+        (Updatable) The OCID of the VM cluster in which the database is running.
         """
         return pulumi.get(self, "vm_cluster_id")
 
@@ -4639,7 +4639,7 @@ class TargetDatabasePeerTargetDatabaseDetail(dict):
         :param str dataguard_association_id: The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
         :param str description: The description of the peer target database in Data Safe.
         :param str display_name: The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param 'TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs' tls_config: (Updatable) The details required to establish a TLS enabled connection.
+        :param 'TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs' tls_config: The details required to establish a TLS enabled connection.
         """
         pulumi.set(__self__, "database_details", database_details)
         if dataguard_association_id is not None:
@@ -4687,7 +4687,7 @@ class TargetDatabasePeerTargetDatabaseDetail(dict):
     @pulumi.getter(name="tlsConfig")
     def tls_config(self) -> Optional['outputs.TargetDatabasePeerTargetDatabaseDetailTlsConfig']:
         """
-        (Updatable) The details required to establish a TLS enabled connection.
+        The details required to establish a TLS enabled connection.
         """
         return pulumi.get(self, "tls_config")
 
@@ -4870,15 +4870,11 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
                  store_password: Optional[str] = None,
                  trust_store_content: Optional[str] = None):
         """
-        :param str status: (Updatable) Status to represent whether the database connection is TLS enabled or not.
-        :param str certificate_store_type: (Updatable) The format of the certificate store.
-        :param str key_store_content: (Updatable) Base64 encoded string of key store file content.
-        :param str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
-        :param str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str status: Status to represent whether the database connection is TLS enabled or not.
+        :param str certificate_store_type: The format of the certificate store.
+        :param str key_store_content: Base64 encoded string of key store file content.
+        :param str store_password: The password to read the trust store and key store files, if they are password protected.
+        :param str trust_store_content: Base64 encoded string of trust store file content.
         """
         pulumi.set(__self__, "status", status)
         if certificate_store_type is not None:
@@ -4894,7 +4890,7 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
     @pulumi.getter
     def status(self) -> str:
         """
-        (Updatable) Status to represent whether the database connection is TLS enabled or not.
+        Status to represent whether the database connection is TLS enabled or not.
         """
         return pulumi.get(self, "status")
 
@@ -4902,7 +4898,7 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
     @pulumi.getter(name="certificateStoreType")
     def certificate_store_type(self) -> Optional[str]:
         """
-        (Updatable) The format of the certificate store.
+        The format of the certificate store.
         """
         return pulumi.get(self, "certificate_store_type")
 
@@ -4910,7 +4906,7 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
     @pulumi.getter(name="keyStoreContent")
     def key_store_content(self) -> Optional[str]:
         """
-        (Updatable) Base64 encoded string of key store file content.
+        Base64 encoded string of key store file content.
         """
         return pulumi.get(self, "key_store_content")
 
@@ -4918,7 +4914,7 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
     @pulumi.getter(name="storePassword")
     def store_password(self) -> Optional[str]:
         """
-        (Updatable) The password to read the trust store and key store files, if they are password protected.
+        The password to read the trust store and key store files, if they are password protected.
         """
         return pulumi.get(self, "store_password")
 
@@ -4926,11 +4922,7 @@ class TargetDatabasePeerTargetDatabaseDetailTlsConfig(dict):
     @pulumi.getter(name="trustStoreContent")
     def trust_store_content(self) -> Optional[str]:
         """
-        (Updatable) Base64 encoded string of trust store file content.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Base64 encoded string of trust store file content.
         """
         return pulumi.get(self, "trust_store_content")
 

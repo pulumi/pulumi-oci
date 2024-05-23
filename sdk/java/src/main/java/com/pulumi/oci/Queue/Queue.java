@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testQueue = new Queue("testQueue", QueueArgs.builder()        
+ *         var testQueue = new Queue("testQueue", QueueArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(queueDisplayName)
  *             .channelConsumptionLimit(queueChannelConsumptionLimit)

@@ -35,14 +35,14 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
     }
 
     /**
-     * (Updatable) Possible type of entity
+     * Possible type of entity
      * 
      */
     @Import(name="entityType")
     private @Nullable Output<String> entityType;
 
     /**
-     * @return (Updatable) Possible type of entity
+     * @return Possible type of entity
      * 
      */
     public Optional<Output<String>> entityType() {
@@ -50,14 +50,14 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
     }
 
     /**
-     * (Updatable) The entity value mapped to a data source query
+     * The entity value mapped to a data source query
      * 
      */
     @Import(name="queryField")
     private @Nullable Output<String> queryField;
 
     /**
-     * @return (Updatable) The entity value mapped to a data source query
+     * @return The entity value mapped to a data source query
      * 
      */
     public Optional<Output<String>> queryField() {
@@ -116,7 +116,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
         }
 
         /**
-         * @param entityType (Updatable) Possible type of entity
+         * @param entityType Possible type of entity
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
         }
 
         /**
-         * @param entityType (Updatable) Possible type of entity
+         * @param entityType Possible type of entity
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
         }
 
         /**
-         * @param queryField (Updatable) The entity value mapped to a data source query
+         * @param queryField The entity value mapped to a data source query
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs extend
         }
 
         /**
-         * @param queryField (Updatable) The entity value mapped to a data source query
+         * @param queryField The entity value mapped to a data source query
          * 
          * @return builder
          * 

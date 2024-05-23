@@ -43,7 +43,7 @@ class WorkspaceApplicationArgs:
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -169,7 +169,7 @@ class WorkspaceApplicationArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -288,7 +288,7 @@ class _WorkspaceApplicationState:
         :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the application.
@@ -461,7 +461,7 @@ class _WorkspaceApplicationState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -743,7 +743,7 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[str] model_type: (Updatable) The type of the application.
         :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -932,7 +932,7 @@ class WorkspaceApplication(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the application.
@@ -1053,7 +1053,7 @@ class WorkspaceApplication(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 

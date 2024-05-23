@@ -23,6 +23,8 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool? IsAssignIpv6ip;
         /// <summary>
         /// (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+        /// =======
+        /// Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         /// </summary>
         public readonly string SubnetId;
 

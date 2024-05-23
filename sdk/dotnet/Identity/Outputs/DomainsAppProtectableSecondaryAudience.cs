@@ -29,20 +29,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? ReadOnly;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) The value of an secondary audience--additional URI to be added automatically to any OAuth token that allows access to this App.
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

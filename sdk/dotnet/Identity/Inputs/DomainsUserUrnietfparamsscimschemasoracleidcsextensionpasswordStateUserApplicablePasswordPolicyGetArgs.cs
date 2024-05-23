@@ -13,12 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) Password Policy Display Name
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -45,9 +47,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the corresponding PasswordPolicy resource.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -62,20 +64,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The identifier of the password policy.
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

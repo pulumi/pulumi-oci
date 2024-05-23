@@ -19,14 +19,14 @@ public final class OpsiConfigurationConfigItemMetadataArgs extends com.pulumi.re
     public static final OpsiConfigurationConfigItemMetadataArgs Empty = new OpsiConfigurationConfigItemMetadataArgs();
 
     /**
-     * (Updatable) Type of configuration item.
+     * Type of configuration item.
      * 
      */
     @Import(name="configItemType")
     private @Nullable Output<String> configItemType;
 
     /**
-     * @return (Updatable) Type of configuration item.
+     * @return Type of configuration item.
      * 
      */
     public Optional<Output<String>> configItemType() {
@@ -138,7 +138,7 @@ public final class OpsiConfigurationConfigItemMetadataArgs extends com.pulumi.re
         }
 
         /**
-         * @param configItemType (Updatable) Type of configuration item.
+         * @param configItemType Type of configuration item.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class OpsiConfigurationConfigItemMetadataArgs extends com.pulumi.re
         }
 
         /**
-         * @param configItemType (Updatable) Type of configuration item.
+         * @param configItemType Type of configuration item.
          * 
          * @return builder
          * 

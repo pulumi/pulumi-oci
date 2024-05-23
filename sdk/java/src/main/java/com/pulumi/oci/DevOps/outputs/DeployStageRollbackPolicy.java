@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployStageRollbackPolicy {
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies type of the deployment stage rollback policy.
      * 
      */
     private @Nullable String policyType;
 
     private DeployStageRollbackPolicy() {}
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies type of the deployment stage rollback policy.
      * 
      */
     public Optional<String> policyType() {

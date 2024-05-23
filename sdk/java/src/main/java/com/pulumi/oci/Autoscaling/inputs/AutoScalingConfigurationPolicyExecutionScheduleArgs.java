@@ -61,14 +61,14 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
     }
 
     /**
-     * The type of action to take.
+     * The type of execution schedule.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to take.
+     * @return The type of execution schedule.
      * 
      */
     public Output<String> type() {
@@ -160,7 +160,7 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
         }
 
         /**
-         * @param type The type of action to take.
+         * @param type The type of execution schedule.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class AutoScalingConfigurationPolicyExecutionScheduleArgs extends c
         }
 
         /**
-         * @param type The type of action to take.
+         * @param type The type of execution schedule.
          * 
          * @return builder
          * 

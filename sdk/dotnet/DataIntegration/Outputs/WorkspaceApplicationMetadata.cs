@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceApplicationMetadata
     {
         /// <summary>
-        /// The owning object's key for this object.
+        /// The owning object key for this object.
         /// </summary>
         public readonly string? AggregatorKey;
         /// <summary>
@@ -46,11 +46,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
-        /// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// The registry version.
+        /// The registry version of the object.
         /// </summary>
         public readonly int? RegistryVersion;
         /// <summary>

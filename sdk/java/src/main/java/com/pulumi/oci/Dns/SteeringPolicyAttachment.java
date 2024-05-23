@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSteeringPolicyAttachment = new SteeringPolicyAttachment("testSteeringPolicyAttachment", SteeringPolicyAttachmentArgs.builder()        
+ *         var testSteeringPolicyAttachment = new SteeringPolicyAttachment("testSteeringPolicyAttachment", SteeringPolicyAttachmentArgs.builder()
  *             .domainName(steeringPolicyAttachmentDomainName)
  *             .steeringPolicyId(testSteeringPolicy.id())
  *             .zoneId(testZone.id())

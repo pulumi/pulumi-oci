@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
-        /// The amount of worker nodes should be created
+        /// Number of nodes that forming the cluster
         /// </summary>
         [Input("numberOfNodes", required: true)]
         public Input<int> NumberOfNodes { get; set; } = null!;
@@ -30,9 +30,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
-        /// <summary>
-        /// The shape configuration requested for the node.
-        /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.BdsInstanceWorkerNodeShapeConfigGetArgs>? ShapeConfig { get; set; }
 

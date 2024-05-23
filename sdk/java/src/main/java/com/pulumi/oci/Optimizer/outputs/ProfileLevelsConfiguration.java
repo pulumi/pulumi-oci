@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ProfileLevelsConfiguration {
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The array of configuration levels.
      * 
      */
     private @Nullable List<ProfileLevelsConfigurationItem> items;
 
     private ProfileLevelsConfiguration() {}
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The array of configuration levels.
      * 
      */
     public List<ProfileLevelsConfigurationItem> items() {

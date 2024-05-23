@@ -18,8 +18,7 @@ public final class AutoScalingConfigurationPolicyRuleAction {
      */
     private @Nullable String type;
     /**
-     * @return ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
      * 
      */
     private @Nullable Integer value;
@@ -33,8 +32,7 @@ public final class AutoScalingConfigurationPolicyRuleAction {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
      * 
      */
     public Optional<Integer> value() {

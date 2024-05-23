@@ -23,14 +23,14 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
     public static final WorkspaceApplicationMetadataArgs Empty = new WorkspaceApplicationMetadataArgs();
 
     /**
-     * The owning object&#39;s key for this object.
+     * The owning object key for this object.
      * 
      */
     @Import(name="aggregatorKey")
     private @Nullable Output<String> aggregatorKey;
 
     /**
-     * @return The owning object&#39;s key for this object.
+     * @return The owning object key for this object.
      * 
      */
     public Optional<Output<String>> aggregatorKey() {
@@ -143,14 +143,14 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -158,14 +158,14 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
     }
 
     /**
-     * The registry version.
+     * The registry version of the object.
      * 
      */
     @Import(name="registryVersion")
     private @Nullable Output<Integer> registryVersion;
 
     /**
-     * @return The registry version.
+     * @return The registry version of the object.
      * 
      */
     public Optional<Output<Integer>> registryVersion() {
@@ -270,7 +270,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param aggregatorKey The owning object&#39;s key for this object.
+         * @param aggregatorKey The owning object key for this object.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param aggregatorKey The owning object&#39;s key for this object.
+         * @param aggregatorKey The owning object key for this object.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param labels Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param labels Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param labels Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param registryVersion The registry version.
+         * @param registryVersion The registry version of the object.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class WorkspaceApplicationMetadataArgs extends com.pulumi.resources
         }
 
         /**
-         * @param registryVersion The registry version.
+         * @param registryVersion The registry version of the object.
          * 
          * @return builder
          * 

@@ -13,34 +13,36 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsSettingIdcsCreatedBy {
     /**
-     * @return (Updatable) A human-readable name, primarily used for display purposes
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -55,25 +57,28 @@ public final class DomainsSettingIdcsCreatedBy {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Indicates the image type
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -84,38 +89,40 @@ public final class DomainsSettingIdcsCreatedBy {
 
     private DomainsSettingIdcsCreatedBy() {}
     /**
-     * @return (Updatable) A human-readable name, primarily used for display purposes
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> display() {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -132,27 +139,30 @@ public final class DomainsSettingIdcsCreatedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Indicates the image type
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string

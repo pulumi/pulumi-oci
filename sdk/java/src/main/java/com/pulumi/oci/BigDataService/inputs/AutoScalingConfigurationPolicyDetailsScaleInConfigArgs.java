@@ -47,14 +47,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs extend
     }
 
     /**
-     * (Updatable) This value is the number of nodes to add during a scale-out event.
+     * (Updatable) This value is the number of nodes to remove during a scale-in event.
      * 
      */
     @Import(name="stepSize")
     private @Nullable Output<Integer> stepSize;
 
     /**
-     * @return (Updatable) This value is the number of nodes to add during a scale-out event.
+     * @return (Updatable) This value is the number of nodes to remove during a scale-in event.
      * 
      */
     public Optional<Output<Integer>> stepSize() {
@@ -130,7 +130,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs extend
         }
 
         /**
-         * @param stepSize (Updatable) This value is the number of nodes to add during a scale-out event.
+         * @param stepSize (Updatable) This value is the number of nodes to remove during a scale-in event.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs extend
         }
 
         /**
-         * @param stepSize (Updatable) This value is the number of nodes to add during a scale-out event.
+         * @param stepSize (Updatable) This value is the number of nodes to remove during a scale-in event.
          * 
          * @return builder
          * 

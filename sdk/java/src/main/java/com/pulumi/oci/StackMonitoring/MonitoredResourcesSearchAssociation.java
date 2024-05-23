@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourcesSearchAssociation = new MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", MonitoredResourcesSearchAssociationArgs.builder()        
+ *         var testMonitoredResourcesSearchAssociation = new MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", MonitoredResourcesSearchAssociationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .associationType(monitoredResourcesSearchAssociationAssociationType)
  *             .destinationResourceId(testDestinationResource.id())

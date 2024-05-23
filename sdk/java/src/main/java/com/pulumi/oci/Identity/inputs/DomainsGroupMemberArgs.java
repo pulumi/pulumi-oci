@@ -52,12 +52,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The member&#39;s display name.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -70,12 +69,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The member&#39;s display name.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -128,12 +126,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) PasswordPolicy Name
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The member&#39;s name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -146,12 +143,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) PasswordPolicy Name
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The member&#39;s name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -165,34 +161,38 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the member of this group.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the member of this group.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -200,11 +200,10 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI that corresponds to the member Resource of this group.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -218,11 +217,10 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI that corresponds to the member Resource of this group.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -237,15 +235,14 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Indicates the type of resource, for example, User or Group.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: User
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -256,15 +253,14 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Indicates the type of resource, for example, User or Group.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: User
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -276,17 +272,15 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The ID of the member of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -295,17 +289,15 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the member of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -387,12 +379,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) The member&#39;s display name.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -409,12 +400,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) The member&#39;s display name.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -475,12 +465,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name (Updatable) PasswordPolicy Name
-         * 
-         * **Added In:** 20.1.3
+         * @param name (Updatable) The member&#39;s name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -497,12 +486,11 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name (Updatable) PasswordPolicy Name
-         * 
-         * **Added In:** 20.1.3
+         * @param name (Updatable) The member&#39;s name.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -518,17 +506,19 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the member of this group.
+         * 
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -539,17 +529,19 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the member of this group.
+         * 
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -559,11 +551,10 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI that corresponds to the member Resource of this group.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -581,11 +572,10 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI that corresponds to the member Resource of this group.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -602,15 +592,14 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) Indicates the type of resource, for example, User or Group.
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * idcsDefaultValue: User
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
@@ -625,15 +614,14 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) Indicates the type of resource, for example, User or Group.
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * idcsDefaultValue: User
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
@@ -647,17 +635,15 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) The ID of the member of this Group
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -670,17 +656,15 @@ public final class DomainsGroupMemberArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) The ID of the member of this Group
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

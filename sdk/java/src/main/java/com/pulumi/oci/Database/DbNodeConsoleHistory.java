@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbNodeConsoleHistory = new DbNodeConsoleHistory("testDbNodeConsoleHistory", DbNodeConsoleHistoryArgs.builder()        
+ *         var testDbNodeConsoleHistory = new DbNodeConsoleHistory("testDbNodeConsoleHistory", DbNodeConsoleHistoryArgs.builder()
  *             .dbNodeId(testDbNode.id())
  *             .displayName(dbNodeConsoleHistoryDisplayName)
  *             .definedTags(dbNodeConsoleHistoryDefinedTags)

@@ -16,14 +16,14 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
     public static final MonitoredResourceCredentialsPropertyArgs Empty = new MonitoredResourceCredentialsPropertyArgs();
 
     /**
-     * (Updatable) Property Name.
+     * (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Property Value.
+     * (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) Property Value.
+     * @return (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value (Updatable) Property Value.
+         * @param value (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class MonitoredResourceCredentialsPropertyArgs extends com.pulumi.r
         }
 
         /**
-         * @param value (Updatable) Property Value.
+         * @param value (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
          * 
          * @return builder
          * 

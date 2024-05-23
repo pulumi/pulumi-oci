@@ -102,14 +102,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return Unique name that can be edited. The name should not contain any confidential information.
+     * @return (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -481,7 +481,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 

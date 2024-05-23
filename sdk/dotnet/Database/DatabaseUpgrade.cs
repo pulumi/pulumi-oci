@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database
         public Output<string> DatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+        /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Output("databaseSoftwareImageId")]
         public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? DatabaseId { get; set; }
 
         /// <summary>
-        /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+        /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Input("databaseSoftwareImageId")]
         public Input<string>? DatabaseSoftwareImageId { get; set; }

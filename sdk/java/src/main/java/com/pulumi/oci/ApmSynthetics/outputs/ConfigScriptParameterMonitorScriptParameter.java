@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigScriptParameterMonitorScriptParameter {
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     private @Nullable String paramName;
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return Value of the parameter.
      * 
      */
     private @Nullable String paramValue;
 
     private ConfigScriptParameterMonitorScriptParameter() {}
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     public Optional<String> paramName() {
         return Optional.ofNullable(this.paramName);
     }
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return Value of the parameter.
      * 
      */
     public Optional<String> paramValue() {

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BuildRunBuildOutputArtifactOverrideParameter {
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     private @Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items;
 
     private BuildRunBuildOutputArtifactOverrideParameter() {}
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     public List<BuildRunBuildOutputArtifactOverrideParameterItem> items() {

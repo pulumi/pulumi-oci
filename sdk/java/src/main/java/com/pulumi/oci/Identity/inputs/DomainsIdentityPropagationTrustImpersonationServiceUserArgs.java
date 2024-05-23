@@ -17,34 +17,34 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
     public static final DomainsIdentityPropagationTrustImpersonationServiceUserArgs Empty = new DomainsIdentityPropagationTrustImpersonationServiceUserArgs();
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the Service User.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the Service User.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -92,10 +92,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The ID of the Service User.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -109,10 +109,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the Service User.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -154,17 +154,17 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the Service User.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -175,17 +175,17 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the Service User.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -243,10 +243,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the Service User.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
@@ -264,10 +264,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUserArgs e
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the Service User.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters
     {
         /// <summary>
-        /// (Updatable) The list of headers.
+        /// (Updatable) The list of query parameters.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem> Items;
 

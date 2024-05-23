@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectorTargetDimensionDimensionValue {
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type of dimension value: static or evaluated.
      * 
      */
     private String kind;
@@ -30,7 +30,7 @@ public final class ConnectorTargetDimensionDimensionValue {
 
     private ConnectorTargetDimensionDimensionValue() {}
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type of dimension value: static or evaluated.
      * 
      */
     public String kind() {

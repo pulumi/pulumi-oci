@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicySecurityRule = new NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule", NetworkFirewallPolicySecurityRuleArgs.builder()        
+ *         var testNetworkFirewallPolicySecurityRule = new NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule", NetworkFirewallPolicySecurityRuleArgs.builder()
  *             .action(networkFirewallPolicySecurityRuleAction)
  *             .name(networkFirewallPolicySecurityRuleName)
  *             .condition(NetworkFirewallPolicySecurityRuleConditionArgs.builder()

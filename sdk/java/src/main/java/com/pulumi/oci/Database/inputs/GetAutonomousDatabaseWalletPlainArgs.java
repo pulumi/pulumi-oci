@@ -50,6 +50,10 @@ public final class GetAutonomousDatabaseWalletPlainArgs extends com.pulumi.resou
      * The type of wallet to generate.
      * 
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * 
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      * 
      */
     @Import(name="generateType")
@@ -59,6 +63,10 @@ public final class GetAutonomousDatabaseWalletPlainArgs extends com.pulumi.resou
      * @return The type of wallet to generate.
      * 
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * 
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      * 
      */
     public Optional<String> generateType() {
@@ -131,6 +139,10 @@ public final class GetAutonomousDatabaseWalletPlainArgs extends com.pulumi.resou
          * @param generateType The type of wallet to generate.
          * 
          * **Serverless instance usage:**
+         * * `SINGLE` - used to generate a wallet for a single database
+         * * `ALL` - used to generate wallet for all databases in the region
+         * 
+         * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
          * 
          * @return builder
          * 

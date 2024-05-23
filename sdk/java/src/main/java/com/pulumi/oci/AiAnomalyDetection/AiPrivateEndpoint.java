@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAiPrivateEndpoint = new AiPrivateEndpoint("testAiPrivateEndpoint", AiPrivateEndpointArgs.builder()        
+ *         var testAiPrivateEndpoint = new AiPrivateEndpoint("testAiPrivateEndpoint", AiPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dnsZones(aiPrivateEndpointDnsZones)
  *             .subnetId(testSubnet.id())

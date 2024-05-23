@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSqlCollection = new SqlCollection("testSqlCollection", SqlCollectionArgs.builder()        
+ *         var testSqlCollection = new SqlCollection("testSqlCollection", SqlCollectionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbUserName(testUser.name())
  *             .targetId(testTarget.id())

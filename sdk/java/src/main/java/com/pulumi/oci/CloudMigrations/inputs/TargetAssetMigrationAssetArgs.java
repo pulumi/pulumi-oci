@@ -19,14 +19,14 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
     public static final TargetAssetMigrationAssetArgs Empty = new TargetAssetMigrationAssetArgs();
 
     /**
-     * (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -34,14 +34,14 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -79,14 +79,14 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -319,14 +319,14 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Optional<Output<String>> type() {
@@ -378,7 +378,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -828,7 +828,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 
@@ -839,7 +839,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 

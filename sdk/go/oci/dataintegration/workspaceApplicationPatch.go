@@ -80,7 +80,7 @@ type WorkspaceApplicationPatch struct {
 	ErrorMessages pulumi.MapOutput `pulumi:"errorMessages"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
@@ -168,7 +168,7 @@ type workspaceApplicationPatchState struct {
 	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
@@ -218,7 +218,7 @@ type WorkspaceApplicationPatchState struct {
 	ErrorMessages pulumi.MapInput
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput
@@ -266,7 +266,7 @@ type workspaceApplicationPatchArgs struct {
 	Description *string `pulumi:"description"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key *string `pulumi:"key"`
 	// The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -295,7 +295,7 @@ type WorkspaceApplicationPatchArgs struct {
 	Description pulumi.StringPtrInput
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringPtrInput
 	// The object's model version.
 	ModelVersion pulumi.StringPtrInput
@@ -435,7 +435,7 @@ func (o WorkspaceApplicationPatchOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The identifying key for the object.
+// The object's key.
 func (o WorkspaceApplicationPatchOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }

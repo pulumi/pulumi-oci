@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class BucketRetentionRuleDuration {
     /**
-     * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+     * @return (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
     private String timeAmount;
     /**
-     * @return The unit that should be used to interpret timeAmount.
+     * @return (Updatable) The unit that should be used to interpret timeAmount.
      * 
      */
     private String timeUnit;
 
     private BucketRetentionRuleDuration() {}
     /**
-     * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+     * @return (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
     public String timeAmount() {
         return this.timeAmount;
     }
     /**
-     * @return The unit that should be used to interpret timeAmount.
+     * @return (Updatable) The unit that should be used to interpret timeAmount.
      * 
      */
     public String timeUnit() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsPolicyPolicyTypeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Rule URI
+        /// (Updatable) PolicyType URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,13 +28,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) PolicyType identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

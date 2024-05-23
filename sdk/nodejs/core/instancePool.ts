@@ -112,7 +112,7 @@ export class InstancePool extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -234,7 +234,7 @@ export interface InstancePoolState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -294,7 +294,7 @@ export interface InstancePoolArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**

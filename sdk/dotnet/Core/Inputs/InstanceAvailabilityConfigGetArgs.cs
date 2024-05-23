@@ -20,6 +20,8 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        /// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        /// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         /// </summary>
         [Input("recoveryAction")]
         public Input<string>? RecoveryAction { get; set; }

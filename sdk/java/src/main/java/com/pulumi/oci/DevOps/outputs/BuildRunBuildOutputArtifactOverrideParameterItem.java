@@ -17,7 +17,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItem {
      */
     private @Nullable String deployArtifactId;
     /**
-     * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+     * @return Name of the step.
      * 
      */
     private @Nullable String name;
@@ -36,7 +36,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItem {
         return Optional.ofNullable(this.deployArtifactId);
     }
     /**
-     * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+     * @return Name of the step.
      * 
      */
     public Optional<String> name() {

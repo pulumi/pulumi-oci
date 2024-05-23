@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIdentityProvider = new IdentityProvider("testIdentityProvider", IdentityProviderArgs.builder()        
+ *         var testIdentityProvider = new IdentityProvider("testIdentityProvider", IdentityProviderArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(identityProviderDescription)
  *             .metadata(identityProviderMetadata)

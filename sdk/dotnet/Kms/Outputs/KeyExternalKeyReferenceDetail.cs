@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Kms.Outputs
     public sealed class KeyExternalKeyReferenceDetail
     {
         /// <summary>
-        /// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        /// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         /// </summary>
         public readonly string? ExternalKeyId;
         /// <summary>

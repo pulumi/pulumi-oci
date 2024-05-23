@@ -14,12 +14,9 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskConfigProviderDelegateBindingParameterValues
     {
         /// <summary>
-        /// (Updatable) The root object value, used in custom parameters.
+        /// The root object value, used in custom parameters.
         /// </summary>
         public readonly Outputs.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue? RootObjectValue;
-        /// <summary>
-        /// A simple value for the parameter.
-        /// </summary>
         public readonly string? SimpleValue;
 
         [OutputConstructor]

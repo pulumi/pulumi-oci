@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        /// ID of the condition that is assigned after creation.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

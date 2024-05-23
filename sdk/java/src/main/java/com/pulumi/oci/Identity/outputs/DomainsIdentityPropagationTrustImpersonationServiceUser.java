@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentityPropagationTrustImpersonationServiceUser {
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the Service User.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
@@ -43,10 +43,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUser {
      */
     private String rule;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the Service User.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -60,17 +60,17 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUser {
 
     private DomainsIdentityPropagationTrustImpersonationServiceUser() {}
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the Service User.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -96,10 +96,10 @@ public final class DomainsIdentityPropagationTrustImpersonationServiceUser {
         return this.rule;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the Service User.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite

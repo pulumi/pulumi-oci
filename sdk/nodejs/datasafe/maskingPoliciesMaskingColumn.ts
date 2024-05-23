@@ -119,7 +119,7 @@ export class MaskingPoliciesMaskingColumn extends pulumi.CustomResource {
      */
     public /*out*/ readonly childColumns!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The name of the substitution column.
+     * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      */
     public readonly columnName!: pulumi.Output<string>;
     /**
@@ -257,7 +257,7 @@ export interface MaskingPoliciesMaskingColumnState {
      */
     childColumns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The name of the substitution column.
+     * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      */
     columnName?: pulumi.Input<string>;
     /**
@@ -327,7 +327,7 @@ export interface MaskingPoliciesMaskingColumnState {
  */
 export interface MaskingPoliciesMaskingColumnArgs {
     /**
-     * (Updatable) The name of the substitution column.
+     * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      */
     columnName: pulumi.Input<string>;
     /**

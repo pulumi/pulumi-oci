@@ -17,10 +17,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
     public static final DomainsCloudGateServerCloudGateArgs Empty = new DomainsCloudGateServerCloudGateArgs();
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the owning Cloud Gate for this server block.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -34,10 +34,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the owning Cloud Gate for this server block.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -52,10 +52,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The id of the owning Cloud Gate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -69,10 +69,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The id of the owning Cloud Gate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -112,10 +112,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the owning Cloud Gate for this server block.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -133,10 +133,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the owning Cloud Gate for this server block.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -153,10 +153,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The id of the owning Cloud Gate.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
@@ -174,10 +174,10 @@ public final class DomainsCloudGateServerCloudGateArgs extends com.pulumi.resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The id of the owning Cloud Gate.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite

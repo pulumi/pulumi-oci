@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class BuildRunBuildOutputArtifactOverrideParameter
     {
         /// <summary>
-        /// List of arguments provided at the time of running the build.
+        /// List of exported variables.
         /// </summary>
         public readonly ImmutableArray<Outputs.BuildRunBuildOutputArtifactOverrideParameterItem> Items;
 

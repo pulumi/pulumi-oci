@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOceInstance = new Instance("testOceInstance", InstanceArgs.builder()        
+ *         var testOceInstance = new Instance("testOceInstance", InstanceArgs.builder()
  *             .adminEmail(oceInstanceAdminEmail)
  *             .compartmentId(compartmentId)
  *             .idcsAccessToken(oceInstanceIdcsAccessToken)

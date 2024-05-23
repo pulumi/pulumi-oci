@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCapacityReport = new ComputeCapacityReport("testComputeCapacityReport", ComputeCapacityReportArgs.builder()        
+ *         var testComputeCapacityReport = new ComputeCapacityReport("testComputeCapacityReport", ComputeCapacityReportArgs.builder()
  *             .availabilityDomain(computeCapacityReportAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shapeAvailabilities(ComputeCapacityReportShapeAvailabilityArgs.builder()

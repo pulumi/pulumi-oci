@@ -17,14 +17,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
     public static final WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs Empty = new WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs();
 
     /**
-     * (Updatable) Configuration values can be string, objects, or parameters.
+     * Configuration values can be string, objects, or parameters.
      * 
      */
     @Import(name="configValues")
     private @Nullable Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs> configValues;
 
     /**
-     * @return (Updatable) Configuration values can be string, objects, or parameters.
+     * @return Configuration values can be string, objects, or parameters.
      * 
      */
     public Optional<Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs>> configValues() {
@@ -32,14 +32,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -47,14 +47,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -104,7 +104,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param configValues (Updatable) Configuration values can be string, objects, or parameters.
+         * @param configValues Configuration values can be string, objects, or parameters.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param configValues (Updatable) Configuration values can be string, objects, or parameters.
+         * @param configValues Configuration values can be string, objects, or parameters.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 

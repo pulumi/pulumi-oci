@@ -50,15 +50,15 @@ public final class DomainsMySmtpCredentialTagArgs extends com.pulumi.resources.R
     }
 
     /**
-     * User&#39;s id
+     * Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -67,15 +67,15 @@ public final class DomainsMySmtpCredentialTagArgs extends com.pulumi.resources.R
     private Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -151,15 +151,15 @@ public final class DomainsMySmtpCredentialTagArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -172,15 +172,15 @@ public final class DomainsMySmtpCredentialTagArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 

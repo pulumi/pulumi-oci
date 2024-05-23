@@ -12,25 +12,23 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsGrantGrantor {
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Grantor display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grantor URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -42,14 +40,15 @@ public final class DomainsGrantGrantor {
      */
     private @Nullable String ref;
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return (Updatable) Resource type of the grantor. Allowed values are User and App.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -57,14 +56,14 @@ public final class DomainsGrantGrantor {
      */
     private @Nullable String type;
     /**
-     * @return Value of the tag.
+     * @return (Updatable) Grantor user identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -74,15 +73,14 @@ public final class DomainsGrantGrantor {
 
     private DomainsGrantGrantor() {}
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Grantor display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -91,10 +89,9 @@ public final class DomainsGrantGrantor {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grantor URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -108,14 +105,15 @@ public final class DomainsGrantGrantor {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return (Updatable) Resource type of the grantor. Allowed values are User and App.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -125,14 +123,14 @@ public final class DomainsGrantGrantor {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return Value of the tag.
+     * @return (Updatable) Grantor user identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none

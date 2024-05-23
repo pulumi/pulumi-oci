@@ -65,14 +65,14 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Name of the day of the week.
+     * (Updatable) Name of database tool.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the day of the week.
+     * @return (Updatable) Name of database tool.
      * 
      */
     public Output<String> name() {
@@ -170,7 +170,7 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) Name of the day of the week.
+         * @param name (Updatable) Name of database tool.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) Name of the day of the week.
+         * @param name (Updatable) Name of database tool.
          * 
          * @return builder
          * 

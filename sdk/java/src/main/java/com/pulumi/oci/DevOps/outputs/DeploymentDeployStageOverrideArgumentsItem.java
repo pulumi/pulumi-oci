@@ -22,8 +22,7 @@ public final class DeploymentDeployStageOverrideArgumentsItem {
      */
     private @Nullable String name;
     /**
-     * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * @return Value of the parameter.
      * 
      */
     private @Nullable String value;
@@ -44,8 +43,7 @@ public final class DeploymentDeployStageOverrideArgumentsItem {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * @return Value of the parameter.
      * 
      */
     public Optional<String> value() {

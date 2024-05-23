@@ -135,7 +135,7 @@ class ConfigurationConfigurationDetail(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.ConfigurationConfigurationDetailItem']] = None):
         """
-        :param Sequence['ConfigurationConfigurationDetailItemArgs'] items: List of configuration overridden values.
+        :param Sequence['ConfigurationConfigurationDetailItemArgs'] items: List of ConfigParms object.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -144,7 +144,7 @@ class ConfigurationConfigurationDetail(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.ConfigurationConfigurationDetailItem']]:
         """
-        List of configuration overridden values.
+        List of ConfigParms object.
         """
         return pulumi.get(self, "items")
 
@@ -191,13 +191,13 @@ class ConfigurationConfigurationDetailItem(dict):
                  overriden_config_value: Optional[str] = None):
         """
         :param str allowed_values: Range or list of allowed values.
-        :param str config_key: Configuration variable name.
+        :param str config_key: The configuration variable name.
         :param str data_type: Data type of the variable.
         :param str default_config_value: Default value for the configuration variable.
         :param str description: (Updatable) Details about the configuration set.
         :param bool is_overridable: Whether the value can be overridden or not.
         :param bool is_restart_required: If true, modifying this configuration value will require a restart of the database.
-        :param str overriden_config_value: User-selected variable value.
+        :param str overriden_config_value: User-selected configuration variable value.
         """
         if allowed_values is not None:
             pulumi.set(__self__, "allowed_values", allowed_values)
@@ -228,7 +228,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="configKey")
     def config_key(self) -> Optional[str]:
         """
-        Configuration variable name.
+        The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
@@ -276,7 +276,7 @@ class ConfigurationConfigurationDetailItem(dict):
     @pulumi.getter(name="overridenConfigValue")
     def overriden_config_value(self) -> Optional[str]:
         """
-        User-selected variable value.
+        User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
@@ -506,8 +506,8 @@ class DbSystemInstance(dict):
                  time_updated: Optional[str] = None):
         """
         :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
-        :param str description: A user-provided description of the database instance node.
-        :param str display_name: Display name of the database instance node. Avoid entering confidential information.
+        :param str description: (Updatable) A user-provided description of a database system.
+        :param str display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param str id: A unique identifier for the database instance node. Immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str state: The current state of the database system.
@@ -543,7 +543,7 @@ class DbSystemInstance(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        A user-provided description of the database instance node.
+        (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
@@ -551,7 +551,7 @@ class DbSystemInstance(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Display name of the database instance node. Avoid entering confidential information.
+        (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1039,10 +1039,6 @@ class DbSystemStorageDetails(dict):
         """
         :param bool is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param str system_type: Type of the database system.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param str iops: (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         """
@@ -1066,10 +1062,6 @@ class DbSystemStorageDetails(dict):
     def system_type(self) -> str:
         """
         Type of the database system.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_type")
 

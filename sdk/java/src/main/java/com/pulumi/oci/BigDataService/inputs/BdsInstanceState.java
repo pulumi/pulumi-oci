@@ -390,14 +390,14 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The amount of worker nodes should be created
+     * Number of nodes that forming the cluster
      * 
      */
     @Import(name="numberOfNodes")
     private @Nullable Output<Integer> numberOfNodes;
 
     /**
-     * @return The amount of worker nodes should be created
+     * @return Number of nodes that forming the cluster
      * 
      */
     public Optional<Output<Integer>> numberOfNodes() {
@@ -1089,7 +1089,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes Number of nodes that forming the cluster
          * 
          * @return builder
          * 
@@ -1100,7 +1100,7 @@ public final class BdsInstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes Number of nodes that forming the cluster
          * 
          * @return builder
          * 

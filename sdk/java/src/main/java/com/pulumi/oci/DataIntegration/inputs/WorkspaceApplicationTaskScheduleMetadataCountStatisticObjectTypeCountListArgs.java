@@ -16,14 +16,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
     public static final WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs Empty = new WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs();
 
     /**
-     * (Updatable) The value for the count statistic object.
+     * The value for the count statistic object.
      * 
      */
     @Import(name="objectCount")
     private @Nullable Output<String> objectCount;
 
     /**
-     * @return (Updatable) The value for the count statistic object.
+     * @return The value for the count statistic object.
      * 
      */
     public Optional<Output<String>> objectCount() {
@@ -31,14 +31,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
     }
 
     /**
-     * (Updatable) The type of object for the count statistic object.
+     * The type of object for the count statistic object.
      * 
      */
     @Import(name="objectType")
     private @Nullable Output<String> objectType;
 
     /**
-     * @return (Updatable) The type of object for the count statistic object.
+     * @return The type of object for the count statistic object.
      * 
      */
     public Optional<Output<String>> objectType() {
@@ -71,7 +71,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
         }
 
         /**
-         * @param objectCount (Updatable) The value for the count statistic object.
+         * @param objectCount The value for the count statistic object.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
         }
 
         /**
-         * @param objectCount (Updatable) The value for the count statistic object.
+         * @param objectCount The value for the count statistic object.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
         }
 
         /**
-         * @param objectType (Updatable) The type of object for the count statistic object.
+         * @param objectType The type of object for the count statistic object.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectT
         }
 
         /**
-         * @param objectType (Updatable) The type of object for the count statistic object.
+         * @param objectType The type of object for the count statistic object.
          * 
          * @return builder
          * 

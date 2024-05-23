@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", BdsInstanceOperationCertificateManagementsManagementArgs.builder()        
+ *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", BdsInstanceOperationCertificateManagementsManagementArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
  *             .clusterAdminPassword(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword)
  *             .services(bdsInstanceOperationCertificateManagementsManagementServices)

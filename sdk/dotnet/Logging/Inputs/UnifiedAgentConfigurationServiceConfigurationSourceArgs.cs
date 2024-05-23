@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? CustomPlugin { get; set; }
 
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) Unique name for the source.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

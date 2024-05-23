@@ -15,16 +15,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsCloudGateServer {
     /**
-     * @return (Updatable) Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Hostname for the Server block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -32,12 +30,10 @@ public final class DomainsCloudGateServer {
      */
     private String hostName;
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) More nginx Settings. JSON encoded text block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -49,16 +45,14 @@ public final class DomainsCloudGateServer {
      */
     private @Nullable String nginxSettings;
     /**
-     * @return (Updatable) Port for the Upstream Server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Port for the Server Block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: integer
      * * uniqueness: none
@@ -81,16 +75,14 @@ public final class DomainsCloudGateServer {
      */
     private @Nullable String serverId;
     /**
-     * @return (Updatable) SSL flag for the Upstream Block
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) SSL flag for the Server Block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: boolean
      * * uniqueness: none
@@ -100,16 +92,14 @@ public final class DomainsCloudGateServer {
 
     private DomainsCloudGateServer() {}
     /**
-     * @return (Updatable) Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Hostname for the Server block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -119,12 +109,10 @@ public final class DomainsCloudGateServer {
         return this.hostName;
     }
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) More nginx Settings. JSON encoded text block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -138,16 +126,14 @@ public final class DomainsCloudGateServer {
         return Optional.ofNullable(this.nginxSettings);
     }
     /**
-     * @return (Updatable) Port for the Upstream Server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Port for the Server Block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: integer
      * * uniqueness: none
@@ -174,16 +160,14 @@ public final class DomainsCloudGateServer {
         return Optional.ofNullable(this.serverId);
     }
     /**
-     * @return (Updatable) SSL flag for the Upstream Block
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) SSL flag for the Server Block
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: boolean
      * * uniqueness: none

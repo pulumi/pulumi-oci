@@ -78,6 +78,8 @@ public final class NetworkFirewallPolicyMappedSecretState extends com.pulumi.res
 
     /**
      * Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
     @Import(name="type")
@@ -85,6 +87,8 @@ public final class NetworkFirewallPolicyMappedSecretState extends com.pulumi.res
 
     /**
      * @return Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
     public Optional<Output<String>> type() {
@@ -243,6 +247,8 @@ public final class NetworkFirewallPolicyMappedSecretState extends com.pulumi.res
 
         /**
          * @param type Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
          * 
          * @return builder
          * 
@@ -254,6 +260,8 @@ public final class NetworkFirewallPolicyMappedSecretState extends com.pulumi.res
 
         /**
          * @param type Type of the secrets mapped based on the policy.
+         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
          * 
          * @return builder
          * 

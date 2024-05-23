@@ -529,7 +529,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) Index(
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
-	// (Updatable) Description of private source scan host zone.
+	// (Updatable) Description of private source dns zone.
 	Description *string `pulumi:"description"`
 	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone string `pulumi:"dnsZone"`
@@ -547,7 +547,7 @@ type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface {
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
-	// (Updatable) Description of private source scan host zone.
+	// (Updatable) Description of private source dns zone.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
@@ -604,7 +604,7 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToAnaly
 	return o
 }
 
-// (Updatable) Description of private source scan host zone.
+// (Updatable) Description of private source dns zone.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) *string { return v.Description }).(pulumi.StringPtrOutput)
 }

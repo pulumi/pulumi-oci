@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string? AccessKeyId;
         /// <summary>
-        /// (Updatable) Name of directory object in database
+        /// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         /// </summary>
         public readonly string? Name;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string? SecretAccessKey;
         /// <summary>
-        /// (Updatable) Migration type.
+        /// (Updatable) Type of the data transfer medium to use for the datapump
         /// </summary>
         public readonly string Type;
 

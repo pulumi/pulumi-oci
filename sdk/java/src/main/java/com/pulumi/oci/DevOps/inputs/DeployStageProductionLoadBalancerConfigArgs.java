@@ -17,14 +17,14 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
     public static final DeployStageProductionLoadBalancerConfigArgs Empty = new DeployStageProductionLoadBalancerConfigArgs();
 
     /**
-     * (Updatable) Listen port for the backend server.
+     * Listen port for the backend server.
      * 
      */
     @Import(name="backendPort")
     private @Nullable Output<Integer> backendPort;
 
     /**
-     * @return (Updatable) Listen port for the backend server.
+     * @return Listen port for the backend server.
      * 
      */
     public Optional<Output<Integer>> backendPort() {
@@ -32,14 +32,14 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Name of the load balancer listener.
+     * Name of the load balancer listener.
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return (Updatable) Name of the load balancer listener.
+     * @return Name of the load balancer listener.
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -47,14 +47,14 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
     }
 
     /**
-     * (Updatable) The OCID of the load balancer.
+     * The OCID of the load balancer.
      * 
      */
     @Import(name="loadBalancerId")
     private @Nullable Output<String> loadBalancerId;
 
     /**
-     * @return (Updatable) The OCID of the load balancer.
+     * @return The OCID of the load balancer.
      * 
      */
     public Optional<Output<String>> loadBalancerId() {
@@ -104,7 +104,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param backendPort (Updatable) Listen port for the backend server.
+         * @param backendPort Listen port for the backend server.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param backendPort (Updatable) Listen port for the backend server.
+         * @param backendPort Listen port for the backend server.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param listenerName (Updatable) Name of the load balancer listener.
+         * @param listenerName Name of the load balancer listener.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param listenerName (Updatable) Name of the load balancer listener.
+         * @param listenerName Name of the load balancer listener.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param loadBalancerId (Updatable) The OCID of the load balancer.
+         * @param loadBalancerId The OCID of the load balancer.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DeployStageProductionLoadBalancerConfigArgs extends com.pulum
         }
 
         /**
-         * @param loadBalancerId (Updatable) The OCID of the load balancer.
+         * @param loadBalancerId The OCID of the load balancer.
          * 
          * @return builder
          * 

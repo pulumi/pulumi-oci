@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetailTargetSecurityZoneRecipe {
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -88,7 +88,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
 
     private TargetTargetDetailTargetSecurityZoneRecipe() {}
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<String> compartmentId() {

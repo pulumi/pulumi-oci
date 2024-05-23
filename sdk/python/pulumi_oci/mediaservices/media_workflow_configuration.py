@@ -25,7 +25,7 @@ class MediaWorkflowConfigurationArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['MediaWorkflowConfigurationLockArgs']]]] = None):
         """
         The set of arguments for constructing a MediaWorkflowConfiguration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[str] parameters: (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue 
                
@@ -52,7 +52,7 @@ class MediaWorkflowConfigurationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -151,7 +151,7 @@ class _MediaWorkflowConfigurationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,7 +164,7 @@ class _MediaWorkflowConfigurationState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the MediaWorkflowConfiguration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
@@ -196,7 +196,7 @@ class _MediaWorkflowConfigurationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -317,7 +317,7 @@ class _MediaWorkflowConfigurationState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -391,7 +391,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -524,7 +524,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) MediaWorkflowConfiguration identifier. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -537,7 +537,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the MediaWorkflowConfiguration.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -562,7 +562,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -643,7 +643,7 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

@@ -76,16 +76,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> IcfType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-        /// 
-        /// **Deprecated Since: 18.2.2**
+        /// (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \"name\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string
@@ -129,20 +126,18 @@ namespace Pulumi.Oci.Identity.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \"value\" attribute in \"ConfigurationProperty\" in ICF.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: true
+        /// * idcsSensitive: encrypt
+        /// * multiValued: true
+        /// * mutability: readWrite
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> Values
         {

@@ -87,17 +87,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     }
 
     /**
-     * (Updatable) User token returned if userFlowControlledByExternalClient is true
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) User token used for auto-login.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: complex
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -105,17 +103,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     private @Nullable Output<String> userToken;
 
     /**
-     * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) User token used for auto-login.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: complex
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -230,17 +226,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param userToken (Updatable) User token returned if userFlowControlledByExternalClient is true
-         * 
-         * **Added In:** 18.4.2
+         * @param userToken (Updatable) User token used for auto-login.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
          * * returned: default
-         * * type: complex
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder
@@ -252,17 +246,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param userToken (Updatable) User token returned if userFlowControlledByExternalClient is true
-         * 
-         * **Added In:** 18.4.2
+         * @param userToken (Updatable) User token used for auto-login.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
          * * returned: default
-         * * type: complex
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder

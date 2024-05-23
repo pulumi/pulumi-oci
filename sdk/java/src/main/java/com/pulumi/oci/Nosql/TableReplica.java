@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTableReplica = new TableReplica("testTableReplica", TableReplicaArgs.builder()        
+ *         var testTableReplica = new TableReplica("testTableReplica", TableReplicaArgs.builder()
  *             .region(tableReplicaRegion)
  *             .tableNameOrId(testTableNameOr.id())
  *             .compartmentId(compartmentId)

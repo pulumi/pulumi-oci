@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()        
+ *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", LoadBalancerRoutingPolicyArgs.builder()
  *             .conditionLanguageVersion(loadBalancerRoutingPolicyConditionLanguageVersion)
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(loadBalancerRoutingPolicyName)
@@ -107,20 +107,14 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
         return this.loadBalancerId;
     }
     /**
-     * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
      * 
      */
     public Output<String> name() {

@@ -45,7 +45,7 @@ public final class DomainsSecurityQuestionQuestionText {
      */
     private String locale;
     /**
-     * @return Value of the tag.
+     * @return The question text
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -53,7 +53,7 @@ public final class DomainsSecurityQuestionQuestionText {
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -97,7 +97,7 @@ public final class DomainsSecurityQuestionQuestionText {
         return this.locale;
     }
     /**
-     * @return Value of the tag.
+     * @return The question text
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -105,7 +105,7 @@ public final class DomainsSecurityQuestionQuestionText {
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

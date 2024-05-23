@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousContainerDatabaseKeyHistoryEntry
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         /// </summary>
         public readonly string? Id;
         /// <summary>

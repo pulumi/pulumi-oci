@@ -219,9 +219,9 @@ class AssetComputeArgs:
                  threads_per_core_count: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[int] connected_networks: (Updatable) Number of connected networks.
-        :param pulumi.Input[int] cores_count: (Updatable) Number of GPU cores.
+        :param pulumi.Input[int] cores_count: (Updatable) Number of CPUs.
         :param pulumi.Input[str] cpu_model: (Updatable) CPU model name.
-        :param pulumi.Input[str] description: (Updatable) The tag description.
+        :param pulumi.Input[str] description: (Updatable) Information about the asset.
         :param pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]] disks: (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
         :param pulumi.Input[int] disks_count: (Updatable) Number of disks.
         :param pulumi.Input[str] dns_name: (Updatable) Fully Qualified DNS Name.
@@ -323,7 +323,7 @@ class AssetComputeArgs:
     @pulumi.getter(name="coresCount")
     def cores_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Number of GPU cores.
+        (Updatable) Number of CPUs.
         """
         return pulumi.get(self, "cores_count")
 
@@ -347,7 +347,7 @@ class AssetComputeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The tag description.
+        (Updatable) Information about the asset.
         """
         return pulumi.get(self, "description")
 
@@ -669,7 +669,7 @@ class AssetComputeDiskArgs:
         """
         :param pulumi.Input[int] boot_order: (Updatable) Order of boot volumes.
         :param pulumi.Input[str] location: (Updatable) Location of the boot/data volume.
-        :param pulumi.Input[str] name: (Updatable) The tag name.
+        :param pulumi.Input[str] name: (Updatable) Disk name.
         :param pulumi.Input[str] persistent_mode: (Updatable) The disk persistent mode.
         :param pulumi.Input[str] size_in_mbs: (Updatable) The size of the volume in MBs.
         :param pulumi.Input[str] uuid: (Updatable) Disk UUID for the virtual disk, if available.
@@ -718,7 +718,7 @@ class AssetComputeDiskArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The tag name.
+        (Updatable) Disk name.
         """
         return pulumi.get(self, "name")
 
@@ -785,10 +785,10 @@ class AssetComputeGpuDeviceArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[int] cores_count: (Updatable) Number of GPU cores.
-        :param pulumi.Input[str] description: (Updatable) The tag description.
+        :param pulumi.Input[str] description: (Updatable) GPU device description.
         :param pulumi.Input[str] manufacturer: (Updatable) The manufacturer of GPU.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Memory size in MBs.
-        :param pulumi.Input[str] name: (Updatable) The tag name.
+        :param pulumi.Input[str] memory_in_mbs: (Updatable) GPU memory size in MBs.
+        :param pulumi.Input[str] name: (Updatable) GPU device name.
         """
         if cores_count is not None:
             pulumi.set(__self__, "cores_count", cores_count)
@@ -817,7 +817,7 @@ class AssetComputeGpuDeviceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The tag description.
+        (Updatable) GPU device description.
         """
         return pulumi.get(self, "description")
 
@@ -841,7 +841,7 @@ class AssetComputeGpuDeviceArgs:
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Memory size in MBs.
+        (Updatable) GPU memory size in MBs.
         """
         return pulumi.get(self, "memory_in_mbs")
 
@@ -853,7 +853,7 @@ class AssetComputeGpuDeviceArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The tag name.
+        (Updatable) GPU device name.
         """
         return pulumi.get(self, "name")
 
@@ -974,7 +974,7 @@ class AssetComputeNvdimmArgs:
         """
         :param pulumi.Input[int] controller_key: (Updatable) Controller key.
         :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
-        :param pulumi.Input[int] unit_number: (Updatable) The unit number of the SCSI controller.
+        :param pulumi.Input[int] unit_number: (Updatable) The unit number of NVDIMM.
         """
         if controller_key is not None:
             pulumi.set(__self__, "controller_key", controller_key)
@@ -1011,7 +1011,7 @@ class AssetComputeNvdimmArgs:
     @pulumi.getter(name="unitNumber")
     def unit_number(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The unit number of the SCSI controller.
+        (Updatable) The unit number of NVDIMM.
         """
         return pulumi.get(self, "unit_number")
 
@@ -1121,7 +1121,7 @@ class AssetSourceDiscoveryCredentialsArgs:
                  type: pulumi.Input[str]):
         """
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        :param pulumi.Input[str] type: (Updatable) Asset source type.
+        :param pulumi.Input[str] type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "type", type)
@@ -1142,7 +1142,7 @@ class AssetSourceDiscoveryCredentialsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Asset source type.
+        (Updatable) Authentication type
         """
         return pulumi.get(self, "type")
 
@@ -1158,7 +1158,7 @@ class AssetSourceReplicationCredentialsArgs:
                  type: pulumi.Input[str]):
         """
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        :param pulumi.Input[str] type: (Updatable) Asset source type.
+        :param pulumi.Input[str] type: (Updatable) Authentication type
         """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "type", type)
@@ -1179,7 +1179,7 @@ class AssetSourceReplicationCredentialsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Asset source type.
+        (Updatable) Authentication type
         """
         return pulumi.get(self, "type")
 

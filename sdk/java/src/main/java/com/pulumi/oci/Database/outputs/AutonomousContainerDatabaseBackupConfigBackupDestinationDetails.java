@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetails {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
     private @Nullable String id;
     /**
-     * @return Proxy URL to connect to object store.
+     * @return (Updatable) Proxy URL to connect to object store.
      * 
      */
     private @Nullable String internetProxy;
     /**
-     * @return Type of the database backup destination.
+     * @return (Updatable) Type of the database backup destination.
      * 
      */
     private String type;
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
     private @Nullable String vpcPassword;
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
     private @Nullable String vpcUser;
 
     private AutonomousContainerDatabaseBackupConfigBackupDestinationDetails() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Proxy URL to connect to object store.
+     * @return (Updatable) Proxy URL to connect to object store.
      * 
      */
     public Optional<String> internetProxy() {
         return Optional.ofNullable(this.internetProxy);
     }
     /**
-     * @return Type of the database backup destination.
+     * @return (Updatable) Type of the database backup destination.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
     public Optional<String> vpcPassword() {
         return Optional.ofNullable(this.vpcPassword);
     }
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
     public Optional<String> vpcUser() {

@@ -39,7 +39,7 @@ class ConfigArgs:
         """
         The set of arguments for constructing a Config resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
@@ -115,7 +115,7 @@ class ConfigArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        Unique name that can be edited. The name should not contain any confidential information.
+        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -377,7 +377,7 @@ class _ConfigState:
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -511,7 +511,7 @@ class _ConfigState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique name that can be edited. The name should not contain any confidential information.
+        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -878,7 +878,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -1143,7 +1143,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -1239,7 +1239,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        Unique name that can be edited. The name should not contain any confidential information.
+        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 

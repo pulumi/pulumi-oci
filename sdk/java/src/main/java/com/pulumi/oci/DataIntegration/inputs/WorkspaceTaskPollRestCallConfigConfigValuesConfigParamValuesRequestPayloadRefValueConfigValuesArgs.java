@@ -16,14 +16,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
     public static final WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs Empty = new WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs();
 
     /**
-     * (Updatable) The configuration parameter values.
+     * The configuration parameter values.
      * 
      */
     @Import(name="configParamValues")
     private @Nullable Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs> configParamValues;
 
     /**
-     * @return (Updatable) The configuration parameter values.
+     * @return The configuration parameter values.
      * 
      */
     public Optional<Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs>> configParamValues() {
@@ -55,7 +55,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param configParamValues (Updatable) The configuration parameter values.
+         * @param configParamValues The configuration parameter values.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesR
         }
 
         /**
-         * @param configParamValues (Updatable) The configuration parameter values.
+         * @param configParamValues The configuration parameter values.
          * 
          * @return builder
          * 

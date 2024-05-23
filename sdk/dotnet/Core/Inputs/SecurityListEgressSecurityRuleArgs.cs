@@ -32,6 +32,8 @@ namespace Pulumi.Oci.Core.Inputs
         /// (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
         /// 
         /// Allowed values:
+        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }
@@ -53,7 +55,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string> Protocol { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+        /// (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         /// </summary>
         [Input("stateless")]
         public Input<bool>? Stateless { get; set; }

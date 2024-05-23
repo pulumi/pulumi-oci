@@ -252,23 +252,22 @@ namespace Pulumi.Oci.Identity
         public Output<string> MixedSalt { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The username.
+        /// (Updatable) Name
+        /// 
+        /// **Added In:** 2109090424
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
-        /// * multiValued: false
+        /// * type: string
         /// * mutability: readOnly
         /// * required: false
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -276,9 +275,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -502,7 +501,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -510,9 +509,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -871,23 +870,22 @@ namespace Pulumi.Oci.Identity
         public Input<string>? MixedSalt { get; set; }
 
         /// <summary>
-        /// (Updatable) The username.
+        /// (Updatable) Name
+        /// 
+        /// **Added In:** 2109090424
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
-        /// * multiValued: false
+        /// * type: string
         /// * mutability: readOnly
         /// * required: false
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -895,9 +893,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }

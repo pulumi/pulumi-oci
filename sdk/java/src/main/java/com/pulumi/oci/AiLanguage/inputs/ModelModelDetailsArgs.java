@@ -18,14 +18,14 @@ public final class ModelModelDetailsArgs extends com.pulumi.resources.ResourceAr
     public static final ModelModelDetailsArgs Empty = new ModelModelDetailsArgs();
 
     /**
-     * classification Modes
+     * possible text classification modes
      * 
      */
     @Import(name="classificationMode")
     private @Nullable Output<ModelModelDetailsClassificationModeArgs> classificationMode;
 
     /**
-     * @return classification Modes
+     * @return possible text classification modes
      * 
      */
     public Optional<Output<ModelModelDetailsClassificationModeArgs>> classificationMode() {
@@ -105,7 +105,7 @@ public final class ModelModelDetailsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param classificationMode classification Modes
+         * @param classificationMode possible text classification modes
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ModelModelDetailsArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param classificationMode classification Modes
+         * @param classificationMode possible text classification modes
          * 
          * @return builder
          * 

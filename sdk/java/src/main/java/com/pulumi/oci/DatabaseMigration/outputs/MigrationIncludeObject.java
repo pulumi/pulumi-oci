@@ -29,7 +29,7 @@ public final class MigrationIncludeObject {
      */
     private String owner;
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
      * 
      */
     private @Nullable String type;
@@ -57,7 +57,7 @@ public final class MigrationIncludeObject {
         return this.owner;
     }
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
      * 
      */
     public Optional<String> type() {

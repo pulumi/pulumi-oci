@@ -176,17 +176,17 @@ export class DomainsMyApiKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
-     * Key or name of the tag.
+     * Key
+     *
+     * **Added In:** 2010242156
      *
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -204,7 +204,7 @@ export class DomainsMyApiKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyApiKeyMeta[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -212,9 +212,9 @@ export class DomainsMyApiKey extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -479,17 +479,17 @@ export interface DomainsMyApiKeyState {
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Key or name of the tag.
+     * Key
+     *
+     * **Added In:** 2010242156
      *
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      */
     key?: pulumi.Input<string>;
     /**
@@ -507,7 +507,7 @@ export interface DomainsMyApiKeyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyApiKeyMeta>[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -515,9 +515,9 @@ export interface DomainsMyApiKeyState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -608,21 +608,21 @@ export interface DomainsMyApiKeyArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * Key or name of the tag.
+     * Key
+     *
+     * **Added In:** 2010242156
      *
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      */
     key: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -630,9 +630,9 @@ export interface DomainsMyApiKeyArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

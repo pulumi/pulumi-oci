@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPathRouteSet = new PathRouteSet("testPathRouteSet", PathRouteSetArgs.builder()        
+ *         var testPathRouteSet = new PathRouteSet("testPathRouteSet", PathRouteSetArgs.builder()
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(pathRouteSetName)
  *             .pathRoutes(PathRouteSetPathRouteArgs.builder()

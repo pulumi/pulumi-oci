@@ -141,14 +141,14 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The package&#39;s type.
+     * Type of packages within this private application.
      * 
      */
     @Import(name="packageType")
     private @Nullable Output<String> packageType;
 
     /**
-     * @return The package&#39;s type.
+     * @return Type of packages within this private application.
      * 
      */
     public Optional<Output<String>> packageType() {
@@ -436,7 +436,7 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param packageType The package&#39;s type.
+         * @param packageType Type of packages within this private application.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class PrivateApplicationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param packageType The package&#39;s type.
+         * @param packageType Type of packages within this private application.
          * 
          * @return builder
          * 

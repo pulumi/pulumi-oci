@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A string value of the parameter.
+        /// A string value of the parameter.
         /// </summary>
         [Input("stringValue")]
         public Input<string>? StringValue { get; set; }

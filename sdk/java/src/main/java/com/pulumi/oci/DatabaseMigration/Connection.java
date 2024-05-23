@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()        
+ *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
  *             .adminCredentials(ConnectionAdminCredentialsArgs.builder()
  *                 .password(connectionAdminCredentialsPassword)
  *                 .username(connectionAdminCredentialsUsername)
@@ -148,14 +148,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.certificateTdn;
     }
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) OCID of the compartment
      * 
      */
     public Output<String> compartmentId() {

@@ -22,7 +22,7 @@ public final class WorkspaceTaskParameter {
      */
     private @Nullable WorkspaceTaskParameterConfigValues configValues;
     /**
-     * @return (Updatable) A default value for the vairable.
+     * @return (Updatable) The default value of the parameter.
      * 
      */
     private @Nullable String defaultValue;
@@ -77,12 +77,12 @@ public final class WorkspaceTaskParameter {
      */
     private @Nullable WorkspaceTaskParameterParentRef parentRef;
     /**
-     * @return (Updatable) A base class for all model types, including First Class and its contained objects.
+     * @return (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
      * 
      */
     private @Nullable String rootObjectDefaultValue;
     /**
-     * @return (Updatable) The object type.
+     * @return (Updatable) This can either be a string value referencing the type or a BaseType object.
      * 
      */
     private @Nullable String type;
@@ -106,7 +106,7 @@ public final class WorkspaceTaskParameter {
         return Optional.ofNullable(this.configValues);
     }
     /**
-     * @return (Updatable) A default value for the vairable.
+     * @return (Updatable) The default value of the parameter.
      * 
      */
     public Optional<String> defaultValue() {
@@ -183,14 +183,14 @@ public final class WorkspaceTaskParameter {
         return Optional.ofNullable(this.parentRef);
     }
     /**
-     * @return (Updatable) A base class for all model types, including First Class and its contained objects.
+     * @return (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
      * 
      */
     public Optional<String> rootObjectDefaultValue() {
         return Optional.ofNullable(this.rootObjectDefaultValue);
     }
     /**
-     * @return (Updatable) The object type.
+     * @return (Updatable) This can either be a string value referencing the type or a BaseType object.
      * 
      */
     public Optional<String> type() {

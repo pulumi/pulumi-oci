@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Nosql.Outputs
     public sealed class TableReplica
     {
         /// <summary>
-        /// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        /// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         /// </summary>
         public readonly string? CapacityMode;
         /// <summary>
@@ -22,11 +22,7 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// (Updatable) Maximum sustained write throughput limit for the table.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Maximum sustained write throughput limit for the table.
         /// </summary>
         public readonly int? MaxWriteUnits;
         /// <summary>

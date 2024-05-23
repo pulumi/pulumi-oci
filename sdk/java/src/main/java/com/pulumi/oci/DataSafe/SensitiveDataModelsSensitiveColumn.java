@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSensitiveDataModelsSensitiveColumn = new SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", SensitiveDataModelsSensitiveColumnArgs.builder()        
+ *         var testSensitiveDataModelsSensitiveColumn = new SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", SensitiveDataModelsSensitiveColumnArgs.builder()
  *             .columnName(sensitiveDataModelsSensitiveColumnColumnName)
  *             .object(sensitiveDataModelsSensitiveColumnObject)
  *             .schemaName(sensitiveDataModelsSensitiveColumnSchemaName)

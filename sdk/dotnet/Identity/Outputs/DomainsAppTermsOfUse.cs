@@ -14,24 +14,25 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppTermsOfUse
     {
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+        /// (Updatable) Terms Of Use name
         /// 
-        /// **Deprecated Since: 18.2.2**
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: default
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) URI of the TermsOfUse.
+        /// 
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -44,20 +45,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Identifier of the TermsOfUse
+        /// 
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

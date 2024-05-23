@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? CustomPlugin;
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) Unique name for the source.
         /// </summary>
         public readonly string? Name;
         /// <summary>

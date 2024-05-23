@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string? Label;
         /// <summary>
-        /// (Updatable) The unit number of the SCSI controller.
+        /// (Updatable) The unit number of NVDIMM.
         /// </summary>
         public readonly int? UnitNumber;
 

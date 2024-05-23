@@ -100,7 +100,7 @@ type Connection struct {
 	AdminCredentials ConnectionAdminCredentialsOutput `pulumi:"adminCredentials"`
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
 	CertificateTdn pulumi.StringOutput `pulumi:"certificateTdn"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
 	ConnectDescriptor ConnectionConnectDescriptorOutput `pulumi:"connectDescriptor"`
@@ -190,7 +190,7 @@ type connectionState struct {
 	AdminCredentials *ConnectionAdminCredentials `pulumi:"adminCredentials"`
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
 	CertificateTdn *string `pulumi:"certificateTdn"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
 	ConnectDescriptor *ConnectionConnectDescriptor `pulumi:"connectDescriptor"`
@@ -239,7 +239,7 @@ type ConnectionState struct {
 	AdminCredentials ConnectionAdminCredentialsPtrInput
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
 	CertificateTdn pulumi.StringPtrInput
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
 	ConnectDescriptor ConnectionConnectDescriptorPtrInput
@@ -292,7 +292,7 @@ type connectionArgs struct {
 	AdminCredentials ConnectionAdminCredentials `pulumi:"adminCredentials"`
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
 	CertificateTdn *string `pulumi:"certificateTdn"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
 	ConnectDescriptor *ConnectionConnectDescriptor `pulumi:"connectDescriptor"`
@@ -330,7 +330,7 @@ type ConnectionArgs struct {
 	AdminCredentials ConnectionAdminCredentialsInput
 	// (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
 	CertificateTdn pulumi.StringPtrInput
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringInput
 	// (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
 	ConnectDescriptor ConnectionConnectDescriptorPtrInput
@@ -459,7 +459,7 @@ func (o ConnectionOutput) CertificateTdn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CertificateTdn }).(pulumi.StringOutput)
 }
 
-// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+// (Updatable) OCID of the compartment
 func (o ConnectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

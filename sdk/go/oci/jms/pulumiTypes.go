@@ -17,9 +17,6 @@ type FleetInventoryLog struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LogId string `pulumi:"logId"`
 }
 
@@ -38,9 +35,6 @@ type FleetInventoryLogArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LogId pulumi.StringInput `pulumi:"logId"`
 }
 
@@ -127,9 +121,6 @@ func (o FleetInventoryLogOutput) LogGroupId() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FleetInventoryLogOutput) LogId() pulumi.StringOutput {
 	return o.ApplyT(func(v FleetInventoryLog) string { return v.LogId }).(pulumi.StringOutput)
 }
@@ -169,9 +160,6 @@ func (o FleetInventoryLogPtrOutput) LogGroupId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FleetInventoryLogPtrOutput) LogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FleetInventoryLog) *string {
 		if v == nil {

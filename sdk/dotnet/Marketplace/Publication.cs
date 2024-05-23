@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Marketplace
         public Output<string> LongDescription { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// (Updatable) The name of the publication, which is also used in the listing.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Marketplace
         public Output<Outputs.PublicationPackageDetails> PackageDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The package's type.
+        /// The listing's package type.
         /// </summary>
         [Output("packageType")]
         public Output<string> PackageType { get; private set; } = null!;
@@ -275,7 +275,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<string>? LongDescription { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// (Updatable) The name of the publication, which is also used in the listing.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -373,7 +373,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<string>? LongDescription { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// (Updatable) The name of the publication, which is also used in the listing.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -385,7 +385,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<Inputs.PublicationPackageDetailsGetArgs>? PackageDetails { get; set; }
 
         /// <summary>
-        /// The package's type.
+        /// The listing's package type.
         /// </summary>
         [Input("packageType")]
         public Input<string>? PackageType { get; set; }

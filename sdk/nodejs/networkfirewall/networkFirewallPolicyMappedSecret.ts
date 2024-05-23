@@ -79,6 +79,8 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
     public readonly source!: pulumi.Output<string>;
     /**
      * Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      */
     public readonly type!: pulumi.Output<string>;
     /**
@@ -166,6 +168,8 @@ export interface NetworkFirewallPolicyMappedSecretState {
     source?: pulumi.Input<string>;
     /**
      * Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      */
     type?: pulumi.Input<string>;
     /**
@@ -200,6 +204,8 @@ export interface NetworkFirewallPolicyMappedSecretArgs {
     source: pulumi.Input<string>;
     /**
      * Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      */
     type: pulumi.Input<string>;
     /**

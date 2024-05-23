@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContent> Contents;
         /// <summary>
-        /// (Updatable) Determines if the parameter is required in the request.
+        /// (Updatable) Determines if the request body is required in the request.
         /// </summary>
         public readonly bool? Required;
         /// <summary>

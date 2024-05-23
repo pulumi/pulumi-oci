@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload {
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     private @Nullable String parameterValue;
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     private @Nullable WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue refValue;
 
     private WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload() {}
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     public Optional<String> parameterValue() {
         return Optional.ofNullable(this.parameterValue);
     }
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     public Optional<WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue> refValue() {

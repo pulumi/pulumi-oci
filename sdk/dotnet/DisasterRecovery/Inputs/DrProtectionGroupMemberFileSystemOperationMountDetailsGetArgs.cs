@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberFileSystemOperationMountDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        /// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         /// </summary>
         [Input("mountTargetId")]
         public Input<string>? MountTargetId { get; set; }

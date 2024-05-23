@@ -14,29 +14,27 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsPasswordPolicyConfiguredPasswordPolicyRule
     {
         /// <summary>
-        /// (Updatable) Key or name of the tag.
+        /// (Updatable) The specific password policy rule
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) User-friendly text that describes a specific password policy rule
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

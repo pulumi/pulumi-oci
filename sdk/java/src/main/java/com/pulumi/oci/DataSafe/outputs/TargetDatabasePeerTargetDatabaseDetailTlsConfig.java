@@ -13,68 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetDatabasePeerTargetDatabaseDetailTlsConfig {
     /**
-     * @return (Updatable) The format of the certificate store.
+     * @return The format of the certificate store.
      * 
      */
     private @Nullable String certificateStoreType;
     /**
-     * @return (Updatable) Base64 encoded string of key store file content.
+     * @return Base64 encoded string of key store file content.
      * 
      */
     private @Nullable String keyStoreContent;
     /**
-     * @return (Updatable) Status to represent whether the database connection is TLS enabled or not.
+     * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
     private String status;
     /**
-     * @return (Updatable) The password to read the trust store and key store files, if they are password protected.
+     * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
     private @Nullable String storePassword;
     /**
-     * @return (Updatable) Base64 encoded string of trust store file content.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Base64 encoded string of trust store file content.
      * 
      */
     private @Nullable String trustStoreContent;
 
     private TargetDatabasePeerTargetDatabaseDetailTlsConfig() {}
     /**
-     * @return (Updatable) The format of the certificate store.
+     * @return The format of the certificate store.
      * 
      */
     public Optional<String> certificateStoreType() {
         return Optional.ofNullable(this.certificateStoreType);
     }
     /**
-     * @return (Updatable) Base64 encoded string of key store file content.
+     * @return Base64 encoded string of key store file content.
      * 
      */
     public Optional<String> keyStoreContent() {
         return Optional.ofNullable(this.keyStoreContent);
     }
     /**
-     * @return (Updatable) Status to represent whether the database connection is TLS enabled or not.
+     * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return (Updatable) The password to read the trust store and key store files, if they are password protected.
+     * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
     public Optional<String> storePassword() {
         return Optional.ofNullable(this.storePassword);
     }
     /**
-     * @return (Updatable) Base64 encoded string of trust store file content.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Base64 encoded string of trust store file content.
      * 
      */
     public Optional<String> trustStoreContent() {

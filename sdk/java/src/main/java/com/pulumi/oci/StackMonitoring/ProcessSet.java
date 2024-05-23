@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProcessSet = new ProcessSet("testProcessSet", ProcessSetArgs.builder()        
+ *         var testProcessSet = new ProcessSet("testProcessSet", ProcessSetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(processSetDisplayName)
  *             .specification(ProcessSetSpecificationArgs.builder()

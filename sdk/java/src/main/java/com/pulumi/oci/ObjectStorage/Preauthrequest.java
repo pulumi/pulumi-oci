@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPreauthenticatedRequest = new Preauthrequest("testPreauthenticatedRequest", PreauthrequestArgs.builder()        
+ *         var testPreauthenticatedRequest = new Preauthrequest("testPreauthenticatedRequest", PreauthrequestArgs.builder()
  *             .accessType(preauthenticatedRequestAccessType)
  *             .bucket(preauthenticatedRequestBucket)
  *             .name(preauthenticatedRequestName)

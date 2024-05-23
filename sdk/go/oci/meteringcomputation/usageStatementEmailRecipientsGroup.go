@@ -66,7 +66,7 @@ type UsageStatementEmailRecipientsGroup struct {
 	EmailRecipientsGroupId pulumi.StringOutput `pulumi:"emailRecipientsGroupId"`
 	// (Updatable) The list of recipient will receive the usage statement email.
 	RecipientsLists UsageStatementEmailRecipientsGroupRecipientsListArrayOutput `pulumi:"recipientsLists"`
-	// (Updatable) The email recipient lifecycle state.
+	// The email recipient group lifecycle state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The UsageStatement Subscription unique OCID.
 	//
@@ -119,7 +119,7 @@ type usageStatementEmailRecipientsGroupState struct {
 	EmailRecipientsGroupId *string `pulumi:"emailRecipientsGroupId"`
 	// (Updatable) The list of recipient will receive the usage statement email.
 	RecipientsLists []UsageStatementEmailRecipientsGroupRecipientsList `pulumi:"recipientsLists"`
-	// (Updatable) The email recipient lifecycle state.
+	// The email recipient group lifecycle state.
 	State *string `pulumi:"state"`
 	// The UsageStatement Subscription unique OCID.
 	//
@@ -134,7 +134,7 @@ type UsageStatementEmailRecipientsGroupState struct {
 	EmailRecipientsGroupId pulumi.StringPtrInput
 	// (Updatable) The list of recipient will receive the usage statement email.
 	RecipientsLists UsageStatementEmailRecipientsGroupRecipientsListArrayInput
-	// (Updatable) The email recipient lifecycle state.
+	// The email recipient group lifecycle state.
 	State pulumi.StringPtrInput
 	// The UsageStatement Subscription unique OCID.
 	//
@@ -277,7 +277,7 @@ func (o UsageStatementEmailRecipientsGroupOutput) RecipientsLists() UsageStateme
 	}).(UsageStatementEmailRecipientsGroupRecipientsListArrayOutput)
 }
 
-// (Updatable) The email recipient lifecycle state.
+// The email recipient group lifecycle state.
 func (o UsageStatementEmailRecipientsGroupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsageStatementEmailRecipientsGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

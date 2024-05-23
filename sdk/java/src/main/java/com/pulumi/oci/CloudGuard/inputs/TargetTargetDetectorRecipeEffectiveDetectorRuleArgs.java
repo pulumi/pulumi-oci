@@ -53,14 +53,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * (Updatable) Details of ResponderRule.
+     * Details of ResponderRule.
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs>> details;
 
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs>>> details() {
@@ -83,14 +83,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * (Updatable) Identifier for DetectorRule.
+     * The unique identifier of the detector rule.
      * 
      */
     @Import(name="detectorRuleId")
     private @Nullable Output<String> detectorRuleId;
 
     /**
-     * @return (Updatable) Identifier for DetectorRule.
+     * @return The unique identifier of the detector rule.
      * 
      */
     public Optional<Output<String>> detectorRuleId() {
@@ -336,7 +336,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detectorRuleId (Updatable) Identifier for DetectorRule.
+         * @param detectorRuleId The unique identifier of the detector rule.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detectorRuleId (Updatable) Identifier for DetectorRule.
+         * @param detectorRuleId The unique identifier of the detector rule.
          * 
          * @return builder
          * 

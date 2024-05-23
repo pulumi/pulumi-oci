@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type DatasetDatasetFormatDetails struct {
-	// It defines the format type of text files.
+	// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 	FormatType string `pulumi:"formatType"`
 	// Metadata for files with text content.
 	TextFileTypeMetadata *DatasetDatasetFormatDetailsTextFileTypeMetadata `pulumi:"textFileTypeMetadata"`
@@ -32,7 +32,7 @@ type DatasetDatasetFormatDetailsInput interface {
 }
 
 type DatasetDatasetFormatDetailsArgs struct {
-	// It defines the format type of text files.
+	// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 	FormatType pulumi.StringInput `pulumi:"formatType"`
 	// Metadata for files with text content.
 	TextFileTypeMetadata DatasetDatasetFormatDetailsTextFileTypeMetadataPtrInput `pulumi:"textFileTypeMetadata"`
@@ -115,7 +115,7 @@ func (o DatasetDatasetFormatDetailsOutput) ToDatasetDatasetFormatDetailsPtrOutpu
 	}).(DatasetDatasetFormatDetailsPtrOutput)
 }
 
-// It defines the format type of text files.
+// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 func (o DatasetDatasetFormatDetailsOutput) FormatType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetFormatDetails) string { return v.FormatType }).(pulumi.StringOutput)
 }
@@ -151,7 +151,7 @@ func (o DatasetDatasetFormatDetailsPtrOutput) Elem() DatasetDatasetFormatDetails
 	}).(DatasetDatasetFormatDetailsOutput)
 }
 
-// It defines the format type of text files.
+// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 func (o DatasetDatasetFormatDetailsPtrOutput) FormatType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetFormatDetails) *string {
 		if v == nil {
@@ -404,13 +404,13 @@ func (o DatasetDatasetFormatDetailsTextFileTypeMetadataPtrOutput) LineDelimiter(
 }
 
 type DatasetDatasetSourceDetails struct {
-	// Bucket name
+	// The object storage bucket that contains the dataset data source.
 	Bucket string `pulumi:"bucket"`
-	// Bucket namespace name
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace string `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix *string `pulumi:"prefix"`
-	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -426,13 +426,13 @@ type DatasetDatasetSourceDetailsInput interface {
 }
 
 type DatasetDatasetSourceDetailsArgs struct {
-	// Bucket name
+	// The object storage bucket that contains the dataset data source.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Bucket namespace name
+	// The namespace of the bucket that contains the dataset data source.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
-	// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+	// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -513,12 +513,12 @@ func (o DatasetDatasetSourceDetailsOutput) ToDatasetDatasetSourceDetailsPtrOutpu
 	}).(DatasetDatasetSourceDetailsPtrOutput)
 }
 
-// Bucket name
+// The object storage bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Bucket namespace name
+// The namespace of the bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -528,7 +528,7 @@ func (o DatasetDatasetSourceDetailsOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
-// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o DatasetDatasetSourceDetailsOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetDatasetSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -557,7 +557,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Elem() DatasetDatasetSourceDetails
 	}).(DatasetDatasetSourceDetailsOutput)
 }
 
-// Bucket name
+// The object storage bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -567,7 +567,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Bucket namespace name
+// The namespace of the bucket that contains the dataset data source.
 func (o DatasetDatasetSourceDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -587,7 +587,7 @@ func (o DatasetDatasetSourceDetailsPtrOutput) Prefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 func (o DatasetDatasetSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetDatasetSourceDetails) *string {
 		if v == nil {
@@ -758,7 +758,7 @@ func (o DatasetInitialImportDatasetConfigurationPtrOutput) ImportMetadataPath() 
 }
 
 type DatasetInitialImportDatasetConfigurationImportFormat struct {
-	// An unique name for a label within its dataset.
+	// Name of import format
 	Name string `pulumi:"name"`
 	// Version of import format
 	Version *string `pulumi:"version"`
@@ -776,7 +776,7 @@ type DatasetInitialImportDatasetConfigurationImportFormatInput interface {
 }
 
 type DatasetInitialImportDatasetConfigurationImportFormatArgs struct {
-	// An unique name for a label within its dataset.
+	// Name of import format
 	Name pulumi.StringInput `pulumi:"name"`
 	// Version of import format
 	Version pulumi.StringPtrInput `pulumi:"version"`
@@ -859,7 +859,7 @@ func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) ToDatasetIni
 	}).(DatasetInitialImportDatasetConfigurationImportFormatPtrOutput)
 }
 
-// An unique name for a label within its dataset.
+// Name of import format
 func (o DatasetInitialImportDatasetConfigurationImportFormatOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v DatasetInitialImportDatasetConfigurationImportFormat) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -893,7 +893,7 @@ func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Elem() Da
 	}).(DatasetInitialImportDatasetConfigurationImportFormatOutput)
 }
 
-// An unique name for a label within its dataset.
+// Name of import format
 func (o DatasetInitialImportDatasetConfigurationImportFormatPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatasetInitialImportDatasetConfigurationImportFormat) *string {
 		if v == nil {

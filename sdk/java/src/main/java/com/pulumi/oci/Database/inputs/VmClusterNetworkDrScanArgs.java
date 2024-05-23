@@ -17,14 +17,14 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
     public static final VmClusterNetworkDrScanArgs Empty = new VmClusterNetworkDrScanArgs();
 
     /**
-     * (Updatable) The node host name.
+     * (Updatable) The Disaster recovery SCAN hostname.
      * 
      */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The Disaster recovery SCAN hostname.
      * 
      */
     public Output<String> hostname() {
@@ -32,14 +32,14 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+     * (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
      * 
      */
     @Import(name="ips", required=true)
     private Output<List<String>> ips;
 
     /**
-     * @return (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+     * @return (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
      * 
      */
     public Output<List<String>> ips() {
@@ -47,14 +47,14 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The SCAN TCPIP port. Default is 1521.
+     * (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
      * 
      */
     @Import(name="scanListenerPortTcp", required=true)
     private Output<Integer> scanListenerPortTcp;
 
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
      * 
      */
     public Output<Integer> scanListenerPortTcp() {
@@ -88,7 +88,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname (Updatable) The Disaster recovery SCAN hostname.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname (Updatable) The Disaster recovery SCAN hostname.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ips (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+         * @param ips (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ips (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+         * @param ips (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ips (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+         * @param ips (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scanListenerPortTcp (Updatable) The SCAN TCPIP port. Default is 1521.
+         * @param scanListenerPortTcp (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class VmClusterNetworkDrScanArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scanListenerPortTcp (Updatable) The SCAN TCPIP port. Default is 1521.
+         * @param scanListenerPortTcp (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
          * 
          * @return builder
          * 

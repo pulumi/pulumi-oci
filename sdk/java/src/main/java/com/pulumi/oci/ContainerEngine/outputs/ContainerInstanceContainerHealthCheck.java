@@ -51,12 +51,12 @@ public final class ContainerInstanceContainerHealthCheck {
      */
     private @Nullable Integer intervalInSeconds;
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Health check name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+     * @return Container health check HTTP path.
      * 
      */
     private @Nullable String path;
@@ -129,14 +129,14 @@ public final class ContainerInstanceContainerHealthCheck {
         return Optional.ofNullable(this.intervalInSeconds);
     }
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Health check name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+     * @return Container health check HTTP path.
      * 
      */
     public Optional<String> path() {

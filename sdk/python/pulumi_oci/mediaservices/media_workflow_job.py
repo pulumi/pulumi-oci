@@ -29,7 +29,7 @@ class MediaWorkflowJobArgs:
                  parameters: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MediaWorkflowJob resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
                
                
@@ -69,7 +69,7 @@ class MediaWorkflowJobArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) ID of the compartment in which the job should be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -225,7 +225,7 @@ class _MediaWorkflowJobState:
                  workflow_identifier_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MediaWorkflowJob resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -240,7 +240,7 @@ class _MediaWorkflowJobState:
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['MediaWorkflowJobTaskLifecycleStateArgs']]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
@@ -297,7 +297,7 @@ class _MediaWorkflowJobState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) ID of the compartment in which the job should be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -486,7 +486,7 @@ class _MediaWorkflowJobState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        Creation time of the job. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -608,7 +608,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -769,7 +769,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -784,7 +784,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaWorkflowJobTaskLifecycleStateArgs']]]] task_lifecycle_states: Status of each task.
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: Creation time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_ended: Time when the job finished. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
@@ -825,7 +825,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) ID of the compartment in which the job should be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -950,7 +950,7 @@ class MediaWorkflowJob(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        Creation time of the job. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

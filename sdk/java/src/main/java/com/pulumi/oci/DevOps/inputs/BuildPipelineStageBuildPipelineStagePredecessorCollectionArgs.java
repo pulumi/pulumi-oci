@@ -16,14 +16,14 @@ public final class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs
     public static final BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs Empty = new BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs();
 
     /**
-     * (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * (Updatable) A list of build pipeline stage predecessors for a stage.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs>> items;
 
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) A list of build pipeline stage predecessors for a stage.
      * 
      */
     public Output<List<BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs>> items() {
@@ -55,7 +55,7 @@ public final class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) A list of build pipeline stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) A list of build pipeline stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) A list of build pipeline stage predecessors for a stage.
          * 
          * @return builder
          * 

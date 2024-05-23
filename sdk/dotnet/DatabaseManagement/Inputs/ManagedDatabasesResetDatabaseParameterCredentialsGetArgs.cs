@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         private Input<string>? _password;
 
         /// <summary>
-        /// The database user's password encoded using BASE64 scheme.
+        /// The password for the database user name.
         /// </summary>
         public Input<string>? Password
         {
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         }
 
         /// <summary>
-        /// The role of the database user.
+        /// The role of the database user. Indicates whether the database user is a normal user or sysdba.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

@@ -16,28 +16,30 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// (Updatable) Locale
         /// 
+        /// **Added In:** 18.2.2
+        /// 
         /// **SCIM++ Properties:**
         /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
         /// * idcsCanonicalValueSourceResourceType: AllowedValue
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
         /// </summary>
         public readonly string Locale;
         /// <summary>
-        /// (Updatable) Custom claim value
+        /// (Updatable) Login text
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * idcsSanitize: true
         /// </summary>
         public readonly string Value;
 

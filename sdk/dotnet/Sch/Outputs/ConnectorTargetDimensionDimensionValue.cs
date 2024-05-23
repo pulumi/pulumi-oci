@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class ConnectorTargetDimensionDimensionValue
     {
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type of dimension value: static or evaluated.
         /// </summary>
         public readonly string Kind;
         /// <summary>

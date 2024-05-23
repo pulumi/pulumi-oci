@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaPrivateEndpointAttachment = new OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment", OdaPrivateEndpointAttachmentArgs.builder()        
+ *         var testOdaPrivateEndpointAttachment = new OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment", OdaPrivateEndpointAttachmentArgs.builder()
  *             .odaInstanceId(testOdaInstance.id())
  *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
  *             .build());

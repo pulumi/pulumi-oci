@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Functions.Outputs
     public sealed class ApplicationImagePolicyConfigKeyDetail
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         /// </summary>
         public readonly string KmsKeyId;
 

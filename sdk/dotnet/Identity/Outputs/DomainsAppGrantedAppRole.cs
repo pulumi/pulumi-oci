@@ -54,9 +54,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? AppName;
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) The display-name of an AppRole that is granted to this App.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -95,9 +96,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? ReadOnly;
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) The URI of an AppRole that is granted to this App.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -108,37 +110,30 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-        /// 
-        /// **Added In:** 18.1.6
+        /// (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be 'direct' (because an App cannot be a member of a Group).
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsDefaultValue: AccountObjectClass
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) The id of an AppRole that is granted to this App.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

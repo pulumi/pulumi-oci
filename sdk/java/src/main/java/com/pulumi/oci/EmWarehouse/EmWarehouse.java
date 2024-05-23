@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEmWarehouse = new EmWarehouse("testEmWarehouse", EmWarehouseArgs.builder()        
+ *         var testEmWarehouse = new EmWarehouse("testEmWarehouse", EmWarehouseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .emBridgeId(testEmBridge.id())
  *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())

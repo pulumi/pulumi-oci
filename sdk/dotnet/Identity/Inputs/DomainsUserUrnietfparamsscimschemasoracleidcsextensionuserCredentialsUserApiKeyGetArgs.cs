@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the user's support account.
+        /// (Updatable) The user's API key OCID.
         /// 
-        /// **Added In:** 2103141444
+        /// **Added In:** 2012271618
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -49,9 +49,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the corresponding ApiKey resource to which the user belongs.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 2012271618
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -66,20 +66,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The user's API key identifier.
+        /// 
+        /// **Added In:** 2012271618
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

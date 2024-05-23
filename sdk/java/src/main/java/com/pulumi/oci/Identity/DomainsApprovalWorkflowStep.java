@@ -30,58 +30,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsApprovalWorkflowStep;
- * import com.pulumi.oci.Identity.DomainsApprovalWorkflowStepArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowStepApproverArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowStepTagArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testApprovalWorkflowStep = new DomainsApprovalWorkflowStep("testApprovalWorkflowStep", DomainsApprovalWorkflowStepArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .order(approvalWorkflowStepOrder)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowStep")
- *             .type(approvalWorkflowStepType)
- *             .approvers(DomainsApprovalWorkflowStepApproverArgs.builder()
- *                 .type(approvalWorkflowStepApproversType)
- *                 .value(approvalWorkflowStepApproversValue)
- *                 .ocid(approvalWorkflowStepApproversOcid)
- *                 .build())
- *             .approversExpressions(approvalWorkflowStepApproversExpressions)
- *             .attributeSets("all")
- *             .attributes("")
- *             .authorization(approvalWorkflowStepAuthorization)
- *             .id(approvalWorkflowStepId)
- *             .minimumApprovals(approvalWorkflowStepMinimumApprovals)
- *             .ocid(approvalWorkflowStepOcid)
- *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
- *             .tags(DomainsApprovalWorkflowStepTagArgs.builder()
- *                 .key(approvalWorkflowStepTagsKey)
- *                 .value(approvalWorkflowStepTagsValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

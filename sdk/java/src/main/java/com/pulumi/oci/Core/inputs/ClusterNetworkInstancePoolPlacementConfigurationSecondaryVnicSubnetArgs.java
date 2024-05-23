@@ -19,14 +19,14 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
     public static final ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs Empty = new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs();
 
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -66,18 +66,12 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
     /**
      * The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -112,7 +106,7 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -123,7 +117,7 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -187,9 +181,6 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
         /**
          * @param subnetId The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -200,9 +191,6 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
 
         /**
          * @param subnetId The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

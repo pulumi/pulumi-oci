@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkSecurityGroup = new NetworkSecurityGroup("testNetworkSecurityGroup", NetworkSecurityGroupArgs.builder()        
+ *         var testNetworkSecurityGroup = new NetworkSecurityGroup("testNetworkSecurityGroup", NetworkSecurityGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

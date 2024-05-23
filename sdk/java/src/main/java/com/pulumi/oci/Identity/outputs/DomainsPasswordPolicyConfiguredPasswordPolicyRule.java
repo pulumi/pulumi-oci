@@ -11,30 +11,28 @@ import java.util.Objects;
 @CustomType
 public final class DomainsPasswordPolicyConfiguredPasswordPolicyRule {
     /**
-     * @return (Updatable) Key or name of the tag.
+     * @return (Updatable) The specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
      */
     private String key;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) User-friendly text that describes a specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -43,15 +41,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRule {
 
     private DomainsPasswordPolicyConfiguredPasswordPolicyRule() {}
     /**
-     * @return (Updatable) Key or name of the tag.
+     * @return (Updatable) The specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -60,15 +57,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRule {
         return this.key;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) User-friendly text that describes a specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

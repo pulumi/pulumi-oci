@@ -17,20 +17,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     public static final DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs Empty = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs();
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the Uri detail.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Uri detail.
      * 
      */
     public Output<String> type() {
@@ -38,14 +32,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+     * (Updatable) The discovery URI for the auth server.
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+     * @return (Updatable) The discovery URI for the auth server.
      * 
      */
     public Optional<Output<String>> uri() {
@@ -78,10 +72,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the Uri detail.
          * 
          * @return builder
          * 
@@ -92,10 +83,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the Uri detail.
          * 
          * @return builder
          * 
@@ -105,7 +93,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param uri (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+         * @param uri (Updatable) The discovery URI for the auth server.
          * 
          * @return builder
          * 
@@ -116,7 +104,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param uri (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+         * @param uri (Updatable) The discovery URI for the auth server.
          * 
          * @return builder
          * 

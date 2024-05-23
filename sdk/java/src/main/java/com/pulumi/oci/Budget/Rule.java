@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAlertRule = new Rule("testAlertRule", RuleArgs.builder()        
+ *         var testAlertRule = new Rule("testAlertRule", RuleArgs.builder()
  *             .budgetId(testBudget.id())
  *             .threshold(alertRuleThreshold)
  *             .thresholdType(alertRuleThresholdType)

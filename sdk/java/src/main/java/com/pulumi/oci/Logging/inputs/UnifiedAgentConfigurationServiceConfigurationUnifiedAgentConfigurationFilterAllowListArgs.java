@@ -16,14 +16,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     public static final UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs Empty = new UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs();
 
     /**
-     * (Updatable) A new key
+     * (Updatable) The field name to which the regular expression is applied
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) A new key
+     * @return (Updatable) The field name to which the regular expression is applied
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     }
 
     /**
-     * (Updatable) The Grok pattern.
+     * (Updatable) The regular expression
      * 
      */
     @Import(name="pattern")
     private @Nullable Output<String> pattern;
 
     /**
-     * @return (Updatable) The Grok pattern.
+     * @return (Updatable) The regular expression
      * 
      */
     public Optional<Output<String>> pattern() {
@@ -71,7 +71,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param key (Updatable) A new key
+         * @param key (Updatable) The field name to which the regular expression is applied
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param key (Updatable) A new key
+         * @param key (Updatable) The field name to which the regular expression is applied
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param pattern (Updatable) The Grok pattern.
+         * @param pattern (Updatable) The regular expression
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param pattern (Updatable) The Grok pattern.
+         * @param pattern (Updatable) The regular expression
          * 
          * @return builder
          * 

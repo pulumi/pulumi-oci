@@ -14,11 +14,7 @@ namespace Pulumi.Oci.Waas.Outputs
     public sealed class PolicyOriginCustomHeader
     {
         /// <summary>
-        /// (Updatable) The unique name of the whitelist.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The name of the header.
         /// </summary>
         public readonly string Name;
         /// <summary>

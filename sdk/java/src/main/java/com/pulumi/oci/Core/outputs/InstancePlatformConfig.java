@@ -76,7 +76,7 @@ public final class InstancePlatformConfig {
      */
     private @Nullable Integer percentageOfCoresEnabled;
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of platform being configured.
      * 
      */
     private String type;
@@ -164,7 +164,7 @@ public final class InstancePlatformConfig {
         return Optional.ofNullable(this.percentageOfCoresEnabled);
     }
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of platform being configured.
      * 
      */
     public String type() {

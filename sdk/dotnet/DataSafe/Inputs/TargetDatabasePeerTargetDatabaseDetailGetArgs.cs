@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The details required to establish a TLS enabled connection.
+        /// The details required to establish a TLS enabled connection.
         /// </summary>
         [Input("tlsConfig")]
         public Input<Inputs.TargetDatabasePeerTargetDatabaseDetailTlsConfigGetArgs>? TlsConfig { get; set; }

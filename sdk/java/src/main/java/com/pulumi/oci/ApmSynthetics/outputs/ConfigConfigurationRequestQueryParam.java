@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigConfigurationRequestQueryParam {
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return (Updatable) Name of request query parameter.
      * 
      */
     private @Nullable String paramName;
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return (Updatable) Value of request query parameter.
      * 
      */
     private @Nullable String paramValue;
 
     private ConfigConfigurationRequestQueryParam() {}
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return (Updatable) Name of request query parameter.
      * 
      */
     public Optional<String> paramName() {
         return Optional.ofNullable(this.paramName);
     }
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return (Updatable) Value of request query parameter.
      * 
      */
     public Optional<String> paramValue() {

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IngressGatewayRouteTableRouteRuleDestination {
     /**
-     * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+     * @return (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
      * 
      */
     private @Nullable Integer port;
@@ -31,7 +31,7 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
 
     private IngressGatewayRouteTableRouteRuleDestination() {}
     /**
-     * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+     * @return (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
      * 
      */
     public Optional<Integer> port() {

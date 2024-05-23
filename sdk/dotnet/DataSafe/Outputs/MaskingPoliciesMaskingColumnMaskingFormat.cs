@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// (Updatable) The description of the format entry.
+        /// (Updatable) The description of the masking format.
         /// </summary>
         public readonly string? Description;
         /// <summary>

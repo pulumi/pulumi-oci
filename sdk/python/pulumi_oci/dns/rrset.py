@@ -25,7 +25,7 @@ class RrsetArgs:
                  view_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Rrset resource.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
+        :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
                
@@ -55,7 +55,7 @@ class RrsetArgs:
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
         """
-        The fully qualified domain name where the record can be located.
+        The target fully-qualified domain name (FQDN) within the target zone.
         """
         return pulumi.get(self, "domain")
 
@@ -155,7 +155,7 @@ class _RrsetState:
         """
         Input properties used for looking up and filtering Rrset resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
+        :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
@@ -199,7 +199,7 @@ class _RrsetState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
         """
-        The fully qualified domain name where the record can be located.
+        The target fully-qualified domain name (FQDN) within the target zone.
         """
         return pulumi.get(self, "domain")
 
@@ -331,7 +331,7 @@ class Rrset(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
+        :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
@@ -460,7 +460,7 @@ class Rrset(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
+        :param pulumi.Input[str] domain: The target fully-qualified domain name (FQDN) within the target zone.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RrsetItemArgs']]]] items: (Updatable) 
                **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
         :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
@@ -498,7 +498,7 @@ class Rrset(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
         """
-        The fully qualified domain name where the record can be located.
+        The target fully-qualified domain name (FQDN) within the target zone.
         """
         return pulumi.get(self, "domain")
 

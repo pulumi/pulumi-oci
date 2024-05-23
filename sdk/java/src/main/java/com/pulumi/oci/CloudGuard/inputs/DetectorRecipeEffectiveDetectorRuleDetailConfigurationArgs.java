@@ -18,14 +18,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     public static final DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs();
 
     /**
-     * (Updatable) Unique name of the configuration
+     * Unique name of the configuration
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -33,14 +33,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * (Updatable) configuration data type
+     * configuration data type
      * 
      */
     @Import(name="dataType")
     private @Nullable Output<String> dataType;
 
     /**
-     * @return (Updatable) configuration data type
+     * @return configuration data type
      * 
      */
     public Optional<Output<String>> dataType() {
@@ -48,14 +48,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * (Updatable) configuration name
+     * configuration name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     public Optional<Output<String>> name() {
@@ -63,14 +63,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * (Updatable) configuration value
+     * configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -78,14 +78,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * (Updatable) List of configuration values
+     * List of configuration values
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs>> values;
 
     /**
-     * @return (Updatable) List of configuration values
+     * @return List of configuration values
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs>>> values() {
@@ -121,7 +121,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey Unique name of the configuration
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey Unique name of the configuration
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param dataType (Updatable) configuration data type
+         * @param dataType configuration data type
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param dataType (Updatable) configuration data type
+         * @param dataType configuration data type
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name configuration name
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name configuration name
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param values (Updatable) List of configuration values
+         * @param values List of configuration values
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param values (Updatable) List of configuration values
+         * @param values List of configuration values
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param values (Updatable) List of configuration values
+         * @param values List of configuration values
          * 
          * @return builder
          * 

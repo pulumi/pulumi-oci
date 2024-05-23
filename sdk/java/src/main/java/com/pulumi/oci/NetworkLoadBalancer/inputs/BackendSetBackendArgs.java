@@ -79,22 +79,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * A user-friendly name for the backend set that must be unique and cannot be changed.
-     * 
-     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-     * 
-     * Example: `example_backend_set`
+     * (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A user-friendly name for the backend set that must be unique and cannot be changed.
-     * 
-     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-     * 
-     * Example: `example_backend_set`
+     * @return (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
      * 
      */
     public Optional<Output<String>> name() {
@@ -102,14 +94,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+     * (Updatable) The communication port for the backend server.  Example: `8080`
      * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
-     * @return (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+     * @return (Updatable) The communication port for the backend server.  Example: `8080`
      * 
      */
     public Output<Integer> port() {
@@ -262,11 +254,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
-         * 
-         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-         * 
-         * Example: `example_backend_set`
+         * @param name (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
          * 
          * @return builder
          * 
@@ -277,11 +265,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name A user-friendly name for the backend set that must be unique and cannot be changed.
-         * 
-         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-         * 
-         * Example: `example_backend_set`
+         * @param name (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
          * 
          * @return builder
          * 
@@ -291,7 +275,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+         * @param port (Updatable) The communication port for the backend server.  Example: `8080`
          * 
          * @return builder
          * 
@@ -302,7 +286,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+         * @param port (Updatable) The communication port for the backend server.  Example: `8080`
          * 
          * @return builder
          * 

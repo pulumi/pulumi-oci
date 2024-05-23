@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem {
     /**
-     * @return (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     private String from;
     /**
-     * @return (Updatable) The new name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     private String to;
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem() {}
     /**
-     * @return (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     public String from() {
         return this.from;
     }
     /**
-     * @return (Updatable) The new name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     public String to() {

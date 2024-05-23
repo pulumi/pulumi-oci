@@ -37,17 +37,14 @@ public final class DomainsSettingImage {
      */
     private String type;
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Image URI
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     private String value;
@@ -82,17 +79,14 @@ public final class DomainsSettingImage {
         return this.type;
     }
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Image URI
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     public String value() {

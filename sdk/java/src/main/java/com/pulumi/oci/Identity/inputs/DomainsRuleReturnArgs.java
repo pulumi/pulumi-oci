@@ -83,11 +83,10 @@ public final class DomainsRuleReturnArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Attribute value of some attribute to be returned.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -100,11 +99,10 @@ public final class DomainsRuleReturnArgs extends com.pulumi.resources.ResourceAr
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Attribute value of some attribute to be returned.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -222,11 +220,10 @@ public final class DomainsRuleReturnArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Attribute value of some attribute to be returned.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -243,11 +240,10 @@ public final class DomainsRuleReturnArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Attribute value of some attribute to be returned.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true

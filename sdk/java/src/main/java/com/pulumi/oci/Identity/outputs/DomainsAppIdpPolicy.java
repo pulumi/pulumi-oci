@@ -13,7 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppIdpPolicy {
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the policy.
+     * 
+     * **Added In:** 18.1.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,26 +29,28 @@ public final class DomainsAppIdpPolicy {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the Policy.
+     * 
+     * **Added In:** 18.1.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppIdpPolicy() {}
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the policy.
+     * 
+     * **Added In:** 18.1.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -62,19 +66,19 @@ public final class DomainsAppIdpPolicy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the Policy.
+     * 
+     * **Added In:** 18.1.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

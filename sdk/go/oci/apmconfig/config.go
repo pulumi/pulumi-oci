@@ -100,7 +100,7 @@ type Config struct {
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A description of the metric.
+	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayOutput `pulumi:"dimensions"`
@@ -183,7 +183,7 @@ type configState struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the metric.
+	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description *string `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
@@ -228,7 +228,7 @@ type ConfigState struct {
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the metric.
+	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringPtrInput
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayInput
@@ -275,7 +275,7 @@ type configArgs struct {
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the metric.
+	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description *string `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
@@ -311,7 +311,7 @@ type ConfigArgs struct {
 	ConfigType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the metric.
+	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringPtrInput
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayInput
@@ -446,7 +446,7 @@ func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) A description of the metric.
+// (Updatable) An optional string that describes what the options are intended or used for.
 func (o ConfigOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }

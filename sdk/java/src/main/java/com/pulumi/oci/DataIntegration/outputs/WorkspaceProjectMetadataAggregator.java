@@ -22,7 +22,7 @@ public final class WorkspaceProjectMetadataAggregator {
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     private @Nullable String key;
@@ -53,7 +53,7 @@ public final class WorkspaceProjectMetadataAggregator {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     public Optional<String> key() {

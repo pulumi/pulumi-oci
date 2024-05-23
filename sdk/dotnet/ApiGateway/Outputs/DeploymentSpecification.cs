@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly Outputs.DeploymentSpecificationLoggingPolicies? LoggingPolicies;
         /// <summary>
-        /// (Updatable) Behavior applied to any requests received by the API on this route.
+        /// (Updatable) Global behavior applied to all requests received by the API.
         /// </summary>
         public readonly Outputs.DeploymentSpecificationRequestPolicies? RequestPolicies;
         /// <summary>

@@ -125,14 +125,14 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+     * (Updatable) The communication port for the backend server.  Example: `8080`
      * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
-     * @return (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+     * @return (Updatable) The communication port for the backend server.  Example: `8080`
      * 
      */
     public Output<Integer> port() {
@@ -328,7 +328,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+         * @param port (Updatable) The communication port for the backend server.  Example: `8080`
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class BackendSetBackendArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+         * @param port (Updatable) The communication port for the backend server.  Example: `8080`
          * 
          * @return builder
          * 

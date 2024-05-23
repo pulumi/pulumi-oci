@@ -53,6 +53,7 @@ export interface GetRetrievePasswordResult {
     readonly sddcId: string;
     /**
      * SDDC vCenter/NSX/HCX password.
+     * * `passwordType` - SDDC password type.
      */
     readonly sddcPassword: {[key: string]: any};
     readonly type: string;

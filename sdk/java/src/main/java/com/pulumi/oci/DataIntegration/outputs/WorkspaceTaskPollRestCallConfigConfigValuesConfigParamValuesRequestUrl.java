@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl {
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     private @Nullable String stringValue;
 
     private WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl() {}
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     public Optional<String> stringValue() {

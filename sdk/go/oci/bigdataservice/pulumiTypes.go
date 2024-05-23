@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AutoScalingConfigurationPolicy struct {
-	// Type of autoscaling policy.
+	// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 	PolicyType string `pulumi:"policyType"`
 	// (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules []AutoScalingConfigurationPolicyRule `pulumi:"rules"`
@@ -32,7 +32,7 @@ type AutoScalingConfigurationPolicyInput interface {
 }
 
 type AutoScalingConfigurationPolicyArgs struct {
-	// Type of autoscaling policy.
+	// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 	// (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
 	Rules AutoScalingConfigurationPolicyRuleArrayInput `pulumi:"rules"`
@@ -115,7 +115,7 @@ func (o AutoScalingConfigurationPolicyOutput) ToAutoScalingConfigurationPolicyPt
 	}).(AutoScalingConfigurationPolicyPtrOutput)
 }
 
-// Type of autoscaling policy.
+// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 func (o AutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -149,7 +149,7 @@ func (o AutoScalingConfigurationPolicyPtrOutput) Elem() AutoScalingConfiguration
 	}).(AutoScalingConfigurationPolicyOutput)
 }
 
-// Type of autoscaling policy.
+// (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 func (o AutoScalingConfigurationPolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicy) *string {
 		if v == nil {
@@ -481,7 +481,7 @@ func (o AutoScalingConfigurationPolicyDetailsPtrOutput) TriggerType() pulumi.Str
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleDownConfig struct {
-	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 	MemoryStepSize *int `pulumi:"memoryStepSize"`
 	// (Updatable) Metric and threshold details for triggering an autoscale action.
 	Metric *AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric `pulumi:"metric"`
@@ -489,7 +489,7 @@ type AutoScalingConfigurationPolicyDetailsScaleDownConfig struct {
 	MinMemoryPerNode *int `pulumi:"minMemoryPerNode"`
 	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 	MinOcpusPerNode *int `pulumi:"minOcpusPerNode"`
-	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 	OcpuStepSize *int `pulumi:"ocpuStepSize"`
 }
 
@@ -505,7 +505,7 @@ type AutoScalingConfigurationPolicyDetailsScaleDownConfigInput interface {
 }
 
 type AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs struct {
-	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 	MemoryStepSize pulumi.IntPtrInput `pulumi:"memoryStepSize"`
 	// (Updatable) Metric and threshold details for triggering an autoscale action.
 	Metric AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricPtrInput `pulumi:"metric"`
@@ -513,7 +513,7 @@ type AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs struct {
 	MinMemoryPerNode pulumi.IntPtrInput `pulumi:"minMemoryPerNode"`
 	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
 	MinOcpusPerNode pulumi.IntPtrInput `pulumi:"minOcpusPerNode"`
-	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+	// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 	OcpuStepSize pulumi.IntPtrInput `pulumi:"ocpuStepSize"`
 }
 
@@ -594,7 +594,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) ToAutoScalin
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput)
 }
 
-// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) MemoryStepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.MemoryStepSize }).(pulumi.IntPtrOutput)
 }
@@ -616,7 +616,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) MinOcpusPerN
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.MinOcpusPerNode }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput) OcpuStepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int { return v.OcpuStepSize }).(pulumi.IntPtrOutput)
 }
@@ -645,7 +645,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) Elem() Au
 	}).(AutoScalingConfigurationPolicyDetailsScaleDownConfigOutput)
 }
 
-// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) MemoryStepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
 		if v == nil {
@@ -685,7 +685,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) MinOcpusP
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
 func (o AutoScalingConfigurationPolicyDetailsScaleDownConfigPtrOutput) OcpuStepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleDownConfig) *int {
 		if v == nil {
@@ -1035,7 +1035,7 @@ type AutoScalingConfigurationPolicyDetailsScaleInConfig struct {
 	Metric *AutoScalingConfigurationPolicyDetailsScaleInConfigMetric `pulumi:"metric"`
 	// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
 	MinNodeCount *int `pulumi:"minNodeCount"`
-	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	// (Updatable) This value is the number of nodes to remove during a scale-in event.
 	StepSize *int `pulumi:"stepSize"`
 }
 
@@ -1055,7 +1055,7 @@ type AutoScalingConfigurationPolicyDetailsScaleInConfigArgs struct {
 	Metric AutoScalingConfigurationPolicyDetailsScaleInConfigMetricPtrInput `pulumi:"metric"`
 	// (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
 	MinNodeCount pulumi.IntPtrInput `pulumi:"minNodeCount"`
-	// (Updatable) This value is the number of nodes to add during a scale-out event.
+	// (Updatable) This value is the number of nodes to remove during a scale-in event.
 	StepSize pulumi.IntPtrInput `pulumi:"stepSize"`
 }
 
@@ -1148,7 +1148,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) MinNodeCount()
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfig) *int { return v.MinNodeCount }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) This value is the number of nodes to add during a scale-out event.
+// (Updatable) This value is the number of nodes to remove during a scale-in event.
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigOutput) StepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyDetailsScaleInConfig) *int { return v.StepSize }).(pulumi.IntPtrOutput)
 }
@@ -1197,7 +1197,7 @@ func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) MinNodeCoun
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) This value is the number of nodes to add during a scale-out event.
+// (Updatable) This value is the number of nodes to remove during a scale-in event.
 func (o AutoScalingConfigurationPolicyDetailsScaleInConfigPtrOutput) StepSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyDetailsScaleInConfig) *int {
 		if v == nil {
@@ -3213,7 +3213,7 @@ type BdsInstanceCloudSqlDetail struct {
 	IsKerberosMappedToDatabaseUsers *bool `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about Kerberos principals
 	KerberosDetails []BdsInstanceCloudSqlDetailKerberosDetail `pulumi:"kerberosDetails"`
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -3243,7 +3243,7 @@ type BdsInstanceCloudSqlDetailArgs struct {
 	IsKerberosMappedToDatabaseUsers pulumi.BoolPtrInput `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about Kerberos principals
 	KerberosDetails BdsInstanceCloudSqlDetailKerberosDetailArrayInput `pulumi:"kerberosDetails"`
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -3324,7 +3324,7 @@ func (o BdsInstanceCloudSqlDetailOutput) KerberosDetails() BdsInstanceCloudSqlDe
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) []BdsInstanceCloudSqlDetailKerberosDetail { return v.KerberosDetails }).(BdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceCloudSqlDetailOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -3696,11 +3696,10 @@ func (o BdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanc
 type BdsInstanceComputeOnlyWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape string `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       string                                       `pulumi:"shape"`
 	ShapeConfig *BdsInstanceComputeOnlyWorkerNodeShapeConfig `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
@@ -3720,11 +3719,10 @@ type BdsInstanceComputeOnlyWorkerNodeInput interface {
 type BdsInstanceComputeOnlyWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       pulumi.StringInput                                  `pulumi:"shape"`
 	ShapeConfig BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -3812,7 +3810,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.St
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceComputeOnlyWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -3822,7 +3820,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceComputeOnlyWorkerNodeOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		return v.ShapeConfig
@@ -3868,7 +3865,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *int {
 		if v == nil {
@@ -3888,7 +3885,6 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) Shape() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) ShapeConfig() BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNode) *BdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		if v == nil {
@@ -3909,7 +3905,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOu
 }
 
 type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -3929,7 +3925,7 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
 }
 
 type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -4014,7 +4010,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) ToBdsInstanceComputeO
 	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -4053,7 +4049,7 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Elem() BdsInstance
 	}).(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
 		if v == nil {
@@ -4086,11 +4082,10 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.Int
 type BdsInstanceEdgeNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape string `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       string                          `pulumi:"shape"`
 	ShapeConfig *BdsInstanceEdgeNodeShapeConfig `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
@@ -4110,11 +4105,10 @@ type BdsInstanceEdgeNodeInput interface {
 type BdsInstanceEdgeNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       pulumi.StringInput                     `pulumi:"shape"`
 	ShapeConfig BdsInstanceEdgeNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -4202,7 +4196,7 @@ func (o BdsInstanceEdgeNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput
 	return o.ApplyT(func(v BdsInstanceEdgeNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceEdgeNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -4212,7 +4206,6 @@ func (o BdsInstanceEdgeNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceEdgeNodeOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNode) *BdsInstanceEdgeNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
 }
@@ -4256,7 +4249,7 @@ func (o BdsInstanceEdgeNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceEdgeNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNode) *int {
 		if v == nil {
@@ -4276,7 +4269,6 @@ func (o BdsInstanceEdgeNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceEdgeNodePtrOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNode) *BdsInstanceEdgeNodeShapeConfig {
 		if v == nil {
@@ -4297,7 +4289,7 @@ func (o BdsInstanceEdgeNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 }
 
 type BdsInstanceEdgeNodeShapeConfig struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -4317,7 +4309,7 @@ type BdsInstanceEdgeNodeShapeConfigInput interface {
 }
 
 type BdsInstanceEdgeNodeShapeConfigArgs struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -4402,7 +4394,7 @@ func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigPt
 	}).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceEdgeNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -4441,7 +4433,7 @@ func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Elem() BdsInstanceEdgeNodeShape
 	}).(BdsInstanceEdgeNodeShapeConfigOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
 		if v == nil {
@@ -4858,7 +4850,7 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOut
 type BdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// The amount of master nodes should be created.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
@@ -4882,7 +4874,7 @@ type BdsInstanceMasterNodeInput interface {
 type BdsInstanceMasterNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// The amount of master nodes should be created.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
@@ -4974,7 +4966,7 @@ func (o BdsInstanceMasterNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutp
 	return o.ApplyT(func(v BdsInstanceMasterNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// The amount of master nodes should be created.
 func (o BdsInstanceMasterNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -5028,7 +5020,7 @@ func (o BdsInstanceMasterNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// The amount of master nodes should be created.
 func (o BdsInstanceMasterNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNode) *int {
 		if v == nil {
@@ -5416,7 +5408,7 @@ type BdsInstanceNode struct {
 	InstanceId *string `pulumi:"instanceId"`
 	// IP address of the node
 	IpAddress *string `pulumi:"ipAddress"`
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
 	NodeType *string `pulumi:"nodeType"`
@@ -5424,13 +5416,13 @@ type BdsInstanceNode struct {
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
-	// Shape of the node
+	// (Updatable) Shape of the node.
 	Shape *string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint *string `pulumi:"sshFingerprint"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
-	// The OCID of the subnet in which the node should be created
+	// The OCID of the subnet in which the node will be created.
 	SubnetId *string `pulumi:"subnetId"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -5466,7 +5458,7 @@ type BdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// IP address of the node
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
@@ -5474,13 +5466,13 @@ type BdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
-	// Shape of the node
+	// (Updatable) Shape of the node.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
 	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// The OCID of the subnet in which the node should be created
+	// The OCID of the subnet in which the node will be created.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -5579,7 +5571,7 @@ func (o BdsInstanceNodeOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceNodeOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -5599,7 +5591,7 @@ func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
 
-// Shape of the node
+// (Updatable) Shape of the node.
 func (o BdsInstanceNodeOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
@@ -5614,7 +5606,7 @@ func (o BdsInstanceNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the subnet in which the node should be created
+// The OCID of the subnet in which the node will be created.
 func (o BdsInstanceNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -5877,7 +5869,7 @@ func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayO
 type BdsInstanceUtilNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// The amount of utility nodes should be created.
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
@@ -5901,7 +5893,7 @@ type BdsInstanceUtilNodeInput interface {
 type BdsInstanceUtilNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// The amount of utility nodes should be created.
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
@@ -5993,7 +5985,7 @@ func (o BdsInstanceUtilNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput
 	return o.ApplyT(func(v BdsInstanceUtilNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// The amount of utility nodes should be created.
 func (o BdsInstanceUtilNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -6047,7 +6039,7 @@ func (o BdsInstanceUtilNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// The amount of utility nodes should be created.
 func (o BdsInstanceUtilNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNode) *int {
 		if v == nil {
@@ -6265,11 +6257,10 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 type BdsInstanceWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape string `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       string                            `pulumi:"shape"`
 	ShapeConfig *BdsInstanceWorkerNodeShapeConfig `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId string `pulumi:"subnetId"`
@@ -6289,11 +6280,10 @@ type BdsInstanceWorkerNodeInput interface {
 type BdsInstanceWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
-	Shape pulumi.StringInput `pulumi:"shape"`
-	// The shape configuration requested for the node.
+	Shape       pulumi.StringInput                       `pulumi:"shape"`
 	ShapeConfig BdsInstanceWorkerNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
@@ -6381,7 +6371,7 @@ func (o BdsInstanceWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutp
 	return o.ApplyT(func(v BdsInstanceWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceWorkerNodeOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
@@ -6391,7 +6381,6 @@ func (o BdsInstanceWorkerNodeOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceWorkerNodeOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
 }
@@ -6435,7 +6424,7 @@ func (o BdsInstanceWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceWorkerNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *int {
 		if v == nil {
@@ -6455,7 +6444,6 @@ func (o BdsInstanceWorkerNodePtrOutput) Shape() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The shape configuration requested for the node.
 func (o BdsInstanceWorkerNodePtrOutput) ShapeConfig() BdsInstanceWorkerNodeShapeConfigPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNode) *BdsInstanceWorkerNodeShapeConfig {
 		if v == nil {
@@ -6476,7 +6464,7 @@ func (o BdsInstanceWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 }
 
 type BdsInstanceWorkerNodeShapeConfig struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
@@ -6496,7 +6484,7 @@ type BdsInstanceWorkerNodeShapeConfigInput interface {
 }
 
 type BdsInstanceWorkerNodeShapeConfigArgs struct {
-	// The total amount of memory available to the node, in gigabytes
+	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
@@ -6581,7 +6569,7 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) ToBdsInstanceWorkerNodeShapeConf
 	}).(BdsInstanceWorkerNodeShapeConfigPtrOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
@@ -6620,7 +6608,7 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Elem() BdsInstanceWorkerNodeS
 	}).(BdsInstanceWorkerNodeShapeConfigOutput)
 }
 
-// The total amount of memory available to the node, in gigabytes
+// The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
 		if v == nil {

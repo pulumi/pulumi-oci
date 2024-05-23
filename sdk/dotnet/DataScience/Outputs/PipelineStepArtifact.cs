@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         public readonly string? ArtifactLastModified;
         public readonly string StepArtifact;
         /// <summary>
-        /// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        /// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         /// </summary>
         public readonly string StepName;
 

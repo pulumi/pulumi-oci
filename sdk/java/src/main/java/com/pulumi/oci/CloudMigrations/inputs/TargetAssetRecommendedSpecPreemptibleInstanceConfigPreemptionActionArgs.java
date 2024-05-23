@@ -17,14 +17,14 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
     public static final TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs Empty = new TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs();
 
     /**
-     * (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+     * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
      * 
      */
     @Import(name="preserveBootVolume")
     private @Nullable Output<Boolean> preserveBootVolume;
 
     /**
-     * @return (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+     * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
      * 
      */
     public Optional<Output<Boolean>> preserveBootVolume() {
@@ -32,14 +32,14 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
     }
 
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Optional<Output<String>> type() {
@@ -72,7 +72,7 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
         }
 
         /**
-         * @param preserveBootVolume (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+         * @param preserveBootVolume Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
         }
 
         /**
-         * @param preserveBootVolume (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+         * @param preserveBootVolume Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemption
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 

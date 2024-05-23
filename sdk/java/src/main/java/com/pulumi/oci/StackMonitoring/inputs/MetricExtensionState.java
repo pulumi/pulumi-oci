@@ -22,14 +22,14 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
     public static final MetricExtensionState Empty = new MetricExtensionState();
 
     /**
-     * (Updatable) Type of possible collection methods.
+     * Type of possible collection methods.
      * 
      */
     @Import(name="collectionMethod")
     private @Nullable Output<String> collectionMethod;
 
     /**
-     * @return (Updatable) Type of possible collection methods.
+     * @return Type of possible collection methods.
      * 
      */
     public Optional<Output<String>> collectionMethod() {
@@ -97,14 +97,14 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of the metric.
+     * @return (Updatable) Metric Extension display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -172,14 +172,14 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of the script file
+     * @return Metric Extension Resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -371,7 +371,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param collectionMethod (Updatable) Type of possible collection methods.
+         * @param collectionMethod Type of possible collection methods.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param collectionMethod (Updatable) Type of possible collection methods.
+         * @param collectionMethod Type of possible collection methods.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) Display name of the metric.
+         * @param displayName (Updatable) Metric Extension display name.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) Display name of the metric.
+         * @param displayName (Updatable) Metric Extension display name.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name Metric Extension Resource name.
          * 
          * @return builder
          * 
@@ -612,7 +612,7 @@ public final class MetricExtensionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name Metric Extension Resource name.
          * 
          * @return builder
          * 

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeader {
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) Value of the header.
+     * @return Value of the header.
      * 
      */
     private @Nullable String value;
 
     private DeploymentSpecificationRouteBackendRoutingBackendBackendHeader() {}
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Value of the header.
+     * @return Value of the header.
      * 
      */
     public Optional<String> value() {

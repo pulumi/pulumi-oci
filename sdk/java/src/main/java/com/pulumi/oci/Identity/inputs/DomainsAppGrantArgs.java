@@ -127,7 +127,7 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -143,7 +143,7 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -160,38 +160,34 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -356,7 +352,7 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -376,7 +372,7 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -395,19 +391,17 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -418,19 +412,17 @@ public final class DomainsAppGrantArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

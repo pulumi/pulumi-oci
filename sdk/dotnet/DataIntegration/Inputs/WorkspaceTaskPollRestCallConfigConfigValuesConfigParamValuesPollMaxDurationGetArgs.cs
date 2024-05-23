@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) An object value of the parameter.
+        /// An object value of the parameter.
         /// </summary>
         [Input("objectValue")]
         public Input<double>? ObjectValue { get; set; }

@@ -29,12 +29,12 @@ class MetricExtensionArgs:
         The set of arguments for constructing a MetricExtension resource.
         :param pulumi.Input[str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
+        :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
         :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]] metric_lists: (Updatable) List of metrics which are part of this metric extension
         :param pulumi.Input['MetricExtensionQueryPropertiesArgs'] query_properties: (Updatable) Collection method and query properties details of metric extension
         :param pulumi.Input[str] resource_type: Resource type to which Metric Extension applies
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
-        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
@@ -82,7 +82,7 @@ class MetricExtensionArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Display name of the metric.
+        (Updatable) Metric Extension display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -142,7 +142,7 @@ class MetricExtensionArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the script file
+        Metric Extension Resource name.
         """
         return pulumi.get(self, "name")
 
@@ -192,17 +192,17 @@ class _MetricExtensionState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MetricExtension resources.
-        :param pulumi.Input[str] collection_method: (Updatable) Type of possible collection methods.
+        :param pulumi.Input[str] collection_method: Type of possible collection methods.
         :param pulumi.Input[str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] created_by: Created by user
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
+        :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
         :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
         :param pulumi.Input[int] enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param pulumi.Input[str] last_updated_by: Last updated by user
         :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]] metric_lists: (Updatable) List of metrics which are part of this metric extension
-        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
@@ -262,7 +262,7 @@ class _MetricExtensionState:
     @pulumi.getter(name="collectionMethod")
     def collection_method(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Type of possible collection methods.
+        Type of possible collection methods.
         """
         return pulumi.get(self, "collection_method")
 
@@ -322,7 +322,7 @@ class _MetricExtensionState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Display name of the metric.
+        (Updatable) Metric Extension display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -382,7 +382,7 @@ class _MetricExtensionState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the script file
+        Metric Extension Resource name.
         """
         return pulumi.get(self, "name")
 
@@ -590,9 +590,9 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
+        :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
-        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
@@ -776,17 +776,17 @@ class MetricExtension(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] collection_method: (Updatable) Type of possible collection methods.
+        :param pulumi.Input[str] collection_method: Type of possible collection methods.
         :param pulumi.Input[str] collection_recurrences: (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[str] created_by: Created by user
         :param pulumi.Input[str] description: (Updatable) Description of the metric extension.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
+        :param pulumi.Input[str] display_name: (Updatable) Metric Extension display name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionEnabledOnResourceArgs']]]] enabled_on_resources: List of resource objects on which this metric extension is enabled.
         :param pulumi.Input[int] enabled_on_resources_count: Count of resources on which this metric extension is enabled.
         :param pulumi.Input[str] last_updated_by: Last updated by user
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MetricExtensionMetricListArgs']]]] metric_lists: (Updatable) List of metrics which are part of this metric extension
-        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] name: Metric Extension Resource name.
         :param pulumi.Input[bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
                
@@ -831,7 +831,7 @@ class MetricExtension(pulumi.CustomResource):
     @pulumi.getter(name="collectionMethod")
     def collection_method(self) -> pulumi.Output[str]:
         """
-        (Updatable) Type of possible collection methods.
+        Type of possible collection methods.
         """
         return pulumi.get(self, "collection_method")
 
@@ -871,7 +871,7 @@ class MetricExtension(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Display name of the metric.
+        (Updatable) Metric Extension display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -911,7 +911,7 @@ class MetricExtension(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Name of the script file
+        Metric Extension Resource name.
         """
         return pulumi.get(self, "name")
 

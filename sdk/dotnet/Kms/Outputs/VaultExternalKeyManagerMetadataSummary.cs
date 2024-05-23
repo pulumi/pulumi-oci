@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Kms.Outputs
     public sealed class VaultExternalKeyManagerMetadataSummary
     {
         /// <summary>
-        /// URI of the vault on external key manager.
+        /// URL of the vault on external key manager.
         /// </summary>
         public readonly string? ExternalVaultEndpointUrl;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Kms.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> OauthMetadataSummaries;
         /// <summary>
-        /// OCID of private endpoint created by customer.
+        /// OCID of the private endpoint.
         /// </summary>
         public readonly string? PrivateEndpointId;
         /// <summary>

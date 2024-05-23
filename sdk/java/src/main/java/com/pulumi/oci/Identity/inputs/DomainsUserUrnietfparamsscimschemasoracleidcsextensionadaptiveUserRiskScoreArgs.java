@@ -57,16 +57,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: reference
      * * uniqueness: none
      * 
@@ -75,16 +76,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: reference
      * * uniqueness: none
      * 
@@ -213,7 +215,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     }
 
     /**
-     * (Updatable) A supplemental status indicating the reason why a user is disabled
+     * (Updatable) Risk Provider Profile status
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -221,7 +225,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -230,7 +234,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * @return (Updatable) Risk Provider Profile status
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -238,7 +244,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -248,38 +254,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -362,16 +368,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: reference
          * * uniqueness: none
          * 
@@ -384,16 +391,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: reference
          * * uniqueness: none
          * 
@@ -542,7 +550,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
+         * @param status (Updatable) Risk Provider Profile status
+         * 
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -550,7 +560,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: request
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -563,7 +573,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param status (Updatable) A supplemental status indicating the reason why a user is disabled
+         * @param status (Updatable) Risk Provider Profile status
+         * 
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -571,7 +583,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: request
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -583,19 +595,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+         * 
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -606,19 +618,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+         * 
+         * **Added In:** 18.1.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

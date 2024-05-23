@@ -144,7 +144,7 @@ class _DrPlanExecutionState:
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionLogLocationArgs']]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[str] plan_execution_type: The type of the plan execution.
+        :param pulumi.Input[str] plan_execution_type: The type of the DR plan executed.
         :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
                
                
@@ -346,7 +346,7 @@ class _DrPlanExecutionState:
     @pulumi.getter(name="planExecutionType")
     def plan_execution_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of the plan execution.
+        The type of the DR plan executed.
         """
         return pulumi.get(self, "plan_execution_type")
 
@@ -644,7 +644,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrPlanExecutionLogLocationArgs']]]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[str] plan_execution_type: The type of the plan execution.
+        :param pulumi.Input[str] plan_execution_type: The type of the DR plan executed.
         :param pulumi.Input[str] plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
                
                
@@ -783,7 +783,7 @@ class DrPlanExecution(pulumi.CustomResource):
     @pulumi.getter(name="planExecutionType")
     def plan_execution_type(self) -> pulumi.Output[str]:
         """
-        The type of the plan execution.
+        The type of the DR plan executed.
         """
         return pulumi.get(self, "plan_execution_type")
 

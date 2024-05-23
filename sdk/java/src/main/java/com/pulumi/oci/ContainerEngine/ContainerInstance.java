@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testContainerInstance = new ContainerInstance("testContainerInstance", ContainerInstanceArgs.builder()        
+ *         var testContainerInstance = new ContainerInstance("testContainerInstance", ContainerInstanceArgs.builder()
  *             .availabilityDomain(containerInstanceAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .containers(ContainerInstanceContainerArgs.builder()
@@ -249,28 +249,28 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.containers;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     public Output<String> displayName() {
@@ -305,14 +305,14 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.faultDomain;
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

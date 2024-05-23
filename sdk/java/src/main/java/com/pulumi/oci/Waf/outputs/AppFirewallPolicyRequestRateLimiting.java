@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AppFirewallPolicyRequestRateLimiting {
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
      * 
      */
     private @Nullable List<AppFirewallPolicyRequestRateLimitingRule> rules;
 
     private AppFirewallPolicyRequestRateLimiting() {}
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
      * 
      */
     public List<AppFirewallPolicyRequestRateLimitingRule> rules() {

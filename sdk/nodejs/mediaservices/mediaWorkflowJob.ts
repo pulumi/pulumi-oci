@@ -78,7 +78,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -139,7 +139,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
      */
     public /*out*/ readonly taskLifecycleStates!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobTaskLifecycleState[]>;
     /**
-     * When the lock was created.
+     * Creation time of the job. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -237,7 +237,7 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
  */
 export interface MediaWorkflowJobState {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -298,7 +298,7 @@ export interface MediaWorkflowJobState {
      */
     taskLifecycleStates?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowJobTaskLifecycleState>[]>;
     /**
-     * When the lock was created.
+     * Creation time of the job. An RFC3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -328,7 +328,7 @@ export interface MediaWorkflowJobState {
  */
 export interface MediaWorkflowJobArgs {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      */
     compartmentId: pulumi.Input<string>;
     /**

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BuildRunBuildOutputExportedVariable {
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     private @Nullable List<BuildRunBuildOutputExportedVariableItem> items;
 
     private BuildRunBuildOutputExportedVariable() {}
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     public List<BuildRunBuildOutputExportedVariableItem> items() {

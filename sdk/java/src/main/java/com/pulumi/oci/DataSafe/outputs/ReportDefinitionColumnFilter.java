@@ -18,7 +18,7 @@ public final class ReportDefinitionColumnFilter {
      */
     private List<String> expressions;
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Name of the column on which the filter must be applied.
      * 
      */
     private String fieldName;
@@ -28,7 +28,7 @@ public final class ReportDefinitionColumnFilter {
      */
     private Boolean isEnabled;
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     private Boolean isHidden;
@@ -47,7 +47,7 @@ public final class ReportDefinitionColumnFilter {
         return this.expressions;
     }
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Name of the column on which the filter must be applied.
      * 
      */
     public String fieldName() {
@@ -61,7 +61,7 @@ public final class ReportDefinitionColumnFilter {
         return this.isEnabled;
     }
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Boolean isHidden() {

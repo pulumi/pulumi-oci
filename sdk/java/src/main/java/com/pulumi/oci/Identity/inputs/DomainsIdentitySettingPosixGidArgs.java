@@ -16,7 +16,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
     public static final DomainsIdentitySettingPosixGidArgs Empty = new DomainsIdentitySettingPosixGidArgs();
 
     /**
-     * (Updatable) The number at which the Posix Uid Manual assignment ends.
+     * (Updatable) The number at which the Posix Gid Manual assignment ends.
      * 
      * **Added In:** 17.4.6
      * 
@@ -34,7 +34,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
     private @Nullable Output<Integer> manualAssignmentEndsAt;
 
     /**
-     * @return (Updatable) The number at which the Posix Uid Manual assignment ends.
+     * @return (Updatable) The number at which the Posix Gid Manual assignment ends.
      * 
      * **Added In:** 17.4.6
      * 
@@ -53,7 +53,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) The number from which the Posix Uid Manual assignment starts.
+     * (Updatable) The number from which the Posix Gid Manual assignment starts.
      * 
      * **Added In:** 17.4.6
      * 
@@ -71,7 +71,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
     private @Nullable Output<Integer> manualAssignmentStartsFrom;
 
     /**
-     * @return (Updatable) The number from which the Posix Uid Manual assignment starts.
+     * @return (Updatable) The number from which the Posix Gid Manual assignment starts.
      * 
      * **Added In:** 17.4.6
      * 
@@ -115,7 +115,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param manualAssignmentEndsAt (Updatable) The number at which the Posix Uid Manual assignment ends.
+         * @param manualAssignmentEndsAt (Updatable) The number at which the Posix Gid Manual assignment ends.
          * 
          * **Added In:** 17.4.6
          * 
@@ -137,7 +137,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param manualAssignmentEndsAt (Updatable) The number at which the Posix Uid Manual assignment ends.
+         * @param manualAssignmentEndsAt (Updatable) The number at which the Posix Gid Manual assignment ends.
          * 
          * **Added In:** 17.4.6
          * 
@@ -158,7 +158,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param manualAssignmentStartsFrom (Updatable) The number from which the Posix Uid Manual assignment starts.
+         * @param manualAssignmentStartsFrom (Updatable) The number from which the Posix Gid Manual assignment starts.
          * 
          * **Added In:** 17.4.6
          * 
@@ -180,7 +180,7 @@ public final class DomainsIdentitySettingPosixGidArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param manualAssignmentStartsFrom (Updatable) The number from which the Posix Uid Manual assignment starts.
+         * @param manualAssignmentStartsFrom (Updatable) The number from which the Posix Gid Manual assignment starts.
          * 
          * **Added In:** 17.4.6
          * 

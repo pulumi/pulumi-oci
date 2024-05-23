@@ -85,14 +85,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Import(name="databaseDetails")
     private @Nullable Output<TargetDatabaseDatabaseDetailsArgs> databaseDetails;
 
     /**
-     * @return Details of the database for the registration in Data Safe.
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Optional<Output<TargetDatabaseDatabaseDetailsArgs>> databaseDetails() {
@@ -115,14 +115,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of the peer target database in Data Safe.
+     * @return (Updatable) The description of the target database in Data Safe.
      * 
      */
     public Optional<Output<String>> description() {
@@ -130,14 +130,14 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -414,7 +414,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails Details of the database for the registration in Data Safe.
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseDetails Details of the database for the registration in Data Safe.
+         * @param databaseDetails (Updatable) Details of the database for the registration in Data Safe.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description The description of the peer target database in Data Safe.
+         * @param description (Updatable) The description of the target database in Data Safe.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description The description of the peer target database in Data Safe.
+         * @param description (Updatable) The description of the target database in Data Safe.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class TargetDatabaseState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+         * @param displayName (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
          * 
          * @return builder
          * 

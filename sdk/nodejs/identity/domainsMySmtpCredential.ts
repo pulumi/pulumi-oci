@@ -190,7 +190,7 @@ export class DomainsMySmtpCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMySmtpCredentialMeta[]>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -198,9 +198,9 @@ export class DomainsMySmtpCredential extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -509,7 +509,7 @@ export interface DomainsMySmtpCredentialState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMySmtpCredentialMeta>[]>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -517,9 +517,9 @@ export interface DomainsMySmtpCredentialState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -655,7 +655,7 @@ export interface DomainsMySmtpCredentialArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -663,9 +663,9 @@ export interface DomainsMySmtpCredentialArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

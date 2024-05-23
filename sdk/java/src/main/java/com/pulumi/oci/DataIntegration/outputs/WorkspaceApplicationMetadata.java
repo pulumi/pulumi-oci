@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationMetadata {
     /**
-     * @return The owning object&#39;s key for this object.
+     * @return The owning object key for this object.
      * 
      */
     private @Nullable String aggregatorKey;
@@ -59,12 +59,12 @@ public final class WorkspaceApplicationMetadata {
      */
     private @Nullable Boolean isFavorite;
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return The registry version.
+     * @return The registry version of the object.
      * 
      */
     private @Nullable Integer registryVersion;
@@ -91,7 +91,7 @@ public final class WorkspaceApplicationMetadata {
 
     private WorkspaceApplicationMetadata() {}
     /**
-     * @return The owning object&#39;s key for this object.
+     * @return The owning object key for this object.
      * 
      */
     public Optional<String> aggregatorKey() {
@@ -147,14 +147,14 @@ public final class WorkspaceApplicationMetadata {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return The registry version.
+     * @return The registry version of the object.
      * 
      */
     public Optional<Integer> registryVersion() {

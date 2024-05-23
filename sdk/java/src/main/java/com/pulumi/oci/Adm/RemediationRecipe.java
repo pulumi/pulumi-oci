@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRemediationRecipe = new RemediationRecipe("testRemediationRecipe", RemediationRecipeArgs.builder()        
+ *         var testRemediationRecipe = new RemediationRecipe("testRemediationRecipe", RemediationRecipeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .detectConfiguration(RemediationRecipeDetectConfigurationArgs.builder()
  *                 .exclusions(remediationRecipeDetectConfigurationExclusions)

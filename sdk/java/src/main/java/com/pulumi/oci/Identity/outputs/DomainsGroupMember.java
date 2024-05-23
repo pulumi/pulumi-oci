@@ -28,12 +28,11 @@ public final class DomainsGroupMember {
      */
     private @Nullable String dateAdded;
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The member&#39;s display name.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -61,12 +60,11 @@ public final class DomainsGroupMember {
      */
     private @Nullable String membershipOcid;
     /**
-     * @return (Updatable) PasswordPolicy Name
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The member&#39;s name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -77,26 +75,27 @@ public final class DomainsGroupMember {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the member of this group.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI that corresponds to the member Resource of this group.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -108,15 +107,14 @@ public final class DomainsGroupMember {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Indicates the type of resource, for example, User or Group.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: User
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -125,17 +123,15 @@ public final class DomainsGroupMember {
      */
     private String type;
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the member of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -161,12 +157,11 @@ public final class DomainsGroupMember {
         return Optional.ofNullable(this.dateAdded);
     }
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The member&#39;s display name.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -198,12 +193,11 @@ public final class DomainsGroupMember {
         return Optional.ofNullable(this.membershipOcid);
     }
     /**
-     * @return (Updatable) PasswordPolicy Name
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The member&#39;s name.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -216,28 +210,29 @@ public final class DomainsGroupMember {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the member of this group.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI that corresponds to the member Resource of this group.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -251,15 +246,14 @@ public final class DomainsGroupMember {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Indicates the type of resource, for example, User or Group.
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * idcsDefaultValue: User
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -270,17 +264,15 @@ public final class DomainsGroupMember {
         return this.type;
     }
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the member of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

@@ -68,7 +68,7 @@ export class Certificate extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) The origin of the certificate.
+     * The origin of the certificate.
      */
     public /*out*/ readonly configType!: pulumi.Output<string>;
     /**
@@ -88,11 +88,11 @@ export class Certificate extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The OCID of the private CA.
+     * The OCID of the certificate authority (CA) that issued the certificate.
      */
     public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
     /**
-     * The algorithm to use to create key pairs.
+     * The algorithm used to create key pairs.
      */
     public /*out*/ readonly keyAlgorithm!: pulumi.Output<string>;
     /**
@@ -108,7 +108,7 @@ export class Certificate extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The algorithm to use to sign the public key certificate.
+     * The algorithm used to sign the public key certificate.
      */
     public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string>;
     /**
@@ -218,7 +218,7 @@ export interface CertificateState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The origin of the certificate.
+     * The origin of the certificate.
      */
     configType?: pulumi.Input<string>;
     /**
@@ -238,11 +238,11 @@ export interface CertificateState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the private CA.
+     * The OCID of the certificate authority (CA) that issued the certificate.
      */
     issuerCertificateAuthorityId?: pulumi.Input<string>;
     /**
-     * The algorithm to use to create key pairs.
+     * The algorithm used to create key pairs.
      */
     keyAlgorithm?: pulumi.Input<string>;
     /**
@@ -258,7 +258,7 @@ export interface CertificateState {
      */
     name?: pulumi.Input<string>;
     /**
-     * The algorithm to use to sign the public key certificate.
+     * The algorithm used to sign the public key certificate.
      */
     signatureAlgorithm?: pulumi.Input<string>;
     /**

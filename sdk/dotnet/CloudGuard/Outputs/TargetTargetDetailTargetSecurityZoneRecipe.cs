@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetailTargetSecurityZoneRecipe
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

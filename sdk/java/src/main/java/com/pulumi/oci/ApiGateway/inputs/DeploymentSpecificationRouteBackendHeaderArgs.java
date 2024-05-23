@@ -16,14 +16,14 @@ public final class DeploymentSpecificationRouteBackendHeaderArgs extends com.pul
     public static final DeploymentSpecificationRouteBackendHeaderArgs Empty = new DeploymentSpecificationRouteBackendHeaderArgs();
 
     /**
-     * (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * (Updatable) Name of the header.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name of the header.
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,7 +71,7 @@ public final class DeploymentSpecificationRouteBackendHeaderArgs extends com.pul
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name of the header.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DeploymentSpecificationRouteBackendHeaderArgs extends com.pul
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name of the header.
          * 
          * @return builder
          * 

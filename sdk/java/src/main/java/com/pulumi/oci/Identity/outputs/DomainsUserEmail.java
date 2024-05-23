@@ -30,10 +30,11 @@ public final class DomainsUserEmail {
      */
     private @Nullable String pendingVerificationData;
     /**
-     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * @return (Updatable) A Boolean value that indicates whether the email address is the primary email address. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -61,13 +62,14 @@ public final class DomainsUserEmail {
      */
     private @Nullable Boolean secondary;
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) Type of email address
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -75,30 +77,28 @@ public final class DomainsUserEmail {
      */
     private String type;
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
-    private String value;
-    /**
-     * @return (Updatable) A Boolean value that indicates if the phone number is verified.
+     * @return (Updatable) Email address
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private String value;
+    /**
+     * @return (Updatable) A Boolean value that indicates whether or not the e-mail address is verified
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: boolean
@@ -127,10 +127,11 @@ public final class DomainsUserEmail {
         return Optional.ofNullable(this.pendingVerificationData);
     }
     /**
-     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * @return (Updatable) A Boolean value that indicates whether the email address is the primary email address. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -162,13 +163,14 @@ public final class DomainsUserEmail {
         return Optional.ofNullable(this.secondary);
     }
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) Type of email address
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -178,32 +180,30 @@ public final class DomainsUserEmail {
         return this.type;
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Email address
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return (Updatable) A Boolean value that indicates if the phone number is verified.
+     * @return (Updatable) A Boolean value that indicates whether or not the e-mail address is verified
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: boolean

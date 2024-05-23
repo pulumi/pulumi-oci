@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
     /**
-     * @return (Updatable) Description of private source scan host zone.
+     * @return (Updatable) Description of private source dns zone.
      * 
      */
     private @Nullable String description;
@@ -25,7 +25,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
 
     private AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone() {}
     /**
-     * @return (Updatable) Description of private source scan host zone.
+     * @return (Updatable) Description of private source dns zone.
      * 
      */
     public Optional<String> description() {

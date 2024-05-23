@@ -17,7 +17,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
     public static final DomainsAppIdentityProviderArgs Empty = new DomainsAppIdentityProviderArgs();
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) Display-name of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +33,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display-name of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,7 +50,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -66,7 +66,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -83,38 +83,32 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) ID of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -148,7 +142,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Display-name of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -168,7 +162,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Display-name of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -187,7 +181,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -207,7 +201,7 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -226,19 +220,16 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ID of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -249,19 +240,16 @@ public final class DomainsAppIdentityProviderArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ID of the IdentityProvider.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -26,16 +26,15 @@ import (
 type DomainsApp struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Access token expiry
+	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
+	// * idcsSearchable: false
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	// * type: dateTime
+	// * type: integer
 	// * uniqueness: none
 	AccessTokenExpiry pulumi.IntOutput `pulumi:"accessTokenExpiry"`
 	// (Updatable) Accounts of App
@@ -408,12 +407,13 @@ type DomainsApp struct {
 	// * type: boolean
 	// * uniqueness: none
 	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
-	// (Updatable) The description of the AppRole.
+	// (Updatable) Description of the application.
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
+	// * mutability: readWrite
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -432,17 +432,17 @@ type DomainsApp struct {
 	// * type: boolean
 	// * uniqueness: none
 	DisableKmsiTokenAuthentication pulumi.BoolOutput `pulumi:"disableKmsiTokenAuthentication"`
-	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+	// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: false
-	// * returned: default
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -944,20 +944,17 @@ type DomainsApp struct {
 	// * type: boolean
 	// * uniqueness: none
 	Migrated pulumi.BoolOutput `pulumi:"migrated"`
-	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	//
-	// **Deprecated Since: 18.2.2**
+	// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * idcsValuePersistedInOtherAttribute: true
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
-	// * required: true
+	// * mutability: immutable
+	// * required: false
 	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
@@ -1351,16 +1348,15 @@ func GetDomainsApp(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DomainsApp resources.
 type domainsAppState struct {
-	// (Updatable) Access token expiry
+	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
+	// * idcsSearchable: false
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	// * type: dateTime
+	// * type: integer
 	// * uniqueness: none
 	AccessTokenExpiry *int `pulumi:"accessTokenExpiry"`
 	// (Updatable) Accounts of App
@@ -1733,12 +1729,13 @@ type domainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	DeleteInProgress *bool `pulumi:"deleteInProgress"`
-	// (Updatable) The description of the AppRole.
+	// (Updatable) Description of the application.
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
+	// * mutability: readWrite
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -1757,17 +1754,17 @@ type domainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	DisableKmsiTokenAuthentication *bool `pulumi:"disableKmsiTokenAuthentication"`
-	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+	// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: false
-	// * returned: default
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -2269,20 +2266,17 @@ type domainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	Migrated *bool `pulumi:"migrated"`
-	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	//
-	// **Deprecated Since: 18.2.2**
+	// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * idcsValuePersistedInOtherAttribute: true
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
-	// * required: true
+	// * mutability: immutable
+	// * required: false
 	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	Name *string `pulumi:"name"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
@@ -2635,16 +2629,15 @@ type domainsAppState struct {
 }
 
 type DomainsAppState struct {
-	// (Updatable) Access token expiry
+	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
+	// * idcsSearchable: false
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	// * type: dateTime
+	// * type: integer
 	// * uniqueness: none
 	AccessTokenExpiry pulumi.IntPtrInput
 	// (Updatable) Accounts of App
@@ -3017,12 +3010,13 @@ type DomainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	DeleteInProgress pulumi.BoolPtrInput
-	// (Updatable) The description of the AppRole.
+	// (Updatable) Description of the application.
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
+	// * mutability: readWrite
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -3041,17 +3035,17 @@ type DomainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	DisableKmsiTokenAuthentication pulumi.BoolPtrInput
-	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+	// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: false
-	// * returned: default
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -3553,20 +3547,17 @@ type DomainsAppState struct {
 	// * type: boolean
 	// * uniqueness: none
 	Migrated pulumi.BoolPtrInput
-	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	//
-	// **Deprecated Since: 18.2.2**
+	// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * idcsValuePersistedInOtherAttribute: true
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
-	// * required: true
+	// * mutability: immutable
+	// * required: false
 	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	Name pulumi.StringPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
@@ -3923,16 +3914,15 @@ func (DomainsAppState) ElementType() reflect.Type {
 }
 
 type domainsAppArgs struct {
-	// (Updatable) Access token expiry
+	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
+	// * idcsSearchable: false
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	// * type: dateTime
+	// * type: integer
 	// * uniqueness: none
 	AccessTokenExpiry *int `pulumi:"accessTokenExpiry"`
 	// (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
@@ -4219,12 +4209,13 @@ type domainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	DelegatedServiceNames []string `pulumi:"delegatedServiceNames"`
-	// (Updatable) The description of the AppRole.
+	// (Updatable) Description of the application.
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
+	// * mutability: readWrite
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -4243,17 +4234,17 @@ type domainsAppArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	DisableKmsiTokenAuthentication *bool `pulumi:"disableKmsiTokenAuthentication"`
-	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+	// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: false
-	// * returned: default
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
 	//
@@ -4566,20 +4557,17 @@ type domainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	LogoutUri *string `pulumi:"logoutUri"`
-	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	//
-	// **Deprecated Since: 18.2.2**
+	// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * idcsValuePersistedInOtherAttribute: true
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
-	// * required: true
+	// * mutability: immutable
+	// * required: false
 	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	Name *string `pulumi:"name"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
@@ -4899,16 +4887,15 @@ type domainsAppArgs struct {
 
 // The set of arguments for constructing a DomainsApp resource.
 type DomainsAppArgs struct {
-	// (Updatable) Access token expiry
+	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
+	// * idcsSearchable: false
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	// * type: dateTime
+	// * type: integer
 	// * uniqueness: none
 	AccessTokenExpiry pulumi.IntPtrInput
 	// (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
@@ -5195,12 +5182,13 @@ type DomainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	DelegatedServiceNames pulumi.StringArrayInput
-	// (Updatable) The description of the AppRole.
+	// (Updatable) Description of the application.
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
+	// * mutability: readWrite
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -5219,17 +5207,17 @@ type DomainsAppArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	DisableKmsiTokenAuthentication pulumi.BoolPtrInput
-	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+	// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: false
-	// * returned: default
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringInput
 	// (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
 	//
@@ -5542,20 +5530,17 @@ type DomainsAppArgs struct {
 	// * type: string
 	// * uniqueness: none
 	LogoutUri pulumi.StringPtrInput
-	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	//
-	// **Deprecated Since: 18.2.2**
+	// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * idcsValuePersistedInOtherAttribute: true
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
-	// * required: true
+	// * mutability: immutable
+	// * required: false
 	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	Name pulumi.StringPtrInput
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
@@ -5960,16 +5945,15 @@ func (o DomainsAppOutput) ToDomainsAppOutputWithContext(ctx context.Context) Dom
 	return o
 }
 
-// (Updatable) Access token expiry
+// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 //
 // **SCIM++ Properties:**
-// * caseExact: true
-// * idcsSearchable: true
+// * idcsSearchable: false
 // * multiValued: false
 // * mutability: readWrite
 // * required: false
 // * returned: default
-// * type: dateTime
+// * type: integer
 // * uniqueness: none
 func (o DomainsAppOutput) AccessTokenExpiry() pulumi.IntOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.IntOutput { return v.AccessTokenExpiry }).(pulumi.IntOutput)
@@ -6444,12 +6428,13 @@ func (o DomainsAppOutput) DeleteInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The description of the AppRole.
+// (Updatable) Description of the application.
 //
 // **SCIM++ Properties:**
-// * idcsSearchable: false
+// * caseExact: false
+// * idcsSearchable: true
 // * multiValued: false
-// * mutability: readOnly
+// * mutability: readWrite
 // * required: false
 // * returned: default
 // * type: string
@@ -6474,17 +6459,17 @@ func (o DomainsAppOutput) DisableKmsiTokenAuthentication() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.DisableKmsiTokenAuthentication }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+// (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
 //
 // **SCIM++ Properties:**
 // * caseExact: false
-// * idcsSearchable: false
+// * idcsSearchable: true
 // * multiValued: false
 // * mutability: readWrite
-// * required: false
-// * returned: default
+// * required: true
+// * returned: always
 // * type: string
-// * uniqueness: none
+// * uniqueness: server
 func (o DomainsAppOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -7118,20 +7103,17 @@ func (o DomainsAppOutput) Migrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.Migrated }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-//
-// **Deprecated Since: 18.2.2**
+// Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
 //
 // **SCIM++ Properties:**
 // * caseExact: false
-// * idcsSearchable: false
-// * idcsValuePersistedInOtherAttribute: true
+// * idcsSearchable: true
 // * multiValued: false
-// * mutability: readWrite
-// * required: true
+// * mutability: immutable
+// * required: false
 // * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: server
 func (o DomainsAppOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
     public sealed class IngressGatewayRouteTableRouteRuleDestination
     {
         /// <summary>
-        /// (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+        /// (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
         /// </summary>
         public readonly int? Port;
         /// <summary>

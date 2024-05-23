@@ -18,14 +18,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     public static final TargetTargetResponderRecipeEffectiveResponderRuleArgs Empty = new TargetTargetResponderRecipeEffectiveResponderRuleArgs();
 
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -52,14 +52,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * (Updatable) Details of ResponderRule.
+     * Details of ResponderRule.
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs>> details;
 
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs>>> details() {
@@ -116,20 +116,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * (Updatable) Identifier for ResponderRule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Unique ResponderRule identifier.
      * 
      */
     @Import(name="responderRuleId")
     private @Nullable Output<String> responderRuleId;
 
     /**
-     * @return (Updatable) Identifier for ResponderRule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Unique ResponderRule identifier.
      * 
      */
     public Optional<Output<String>> responderRuleId() {
@@ -247,7 +241,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -258,7 +252,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -293,7 +287,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -304,7 +298,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -314,7 +308,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -401,10 +395,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param responderRuleId (Updatable) Identifier for ResponderRule.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param responderRuleId Unique ResponderRule identifier.
          * 
          * @return builder
          * 
@@ -415,10 +406,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param responderRuleId (Updatable) Identifier for ResponderRule.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param responderRuleId Unique ResponderRule identifier.
          * 
          * @return builder
          * 

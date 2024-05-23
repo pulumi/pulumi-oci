@@ -88,7 +88,7 @@ type DrPlanExecution struct {
 	PeerDrProtectionGroupId pulumi.StringOutput `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
-	// The type of the plan execution.
+	// The type of the DR plan executed.
 	PlanExecutionType pulumi.StringOutput `pulumi:"planExecutionType"`
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	//
@@ -169,7 +169,7 @@ type drPlanExecutionState struct {
 	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
-	// The type of the plan execution.
+	// The type of the DR plan executed.
 	PlanExecutionType *string `pulumi:"planExecutionType"`
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	//
@@ -215,7 +215,7 @@ type DrPlanExecutionState struct {
 	PeerDrProtectionGroupId pulumi.StringPtrInput
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
-	// The type of the plan execution.
+	// The type of the DR plan executed.
 	PlanExecutionType pulumi.StringPtrInput
 	// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	//
@@ -420,7 +420,7 @@ func (o DrPlanExecutionOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The type of the plan execution.
+// The type of the DR plan executed.
 func (o DrPlanExecutionOutput) PlanExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrPlanExecution) pulumi.StringOutput { return v.PlanExecutionType }).(pulumi.StringOutput)
 }

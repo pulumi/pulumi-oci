@@ -74,7 +74,7 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
                  kms_key_id: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         """
         pulumi.set(__self__, "kms_key_id", kms_key_id)
 
@@ -82,7 +82,7 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         """
         return pulumi.get(self, "kms_key_id")
 

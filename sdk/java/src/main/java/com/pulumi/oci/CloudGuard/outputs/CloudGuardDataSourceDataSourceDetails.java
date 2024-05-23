@@ -22,7 +22,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable Integer additionalEntitiesCount;
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
     private String dataSourceFeedProvider;
@@ -52,7 +52,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Continuous query start policy object
      * 
      */
     private @Nullable CloudGuardDataSourceDataSourceDetailsQueryStartTime queryStartTime;
@@ -76,7 +76,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.additionalEntitiesCount);
     }
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
     public String dataSourceFeedProvider() {
@@ -118,7 +118,7 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Continuous query start policy object
      * 
      */
     public Optional<CloudGuardDataSourceDataSourceDetailsQueryStartTime> queryStartTime() {

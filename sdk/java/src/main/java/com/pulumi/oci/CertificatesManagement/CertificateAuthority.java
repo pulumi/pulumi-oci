@@ -95,14 +95,14 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The origin of the CA.
+     * The origin of the CA.
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the CA.
+     * @return The origin of the CA.
      * 
      */
     public Output<String> configType() {
@@ -165,14 +165,14 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The OCID of the private CA.
+     * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
     @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
     private Output<String> issuerCertificateAuthorityId;
 
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
     public Output<String> issuerCertificateAuthorityId() {

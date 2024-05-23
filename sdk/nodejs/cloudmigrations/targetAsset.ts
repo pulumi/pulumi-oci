@@ -134,7 +134,7 @@ export class TargetAsset extends pulumi.CustomResource {
      */
     public readonly blockVolumesPerformance!: pulumi.Output<number>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -146,7 +146,7 @@ export class TargetAsset extends pulumi.CustomResource {
      */
     public /*out*/ readonly createdResourceId!: pulumi.Output<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
     /**
@@ -202,7 +202,7 @@ export class TargetAsset extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      */
     public readonly type!: pulumi.Output<string>;
     /**
@@ -295,7 +295,7 @@ export interface TargetAssetState {
      */
     blockVolumesPerformance?: pulumi.Input<number>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -307,7 +307,7 @@ export interface TargetAssetState {
      */
     createdResourceId?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -363,7 +363,7 @@ export interface TargetAssetState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      */
     type?: pulumi.Input<string>;
     /**
@@ -397,7 +397,7 @@ export interface TargetAssetArgs {
      */
     preferredShapeType: pulumi.Input<string>;
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      */
     type: pulumi.Input<string>;
     /**

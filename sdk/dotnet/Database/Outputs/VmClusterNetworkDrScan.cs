@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class VmClusterNetworkDrScan
     {
         /// <summary>
-        /// (Updatable) The node host name.
+        /// (Updatable) The Disaster recovery SCAN hostname.
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        /// (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
         /// </summary>
         public readonly ImmutableArray<string> Ips;
         /// <summary>
-        /// (Updatable) The SCAN TCPIP port. Default is 1521.
+        /// (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
         /// </summary>
         public readonly int ScanListenerPortTcp;
 

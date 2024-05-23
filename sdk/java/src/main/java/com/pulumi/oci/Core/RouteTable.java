@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRouteTable = new RouteTable("testRouteTable", RouteTableArgs.builder()        
+ *         var testRouteTable = new RouteTable("testRouteTable", RouteTableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

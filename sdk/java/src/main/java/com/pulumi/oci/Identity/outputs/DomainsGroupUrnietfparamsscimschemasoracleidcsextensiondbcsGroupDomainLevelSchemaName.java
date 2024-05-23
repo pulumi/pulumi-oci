@@ -28,7 +28,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
      */
     private String domainName;
     /**
-     * @return (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
+     * @return (Updatable) The DBCS schema-name granted to this group in the DB domain that &#39;domainName&#39; specifies.
      * 
      * **Added In:** 18.2.4
      * 
@@ -66,7 +66,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
         return this.domainName;
     }
     /**
-     * @return (Updatable) The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
+     * @return (Updatable) The DBCS schema-name granted to this group in the DB domain that &#39;domainName&#39; specifies.
      * 
      * **Added In:** 18.2.4
      * 

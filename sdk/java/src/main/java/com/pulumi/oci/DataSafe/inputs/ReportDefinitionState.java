@@ -175,14 +175,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Specifies the order in which the summary must be displayed.
+     * Specifies the order in which the summary must be displayed.
      * 
      */
     @Import(name="displayOrder")
     private @Nullable Output<Integer> displayOrder;
 
     /**
-     * @return (Updatable) Specifies the order in which the summary must be displayed.
+     * @return Specifies the order in which the summary must be displayed.
      * 
      */
     public Optional<Output<Integer>> displayOrder() {
@@ -325,20 +325,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Additional scim filters used to get the specific summary.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Additional scim filters used to get the specific summary.
      * 
      */
     @Import(name="scimFilter")
     private @Nullable Output<String> scimFilter;
 
     /**
-     * @return (Updatable) Additional scim filters used to get the specific summary.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Additional scim filters used to get the specific summary.
      * 
      */
     public Optional<Output<String>> scimFilter() {
@@ -720,7 +714,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayOrder (Updatable) Specifies the order in which the summary must be displayed.
+         * @param displayOrder Specifies the order in which the summary must be displayed.
          * 
          * @return builder
          * 
@@ -731,7 +725,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayOrder (Updatable) Specifies the order in which the summary must be displayed.
+         * @param displayOrder Specifies the order in which the summary must be displayed.
          * 
          * @return builder
          * 
@@ -930,10 +924,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scimFilter (Updatable) Additional scim filters used to get the specific summary.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param scimFilter Additional scim filters used to get the specific summary.
          * 
          * @return builder
          * 
@@ -944,10 +935,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scimFilter (Updatable) Additional scim filters used to get the specific summary.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param scimFilter Additional scim filters used to get the specific summary.
          * 
          * @return builder
          * 

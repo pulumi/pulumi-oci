@@ -21,13 +21,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Possible type of entity
+        /// Possible type of entity
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
 
         /// <summary>
-        /// (Updatable) The entity value mapped to a data source query
+        /// The entity value mapped to a data source query
         /// </summary>
         [Input("queryField")]
         public Input<string>? QueryField { get; set; }

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
-        /// The amount of worker nodes should be created
+        /// The amount of master nodes should be created.
         /// </summary>
         [Input("numberOfNodes", required: true)]
         public Input<int> NumberOfNodes { get; set; } = null!;

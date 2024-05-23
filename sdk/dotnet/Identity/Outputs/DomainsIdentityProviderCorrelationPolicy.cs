@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsIdentityProviderCorrelationPolicy
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        /// (Updatable) Policy display name
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -29,39 +29,43 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Group URI
-        /// 
-        /// **Added In:** 2205120021
-        /// 
-        /// **SCIM++ Properties:**
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: true
-        /// * returned: default
-        /// * type: reference
-        /// </summary>
-        public readonly string? Ref;
-        /// <summary>
-        /// (Updatable) Identity Provider Type
+        /// (Updatable) Policy URI
         /// 
         /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? Ref;
+        /// <summary>
+        /// (Updatable) A label that indicates the type that this references.
+        /// 
+        /// **Added In:** 20.1.3
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsDefaultValue: Policy
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Policy identifier
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

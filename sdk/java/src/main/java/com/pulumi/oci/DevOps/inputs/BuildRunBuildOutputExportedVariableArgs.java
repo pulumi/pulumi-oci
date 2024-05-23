@@ -17,14 +17,14 @@ public final class BuildRunBuildOutputExportedVariableArgs extends com.pulumi.re
     public static final BuildRunBuildOutputExportedVariableArgs Empty = new BuildRunBuildOutputExportedVariableArgs();
 
     /**
-     * List of arguments provided at the time of running the build.
+     * List of exported variables.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<BuildRunBuildOutputExportedVariableItemArgs>> items;
 
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     public Optional<Output<List<BuildRunBuildOutputExportedVariableItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class BuildRunBuildOutputExportedVariableArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class BuildRunBuildOutputExportedVariableArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class BuildRunBuildOutputExportedVariableArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 

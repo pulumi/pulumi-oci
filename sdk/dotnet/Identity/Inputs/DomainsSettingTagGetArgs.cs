@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

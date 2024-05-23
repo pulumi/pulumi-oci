@@ -59,17 +59,18 @@ namespace Pulumi.Oci.Identity.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The number of failed login attempts. The value is reset to 0 after a successful login.
+        /// (Updatable) The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
+        /// 
+        /// **Added In:** 18.3.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
-        /// * idcsAllowUpdatesInReadOnlyMode: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * idcsRequiresWriteForAccessFlows: true
         /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
-        /// * returned: request
+        /// * returned: default
         /// * type: integer
         /// * uniqueness: none
         /// </summary>

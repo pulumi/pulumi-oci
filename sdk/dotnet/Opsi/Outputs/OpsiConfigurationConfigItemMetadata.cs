@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class OpsiConfigurationConfigItemMetadata
     {
         /// <summary>
-        /// (Updatable) Type of configuration item.
+        /// Type of configuration item.
         /// </summary>
         public readonly string? ConfigItemType;
         /// <summary>

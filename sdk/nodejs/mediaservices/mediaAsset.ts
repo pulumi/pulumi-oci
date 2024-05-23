@@ -52,7 +52,7 @@ export class MediaAsset extends pulumi.CustomResource {
      */
     public readonly bucket!: pulumi.Output<string>;
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -85,7 +85,7 @@ export class MediaAsset extends pulumi.CustomResource {
      */
     public readonly mediaWorkflowJobId!: pulumi.Output<string>;
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      */
     public readonly metadatas!: pulumi.Output<outputs.MediaServices.MediaAssetMetadata[]>;
     /**
@@ -129,7 +129,7 @@ export class MediaAsset extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -229,7 +229,7 @@ export interface MediaAssetState {
      */
     bucket?: pulumi.Input<string>;
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -262,7 +262,7 @@ export interface MediaAssetState {
      */
     mediaWorkflowJobId?: pulumi.Input<string>;
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[]>;
     /**
@@ -306,7 +306,7 @@ export interface MediaAssetState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -332,7 +332,7 @@ export interface MediaAssetArgs {
      */
     bucket?: pulumi.Input<string>;
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -365,7 +365,7 @@ export interface MediaAssetArgs {
      */
     mediaWorkflowJobId?: pulumi.Input<string>;
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaAssetMetadata>[]>;
     /**

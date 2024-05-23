@@ -84,6 +84,15 @@ type Subscription struct {
 	// The protocol used for the subscription.
 	//
 	// Allowed values:
+	// * `CUSTOM_HTTPS`
+	// * `EMAIL`
+	// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+	// * `ORACLE_FUNCTIONS`
+	// * `PAGERDUTY`
+	// * `SLACK`
+	// * `SMS`
+	//
+	// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -155,6 +164,15 @@ type subscriptionState struct {
 	// The protocol used for the subscription.
 	//
 	// Allowed values:
+	// * `CUSTOM_HTTPS`
+	// * `EMAIL`
+	// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+	// * `ORACLE_FUNCTIONS`
+	// * `PAGERDUTY`
+	// * `SLACK`
+	// * `SMS`
+	//
+	// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Protocol *string `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State *string `pulumi:"state"`
@@ -185,6 +203,15 @@ type SubscriptionState struct {
 	// The protocol used for the subscription.
 	//
 	// Allowed values:
+	// * `CUSTOM_HTTPS`
+	// * `EMAIL`
+	// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+	// * `ORACLE_FUNCTIONS`
+	// * `PAGERDUTY`
+	// * `SLACK`
+	// * `SMS`
+	//
+	// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Protocol pulumi.StringPtrInput
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 	State pulumi.StringPtrInput
@@ -215,6 +242,15 @@ type subscriptionArgs struct {
 	// The protocol used for the subscription.
 	//
 	// Allowed values:
+	// * `CUSTOM_HTTPS`
+	// * `EMAIL`
+	// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+	// * `ORACLE_FUNCTIONS`
+	// * `PAGERDUTY`
+	// * `SLACK`
+	// * `SMS`
+	//
+	// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Protocol string `pulumi:"protocol"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
 	//
@@ -240,6 +276,15 @@ type SubscriptionArgs struct {
 	// The protocol used for the subscription.
 	//
 	// Allowed values:
+	// * `CUSTOM_HTTPS`
+	// * `EMAIL`
+	// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+	// * `ORACLE_FUNCTIONS`
+	// * `PAGERDUTY`
+	// * `SLACK`
+	// * `SMS`
+	//
+	// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 	Protocol pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription.
 	//
@@ -375,6 +420,15 @@ func (o SubscriptionOutput) FreeformTags() pulumi.MapOutput {
 // The protocol used for the subscription.
 //
 // Allowed values:
+// * `CUSTOM_HTTPS`
+// * `EMAIL`
+// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+// * `ORACLE_FUNCTIONS`
+// * `PAGERDUTY`
+// * `SLACK`
+// * `SMS`
+//
+// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
 func (o SubscriptionOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }

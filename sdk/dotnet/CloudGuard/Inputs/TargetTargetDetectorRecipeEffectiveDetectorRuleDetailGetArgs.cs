@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupGetArgs>? _conditionGroups;
 
         /// <summary>
-        /// (Updatable) Condition group corresponding to each compartment
+        /// Condition group corresponding to each compartment
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupGetArgs> ConditionGroups
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// (Updatable) Configurations associated with the ResponderRule
+        /// ResponderRule configurations
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs> Configurations
         {

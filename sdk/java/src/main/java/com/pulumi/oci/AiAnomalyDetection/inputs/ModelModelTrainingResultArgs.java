@@ -133,14 +133,14 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * This value would determine the window size of the training algorithm.
+     * Window size defined during training or deduced by the algorithm.
      * 
      */
     @Import(name="windowSize")
     private @Nullable Output<Integer> windowSize;
 
     /**
-     * @return This value would determine the window size of the training algorithm.
+     * @return Window size defined during training or deduced by the algorithm.
      * 
      */
     public Optional<Output<Integer>> windowSize() {
@@ -354,7 +354,7 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param windowSize This value would determine the window size of the training algorithm.
+         * @param windowSize Window size defined during training or deduced by the algorithm.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class ModelModelTrainingResultArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param windowSize This value would determine the window size of the training algorithm.
+         * @param windowSize Window size defined during training or deduced by the algorithm.
          * 
          * @return builder
          * 

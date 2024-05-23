@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string? AllowedValues;
         /// <summary>
-        /// Configuration variable name.
+        /// The configuration variable name.
         /// </summary>
         public readonly string? ConfigKey;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly bool? IsRestartRequired;
         /// <summary>
-        /// User-selected variable value.
+        /// User-selected configuration variable value.
         /// </summary>
         public readonly string? OverridenConfigValue;
 

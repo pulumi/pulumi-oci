@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsPrimary;
         /// <summary>
-        /// (Updatable) Name of the month of the year.
+        /// (Updatable) The name of the Exadata Infrastructure contact.
         /// </summary>
         public readonly string Name;
         /// <summary>

@@ -13,10 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsSelfRegistrationProfileEmailTemplate {
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -28,10 +29,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Email Template
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -43,7 +43,7 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Email Template.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -55,18 +55,16 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
     private DomainsSelfRegistrationProfileEmailTemplate() {}
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -80,10 +78,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Email Template
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -97,7 +94,7 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Email Template.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -108,9 +105,6 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

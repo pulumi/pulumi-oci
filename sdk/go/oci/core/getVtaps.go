@@ -90,6 +90,8 @@ type GetVtapsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Used to start or stop a `Vtap` resource.
+	// * `TRUE` directs the VTAP to start mirroring traffic.
+	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled *bool   `pulumi:"isVtapEnabled"`
 	Source        *string `pulumi:"source"`
 	// The VTAP's administrative lifecycle state.
@@ -179,6 +181,8 @@ func (o GetVtapsResultOutput) Id() pulumi.StringOutput {
 }
 
 // Used to start or stop a `Vtap` resource.
+// * `TRUE` directs the VTAP to start mirroring traffic.
+// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 func (o GetVtapsResultOutput) IsVtapEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetVtapsResult) *bool { return v.IsVtapEnabled }).(pulumi.BoolPtrOutput)
 }

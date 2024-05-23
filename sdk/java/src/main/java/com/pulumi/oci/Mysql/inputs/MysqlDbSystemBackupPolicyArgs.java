@@ -21,14 +21,22 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     public static final MysqlDbSystemBackupPolicyArgs Empty = new MysqlDbSystemBackupPolicyArgs();
 
     /**
-     * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * 
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * 
+     * Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * 
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * 
+     * Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -36,14 +44,22 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * 
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * 
+     * Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * 
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * 
+     * Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -51,14 +67,14 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Specifies if PITR is enabled or disabled.
+     * (Updatable) Specifies if automatic backups are enabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Specifies if PITR is enabled or disabled.
+     * @return (Updatable) Specifies if automatic backups are enabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -96,30 +112,22 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The start of the 2 hour maintenance window.
+     * (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
      * 
-     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+     * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
-     * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
-     * 
-     * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-     * 
-     * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+     * At some point in the window, the system may incur a brief service disruption as the backup is performed.
      * 
      */
     @Import(name="windowStartTime")
     private @Nullable Output<String> windowStartTime;
 
     /**
-     * @return (Updatable) The start of the 2 hour maintenance window.
+     * @return (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
      * 
-     * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+     * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
      * 
-     * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
-     * 
-     * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-     * 
-     * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+     * At some point in the window, the system may incur a brief service disruption as the backup is performed.
      * 
      */
     public Optional<Output<String>> windowStartTime() {
@@ -156,7 +164,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * 
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * 
+         * Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -167,7 +179,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * 
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * 
+         * Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -177,7 +193,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * 
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * 
+         * Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -188,7 +208,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * 
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * 
+         * Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -198,7 +222,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
+         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
          * 
          * @return builder
          * 
@@ -209,7 +233,7 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
+         * @param isEnabled (Updatable) Specifies if automatic backups are enabled.
          * 
          * @return builder
          * 
@@ -261,15 +285,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param windowStartTime (Updatable) The start of the 2 hour maintenance window.
+         * @param windowStartTime (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
          * 
-         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+         * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          * 
-         * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
-         * 
-         * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-         * 
-         * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
          * 
          * @return builder
          * 
@@ -280,15 +300,11 @@ public final class MysqlDbSystemBackupPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param windowStartTime (Updatable) The start of the 2 hour maintenance window.
+         * @param windowStartTime (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
          * 
-         * This string is of the format: &#34;{day-of-week} {time-of-day}&#34;.
+         * This should be in the format of the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
          * 
-         * &#34;{day-of-week}&#34; is a case-insensitive string like &#34;mon&#34;, &#34;tue&#34;, &amp;c.
-         * 
-         * &#34;{time-of-day}&#34; is the &#34;Time&#34; portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-         * 
-         * If you set the read replica maintenance window to &#34;&#34; or if not specified, the read replica is set same as the DB system maintenance window.
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
          * 
          * @return builder
          * 

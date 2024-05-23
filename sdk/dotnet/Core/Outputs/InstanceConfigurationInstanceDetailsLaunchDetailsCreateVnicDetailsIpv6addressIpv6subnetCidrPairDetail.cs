@@ -13,13 +13,7 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail
     {
-        /// <summary>
-        /// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        /// </summary>
         public readonly string? Ipv6address;
-        /// <summary>
-        /// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        /// </summary>
         public readonly string? Ipv6subnetCidr;
 
         [OutputConstructor]

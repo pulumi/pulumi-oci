@@ -49,14 +49,14 @@ public final class ResponderRecipeEffectiveResponderRuleDetailArgs extends com.p
     }
 
     /**
-     * (Updatable) Identifies state for ResponderRule
+     * Identifies state for ResponderRule
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Identifies state for ResponderRule
+     * @return Identifies state for ResponderRule
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -158,7 +158,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailArgs extends com.p
         }
 
         /**
-         * @param isEnabled (Updatable) Identifies state for ResponderRule
+         * @param isEnabled Identifies state for ResponderRule
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailArgs extends com.p
         }
 
         /**
-         * @param isEnabled (Updatable) Identifies state for ResponderRule
+         * @param isEnabled Identifies state for ResponderRule
          * 
          * @return builder
          * 

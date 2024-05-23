@@ -859,7 +859,7 @@ class ScheduleQueryPropertiesGroupByTag(dict):
                  value: Optional[str] = None):
         """
         :param str key: The tag key.
-        :param str namespace: (Updatable) The namespace needed to determine the object storage bucket.
+        :param str namespace: The tag namespace.
         :param str value: The tag value.
         """
         if key is not None:
@@ -881,7 +881,7 @@ class ScheduleQueryPropertiesGroupByTag(dict):
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
-        (Updatable) The namespace needed to determine the object storage bucket.
+        The tag namespace.
         """
         return pulumi.get(self, "namespace")
 

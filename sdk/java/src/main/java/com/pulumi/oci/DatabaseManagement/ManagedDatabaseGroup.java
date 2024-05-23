@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedDatabaseGroup = new ManagedDatabaseGroup("testManagedDatabaseGroup", ManagedDatabaseGroupArgs.builder()        
+ *         var testManagedDatabaseGroup = new ManagedDatabaseGroup("testManagedDatabaseGroup", ManagedDatabaseGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(managedDatabaseGroupName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -48,9 +48,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? GrantMechanism { get; set; }
 
         /// <summary>
-        /// (Updatable) App URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Grant URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -65,16 +63,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The ID of the App.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Grant identifier
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none

@@ -1411,6 +1411,8 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
         :param str parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
         :param str source: Source of the secrets, where the secrets are stored.
         :param str type: Type of the secrets mapped based on the policy.
+               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param str vault_secret_id: OCID for the Vault Secret to be used.
         :param int version_number: Version number of the secret to be used.
         """
@@ -1459,6 +1461,8 @@ class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItemResu
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
+        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 

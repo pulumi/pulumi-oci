@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Waas.Outputs
     public sealed class PolicyWafConfigDeviceFingerprintChallenge
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
         public readonly string? Action;
         /// <summary>
-        /// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+        /// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
         /// </summary>
         public readonly int? ActionExpirationInSeconds;
         /// <summary>
@@ -26,15 +26,15 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly Outputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettings? ChallengeSettings;
         /// <summary>
-        /// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+        /// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
         /// </summary>
         public readonly int? FailureThreshold;
         /// <summary>
-        /// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+        /// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
         /// </summary>
         public readonly int? FailureThresholdExpirationInSeconds;
         /// <summary>
-        /// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+        /// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

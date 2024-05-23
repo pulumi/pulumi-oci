@@ -34,7 +34,7 @@ class WorkspaceProjectArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -101,7 +101,7 @@ class WorkspaceProjectArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 
@@ -188,7 +188,7 @@ class _WorkspaceProjectState:
         Input properties used for looking up and filtering WorkspaceProject resources.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
@@ -261,7 +261,7 @@ class _WorkspaceProjectState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 
@@ -458,7 +458,7 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -595,7 +595,7 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceProjectMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
@@ -651,7 +651,7 @@ class WorkspaceProject(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 

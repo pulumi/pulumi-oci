@@ -102,7 +102,7 @@ import (
 type Target struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -186,7 +186,7 @@ func GetTarget(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Target resources.
 type targetState struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -229,7 +229,7 @@ type targetState struct {
 }
 
 type TargetState struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -276,7 +276,7 @@ func (TargetState) ElementType() reflect.Type {
 }
 
 type targetArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -306,7 +306,7 @@ type targetArgs struct {
 
 // The set of arguments for constructing a Target resource.
 type TargetArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -421,7 +421,7 @@ func (o TargetOutput) ToTargetOutputWithContext(ctx context.Context) TargetOutpu
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

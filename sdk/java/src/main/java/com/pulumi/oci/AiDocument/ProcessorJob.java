@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProcessorJob = new ProcessorJob("testProcessorJob", ProcessorJobArgs.builder()        
+ *         var testProcessorJob = new ProcessorJob("testProcessorJob", ProcessorJobArgs.builder()
  *             .compartmentId(compartmentId)
  *             .inputLocation(ProcessorJobInputLocationArgs.builder()
  *                 .sourceType(processorJobInputLocationSourceType)

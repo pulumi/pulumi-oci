@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails {
     /**
-     * @return (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+     * @return The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return (Updatable) The total number of OCPUs available to the notebook session instance.
+     * @return The total number of OCPUs available to the notebook session instance.
      * 
      */
     private @Nullable Double ocpus;
 
     private NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails() {}
     /**
-     * @return (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+     * @return The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return (Updatable) The total number of OCPUs available to the notebook session instance.
+     * @return The total number of OCPUs available to the notebook session instance.
      * 
      */
     public Optional<Double> ocpus() {

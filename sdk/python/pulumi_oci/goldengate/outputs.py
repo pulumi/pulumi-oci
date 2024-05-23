@@ -132,8 +132,7 @@ class ConnectionBootstrapServer(dict):
                  port: Optional[int] = None,
                  private_ip: Optional[str] = None):
         """
-        :param str host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+        :param str host: (Updatable) The name or address of a host.
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
         :param str private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
@@ -149,8 +148,7 @@ class ConnectionBootstrapServer(dict):
     @pulumi.getter
     def host(self) -> Optional[str]:
         """
-        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+        (Updatable) The name or address of a host.
         """
         return pulumi.get(self, "host")
 

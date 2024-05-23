@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.DeploymentDeployPipelineArtifactItemArgs>? _items;
 
         /// <summary>
-        /// List of arguments provided at the time of deployment.
+        /// A list of stage predecessors for a stage.
         /// </summary>
         public InputList<Inputs.DeploymentDeployPipelineArtifactItemArgs> Items
         {

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOpaInstance = new OpaInstance("testOpaInstance", OpaInstanceArgs.builder()        
+ *         var testOpaInstance = new OpaInstance("testOpaInstance", OpaInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(opaInstanceDisplayName)
  *             .shapeName(testShape.name())

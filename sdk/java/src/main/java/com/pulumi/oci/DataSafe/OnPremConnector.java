@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOnPremConnector = new OnPremConnector("testOnPremConnector", OnPremConnectorArgs.builder()        
+ *         var testOnPremConnector = new OnPremConnector("testOnPremConnector", OnPremConnectorArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(onPremConnectorDescription)

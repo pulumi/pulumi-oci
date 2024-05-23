@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsIdentitySettingPosixGid
     {
         /// <summary>
-        /// (Updatable) The number at which the Posix Uid Manual assignment ends.
+        /// (Updatable) The number at which the Posix Gid Manual assignment ends.
         /// 
         /// **Added In:** 17.4.6
         /// 
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? ManualAssignmentEndsAt;
         /// <summary>
-        /// (Updatable) The number from which the Posix Uid Manual assignment starts.
+        /// (Updatable) The number from which the Posix Gid Manual assignment starts.
         /// 
         /// **Added In:** 17.4.6
         /// 

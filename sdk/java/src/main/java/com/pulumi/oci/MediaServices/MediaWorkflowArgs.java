@@ -23,14 +23,14 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
     public static final MediaWorkflowArgs Empty = new MediaWorkflowArgs();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -120,14 +120,14 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
-     * @return (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * @return (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      * 
      */
     public Optional<Output<String>> parameters() {
@@ -182,7 +182,7 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+         * @param parameters (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class MediaWorkflowArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+         * @param parameters (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
          * 
          * @return builder
          * 

@@ -90,7 +90,7 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -106,7 +106,7 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -117,38 +117,34 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The value of a role.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The value of a role.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -267,7 +263,7 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -287,7 +283,7 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -300,19 +296,17 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The value of a role.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -323,19 +317,17 @@ public final class DomainsUserRoleArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The value of a role.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

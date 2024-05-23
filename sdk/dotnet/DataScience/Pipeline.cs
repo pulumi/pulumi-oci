@@ -134,7 +134,7 @@ namespace Pulumi.Oci.DataScience
         public Output<bool?> DeleteRelatedPipelineRuns { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A short description of the step.
+        /// (Updatable) A short description of the pipeline.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -282,7 +282,7 @@ namespace Pulumi.Oci.DataScience
         public Input<bool>? DeleteRelatedPipelineRuns { get; set; }
 
         /// <summary>
-        /// (Updatable) A short description of the step.
+        /// (Updatable) A short description of the pipeline.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.DataScience
         public Input<bool>? DeleteRelatedPipelineRuns { get; set; }
 
         /// <summary>
-        /// (Updatable) A short description of the step.
+        /// (Updatable) A short description of the pipeline.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

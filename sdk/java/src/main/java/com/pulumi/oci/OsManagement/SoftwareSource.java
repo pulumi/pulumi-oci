@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSoftwareSource = new SoftwareSource("testSoftwareSource", SoftwareSourceArgs.builder()        
+ *         var testSoftwareSource = new SoftwareSource("testSoftwareSource", SoftwareSourceArgs.builder()
  *             .archType(softwareSourceArchType)
  *             .compartmentId(compartmentId)
  *             .displayName(softwareSourceDisplayName)

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAcceptedAgreement = new AcceptedAgreement("testAcceptedAgreement", AcceptedAgreementArgs.builder()        
+ *         var testAcceptedAgreement = new AcceptedAgreement("testAcceptedAgreement", AcceptedAgreementArgs.builder()
  *             .agreementId(testAgreement.id())
  *             .compartmentId(compartmentId)
  *             .listingId(testListing.id())

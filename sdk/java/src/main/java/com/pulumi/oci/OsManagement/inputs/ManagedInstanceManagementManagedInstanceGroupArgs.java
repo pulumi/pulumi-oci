@@ -31,14 +31,14 @@ public final class ManagedInstanceManagementManagedInstanceGroupArgs extends com
     }
 
     /**
-     * software source identifier
+     * unique identifier that is immutable on creation
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return software source identifier
+     * @return unique identifier that is immutable on creation
      * 
      */
     public Optional<Output<String>> id() {
@@ -92,7 +92,7 @@ public final class ManagedInstanceManagementManagedInstanceGroupArgs extends com
         }
 
         /**
-         * @param id software source identifier
+         * @param id unique identifier that is immutable on creation
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ManagedInstanceManagementManagedInstanceGroupArgs extends com
         }
 
         /**
-         * @param id software source identifier
+         * @param id unique identifier that is immutable on creation
          * 
          * @return builder
          * 

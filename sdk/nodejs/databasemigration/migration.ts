@@ -214,7 +214,7 @@ export class Migration extends pulumi.CustomResource {
      */
     public readonly agentId!: pulumi.Output<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -426,7 +426,7 @@ export interface MigrationState {
      */
     agentId?: pulumi.Input<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -548,7 +548,7 @@ export interface MigrationArgs {
      */
     agentId?: pulumi.Input<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     compartmentId: pulumi.Input<string>;
     /**

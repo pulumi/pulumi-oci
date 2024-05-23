@@ -14,74 +14,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NamespaceScheduledTaskSchedulesSchedule {
     /**
-     * @return (Updatable) Value in cron format.
+     * @return Value in cron format.
      * 
      */
     private @Nullable String expression;
     /**
-     * @return (Updatable) Schedule misfire retry policy.
+     * @return Schedule misfire retry policy.
      * 
      */
     private @Nullable String misfirePolicy;
     /**
-     * @return (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     private @Nullable String recurringInterval;
     /**
-     * @return (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+     * @return Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
      * 
      */
     private @Nullable Integer repeatCount;
     /**
-     * @return (Updatable) Time zone, by default UTC.
+     * @return Time zone, by default UTC.
      * 
      */
     private @Nullable String timeZone;
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Schedule type discriminator.
      * 
      */
     private String type;
 
     private NamespaceScheduledTaskSchedulesSchedule() {}
     /**
-     * @return (Updatable) Value in cron format.
+     * @return Value in cron format.
      * 
      */
     public Optional<String> expression() {
         return Optional.ofNullable(this.expression);
     }
     /**
-     * @return (Updatable) Schedule misfire retry policy.
+     * @return Schedule misfire retry policy.
      * 
      */
     public Optional<String> misfirePolicy() {
         return Optional.ofNullable(this.misfirePolicy);
     }
     /**
-     * @return (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     public Optional<String> recurringInterval() {
         return Optional.ofNullable(this.recurringInterval);
     }
     /**
-     * @return (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+     * @return Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
      * 
      */
     public Optional<Integer> repeatCount() {
         return Optional.ofNullable(this.repeatCount);
     }
     /**
-     * @return (Updatable) Time zone, by default UTC.
+     * @return Time zone, by default UTC.
      * 
      */
     public Optional<String> timeZone() {
         return Optional.ofNullable(this.timeZone);
     }
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Schedule type discriminator.
      * 
      */
     public String type() {

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string> ResetPolicy { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        /// (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
         /// </summary>
         [Input("unit", required: true)]
         public Input<string> Unit { get; set; } = null!;

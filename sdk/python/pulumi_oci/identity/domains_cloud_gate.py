@@ -31,19 +31,19 @@ class DomainsCloudGateArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DomainsCloudGate resource.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of upstream server
+        :param pulumi.Input[str] display_name: (Updatable) Display name/Host identifier for this Cloud Gate
                
-               **Added In:** 20.1.3
+               **Added In:** 19.2.1
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
+               * mutability: readWrite
+               * required: true
+               * returned: always
                * type: string
-               * uniqueness: none
+               * uniqueness: server
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -161,19 +161,19 @@ class DomainsCloudGateArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Display name of upstream server
+        (Updatable) Display name/Host identifier for this Cloud Gate
 
-        **Added In:** 20.1.3
+        **Added In:** 19.2.1
 
         **SCIM++ Properties:**
         * caseExact: false
-        * idcsSearchable: false
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
+        * mutability: readWrite
+        * required: true
+        * returned: always
         * type: string
-        * uniqueness: none
+        * uniqueness: server
         """
         return pulumi.get(self, "display_name")
 
@@ -486,19 +486,19 @@ class _DomainsCloudGateState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of upstream server
+        :param pulumi.Input[str] display_name: (Updatable) Display name/Host identifier for this Cloud Gate
                
-               **Added In:** 20.1.3
+               **Added In:** 19.2.1
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
+               * mutability: readWrite
+               * required: true
+               * returned: always
                * type: string
-               * uniqueness: none
+               * uniqueness: server
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
                
                **SCIM++ Properties:**
@@ -896,19 +896,19 @@ class _DomainsCloudGateState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Display name of upstream server
+        (Updatable) Display name/Host identifier for this Cloud Gate
 
-        **Added In:** 20.1.3
+        **Added In:** 19.2.1
 
         **SCIM++ Properties:**
         * caseExact: false
-        * idcsSearchable: false
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
+        * mutability: readWrite
+        * required: true
+        * returned: always
         * type: string
-        * uniqueness: none
+        * uniqueness: server
         """
         return pulumi.get(self, "display_name")
 
@@ -1432,19 +1432,19 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of upstream server
+        :param pulumi.Input[str] display_name: (Updatable) Display name/Host identifier for this Cloud Gate
                
-               **Added In:** 20.1.3
+               **Added In:** 19.2.1
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
+               * mutability: readWrite
+               * required: true
+               * returned: always
                * type: string
-               * uniqueness: none
+               * uniqueness: server
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[str] last_modified_time: (Updatable) Last updated timestamp for this CloudGate's servers and mappings.
                
@@ -1716,19 +1716,19 @@ class DomainsCloudGate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of upstream server
+        :param pulumi.Input[str] display_name: (Updatable) Display name/Host identifier for this Cloud Gate
                
-               **Added In:** 20.1.3
+               **Added In:** 19.2.1
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
+               * mutability: readWrite
+               * required: true
+               * returned: always
                * type: string
-               * uniqueness: none
+               * uniqueness: server
         :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
                
                **SCIM++ Properties:**
@@ -2075,19 +2075,19 @@ class DomainsCloudGate(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Display name of upstream server
+        (Updatable) Display name/Host identifier for this Cloud Gate
 
-        **Added In:** 20.1.3
+        **Added In:** 19.2.1
 
         **SCIM++ Properties:**
         * caseExact: false
-        * idcsSearchable: false
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
+        * mutability: readWrite
+        * required: true
+        * returned: always
         * type: string
-        * uniqueness: none
+        * uniqueness: server
         """
         return pulumi.get(self, "display_name")
 

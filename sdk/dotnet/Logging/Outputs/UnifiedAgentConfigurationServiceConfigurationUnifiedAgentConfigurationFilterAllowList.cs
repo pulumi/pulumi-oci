@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList
     {
         /// <summary>
-        /// (Updatable) A new key
+        /// (Updatable) The field name to which the regular expression is applied
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) The Grok pattern.
+        /// (Updatable) The regular expression
         /// </summary>
         public readonly string? Pattern;
 

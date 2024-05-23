@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaskingPolicy = new MaskingPolicy("testMaskingPolicy", MaskingPolicyArgs.builder()        
+ *         var testMaskingPolicy = new MaskingPolicy("testMaskingPolicy", MaskingPolicyArgs.builder()
  *             .columnSources(MaskingPolicyColumnSourceArgs.builder()
  *                 .columnSource(maskingPolicyColumnSourceColumnSource)
  *                 .sensitiveDataModelId(testSensitiveDataModel.id())
@@ -119,14 +119,14 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.addMaskingColumnsFromSdmTrigger);
     }
     /**
-     * (Updatable) The source of masking columns.
+     * (Updatable) Details to associate a column source with a masking policy.
      * 
      */
     @Export(name="columnSources", refs={List.class,MaskingPolicyColumnSource.class}, tree="[0,1]")
     private Output<List<MaskingPolicyColumnSource>> columnSources;
 
     /**
-     * @return (Updatable) The source of masking columns.
+     * @return (Updatable) Details to associate a column source with a masking policy.
      * 
      */
     public Output<List<MaskingPolicyColumnSource>> columnSources() {

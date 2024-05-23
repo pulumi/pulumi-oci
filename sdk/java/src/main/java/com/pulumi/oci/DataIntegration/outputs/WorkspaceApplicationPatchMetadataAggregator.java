@@ -22,7 +22,7 @@ public final class WorkspaceApplicationPatchMetadataAggregator {
      */
     private @Nullable String identifier;
     /**
-     * @return The identifying key for the object.
+     * @return The object&#39;s key.
      * 
      */
     private @Nullable String key;
@@ -53,7 +53,7 @@ public final class WorkspaceApplicationPatchMetadataAggregator {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return The identifying key for the object.
+     * @return The object&#39;s key.
      * 
      */
     public Optional<String> key() {

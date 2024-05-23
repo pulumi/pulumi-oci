@@ -51,7 +51,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -67,7 +67,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
     private @Nullable Output<Boolean> primary;
 
     /**
-     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -84,13 +84,13 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;photo&#39; or &#39;thumbnail&#39;.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -100,13 +100,13 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;photo&#39; or &#39;thumbnail&#39;.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -117,7 +117,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) URL of a photo for the User
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -125,18 +125,15 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) URL of a photo for the User
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -144,11 +141,8 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -222,7 +216,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -242,7 +236,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -261,13 +255,13 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;photo&#39; or &#39;thumbnail&#39;.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -281,13 +275,13 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;photo&#39; or &#39;thumbnail&#39;.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -300,7 +294,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) URL of a photo for the User
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -308,11 +302,8 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: reference
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -323,7 +314,7 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) URL of a photo for the User
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -331,11 +322,8 @@ public final class DomainsUserPhotoArgs extends com.pulumi.resources.ResourceArg
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: reference
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogSavedSearch = new LogSavedSearch("testLogSavedSearch", LogSavedSearchArgs.builder()        
+ *         var testLogSavedSearch = new LogSavedSearch("testLogSavedSearch", LogSavedSearchArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(logSavedSearchName)
  *             .query(logSavedSearchQuery)

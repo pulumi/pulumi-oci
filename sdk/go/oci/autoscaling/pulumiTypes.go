@@ -16,7 +16,7 @@ var _ = internal.GetEnvOrDefault
 type AutoScalingConfigurationAutoScalingResources struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
 	Id string `pulumi:"id"`
-	// The type of action to take.
+	// The type of resource.
 	Type string `pulumi:"type"`
 }
 
@@ -34,7 +34,7 @@ type AutoScalingConfigurationAutoScalingResourcesInput interface {
 type AutoScalingConfigurationAutoScalingResourcesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
 	Id pulumi.StringInput `pulumi:"id"`
-	// The type of action to take.
+	// The type of resource.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -120,7 +120,7 @@ func (o AutoScalingConfigurationAutoScalingResourcesOutput) Id() pulumi.StringOu
 	return o.ApplyT(func(v AutoScalingConfigurationAutoScalingResources) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The type of action to take.
+// The type of resource.
 func (o AutoScalingConfigurationAutoScalingResourcesOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationAutoScalingResources) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -159,7 +159,7 @@ func (o AutoScalingConfigurationAutoScalingResourcesPtrOutput) Id() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of action to take.
+// The type of resource.
 func (o AutoScalingConfigurationAutoScalingResourcesPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationAutoScalingResources) *string {
 		if v == nil {
@@ -171,11 +171,12 @@ func (o AutoScalingConfigurationAutoScalingResourcesPtrOutput) Type() pulumi.Str
 
 type AutoScalingConfigurationPolicy struct {
 	// The capacity requirements of the autoscaling policy.
-	Capacity    *AutoScalingConfigurationPolicyCapacity `pulumi:"capacity"`
-	DisplayName *string                                 `pulumi:"displayName"`
+	Capacity *AutoScalingConfigurationPolicyCapacity `pulumi:"capacity"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
 	// An execution schedule for an autoscaling policy.
 	ExecutionSchedule *AutoScalingConfigurationPolicyExecutionSchedule `pulumi:"executionSchedule"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+	// ID of the condition that is assigned after creation.
 	Id *string `pulumi:"id"`
 	// Whether the autoscaling policy is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
@@ -201,11 +202,12 @@ type AutoScalingConfigurationPolicyInput interface {
 
 type AutoScalingConfigurationPolicyArgs struct {
 	// The capacity requirements of the autoscaling policy.
-	Capacity    AutoScalingConfigurationPolicyCapacityPtrInput `pulumi:"capacity"`
-	DisplayName pulumi.StringPtrInput                          `pulumi:"displayName"`
+	Capacity AutoScalingConfigurationPolicyCapacityPtrInput `pulumi:"capacity"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// An execution schedule for an autoscaling policy.
 	ExecutionSchedule AutoScalingConfigurationPolicyExecutionSchedulePtrInput `pulumi:"executionSchedule"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+	// ID of the condition that is assigned after creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the autoscaling policy is enabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
@@ -274,6 +276,7 @@ func (o AutoScalingConfigurationPolicyOutput) Capacity() AutoScalingConfiguratio
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *AutoScalingConfigurationPolicyCapacity { return v.Capacity }).(AutoScalingConfigurationPolicyCapacityPtrOutput)
 }
 
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o AutoScalingConfigurationPolicyOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -285,7 +288,7 @@ func (o AutoScalingConfigurationPolicyOutput) ExecutionSchedule() AutoScalingCon
 	}).(AutoScalingConfigurationPolicyExecutionSchedulePtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+// ID of the condition that is assigned after creation.
 func (o AutoScalingConfigurationPolicyOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -548,7 +551,7 @@ type AutoScalingConfigurationPolicyExecutionSchedule struct {
 	Expression string `pulumi:"expression"`
 	// The time zone for the execution schedule.
 	Timezone string `pulumi:"timezone"`
-	// The type of action to take.
+	// The type of execution schedule.
 	Type string `pulumi:"type"`
 }
 
@@ -576,7 +579,7 @@ type AutoScalingConfigurationPolicyExecutionScheduleArgs struct {
 	Expression pulumi.StringInput `pulumi:"expression"`
 	// The time zone for the execution schedule.
 	Timezone pulumi.StringInput `pulumi:"timezone"`
-	// The type of action to take.
+	// The type of execution schedule.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -675,7 +678,7 @@ func (o AutoScalingConfigurationPolicyExecutionScheduleOutput) Timezone() pulumi
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyExecutionSchedule) string { return v.Timezone }).(pulumi.StringOutput)
 }
 
-// The type of action to take.
+// The type of execution schedule.
 func (o AutoScalingConfigurationPolicyExecutionScheduleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyExecutionSchedule) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -732,7 +735,7 @@ func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Timezone() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of action to take.
+// The type of execution schedule.
 func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyExecutionSchedule) *string {
 		if v == nil {
@@ -743,7 +746,6 @@ func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Type() pulumi.
 }
 
 type AutoScalingConfigurationPolicyResourceAction struct {
-	// The action to take when autoscaling is triggered.
 	Action string `pulumi:"action"`
 	// The type of resource action.
 	ActionType string `pulumi:"actionType"`
@@ -761,7 +763,6 @@ type AutoScalingConfigurationPolicyResourceActionInput interface {
 }
 
 type AutoScalingConfigurationPolicyResourceActionArgs struct {
-	// The action to take when autoscaling is triggered.
 	Action pulumi.StringInput `pulumi:"action"`
 	// The type of resource action.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
@@ -844,7 +845,6 @@ func (o AutoScalingConfigurationPolicyResourceActionOutput) ToAutoScalingConfigu
 	}).(AutoScalingConfigurationPolicyResourceActionPtrOutput)
 }
 
-// The action to take when autoscaling is triggered.
 func (o AutoScalingConfigurationPolicyResourceActionOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyResourceAction) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -878,7 +878,6 @@ func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) Elem() AutoScalin
 	}).(AutoScalingConfigurationPolicyResourceActionOutput)
 }
 
-// The action to take when autoscaling is triggered.
 func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyResourceAction) *string {
 		if v == nil {
@@ -902,7 +901,7 @@ type AutoScalingConfigurationPolicyRule struct {
 	// The action to take when autoscaling is triggered.
 	Action      *AutoScalingConfigurationPolicyRuleAction `pulumi:"action"`
 	DisplayName string                                    `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+	// ID of the condition that is assigned after creation.
 	Id *string `pulumi:"id"`
 	// Metric and threshold details for triggering an autoscaling action.
 	Metric *AutoScalingConfigurationPolicyRuleMetric `pulumi:"metric"`
@@ -923,7 +922,7 @@ type AutoScalingConfigurationPolicyRuleArgs struct {
 	// The action to take when autoscaling is triggered.
 	Action      AutoScalingConfigurationPolicyRuleActionPtrInput `pulumi:"action"`
 	DisplayName pulumi.StringInput                               `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+	// ID of the condition that is assigned after creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Metric and threshold details for triggering an autoscaling action.
 	Metric AutoScalingConfigurationPolicyRuleMetricPtrInput `pulumi:"metric"`
@@ -989,7 +988,7 @@ func (o AutoScalingConfigurationPolicyRuleOutput) DisplayName() pulumi.StringOut
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+// ID of the condition that is assigned after creation.
 func (o AutoScalingConfigurationPolicyRuleOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -1022,8 +1021,7 @@ func (o AutoScalingConfigurationPolicyRuleArrayOutput) Index(i pulumi.IntInput) 
 type AutoScalingConfigurationPolicyRuleAction struct {
 	// The type of action to take.
 	Type *string `pulumi:"type"`
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
 	Value *int `pulumi:"value"`
 }
 
@@ -1041,8 +1039,7 @@ type AutoScalingConfigurationPolicyRuleActionInput interface {
 type AutoScalingConfigurationPolicyRuleActionArgs struct {
 	// The type of action to take.
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
 	Value pulumi.IntPtrInput `pulumi:"value"`
 }
 
@@ -1128,8 +1125,7 @@ func (o AutoScalingConfigurationPolicyRuleActionOutput) Type() pulumi.StringPtrO
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleAction) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
 func (o AutoScalingConfigurationPolicyRuleActionOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleAction) *int { return v.Value }).(pulumi.IntPtrOutput)
 }
@@ -1168,8 +1164,7 @@ func (o AutoScalingConfigurationPolicyRuleActionPtrOutput) Type() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
 func (o AutoScalingConfigurationPolicyRuleActionPtrOutput) Value() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleAction) *int {
 		if v == nil {

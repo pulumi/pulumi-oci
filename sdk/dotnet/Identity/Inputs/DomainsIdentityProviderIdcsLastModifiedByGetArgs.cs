@@ -13,11 +13,10 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsIdentityProviderIdcsLastModifiedByGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The displayName of the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -30,48 +29,46 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) Group URI
-        /// 
-        /// **Added In:** 2205120021
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Identity Provider Type
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The type of resource, User or App, that modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readOnly
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -79,13 +76,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

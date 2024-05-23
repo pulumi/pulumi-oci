@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Waas.Inputs
     public sealed class PolicyWafConfigDeviceFingerprintChallengeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+        /// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
         /// </summary>
         [Input("actionExpirationInSeconds")]
         public Input<int>? ActionExpirationInSeconds { get; set; }
@@ -31,19 +31,19 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<Inputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsGetArgs>? ChallengeSettings { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+        /// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
         /// </summary>
         [Input("failureThreshold")]
         public Input<int>? FailureThreshold { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+        /// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
         /// </summary>
         [Input("failureThresholdExpirationInSeconds")]
         public Input<int>? FailureThresholdExpirationInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+        /// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;

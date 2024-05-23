@@ -1374,32 +1374,36 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Locale
+     * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     @Import(name="locale")
     private @Nullable Output<String> locale;
 
     /**
-     * @return (Updatable) Locale
+     * @return (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> locale() {
@@ -4142,16 +4146,18 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param locale (Updatable) Locale
+         * @param locale (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
          * 
          * **SCIM++ Properties:**
-         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+         * * caseExact: false
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -4162,16 +4168,18 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param locale (Updatable) Locale
+         * @param locale (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
          * 
          * **SCIM++ Properties:**
-         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+         * * caseExact: false
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
+         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -13,37 +13,37 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) An integer value of the parameter.
+        /// An integer value of the parameter.
         /// </summary>
         [Input("intValue")]
         public Input<int>? IntValue { get; set; }
 
         /// <summary>
-        /// (Updatable) An object value of the parameter.
+        /// An object value of the parameter.
         /// </summary>
         [Input("objectValue")]
         public Input<string>? ObjectValue { get; set; }
 
         /// <summary>
-        /// (Updatable) Reference to the parameter by its key.
+        /// Reference to the parameter by its key.
         /// </summary>
         [Input("parameterValue")]
         public Input<string>? ParameterValue { get; set; }
 
         /// <summary>
-        /// (Updatable) The root object reference value.
+        /// The root object reference value.
         /// </summary>
         [Input("refValue")]
         public Input<Inputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs>? RefValue { get; set; }
 
         /// <summary>
-        /// (Updatable) The root object value, used in custom parameters.
+        /// The root object value, used in custom parameters.
         /// </summary>
         [Input("rootObjectValue")]
         public Input<Inputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs>? RootObjectValue { get; set; }
 
         /// <summary>
-        /// (Updatable) A string value of the parameter.
+        /// A string value of the parameter.
         /// </summary>
         [Input("stringValue")]
         public Input<string>? StringValue { get; set; }

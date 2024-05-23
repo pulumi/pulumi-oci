@@ -44,7 +44,7 @@ public final class MetricExtensionMetricList {
      */
     private @Nullable String metricCategory;
     /**
-     * @return (Updatable) Name of the script file
+     * @return (Updatable) Name of the metric.
      * 
      */
     private String name;
@@ -98,7 +98,7 @@ public final class MetricExtensionMetricList {
         return Optional.ofNullable(this.metricCategory);
     }
     /**
-     * @return (Updatable) Name of the script file
+     * @return (Updatable) Name of the metric.
      * 
      */
     public String name() {

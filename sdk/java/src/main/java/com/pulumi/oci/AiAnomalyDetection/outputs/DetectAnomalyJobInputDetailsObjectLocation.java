@@ -17,7 +17,7 @@ public final class DetectAnomalyJobInputDetailsObjectLocation {
      */
     private @Nullable String bucket;
     /**
-     * @return Object Storage namespace.
+     * @return Object Storage namespace name.
      * 
      */
     private @Nullable String namespace;
@@ -36,7 +36,7 @@ public final class DetectAnomalyJobInputDetailsObjectLocation {
         return Optional.ofNullable(this.bucket);
     }
     /**
-     * @return Object Storage namespace.
+     * @return Object Storage namespace name.
      * 
      */
     public Optional<String> namespace() {

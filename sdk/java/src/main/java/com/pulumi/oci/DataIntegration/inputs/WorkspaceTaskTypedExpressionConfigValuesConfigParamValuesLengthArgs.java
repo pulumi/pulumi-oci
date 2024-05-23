@@ -16,14 +16,14 @@ public final class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLeng
     public static final WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs Empty = new WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs();
 
     /**
-     * (Updatable) An integer value of the parameter.
+     * An integer value of the parameter.
      * 
      */
     @Import(name="intValue")
     private @Nullable Output<Integer> intValue;
 
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     public Optional<Output<Integer>> intValue() {
@@ -55,7 +55,7 @@ public final class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLeng
         }
 
         /**
-         * @param intValue (Updatable) An integer value of the parameter.
+         * @param intValue An integer value of the parameter.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLeng
         }
 
         /**
-         * @param intValue (Updatable) An integer value of the parameter.
+         * @param intValue An integer value of the parameter.
          * 
          * @return builder
          * 

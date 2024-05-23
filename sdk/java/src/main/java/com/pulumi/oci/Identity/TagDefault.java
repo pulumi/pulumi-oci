@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTagDefault = new TagDefault("testTagDefault", TagDefaultArgs.builder()        
+ *         var testTagDefault = new TagDefault("testTagDefault", TagDefaultArgs.builder()
  *             .compartmentId(compartmentId)
  *             .tagDefinitionId(testTagDefinition.id())
  *             .value(tagDefaultValue)

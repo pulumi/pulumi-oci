@@ -106,13 +106,13 @@ namespace Pulumi.Oci.Opsi
     public partial class ExadataInsight : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of database
+        /// (Updatable) Compartment Identifier of Exadata insight
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> EnterpriseManagerIdentifier { get; private set; } = null!;
 
         /// <summary>
-        /// Source of the database entity.
+        /// (Updatable) Source of the Exadata system.
         /// </summary>
         [Output("entitySource")]
         public Output<string> EntitySource { get; private set; } = null!;
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> ExadataType { get; private set; } = null!;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -299,7 +299,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class ExadataInsightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of database
+        /// (Updatable) Compartment Identifier of Exadata insight
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -308,7 +308,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -335,7 +335,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? EnterpriseManagerIdentifier { get; set; }
 
         /// <summary>
-        /// Source of the database entity.
+        /// (Updatable) Source of the Exadata system.
         /// </summary>
         [Input("entitySource", required: true)]
         public Input<string> EntitySource { get; set; } = null!;
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -387,7 +387,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class ExadataInsightState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of database
+        /// (Updatable) Compartment Identifier of Exadata insight
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -396,7 +396,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -441,7 +441,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? EnterpriseManagerIdentifier { get; set; }
 
         /// <summary>
-        /// Source of the database entity.
+        /// (Updatable) Source of the Exadata system.
         /// </summary>
         [Input("entitySource")]
         public Input<string>? EntitySource { get; set; }
@@ -483,7 +483,7 @@ namespace Pulumi.Oci.Opsi
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {

@@ -43,13 +43,13 @@ namespace Pulumi.Oci.Adm.Inputs
         public Input<string>? OciCodeRepositoryId { get; set; }
 
         /// <summary>
-        /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        /// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
         /// </summary>
         [Input("patSecretId")]
         public Input<string>? PatSecretId { get; set; }
 
         /// <summary>
-        /// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        /// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
         /// </summary>
         [Input("repositoryUrl")]
         public Input<string>? RepositoryUrl { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Adm.Inputs
         public Input<string> ScmType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The username that will be used to authenticate with Jenkins.
+        /// (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

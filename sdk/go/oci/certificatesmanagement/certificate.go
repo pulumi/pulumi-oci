@@ -36,7 +36,7 @@ type Certificate struct {
 	CertificateRules CertificateCertificateRuleArrayOutput `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The origin of the certificate.
+	// The origin of the certificate.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayOutput `pulumi:"currentVersions"`
@@ -46,9 +46,9 @@ type Certificate struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The OCID of the private CA.
+	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId pulumi.StringOutput `pulumi:"issuerCertificateAuthorityId"`
-	// The algorithm to use to create key pairs.
+	// The algorithm used to create key pairs.
 	KeyAlgorithm pulumi.StringOutput `pulumi:"keyAlgorithm"`
 	// Additional information about the current lifecycle state of the certificate.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -57,7 +57,7 @@ type Certificate struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The algorithm to use to sign the public key certificate.
+	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm pulumi.StringOutput `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the certificate.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -115,7 +115,7 @@ type certificateState struct {
 	CertificateRules []CertificateCertificateRule `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The origin of the certificate.
+	// The origin of the certificate.
 	ConfigType *string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []CertificateCurrentVersion `pulumi:"currentVersions"`
@@ -125,9 +125,9 @@ type certificateState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the private CA.
+	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
-	// The algorithm to use to create key pairs.
+	// The algorithm used to create key pairs.
 	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
 	// Additional information about the current lifecycle state of the certificate.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -136,7 +136,7 @@ type certificateState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
-	// The algorithm to use to sign the public key certificate.
+	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the certificate.
 	State *string `pulumi:"state"`
@@ -159,7 +159,7 @@ type CertificateState struct {
 	CertificateRules CertificateCertificateRuleArrayInput
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The origin of the certificate.
+	// The origin of the certificate.
 	ConfigType pulumi.StringPtrInput
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayInput
@@ -169,9 +169,9 @@ type CertificateState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The OCID of the private CA.
+	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId pulumi.StringPtrInput
-	// The algorithm to use to create key pairs.
+	// The algorithm used to create key pairs.
 	KeyAlgorithm pulumi.StringPtrInput
 	// Additional information about the current lifecycle state of the certificate.
 	LifecycleDetails pulumi.StringPtrInput
@@ -180,7 +180,7 @@ type CertificateState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput
-	// The algorithm to use to sign the public key certificate.
+	// The algorithm used to sign the public key certificate.
 	SignatureAlgorithm pulumi.StringPtrInput
 	// The current lifecycle state of the certificate.
 	State pulumi.StringPtrInput
@@ -351,7 +351,7 @@ func (o CertificateOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The origin of the certificate.
+// The origin of the certificate.
 func (o CertificateOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -376,12 +376,12 @@ func (o CertificateOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the private CA.
+// The OCID of the certificate authority (CA) that issued the certificate.
 func (o CertificateOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.IssuerCertificateAuthorityId }).(pulumi.StringOutput)
 }
 
-// The algorithm to use to create key pairs.
+// The algorithm used to create key pairs.
 func (o CertificateOutput) KeyAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.KeyAlgorithm }).(pulumi.StringOutput)
 }
@@ -399,7 +399,7 @@ func (o CertificateOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The algorithm to use to sign the public key certificate.
+// The algorithm used to sign the public key certificate.
 func (o CertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.SignatureAlgorithm }).(pulumi.StringOutput)
 }

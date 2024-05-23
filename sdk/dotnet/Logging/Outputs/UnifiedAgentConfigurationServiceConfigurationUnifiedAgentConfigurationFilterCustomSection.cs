@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection
     {
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) The name of the custom section
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) Parameters of the custom filter
+        /// (Updatable) Parameters in the custom section
         /// </summary>
         public readonly ImmutableDictionary<string, object>? Params;
 

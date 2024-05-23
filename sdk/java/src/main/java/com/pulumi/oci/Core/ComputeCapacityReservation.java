@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testComputeCapacityReservation = new ComputeCapacityReservation("testComputeCapacityReservation", ComputeCapacityReservationArgs.builder()        
+ *         var testComputeCapacityReservation = new ComputeCapacityReservation("testComputeCapacityReservation", ComputeCapacityReservationArgs.builder()
  *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

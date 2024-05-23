@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInvokeFunction = new InvokeFunction("testInvokeFunction", InvokeFunctionArgs.builder()        
+ *         var testInvokeFunction = new InvokeFunction("testInvokeFunction", InvokeFunctionArgs.builder()
  *             .functionId(testFunction.id())
  *             .invokeFunctionBody(invokeFunctionInvokeFunctionBody)
  *             .fnIntent(invokeFunctionFnIntent)

@@ -20,7 +20,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidation {
      */
     private @Nullable List<DeploymentSpecificationRouteRequestPoliciesBodyValidationContent> contents;
     /**
-     * @return (Updatable) Determines if the parameter is required in the request.
+     * @return (Updatable) Determines if the request body is required in the request.
      * 
      */
     private @Nullable Boolean required;
@@ -45,7 +45,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidation {
         return this.contents == null ? List.of() : this.contents;
     }
     /**
-     * @return (Updatable) Determines if the parameter is required in the request.
+     * @return (Updatable) Determines if the request body is required in the request.
      * 
      */
     public Optional<Boolean> required() {

@@ -47,14 +47,14 @@ public final class AssetComputeNvdimmArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The unit number of the SCSI controller.
+     * (Updatable) The unit number of NVDIMM.
      * 
      */
     @Import(name="unitNumber")
     private @Nullable Output<Integer> unitNumber;
 
     /**
-     * @return (Updatable) The unit number of the SCSI controller.
+     * @return (Updatable) The unit number of NVDIMM.
      * 
      */
     public Optional<Output<Integer>> unitNumber() {
@@ -130,7 +130,7 @@ public final class AssetComputeNvdimmArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param unitNumber (Updatable) The unit number of the SCSI controller.
+         * @param unitNumber (Updatable) The unit number of NVDIMM.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AssetComputeNvdimmArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param unitNumber (Updatable) The unit number of the SCSI controller.
+         * @param unitNumber (Updatable) The unit number of NVDIMM.
          * 
          * @return builder
          * 

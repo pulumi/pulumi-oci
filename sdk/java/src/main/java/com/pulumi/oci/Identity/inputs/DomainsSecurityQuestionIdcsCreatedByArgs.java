@@ -17,7 +17,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     public static final DomainsSecurityQuestionIdcsCreatedByArgs Empty = new DomainsSecurityQuestionIdcsCreatedByArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -34,7 +34,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -52,34 +52,32 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,7 +85,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -122,40 +120,34 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * This indicates if the question is a Custom Question added by the Security Admin.
+     * The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: always
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return This indicates if the question is a Custom Question added by the Security Admin.
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: always
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -163,13 +155,13 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     }
 
     /**
-     * Value of the tag.
+     * The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -180,13 +172,13 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -226,7 +218,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -247,7 +239,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -267,17 +259,16 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -288,17 +279,16 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -308,7 +298,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -329,7 +319,7 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -349,20 +339,17 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param type This indicates if the question is a Custom Question added by the Security Admin.
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: always
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -373,20 +360,17 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param type This indicates if the question is a Custom Question added by the Security Admin.
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: always
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -396,13 +380,13 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -417,13 +401,13 @@ public final class DomainsSecurityQuestionIdcsCreatedByArgs extends com.pulumi.r
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

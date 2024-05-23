@@ -16,14 +16,14 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
     public static final NodePoolNodeSourceArgs Empty = new NodePoolNodeSourceArgs();
 
     /**
-     * (Updatable) The OCID of the image used to boot the node.
+     * The OCID of the image used to boot the node.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return (Updatable) The OCID of the image used to boot the node.
+     * @return The OCID of the image used to boot the node.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -46,14 +46,14 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+     * The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+     * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -87,7 +87,7 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param imageId (Updatable) The OCID of the image used to boot the node.
+         * @param imageId The OCID of the image used to boot the node.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param imageId (Updatable) The OCID of the image used to boot the node.
+         * @param imageId The OCID of the image used to boot the node.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param sourceType (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+         * @param sourceType The source type for the node. Use `IMAGE` when specifying an OCID of an image.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NodePoolNodeSourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param sourceType (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+         * @param sourceType The source type for the node. Use `IMAGE` when specifying an OCID of an image.
          * 
          * @return builder
          * 

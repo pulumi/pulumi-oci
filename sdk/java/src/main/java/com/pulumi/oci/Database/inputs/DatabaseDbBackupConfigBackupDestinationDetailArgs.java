@@ -31,14 +31,14 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
     public Optional<Output<String>> id() {
@@ -116,7 +116,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetailArgs extends com
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * 
          * @return builder
          * 

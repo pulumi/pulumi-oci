@@ -19,7 +19,7 @@ public final class MigrationDataTransferMediumDetailsV2 {
      */
     private @Nullable String accessKeyId;
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     private @Nullable String name;
@@ -39,7 +39,7 @@ public final class MigrationDataTransferMediumDetailsV2 {
      */
     private @Nullable String secretAccessKey;
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of the data transfer medium to use for the datapump
      * 
      */
     private String type;
@@ -53,7 +53,7 @@ public final class MigrationDataTransferMediumDetailsV2 {
         return Optional.ofNullable(this.accessKeyId);
     }
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     public Optional<String> name() {
@@ -81,7 +81,7 @@ public final class MigrationDataTransferMediumDetailsV2 {
         return Optional.ofNullable(this.secretAccessKey);
     }
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of the data transfer medium to use for the datapump
      * 
      */
     public String type() {

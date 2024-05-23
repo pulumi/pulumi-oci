@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMemberFileSystemOperationMountDetails
     {
         /// <summary>
-        /// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        /// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         /// </summary>
         public readonly string? MountTargetId;
 

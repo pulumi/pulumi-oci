@@ -60,14 +60,14 @@ public final class DeployStageBlueGreenStrategyArgs extends com.pulumi.resources
     }
 
     /**
-     * Canary strategy type.
+     * Blue Green strategy type
      * 
      */
     @Import(name="strategyType", required=true)
     private Output<String> strategyType;
 
     /**
-     * @return Canary strategy type.
+     * @return Blue Green strategy type
      * 
      */
     public Output<String> strategyType() {
@@ -165,7 +165,7 @@ public final class DeployStageBlueGreenStrategyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param strategyType Canary strategy type.
+         * @param strategyType Blue Green strategy type
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class DeployStageBlueGreenStrategyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param strategyType Canary strategy type.
+         * @param strategyType Blue Green strategy type
          * 
          * @return builder
          * 

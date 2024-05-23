@@ -22,14 +22,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     public static final TargetArgs Empty = new TargetArgs();
 
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Output<String> compartmentId() {
@@ -217,7 +217,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 

@@ -253,14 +253,14 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
     }
 
     /**
-     * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+     * (Updatable) The name of the schema that contains the substitution column.
      * 
      */
     @Import(name="schemaName")
     private @Nullable Output<String> schemaName;
 
     /**
-     * @return The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+     * @return (Updatable) The name of the schema that contains the substitution column.
      * 
      */
     public Optional<Output<String>> schemaName() {
@@ -778,7 +778,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param schemaName The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+         * @param schemaName (Updatable) The name of the schema that contains the substitution column.
          * 
          * @return builder
          * 
@@ -789,7 +789,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         }
 
         /**
-         * @param schemaName The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+         * @param schemaName (Updatable) The name of the schema that contains the substitution column.
          * 
          * @return builder
          * 

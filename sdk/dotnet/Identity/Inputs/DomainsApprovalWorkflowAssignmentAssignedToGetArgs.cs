@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) Display name of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -45,31 +45,31 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// Ocid of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -77,15 +77,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Value of the tag.
+        /// Identifier of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

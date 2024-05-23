@@ -44,9 +44,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? Priority;
         /// <summary>
-        /// (Updatable) App URI
+        /// (Updatable) PasswordPolicy URI
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) The ID of the App.
+        /// (Updatable) The ID of the PasswordPolicy.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

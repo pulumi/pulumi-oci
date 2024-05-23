@@ -55,7 +55,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable String ipAddress;
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     private @Nullable Integer memoryInGbs;
@@ -75,7 +75,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable Integer ocpus;
     /**
-     * @return Shape of the node
+     * @return (Updatable) Shape of the node.
      * 
      */
     private @Nullable String shape;
@@ -90,7 +90,7 @@ public final class BdsInstanceNode {
      */
     private @Nullable String state;
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node will be created.
      * 
      */
     private @Nullable String subnetId;
@@ -163,7 +163,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Integer> memoryInGbs() {
@@ -191,7 +191,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.ocpus);
     }
     /**
-     * @return Shape of the node
+     * @return (Updatable) Shape of the node.
      * 
      */
     public Optional<String> shape() {
@@ -212,7 +212,7 @@ public final class BdsInstanceNode {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node will be created.
      * 
      */
     public Optional<String> subnetId() {

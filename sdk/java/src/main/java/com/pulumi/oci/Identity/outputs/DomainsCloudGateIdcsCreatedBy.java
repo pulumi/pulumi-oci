@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsCloudGateIdcsCreatedBy {
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -28,27 +28,24 @@ public final class DomainsCloudGateIdcsCreatedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -60,13 +57,13 @@ public final class DomainsCloudGateIdcsCreatedBy {
      */
     private @Nullable String ref;
     /**
-     * @return Type of Cloud Gate
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -75,12 +72,10 @@ public final class DomainsCloudGateIdcsCreatedBy {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
@@ -89,15 +84,12 @@ public final class DomainsCloudGateIdcsCreatedBy {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
     private DomainsCloudGateIdcsCreatedBy() {}
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -114,29 +106,26 @@ public final class DomainsCloudGateIdcsCreatedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -150,13 +139,13 @@ public final class DomainsCloudGateIdcsCreatedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Type of Cloud Gate
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -167,12 +156,10 @@ public final class DomainsCloudGateIdcsCreatedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
@@ -180,9 +167,6 @@ public final class DomainsCloudGateIdcsCreatedBy {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

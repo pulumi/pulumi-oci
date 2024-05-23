@@ -53,14 +53,14 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the Configuration to be used by the read replica.
+     * The OCID of the Configuration to be used by the read replica.
      * 
      */
     @Import(name="configurationId")
     private @Nullable Output<String> configurationId;
 
     /**
-     * @return (Updatable) The OCID of the Configuration to be used by the read replica.
+     * @return The OCID of the Configuration to be used by the read replica.
      * 
      */
     public Optional<Output<String>> configurationId() {
@@ -203,14 +203,14 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The MySQL version to be used by the read replica.
+     * The MySQL version to be used by the read replica.
      * 
      */
     @Import(name="mysqlVersion")
     private @Nullable Output<String> mysqlVersion;
 
     /**
-     * @return (Updatable) The MySQL version to be used by the read replica.
+     * @return The MySQL version to be used by the read replica.
      * 
      */
     public Optional<Output<String>> mysqlVersion() {
@@ -278,20 +278,14 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
     @Import(name="shapeName")
     private @Nullable Output<String> shapeName;
 
     /**
-     * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
     public Optional<Output<String>> shapeName() {
@@ -430,7 +424,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurationId (Updatable) The OCID of the Configuration to be used by the read replica.
+         * @param configurationId The OCID of the Configuration to be used by the read replica.
          * 
          * @return builder
          * 
@@ -441,7 +435,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configurationId (Updatable) The OCID of the Configuration to be used by the read replica.
+         * @param configurationId The OCID of the Configuration to be used by the read replica.
          * 
          * @return builder
          * 
@@ -640,7 +634,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion (Updatable) The MySQL version to be used by the read replica.
+         * @param mysqlVersion The MySQL version to be used by the read replica.
          * 
          * @return builder
          * 
@@ -651,7 +645,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion (Updatable) The MySQL version to be used by the read replica.
+         * @param mysqlVersion The MySQL version to be used by the read replica.
          * 
          * @return builder
          * 
@@ -755,10 +749,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param shapeName The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
          * @return builder
          * 
@@ -769,10 +760,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param shapeName The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
          * 
          * @return builder
          * 

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig("testCloudVmClusterIormConfig", CloudVmClusterIormConfigArgs.builder()        
+ *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig("testCloudVmClusterIormConfig", CloudVmClusterIormConfigArgs.builder()
  *             .dbPlans(CloudVmClusterIormConfigDbPlanArgs.builder()
  *                 .dbName(cloudVmClusterIormConfigDbPlansDbName)
  *                 .share(cloudVmClusterIormConfigDbPlansShare)

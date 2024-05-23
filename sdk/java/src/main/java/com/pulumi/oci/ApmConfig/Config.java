@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfig = new Config("testConfig", ConfigArgs.builder()        
+ *         var testConfig = new Config("testConfig", ConfigArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .configType(configConfigType)
  *             .displayName(configDisplayName)
@@ -161,14 +161,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) A description of the metric.
+     * (Updatable) An optional string that describes what the options are intended or used for.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the metric.
+     * @return (Updatable) An optional string that describes what the options are intended or used for.
      * 
      */
     public Output<String> description() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class PipelineRunConfigurationOverrideDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The command line arguments to set for step.
+        /// The command line arguments to set for steps in the pipeline.
         /// </summary>
         [Input("commandLineArguments")]
         public Input<string>? CommandLineArguments { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         private InputMap<object>? _environmentVariables;
 
         /// <summary>
-        /// Environment variables to set for step.
+        /// Environment variables to set for steps in the pipeline.
         /// </summary>
         public InputMap<object> EnvironmentVariables
         {
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         }
 
         /// <summary>
-        /// A time bound for the execution of the step.
+        /// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         /// </summary>
         [Input("maximumRuntimeInMinutes")]
         public Input<string>? MaximumRuntimeInMinutes { get; set; }

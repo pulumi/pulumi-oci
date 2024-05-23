@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployPipelineDeployPipelineEnvironment {
     /**
-     * @return (Updatable) List of parameters defined for a deployment pipeline.
+     * @return List of parameters defined for a deployment pipeline.
      * 
      */
     private @Nullable List<DeployPipelineDeployPipelineEnvironmentItem> items;
 
     private DeployPipelineDeployPipelineEnvironment() {}
     /**
-     * @return (Updatable) List of parameters defined for a deployment pipeline.
+     * @return List of parameters defined for a deployment pipeline.
      * 
      */
     public List<DeployPipelineDeployPipelineEnvironmentItem> items() {

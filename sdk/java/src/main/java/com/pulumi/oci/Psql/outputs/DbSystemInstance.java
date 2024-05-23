@@ -17,12 +17,12 @@ public final class DbSystemInstance {
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return A user-provided description of the database instance node.
+     * @return (Updatable) A user-provided description of a database system.
      * 
      */
     private @Nullable String description;
     /**
-     * @return Display name of the database instance node. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -61,14 +61,14 @@ public final class DbSystemInstance {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return A user-provided description of the database instance node.
+     * @return (Updatable) A user-provided description of a database system.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Display name of the database instance node. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

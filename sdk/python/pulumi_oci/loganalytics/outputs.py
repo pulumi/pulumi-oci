@@ -110,7 +110,7 @@ class LogAnalyticsEntityMetadataItem(dict):
                  type: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Log analytics entity name.
+        :param str name: (Updatable) The metadata name.
         :param str type: (Updatable) The metadata type.
         :param str value: (Updatable) The metadata value.
         """
@@ -125,7 +125,7 @@ class LogAnalyticsEntityMetadataItem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Log analytics entity name.
+        (Updatable) The metadata name.
         """
         return pulumi.get(self, "name")
 
@@ -416,13 +416,9 @@ class NamespaceIngestTimeRuleAction(dict):
                  dimensions: Optional[Sequence[str]] = None,
                  resource_group: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param str metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str namespace: (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param str type: (Updatable) Discriminator.
         :param Sequence[str] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         :param str resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -440,7 +436,7 @@ class NamespaceIngestTimeRuleAction(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -456,11 +452,7 @@ class NamespaceIngestTimeRuleAction(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         """
         return pulumi.get(self, "namespace")
 
@@ -677,14 +669,14 @@ class NamespaceScheduledTaskAction(dict):
                  query_string: Optional[str] = None,
                  saved_search_id: Optional[str] = None):
         """
-        :param str type: (Updatable) Schedule type discriminator.
+        :param str type: Action type discriminator.
         :param bool compartment_id_in_subtree: if true, purge child compartments data
         :param str data_type: the type of the log data to be purged
         :param 'NamespaceScheduledTaskActionMetricExtractionArgs' metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param str purge_compartment_id: the compartment OCID under which the data will be purged
         :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param str query_string: Purge query string.
-        :param str saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
+        :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
@@ -706,7 +698,7 @@ class NamespaceScheduledTaskAction(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Schedule type discriminator.
+        Action type discriminator.
         """
         return pulumi.get(self, "type")
 
@@ -762,7 +754,7 @@ class NamespaceScheduledTaskAction(dict):
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[str]:
         """
-        The ManagementSavedSearch id [OCID] to be accelerated.
+        The ManagementSavedSearch id [OCID] utilized in the action.
         """
         return pulumi.get(self, "saved_search_id")
 
@@ -796,9 +788,9 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request.
+        :param str namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         if compartment_id is not None:
@@ -814,7 +806,7 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -830,7 +822,7 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
-        The Logging Analytics namespace used for the request.
+        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         """
         return pulumi.get(self, "namespace")
 
@@ -888,12 +880,12 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
                  repeat_count: Optional[int] = None,
                  time_zone: Optional[str] = None):
         """
-        :param str type: (Updatable) Schedule type discriminator.
-        :param str expression: (Updatable) Value in cron format.
-        :param str misfire_policy: (Updatable) Schedule misfire retry policy.
-        :param str recurring_interval: (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param int repeat_count: (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param str time_zone: (Updatable) Time zone, by default UTC.
+        :param str type: Schedule type discriminator.
+        :param str expression: Value in cron format.
+        :param str misfire_policy: Schedule misfire retry policy.
+        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param str time_zone: Time zone, by default UTC.
         """
         pulumi.set(__self__, "type", type)
         if expression is not None:
@@ -911,7 +903,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Schedule type discriminator.
+        Schedule type discriminator.
         """
         return pulumi.get(self, "type")
 
@@ -919,7 +911,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter
     def expression(self) -> Optional[str]:
         """
-        (Updatable) Value in cron format.
+        Value in cron format.
         """
         return pulumi.get(self, "expression")
 
@@ -927,7 +919,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter(name="misfirePolicy")
     def misfire_policy(self) -> Optional[str]:
         """
-        (Updatable) Schedule misfire retry policy.
+        Schedule misfire retry policy.
         """
         return pulumi.get(self, "misfire_policy")
 
@@ -935,7 +927,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[str]:
         """
-        (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 
@@ -943,7 +935,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter(name="repeatCount")
     def repeat_count(self) -> Optional[int]:
         """
-        (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
 
@@ -951,7 +943,7 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[str]:
         """
-        (Updatable) Time zone, by default UTC.
+        Time zone, by default UTC.
         """
         return pulumi.get(self, "time_zone")
 

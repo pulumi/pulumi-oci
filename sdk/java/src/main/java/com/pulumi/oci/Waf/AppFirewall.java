@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppFirewall = new AppFirewall("testWebAppFirewall", AppFirewallArgs.builder()        
+ *         var testWebAppFirewall = new AppFirewall("testWebAppFirewall", AppFirewallArgs.builder()
  *             .backendType(webAppFirewallBackendType)
  *             .compartmentId(compartmentId)
  *             .loadBalancerId(testLoadBalancer.id())

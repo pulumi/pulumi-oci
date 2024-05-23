@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGroup = new Group("testGroup", GroupArgs.builder()        
+ *         var testGroup = new Group("testGroup", GroupArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(groupDescription)
  *             .name(groupName)

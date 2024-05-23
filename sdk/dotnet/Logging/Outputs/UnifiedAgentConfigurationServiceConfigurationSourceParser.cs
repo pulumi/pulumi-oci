@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? Expression;
         /// <summary>
-        /// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        /// (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
         public readonly string? FieldTimeKey;
         /// <summary>

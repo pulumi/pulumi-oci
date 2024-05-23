@@ -19,14 +19,14 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
     public static final NetworkLoadBalancerIpAddressArgs Empty = new NetworkLoadBalancerIpAddressArgs();
 
     /**
-     * The IP address of the backend server. Example: `10.0.0.3`
+     * An IP address.  Example: `192.168.0.3`
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return The IP address of the backend server. Example: `10.0.0.3`
+     * @return An IP address.  Example: `192.168.0.3`
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -106,7 +106,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipAddress The IP address of the backend server. Example: `10.0.0.3`
+         * @param ipAddress An IP address.  Example: `192.168.0.3`
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipAddress The IP address of the backend server. Example: `10.0.0.3`
+         * @param ipAddress An IP address.  Example: `192.168.0.3`
          * 
          * @return builder
          * 

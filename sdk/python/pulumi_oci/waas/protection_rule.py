@@ -25,7 +25,7 @@ class ProtectionRuleArgs:
         :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: (Updatable)
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "waas_policy_id", waas_policy_id)
@@ -74,7 +74,7 @@ class ProtectionRuleArgs:
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
         """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        (Updatable)
         """
         return pulumi.get(self, "exclusions")
 
@@ -98,7 +98,7 @@ class _ProtectionRuleState:
         Input properties used for looking up and filtering ProtectionRule resources.
         :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         :param pulumi.Input[str] description: The description of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]] exclusions: (Updatable)
         :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The list of labels for the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] mod_security_rule_ids: The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
@@ -150,7 +150,7 @@ class _ProtectionRuleState:
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
         """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        (Updatable)
         """
         return pulumi.get(self, "exclusions")
 
@@ -247,7 +247,7 @@ class ProtectionRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: (Updatable)
         :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[str] waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
@@ -339,7 +339,7 @@ class ProtectionRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         :param pulumi.Input[str] description: The description of the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleExclusionArgs']]]] exclusions: (Updatable)
         :param pulumi.Input[str] key: (Updatable) The unique key of the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The list of labels for the protection rule.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] mod_security_rule_ids: The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
@@ -380,7 +380,7 @@ class ProtectionRule(pulumi.CustomResource):
     @pulumi.getter
     def exclusions(self) -> pulumi.Output[Sequence['outputs.ProtectionRuleExclusion']]:
         """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        (Updatable)
         """
         return pulumi.get(self, "exclusions")
 

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly string? Identifier;
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         public readonly string? Key;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) The object type.
+        /// The object type.
         /// </summary>
         public readonly string? Type;
 

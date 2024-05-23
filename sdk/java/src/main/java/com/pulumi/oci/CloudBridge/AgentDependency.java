@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAgentDependency = new AgentDependency("testAgentDependency", AgentDependencyArgs.builder()        
+ *         var testAgentDependency = new AgentDependency("testAgentDependency", AgentDependencyArgs.builder()
  *             .bucket(agentDependencyBucket)
  *             .compartmentId(compartmentId)
  *             .dependencyName(agentDependencyDependencyName)

@@ -68,7 +68,7 @@ import (
 type NetworkAddressList struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) A private IP address or CIDR IP address range.
+	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses pulumi.StringArrayOutput `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -130,7 +130,7 @@ func GetNetworkAddressList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkAddressList resources.
 type networkAddressListState struct {
-	// (Updatable) A private IP address or CIDR IP address range.
+	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses []string `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -157,7 +157,7 @@ type networkAddressListState struct {
 }
 
 type NetworkAddressListState struct {
-	// (Updatable) A private IP address or CIDR IP address range.
+	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses pulumi.StringArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -188,7 +188,7 @@ func (NetworkAddressListState) ElementType() reflect.Type {
 }
 
 type networkAddressListArgs struct {
-	// (Updatable) A private IP address or CIDR IP address range.
+	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses []string `pulumi:"addresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -208,7 +208,7 @@ type networkAddressListArgs struct {
 
 // The set of arguments for constructing a NetworkAddressList resource.
 type NetworkAddressListArgs struct {
-	// (Updatable) A private IP address or CIDR IP address range.
+	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses pulumi.StringArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
@@ -313,7 +313,7 @@ func (o NetworkAddressListOutput) ToNetworkAddressListOutputWithContext(ctx cont
 	return o
 }
 
-// (Updatable) A private IP address or CIDR IP address range.
+// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 func (o NetworkAddressListOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringArrayOutput { return v.Addresses }).(pulumi.StringArrayOutput)
 }

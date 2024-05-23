@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string> CapacityType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

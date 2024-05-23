@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataMaskRule = new DataMaskRule("testDataMaskRule", DataMaskRuleArgs.builder()        
+ *         var testDataMaskRule = new DataMaskRule("testDataMaskRule", DataMaskRuleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataMaskCategories(dataMaskRuleDataMaskCategories)
  *             .displayName(dataMaskRuleDisplayName)

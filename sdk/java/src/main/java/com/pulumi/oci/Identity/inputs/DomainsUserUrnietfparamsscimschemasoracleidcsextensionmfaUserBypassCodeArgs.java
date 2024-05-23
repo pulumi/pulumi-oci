@@ -17,9 +17,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs();
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the corresponding BypassCode resource which belongs to user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -35,9 +35,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding BypassCode resource which belongs to user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -54,38 +54,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The user&#39;s bypass code identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s bypass code identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -118,9 +118,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding BypassCode resource which belongs to user
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -140,9 +140,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding BypassCode resource which belongs to user
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -161,19 +161,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s bypass code identifier.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -184,19 +184,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s bypass code identifier.
+         * 
+         * **Added In:** 18.3.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

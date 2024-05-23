@@ -20,7 +20,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) The description of the format entry.
+     * @return (Updatable) The description of the masking format.
      * 
      */
     private @Nullable String description;
@@ -39,7 +39,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) The description of the format entry.
+     * @return (Updatable) The description of the masking format.
      * 
      */
     public Optional<String> description() {

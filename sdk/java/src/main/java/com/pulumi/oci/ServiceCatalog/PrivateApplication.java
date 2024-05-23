@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPrivateApplication = new PrivateApplication("testPrivateApplication", PrivateApplicationArgs.builder()        
+ *         var testPrivateApplication = new PrivateApplication("testPrivateApplication", PrivateApplicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(privateApplicationDisplayName)
  *             .packageDetails(PrivateApplicationPackageDetailsArgs.builder()
@@ -194,14 +194,14 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
         return this.packageDetails;
     }
     /**
-     * The package&#39;s type.
+     * Type of packages within this private application.
      * 
      */
     @Export(name="packageType", refs={String.class}, tree="[0]")
     private Output<String> packageType;
 
     /**
-     * @return The package&#39;s type.
+     * @return Type of packages within this private application.
      * 
      */
     public Output<String> packageType() {

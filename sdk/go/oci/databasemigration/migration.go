@@ -209,7 +209,7 @@ type Migration struct {
 	AdvisorSettings MigrationAdvisorSettingsOutput `pulumi:"advisorSettings"`
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 	AgentId pulumi.StringOutput `pulumi:"agentId"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId pulumi.StringOutput `pulumi:"credentialsSecretId"`
@@ -311,7 +311,7 @@ type migrationState struct {
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 	AgentId *string `pulumi:"agentId"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId *string `pulumi:"credentialsSecretId"`
@@ -372,7 +372,7 @@ type MigrationState struct {
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 	AgentId pulumi.StringPtrInput
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringPtrInput
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
 	CredentialsSecretId pulumi.StringPtrInput
@@ -437,7 +437,7 @@ type migrationArgs struct {
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 	AgentId *string `pulumi:"agentId"`
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText *string `pulumi:"csvText"`
@@ -481,7 +481,7 @@ type MigrationArgs struct {
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
 	AgentId pulumi.StringPtrInput
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) OCID of the compartment
 	CompartmentId pulumi.StringInput
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringPtrInput
@@ -616,7 +616,7 @@ func (o MigrationOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.AgentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+// (Updatable) OCID of the compartment
 func (o MigrationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

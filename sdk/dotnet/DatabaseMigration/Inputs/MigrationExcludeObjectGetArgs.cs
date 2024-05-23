@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string> Owner { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Migration type.
+        /// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

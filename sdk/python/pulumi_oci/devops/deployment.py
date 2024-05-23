@@ -33,7 +33,7 @@ class DeploymentArgs:
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
-        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input['DeploymentDeploymentArgumentsArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
@@ -118,7 +118,7 @@ class DeploymentArgs:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -235,7 +235,7 @@ class _DeploymentState:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input['DeploymentDeploymentArgumentsArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]] deployment_execution_progresses: The execution progress details of a deployment.
@@ -374,7 +374,7 @@ class _DeploymentState:
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -590,7 +590,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[pulumi.InputType['DeploymentDeployArtifactOverrideArgumentsArgs']] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
@@ -726,7 +726,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeployPipelineArtifactArgs']]]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeployPipelineEnvironmentArgs']]]] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
-        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param pulumi.Input[pulumi.InputType['DeploymentDeployStageOverrideArgumentsArgs']] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input[pulumi.InputType['DeploymentDeploymentArgumentsArgs']] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentExecutionProgressArgs']]]] deployment_execution_progresses: The execution progress details of a deployment.
@@ -825,7 +825,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 

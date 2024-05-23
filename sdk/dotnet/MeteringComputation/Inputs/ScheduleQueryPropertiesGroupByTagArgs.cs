@@ -19,7 +19,7 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The namespace needed to determine the object storage bucket.
+        /// The tag namespace.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

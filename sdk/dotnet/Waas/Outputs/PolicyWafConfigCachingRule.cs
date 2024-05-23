@@ -14,7 +14,9 @@ namespace Pulumi.Oci.Waas.Outputs
     public sealed class PolicyWafConfigCachingRule
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action to take when the criteria of a caching rule are met.
+        /// * **CACHE:** Caches requested content when the criteria of the rule are met.
+        /// * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -26,7 +28,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string? ClientCachingDuration;
         /// <summary>
-        /// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+        /// (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
         /// </summary>
         public readonly ImmutableArray<Outputs.PolicyWafConfigCachingRuleCriteria> Criterias;
         /// <summary>
@@ -38,11 +40,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) The unique name of the whitelist.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The name of the caching rule.
         /// </summary>
         public readonly string Name;
 

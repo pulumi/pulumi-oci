@@ -13,10 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsGrantAppEntitlementCollection {
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application Entitlement Collection URI
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -28,13 +29,15 @@ public final class DomainsGrantAppEntitlementCollection {
      */
     private @Nullable String ref;
     /**
-     * @return Value of the tag.
+     * @return Application Entitlement Collection identifier
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -45,10 +48,11 @@ public final class DomainsGrantAppEntitlementCollection {
 
     private DomainsGrantAppEntitlementCollection() {}
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application Entitlement Collection URI
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -62,13 +66,15 @@ public final class DomainsGrantAppEntitlementCollection {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Value of the tag.
+     * @return Application Entitlement Collection identifier
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

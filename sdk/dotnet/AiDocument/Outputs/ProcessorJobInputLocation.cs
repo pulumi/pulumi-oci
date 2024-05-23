@@ -23,6 +23,8 @@ namespace Pulumi.Oci.AiDocument.Outputs
         public readonly ImmutableArray<Outputs.ProcessorJobInputLocationObjectLocation> ObjectLocations;
         /// <summary>
         /// The type of input location. The allowed values are:
+        /// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        /// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         /// </summary>
         public readonly string SourceType;
 

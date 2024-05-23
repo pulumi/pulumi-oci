@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHttpRedirect = new HttpRedirect("testHttpRedirect", HttpRedirectArgs.builder()        
+ *         var testHttpRedirect = new HttpRedirect("testHttpRedirect", HttpRedirectArgs.builder()
  *             .compartmentId(compartmentId)
  *             .domain(httpRedirectDomain)
  *             .target(HttpRedirectTargetArgs.builder()

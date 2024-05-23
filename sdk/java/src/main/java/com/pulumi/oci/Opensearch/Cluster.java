@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOpensearchCluster = new Cluster("testOpensearchCluster", ClusterArgs.builder()        
+ *         var testOpensearchCluster = new Cluster("testOpensearchCluster", ClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataNodeCount(opensearchClusterDataNodeCount)
  *             .dataNodeHostMemoryGb(opensearchClusterDataNodeHostMemoryGb)

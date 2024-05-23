@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly int? FailurePercentage;
         /// <summary>
-        /// (Updatable) The type of policy used for rolling out a deployment stage.
+        /// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
         /// </summary>
         public readonly string PolicyType;
 

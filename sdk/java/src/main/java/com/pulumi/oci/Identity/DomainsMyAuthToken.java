@@ -29,54 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsMyAuthToken;
- * import com.pulumi.oci.Identity.DomainsMyAuthTokenArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testMyAuthToken = new DomainsMyAuthToken("testMyAuthToken", DomainsMyAuthTokenArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:authToken")
- *             .authorization(myAuthTokenAuthorization)
- *             .description(myAuthTokenDescription)
- *             .expiresOn(myAuthTokenExpiresOn)
- *             .id(myAuthTokenId)
- *             .ocid(myAuthTokenOcid)
- *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
- *             .status(myAuthTokenStatus)
- *             .tags(DomainsMyAuthTokenTagArgs.builder()
- *                 .key(myAuthTokenTagsKey)
- *                 .value(myAuthTokenTagsValue)
- *                 .build())
- *             .user(DomainsMyAuthTokenUserArgs.builder()
- *                 .ocid(myAuthTokenUserOcid)
- *                 .value(myAuthTokenUserValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -451,7 +403,7 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -459,16 +411,16 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -476,9 +428,9 @@ public class DomainsMyAuthToken extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {

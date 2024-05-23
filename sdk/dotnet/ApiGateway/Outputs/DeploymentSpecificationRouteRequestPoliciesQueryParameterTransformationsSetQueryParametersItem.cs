@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem
     {
         /// <summary>
-        /// (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+        /// (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         /// </summary>
         public readonly string? IfExists;
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
         /// </summary>
         public readonly string Name;
         /// <summary>

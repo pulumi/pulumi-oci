@@ -80,7 +80,7 @@ export class SoftwareSource extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) User-friendly name.
+     * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -298,7 +298,7 @@ export interface SoftwareSourceState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) User-friendly name.
+     * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -412,7 +412,7 @@ export interface SoftwareSourceArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) User-friendly name.
+     * (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**

@@ -44,9 +44,9 @@ type AlarmOverride struct {
 	//
 	// ***
 	Query *string `pulumi:"query"`
-	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
 	RuleName *string `pulumi:"ruleName"`
-	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
 	Severity *string `pulumi:"severity"`
 }
 
@@ -92,9 +92,9 @@ type AlarmOverrideArgs struct {
 	//
 	// ***
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
 	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
-	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
 }
 
@@ -188,12 +188,12 @@ func (o AlarmOverrideOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
 func (o AlarmOverrideOutput) RuleName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.RuleName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
 func (o AlarmOverrideOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AlarmOverride) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
@@ -1961,6 +1961,9 @@ type GetAlarmsAlarm struct {
 	// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
 	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId string `pulumi:"metricCompartmentId"`
@@ -2027,6 +2030,9 @@ type GetAlarmsAlarmArgs struct {
 	// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
 	IsNotificationsPerMetricDimensionEnabled pulumi.BoolInput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId pulumi.StringInput `pulumi:"metricCompartmentId"`
@@ -2159,6 +2165,9 @@ func (o GetAlarmsAlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.
 }
 
 // The format to use for alarm notifications. The formats are:
+// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 func (o GetAlarmsAlarmOutput) MessageFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.MessageFormat }).(pulumi.StringOutput)
 }

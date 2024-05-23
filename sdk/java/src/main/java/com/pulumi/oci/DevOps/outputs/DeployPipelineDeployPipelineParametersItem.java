@@ -18,7 +18,7 @@ public final class DeployPipelineDeployPipelineParametersItem {
      */
     private @Nullable String defaultValue;
     /**
-     * @return (Updatable) Optional description about the deployment pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     private @Nullable String description;
@@ -37,7 +37,7 @@ public final class DeployPipelineDeployPipelineParametersItem {
         return Optional.ofNullable(this.defaultValue);
     }
     /**
-     * @return (Updatable) Optional description about the deployment pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     public Optional<String> description() {

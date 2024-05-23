@@ -22,14 +22,14 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
     public static final MediaWorkflowState Empty = new MediaWorkflowState();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -134,14 +134,14 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
-     * @return (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * @return (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      * 
      */
     public Optional<Output<String>> parameters() {
@@ -194,14 +194,14 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * When the lock was created.
+     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -224,20 +224,14 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The version of the MediaWorkflowTaskDeclaration.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The version of the MediaWorkflow.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return (Updatable) The version of the MediaWorkflowTaskDeclaration.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The version of the MediaWorkflow.
      * 
      */
     public Optional<Output<String>> version() {
@@ -283,7 +277,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -294,7 +288,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -459,7 +453,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parameters (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+         * @param parameters (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
          * 
          * @return builder
          * 
@@ -470,7 +464,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parameters (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+         * @param parameters (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
          * 
          * @return builder
          * 
@@ -553,7 +547,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -564,7 +558,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -595,10 +589,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param version (Updatable) The version of the MediaWorkflowTaskDeclaration.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param version The version of the MediaWorkflow.
          * 
          * @return builder
          * 
@@ -609,10 +600,7 @@ public final class MediaWorkflowState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param version (Updatable) The version of the MediaWorkflowTaskDeclaration.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param version The version of the MediaWorkflow.
          * 
          * @return builder
          * 

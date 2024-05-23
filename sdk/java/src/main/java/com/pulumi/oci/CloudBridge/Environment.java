@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEnvironment = new Environment("testEnvironment", EnvironmentArgs.builder()        
+ *         var testEnvironment = new Environment("testEnvironment", EnvironmentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(environmentDisplayName)

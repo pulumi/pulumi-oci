@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

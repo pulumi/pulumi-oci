@@ -211,7 +211,7 @@ class ConnectionConnectDescriptor(dict):
         """
         :param str connect_string: (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: <host>:<port>/<db_service_name> Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
         :param str database_service_name: (Updatable) Database service name. Required if no connectString was specified.
-        :param str host: (Updatable) Name of the host the SSH key is valid for.
+        :param str host: (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
         :param int port: (Updatable) Port of the connect descriptor. Required if no connectString was specified.
         """
         if connect_string is not None:
@@ -243,7 +243,7 @@ class ConnectionConnectDescriptor(dict):
     @pulumi.getter
     def host(self) -> Optional[str]:
         """
-        (Updatable) Name of the host the SSH key is valid for.
+        (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
         """
         return pulumi.get(self, "host")
 
@@ -285,7 +285,7 @@ class ConnectionPrivateEndpoint(dict):
                  vcn_id: str,
                  id: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
         :param str subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
         :param str vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
         :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
@@ -300,7 +300,7 @@ class ConnectionPrivateEndpoint(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -934,7 +934,7 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetails(dict):
                  name: Optional[str] = None,
                  wallet_bucket: Optional['outputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket'] = None):
         """
-        :param str name: (Updatable) Name of directory object in database
+        :param str name: (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         :param 'MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs' wallet_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
         if name is not None:
@@ -946,7 +946,7 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetails(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Name of directory object in database
+        (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         """
         return pulumi.get(self, "name")
 
@@ -1048,9 +1048,9 @@ class MigrationDataTransferMediumDetailsV2(dict):
                  region: Optional[str] = None,
                  secret_access_key: Optional[str] = None):
         """
-        :param str type: (Updatable) Migration type.
+        :param str type: (Updatable) Type of the data transfer medium to use for the datapump
         :param str access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-        :param str name: (Updatable) Name of directory object in database
+        :param str name: (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         :param 'MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs' object_storage_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         :param str region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
         :param str secret_access_key: (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
@@ -1071,7 +1071,7 @@ class MigrationDataTransferMediumDetailsV2(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Migration type.
+        (Updatable) Type of the data transfer medium to use for the datapump
         """
         return pulumi.get(self, "type")
 
@@ -1087,7 +1087,7 @@ class MigrationDataTransferMediumDetailsV2(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Name of directory object in database
+        (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         """
         return pulumi.get(self, "name")
 
@@ -1431,7 +1431,7 @@ class MigrationDatapumpSettingsMetadataRemap(dict):
         """
         :param str new_value: (Updatable) Specifies the new value that oldValue should be translated into.
         :param str old_value: (Updatable) Specifies the value which needs to be reset.
-        :param str type: (Updatable) Migration type.
+        :param str type: (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         """
         pulumi.set(__self__, "new_value", new_value)
         pulumi.set(__self__, "old_value", old_value)
@@ -1457,7 +1457,7 @@ class MigrationDatapumpSettingsMetadataRemap(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Migration type.
+        (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         """
         return pulumi.get(self, "type")
 
@@ -1672,7 +1672,7 @@ class MigrationExcludeObject(dict):
         :param str object: (Updatable) Name of the object (regular expression is allowed)
         :param str owner: (Updatable) Owner of the object (regular expression is allowed)
         :param bool is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        :param str type: (Updatable) Migration type.
+        :param str type: (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
@@ -1709,7 +1709,7 @@ class MigrationExcludeObject(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        (Updatable) Migration type.
+        (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 
@@ -1880,8 +1880,8 @@ class MigrationGoldenGateDetailsHubRestAdminCredentials(dict):
                  password: str,
                  username: str):
         """
-        :param str password: (Updatable) Database  password
-        :param str username: (Updatable) Database username
+        :param str password: (Updatable) Administrator password
+        :param str username: (Updatable) Administrator username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1890,7 +1890,7 @@ class MigrationGoldenGateDetailsHubRestAdminCredentials(dict):
     @pulumi.getter
     def password(self) -> str:
         """
-        (Updatable) Database  password
+        (Updatable) Administrator password
         """
         return pulumi.get(self, "password")
 
@@ -1898,7 +1898,7 @@ class MigrationGoldenGateDetailsHubRestAdminCredentials(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        (Updatable) Database username
+        (Updatable) Administrator username
         """
         return pulumi.get(self, "username")
 
@@ -1909,8 +1909,8 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials(dict):
                  password: str,
                  username: str):
         """
-        :param str password: (Updatable) Database  password
-        :param str username: (Updatable) Database username
+        :param str password: (Updatable) Administrator password
+        :param str username: (Updatable) Administrator username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1919,7 +1919,7 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials(dict):
     @pulumi.getter
     def password(self) -> str:
         """
-        (Updatable) Database  password
+        (Updatable) Administrator password
         """
         return pulumi.get(self, "password")
 
@@ -1927,7 +1927,7 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        (Updatable) Database username
+        (Updatable) Administrator username
         """
         return pulumi.get(self, "username")
 
@@ -1938,8 +1938,8 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentials(dict):
                  password: str,
                  username: str):
         """
-        :param str password: (Updatable) Database  password
-        :param str username: (Updatable) Database username
+        :param str password: (Updatable) Administrator password
+        :param str username: (Updatable) Administrator username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1948,7 +1948,7 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentials(dict):
     @pulumi.getter
     def password(self) -> str:
         """
-        (Updatable) Database  password
+        (Updatable) Administrator password
         """
         return pulumi.get(self, "password")
 
@@ -1956,7 +1956,7 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentials(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        (Updatable) Database username
+        (Updatable) Administrator username
         """
         return pulumi.get(self, "username")
 
@@ -1967,8 +1967,8 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentials(dict):
                  password: str,
                  username: str):
         """
-        :param str password: (Updatable) Database  password
-        :param str username: (Updatable) Database username
+        :param str password: (Updatable) Administrator password
+        :param str username: (Updatable) Administrator username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -1977,7 +1977,7 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentials(dict):
     @pulumi.getter
     def password(self) -> str:
         """
-        (Updatable) Database  password
+        (Updatable) Administrator password
         """
         return pulumi.get(self, "password")
 
@@ -1985,7 +1985,7 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentials(dict):
     @pulumi.getter
     def username(self) -> str:
         """
-        (Updatable) Database username
+        (Updatable) Administrator username
         """
         return pulumi.get(self, "username")
 
@@ -2134,7 +2134,7 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
         :param int map_parallelism: (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
         :param int max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-        :param str performance_profile: (Updatable) Extract performance.
+        :param str performance_profile: Extract performance.
         """
         if map_parallelism is not None:
             pulumi.set(__self__, "map_parallelism", map_parallelism)
@@ -2173,7 +2173,7 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
     @pulumi.getter(name="performanceProfile")
     def performance_profile(self) -> Optional[str]:
         """
-        (Updatable) Extract performance.
+        Extract performance.
         """
         return pulumi.get(self, "performance_profile")
 
@@ -2607,7 +2607,7 @@ class MigrationIncludeObject(dict):
         :param str object: (Updatable) Name of the object (regular expression is allowed)
         :param str owner: (Updatable) Owner of the object (regular expression is allowed)
         :param bool is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-        :param str type: (Updatable) Migration type.
+        :param str type: (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "owner", owner)
@@ -2644,7 +2644,7 @@ class MigrationIncludeObject(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        (Updatable) Migration type.
+        (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 

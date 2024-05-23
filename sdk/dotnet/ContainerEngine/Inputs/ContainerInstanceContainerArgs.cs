@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         private InputList<string>? _commands;
 
         /// <summary>
-        /// The list of strings that will be simplified to a single command for checking the status of the container.
+        /// An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
         /// </summary>
         public InputList<string> Commands
         {
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

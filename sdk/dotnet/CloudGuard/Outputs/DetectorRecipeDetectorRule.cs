@@ -18,11 +18,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleCandidateResponderRule> CandidateResponderRules;
         /// <summary>
-        /// (Updatable) The id of the attached DataSource.
+        /// The id of the attached DataSource.
         /// </summary>
         public readonly string? DataSourceId;
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -44,7 +46,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// Data Source entities mapping for a Detector Rule
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleEntitiesMapping> EntitiesMappings;
         /// <summary>
@@ -56,7 +58,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ManagedListTypes;
         /// <summary>
-        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
+        /// Recommendation for DetectorRecipeDetectorRule
         /// </summary>
         public readonly string? Recommendation;
         /// <summary>

@@ -108,14 +108,14 @@ public final class MetricExtensionMetricListArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Name of the script file
+     * (Updatable) Name of the metric.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the script file
+     * @return (Updatable) Name of the metric.
      * 
      */
     public Output<String> name() {
@@ -295,7 +295,7 @@ public final class MetricExtensionMetricListArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name (Updatable) Name of the metric.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class MetricExtensionMetricListArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name (Updatable) Name of the metric.
          * 
          * @return builder
          * 

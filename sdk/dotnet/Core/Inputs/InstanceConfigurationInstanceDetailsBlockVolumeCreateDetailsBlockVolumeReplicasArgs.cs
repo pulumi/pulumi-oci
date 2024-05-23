@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

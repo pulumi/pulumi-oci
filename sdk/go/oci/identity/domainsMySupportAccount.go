@@ -135,7 +135,7 @@ type DomainsMySupportAccount struct {
 	// * type: string
 	// * uniqueness: none
 	MySupportAccountProvider pulumi.StringOutput `pulumi:"mySupportAccountProvider"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -143,9 +143,9 @@ type DomainsMySupportAccount struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
@@ -376,7 +376,7 @@ type domainsMySupportAccountState struct {
 	// * type: string
 	// * uniqueness: none
 	MySupportAccountProvider *string `pulumi:"mySupportAccountProvider"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -384,9 +384,9 @@ type domainsMySupportAccountState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -579,7 +579,7 @@ type DomainsMySupportAccountState struct {
 	// * type: string
 	// * uniqueness: none
 	MySupportAccountProvider pulumi.StringPtrInput
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -587,9 +587,9 @@ type DomainsMySupportAccountState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -681,7 +681,7 @@ type domainsMySupportAccountArgs struct {
 	Authorization *string `pulumi:"authorization"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -689,9 +689,9 @@ type domainsMySupportAccountArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -751,7 +751,7 @@ type DomainsMySupportAccountArgs struct {
 	Authorization pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -759,9 +759,9 @@ type DomainsMySupportAccountArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -1048,7 +1048,7 @@ func (o DomainsMySupportAccountOutput) MySupportAccountProvider() pulumi.StringO
 	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.MySupportAccountProvider }).(pulumi.StringOutput)
 }
 
-// User's ocid
+// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1056,9 +1056,9 @@ func (o DomainsMySupportAccountOutput) MySupportAccountProvider() pulumi.StringO
 // * multiValued: false
 // * mutability: immutable
 // * required: false
-// * returned: always
+// * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: global
 func (o DomainsMySupportAccountOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }

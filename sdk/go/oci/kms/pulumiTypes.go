@@ -570,7 +570,7 @@ func (o KeyExternalKeyReferencePtrOutput) ExternalKeyId() pulumi.StringPtrOutput
 }
 
 type KeyExternalKeyReferenceDetail struct {
-	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
 	ExternalKeyId *string `pulumi:"externalKeyId"`
 	// Key version ID associated with the external key.
 	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
@@ -588,7 +588,7 @@ type KeyExternalKeyReferenceDetailInput interface {
 }
 
 type KeyExternalKeyReferenceDetailArgs struct {
-	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
 	ExternalKeyId pulumi.StringPtrInput `pulumi:"externalKeyId"`
 	// Key version ID associated with the external key.
 	ExternalKeyVersionId pulumi.StringPtrInput `pulumi:"externalKeyVersionId"`
@@ -645,7 +645,7 @@ func (o KeyExternalKeyReferenceDetailOutput) ToKeyExternalKeyReferenceDetailOutp
 	return o
 }
 
-// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
 func (o KeyExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeyExternalKeyReferenceDetail) *string { return v.ExternalKeyId }).(pulumi.StringPtrOutput)
 }
@@ -1903,11 +1903,11 @@ func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) IdcsAccountNameUr
 }
 
 type VaultExternalKeyManagerMetadataSummary struct {
-	// URI of the vault on external key manager.
+	// URL of the vault on external key manager.
 	ExternalVaultEndpointUrl *string `pulumi:"externalVaultEndpointUrl"`
 	// Summary about authorization to be returned to the customer as a response.
 	OauthMetadataSummaries []VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary `pulumi:"oauthMetadataSummaries"`
-	// OCID of private endpoint created by customer.
+	// OCID of the private endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// Vendor of the external key manager.
 	Vendor *string `pulumi:"vendor"`
@@ -1925,11 +1925,11 @@ type VaultExternalKeyManagerMetadataSummaryInput interface {
 }
 
 type VaultExternalKeyManagerMetadataSummaryArgs struct {
-	// URI of the vault on external key manager.
+	// URL of the vault on external key manager.
 	ExternalVaultEndpointUrl pulumi.StringPtrInput `pulumi:"externalVaultEndpointUrl"`
 	// Summary about authorization to be returned to the customer as a response.
 	OauthMetadataSummaries VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput `pulumi:"oauthMetadataSummaries"`
-	// OCID of private endpoint created by customer.
+	// OCID of the private endpoint.
 	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// Vendor of the external key manager.
 	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
@@ -1986,7 +1986,7 @@ func (o VaultExternalKeyManagerMetadataSummaryOutput) ToVaultExternalKeyManagerM
 	return o
 }
 
-// URI of the vault on external key manager.
+// URL of the vault on external key manager.
 func (o VaultExternalKeyManagerMetadataSummaryOutput) ExternalVaultEndpointUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) *string { return v.ExternalVaultEndpointUrl }).(pulumi.StringPtrOutput)
 }
@@ -1998,7 +1998,7 @@ func (o VaultExternalKeyManagerMetadataSummaryOutput) OauthMetadataSummaries() V
 	}).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
 }
 
-// OCID of private endpoint created by customer.
+// OCID of the private endpoint.
 func (o VaultExternalKeyManagerMetadataSummaryOutput) PrivateEndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }

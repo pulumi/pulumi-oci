@@ -27,7 +27,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// (Updatable) Overriden settings of a Detector Rule applied on target
         /// </summary>
         [Input("details", required: true)]
         public Input<Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsArgs> Details { get; set; } = null!;

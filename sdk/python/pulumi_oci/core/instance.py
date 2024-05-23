@@ -53,7 +53,7 @@ class InstanceArgs:
         """
         The set of arguments for constructing a Instance resource.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
@@ -62,7 +62,7 @@ class InstanceArgs:
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -88,7 +88,7 @@ class InstanceArgs:
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
                For more information about iPXE, see http://ipxe.org.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -138,7 +138,7 @@ class InstanceArgs:
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -246,7 +246,7 @@ class InstanceArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -363,7 +363,7 @@ class InstanceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -492,7 +492,7 @@ class InstanceArgs:
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -608,7 +608,7 @@ class InstanceArgs:
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
 
@@ -761,12 +761,12 @@ class _InstanceState:
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -793,8 +793,12 @@ class _InstanceState:
                
                For more information about iPXE, see http://ipxe.org.
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input['InstanceLaunchOptionsArgs'] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -844,12 +848,8 @@ class _InstanceState:
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-               
-               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `10.0.3.3`
+        :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -1051,7 +1051,7 @@ class _InstanceState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1111,7 +1111,7 @@ class _InstanceState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1252,7 +1252,7 @@ class _InstanceState:
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -1265,6 +1265,10 @@ class _InstanceState:
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -1380,7 +1384,7 @@ class _InstanceState:
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
 
@@ -1401,11 +1405,7 @@ class _InstanceState:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-
-        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `10.0.3.3`
+        The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         """
         return pulumi.get(self, "private_ip")
 
@@ -1657,12 +1657,12 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1688,7 +1688,7 @@ class Instance(pulumi.CustomResource):
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
                For more information about iPXE, see http://ipxe.org.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -1738,7 +1738,7 @@ class Instance(pulumi.CustomResource):
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
                
                You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -1986,12 +1986,12 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -2018,8 +2018,12 @@ class Instance(pulumi.CustomResource):
                
                For more information about iPXE, see http://ipxe.org.
         :param pulumi.Input[bool] is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param pulumi.Input[pulumi.InputType['InstanceLaunchOptionsArgs']] launch_options: (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstanceLaunchVolumeAttachmentArgs']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
@@ -2069,12 +2073,8 @@ class Instance(pulumi.CustomResource):
                
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']] preemptible_instance_config: Configuration options for preemptible instances.
-        :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-               
-               If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Example: `10.0.3.3`
+        :param pulumi.Input[bool] preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        :param pulumi.Input[str] private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         :param pulumi.Input[str] public_ip: The public IP address of instance VNIC (if enabled).
         :param pulumi.Input[str] region: The region that contains the availability domain the instance is running in.
         :param pulumi.Input[str] shape: (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
@@ -2201,7 +2201,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2241,7 +2241,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2342,7 +2342,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -2351,6 +2351,10 @@ class Instance(pulumi.CustomResource):
     def launch_mode(self) -> pulumi.Output[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -2442,7 +2446,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="preserveBootVolume")
     def preserve_boot_volume(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "preserve_boot_volume")
 
@@ -2455,11 +2459,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> pulumi.Output[str]:
         """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-
-        If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Example: `10.0.3.3`
+        The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         """
         return pulumi.get(self, "private_ip")
 

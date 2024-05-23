@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the aggregator.
+        /// The type of the aggregator.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

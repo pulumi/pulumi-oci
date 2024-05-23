@@ -57,7 +57,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public Input<bool>? Offline { get; set; }
 
         /// <summary>
-        /// (Updatable) The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
+        /// (Updatable) The communication port for the backend server.  Example: `8080`
         /// </summary>
         [Input("port", required: true)]
         public Input<int> Port { get; set; } = null!;

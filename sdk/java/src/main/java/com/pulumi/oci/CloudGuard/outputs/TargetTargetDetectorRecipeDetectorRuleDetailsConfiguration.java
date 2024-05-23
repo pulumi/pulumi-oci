@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     private @Nullable String configKey;
@@ -24,12 +24,12 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
      */
     private @Nullable String dataType;
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     private @Nullable String value;
@@ -41,7 +41,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
 
     private TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration() {}
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     public Optional<String> configKey() {
@@ -55,14 +55,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
         return Optional.ofNullable(this.dataType);
     }
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<String> value() {

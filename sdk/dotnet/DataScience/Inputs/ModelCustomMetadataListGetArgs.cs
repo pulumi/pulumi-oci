@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? Category { get; set; }
 
         /// <summary>
-        /// (Updatable) A short description of the model.
+        /// (Updatable) Description of model metadata
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

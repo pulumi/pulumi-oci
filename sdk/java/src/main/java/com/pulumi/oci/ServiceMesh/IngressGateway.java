@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIngressGateway = new IngressGateway("testIngressGateway", IngressGatewayArgs.builder()        
+ *         var testIngressGateway = new IngressGateway("testIngressGateway", IngressGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .hosts(IngressGatewayHostArgs.builder()
  *                 .listeners(IngressGatewayHostListenerArgs.builder()

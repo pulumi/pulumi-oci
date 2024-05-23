@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalPluggableDatabase = new ExternalPluggableDatabase("testExternalPluggableDatabase", ExternalPluggableDatabaseArgs.builder()        
+ *         var testExternalPluggableDatabase = new ExternalPluggableDatabase("testExternalPluggableDatabase", ExternalPluggableDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(externalPluggableDatabaseDisplayName)
  *             .externalContainerDatabaseId(testExternalContainerDatabase.id())

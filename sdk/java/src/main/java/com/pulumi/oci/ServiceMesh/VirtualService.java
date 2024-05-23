@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualService = new VirtualService("testVirtualService", VirtualServiceArgs.builder()        
+ *         var testVirtualService = new VirtualService("testVirtualService", VirtualServiceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .meshId(testMesh.id())
  *             .name(virtualServiceName)

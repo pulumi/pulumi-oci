@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatasetInitialImportDatasetConfigurationImportFormat {
     /**
-     * @return An unique name for a label within its dataset.
+     * @return Name of import format
      * 
      */
     private String name;
@@ -25,7 +25,7 @@ public final class DatasetInitialImportDatasetConfigurationImportFormat {
 
     private DatasetInitialImportDatasetConfigurationImportFormat() {}
     /**
-     * @return An unique name for a label within its dataset.
+     * @return Name of import format
      * 
      */
     public String name() {

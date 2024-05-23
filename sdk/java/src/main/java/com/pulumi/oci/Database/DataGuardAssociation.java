@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataGuardAssociation = new DataGuardAssociation("testDataGuardAssociation", DataGuardAssociationArgs.builder()        
+ *         var testDataGuardAssociation = new DataGuardAssociation("testDataGuardAssociation", DataGuardAssociationArgs.builder()
  *             .creationType(dataGuardAssociationCreationType)
  *             .databaseAdminPassword(dataGuardAssociationDatabaseAdminPassword)
  *             .databaseId(testDatabase.id())

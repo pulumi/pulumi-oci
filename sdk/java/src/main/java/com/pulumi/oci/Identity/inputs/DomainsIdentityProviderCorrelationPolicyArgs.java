@@ -17,7 +17,7 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     public static final DomainsIdentityProviderCorrelationPolicyArgs Empty = new DomainsIdentityProviderCorrelationPolicyArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * (Updatable) Policy display name
      * 
      * **Added In:** 20.1.3
      * 
@@ -35,7 +35,7 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * @return (Updatable) Policy display name
      * 
      * **Added In:** 20.1.3
      * 
@@ -54,32 +54,36 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Group URI
+     * (Updatable) Policy URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) Group URI
+     * @return (Updatable) Policy URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -87,17 +91,17 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Identity Provider Type
+     * (Updatable) A label that indicates the type that this references.
      * 
      * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsDefaultValue: Policy
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -106,17 +110,17 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     private Output<String> type;
 
     /**
-     * @return (Updatable) Identity Provider Type
+     * @return (Updatable) A label that indicates the type that this references.
      * 
      * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsDefaultValue: Policy
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -126,10 +130,12 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Policy identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -143,10 +149,12 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Policy identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -188,7 +196,7 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * @param display (Updatable) Policy display name
          * 
          * **Added In:** 20.1.3
          * 
@@ -210,7 +218,7 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * @param display (Updatable) Policy display name
          * 
          * **Added In:** 20.1.3
          * 
@@ -231,16 +239,18 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param ref (Updatable) Group URI
+         * @param ref (Updatable) Policy URI
          * 
-         * **Added In:** 2205120021
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -251,16 +261,18 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param ref (Updatable) Group URI
+         * @param ref (Updatable) Policy URI
          * 
-         * **Added In:** 2205120021
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -270,17 +282,17 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param type (Updatable) Identity Provider Type
+         * @param type (Updatable) A label that indicates the type that this references.
          * 
          * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsDefaultValue: Policy
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -293,17 +305,17 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param type (Updatable) Identity Provider Type
+         * @param type (Updatable) A label that indicates the type that this references.
          * 
          * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsDefaultValue: Policy
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -315,10 +327,12 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Policy identifier
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
@@ -336,10 +350,12 @@ public final class DomainsIdentityProviderCorrelationPolicyArgs extends com.pulu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Policy identifier
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite

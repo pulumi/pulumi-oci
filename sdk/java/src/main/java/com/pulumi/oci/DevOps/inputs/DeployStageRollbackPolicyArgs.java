@@ -16,14 +16,14 @@ public final class DeployStageRollbackPolicyArgs extends com.pulumi.resources.Re
     public static final DeployStageRollbackPolicyArgs Empty = new DeployStageRollbackPolicyArgs();
 
     /**
-     * (Updatable) The type of policy used for rolling out a deployment stage.
+     * (Updatable) Specifies type of the deployment stage rollback policy.
      * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies type of the deployment stage rollback policy.
      * 
      */
     public Optional<Output<String>> policyType() {
@@ -55,7 +55,7 @@ public final class DeployStageRollbackPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policyType (Updatable) The type of policy used for rolling out a deployment stage.
+         * @param policyType (Updatable) Specifies type of the deployment stage rollback policy.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DeployStageRollbackPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param policyType (Updatable) The type of policy used for rolling out a deployment stage.
+         * @param policyType (Updatable) Specifies type of the deployment stage rollback policy.
          * 
          * @return builder
          * 

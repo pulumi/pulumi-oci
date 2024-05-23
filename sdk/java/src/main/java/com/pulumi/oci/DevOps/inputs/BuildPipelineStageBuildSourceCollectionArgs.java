@@ -17,14 +17,14 @@ public final class BuildPipelineStageBuildSourceCollectionArgs extends com.pulum
     public static final BuildPipelineStageBuildSourceCollectionArgs Empty = new BuildPipelineStageBuildSourceCollectionArgs();
 
     /**
-     * (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<BuildPipelineStageBuildSourceCollectionItemArgs>> items;
 
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
      * 
      */
     public Optional<Output<List<BuildPipelineStageBuildSourceCollectionItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class BuildPipelineStageBuildSourceCollectionArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class BuildPipelineStageBuildSourceCollectionArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class BuildPipelineStageBuildSourceCollectionArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+         * @param items (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
          * 
          * @return builder
          * 

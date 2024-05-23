@@ -42,11 +42,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// </summary>
         public readonly string? TimeOfDeletion;
         /// <summary>
-        /// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        /// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         /// </summary>
         public readonly ImmutableArray<Outputs.CertificateAuthorityCurrentVersionValidity> Validities;
         /// <summary>
-        /// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+        /// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         /// </summary>
         public readonly string? VersionName;
         /// <summary>

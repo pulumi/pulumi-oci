@@ -38,6 +38,12 @@ class SteeringPolicyArgs:
                All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
                
                **Template Types**
+               * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+               * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+               * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+               * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+               * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+               * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]] answers: The set of all answers that can potentially issue from the steering policy.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -106,6 +112,12 @@ class SteeringPolicyArgs:
         All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
 
         **Template Types**
+        * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+        * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+        * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+        * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+        * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+        * `CUSTOM` - Allows a customized configuration of rules.
         """
         return pulumi.get(self, "template")
 
@@ -233,6 +245,12 @@ class _SteeringPolicyState:
                All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
                
                **Template Types**
+               * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+               * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+               * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+               * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+               * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+               * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
                
@@ -390,6 +408,12 @@ class _SteeringPolicyState:
         All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
 
         **Template Types**
+        * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+        * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+        * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+        * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+        * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+        * `CUSTOM` - Allows a customized configuration of rules.
         """
         return pulumi.get(self, "template")
 
@@ -519,6 +543,12 @@ class SteeringPolicy(pulumi.CustomResource):
                All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
                
                **Template Types**
+               * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+               * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+               * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+               * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+               * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+               * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
                
                
@@ -689,6 +719,12 @@ class SteeringPolicy(pulumi.CustomResource):
                All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
                
                **Template Types**
+               * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+               * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+               * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+               * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+               * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+               * `CUSTOM` - Allows a customized configuration of rules.
         :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
                
@@ -803,6 +839,12 @@ class SteeringPolicy(pulumi.CustomResource):
         All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
 
         **Template Types**
+        * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers to serve. If an endpoint fails a health check, the answer for that endpoint will be removed from the list of available answers until the endpoint is detected as healthy.
+        * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+        * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+        * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+        * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+        * `CUSTOM` - Allows a customized configuration of rules.
         """
         return pulumi.get(self, "template")
 

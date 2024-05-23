@@ -14,78 +14,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetTestSpecAgentConfig {
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-     * 
-     * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
     private @Nullable Boolean areAllPluginsDisabled;
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-     * 
-     * These are the management plugins: OS Management Service Agent and Compute instance run command.
-     * 
-     * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
     private @Nullable Boolean isManagementDisabled;
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-     * 
-     * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
     private @Nullable Boolean isMonitoringDisabled;
     /**
-     * @return (Updatable) The configuration of plugins associated with this instance.
+     * @return The configuration of plugins associated with this instance.
      * 
      */
     private @Nullable List<TargetAssetTestSpecAgentConfigPluginsConfig> pluginsConfigs;
 
     private TargetAssetTestSpecAgentConfig() {}
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-     * 
-     * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
     public Optional<Boolean> areAllPluginsDisabled() {
         return Optional.ofNullable(this.areAllPluginsDisabled);
     }
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-     * 
-     * These are the management plugins: OS Management Service Agent and Compute instance run command.
-     * 
-     * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
     public Optional<Boolean> isManagementDisabled() {
         return Optional.ofNullable(this.isManagementDisabled);
     }
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-     * 
-     * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
     public Optional<Boolean> isMonitoringDisabled() {
         return Optional.ofNullable(this.isMonitoringDisabled);
     }
     /**
-     * @return (Updatable) The configuration of plugins associated with this instance.
+     * @return The configuration of plugins associated with this instance.
      * 
      */
     public List<TargetAssetTestSpecAgentConfigPluginsConfig> pluginsConfigs() {

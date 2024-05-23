@@ -183,20 +183,14 @@ public final class StreamCdnConfigConfigArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * Type of the lock.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The name of the CDN configuration type.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Type of the lock.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the CDN configuration type.
      * 
      */
     public Output<String> type() {
@@ -470,10 +464,7 @@ public final class StreamCdnConfigConfigArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param type Type of the lock.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) The name of the CDN configuration type.
          * 
          * @return builder
          * 
@@ -484,10 +475,7 @@ public final class StreamCdnConfigConfigArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param type Type of the lock.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) The name of the CDN configuration type.
          * 
          * @return builder
          * 

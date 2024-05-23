@@ -13,14 +13,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppServiceParam {
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return (Updatable) The name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -31,33 +27,26 @@ public final class DomainsAppServiceParam {
      */
     private String name;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The value of the attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
 
     private DomainsAppServiceParam() {}
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return (Updatable) The name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -70,19 +59,16 @@ public final class DomainsAppServiceParam {
         return this.name;
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The value of the attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

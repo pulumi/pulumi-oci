@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", AppCatalogListingResourceVersionAgreementArgs.builder()        
+ *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", AppCatalogListingResourceVersionAgreementArgs.builder()
  *             .listingId(testListing.id())
  *             .listingResourceVersion(appCatalogListingResourceVersionAgreementListingResourceVersion)
  *             .build());

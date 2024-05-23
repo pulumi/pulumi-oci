@@ -131,19 +131,19 @@ type DomainsCloudGate struct {
 	// * type: string
 	// * uniqueness: none
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Display name of upstream server
+	// (Updatable) Display name/Host identifier for this Cloud Gate
 	//
-	// **Added In:** 20.1.3
+	// **Added In:** 19.2.1
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -471,19 +471,19 @@ type domainsCloudGateState struct {
 	// * type: string
 	// * uniqueness: none
 	Description *string `pulumi:"description"`
-	// (Updatable) Display name of upstream server
+	// (Updatable) Display name/Host identifier for this Cloud Gate
 	//
-	// **Added In:** 20.1.3
+	// **Added In:** 19.2.1
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -773,19 +773,19 @@ type DomainsCloudGateState struct {
 	// * type: string
 	// * uniqueness: none
 	Description pulumi.StringPtrInput
-	// (Updatable) Display name of upstream server
+	// (Updatable) Display name/Host identifier for this Cloud Gate
 	//
-	// **Added In:** 20.1.3
+	// **Added In:** 19.2.1
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
@@ -1055,19 +1055,19 @@ type domainsCloudGateArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Description *string `pulumi:"description"`
-	// (Updatable) Display name of upstream server
+	// (Updatable) Display name/Host identifier for this Cloud Gate
 	//
-	// **Added In:** 20.1.3
+	// **Added In:** 19.2.1
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName string `pulumi:"displayName"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
@@ -1173,19 +1173,19 @@ type DomainsCloudGateArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Description pulumi.StringPtrInput
-	// (Updatable) Display name of upstream server
+	// (Updatable) Display name/Host identifier for this Cloud Gate
 	//
-	// **Added In:** 20.1.3
+	// **Added In:** 19.2.1
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
+	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: server
 	DisplayName pulumi.StringInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
@@ -1421,19 +1421,19 @@ func (o DomainsCloudGateOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsCloudGate) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Display name of upstream server
+// (Updatable) Display name/Host identifier for this Cloud Gate
 //
-// **Added In:** 20.1.3
+// **Added In:** 19.2.1
 //
 // **SCIM++ Properties:**
 // * caseExact: false
-// * idcsSearchable: false
+// * idcsSearchable: true
 // * multiValued: false
-// * mutability: readOnly
-// * required: false
-// * returned: default
+// * mutability: readWrite
+// * required: true
+// * returned: always
 // * type: string
-// * uniqueness: none
+// * uniqueness: server
 func (o DomainsCloudGateOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsCloudGate) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

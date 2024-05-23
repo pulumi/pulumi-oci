@@ -72,7 +72,7 @@ class DatasetDatasetFormatDetails(dict):
                  format_type: str,
                  text_file_type_metadata: Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata'] = None):
         """
-        :param str format_type: It defines the format type of text files.
+        :param str format_type: The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         :param 'DatasetDatasetFormatDetailsTextFileTypeMetadataArgs' text_file_type_metadata: Metadata for files with text content.
         """
         pulumi.set(__self__, "format_type", format_type)
@@ -83,7 +83,7 @@ class DatasetDatasetFormatDetails(dict):
     @pulumi.getter(name="formatType")
     def format_type(self) -> str:
         """
-        It defines the format type of text files.
+        The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         """
         return pulumi.get(self, "format_type")
 
@@ -225,9 +225,9 @@ class DatasetDatasetSourceDetails(dict):
                  source_type: str,
                  prefix: Optional[str] = None):
         """
-        :param str bucket: Bucket name
-        :param str namespace: Bucket namespace name
-        :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        :param str bucket: The object storage bucket that contains the dataset data source.
+        :param str namespace: The namespace of the bucket that contains the dataset data source.
+        :param str source_type: The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -240,7 +240,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def bucket(self) -> str:
         """
-        Bucket name
+        The object storage bucket that contains the dataset data source.
         """
         return pulumi.get(self, "bucket")
 
@@ -248,7 +248,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        Bucket namespace name
+        The namespace of the bucket that contains the dataset data source.
         """
         return pulumi.get(self, "namespace")
 
@@ -256,7 +256,7 @@ class DatasetDatasetSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         """
         return pulumi.get(self, "source_type")
 
@@ -323,7 +323,7 @@ class DatasetInitialImportDatasetConfigurationImportFormat(dict):
                  name: str,
                  version: Optional[str] = None):
         """
-        :param str name: An unique name for a label within its dataset.
+        :param str name: Name of import format
         :param str version: Version of import format
         """
         pulumi.set(__self__, "name", name)
@@ -334,7 +334,7 @@ class DatasetInitialImportDatasetConfigurationImportFormat(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        An unique name for a label within its dataset.
+        Name of import format
         """
         return pulumi.get(self, "name")
 

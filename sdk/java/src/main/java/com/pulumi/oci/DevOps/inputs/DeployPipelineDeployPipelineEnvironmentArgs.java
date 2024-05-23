@@ -17,14 +17,14 @@ public final class DeployPipelineDeployPipelineEnvironmentArgs extends com.pulum
     public static final DeployPipelineDeployPipelineEnvironmentArgs Empty = new DeployPipelineDeployPipelineEnvironmentArgs();
 
     /**
-     * (Updatable) List of parameters defined for a deployment pipeline.
+     * List of parameters defined for a deployment pipeline.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeployPipelineDeployPipelineEnvironmentItemArgs>> items;
 
     /**
-     * @return (Updatable) List of parameters defined for a deployment pipeline.
+     * @return List of parameters defined for a deployment pipeline.
      * 
      */
     public Optional<Output<List<DeployPipelineDeployPipelineEnvironmentItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeployPipelineDeployPipelineEnvironmentArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeployPipelineDeployPipelineEnvironmentArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeployPipelineDeployPipelineEnvironmentArgs extends com.pulum
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 

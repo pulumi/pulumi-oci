@@ -23,7 +23,7 @@ public final class VolumeGroupVolumeGroupReplica {
      */
     private @Nullable String displayName;
     /**
-     * @return The OCID of the volume group replica.
+     * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
     private @Nullable String volumeGroupReplicaId;
@@ -44,7 +44,7 @@ public final class VolumeGroupVolumeGroupReplica {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The OCID of the volume group replica.
+     * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
     public Optional<String> volumeGroupReplicaId() {

@@ -113,7 +113,7 @@ type Pipeline struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               pulumi.MapOutput     `pulumi:"definedTags"`
 	DeleteRelatedPipelineRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedPipelineRuns"`
-	// (Updatable) A short description of the step.
+	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -188,7 +188,7 @@ type pipelineState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
 	DeleteRelatedPipelineRuns *bool                  `pulumi:"deleteRelatedPipelineRuns"`
-	// (Updatable) A short description of the step.
+	// (Updatable) A short description of the pipeline.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
@@ -225,7 +225,7 @@ type PipelineState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               pulumi.MapInput
 	DeleteRelatedPipelineRuns pulumi.BoolPtrInput
-	// (Updatable) A short description of the step.
+	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
@@ -264,7 +264,7 @@ type pipelineArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
 	DeleteRelatedPipelineRuns *bool                  `pulumi:"deleteRelatedPipelineRuns"`
-	// (Updatable) A short description of the step.
+	// (Updatable) A short description of the pipeline.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
@@ -290,7 +290,7 @@ type PipelineArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               pulumi.MapInput
 	DeleteRelatedPipelineRuns pulumi.BoolPtrInput
-	// (Updatable) A short description of the step.
+	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
@@ -418,7 +418,7 @@ func (o PipelineOutput) DeleteRelatedPipelineRuns() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.BoolPtrOutput { return v.DeleteRelatedPipelineRuns }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) A short description of the step.
+// (Updatable) A short description of the pipeline.
 func (o PipelineOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }

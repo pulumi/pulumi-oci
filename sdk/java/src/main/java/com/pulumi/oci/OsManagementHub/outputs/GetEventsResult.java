@@ -62,6 +62,14 @@ public final class GetEventsResult {
     private @Nullable String timeCreatedLessThan;
     /**
      * @return Event type:
+     * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+     * * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+     * * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+     * * `SOFTWARE_UPDATE` - Software updates - Packages
+     * * `KSPLICE_UPDATE` - Ksplice updates
+     * * `SOFTWARE_SOURCE` - Software source
+     * * `AGENT` - Agent
+     * * `MANAGEMENT_STATION` - Management Station
      * 
      */
     private @Nullable List<String> types;
@@ -137,6 +145,14 @@ public final class GetEventsResult {
     }
     /**
      * @return Event type:
+     * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+     * * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+     * * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+     * * `SOFTWARE_UPDATE` - Software updates - Packages
+     * * `KSPLICE_UPDATE` - Ksplice updates
+     * * `SOFTWARE_SOURCE` - Software source
+     * * `AGENT` - Agent
+     * * `MANAGEMENT_STATION` - Management Station
      * 
      */
     public List<String> types() {

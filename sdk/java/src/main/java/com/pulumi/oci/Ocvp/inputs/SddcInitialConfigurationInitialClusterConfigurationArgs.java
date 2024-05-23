@@ -132,14 +132,14 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
     @Import(name="initialHostOcpuCount")
     private @Nullable Output<Double> initialHostOcpuCount;
 
     /**
-     * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
     public Optional<Output<Double>> initialHostOcpuCount() {
@@ -147,14 +147,14 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     @Import(name="initialHostShapeName")
     private @Nullable Output<String> initialHostShapeName;
 
     /**
-     * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     public Optional<Output<String>> initialHostShapeName() {
@@ -162,18 +162,18 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+     * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
-     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+     * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      * 
      */
     @Import(name="instanceDisplayNamePrefix")
     private @Nullable Output<String> instanceDisplayNamePrefix;
 
     /**
-     * @return (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+     * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
-     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+     * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      * 
      */
     public Optional<Output<String>> instanceDisplayNamePrefix() {
@@ -181,14 +181,14 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * Indicates whether shielded instance is enabled for this Cluster.
      * 
      */
     @Import(name="isShieldedInstanceEnabled")
     private @Nullable Output<Boolean> isShieldedInstanceEnabled;
 
     /**
-     * @return (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return Indicates whether shielded instance is enabled for this Cluster.
      * 
      */
     public Optional<Output<Boolean>> isShieldedInstanceEnabled() {
@@ -226,20 +226,14 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
     }
 
     /**
-     * (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      * 
      */
     @Import(name="workloadNetworkCidr")
     private @Nullable Output<String> workloadNetworkCidr;
 
     /**
-     * @return (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      * 
      */
     public Optional<Output<String>> workloadNetworkCidr() {
@@ -445,7 +439,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param initialHostOcpuCount (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+         * @param initialHostOcpuCount The initial OCPU count of the Cluster&#39;s ESXi hosts.
          * 
          * @return builder
          * 
@@ -456,7 +450,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param initialHostOcpuCount (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+         * @param initialHostOcpuCount The initial OCPU count of the Cluster&#39;s ESXi hosts.
          * 
          * @return builder
          * 
@@ -466,7 +460,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param initialHostShapeName (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+         * @param initialHostShapeName The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
@@ -477,7 +471,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param initialHostShapeName (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+         * @param initialHostShapeName The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
@@ -487,9 +481,9 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param instanceDisplayNamePrefix (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+         * @param instanceDisplayNamePrefix A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
          * 
-         * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+         * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
          * 
          * @return builder
          * 
@@ -500,9 +494,9 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param instanceDisplayNamePrefix (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+         * @param instanceDisplayNamePrefix A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
          * 
-         * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+         * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
          * 
          * @return builder
          * 
@@ -512,7 +506,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param isShieldedInstanceEnabled (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+         * @param isShieldedInstanceEnabled Indicates whether shielded instance is enabled for this Cluster.
          * 
          * @return builder
          * 
@@ -523,7 +517,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param isShieldedInstanceEnabled (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+         * @param isShieldedInstanceEnabled Indicates whether shielded instance is enabled for this Cluster.
          * 
          * @return builder
          * 
@@ -575,10 +569,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param workloadNetworkCidr (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
          * 
          * @return builder
          * 
@@ -589,10 +580,7 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         /**
-         * @param workloadNetworkCidr (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param workloadNetworkCidr The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
          * 
          * @return builder
          * 

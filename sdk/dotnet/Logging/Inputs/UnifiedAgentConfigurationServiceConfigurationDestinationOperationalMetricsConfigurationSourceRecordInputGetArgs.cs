@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Namespace to emit metrics.
+        /// (Updatable) Namespace to emit the operational metrics.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Resource group to emit metrics.
+        /// (Updatable) Resource group to emit the operational metrics.
         /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }

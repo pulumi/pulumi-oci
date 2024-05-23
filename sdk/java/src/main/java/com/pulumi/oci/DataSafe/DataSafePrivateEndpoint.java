@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSafePrivateEndpoint = new DataSafePrivateEndpoint("testDataSafePrivateEndpoint", DataSafePrivateEndpointArgs.builder()        
+ *         var testDataSafePrivateEndpoint = new DataSafePrivateEndpoint("testDataSafePrivateEndpoint", DataSafePrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(dataSafePrivateEndpointDisplayName)
  *             .subnetId(testSubnet.id())

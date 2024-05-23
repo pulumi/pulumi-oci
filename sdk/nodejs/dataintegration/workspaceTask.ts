@@ -60,7 +60,7 @@ export class WorkspaceTask extends pulumi.CustomResource {
      */
     public readonly cancelRestCallConfig!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      */
     public readonly configProviderDelegate!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
     /**
@@ -84,23 +84,23 @@ export class WorkspaceTask extends pulumi.CustomResource {
      */
     public readonly isSingleLoad!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
     public readonly key!: pulumi.Output<string>;
     /**
-     * (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
     public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
     public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskMetadata[]>;
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      */
     public readonly modelType!: pulumi.Output<string>;
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object's model version.
      */
     public readonly modelVersion!: pulumi.Output<string>;
     /**
@@ -112,7 +112,7 @@ export class WorkspaceTask extends pulumi.CustomResource {
      */
     public readonly objectStatus!: pulumi.Output<number>;
     /**
-     * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
     public /*out*/ readonly objectVersion!: pulumi.Output<number>;
     /**
@@ -132,7 +132,7 @@ export class WorkspaceTask extends pulumi.CustomResource {
      */
     public readonly parallelLoadLimit!: pulumi.Output<number>;
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      */
     public readonly parameters!: pulumi.Output<outputs.DataIntegration.WorkspaceTaskParameter[]>;
     /**
@@ -264,7 +264,7 @@ export interface WorkspaceTaskState {
      */
     cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      */
     configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
     /**
@@ -288,23 +288,23 @@ export interface WorkspaceTaskState {
      */
     isSingleLoad?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
     keyMap?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadata>[]>;
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      */
     modelType?: pulumi.Input<string>;
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object's model version.
      */
     modelVersion?: pulumi.Input<string>;
     /**
@@ -316,7 +316,7 @@ export interface WorkspaceTaskState {
      */
     objectStatus?: pulumi.Input<number>;
     /**
-     * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
     objectVersion?: pulumi.Input<number>;
     /**
@@ -336,7 +336,7 @@ export interface WorkspaceTaskState {
      */
     parallelLoadLimit?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      */
     parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[]>;
     /**
@@ -382,7 +382,7 @@ export interface WorkspaceTaskArgs {
      */
     cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      */
     configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
     /**
@@ -406,15 +406,15 @@ export interface WorkspaceTaskArgs {
      */
     isSingleLoad?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      */
     modelType: pulumi.Input<string>;
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object's model version.
      */
     modelVersion?: pulumi.Input<string>;
     /**
@@ -442,7 +442,7 @@ export interface WorkspaceTaskArgs {
      */
     parallelLoadLimit?: pulumi.Input<number>;
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      */
     parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[]>;
     /**

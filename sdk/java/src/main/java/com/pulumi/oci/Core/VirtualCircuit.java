@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualCircuit = new VirtualCircuit("testVirtualCircuit", VirtualCircuitArgs.builder()        
+ *         var testVirtualCircuit = new VirtualCircuit("testVirtualCircuit", VirtualCircuitArgs.builder()
  *             .compartmentId(compartmentId)
  *             .type(virtualCircuitType)
  *             .bandwidthShapeName(virtualCircuitBandwidthShapeName)

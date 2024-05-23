@@ -16,14 +16,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
     public static final DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs();
 
     /**
-     * (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * configuration list item type, either CUSTOM or MANAGED
      * 
      */
     @Import(name="listType")
     private @Nullable Output<String> listType;
 
     /**
-     * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * @return configuration list item type, either CUSTOM or MANAGED
      * 
      */
     public Optional<Output<String>> listType() {
@@ -31,14 +31,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
     }
 
     /**
-     * (Updatable) type of the managed list
+     * type of the managed list
      * 
      */
     @Import(name="managedListType")
     private @Nullable Output<String> managedListType;
 
     /**
-     * @return (Updatable) type of the managed list
+     * @return type of the managed list
      * 
      */
     public Optional<Output<String>> managedListType() {
@@ -46,14 +46,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
     }
 
     /**
-     * (Updatable) configuration value
+     * configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param listType (Updatable) configuration list item type, either CUSTOM or MANAGED
+         * @param listType configuration list item type, either CUSTOM or MANAGED
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param listType (Updatable) configuration list item type, either CUSTOM or MANAGED
+         * @param listType configuration list item type, either CUSTOM or MANAGED
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param managedListType (Updatable) type of the managed list
+         * @param managedListType type of the managed list
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param managedListType (Updatable) type of the managed list
+         * @param managedListType type of the managed list
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 

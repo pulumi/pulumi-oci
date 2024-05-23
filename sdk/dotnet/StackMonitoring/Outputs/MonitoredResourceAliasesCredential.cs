@@ -14,7 +14,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourceAliasesCredential
     {
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string Service;
         /// <summary>
-        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         public readonly string Source;
 

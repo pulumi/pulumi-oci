@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeployStageProductionLoadBalancerConfig {
     /**
-     * @return (Updatable) Listen port for the backend server.
+     * @return Listen port for the backend server.
      * 
      */
     private @Nullable Integer backendPort;
     /**
-     * @return (Updatable) Name of the load balancer listener.
+     * @return Name of the load balancer listener.
      * 
      */
     private @Nullable String listenerName;
     /**
-     * @return (Updatable) The OCID of the load balancer.
+     * @return The OCID of the load balancer.
      * 
      */
     private @Nullable String loadBalancerId;
@@ -35,21 +35,21 @@ public final class DeployStageProductionLoadBalancerConfig {
 
     private DeployStageProductionLoadBalancerConfig() {}
     /**
-     * @return (Updatable) Listen port for the backend server.
+     * @return Listen port for the backend server.
      * 
      */
     public Optional<Integer> backendPort() {
         return Optional.ofNullable(this.backendPort);
     }
     /**
-     * @return (Updatable) Name of the load balancer listener.
+     * @return Name of the load balancer listener.
      * 
      */
     public Optional<String> listenerName() {
         return Optional.ofNullable(this.listenerName);
     }
     /**
-     * @return (Updatable) The OCID of the load balancer.
+     * @return The OCID of the load balancer.
      * 
      */
     public Optional<String> loadBalancerId() {

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly double? MaxClockSkewInSeconds;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? Parameters;
         /// <summary>
@@ -58,11 +58,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string? TokenQueryParam;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the authentication policy to use.
         /// </summary>
         public readonly string Type;
         /// <summary>

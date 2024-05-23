@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSensitiveType = new SensitiveType("testSensitiveType", SensitiveTypeArgs.builder()        
+ *         var testSensitiveType = new SensitiveType("testSensitiveType", SensitiveTypeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .entityType(sensitiveTypeEntityType)
  *             .commentPattern(sensitiveTypeCommentPattern)

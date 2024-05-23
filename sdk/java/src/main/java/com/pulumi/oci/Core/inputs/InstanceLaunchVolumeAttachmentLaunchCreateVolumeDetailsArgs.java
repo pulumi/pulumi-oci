@@ -17,14 +17,14 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
     public static final InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs Empty = new InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the compartment containing images to search
+     * (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -47,14 +47,14 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
     }
 
     /**
-     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -140,7 +140,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the volume.
          * 
          * @return builder
          * 

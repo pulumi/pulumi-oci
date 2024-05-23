@@ -18,14 +18,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     public static final UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs Empty = new UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs();
 
     /**
-     * (Updatable) The name key to tag this Grok pattern.
+     * (Updatable) The name of the custom section
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) The name of the custom section
      * 
      */
     public Optional<Output<String>> name() {
@@ -33,14 +33,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     }
 
     /**
-     * (Updatable) Parameters of the custom filter
+     * (Updatable) Parameters in the custom section
      * 
      */
     @Import(name="params")
     private @Nullable Output<Map<String,Object>> params;
 
     /**
-     * @return (Updatable) Parameters of the custom filter
+     * @return (Updatable) Parameters in the custom section
      * 
      */
     public Optional<Output<Map<String,Object>>> params() {
@@ -73,7 +73,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) The name of the custom section
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) The name of the custom section
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param params (Updatable) Parameters of the custom filter
+         * @param params (Updatable) Parameters in the custom section
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param params (Updatable) Parameters of the custom filter
+         * @param params (Updatable) Parameters in the custom section
          * 
          * @return builder
          * 

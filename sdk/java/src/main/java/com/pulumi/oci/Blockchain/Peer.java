@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPeer = new Peer("testPeer", PeerArgs.builder()        
+ *         var testPeer = new Peer("testPeer", PeerArgs.builder()
  *             .ad(peerAd)
  *             .blockchainPlatformId(testBlockchainPlatform.id())
  *             .ocpuAllocationParam(PeerOcpuAllocationParamArgs.builder()

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// </summary>
         public readonly string Timezone;
         /// <summary>
-        /// The type of action to take.
+        /// The type of execution schedule.
         /// </summary>
         public readonly string Type;
 

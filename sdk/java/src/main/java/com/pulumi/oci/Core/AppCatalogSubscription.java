@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAppCatalogSubscription = new AppCatalogSubscription("testAppCatalogSubscription", AppCatalogSubscriptionArgs.builder()        
+ *         var testAppCatalogSubscription = new AppCatalogSubscription("testAppCatalogSubscription", AppCatalogSubscriptionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .listingId(testListing.id())
  *             .listingResourceVersion(appCatalogSubscriptionListingResourceVersion)

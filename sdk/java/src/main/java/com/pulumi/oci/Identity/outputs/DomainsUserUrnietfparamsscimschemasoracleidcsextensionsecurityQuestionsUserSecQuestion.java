@@ -44,9 +44,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
      */
     private @Nullable String hintText;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding Security Question resource.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -60,19 +58,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The identifier of the question selected by the user when setting up a security question.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -114,9 +110,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         return Optional.ofNullable(this.hintText);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding Security Question resource.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -132,19 +126,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The identifier of the question selected by the user when setting up a security question.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

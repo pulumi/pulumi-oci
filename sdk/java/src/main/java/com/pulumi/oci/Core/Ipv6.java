@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpv6 = new Ipv6("testIpv6", Ipv6Args.builder()        
+ *         var testIpv6 = new Ipv6("testIpv6", Ipv6Args.builder()
  *             .vnicId(testVnicAttachment.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(ipv6DisplayName)

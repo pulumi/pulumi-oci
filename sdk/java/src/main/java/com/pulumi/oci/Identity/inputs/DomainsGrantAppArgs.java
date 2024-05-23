@@ -17,15 +17,14 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainsGrantAppArgs Empty = new DomainsGrantAppArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * (Updatable) Application display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -34,15 +33,14 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Application display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -52,10 +50,9 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) Application URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -69,10 +66,9 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -87,13 +83,13 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Value of the tag.
+     * Application identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -104,13 +100,13 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return Application identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -148,15 +144,14 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Application display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -169,15 +164,14 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Application display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -189,10 +183,9 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Application URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -210,10 +203,9 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Application URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -230,13 +222,13 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Application identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -251,13 +243,13 @@ public final class DomainsGrantAppArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Application identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

@@ -16,14 +16,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     public static final SubscriptionBillingAddressArgs Empty = new SubscriptionBillingAddressArgs();
 
     /**
-     * (Updatable) Address identifier.
+     * Address identifier.
      * 
      */
     @Import(name="addressKey")
     private @Nullable Output<String> addressKey;
 
     /**
-     * @return (Updatable) Address identifier.
+     * @return Address identifier.
      * 
      */
     public Optional<Output<String>> addressKey() {
@@ -31,14 +31,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Name of the city.
+     * Name of the city.
      * 
      */
     @Import(name="city")
     private @Nullable Output<String> city;
 
     /**
-     * @return (Updatable) Name of the city.
+     * @return Name of the city.
      * 
      */
     public Optional<Output<String>> city() {
@@ -46,14 +46,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Name of the customer company.
+     * Name of the customer company.
      * 
      */
     @Import(name="companyName")
     private @Nullable Output<String> companyName;
 
     /**
-     * @return (Updatable) Name of the customer company.
+     * @return Name of the customer company.
      * 
      */
     public Optional<Output<String>> companyName() {
@@ -61,14 +61,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Contributor class of the customer company.
+     * Contributor class of the customer company.
      * 
      */
     @Import(name="contributorClass")
     private @Nullable Output<String> contributorClass;
 
     /**
-     * @return (Updatable) Contributor class of the customer company.
+     * @return Contributor class of the customer company.
      * 
      */
     public Optional<Output<String>> contributorClass() {
@@ -76,14 +76,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Country of the address.
+     * Country of the address.
      * 
      */
     @Import(name="country")
     private @Nullable Output<String> country;
 
     /**
-     * @return (Updatable) Country of the address.
+     * @return Country of the address.
      * 
      */
     public Optional<Output<String>> country() {
@@ -91,14 +91,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) County of the address.
+     * County of the address.
      * 
      */
     @Import(name="county")
     private @Nullable Output<String> county;
 
     /**
-     * @return (Updatable) County of the address.
+     * @return County of the address.
      * 
      */
     public Optional<Output<String>> county() {
@@ -106,14 +106,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Department name of the customer company.
+     * Department name of the customer company.
      * 
      */
     @Import(name="departmentName")
     private @Nullable Output<String> departmentName;
 
     /**
-     * @return (Updatable) Department name of the customer company.
+     * @return Department name of the customer company.
      * 
      */
     public Optional<Output<String>> departmentName() {
@@ -121,14 +121,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The email address of the paypal user.
+     * The email address of the paypal user.
      * 
      */
     @Import(name="emailAddress")
     private @Nullable Output<String> emailAddress;
 
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     public Optional<Output<String>> emailAddress() {
@@ -136,14 +136,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) First name of the paypal user.
+     * First name of the paypal user.
      * 
      */
     @Import(name="firstName")
     private @Nullable Output<String> firstName;
 
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     public Optional<Output<String>> firstName() {
@@ -151,14 +151,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Internal number of the customer company.
+     * Internal number of the customer company.
      * 
      */
     @Import(name="internalNumber")
     private @Nullable Output<String> internalNumber;
 
     /**
-     * @return (Updatable) Internal number of the customer company.
+     * @return Internal number of the customer company.
      * 
      */
     public Optional<Output<String>> internalNumber() {
@@ -166,14 +166,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Job title of the contact person.
+     * Job title of the contact person.
      * 
      */
     @Import(name="jobTitle")
     private @Nullable Output<String> jobTitle;
 
     /**
-     * @return (Updatable) Job title of the contact person.
+     * @return Job title of the contact person.
      * 
      */
     public Optional<Output<String>> jobTitle() {
@@ -181,14 +181,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Last name of the paypal user.
+     * Last name of the paypal user.
      * 
      */
     @Import(name="lastName")
     private @Nullable Output<String> lastName;
 
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     public Optional<Output<String>> lastName() {
@@ -196,14 +196,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Address line 1.
+     * Address line 1.
      * 
      */
     @Import(name="line1")
     private @Nullable Output<String> line1;
 
     /**
-     * @return (Updatable) Address line 1.
+     * @return Address line 1.
      * 
      */
     public Optional<Output<String>> line1() {
@@ -211,14 +211,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Address line 2.
+     * Address line 2.
      * 
      */
     @Import(name="line2")
     private @Nullable Output<String> line2;
 
     /**
-     * @return (Updatable) Address line 2.
+     * @return Address line 2.
      * 
      */
     public Optional<Output<String>> line2() {
@@ -226,14 +226,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Address line 3.
+     * Address line 3.
      * 
      */
     @Import(name="line3")
     private @Nullable Output<String> line3;
 
     /**
-     * @return (Updatable) Address line 3.
+     * @return Address line 3.
      * 
      */
     public Optional<Output<String>> line3() {
@@ -241,14 +241,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Address line 4.
+     * Address line 4.
      * 
      */
     @Import(name="line4")
     private @Nullable Output<String> line4;
 
     /**
-     * @return (Updatable) Address line 4.
+     * @return Address line 4.
      * 
      */
     public Optional<Output<String>> line4() {
@@ -256,14 +256,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Middle name of the contact person.
+     * Middle name of the contact person.
      * 
      */
     @Import(name="middleName")
     private @Nullable Output<String> middleName;
 
     /**
-     * @return (Updatable) Middle name of the contact person.
+     * @return Middle name of the contact person.
      * 
      */
     public Optional<Output<String>> middleName() {
@@ -271,14 +271,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Municipal Inscription.
+     * Municipal Inscription.
      * 
      */
     @Import(name="municipalInscription")
     private @Nullable Output<String> municipalInscription;
 
     /**
-     * @return (Updatable) Municipal Inscription.
+     * @return Municipal Inscription.
      * 
      */
     public Optional<Output<String>> municipalInscription() {
@@ -286,14 +286,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Phone country code of the contact person.
+     * Phone country code of the contact person.
      * 
      */
     @Import(name="phoneCountryCode")
     private @Nullable Output<String> phoneCountryCode;
 
     /**
-     * @return (Updatable) Phone country code of the contact person.
+     * @return Phone country code of the contact person.
      * 
      */
     public Optional<Output<String>> phoneCountryCode() {
@@ -301,14 +301,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Phone number of the contact person.
+     * Phone number of the contact person.
      * 
      */
     @Import(name="phoneNumber")
     private @Nullable Output<String> phoneNumber;
 
     /**
-     * @return (Updatable) Phone number of the contact person.
+     * @return Phone number of the contact person.
      * 
      */
     public Optional<Output<String>> phoneNumber() {
@@ -316,14 +316,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Post code of the address.
+     * Post code of the address.
      * 
      */
     @Import(name="postalCode")
     private @Nullable Output<String> postalCode;
 
     /**
-     * @return (Updatable) Post code of the address.
+     * @return Post code of the address.
      * 
      */
     public Optional<Output<String>> postalCode() {
@@ -331,14 +331,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Province of the address.
+     * Province of the address.
      * 
      */
     @Import(name="province")
     private @Nullable Output<String> province;
 
     /**
-     * @return (Updatable) Province of the address.
+     * @return Province of the address.
      * 
      */
     public Optional<Output<String>> province() {
@@ -346,14 +346,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) State of the address.
+     * State of the address.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) State of the address.
+     * @return State of the address.
      * 
      */
     public Optional<Output<String>> state() {
@@ -361,14 +361,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) State Inscription.
+     * State Inscription.
      * 
      */
     @Import(name="stateInscription")
     private @Nullable Output<String> stateInscription;
 
     /**
-     * @return (Updatable) State Inscription.
+     * @return State Inscription.
      * 
      */
     public Optional<Output<String>> stateInscription() {
@@ -376,14 +376,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Street name of the address.
+     * Street name of the address.
      * 
      */
     @Import(name="streetName")
     private @Nullable Output<String> streetName;
 
     /**
-     * @return (Updatable) Street name of the address.
+     * @return Street name of the address.
      * 
      */
     public Optional<Output<String>> streetName() {
@@ -391,14 +391,14 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Street number of the address.
+     * Street number of the address.
      * 
      */
     @Import(name="streetNumber")
     private @Nullable Output<String> streetNumber;
 
     /**
-     * @return (Updatable) Street number of the address.
+     * @return Street number of the address.
      * 
      */
     public Optional<Output<String>> streetNumber() {
@@ -455,7 +455,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param addressKey (Updatable) Address identifier.
+         * @param addressKey Address identifier.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param addressKey (Updatable) Address identifier.
+         * @param addressKey Address identifier.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param city (Updatable) Name of the city.
+         * @param city Name of the city.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param city (Updatable) Name of the city.
+         * @param city Name of the city.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param companyName (Updatable) Name of the customer company.
+         * @param companyName Name of the customer company.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param companyName (Updatable) Name of the customer company.
+         * @param companyName Name of the customer company.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param contributorClass (Updatable) Contributor class of the customer company.
+         * @param contributorClass Contributor class of the customer company.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param contributorClass (Updatable) Contributor class of the customer company.
+         * @param contributorClass Contributor class of the customer company.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param country (Updatable) Country of the address.
+         * @param country Country of the address.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param country (Updatable) Country of the address.
+         * @param country Country of the address.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param county (Updatable) County of the address.
+         * @param county County of the address.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param county (Updatable) County of the address.
+         * @param county County of the address.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param departmentName (Updatable) Department name of the customer company.
+         * @param departmentName Department name of the customer company.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param departmentName (Updatable) Department name of the customer company.
+         * @param departmentName Department name of the customer company.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress The email address of the paypal user.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress The email address of the paypal user.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName First name of the paypal user.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName First name of the paypal user.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param internalNumber (Updatable) Internal number of the customer company.
+         * @param internalNumber Internal number of the customer company.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param internalNumber (Updatable) Internal number of the customer company.
+         * @param internalNumber Internal number of the customer company.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param jobTitle (Updatable) Job title of the contact person.
+         * @param jobTitle Job title of the contact person.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param jobTitle (Updatable) Job title of the contact person.
+         * @param jobTitle Job title of the contact person.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName Last name of the paypal user.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName Last name of the paypal user.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line1 (Updatable) Address line 1.
+         * @param line1 Address line 1.
          * 
          * @return builder
          * 
@@ -718,7 +718,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line1 (Updatable) Address line 1.
+         * @param line1 Address line 1.
          * 
          * @return builder
          * 
@@ -728,7 +728,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line2 (Updatable) Address line 2.
+         * @param line2 Address line 2.
          * 
          * @return builder
          * 
@@ -739,7 +739,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line2 (Updatable) Address line 2.
+         * @param line2 Address line 2.
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line3 (Updatable) Address line 3.
+         * @param line3 Address line 3.
          * 
          * @return builder
          * 
@@ -760,7 +760,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line3 (Updatable) Address line 3.
+         * @param line3 Address line 3.
          * 
          * @return builder
          * 
@@ -770,7 +770,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line4 (Updatable) Address line 4.
+         * @param line4 Address line 4.
          * 
          * @return builder
          * 
@@ -781,7 +781,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param line4 (Updatable) Address line 4.
+         * @param line4 Address line 4.
          * 
          * @return builder
          * 
@@ -791,7 +791,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param middleName (Updatable) Middle name of the contact person.
+         * @param middleName Middle name of the contact person.
          * 
          * @return builder
          * 
@@ -802,7 +802,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param middleName (Updatable) Middle name of the contact person.
+         * @param middleName Middle name of the contact person.
          * 
          * @return builder
          * 
@@ -812,7 +812,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param municipalInscription (Updatable) Municipal Inscription.
+         * @param municipalInscription Municipal Inscription.
          * 
          * @return builder
          * 
@@ -823,7 +823,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param municipalInscription (Updatable) Municipal Inscription.
+         * @param municipalInscription Municipal Inscription.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param phoneCountryCode (Updatable) Phone country code of the contact person.
+         * @param phoneCountryCode Phone country code of the contact person.
          * 
          * @return builder
          * 
@@ -844,7 +844,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param phoneCountryCode (Updatable) Phone country code of the contact person.
+         * @param phoneCountryCode Phone country code of the contact person.
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param phoneNumber (Updatable) Phone number of the contact person.
+         * @param phoneNumber Phone number of the contact person.
          * 
          * @return builder
          * 
@@ -865,7 +865,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param phoneNumber (Updatable) Phone number of the contact person.
+         * @param phoneNumber Phone number of the contact person.
          * 
          * @return builder
          * 
@@ -875,7 +875,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param postalCode (Updatable) Post code of the address.
+         * @param postalCode Post code of the address.
          * 
          * @return builder
          * 
@@ -886,7 +886,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param postalCode (Updatable) Post code of the address.
+         * @param postalCode Post code of the address.
          * 
          * @return builder
          * 
@@ -896,7 +896,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param province (Updatable) Province of the address.
+         * @param province Province of the address.
          * 
          * @return builder
          * 
@@ -907,7 +907,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param province (Updatable) Province of the address.
+         * @param province Province of the address.
          * 
          * @return builder
          * 
@@ -917,7 +917,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param state (Updatable) State of the address.
+         * @param state State of the address.
          * 
          * @return builder
          * 
@@ -928,7 +928,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param state (Updatable) State of the address.
+         * @param state State of the address.
          * 
          * @return builder
          * 
@@ -938,7 +938,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param stateInscription (Updatable) State Inscription.
+         * @param stateInscription State Inscription.
          * 
          * @return builder
          * 
@@ -949,7 +949,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param stateInscription (Updatable) State Inscription.
+         * @param stateInscription State Inscription.
          * 
          * @return builder
          * 
@@ -959,7 +959,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param streetName (Updatable) Street name of the address.
+         * @param streetName Street name of the address.
          * 
          * @return builder
          * 
@@ -970,7 +970,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param streetName (Updatable) Street name of the address.
+         * @param streetName Street name of the address.
          * 
          * @return builder
          * 
@@ -980,7 +980,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param streetNumber (Updatable) Street number of the address.
+         * @param streetNumber Street number of the address.
          * 
          * @return builder
          * 
@@ -991,7 +991,7 @@ public final class SubscriptionBillingAddressArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param streetNumber (Updatable) Street number of the address.
+         * @param streetNumber Street number of the address.
          * 
          * @return builder
          * 

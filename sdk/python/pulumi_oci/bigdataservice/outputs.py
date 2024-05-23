@@ -167,7 +167,7 @@ class AutoScalingConfigurationPolicy(dict):
                  policy_type: str,
                  rules: Sequence['outputs.AutoScalingConfigurationPolicyRule']):
         """
-        :param str policy_type: Type of autoscaling policy.
+        :param str policy_type: (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
         :param Sequence['AutoScalingConfigurationPolicyRuleArgs'] rules: (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
         """
         pulumi.set(__self__, "policy_type", policy_type)
@@ -177,7 +177,7 @@ class AutoScalingConfigurationPolicy(dict):
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
         """
-        Type of autoscaling policy.
+        (Updatable) Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
         """
         return pulumi.get(self, "policy_type")
 
@@ -375,11 +375,11 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfig(dict):
                  min_ocpus_per_node: Optional[int] = None,
                  ocpu_step_size: Optional[int] = None):
         """
-        :param int memory_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        :param int memory_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         :param 'AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs' metric: (Updatable) Metric and threshold details for triggering an autoscale action.
         :param int min_memory_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
         :param int min_ocpus_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        :param int ocpu_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        :param int ocpu_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         """
         if memory_step_size is not None:
             pulumi.set(__self__, "memory_step_size", memory_step_size)
@@ -396,7 +396,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfig(dict):
     @pulumi.getter(name="memoryStepSize")
     def memory_step_size(self) -> Optional[int]:
         """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         """
         return pulumi.get(self, "memory_step_size")
 
@@ -428,7 +428,7 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfig(dict):
     @pulumi.getter(name="ocpuStepSize")
     def ocpu_step_size(self) -> Optional[int]:
         """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         """
         return pulumi.get(self, "ocpu_step_size")
 
@@ -569,7 +569,7 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfig(dict):
         """
         :param 'AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs' metric: (Updatable) Metric and threshold details for triggering an autoscale action.
         :param int min_node_count: (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
-        :param int step_size: (Updatable) This value is the number of nodes to add during a scale-out event.
+        :param int step_size: (Updatable) This value is the number of nodes to remove during a scale-in event.
         """
         if metric is not None:
             pulumi.set(__self__, "metric", metric)
@@ -598,7 +598,7 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfig(dict):
     @pulumi.getter(name="stepSize")
     def step_size(self) -> Optional[int]:
         """
-        (Updatable) This value is the number of nodes to add during a scale-out event.
+        (Updatable) This value is the number of nodes to remove during a scale-in event.
         """
         return pulumi.get(self, "step_size")
 
@@ -1445,7 +1445,7 @@ class BdsInstanceCloudSqlDetail(dict):
         :param str ip_address: IP address of the node
         :param bool is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not are Kerberos principals mapped to database users.
         :param Sequence['BdsInstanceCloudSqlDetailKerberosDetailArgs'] kerberos_details: Details about Kerberos principals
-        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
@@ -1509,7 +1509,7 @@ class BdsInstanceCloudSqlDetail(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
-        The total amount of memory available to the node, in gigabytes
+        The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1844,11 +1844,10 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
                  block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceComputeOnlyWorkerNodeShapeConfig'] = None):
         """
-        :param int number_of_nodes: The amount of worker nodes should be created
+        :param int number_of_nodes: Number of nodes that forming the cluster
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param 'BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -1862,7 +1861,7 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> int:
         """
-        The amount of worker nodes should be created
+        Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -1893,9 +1892,6 @@ class BdsInstanceComputeOnlyWorkerNode(dict):
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.BdsInstanceComputeOnlyWorkerNodeShapeConfig']:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
 
@@ -1923,7 +1919,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
                  nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
-        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
@@ -1938,7 +1934,7 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
-        The total amount of memory available to the node, in gigabytes
+        The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1991,11 +1987,10 @@ class BdsInstanceEdgeNode(dict):
                  block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceEdgeNodeShapeConfig'] = None):
         """
-        :param int number_of_nodes: The amount of worker nodes should be created
+        :param int number_of_nodes: Number of nodes that forming the cluster
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param 'BdsInstanceEdgeNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -2009,7 +2004,7 @@ class BdsInstanceEdgeNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> int:
         """
-        The amount of worker nodes should be created
+        Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2040,9 +2035,6 @@ class BdsInstanceEdgeNode(dict):
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.BdsInstanceEdgeNodeShapeConfig']:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
 
@@ -2070,7 +2062,7 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
                  nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
-        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
@@ -2085,7 +2077,7 @@ class BdsInstanceEdgeNodeShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
-        The total amount of memory available to the node, in gigabytes
+        The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2281,7 +2273,7 @@ class BdsInstanceMasterNode(dict):
                  block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceMasterNodeShapeConfig'] = None):
         """
-        :param int number_of_nodes: The amount of worker nodes should be created
+        :param int number_of_nodes: The amount of master nodes should be created.
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -2299,7 +2291,7 @@ class BdsInstanceMasterNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> int:
         """
-        The amount of worker nodes should be created
+        The amount of master nodes should be created.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -2517,14 +2509,14 @@ class BdsInstanceNode(dict):
         :param str image_id: The OCID of the image from which the node was created
         :param str instance_id: The OCID of the underlying compute instance
         :param str ip_address: IP address of the node
-        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: The Big Data Service cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
-        :param str shape: Shape of the node
+        :param str shape: (Updatable) Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
         :param str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-        :param str subnet_id: The OCID of the subnet in which the node should be created
+        :param str subnet_id: The OCID of the subnet in which the node will be created.
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
         """
@@ -2633,7 +2625,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
-        The total amount of memory available to the node, in gigabytes
+        The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2665,7 +2657,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter
     def shape(self) -> Optional[str]:
         """
-        Shape of the node
+        (Updatable) Shape of the node.
         """
         return pulumi.get(self, "shape")
 
@@ -2689,7 +2681,7 @@ class BdsInstanceNode(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
         """
-        The OCID of the subnet in which the node should be created
+        The OCID of the subnet in which the node will be created.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2854,7 +2846,7 @@ class BdsInstanceUtilNode(dict):
                  block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceUtilNodeShapeConfig'] = None):
         """
-        :param int number_of_nodes: The amount of worker nodes should be created
+        :param int number_of_nodes: The amount of utility nodes should be created.
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
@@ -2872,7 +2864,7 @@ class BdsInstanceUtilNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> int:
         """
-        The amount of worker nodes should be created
+        The amount of utility nodes should be created.
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -3001,11 +2993,10 @@ class BdsInstanceWorkerNode(dict):
                  block_volume_size_in_gbs: Optional[str] = None,
                  shape_config: Optional['outputs.BdsInstanceWorkerNodeShapeConfig'] = None):
         """
-        :param int number_of_nodes: The amount of worker nodes should be created
+        :param int number_of_nodes: Number of nodes that forming the cluster
         :param str shape: Shape of the node
         :param str subnet_id: The OCID of the subnet in which the node should be created
         :param str block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param 'BdsInstanceWorkerNodeShapeConfigArgs' shape_config: The shape configuration requested for the node.
         """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
@@ -3019,7 +3010,7 @@ class BdsInstanceWorkerNode(dict):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> int:
         """
-        The amount of worker nodes should be created
+        Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -3050,9 +3041,6 @@ class BdsInstanceWorkerNode(dict):
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.BdsInstanceWorkerNodeShapeConfig']:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
 
@@ -3080,7 +3068,7 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
                  nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None):
         """
-        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes
+        :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
         """
@@ -3095,7 +3083,7 @@ class BdsInstanceWorkerNodeShapeConfig(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
-        The total amount of memory available to the node, in gigabytes
+        The total amount of memory available to the node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 

@@ -28,7 +28,7 @@ class AtCustomerCccUpgradeScheduleArgs:
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
                
                
@@ -97,7 +97,7 @@ class AtCustomerCccUpgradeScheduleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -141,7 +141,7 @@ class _AtCustomerCccUpgradeScheduleState:
         Input properties used for looking up and filtering AtCustomerCccUpgradeSchedule resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
@@ -209,7 +209,7 @@ class _AtCustomerCccUpgradeScheduleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -383,7 +383,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
@@ -514,7 +514,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        :param pulumi.Input[str] description: (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
@@ -567,7 +567,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 

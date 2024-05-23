@@ -188,17 +188,17 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> IdcsPreventedOperations { get; private set; } = null!;
 
         /// <summary>
-        /// Key or name of the tag.
+        /// Key
+        /// 
+        /// **Added In:** 2010242156
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
-        /// * multiValued: false
-        /// * mutability: readWrite
+        /// * caseExact: true
+        /// * idcsPii: true
+        /// * type: string
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsApiKeyMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -228,9 +228,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
         public Output<string> Ocid { get; private set; } = null!;
@@ -403,23 +403,23 @@ namespace Pulumi.Oci.Identity
         public Input<string> IdcsEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// Key or name of the tag.
+        /// Key
+        /// 
+        /// **Added In:** 2010242156
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
-        /// * multiValued: false
-        /// * mutability: readWrite
+        /// * caseExact: true
+        /// * idcsPii: true
+        /// * type: string
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -427,9 +427,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -701,17 +701,17 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// Key or name of the tag.
+        /// Key
+        /// 
+        /// **Added In:** 2010242156
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
-        /// * multiValued: false
-        /// * mutability: readWrite
+        /// * caseExact: true
+        /// * idcsPii: true
+        /// * type: string
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -739,7 +739,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// The user's OCID.
+        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -747,9 +747,9 @@ namespace Pulumi.Oci.Identity
         /// * multiValued: false
         /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: global
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }

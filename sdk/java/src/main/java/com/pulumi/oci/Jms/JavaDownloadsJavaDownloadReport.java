@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport("testJavaDownloadReport", JavaDownloadsJavaDownloadReportArgs.builder()        
+ *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport("testJavaDownloadReport", JavaDownloadsJavaDownloadReportArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .format(javaDownloadReportFormat)
  *             .timeEnd(javaDownloadReportTimeEnd)

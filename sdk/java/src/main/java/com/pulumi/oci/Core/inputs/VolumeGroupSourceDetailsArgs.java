@@ -78,20 +78,14 @@ public final class VolumeGroupSourceDetailsArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * OCIDs for the volumes used to create this volume group.
      * 
      */
     @Import(name="volumeIds")
     private @Nullable Output<List<String>> volumeIds;
 
     /**
-     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return OCIDs for the volumes used to create this volume group.
      * 
      */
     public Optional<Output<List<String>>> volumeIds() {
@@ -211,10 +205,7 @@ public final class VolumeGroupSourceDetailsArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param volumeIds OCIDs for the volumes used to create this volume group.
          * 
          * @return builder
          * 
@@ -225,10 +216,7 @@ public final class VolumeGroupSourceDetailsArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param volumeIds OCIDs for the volumes used to create this volume group.
          * 
          * @return builder
          * 
@@ -238,10 +226,7 @@ public final class VolumeGroupSourceDetailsArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param volumeIds OCIDs for the volumes used to create this volume group.
          * 
          * @return builder
          * 

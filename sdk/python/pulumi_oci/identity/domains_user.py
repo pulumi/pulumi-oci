@@ -91,14 +91,15 @@ class DomainsUserArgs:
                * returned: always
                * type: string
                * uniqueness: global
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[bool] active: (Updatable) User status
                
                **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCsvAttributeName: Active
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: boolean
@@ -132,12 +133,16 @@ class DomainsUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        :param pulumi.Input[str] display_name: (Updatable) Display name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeName: Display Name
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -164,14 +169,15 @@ class DomainsUserArgs:
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
+        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -200,18 +206,16 @@ class DomainsUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) A complex attribute that contains attributes representing the name
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+               * idcsPii: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
-               * type: string
+               * type: complex
                * uniqueness: none
         :param pulumi.Input[str] nick_name: (Updatable) Nick name
                
@@ -227,19 +231,17 @@ class DomainsUserArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
                
                **SCIM++ Properties:**
@@ -552,14 +554,15 @@ class DomainsUserArgs:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
+        (Updatable) User status
 
         **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCsvAttributeName: Active
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: boolean
@@ -659,12 +662,16 @@ class DomainsUserArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        (Updatable) Display name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeName: Display Name
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -724,14 +731,15 @@ class DomainsUserArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
+        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -793,18 +801,16 @@ class DomainsUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
         """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
+        (Updatable) A complex attribute that contains attributes representing the name
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        * idcsPii: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
-        * type: string
+        * type: complex
         * uniqueness: none
         """
         return pulumi.get(self, "name")
@@ -842,19 +848,17 @@ class DomainsUserArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1403,14 +1407,15 @@ class _DomainsUserState:
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsUser resources.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[bool] active: (Updatable) User status
                
                **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCsvAttributeName: Active
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: boolean
@@ -1466,12 +1471,16 @@ class _DomainsUserState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        :param pulumi.Input[str] display_name: (Updatable) Display name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeName: Display Name
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -1509,14 +1518,15 @@ class _DomainsUserState:
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
+        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -1607,18 +1617,16 @@ class _DomainsUserState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) A complex attribute that contains attributes representing the name
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+               * idcsPii: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
-               * type: string
+               * type: complex
                * uniqueness: none
         :param pulumi.Input[str] nick_name: (Updatable) Nick name
                
@@ -1634,19 +1642,17 @@ class _DomainsUserState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
                
                **SCIM++ Properties:**
@@ -1968,14 +1974,15 @@ class _DomainsUserState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
+        (Updatable) User status
 
         **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCsvAttributeName: Active
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: boolean
@@ -2119,12 +2126,16 @@ class _DomainsUserState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        (Updatable) Display name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeName: Display Name
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -2206,14 +2217,15 @@ class _DomainsUserState:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
+        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -2414,18 +2426,16 @@ class _DomainsUserState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
         """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
+        (Updatable) A complex attribute that contains attributes representing the name
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        * idcsPii: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
-        * type: string
+        * type: complex
         * uniqueness: none
         """
         return pulumi.get(self, "name")
@@ -2463,19 +2473,17 @@ class _DomainsUserState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -3132,14 +3140,15 @@ class DomainsUser(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[bool] active: (Updatable) User status
                
                **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCsvAttributeName: Active
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: boolean
@@ -3173,12 +3182,16 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        :param pulumi.Input[str] display_name: (Updatable) Display name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeName: Display Name
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -3205,14 +3218,15 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
+        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -3242,18 +3256,16 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) A complex attribute that contains attributes representing the name
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+               * idcsPii: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
-               * type: string
+               * type: complex
                * uniqueness: none
         :param pulumi.Input[str] nick_name: (Updatable) Nick name
                
@@ -3269,19 +3281,17 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
                
                **SCIM++ Properties:**
@@ -3699,14 +3709,15 @@ class DomainsUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[bool] active: (Updatable) User status
                
                **SCIM++ Properties:**
+               * caseExact: false
+               * idcsCsvAttributeName: Active
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: boolean
@@ -3762,12 +3773,16 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        :param pulumi.Input[str] display_name: (Updatable) Display name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeName: Display Name
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -3805,14 +3820,15 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: complex
                * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
+        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * caseExact: false
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+               * idcsPii: true
+               * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
                * type: string
@@ -3903,18 +3919,16 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
+        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) A complex attribute that contains attributes representing the name
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
+               * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+               * idcsPii: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: readWrite
                * required: false
                * returned: default
-               * type: string
+               * type: complex
                * uniqueness: none
         :param pulumi.Input[str] nick_name: (Updatable) Nick name
                
@@ -3930,19 +3944,17 @@ class DomainsUser(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
+        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readOnly
+               * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
                
                **SCIM++ Properties:**
@@ -4209,14 +4221,15 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[bool]:
         """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
+        (Updatable) User status
 
         **SCIM++ Properties:**
+        * caseExact: false
+        * idcsCsvAttributeName: Active
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: boolean
@@ -4328,12 +4341,16 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
+        (Updatable) Display name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeName: Display Name
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -4399,14 +4416,15 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
+        (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * caseExact: false
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+        * idcsPii: true
+        * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
         * type: string
@@ -4567,18 +4585,16 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output['outputs.DomainsUserName']:
         """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
+        (Updatable) A complex attribute that contains attributes representing the name
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
+        * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+        * idcsPii: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: readWrite
         * required: false
         * returned: default
-        * type: string
+        * type: complex
         * uniqueness: none
         """
         return pulumi.get(self, "name")
@@ -4608,19 +4624,17 @@ class DomainsUser(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
+        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readOnly
+        * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 

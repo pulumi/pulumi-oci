@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup {
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     private @Nullable String condition;
 
     private TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup() {}
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<String> condition() {

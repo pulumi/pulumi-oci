@@ -39,14 +39,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain", required=true)
     private Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {
@@ -354,7 +354,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 

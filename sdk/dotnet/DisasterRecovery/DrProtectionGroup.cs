@@ -237,7 +237,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> PeerRegion { get; private set; } = null!;
 
         /// <summary>
-        /// The role of the DR protection group.  Example: `STANDBY`
+        /// The role of the DR protection group.
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
@@ -485,7 +485,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? PeerRegion { get; set; }
 
         /// <summary>
-        /// The role of the DR protection group.  Example: `STANDBY`
+        /// The role of the DR protection group.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

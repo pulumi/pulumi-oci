@@ -17,14 +17,14 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
     public static final AutonomousContainerDatabaseBackupConfigArgs Empty = new AutonomousContainerDatabaseBackupConfigArgs();
 
     /**
-     * Backup destination details.
+     * (Updatable) Backup destination details.
      * 
      */
     @Import(name="backupDestinationDetails")
     private @Nullable Output<AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs> backupDestinationDetails;
 
     /**
-     * @return Backup destination details.
+     * @return (Updatable) Backup destination details.
      * 
      */
     public Optional<Output<AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs>> backupDestinationDetails() {
@@ -32,14 +32,14 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
     }
 
     /**
-     * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+     * (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
      * 
      */
     @Import(name="recoveryWindowInDays")
     private @Nullable Output<Integer> recoveryWindowInDays;
 
     /**
-     * @return Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+     * @return (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
      * 
      */
     public Optional<Output<Integer>> recoveryWindowInDays() {
@@ -72,7 +72,7 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
         }
 
         /**
-         * @param backupDestinationDetails Backup destination details.
+         * @param backupDestinationDetails (Updatable) Backup destination details.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
         }
 
         /**
-         * @param backupDestinationDetails Backup destination details.
+         * @param backupDestinationDetails (Updatable) Backup destination details.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
         }
 
         /**
-         * @param recoveryWindowInDays Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         * @param recoveryWindowInDays (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class AutonomousContainerDatabaseBackupConfigArgs extends com.pulum
         }
 
         /**
-         * @param recoveryWindowInDays Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         * @param recoveryWindowInDays (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
          * 
          * @return builder
          * 

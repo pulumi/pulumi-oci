@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class ConnectionPrivateEndpoint
     {
         /// <summary>
-        /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

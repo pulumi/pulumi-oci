@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Sch.Inputs
     public sealed class ConnectorSourceMonitoringSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

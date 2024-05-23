@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBuildPipelineStage = new BuildPipelineStage("testBuildPipelineStage", BuildPipelineStageArgs.builder()        
+ *         var testBuildPipelineStage = new BuildPipelineStage("testBuildPipelineStage", BuildPipelineStageArgs.builder()
  *             .buildPipelineId(testBuildPipeline.id())
  *             .buildPipelineStagePredecessorCollection(BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs.builder()
  *                 .items(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs.builder()

@@ -65,6 +65,10 @@ type AutonomousDatabaseWallet struct {
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
+	// * `SINGLE` - used to generate a wallet for a single database
+	// * `ALL` - used to generate wallet for all databases in the region
+	//
+	// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 	GenerateType pulumi.StringPtrOutput `pulumi:"generateType"`
 	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
 	IsRegional pulumi.BoolOutput `pulumi:"isRegional"`
@@ -126,6 +130,10 @@ type autonomousDatabaseWalletState struct {
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
+	// * `SINGLE` - used to generate a wallet for a single database
+	// * `ALL` - used to generate wallet for all databases in the region
+	//
+	// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 	GenerateType *string `pulumi:"generateType"`
 	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
 	IsRegional *bool `pulumi:"isRegional"`
@@ -145,6 +153,10 @@ type AutonomousDatabaseWalletState struct {
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
+	// * `SINGLE` - used to generate a wallet for a single database
+	// * `ALL` - used to generate wallet for all databases in the region
+	//
+	// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 	GenerateType pulumi.StringPtrInput
 	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
 	IsRegional pulumi.BoolPtrInput
@@ -166,6 +178,10 @@ type autonomousDatabaseWalletArgs struct {
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
+	// * `SINGLE` - used to generate a wallet for a single database
+	// * `ALL` - used to generate wallet for all databases in the region
+	//
+	// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 	GenerateType *string `pulumi:"generateType"`
 	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
 	IsRegional *bool `pulumi:"isRegional"`
@@ -184,6 +200,10 @@ type AutonomousDatabaseWalletArgs struct {
 	// The type of wallet to generate.
 	//
 	// **Serverless instance usage:**
+	// * `SINGLE` - used to generate a wallet for a single database
+	// * `ALL` - used to generate wallet for all databases in the region
+	//
+	// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 	GenerateType pulumi.StringPtrInput
 	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
 	IsRegional pulumi.BoolPtrInput
@@ -298,6 +318,10 @@ func (o AutonomousDatabaseWalletOutput) Content() pulumi.StringOutput {
 // The type of wallet to generate.
 //
 // **Serverless instance usage:**
+// * `SINGLE` - used to generate a wallet for a single database
+// * `ALL` - used to generate wallet for all databases in the region
+//
+// **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 func (o AutonomousDatabaseWalletOutput) GenerateType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.StringPtrOutput { return v.GenerateType }).(pulumi.StringPtrOutput)
 }

@@ -87,12 +87,8 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
                  value_type: pulumi.Input[str],
                  secret_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] value_type: (Updatable) The value type of the key store content.
+        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
         """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
@@ -102,11 +98,7 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The value type of the key store content.
         """
         return pulumi.get(self, "value_type")
 
@@ -118,7 +110,7 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
         """
         return pulumi.get(self, "secret_id")
 
@@ -133,12 +125,8 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
                  value_type: pulumi.Input[str],
                  secret_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] value_type: (Updatable) The value type of the key store password.
+        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
         """
         pulumi.set(__self__, "value_type", value_type)
         if secret_id is not None:
@@ -148,11 +136,7 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     @pulumi.getter(name="valueType")
     def value_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The value type of the key store password.
         """
         return pulumi.get(self, "value_type")
 
@@ -164,7 +148,7 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
         """
         return pulumi.get(self, "secret_id")
 
@@ -181,7 +165,7 @@ class DatabaseToolsConnectionLockArgs:
                  related_resource_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[str] type: Type of the lock.
         :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[str] time_created: When the lock was created.
@@ -198,7 +182,7 @@ class DatabaseToolsConnectionLockArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The DatabaseToolsConnection type.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -253,7 +237,7 @@ class DatabaseToolsConnectionProxyClientArgs:
         """
         :param pulumi.Input[str] proxy_authentication_type: (Updatable) The proxy authentication type.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
-        :param pulumi.Input[str] user_name: (Updatable) The database user name.
+        :param pulumi.Input[str] user_name: (Updatable) The user name.
         :param pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs'] user_password: (Updatable) The user password.
         """
         pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
@@ -292,7 +276,7 @@ class DatabaseToolsConnectionProxyClientArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The database user name.
+        (Updatable) The user name.
         """
         return pulumi.get(self, "user_name")
 
@@ -321,10 +305,6 @@ class DatabaseToolsConnectionProxyClientUserPasswordArgs:
         """
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "value_type", value_type)
@@ -346,10 +326,6 @@ class DatabaseToolsConnectionProxyClientUserPasswordArgs:
     def value_type(self) -> pulumi.Input[str]:
         """
         (Updatable) The value type of the user password.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
 

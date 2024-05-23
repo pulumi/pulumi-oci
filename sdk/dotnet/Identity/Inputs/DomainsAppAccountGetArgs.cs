@@ -13,12 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppAccountGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+        /// (Updatable) Status of the account
+        /// 
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: boolean
@@ -28,17 +30,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? Active { get; set; }
 
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+        /// (Updatable) Name of the account
         /// 
-        /// **Deprecated Since: 18.2.2**
+        /// **Added In:** 17.4.6
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -63,7 +64,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? OwnerId { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) AccountMgmtInfo URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -78,20 +79,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Account identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
-        /// * returned: default
+        /// * required: false
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

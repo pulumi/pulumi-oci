@@ -63,14 +63,14 @@ public final class MigrationExcludeObjectArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Migration type.
+     * (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
      * 
      */
     public Optional<Output<String>> type() {
@@ -168,7 +168,7 @@ public final class MigrationExcludeObjectArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class MigrationExcludeObjectArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
          * 
          * @return builder
          * 

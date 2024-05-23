@@ -34,7 +34,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? KeyId { get; set; }
 
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the credential, within the context of the source.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         private InputList<Inputs.MonitoredResourceAdditionalCredentialPropertyGetArgs>? _properties;
 
         /// <summary>
-        /// (Updatable) List of monitored resource properties.
+        /// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         /// </summary>
         public InputList<Inputs.MonitoredResourceAdditionalCredentialPropertyGetArgs> Properties
         {
@@ -58,11 +58,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Monitored Resource Type. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

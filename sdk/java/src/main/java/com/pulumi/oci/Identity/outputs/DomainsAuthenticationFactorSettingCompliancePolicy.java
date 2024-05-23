@@ -39,11 +39,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicy {
      */
     private String name;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The value of the attribute to be evaluated
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -88,11 +87,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicy {
         return this.name;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The value of the attribute to be evaluated
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true

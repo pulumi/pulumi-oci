@@ -23,9 +23,6 @@ type ModelTestingDataset struct {
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object *string `pulumi:"object"`
 }
 
@@ -50,9 +47,6 @@ type ModelTestingDatasetArgs struct {
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -154,9 +148,6 @@ func (o ModelTestingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestingDatasetOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -226,9 +217,6 @@ func (o ModelTestingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -248,9 +236,6 @@ type ModelTrainingDataset struct {
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object *string `pulumi:"object"`
 }
 
@@ -275,9 +260,6 @@ type ModelTrainingDatasetArgs struct {
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
@@ -379,9 +361,6 @@ func (o ModelTrainingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTrainingDatasetOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
@@ -451,9 +430,6 @@ func (o ModelTrainingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 }
 
 // The object name of the input data file.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTrainingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {

@@ -14,20 +14,24 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp
     {
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) DB Domain App display name
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) DB Domain App URI
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -40,20 +44,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) DB Domain App identifier
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

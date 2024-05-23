@@ -15,15 +15,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
     public static final DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs Empty = new DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs();
 
     /**
-     * (Updatable) Key or name of the tag.
+     * (Updatable) The specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -32,15 +31,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
     private Output<String> key;
 
     /**
-     * @return (Updatable) Key or name of the tag.
+     * @return (Updatable) The specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -50,15 +48,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) User-friendly text that describes a specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -67,15 +64,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) User-friendly text that describes a specific password policy rule
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -110,15 +106,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
         }
 
         /**
-         * @param key (Updatable) Key or name of the tag.
+         * @param key (Updatable) The specific password policy rule
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -131,15 +126,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
         }
 
         /**
-         * @param key (Updatable) Key or name of the tag.
+         * @param key (Updatable) The specific password policy rule
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -151,15 +145,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) User-friendly text that describes a specific password policy rule
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -172,15 +165,14 @@ public final class DomainsPasswordPolicyConfiguredPasswordPolicyRuleArgs extends
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) User-friendly text that describes a specific password policy rule
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

@@ -31,14 +31,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A user-provided description of the database instance node.
+     * (Updatable) A user-provided description of a database system.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return A user-provided description of the database instance node.
+     * @return (Updatable) A user-provided description of a database system.
      * 
      */
     public Optional<Output<String>> description() {
@@ -46,14 +46,14 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Display name of the database instance node. Avoid entering confidential information.
+     * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Display name of the database instance node. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -188,7 +188,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description A user-provided description of the database instance node.
+         * @param description (Updatable) A user-provided description of a database system.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description A user-provided description of the database instance node.
+         * @param description (Updatable) A user-provided description of a database system.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName Display name of the database instance node. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class DbSystemInstanceArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName Display name of the database instance node. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
          * 
          * @return builder
          * 

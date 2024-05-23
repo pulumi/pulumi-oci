@@ -83,7 +83,7 @@ type PrivateApplication struct {
 	LongDescription pulumi.StringOutput `pulumi:"longDescription"`
 	// A base object for creating a private application package.
 	PackageDetails PrivateApplicationPackageDetailsOutput `pulumi:"packageDetails"`
-	// The package's type.
+	// Type of packages within this private application.
 	PackageType pulumi.StringOutput `pulumi:"packageType"`
 	// (Updatable) A short description of the private application.
 	//
@@ -156,7 +156,7 @@ type privateApplicationState struct {
 	LongDescription *string `pulumi:"longDescription"`
 	// A base object for creating a private application package.
 	PackageDetails *PrivateApplicationPackageDetails `pulumi:"packageDetails"`
-	// The package's type.
+	// Type of packages within this private application.
 	PackageType *string `pulumi:"packageType"`
 	// (Updatable) A short description of the private application.
 	//
@@ -188,7 +188,7 @@ type PrivateApplicationState struct {
 	LongDescription pulumi.StringPtrInput
 	// A base object for creating a private application package.
 	PackageDetails PrivateApplicationPackageDetailsPtrInput
-	// The package's type.
+	// Type of packages within this private application.
 	PackageType pulumi.StringPtrInput
 	// (Updatable) A short description of the private application.
 	//
@@ -379,7 +379,7 @@ func (o PrivateApplicationOutput) PackageDetails() PrivateApplicationPackageDeta
 	return o.ApplyT(func(v *PrivateApplication) PrivateApplicationPackageDetailsOutput { return v.PackageDetails }).(PrivateApplicationPackageDetailsOutput)
 }
 
-// The package's type.
+// Type of packages within this private application.
 func (o PrivateApplicationOutput) PackageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.PackageType }).(pulumi.StringOutput)
 }

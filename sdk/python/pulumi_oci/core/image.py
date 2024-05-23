@@ -35,6 +35,14 @@ class ImageArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -128,6 +136,14 @@ class ImageArgs:
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "launch_mode")
 
@@ -173,6 +189,14 @@ class _ImageState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ImageLaunchOptionArgs']]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[str] listing_type: The listing type of the image. The default value is "NONE".
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
@@ -344,6 +368,14 @@ class _ImageState:
     def launch_mode(self) -> Optional[pulumi.Input[str]]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "launch_mode")
 
@@ -554,6 +586,14 @@ class Image(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -754,6 +794,14 @@ class Image(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_id: The OCID of the instance you want to use as the basis for the image.
         :param pulumi.Input[str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ImageLaunchOptionArgs']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input[str] listing_type: The listing type of the image. The default value is "NONE".
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
@@ -872,6 +920,14 @@ class Image(pulumi.CustomResource):
     def launch_mode(self) -> pulumi.Output[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "launch_mode")
 

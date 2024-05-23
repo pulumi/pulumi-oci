@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSubscriber = new Subscriber("testSubscriber", SubscriberArgs.builder()        
+ *         var testSubscriber = new Subscriber("testSubscriber", SubscriberArgs.builder()
  *             .clients(SubscriberClientArgs.builder()
  *                 .name(subscriberClientsName)
  *                 .token(subscriberClientsToken)

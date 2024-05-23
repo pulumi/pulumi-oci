@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Locale;
         /// <summary>
-        /// Value of the tag.
+        /// The question text
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

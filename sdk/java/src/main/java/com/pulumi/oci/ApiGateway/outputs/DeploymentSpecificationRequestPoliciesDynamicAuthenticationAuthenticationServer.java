@@ -17,7 +17,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      */
     private DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail authenticationServerDetail;
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
      * 
      */
     private DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey key;
@@ -31,7 +31,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         return this.authenticationServerDetail;
     }
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
      * 
      */
     public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey key() {

@@ -69,7 +69,7 @@ type WorkspaceProject struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
@@ -137,7 +137,7 @@ type workspaceProjectState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
@@ -170,7 +170,7 @@ type WorkspaceProjectState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput
@@ -207,7 +207,7 @@ type workspaceProjectArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key *string `pulumi:"key"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -231,7 +231,7 @@ type WorkspaceProjectArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringPtrInput
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput
@@ -346,7 +346,7 @@ func (o WorkspaceProjectOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// (Updatable) The identifying key for the object.
+// (Updatable) Generated key that can be used in API calls to identify project.
 func (o WorkspaceProjectOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }

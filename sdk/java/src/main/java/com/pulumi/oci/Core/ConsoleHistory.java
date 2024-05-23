@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConsoleHistory = new ConsoleHistory("testConsoleHistory", ConsoleHistoryArgs.builder()        
+ *         var testConsoleHistory = new ConsoleHistory("testConsoleHistory", ConsoleHistoryArgs.builder()
  *             .instanceId(testInstance.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(consoleHistoryDisplayName)

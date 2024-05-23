@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnectHarness = new ConnectHarness("testConnectHarness", ConnectHarnessArgs.builder()        
+ *         var testConnectHarness = new ConnectHarness("testConnectHarness", ConnectHarnessArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(connectHarnessName)
  *             .definedTags(connectHarnessDefinedTags)

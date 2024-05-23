@@ -26,15 +26,15 @@ public final class DomainsSmtpCredentialTag {
      */
     private String key;
     /**
-     * @return User&#39;s id
+     * @return Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -60,15 +60,15 @@ public final class DomainsSmtpCredentialTag {
         return this.key;
     }
     /**
-     * @return User&#39;s id
+     * @return Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 

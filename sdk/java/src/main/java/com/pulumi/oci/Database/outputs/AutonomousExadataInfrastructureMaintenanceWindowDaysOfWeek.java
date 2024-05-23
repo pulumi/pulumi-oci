@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek {
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     private @Nullable String name;
 
     private AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek() {}
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     public Optional<String> name() {

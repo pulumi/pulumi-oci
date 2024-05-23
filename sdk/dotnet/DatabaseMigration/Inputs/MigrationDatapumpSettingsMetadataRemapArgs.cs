@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string> OldValue { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Migration type.
+        /// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -18,11 +18,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string BackendSetName;
         /// <summary>
-        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The name can be one of these values: `FORWARD_TO_BACKENDSET`
         /// </summary>
         public readonly string Name;
 

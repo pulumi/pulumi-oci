@@ -26,11 +26,11 @@ public final class DomainsSettingTag {
      */
     private String key;
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -60,11 +60,11 @@ public final class DomainsSettingTag {
         return this.key;
     }
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true

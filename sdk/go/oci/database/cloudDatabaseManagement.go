@@ -73,6 +73,8 @@ type CloudDatabaseManagement struct {
 	EnableManagement pulumi.BoolOutput `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
+	// - `BASIC`
+	// - `ADVANCED`
 	ManagementType pulumi.StringOutput `pulumi:"managementType"`
 	// The port used to connect to the database.
 	Port pulumi.IntPtrOutput `pulumi:"port"`
@@ -146,6 +148,8 @@ type cloudDatabaseManagementState struct {
 	EnableManagement *bool `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
+	// - `BASIC`
+	// - `ADVANCED`
 	ManagementType *string `pulumi:"managementType"`
 	// The port used to connect to the database.
 	Port *int `pulumi:"port"`
@@ -172,6 +176,8 @@ type CloudDatabaseManagementState struct {
 	EnableManagement pulumi.BoolPtrInput
 	// (Updatable) Specifies database management type
 	// enum:
+	// - `BASIC`
+	// - `ADVANCED`
 	ManagementType pulumi.StringPtrInput
 	// The port used to connect to the database.
 	Port pulumi.IntPtrInput
@@ -202,6 +208,8 @@ type cloudDatabaseManagementArgs struct {
 	EnableManagement bool `pulumi:"enableManagement"`
 	// (Updatable) Specifies database management type
 	// enum:
+	// - `BASIC`
+	// - `ADVANCED`
 	ManagementType string `pulumi:"managementType"`
 	// The port used to connect to the database.
 	Port *int `pulumi:"port"`
@@ -229,6 +237,8 @@ type CloudDatabaseManagementArgs struct {
 	EnableManagement pulumi.BoolInput
 	// (Updatable) Specifies database management type
 	// enum:
+	// - `BASIC`
+	// - `ADVANCED`
 	ManagementType pulumi.StringInput
 	// The port used to connect to the database.
 	Port pulumi.IntPtrInput
@@ -352,6 +362,8 @@ func (o CloudDatabaseManagementOutput) EnableManagement() pulumi.BoolOutput {
 
 // (Updatable) Specifies database management type
 // enum:
+// - `BASIC`
+// - `ADVANCED`
 func (o CloudDatabaseManagementOutput) ManagementType() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudDatabaseManagement) pulumi.StringOutput { return v.ManagementType }).(pulumi.StringOutput)
 }

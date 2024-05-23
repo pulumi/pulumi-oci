@@ -17,14 +17,14 @@ public final class DeploymentDeployStageOverrideArgumentsArgs extends com.pulumi
     public static final DeploymentDeployStageOverrideArgumentsArgs Empty = new DeploymentDeployStageOverrideArgumentsArgs();
 
     /**
-     * List of arguments provided at the time of deployment.
+     * List of stage override arguments at the time of deployment.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeploymentDeployStageOverrideArgumentsItemArgs>> items;
 
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return List of stage override arguments at the time of deployment.
      * 
      */
     public Optional<Output<List<DeploymentDeployStageOverrideArgumentsItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeploymentDeployStageOverrideArgumentsArgs extends com.pulumi
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of stage override arguments at the time of deployment.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeploymentDeployStageOverrideArgumentsArgs extends com.pulumi
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of stage override arguments at the time of deployment.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeploymentDeployStageOverrideArgumentsArgs extends com.pulumi
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of stage override arguments at the time of deployment.
          * 
          * @return builder
          * 

@@ -355,7 +355,7 @@ class MetricExtensionMetricListArgs:
                  unit: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] data_type: (Updatable) Data type of value of this metric
-        :param pulumi.Input[str] name: (Updatable) Name of the script file
+        :param pulumi.Input[str] name: (Updatable) Name of the metric.
         :param pulumi.Input[str] compute_expression: (Updatable) Compute Expression to calculate the value of this metric
         :param pulumi.Input[str] display_name: (Updatable) Display name of the metric.
         :param pulumi.Input[bool] is_dimension: (Updatable) Current metric need to be included as dimension or not
@@ -394,7 +394,7 @@ class MetricExtensionMetricListArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Name of the script file
+        (Updatable) Name of the metric.
         """
         return pulumi.get(self, "name")
 
@@ -801,7 +801,7 @@ class MetricExtensionQueryPropertiesScriptDetailsArgs:
                  content: pulumi.Input[str],
                  name: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] content: (Updatable) Sql statement or script file content as base64 encoded string
+        :param pulumi.Input[str] content: (Updatable) Content of the script file as base64 encoded string
         :param pulumi.Input[str] name: (Updatable) Name of the script file
         """
         pulumi.set(__self__, "content", content)
@@ -811,7 +811,7 @@ class MetricExtensionQueryPropertiesScriptDetailsArgs:
     @pulumi.getter
     def content(self) -> pulumi.Input[str]:
         """
-        (Updatable) Sql statement or script file content as base64 encoded string
+        (Updatable) Content of the script file as base64 encoded string
         """
         return pulumi.get(self, "content")
 
@@ -878,8 +878,8 @@ class MonitoredResourceAdditionalAliasArgs:
                  source: pulumi.Input[str]):
         """
         :param pulumi.Input['MonitoredResourceAdditionalAliasCredentialArgs'] credential: (Updatable) Monitored Resource Alias Reference Source Credential.
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param pulumi.Input[str] name: (Updatable) The name of the alias, within the context of the source.
+        :param pulumi.Input[str] source: (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credential", credential)
         pulumi.set(__self__, "name", name)
@@ -901,7 +901,7 @@ class MonitoredResourceAdditionalAliasArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the alias, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -913,7 +913,7 @@ class MonitoredResourceAdditionalAliasArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -929,9 +929,9 @@ class MonitoredResourceAdditionalAliasCredentialArgs:
                  service: pulumi.Input[str],
                  source: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         :param pulumi.Input[str] service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
-        :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param pulumi.Input[str] source: (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -941,7 +941,7 @@ class MonitoredResourceAdditionalAliasCredentialArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         """
         return pulumi.get(self, "name")
 
@@ -965,7 +965,7 @@ class MonitoredResourceAdditionalAliasCredentialArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -991,14 +991,10 @@ class MonitoredResourceAdditionalCredentialArgs:
                * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param pulumi.Input[str] description: (Updatable) The user-specified textual description of the credential.
         :param pulumi.Input[str] key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[str] name: (Updatable) The name of the credential, within the context of the source.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]] properties: (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -1058,7 +1054,7 @@ class MonitoredResourceAdditionalCredentialArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1070,7 +1066,7 @@ class MonitoredResourceAdditionalCredentialArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceAdditionalCredentialPropertyArgs']]]]:
         """
-        (Updatable) List of monitored resource properties.
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         """
         return pulumi.get(self, "properties")
 
@@ -1094,11 +1090,7 @@ class MonitoredResourceAdditionalCredentialArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         return pulumi.get(self, "type")
 
@@ -1113,8 +1105,8 @@ class MonitoredResourceAdditionalCredentialPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[str] value: (Updatable) Property Value.
+        :param pulumi.Input[str] name: (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        :param pulumi.Input[str] value: (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1125,7 +1117,7 @@ class MonitoredResourceAdditionalCredentialPropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
         """
         return pulumi.get(self, "name")
 
@@ -1137,7 +1129,7 @@ class MonitoredResourceAdditionalCredentialPropertyArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Value.
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         return pulumi.get(self, "value")
 
@@ -1154,8 +1146,8 @@ class MonitoredResourceAliasesArgs:
                  source: pulumi.Input[str]):
         """
         :param pulumi.Input['MonitoredResourceAliasesCredentialArgs'] credential: (Updatable) Monitored Resource Alias Reference Source Credential.
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param pulumi.Input[str] name: (Updatable) The name of the alias, within the context of the source.
+        :param pulumi.Input[str] source: (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credential", credential)
         pulumi.set(__self__, "name", name)
@@ -1177,7 +1169,7 @@ class MonitoredResourceAliasesArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the alias, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1189,7 +1181,7 @@ class MonitoredResourceAliasesArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1205,9 +1197,9 @@ class MonitoredResourceAliasesCredentialArgs:
                  service: pulumi.Input[str],
                  source: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         :param pulumi.Input[str] service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
-        :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param pulumi.Input[str] source: (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -1217,7 +1209,7 @@ class MonitoredResourceAliasesCredentialArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         """
         return pulumi.get(self, "name")
 
@@ -1241,7 +1233,7 @@ class MonitoredResourceAliasesCredentialArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[str]:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1267,14 +1259,10 @@ class MonitoredResourceCredentialsArgs:
                * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param pulumi.Input[str] description: (Updatable) The user-specified textual description of the credential.
         :param pulumi.Input[str] key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[str] name: (Updatable) The name of the credential, within the context of the source.
+        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]] properties: (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         :param pulumi.Input[str] source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param pulumi.Input[str] type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -1334,7 +1322,7 @@ class MonitoredResourceCredentialsArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1346,7 +1334,7 @@ class MonitoredResourceCredentialsArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceCredentialsPropertyArgs']]]]:
         """
-        (Updatable) List of monitored resource properties.
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         """
         return pulumi.get(self, "properties")
 
@@ -1370,11 +1358,7 @@ class MonitoredResourceCredentialsArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         return pulumi.get(self, "type")
 
@@ -1389,8 +1373,8 @@ class MonitoredResourceCredentialsPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Property Name.
-        :param pulumi.Input[str] value: (Updatable) Property Value.
+        :param pulumi.Input[str] name: (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        :param pulumi.Input[str] value: (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1401,7 +1385,7 @@ class MonitoredResourceCredentialsPropertyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
         """
         return pulumi.get(self, "name")
 
@@ -1413,7 +1397,7 @@ class MonitoredResourceCredentialsPropertyArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Value.
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         return pulumi.get(self, "value")
 

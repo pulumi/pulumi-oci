@@ -16,14 +16,14 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
     public static final ConfigConfigurationClientCertificateDetailsClientCertificateArgs Empty = new ConfigConfigurationClientCertificateDetailsClientCertificateArgs();
 
     /**
-     * (Updatable) Content of the private key file.
+     * (Updatable) Content of the client certificate file.
      * 
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
-     * @return (Updatable) Content of the private key file.
+     * @return (Updatable) Content of the client certificate file.
      * 
      */
     public Optional<Output<String>> content() {
@@ -31,14 +31,14 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
     }
 
     /**
-     * (Updatable) Name of the private key file.
+     * (Updatable) Name of the certificate file. The name should not contain any confidential information.
      * 
      */
     @Import(name="fileName")
     private @Nullable Output<String> fileName;
 
     /**
-     * @return (Updatable) Name of the private key file.
+     * @return (Updatable) Name of the certificate file. The name should not contain any confidential information.
      * 
      */
     public Optional<Output<String>> fileName() {
@@ -71,7 +71,7 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
         }
 
         /**
-         * @param content (Updatable) Content of the private key file.
+         * @param content (Updatable) Content of the client certificate file.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
         }
 
         /**
-         * @param content (Updatable) Content of the private key file.
+         * @param content (Updatable) Content of the client certificate file.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
         }
 
         /**
-         * @param fileName (Updatable) Name of the private key file.
+         * @param fileName (Updatable) Name of the certificate file. The name should not contain any confidential information.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificateA
         }
 
         /**
-         * @param fileName (Updatable) Name of the private key file.
+         * @param fileName (Updatable) Name of the certificate file. The name should not contain any confidential information.
          * 
          * @return builder
          * 

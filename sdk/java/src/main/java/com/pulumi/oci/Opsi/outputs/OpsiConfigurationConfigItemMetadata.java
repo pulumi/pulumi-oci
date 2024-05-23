@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class OpsiConfigurationConfigItemMetadata {
     /**
-     * @return (Updatable) Type of configuration item.
+     * @return Type of configuration item.
      * 
      */
     private @Nullable String configItemType;
@@ -47,7 +47,7 @@ public final class OpsiConfigurationConfigItemMetadata {
 
     private OpsiConfigurationConfigItemMetadata() {}
     /**
-     * @return (Updatable) Type of configuration item.
+     * @return Type of configuration item.
      * 
      */
     public Optional<String> configItemType() {

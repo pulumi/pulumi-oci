@@ -126,12 +126,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -145,12 +143,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     private @Nullable Output<String> nginxSettings;
 
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -235,12 +231,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) URI of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -254,12 +248,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) URI of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -309,14 +301,14 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Server Name for the Server Block
+     * (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -326,14 +318,14 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     private Output<String> serverId;
 
     /**
-     * @return (Updatable) Server Name for the Server Block
+     * @return (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -383,44 +375,34 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The id of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -589,12 +571,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param nginxSettings (Updatable) Any additional settings for this upstream server in nginx configuration form
-         * 
-         * **Added In:** 20.1.3
+         * @param nginxSettings (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -612,12 +592,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param nginxSettings (Updatable) Any additional settings for this upstream server in nginx configuration form
-         * 
-         * **Added In:** 20.1.3
+         * @param nginxSettings (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -716,12 +694,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) URI of the App being mapped to
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -739,12 +715,10 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) URI of the App being mapped to
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -802,14 +776,14 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param serverId (Updatable) Server Name for the Server Block
+         * @param serverId (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -823,14 +797,14 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param serverId (Updatable) Server Name for the Server Block
+         * @param serverId (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -888,22 +862,17 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the App being mapped to
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -914,22 +883,17 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the App being mapped to
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -119,7 +119,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     public /*out*/ readonly peerRegion!: pulumi.Output<string>;
     /**
-     * The type of the plan execution.
+     * The type of the DR plan executed.
      */
     public /*out*/ readonly planExecutionType!: pulumi.Output<string>;
     /**
@@ -275,7 +275,7 @@ export interface DrPlanExecutionState {
      */
     peerRegion?: pulumi.Input<string>;
     /**
-     * The type of the plan execution.
+     * The type of the DR plan executed.
      */
     planExecutionType?: pulumi.Input<string>;
     /**

@@ -139,20 +139,14 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The cross-connect group&#39;s current state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The cross-connect group&#39;s current state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -376,10 +370,7 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state (Updatable) Indicates whether or not MACsec is enabled.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param state The cross-connect group&#39;s current state.
          * 
          * @return builder
          * 
@@ -390,10 +381,7 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param state (Updatable) Indicates whether or not MACsec is enabled.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param state The cross-connect group&#39;s current state.
          * 
          * @return builder
          * 

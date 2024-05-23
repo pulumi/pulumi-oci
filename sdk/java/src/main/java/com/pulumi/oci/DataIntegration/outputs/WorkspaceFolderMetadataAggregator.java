@@ -22,7 +22,7 @@ public final class WorkspaceFolderMetadataAggregator {
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     private @Nullable String key;
@@ -53,7 +53,7 @@ public final class WorkspaceFolderMetadataAggregator {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     public Optional<String> key() {

@@ -13,12 +13,15 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) Group display name
+        /// 
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -46,17 +49,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> IdcsAppRoleId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the user's support account.
+        /// (Updatable) The ocid of a Group the AppRole Grant is limited to
         /// 
-        /// **Added In:** 2103141444
+        /// **Added In:** 2202230830
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * idcsCsvAttributeName: Group Ocid
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -64,9 +67,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the SCIM resource representing the Group manager.  RECOMMENDED.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -81,20 +84,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The id of a Group the AppRole Grant is limited to
+        /// 
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsCsvAttributeName: Group Name
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

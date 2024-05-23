@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -38,10 +38,6 @@ namespace Pulumi.Oci.Core.Inputs
 
         /// <summary>
         /// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalDbSystem = new ExternalDbSystem("testExternalDbSystem", ExternalDbSystemArgs.builder()        
+ *         var testExternalDbSystem = new ExternalDbSystem("testExternalDbSystem", ExternalDbSystemArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbSystemDiscoveryId(testDbSystemDiscovery.id())
  *             .databaseManagementConfig(ExternalDbSystemDatabaseManagementConfigArgs.builder()

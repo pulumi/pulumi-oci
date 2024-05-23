@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeploymentDeployPipelineArtifactItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the artifact to which this parameter applies.
+        /// The OCID of an artifact
         /// </summary>
         [Input("deployArtifactId")]
         public Input<string>? DeployArtifactId { get; set; }

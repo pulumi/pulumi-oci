@@ -60,7 +60,7 @@ export class LibraryMasingFormat extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the library masking format.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -162,7 +162,7 @@ export interface LibraryMasingFormatState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the library masking format.
      */
     description?: pulumi.Input<string>;
     /**
@@ -216,7 +216,7 @@ export interface LibraryMasingFormatArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the library masking format.
      */
     description?: pulumi.Input<string>;
     /**

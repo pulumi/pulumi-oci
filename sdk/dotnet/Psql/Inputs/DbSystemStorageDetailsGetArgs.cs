@@ -32,10 +32,6 @@ namespace Pulumi.Oci.Psql.Inputs
 
         /// <summary>
         /// Type of the database system.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("systemType", required: true)]
         public Input<string> SystemType { get; set; } = null!;

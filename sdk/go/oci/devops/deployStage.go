@@ -38,7 +38,7 @@ type DeployStage struct {
 	CanaryStrategy DeployStageCanaryStrategyOutput `pulumi:"canaryStrategy"`
 	// (Updatable) The OCID of the artifact that contains the command specification.
 	CommandSpecDeployArtifactId pulumi.StringOutput `pulumi:"commandSpecDeployArtifactId"`
-	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+	// The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringOutput `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
@@ -219,7 +219,7 @@ type deployStageState struct {
 	CanaryStrategy *DeployStageCanaryStrategy `pulumi:"canaryStrategy"`
 	// (Updatable) The OCID of the artifact that contains the command specification.
 	CommandSpecDeployArtifactId *string `pulumi:"commandSpecDeployArtifactId"`
-	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+	// The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId *string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
@@ -362,7 +362,7 @@ type DeployStageState struct {
 	CanaryStrategy DeployStageCanaryStrategyPtrInput
 	// (Updatable) The OCID of the artifact that contains the command specification.
 	CommandSpecDeployArtifactId pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+	// The OCID of the compartment where the ContainerInstance will be created.
 	CompartmentId pulumi.StringPtrInput
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
 	ComputeInstanceGroupBlueGreenDeploymentDeployStageId pulumi.StringPtrInput
@@ -872,7 +872,7 @@ func (o DeployStageOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+// The OCID of the compartment where the ContainerInstance will be created.
 func (o DeployStageOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

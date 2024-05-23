@@ -36,7 +36,7 @@ class ConnectionArgs:
         """
         The set of arguments for constructing a Connection resource.
         :param pulumi.Input['ConnectionAdminCredentialsArgs'] admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] database_type: Database connection type.
         :param pulumi.Input['ConnectionVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
@@ -100,7 +100,7 @@ class ConnectionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -319,7 +319,7 @@ class _ConnectionState:
         Input properties used for looking up and filtering Connection resources.
         :param pulumi.Input['ConnectionAdminCredentialsArgs'] admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input['ConnectionConnectDescriptorArgs'] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
         :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
@@ -416,7 +416,7 @@ class _ConnectionState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -759,7 +759,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['ConnectionAdminCredentialsArgs']] admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[pulumi.InputType['ConnectionConnectDescriptorArgs']] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
         :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
         :param pulumi.Input[str] database_type: Database connection type.
@@ -962,7 +962,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['ConnectionAdminCredentialsArgs']] admin_credentials: (Updatable) Database Administrator Credentials details.
         :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[pulumi.InputType['ConnectionConnectDescriptorArgs']] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
         :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
@@ -1033,7 +1033,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 

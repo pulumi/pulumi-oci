@@ -66,14 +66,14 @@ public class LibraryMasingFormat extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the library masking format.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the format entry.
+     * @return (Updatable) The description of the library masking format.
      * 
      */
     public Output<String> description() {

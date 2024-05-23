@@ -32,6 +32,8 @@ namespace Pulumi.Oci.AiDocument.Inputs
 
         /// <summary>
         /// The type of input location. The allowed values are:
+        /// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        /// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

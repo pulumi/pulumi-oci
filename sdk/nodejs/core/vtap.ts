@@ -111,6 +111,8 @@ export class Vtap extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
     public readonly isVtapEnabled!: pulumi.Output<boolean>;
     /**
@@ -279,6 +281,8 @@ export interface VtapState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
     isVtapEnabled?: pulumi.Input<boolean>;
     /**
@@ -373,6 +377,8 @@ export interface VtapArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
+     * * `TRUE` directs the VTAP to start mirroring traffic.
+     * * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
      */
     isVtapEnabled?: pulumi.Input<boolean>;
     /**

@@ -16,14 +16,14 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
     public static final ConfigConfigurationRequestQueryParamArgs Empty = new ConfigConfigurationRequestQueryParamArgs();
 
     /**
-     * (Updatable) Name of the parameter.
+     * (Updatable) Name of request query parameter.
      * 
      */
     @Import(name="paramName")
     private @Nullable Output<String> paramName;
 
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return (Updatable) Name of request query parameter.
      * 
      */
     public Optional<Output<String>> paramName() {
@@ -31,14 +31,14 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Value of the parameter.
+     * (Updatable) Value of request query parameter.
      * 
      */
     @Import(name="paramValue")
     private @Nullable Output<String> paramValue;
 
     /**
-     * @return (Updatable) Value of the parameter.
+     * @return (Updatable) Value of request query parameter.
      * 
      */
     public Optional<Output<String>> paramValue() {
@@ -71,7 +71,7 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName (Updatable) Name of request query parameter.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName (Updatable) Name of request query parameter.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
+         * @param paramValue (Updatable) Value of request query parameter.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigConfigurationRequestQueryParamArgs extends com.pulumi.r
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
+         * @param paramValue (Updatable) Value of request query parameter.
          * 
          * @return builder
          * 

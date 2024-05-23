@@ -36,14 +36,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
     @Import(name="dataSourceFeedProvider", required=true)
     private Output<String> dataSourceFeedProvider;
 
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
     public Output<String> dataSourceFeedProvider() {
@@ -126,14 +126,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Time when the query can start, if not specified it can start immediately.
+     * (Updatable) Continuous query start policy object
      * 
      */
     @Import(name="queryStartTime")
     private @Nullable Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs> queryStartTime;
 
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Continuous query start policy object
      * 
      */
     public Optional<Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs>> queryStartTime() {
@@ -225,7 +225,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Time when the query can start, if not specified it can start immediately.
+         * @param queryStartTime (Updatable) Continuous query start policy object
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Time when the query can start, if not specified it can start immediately.
+         * @param queryStartTime (Updatable) Continuous query start policy object
          * 
          * @return builder
          * 

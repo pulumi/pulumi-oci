@@ -13,10 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsSelfRegistrationProfileDefaultGroup {
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -28,10 +27,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Default Group
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -43,7 +41,7 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Default Group.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -55,18 +53,14 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
     private DomainsSelfRegistrationProfileDefaultGroup() {}
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -80,10 +74,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Default Group
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -97,7 +90,7 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Default Group.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -108,9 +101,6 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

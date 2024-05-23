@@ -194,14 +194,14 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * When the lock was created.
+     * The time when the CDN Config was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the CDN Config was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -511,7 +511,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the CDN Config was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -522,7 +522,7 @@ public final class StreamCdnConfigState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the CDN Config was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

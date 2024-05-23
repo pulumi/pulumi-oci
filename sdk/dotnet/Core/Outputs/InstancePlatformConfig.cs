@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int? PercentageOfCoresEnabled;
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type of platform being configured.
         /// </summary>
         public readonly string Type;
 

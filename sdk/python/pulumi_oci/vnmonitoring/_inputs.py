@@ -74,11 +74,7 @@ class PathAnalysiDestinationEndpointArgs:
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The type of the `Endpoint`.
         :param pulumi.Input[str] address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
         :param pulumi.Input[str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
@@ -112,11 +108,7 @@ class PathAnalysiDestinationEndpointArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of the `Endpoint`.
         """
         return pulumi.get(self, "type")
 
@@ -239,11 +231,7 @@ class PathAnalysiProtocolParametersArgs:
                  icmp_type: Optional[pulumi.Input[int]] = None,
                  source_port: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The type of the `ProtocolParameters` object.
         :param pulumi.Input[int] destination_port: The destination port to use in a `PathAnalyzerTest` resource.
         :param pulumi.Input[int] icmp_code: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
         :param pulumi.Input[int] icmp_type: The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
@@ -263,11 +251,7 @@ class PathAnalysiProtocolParametersArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of the `ProtocolParameters` object.
         """
         return pulumi.get(self, "type")
 
@@ -361,11 +345,7 @@ class PathAnalysiSourceEndpointArgs:
                  vlan_id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: The type of the `PathAnalysis` query.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: The type of the `Endpoint`.
         :param pulumi.Input[str] address: The IPv4 address of the COMPUTE_INSTANCE-type `Endpoint` object.
         :param pulumi.Input[str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute instance.
         :param pulumi.Input[str] listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer listener.
@@ -399,11 +379,7 @@ class PathAnalysiSourceEndpointArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of the `PathAnalysis` query.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The type of the `Endpoint`.
         """
         return pulumi.get(self, "type")
 
@@ -540,11 +516,7 @@ class PathAnalyzerTestDestinationEndpointArgs:
         :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address. This can be used to disambiguate which subnet is intended, in case the IP address is used in more than one subnet (when there are subnets with overlapping IP ranges).
         :param pulumi.Input[str] vlan_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN containing the IP address. This can be used to disambiguate which VLAN is queried, in case the endpoint IP address belongs to more than one VLAN (when there are VLANs with overlapping IP ranges).
-        :param pulumi.Input[str] vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] vnic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
         """
         pulumi.set(__self__, "type", type)
         if address is not None:
@@ -678,11 +650,7 @@ class PathAnalyzerTestDestinationEndpointArgs:
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC attached to the compute instance.
         """
         return pulumi.get(self, "vnic_id")
 
@@ -700,7 +668,7 @@ class PathAnalyzerTestProtocolParametersArgs:
                  icmp_type: Optional[pulumi.Input[int]] = None,
                  source_port: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) The type of the `Endpoint`.
+        :param pulumi.Input[str] type: (Updatable) The type of the `ProtocolParameters` object.
         :param pulumi.Input[int] destination_port: (Updatable) The destination port to use in a `PathAnalyzerTest` resource.
         :param pulumi.Input[int] icmp_code: (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
         :param pulumi.Input[int] icmp_type: (Updatable) The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
@@ -720,7 +688,7 @@ class PathAnalyzerTestProtocolParametersArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of the `Endpoint`.
+        (Updatable) The type of the `ProtocolParameters` object.
         """
         return pulumi.get(self, "type")
 

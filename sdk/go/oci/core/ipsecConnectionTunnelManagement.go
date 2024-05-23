@@ -87,9 +87,9 @@ type IpsecConnectionTunnelManagement struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput                                 `pulumi:"displayName"`
 	DpdConfigs  IpsecConnectionTunnelManagementDpdConfigArrayOutput `pulumi:"dpdConfigs"`
-	// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
 	DpdMode pulumi.StringOutput `pulumi:"dpdMode"`
-	// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+	// DPD timeout in seconds.
 	DpdTimeoutInSec pulumi.IntOutput `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigOutput `pulumi:"encryptionDomainConfig"`
@@ -187,9 +187,9 @@ type ipsecConnectionTunnelManagementState struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                                    `pulumi:"displayName"`
 	DpdConfigs  []IpsecConnectionTunnelManagementDpdConfig `pulumi:"dpdConfigs"`
-	// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
 	DpdMode *string `pulumi:"dpdMode"`
-	// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+	// DPD timeout in seconds.
 	DpdTimeoutInSec *int `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig *IpsecConnectionTunnelManagementEncryptionDomainConfig `pulumi:"encryptionDomainConfig"`
@@ -245,9 +245,9 @@ type IpsecConnectionTunnelManagementState struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	DpdConfigs  IpsecConnectionTunnelManagementDpdConfigArrayInput
-	// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
 	DpdMode pulumi.StringPtrInput
-	// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+	// DPD timeout in seconds.
 	DpdTimeoutInSec pulumi.IntPtrInput
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
 	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigPtrInput
@@ -492,12 +492,12 @@ func (o IpsecConnectionTunnelManagementOutput) DpdConfigs() IpsecConnectionTunne
 	}).(IpsecConnectionTunnelManagementDpdConfigArrayOutput)
 }
 
-// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+// Dead peer detection (DPD) mode set on the Oracle side of the connection.
 func (o IpsecConnectionTunnelManagementOutput) DpdMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.DpdMode }).(pulumi.StringOutput)
 }
 
-// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+// DPD timeout in seconds.
 func (o IpsecConnectionTunnelManagementOutput) DpdTimeoutInSec() pulumi.IntOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.IntOutput { return v.DpdTimeoutInSec }).(pulumi.IntOutput)
 }

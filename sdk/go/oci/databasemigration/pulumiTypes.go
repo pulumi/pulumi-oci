@@ -174,7 +174,7 @@ type ConnectionConnectDescriptor struct {
 	ConnectString *string `pulumi:"connectString"`
 	// (Updatable) Database service name. Required if no connectString was specified.
 	DatabaseServiceName *string `pulumi:"databaseServiceName"`
-	// (Updatable) Name of the host the SSH key is valid for.
+	// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
 	Host *string `pulumi:"host"`
 	// (Updatable) Port of the connect descriptor. Required if no connectString was specified.
 	Port *int `pulumi:"port"`
@@ -196,7 +196,7 @@ type ConnectionConnectDescriptorArgs struct {
 	ConnectString pulumi.StringPtrInput `pulumi:"connectString"`
 	// (Updatable) Database service name. Required if no connectString was specified.
 	DatabaseServiceName pulumi.StringPtrInput `pulumi:"databaseServiceName"`
-	// (Updatable) Name of the host the SSH key is valid for.
+	// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) Port of the connect descriptor. Required if no connectString was specified.
 	Port pulumi.IntPtrInput `pulumi:"port"`
@@ -289,7 +289,7 @@ func (o ConnectionConnectDescriptorOutput) DatabaseServiceName() pulumi.StringPt
 	return o.ApplyT(func(v ConnectionConnectDescriptor) *string { return v.DatabaseServiceName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the host the SSH key is valid for.
+// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
 func (o ConnectionConnectDescriptorOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionConnectDescriptor) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
@@ -343,7 +343,7 @@ func (o ConnectionConnectDescriptorPtrOutput) DatabaseServiceName() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the host the SSH key is valid for.
+// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
 func (o ConnectionConnectDescriptorPtrOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionConnectDescriptor) *string {
 		if v == nil {
@@ -364,7 +364,7 @@ func (o ConnectionConnectDescriptorPtrOutput) Port() pulumi.IntPtrOutput {
 }
 
 type ConnectionPrivateEndpoint struct {
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
 	Id *string `pulumi:"id"`
@@ -386,7 +386,7 @@ type ConnectionPrivateEndpointInput interface {
 }
 
 type ConnectionPrivateEndpointArgs struct {
-	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -473,7 +473,7 @@ func (o ConnectionPrivateEndpointOutput) ToConnectionPrivateEndpointPtrOutputWit
 	}).(ConnectionPrivateEndpointPtrOutput)
 }
 
-// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
 func (o ConnectionPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectionPrivateEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -517,7 +517,7 @@ func (o ConnectionPrivateEndpointPtrOutput) Elem() ConnectionPrivateEndpointOutp
 	}).(ConnectionPrivateEndpointOutput)
 }
 
-// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
 func (o ConnectionPrivateEndpointPtrOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionPrivateEndpoint) *string {
 		if v == nil {
@@ -2031,7 +2031,7 @@ func (o MigrationDataTransferMediumDetailsPtrOutput) ObjectStorageDetails() Migr
 }
 
 type MigrationDataTransferMediumDetailsDatabaseLinkDetails struct {
-	// (Updatable) Name of directory object in database
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 	Name *string `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	WalletBucket *MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket `pulumi:"walletBucket"`
@@ -2049,7 +2049,7 @@ type MigrationDataTransferMediumDetailsDatabaseLinkDetailsInput interface {
 }
 
 type MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs struct {
-	// (Updatable) Name of directory object in database
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	WalletBucket MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrInput `pulumi:"walletBucket"`
@@ -2132,7 +2132,7 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput) ToMigration
 	}).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput)
 }
 
-// (Updatable) Name of directory object in database
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsDatabaseLinkDetails) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2168,7 +2168,7 @@ func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) Elem() M
 	}).(MigrationDataTransferMediumDetailsDatabaseLinkDetailsOutput)
 }
 
-// (Updatable) Name of directory object in database
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 func (o MigrationDataTransferMediumDetailsDatabaseLinkDetailsPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsDatabaseLinkDetails) *string {
 		if v == nil {
@@ -2503,7 +2503,7 @@ func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) Namespa
 type MigrationDataTransferMediumDetailsV2 struct {
 	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId *string `pulumi:"accessKeyId"`
-	// (Updatable) Name of directory object in database
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 	Name *string `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket *MigrationDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBucket"`
@@ -2511,7 +2511,7 @@ type MigrationDataTransferMediumDetailsV2 struct {
 	Region *string `pulumi:"region"`
 	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of the data transfer medium to use for the datapump
 	Type string `pulumi:"type"`
 }
 
@@ -2529,7 +2529,7 @@ type MigrationDataTransferMediumDetailsV2Input interface {
 type MigrationDataTransferMediumDetailsV2Args struct {
 	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
-	// (Updatable) Name of directory object in database
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput `pulumi:"objectStorageBucket"`
@@ -2537,7 +2537,7 @@ type MigrationDataTransferMediumDetailsV2Args struct {
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of the data transfer medium to use for the datapump
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -2623,7 +2623,7 @@ func (o MigrationDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringP
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of directory object in database
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 func (o MigrationDataTransferMediumDetailsV2Output) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2645,7 +2645,7 @@ func (o MigrationDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.Str
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Migration type.
+// (Updatable) Type of the data transfer medium to use for the datapump
 func (o MigrationDataTransferMediumDetailsV2Output) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2684,7 +2684,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) AccessKeyId() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of directory object in database
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
 		if v == nil {
@@ -2724,7 +2724,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) SecretAccessKey() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Migration type.
+// (Updatable) Type of the data transfer medium to use for the datapump
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
 		if v == nil {
@@ -3658,7 +3658,7 @@ type MigrationDatapumpSettingsMetadataRemap struct {
 	NewValue string `pulumi:"newValue"`
 	// (Updatable) Specifies the value which needs to be reset.
 	OldValue string `pulumi:"oldValue"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
 	Type string `pulumi:"type"`
 }
 
@@ -3678,7 +3678,7 @@ type MigrationDatapumpSettingsMetadataRemapArgs struct {
 	NewValue pulumi.StringInput `pulumi:"newValue"`
 	// (Updatable) Specifies the value which needs to be reset.
 	OldValue pulumi.StringInput `pulumi:"oldValue"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -3743,7 +3743,7 @@ func (o MigrationDatapumpSettingsMetadataRemapOutput) OldValue() pulumi.StringOu
 	return o.ApplyT(func(v MigrationDatapumpSettingsMetadataRemap) string { return v.OldValue }).(pulumi.StringOutput)
 }
 
-// (Updatable) Migration type.
+// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
 func (o MigrationDatapumpSettingsMetadataRemapOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationDatapumpSettingsMetadataRemap) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -4300,7 +4300,7 @@ type MigrationExcludeObject struct {
 	Object string `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
 	Owner string `pulumi:"owner"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 	Type *string `pulumi:"type"`
 }
 
@@ -4322,7 +4322,7 @@ type MigrationExcludeObjectArgs struct {
 	Object pulumi.StringInput `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
 	Owner pulumi.StringInput `pulumi:"owner"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -4392,7 +4392,7 @@ func (o MigrationExcludeObjectOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationExcludeObject) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// (Updatable) Migration type.
+// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 func (o MigrationExcludeObjectOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationExcludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -4852,9 +4852,9 @@ func (o MigrationGoldenGateDetailsHubPtrOutput) Url() pulumi.StringPtrOutput {
 }
 
 type MigrationGoldenGateDetailsHubRestAdminCredentials struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password string `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username string `pulumi:"username"`
 }
 
@@ -4870,9 +4870,9 @@ type MigrationGoldenGateDetailsHubRestAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubRestAdminCredentialsArgs struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -4953,12 +4953,12 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) ToMigrationGold
 	}).(MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubRestAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubRestAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -4987,7 +4987,7 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Elem() Migra
 	}).(MigrationGoldenGateDetailsHubRestAdminCredentialsOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubRestAdminCredentials) *string {
 		if v == nil {
@@ -4997,7 +4997,7 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Password() p
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubRestAdminCredentials) *string {
 		if v == nil {
@@ -5008,9 +5008,9 @@ func (o MigrationGoldenGateDetailsHubRestAdminCredentialsPtrOutput) Username() p
 }
 
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password string `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username string `pulumi:"username"`
 }
 
@@ -5026,9 +5026,9 @@ type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsInput interfa
 }
 
 type MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -5109,12 +5109,12 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) To
 	}).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -5143,7 +5143,7 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 	}).(MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) *string {
 		if v == nil {
@@ -5153,7 +5153,7 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials) *string {
 		if v == nil {
@@ -5164,9 +5164,9 @@ func (o MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPtrOutput)
 }
 
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentials struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password string `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username string `pulumi:"username"`
 }
 
@@ -5182,9 +5182,9 @@ type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -5265,12 +5265,12 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubSourceDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -5299,7 +5299,7 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Elem() M
 	}).(MigrationGoldenGateDetailsHubSourceDbAdminCredentialsOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceDbAdminCredentials) *string {
 		if v == nil {
@@ -5309,7 +5309,7 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Password
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubSourceDbAdminCredentials) *string {
 		if v == nil {
@@ -5320,9 +5320,9 @@ func (o MigrationGoldenGateDetailsHubSourceDbAdminCredentialsPtrOutput) Username
 }
 
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentials struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password string `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username string `pulumi:"username"`
 }
 
@@ -5338,9 +5338,9 @@ type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsInput interface {
 }
 
 type MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs struct {
-	// (Updatable) Database  password
+	// (Updatable) Administrator password
 	Password pulumi.StringInput `pulumi:"password"`
-	// (Updatable) Database username
+	// (Updatable) Administrator username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -5421,12 +5421,12 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) ToMigration
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubTargetDbAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsHubTargetDbAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -5455,7 +5455,7 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Elem() M
 	}).(MigrationGoldenGateDetailsHubTargetDbAdminCredentialsOutput)
 }
 
-// (Updatable) Database  password
+// (Updatable) Administrator password
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubTargetDbAdminCredentials) *string {
 		if v == nil {
@@ -5465,7 +5465,7 @@ func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Password
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Database username
+// (Updatable) Administrator username
 func (o MigrationGoldenGateDetailsHubTargetDbAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsHubTargetDbAdminCredentials) *string {
 		if v == nil {
@@ -5817,7 +5817,7 @@ type MigrationGoldenGateDetailsSettingsReplicat struct {
 	MaxApplyParallelism *int `pulumi:"maxApplyParallelism"`
 	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism *int `pulumi:"minApplyParallelism"`
-	// (Updatable) Extract performance.
+	// Extract performance.
 	PerformanceProfile *string `pulumi:"performanceProfile"`
 }
 
@@ -5839,7 +5839,7 @@ type MigrationGoldenGateDetailsSettingsReplicatArgs struct {
 	MaxApplyParallelism pulumi.IntPtrInput `pulumi:"maxApplyParallelism"`
 	// (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
 	MinApplyParallelism pulumi.IntPtrInput `pulumi:"minApplyParallelism"`
-	// (Updatable) Extract performance.
+	// Extract performance.
 	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
 }
 
@@ -5935,7 +5935,7 @@ func (o MigrationGoldenGateDetailsSettingsReplicatOutput) MinApplyParallelism() 
 	return o.ApplyT(func(v MigrationGoldenGateDetailsSettingsReplicat) *int { return v.MinApplyParallelism }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Extract performance.
+// Extract performance.
 func (o MigrationGoldenGateDetailsSettingsReplicatOutput) PerformanceProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationGoldenGateDetailsSettingsReplicat) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
 }
@@ -5994,7 +5994,7 @@ func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) MinApplyParallelism
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Extract performance.
+// Extract performance.
 func (o MigrationGoldenGateDetailsSettingsReplicatPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationGoldenGateDetailsSettingsReplicat) *string {
 		if v == nil {
@@ -7318,7 +7318,7 @@ type MigrationIncludeObject struct {
 	Object string `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
 	Owner string `pulumi:"owner"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 	Type *string `pulumi:"type"`
 }
 
@@ -7340,7 +7340,7 @@ type MigrationIncludeObjectArgs struct {
 	Object pulumi.StringInput `pulumi:"object"`
 	// (Updatable) Owner of the object (regular expression is allowed)
 	Owner pulumi.StringInput `pulumi:"owner"`
-	// (Updatable) Migration type.
+	// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -7410,7 +7410,7 @@ func (o MigrationIncludeObjectOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v MigrationIncludeObject) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// (Updatable) Migration type.
+// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
 func (o MigrationIncludeObjectOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationIncludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

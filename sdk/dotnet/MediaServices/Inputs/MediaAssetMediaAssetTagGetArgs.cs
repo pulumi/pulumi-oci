@@ -13,11 +13,7 @@ namespace Pulumi.Oci.MediaServices.Inputs
     public sealed class MediaAssetMediaAssetTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of the media asset.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the tag.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

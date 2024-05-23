@@ -57,9 +57,10 @@ public final class DomainsAppMeta {
      */
     private @Nullable String location;
     /**
-     * @return (Updatable) Object class resource type
+     * @return (Updatable) Name of the resource type of the resource--for example, Users or Groups
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -139,9 +140,10 @@ public final class DomainsAppMeta {
         return Optional.ofNullable(this.location);
     }
     /**
-     * @return (Updatable) Object class resource type
+     * @return (Updatable) Name of the resource type of the resource--for example, Users or Groups
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly

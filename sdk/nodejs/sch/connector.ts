@@ -147,7 +147,7 @@ export class Connector extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -267,7 +267,7 @@ export class Connector extends pulumi.CustomResource {
  */
 export interface ConnectorState {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -329,7 +329,7 @@ export interface ConnectorState {
  */
 export interface ConnectorArgs {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      */
     compartmentId: pulumi.Input<string>;
     /**

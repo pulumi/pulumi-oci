@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackend = new Backend("testBackend", BackendArgs.builder()        
+ *         var testBackend = new Backend("testBackend", BackendArgs.builder()
  *             .backendsetName(testBackendSet.name())
  *             .ipAddress(backendIpAddress)
  *             .loadBalancerId(testLoadBalancer.id())

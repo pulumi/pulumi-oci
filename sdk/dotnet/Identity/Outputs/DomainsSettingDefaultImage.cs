@@ -16,9 +16,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// (Updatable) A human-readable name, primarily used for display purposes
         /// 
+        /// **Added In:** 18.2.2
+        /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -27,26 +29,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// (Updatable) Indicates the image type
         /// 
+        /// **Added In:** 18.2.2
+        /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) Custom claim value
+        /// (Updatable) Image URI
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
+        /// * type: reference
         /// </summary>
         public readonly string Value;
 

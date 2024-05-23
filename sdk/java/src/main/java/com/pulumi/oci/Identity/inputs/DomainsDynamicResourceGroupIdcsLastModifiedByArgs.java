@@ -52,34 +52,32 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -157,18 +155,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
     }
 
     /**
-     * (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
      * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -176,18 +172,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
     private Output<String> value;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
      * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -265,17 +259,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -286,17 +279,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -388,18 +380,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
         }
 
         /**
-         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
-         * 
-         * **Added In:** 2011192329
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
          * * required: true
-         * * idcsReturnEmptyWhenNull: true
-         * * mutability: readWrite
          * * returned: default
          * * type: string
-         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder
@@ -411,18 +401,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedByArgs extends com
         }
 
         /**
-         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
-         * 
-         * **Added In:** 2011192329
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
          * * required: true
-         * * idcsReturnEmptyWhenNull: true
-         * * mutability: readWrite
          * * returned: default
          * * type: string
-         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder

@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount {
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -27,9 +27,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding SocialAccount resource linked with the user
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -43,31 +41,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     private String value;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount() {}
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -78,9 +64,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding SocialAccount resource linked with the user
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -96,19 +80,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     public String value() {

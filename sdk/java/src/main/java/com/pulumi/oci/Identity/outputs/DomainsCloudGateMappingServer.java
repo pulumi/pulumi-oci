@@ -13,9 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsCloudGateMappingServer {
     /**
-     * @return (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI to the server block entry
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -30,31 +28,24 @@ public final class DomainsCloudGateMappingServer {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the server block entry.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsCloudGateMappingServer() {}
     /**
-     * @return (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI to the server block entry
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -71,22 +62,17 @@ public final class DomainsCloudGateMappingServer {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the server block entry.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

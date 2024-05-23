@@ -19,14 +19,14 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
     public static final WorkspaceApplicationTaskScheduleRegistryMetadataArgs Empty = new WorkspaceApplicationTaskScheduleRegistryMetadataArgs();
 
     /**
-     * (Updatable) The owning object key for this object.
+     * (Updatable) The owning object&#39;s key for this object.
      * 
      */
     @Import(name="aggregatorKey")
     private @Nullable Output<String> aggregatorKey;
 
     /**
-     * @return (Updatable) The owning object key for this object.
+     * @return (Updatable) The owning object&#39;s key for this object.
      * 
      */
     public Optional<Output<String>> aggregatorKey() {
@@ -49,14 +49,14 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
     }
 
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) The identifying key for the object.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     public Optional<Output<String>> key() {
@@ -64,14 +64,14 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
     }
 
     /**
-     * (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -79,14 +79,14 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
     }
 
     /**
-     * (Updatable) The registry version of the object.
+     * (Updatable) The registry version.
      * 
      */
     @Import(name="registryVersion")
     private @Nullable Output<Integer> registryVersion;
 
     /**
-     * @return (Updatable) The registry version of the object.
+     * @return (Updatable) The registry version.
      * 
      */
     public Optional<Output<Integer>> registryVersion() {
@@ -122,7 +122,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param aggregatorKey (Updatable) The owning object key for this object.
+         * @param aggregatorKey (Updatable) The owning object&#39;s key for this object.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param aggregatorKey (Updatable) The owning object key for this object.
+         * @param aggregatorKey (Updatable) The owning object&#39;s key for this object.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) The identifying key for the object.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) The identifying key for the object.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param registryVersion (Updatable) The registry version of the object.
+         * @param registryVersion (Updatable) The registry version.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadataArgs extends 
         }
 
         /**
-         * @param registryVersion (Updatable) The registry version of the object.
+         * @param registryVersion (Updatable) The registry version.
          * 
          * @return builder
          * 

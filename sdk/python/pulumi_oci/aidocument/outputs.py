@@ -80,12 +80,18 @@ class ModelComponentModel(dict):
 
     def __init__(__self__, *,
                  model_id: Optional[str] = None):
+        """
+        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        """
         return pulumi.get(self, "model_id")
 
 
@@ -538,10 +544,6 @@ class ModelTestingDataset(dict):
         :param str dataset_id: OCID of the Data Labeling dataset.
         :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
         :param str object: The object name of the input data file.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
@@ -590,10 +592,6 @@ class ModelTestingDataset(dict):
     def object(self) -> Optional[str]:
         """
         The object name of the input data file.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -631,10 +629,6 @@ class ModelTrainingDataset(dict):
         :param str dataset_id: OCID of the Data Labeling dataset.
         :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
         :param str object: The object name of the input data file.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
@@ -683,10 +677,6 @@ class ModelTrainingDataset(dict):
     def object(self) -> Optional[str]:
         """
         The object name of the input data file.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
 
@@ -811,6 +801,8 @@ class ProcessorJobInputLocation(dict):
                  object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None):
         """
         :param str source_type: The type of input location. The allowed values are:
+               * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+               * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         :param str data: Raw document data with Base64 encoding.
         :param Sequence['ProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
         """
@@ -825,6 +817,8 @@ class ProcessorJobInputLocation(dict):
     def source_type(self) -> str:
         """
         The type of input location. The allowed values are:
+        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         return pulumi.get(self, "source_type")
 
@@ -853,7 +847,7 @@ class ProcessorJobInputLocationObjectLocation(dict):
                  object: Optional[str] = None):
         """
         :param str bucket: The Object Storage bucket name.
-        :param str namespace: The Object Storage namespace.
+        :param str namespace: The Object Storage namespace name.
         :param str object: The Object Storage object name.
         """
         if bucket is not None:
@@ -875,7 +869,7 @@ class ProcessorJobInputLocationObjectLocation(dict):
     @pulumi.getter
     def namespace(self) -> Optional[str]:
         """
-        The Object Storage namespace.
+        The Object Storage namespace name.
         """
         return pulumi.get(self, "namespace")
 
@@ -1057,6 +1051,11 @@ class ProcessorJobProcessorConfigFeature(dict):
                  tenancy_id: Optional[str] = None):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
+               * `LANGUAGE_CLASSIFICATION`: Detect the language.
+               * `TEXT_EXTRACTION`: Recognize text.
+               * `TABLE_EXTRACTION`: Detect and extract data in tables.
+               * `KEY_VALUE_EXTRACTION`: Extract form fields.
+               * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
@@ -1077,6 +1076,11 @@ class ProcessorJobProcessorConfigFeature(dict):
     def feature_type(self) -> str:
         """
         The type of document analysis requested. The allowed values are:
+        * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        * `TEXT_EXTRACTION`: Recognize text.
+        * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         """
         return pulumi.get(self, "feature_type")
 
@@ -2475,6 +2479,8 @@ class GetProcessorJobInputLocationResult(dict):
         :param str data: Raw document data with Base64 encoding.
         :param Sequence['GetProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
         :param str source_type: The type of input location. The allowed values are:
+               * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+               * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         pulumi.set(__self__, "data", data)
         pulumi.set(__self__, "object_locations", object_locations)
@@ -2501,6 +2507,8 @@ class GetProcessorJobInputLocationResult(dict):
     def source_type(self) -> str:
         """
         The type of input location. The allowed values are:
+        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         return pulumi.get(self, "source_type")
 
@@ -2657,6 +2665,11 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
                  tenancy_id: str):
         """
         :param str feature_type: The type of document analysis requested. The allowed values are:
+               * `LANGUAGE_CLASSIFICATION`: Detect the language.
+               * `TEXT_EXTRACTION`: Recognize text.
+               * `TABLE_EXTRACTION`: Detect and extract data in tables.
+               * `KEY_VALUE_EXTRACTION`: Extract form fields.
+               * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param int max_results: The maximum number of results to return.
         :param str model_id: The custom model ID.
@@ -2673,6 +2686,11 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
     def feature_type(self) -> str:
         """
         The type of document analysis requested. The allowed values are:
+        * `LANGUAGE_CLASSIFICATION`: Detect the language.
+        * `TEXT_EXTRACTION`: Recognize text.
+        * `TABLE_EXTRACTION`: Detect and extract data in tables.
+        * `KEY_VALUE_EXTRACTION`: Extract form fields.
+        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
         """
         return pulumi.get(self, "feature_type")
 

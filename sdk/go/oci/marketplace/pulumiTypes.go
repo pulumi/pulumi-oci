@@ -20,7 +20,7 @@ type PublicationIcon struct {
 	FileExtension *string `pulumi:"fileExtension"`
 	// The MIME type of the upload data.
 	MimeType *string `pulumi:"mimeType"`
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name *string `pulumi:"name"`
 }
 
@@ -42,7 +42,7 @@ type PublicationIconArgs struct {
 	FileExtension pulumi.StringPtrInput `pulumi:"fileExtension"`
 	// The MIME type of the upload data.
 	MimeType pulumi.StringPtrInput `pulumi:"mimeType"`
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -112,7 +112,7 @@ func (o PublicationIconOutput) MimeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationIcon) *string { return v.MimeType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the contact.
+// (Updatable) The name of the publication, which is also used in the listing.
 func (o PublicationIconOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationIcon) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -457,7 +457,7 @@ func (o PublicationPackageDetailsEulaArrayOutput) Index(i pulumi.IntInput) Publi
 }
 
 type PublicationPackageDetailsOperatingSystem struct {
-	// (Updatable) The name of the contact.
+	// The name of the operating system.
 	Name *string `pulumi:"name"`
 }
 
@@ -473,7 +473,7 @@ type PublicationPackageDetailsOperatingSystemInput interface {
 }
 
 type PublicationPackageDetailsOperatingSystemArgs struct {
-	// (Updatable) The name of the contact.
+	// The name of the operating system.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -554,7 +554,7 @@ func (o PublicationPackageDetailsOperatingSystemOutput) ToPublicationPackageDeta
 	}).(PublicationPackageDetailsOperatingSystemPtrOutput)
 }
 
-// (Updatable) The name of the contact.
+// The name of the operating system.
 func (o PublicationPackageDetailsOperatingSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationPackageDetailsOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -583,7 +583,7 @@ func (o PublicationPackageDetailsOperatingSystemPtrOutput) Elem() PublicationPac
 	}).(PublicationPackageDetailsOperatingSystemOutput)
 }
 
-// (Updatable) The name of the contact.
+// The name of the operating system.
 func (o PublicationPackageDetailsOperatingSystemPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicationPackageDetailsOperatingSystem) *string {
 		if v == nil {
@@ -727,7 +727,7 @@ func (o PublicationSupportContactArrayOutput) Index(i pulumi.IntInput) Publicati
 }
 
 type PublicationSupportedOperatingSystem struct {
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name *string `pulumi:"name"`
 }
 
@@ -743,7 +743,7 @@ type PublicationSupportedOperatingSystemInput interface {
 }
 
 type PublicationSupportedOperatingSystemArgs struct {
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -798,7 +798,7 @@ func (o PublicationSupportedOperatingSystemOutput) ToPublicationSupportedOperati
 	return o
 }
 
-// (Updatable) The name of the contact.
+// (Updatable) The name of the publication, which is also used in the listing.
 func (o PublicationSupportedOperatingSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicationSupportedOperatingSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

@@ -81,11 +81,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The value of the attribute to be evaluated
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -98,11 +97,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The value of the attribute to be evaluated
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -220,11 +218,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The value of the attribute to be evaluated
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -241,11 +238,10 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicyArgs extend
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The value of the attribute to be evaluated
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true

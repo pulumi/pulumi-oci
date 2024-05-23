@@ -34,7 +34,7 @@ public final class AppFirewallPolicyRequestProtection {
      */
     private @Nullable Integer bodyInspectionSizeLimitInBytes;
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      * 
      */
     private @Nullable List<AppFirewallPolicyRequestProtectionRule> rules;
@@ -64,7 +64,7 @@ public final class AppFirewallPolicyRequestProtection {
         return Optional.ofNullable(this.bodyInspectionSizeLimitInBytes);
     }
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      * 
      */
     public List<AppFirewallPolicyRequestProtectionRule> rules() {

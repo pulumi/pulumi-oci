@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class MetricExtensionQueryPropertiesScriptDetails {
     /**
-     * @return (Updatable) Sql statement or script file content as base64 encoded string
+     * @return (Updatable) Content of the script file as base64 encoded string
      * 
      */
     private String content;
@@ -23,7 +23,7 @@ public final class MetricExtensionQueryPropertiesScriptDetails {
 
     private MetricExtensionQueryPropertiesScriptDetails() {}
     /**
-     * @return (Updatable) Sql statement or script file content as base64 encoded string
+     * @return (Updatable) Content of the script file as base64 encoded string
      * 
      */
     public String content() {

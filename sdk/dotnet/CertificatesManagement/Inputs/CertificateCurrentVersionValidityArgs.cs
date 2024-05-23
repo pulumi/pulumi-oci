@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
     public sealed class CertificateCurrentVersionValidityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeOfValidityNotAfter")]
         public Input<string>? TimeOfValidityNotAfter { get; set; }
 
         /// <summary>
-        /// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        /// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         [Input("timeOfValidityNotBefore")]
         public Input<string>? TimeOfValidityNotBefore { get; set; }

@@ -51,7 +51,7 @@ public final class ModelModelTrainingResult {
      */
     private @Nullable String warning;
     /**
-     * @return This value would determine the window size of the training algorithm.
+     * @return Window size defined during training or deduced by the algorithm.
      * 
      */
     private @Nullable Integer windowSize;
@@ -109,7 +109,7 @@ public final class ModelModelTrainingResult {
         return Optional.ofNullable(this.warning);
     }
     /**
-     * @return This value would determine the window size of the training algorithm.
+     * @return Window size defined during training or deduced by the algorithm.
      * 
      */
     public Optional<Integer> windowSize() {

@@ -40,14 +40,14 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -85,14 +85,14 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -295,14 +295,14 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Optional<Output<String>> type() {
@@ -389,7 +389,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -796,7 +796,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 
@@ -807,7 +807,7 @@ public final class TargetAssetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 

@@ -19,14 +19,14 @@ public final class AppFirewallPolicyRequestRateLimitingRuleArgs extends com.pulu
     public static final AppFirewallPolicyRequestRateLimitingRuleArgs Empty = new AppFirewallPolicyRequestRateLimitingRuleArgs();
 
     /**
-     * (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+     * (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
      * 
      */
     @Import(name="actionName", required=true)
     private Output<String> actionName;
 
     /**
-     * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+     * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
      * 
      */
     public Output<String> actionName() {
@@ -140,7 +140,7 @@ public final class AppFirewallPolicyRequestRateLimitingRuleArgs extends com.pulu
         }
 
         /**
-         * @param actionName (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+         * @param actionName (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class AppFirewallPolicyRequestRateLimitingRuleArgs extends com.pulu
         }
 
         /**
-         * @param actionName (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+         * @param actionName (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
          * 
          * @return builder
          * 

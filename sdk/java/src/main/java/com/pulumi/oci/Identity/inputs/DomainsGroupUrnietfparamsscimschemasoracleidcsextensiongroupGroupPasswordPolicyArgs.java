@@ -92,9 +92,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) App URI
+     * (Updatable) PasswordPolicy URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -110,9 +110,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) App URI
+     * @return (Updatable) PasswordPolicy URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -129,9 +129,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) The ID of the App.
+     * (Updatable) The ID of the PasswordPolicy.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -139,7 +139,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -148,9 +148,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
+     * @return (Updatable) The ID of the PasswordPolicy.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -158,7 +158,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -281,9 +281,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
+         * @param ref (Updatable) PasswordPolicy URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -303,9 +303,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
+         * @param ref (Updatable) PasswordPolicy URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -324,9 +324,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
+         * @param value (Updatable) The ID of the PasswordPolicy.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -334,7 +334,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -347,9 +347,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
+         * @param value (Updatable) The ID of the PasswordPolicy.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -357,7 +357,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

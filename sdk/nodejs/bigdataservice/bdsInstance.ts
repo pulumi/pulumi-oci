@@ -142,7 +142,7 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public /*out*/ readonly nodes!: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
     /**
-     * The amount of worker nodes should be created
+     * Number of nodes that forming the cluster
      */
     public /*out*/ readonly numberOfNodes!: pulumi.Output<number>;
     /**
@@ -389,7 +389,7 @@ export interface BdsInstanceState {
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNode>[]>;
     /**
-     * The amount of worker nodes should be created
+     * Number of nodes that forming the cluster
      */
     numberOfNodes?: pulumi.Input<number>;
     /**

@@ -99,14 +99,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The origin of the certificate.
+     * The origin of the certificate.
      * 
      */
     @Import(name="configType")
     private @Nullable Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the certificate.
+     * @return The origin of the certificate.
      * 
      */
     public Optional<Output<String>> configType() {
@@ -174,14 +174,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the private CA.
+     * The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
     @Import(name="issuerCertificateAuthorityId")
     private @Nullable Output<String> issuerCertificateAuthorityId;
 
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
     public Optional<Output<String>> issuerCertificateAuthorityId() {
@@ -189,14 +189,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The algorithm to use to create key pairs.
+     * The algorithm used to create key pairs.
      * 
      */
     @Import(name="keyAlgorithm")
     private @Nullable Output<String> keyAlgorithm;
 
     /**
-     * @return The algorithm to use to create key pairs.
+     * @return The algorithm used to create key pairs.
      * 
      */
     public Optional<Output<String>> keyAlgorithm() {
@@ -240,14 +240,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The algorithm to use to sign the public key certificate.
+     * The algorithm used to sign the public key certificate.
      * 
      */
     @Import(name="signatureAlgorithm")
     private @Nullable Output<String> signatureAlgorithm;
 
     /**
-     * @return The algorithm to use to sign the public key certificate.
+     * @return The algorithm used to sign the public key certificate.
      * 
      */
     public Optional<Output<String>> signatureAlgorithm() {
@@ -482,7 +482,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate.
+         * @param configType The origin of the certificate.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate.
+         * @param configType The origin of the certificate.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the certificate authority (CA) that issued the certificate.
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the certificate authority (CA) that issued the certificate.
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyAlgorithm The algorithm to use to create key pairs.
+         * @param keyAlgorithm The algorithm used to create key pairs.
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyAlgorithm The algorithm to use to create key pairs.
+         * @param keyAlgorithm The algorithm used to create key pairs.
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signatureAlgorithm The algorithm to use to sign the public key certificate.
+         * @param signatureAlgorithm The algorithm used to sign the public key certificate.
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signatureAlgorithm The algorithm to use to sign the public key certificate.
+         * @param signatureAlgorithm The algorithm used to sign the public key certificate.
          * 
          * @return builder
          * 

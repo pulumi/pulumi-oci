@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) Database  password
+        /// (Updatable) Administrator password
         /// </summary>
         public Input<string>? Password
         {
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Database username
+        /// (Updatable) Administrator username
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;

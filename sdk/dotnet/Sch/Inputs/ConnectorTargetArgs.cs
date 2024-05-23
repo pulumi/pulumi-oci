@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<int>? BatchRolloverTimeInMs { get; set; }
 
         /// <summary>
-        /// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+        /// (Updatable) The batch rollover size in kilobytes.
         /// </summary>
         [Input("batchSizeInKbs")]
         public Input<int>? BatchSizeInKbs { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<int>? BatchSizeInNum { get; set; }
 
         /// <summary>
-        /// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+        /// (Updatable) The batch rollover time in seconds.
         /// </summary>
         [Input("batchTimeInSec")]
         public Input<int>? BatchTimeInSec { get; set; }
@@ -73,13 +73,13 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<bool>? EnableFormattedMessaging { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
 
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;

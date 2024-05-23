@@ -38,7 +38,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? MetricCategory;
         /// <summary>
-        /// (Updatable) Name of the script file
+        /// (Updatable) Name of the metric.
         /// </summary>
         public readonly string Name;
         /// <summary>

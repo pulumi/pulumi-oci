@@ -41,14 +41,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -71,14 +71,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -101,14 +101,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     @Import(name="hpcIslandId")
     private @Nullable Output<String> hpcIslandId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     public Optional<Output<String>> hpcIslandId() {
@@ -135,14 +135,14 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The list of network block OCIDs.
+     * The list of network block OCIDs of the HPC island.
      * 
      */
     @Import(name="networkBlockIds")
     private @Nullable Output<List<String>> networkBlockIds;
 
     /**
-     * @return The list of network block OCIDs.
+     * @return The list of network block OCIDs of the HPC island.
      * 
      */
     public Optional<Output<List<String>>> networkBlockIds() {
@@ -270,7 +270,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+         * @param hpcIslandId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs.
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs.
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class ClusterNetworkState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param networkBlockIds The list of network block OCIDs.
+         * @param networkBlockIds The list of network block OCIDs of the HPC island.
          * 
          * @return builder
          * 

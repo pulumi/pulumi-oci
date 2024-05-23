@@ -200,7 +200,7 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAuthTokenMeta[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -208,9 +208,9 @@ export class DomainsAuthToken extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -522,7 +522,7 @@ export interface DomainsAuthTokenState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAuthTokenMeta>[]>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -530,9 +530,9 @@ export interface DomainsAuthTokenState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -667,7 +667,7 @@ export interface DomainsAuthTokenArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -675,9 +675,9 @@ export interface DomainsAuthTokenArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

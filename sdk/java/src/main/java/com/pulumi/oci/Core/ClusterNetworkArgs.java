@@ -42,14 +42,14 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     public Output<String> compartmentId() {
@@ -72,14 +72,14 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -191,7 +191,7 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class ClusterNetworkArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 

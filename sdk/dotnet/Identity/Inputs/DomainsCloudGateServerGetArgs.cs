@@ -13,16 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsCloudGateServerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Any incoming request to cloud gate is finally sent to this host, if selected during load balancing
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) Hostname for the Server block
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -31,12 +29,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> HostName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Any additional settings for this upstream server in nginx configuration form
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) More nginx Settings. JSON encoded text block
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -49,16 +45,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? NginxSettings { get; set; }
 
         /// <summary>
-        /// (Updatable) Port for the Upstream Server
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) Port for the Server Block
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: integer
         /// * uniqueness: none
@@ -83,16 +77,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? ServerId { get; set; }
 
         /// <summary>
-        /// (Updatable) SSL flag for the Upstream Block
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) SSL flag for the Server Block
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: boolean
         /// * uniqueness: none

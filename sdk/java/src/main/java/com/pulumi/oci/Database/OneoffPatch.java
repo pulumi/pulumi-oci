@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOneoffPatch = new OneoffPatch("testOneoffPatch", OneoffPatchArgs.builder()        
+ *         var testOneoffPatch = new OneoffPatch("testOneoffPatch", OneoffPatchArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbVersion(oneoffPatchDbVersion)
  *             .displayName(oneoffPatchDisplayName)

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
     public sealed class DatasetInitialImportDatasetConfigurationImportFormatGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// An unique name for a label within its dataset.
+        /// Name of import format
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

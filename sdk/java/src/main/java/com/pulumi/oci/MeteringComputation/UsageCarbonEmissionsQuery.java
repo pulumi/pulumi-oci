@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsageCarbonEmissionsQuery = new UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery", UsageCarbonEmissionsQueryArgs.builder()        
+ *         var testUsageCarbonEmissionsQuery = new UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery", UsageCarbonEmissionsQueryArgs.builder()
  *             .compartmentId(compartmentId)
  *             .queryDefinition(UsageCarbonEmissionsQueryQueryDefinitionArgs.builder()
  *                 .costAnalysisUi(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs.builder()

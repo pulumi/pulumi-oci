@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<Inputs.WorkspaceTaskMetadataCountStatisticObjectTypeCountListGetArgs>? _objectTypeCountLists;
 
         /// <summary>
-        /// (Updatable) The array of statistics.
+        /// The array of statistics.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskMetadataCountStatisticObjectTypeCountListGetArgs> ObjectTypeCountLists
         {

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BuildPipelineStageBuildSourceCollection {
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
      * 
      */
     private @Nullable List<BuildPipelineStageBuildSourceCollectionItem> items;
 
     private BuildPipelineStageBuildSourceCollection() {}
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
      * 
      */
     public List<BuildPipelineStageBuildSourceCollectionItem> items() {

@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsagePlan = new UsagePlan("testUsagePlan", UsagePlanArgs.builder()        
+ *         var testUsagePlan = new UsagePlan("testUsagePlan", UsagePlanArgs.builder()
  *             .compartmentId(compartmentId)
  *             .entitlements(UsagePlanEntitlementArgs.builder()
  *                 .name(usagePlanEntitlementsName)

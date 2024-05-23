@@ -13,10 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsPasswordPolicyGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The displayName of the User or App who modified this Resource
+        /// (Updatable) Group Display Name
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -29,10 +30,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -45,15 +47,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The identifier of the group.
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

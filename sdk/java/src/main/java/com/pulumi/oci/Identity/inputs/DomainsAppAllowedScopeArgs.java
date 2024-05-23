@@ -18,34 +18,34 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
     public static final DomainsAppAllowedScopeArgs Empty = new DomainsAppAllowedScopeArgs();
 
     /**
-     * (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+     * (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: server
+     * * uniqueness: none
      * 
      */
     @Import(name="fqs", required=true)
     private Output<String> fqs;
 
     /**
-     * @return (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+     * @return (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: server
+     * * uniqueness: none
      * 
      */
     public Output<String> fqs() {
@@ -97,7 +97,7 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 
@@ -115,7 +115,7 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 
@@ -151,17 +151,17 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param fqs (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+         * @param fqs (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
+         * * mutability: readWrite
+         * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: server
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -172,17 +172,17 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param fqs (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+         * @param fqs (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
+         * * mutability: readWrite
+         * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: server
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: request
+         * * returned: default
          * * type: boolean
          * * uniqueness: none
          * 
@@ -264,7 +264,7 @@ public final class DomainsAppAllowedScopeArgs extends com.pulumi.resources.Resou
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: request
+         * * returned: default
          * * type: boolean
          * * uniqueness: none
          * 

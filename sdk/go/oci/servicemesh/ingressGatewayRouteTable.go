@@ -96,7 +96,7 @@ type IngressGatewayRouteTable struct {
 	IngressGatewayId pulumi.StringOutput `pulumi:"ingressGatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Name of the ingress gateway host that this route should apply to.
+	// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority pulumi.IntOutput `pulumi:"priority"`
@@ -163,7 +163,7 @@ type ingressGatewayRouteTableState struct {
 	IngressGatewayId *string `pulumi:"ingressGatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Name of the ingress gateway host that this route should apply to.
+	// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name *string `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority *int `pulumi:"priority"`
@@ -192,7 +192,7 @@ type IngressGatewayRouteTableState struct {
 	IngressGatewayId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Name of the ingress gateway host that this route should apply to.
+	// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name pulumi.StringPtrInput
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority pulumi.IntPtrInput
@@ -223,7 +223,7 @@ type ingressGatewayRouteTableArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the service mesh in which this access policy is created.
 	IngressGatewayId string `pulumi:"ingressGatewayId"`
-	// (Updatable) Name of the ingress gateway host that this route should apply to.
+	// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name *string `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority *int `pulumi:"priority"`
@@ -243,7 +243,7 @@ type IngressGatewayRouteTableArgs struct {
 	FreeformTags pulumi.MapInput
 	// The OCID of the service mesh in which this access policy is created.
 	IngressGatewayId pulumi.StringInput
-	// (Updatable) Name of the ingress gateway host that this route should apply to.
+	// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name pulumi.StringPtrInput
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
 	Priority pulumi.IntPtrInput
@@ -368,7 +368,7 @@ func (o IngressGatewayRouteTableOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Name of the ingress gateway host that this route should apply to.
+// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 func (o IngressGatewayRouteTableOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

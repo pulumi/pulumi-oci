@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineRunConfigurationOverrideDetails
     {
         /// <summary>
-        /// The command line arguments to set for step.
+        /// The command line arguments to set for steps in the pipeline.
         /// </summary>
         public readonly string? CommandLineArguments;
         /// <summary>
-        /// Environment variables to set for step.
+        /// Environment variables to set for steps in the pipeline.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         /// <summary>
-        /// A time bound for the execution of the step.
+        /// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         /// </summary>
         public readonly string? MaximumRuntimeInMinutes;
         /// <summary>

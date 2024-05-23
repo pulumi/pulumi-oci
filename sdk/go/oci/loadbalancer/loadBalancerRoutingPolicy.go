@@ -71,10 +71,7 @@ type LoadBalancerRoutingPolicy struct {
 	ConditionLanguageVersion pulumi.StringOutput `pulumi:"conditionLanguageVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The list of routing rules.
 	Rules LoadBalancerRoutingPolicyRuleArrayOutput `pulumi:"rules"`
@@ -124,10 +121,7 @@ type loadBalancerRoutingPolicyState struct {
 	ConditionLanguageVersion *string `pulumi:"conditionLanguageVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 	Name *string `pulumi:"name"`
 	// (Updatable) The list of routing rules.
 	Rules []LoadBalancerRoutingPolicyRule `pulumi:"rules"`
@@ -139,10 +133,7 @@ type LoadBalancerRoutingPolicyState struct {
 	ConditionLanguageVersion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId pulumi.StringPtrInput
-	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 	Name pulumi.StringPtrInput
 	// (Updatable) The list of routing rules.
 	Rules LoadBalancerRoutingPolicyRuleArrayInput
@@ -158,10 +149,7 @@ type loadBalancerRoutingPolicyArgs struct {
 	ConditionLanguageVersion string `pulumi:"conditionLanguageVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 	Name *string `pulumi:"name"`
 	// (Updatable) The list of routing rules.
 	Rules []LoadBalancerRoutingPolicyRule `pulumi:"rules"`
@@ -173,10 +161,7 @@ type LoadBalancerRoutingPolicyArgs struct {
 	ConditionLanguageVersion pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
 	LoadBalancerId pulumi.StringInput
-	// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 	Name pulumi.StringPtrInput
 	// (Updatable) The list of routing rules.
 	Rules LoadBalancerRoutingPolicyRuleArrayInput
@@ -279,10 +264,7 @@ func (o LoadBalancerRoutingPolicyOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancerRoutingPolicy) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
 func (o LoadBalancerRoutingPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancerRoutingPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string? DatabaseServiceName;
         /// <summary>
-        /// (Updatable) Name of the host the SSH key is valid for.
+        /// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
         /// </summary>
         public readonly string? Host;
         /// <summary>

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Waas.Inputs
     public sealed class PolicyWafConfigCustomProtectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Waas.Inputs
         private InputList<Inputs.PolicyWafConfigCustomProtectionRuleExclusionArgs>? _exclusions;
 
         /// <summary>
-        /// (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        /// (Updatable)
         /// </summary>
         public InputList<Inputs.PolicyWafConfigCustomProtectionRuleExclusionArgs> Exclusions
         {

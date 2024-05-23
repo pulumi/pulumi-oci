@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPipelineRun = new PipelineRun("testPipelineRun", PipelineRunArgs.builder()        
+ *         var testPipelineRun = new PipelineRun("testPipelineRun", PipelineRunArgs.builder()
  *             .compartmentId(compartmentId)
  *             .pipelineId(testPipeline.id())
  *             .configurationOverrideDetails(PipelineRunConfigurationOverrideDetailsArgs.builder()

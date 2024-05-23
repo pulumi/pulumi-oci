@@ -187,7 +187,7 @@ export class MonitoredResource extends pulumi.CustomResource {
      */
     public readonly managementAgentId!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) Property Name.
+     * Monitored Resource Name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -373,7 +373,7 @@ export interface MonitoredResourceState {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Property Name.
+     * Monitored Resource Name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -483,7 +483,7 @@ export interface MonitoredResourceArgs {
      */
     managementAgentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Property Name.
+     * Monitored Resource Name.
      */
     name?: pulumi.Input<string>;
     /**

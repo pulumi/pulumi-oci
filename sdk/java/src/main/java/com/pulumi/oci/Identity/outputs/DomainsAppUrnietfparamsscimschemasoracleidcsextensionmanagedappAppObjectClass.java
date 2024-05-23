@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Object class display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -42,7 +42,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable Boolean isAccountObjectClass;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Object class URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -88,26 +88,24 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private String type;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Object class template identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Object class display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -139,7 +137,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.isAccountObjectClass);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Object class URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -191,19 +189,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return this.type;
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Object class template identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

@@ -50,14 +50,14 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+     * (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+     * @return (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -283,7 +283,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+         * @param description (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class AtCustomerCccUpgradeScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param description (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+         * @param description (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
          * 
          * @return builder
          * 

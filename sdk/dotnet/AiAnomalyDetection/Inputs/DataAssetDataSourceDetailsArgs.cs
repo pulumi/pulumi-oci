@@ -35,7 +35,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public Input<string>? AtpUserName { get; set; }
 
         /// <summary>
-        /// Bucket Name for influx connection
+        /// Object storage bucket name
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public Input<string> DataSourceType { get; set; } = null!;
 
         /// <summary>
-        /// DB Name for influx connection
+        /// atp database name
         /// </summary>
         [Input("databaseName")]
         public Input<string>? DatabaseName { get; set; }

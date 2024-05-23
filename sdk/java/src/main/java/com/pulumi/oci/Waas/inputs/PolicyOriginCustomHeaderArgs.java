@@ -15,20 +15,14 @@ public final class PolicyOriginCustomHeaderArgs extends com.pulumi.resources.Res
     public static final PolicyOriginCustomHeaderArgs Empty = new PolicyOriginCustomHeaderArgs();
 
     /**
-     * (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The name of the header.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the header.
      * 
      */
     public Output<String> name() {
@@ -76,10 +70,7 @@ public final class PolicyOriginCustomHeaderArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the header.
          * 
          * @return builder
          * 
@@ -90,10 +81,7 @@ public final class PolicyOriginCustomHeaderArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the header.
          * 
          * @return builder
          * 

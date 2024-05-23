@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", PluggableDatabasesRemoteCloneArgs.builder()        
+ *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", PluggableDatabasesRemoteCloneArgs.builder()
  *             .clonedPdbName(pluggableDatabasesRemoteCloneClonedPdbName)
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .sourceContainerDbAdminPassword(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword)

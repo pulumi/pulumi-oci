@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration {
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     private @Nullable Double objectValue;
 
     private WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration() {}
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     public Optional<Double> objectValue() {

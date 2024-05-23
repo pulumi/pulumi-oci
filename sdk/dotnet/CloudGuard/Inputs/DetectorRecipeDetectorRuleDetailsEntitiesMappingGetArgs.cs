@@ -13,9 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeDetectorRuleDetailsEntitiesMappingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Detector recipe display name.
-        /// 
-        /// Avoid entering confidential information.
+        /// (Updatable) The display name of entity
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

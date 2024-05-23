@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string Text;
         /// <summary>
-        /// (Updatable) Type of WebAppFirewallPolicyRule.
+        /// (Updatable) Type of HttpResponseBody.
         /// </summary>
         public readonly string Type;
 

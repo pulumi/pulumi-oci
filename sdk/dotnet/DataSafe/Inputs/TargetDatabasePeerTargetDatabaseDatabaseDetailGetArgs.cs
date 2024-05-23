@@ -13,31 +13,31 @@ namespace Pulumi.Oci.DataSafe.Inputs
     public sealed class TargetDatabasePeerTargetDatabaseDatabaseDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the Autonomous Database registered as a target database in Data Safe.
+        /// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
 
         /// <summary>
-        /// The database type.
+        /// (Updatable) The database type.
         /// </summary>
         [Input("databaseType")]
         public Input<string>? DatabaseType { get; set; }
 
         /// <summary>
-        /// The OCID of the cloud database registered as a target database in Data Safe.
+        /// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }
 
         /// <summary>
-        /// The infrastructure type the database is running on.
+        /// (Updatable) The infrastructure type the database is running on.
         /// </summary>
         [Input("infrastructureType")]
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// The OCID of the compute instance on which the database is running.
+        /// (Updatable) The OCID of the compute instance on which the database is running.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         private InputList<string>? _ipAddresses;
 
         /// <summary>
-        /// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+        /// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         /// </summary>
         public InputList<string> IpAddresses
         {
@@ -55,19 +55,19 @@ namespace Pulumi.Oci.DataSafe.Inputs
         }
 
         /// <summary>
-        /// The port number of the database listener.
+        /// (Updatable) The port number of the database listener.
         /// </summary>
         [Input("listenerPort")]
         public Input<int>? ListenerPort { get; set; }
 
         /// <summary>
-        /// The service name of the database registered as target database.
+        /// (Updatable) The service name of the database registered as target database.
         /// </summary>
         [Input("serviceName")]
         public Input<string>? ServiceName { get; set; }
 
         /// <summary>
-        /// The OCID of the VM cluster in which the database is running.
+        /// (Updatable) The OCID of the VM cluster in which the database is running.
         /// </summary>
         [Input("vmClusterId")]
         public Input<string>? VmClusterId { get; set; }

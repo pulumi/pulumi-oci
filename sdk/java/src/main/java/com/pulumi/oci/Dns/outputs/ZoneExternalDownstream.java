@@ -24,7 +24,7 @@ public final class ZoneExternalDownstream {
      */
     private @Nullable Integer port;
     /**
-     * @return (Updatable) The OCID of the TSIG key.
+     * @return (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
      * 
      */
     private @Nullable String tsigKeyId;
@@ -45,7 +45,7 @@ public final class ZoneExternalDownstream {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return (Updatable) The OCID of the TSIG key.
+     * @return (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
      * 
      */
     public Optional<String> tsigKeyId() {

@@ -76,20 +76,14 @@ public final class WorkspaceApplicationSourceApplicationInfoArgs extends com.pul
     }
 
     /**
-     * The workspace ID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
-     * @return The workspace ID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      * 
      */
     public Optional<Output<String>> workspaceId() {
@@ -209,10 +203,7 @@ public final class WorkspaceApplicationSourceApplicationInfoArgs extends com.pul
         }
 
         /**
-         * @param workspaceId The workspace ID.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param workspaceId The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
          * 
          * @return builder
          * 
@@ -223,10 +214,7 @@ public final class WorkspaceApplicationSourceApplicationInfoArgs extends com.pul
         }
 
         /**
-         * @param workspaceId The workspace ID.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param workspaceId The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
          * 
          * @return builder
          * 

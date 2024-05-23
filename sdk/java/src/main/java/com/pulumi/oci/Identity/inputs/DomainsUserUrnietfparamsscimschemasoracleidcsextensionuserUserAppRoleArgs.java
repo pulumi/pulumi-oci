@@ -51,7 +51,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The ID of the App in this Grant.
+     * (Updatable) The ID of the App that defines this AppRole.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -68,7 +68,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> appId;
 
     /**
-     * @return (Updatable) The ID of the App in this Grant.
+     * @return (Updatable) The ID of the App that defines this AppRole.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -119,12 +119,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) The display name of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -135,12 +135,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) The display name of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -185,9 +185,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -203,9 +201,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -222,14 +218,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -238,14 +235,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -255,38 +253,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The Id of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The Id of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -364,7 +358,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param appId (Updatable) The ID of the App in this Grant.
+         * @param appId (Updatable) The ID of the App that defines this AppRole.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -385,7 +379,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param appId (Updatable) The ID of the App in this Grant.
+         * @param appId (Updatable) The ID of the App that defines this AppRole.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -444,12 +438,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) The display name of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -464,12 +458,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) The display name of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -522,9 +516,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -544,9 +536,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -565,14 +555,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -585,14 +576,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -604,19 +596,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The Id of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -627,19 +617,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The Id of the AppRole assigned to the User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

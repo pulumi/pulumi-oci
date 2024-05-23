@@ -50,7 +50,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The origin of the CA.
+        /// The origin of the CA.
         /// </summary>
         [Output("configType")]
         public Output<string> ConfigType { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         /// </summary>
         [Output("issuerCertificateAuthorityId")]
         public Output<string> IssuerCertificateAuthorityId { get; private set; } = null!;
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The origin of the CA.
+        /// The origin of the CA.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
@@ -346,7 +346,7 @@ namespace Pulumi.Oci.CertificatesManagement
         }
 
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         /// </summary>
         [Input("issuerCertificateAuthorityId")]
         public Input<string>? IssuerCertificateAuthorityId { get; set; }

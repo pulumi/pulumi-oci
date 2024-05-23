@@ -44,10 +44,10 @@ public final class DomainsSelfRegistrationProfileHeaderText {
      */
     private String locale;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Localized value of header text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -55,9 +55,6 @@ public final class DomainsSelfRegistrationProfileHeaderText {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -98,10 +95,10 @@ public final class DomainsSelfRegistrationProfileHeaderText {
         return this.locale;
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Localized value of header text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -109,9 +106,6 @@ public final class DomainsSelfRegistrationProfileHeaderText {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

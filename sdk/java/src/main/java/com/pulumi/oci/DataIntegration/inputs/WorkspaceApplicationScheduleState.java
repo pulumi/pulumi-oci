@@ -98,14 +98,14 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -128,14 +128,14 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The type of the model
+     * The type of the object.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the model
+     * @return The type of the object.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -413,7 +413,7 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param modelType (Updatable) The type of the model
+         * @param modelType The type of the object.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class WorkspaceApplicationScheduleState extends com.pulumi.resource
         }
 
         /**
-         * @param modelType (Updatable) The type of the model
+         * @param modelType The type of the object.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetResponderRecipeEffectiveResponderRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailGetArgs>? _details;
 
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// Details of ResponderRule.
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailGetArgs> Details
         {
@@ -65,11 +65,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Identifier for ResponderRule.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Unique ResponderRule identifier.
         /// </summary>
         [Input("responderRuleId")]
         public Input<string>? ResponderRuleId { get; set; }

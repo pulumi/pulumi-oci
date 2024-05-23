@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigScriptParameterMonitorScriptParameter
     {
         /// <summary>
-        /// (Updatable) Name of the parameter.
+        /// Name of the parameter.
         /// </summary>
         public readonly string? ParamName;
         /// <summary>
-        /// (Updatable) Value of the parameter.
+        /// Value of the parameter.
         /// </summary>
         public readonly string? ParamValue;
 

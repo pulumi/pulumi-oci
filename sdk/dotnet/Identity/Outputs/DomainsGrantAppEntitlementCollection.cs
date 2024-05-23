@@ -14,10 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsGrantAppEntitlementCollection
     {
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) Application Entitlement Collection URI
+        /// 
+        /// **Added In:** 18.2.4
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -28,13 +29,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// Value of the tag.
+        /// Application Entitlement Collection identifier
+        /// 
+        /// **Added In:** 18.2.4
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

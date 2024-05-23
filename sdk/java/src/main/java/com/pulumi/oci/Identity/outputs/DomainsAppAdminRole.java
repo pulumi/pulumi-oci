@@ -66,9 +66,6 @@ public final class DomainsAppAdminRole {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
@@ -132,9 +129,6 @@ public final class DomainsAppAdminRole {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

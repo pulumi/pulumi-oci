@@ -19,14 +19,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     public static final WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs Empty = new WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs();
 
     /**
-     * (Updatable) An integer value of the parameter.
+     * An integer value of the parameter.
      * 
      */
     @Import(name="intValue")
     private @Nullable Output<Integer> intValue;
 
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     public Optional<Output<Integer>> intValue() {
@@ -34,14 +34,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     }
 
     /**
-     * (Updatable) An object value of the parameter.
+     * An object value of the parameter.
      * 
      */
     @Import(name="objectValue")
     private @Nullable Output<String> objectValue;
 
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     public Optional<Output<String>> objectValue() {
@@ -49,14 +49,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     }
 
     /**
-     * (Updatable) Reference to the parameter by its key.
+     * Reference to the parameter by its key.
      * 
      */
     @Import(name="parameterValue")
     private @Nullable Output<String> parameterValue;
 
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     public Optional<Output<String>> parameterValue() {
@@ -64,14 +64,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     }
 
     /**
-     * (Updatable) The root object reference value.
+     * The root object reference value.
      * 
      */
     @Import(name="refValue")
     private @Nullable Output<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs> refValue;
 
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     public Optional<Output<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs>> refValue() {
@@ -79,14 +79,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     }
 
     /**
-     * (Updatable) The root object value, used in custom parameters.
+     * The root object value, used in custom parameters.
      * 
      */
     @Import(name="rootObjectValue")
     private @Nullable Output<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs> rootObjectValue;
 
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     public Optional<Output<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs>> rootObjectValue() {
@@ -94,14 +94,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
     }
 
     /**
-     * (Updatable) A string value of the parameter.
+     * A string value of the parameter.
      * 
      */
     @Import(name="stringValue")
     private @Nullable Output<String> stringValue;
 
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     public Optional<Output<String>> stringValue() {
@@ -138,7 +138,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param intValue (Updatable) An integer value of the parameter.
+         * @param intValue An integer value of the parameter.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param intValue (Updatable) An integer value of the parameter.
+         * @param intValue An integer value of the parameter.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param objectValue (Updatable) An object value of the parameter.
+         * @param objectValue An object value of the parameter.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param objectValue (Updatable) An object value of the parameter.
+         * @param objectValue An object value of the parameter.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param parameterValue (Updatable) Reference to the parameter by its key.
+         * @param parameterValue Reference to the parameter by its key.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param parameterValue (Updatable) Reference to the parameter by its key.
+         * @param parameterValue Reference to the parameter by its key.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param refValue (Updatable) The root object reference value.
+         * @param refValue The root object reference value.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param refValue (Updatable) The root object reference value.
+         * @param refValue The root object reference value.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param rootObjectValue (Updatable) The root object value, used in custom parameters.
+         * @param rootObjectValue The root object value, used in custom parameters.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param rootObjectValue (Updatable) The root object value, used in custom parameters.
+         * @param rootObjectValue The root object value, used in custom parameters.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param stringValue (Updatable) A string value of the parameter.
+         * @param stringValue A string value of the parameter.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueA
         }
 
         /**
-         * @param stringValue (Updatable) A string value of the parameter.
+         * @param stringValue A string value of the parameter.
          * 
          * @return builder
          * 

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceExportRequest = new WorkspaceExportRequest("testWorkspaceExportRequest", WorkspaceExportRequestArgs.builder()        
+ *         var testWorkspaceExportRequest = new WorkspaceExportRequest("testWorkspaceExportRequest", WorkspaceExportRequestArgs.builder()
  *             .bucket(workspaceExportRequestBucket)
  *             .workspaceId(testWorkspace.id())
  *             .areReferencesIncluded(workspaceExportRequestAreReferencesIncluded)

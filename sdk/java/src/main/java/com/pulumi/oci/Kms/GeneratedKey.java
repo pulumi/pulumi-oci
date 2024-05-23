@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGeneratedKey = new GeneratedKey("testGeneratedKey", GeneratedKeyArgs.builder()        
+ *         var testGeneratedKey = new GeneratedKey("testGeneratedKey", GeneratedKeyArgs.builder()
  *             .cryptoEndpoint(generatedKeyCryptoEndpoint)
  *             .includePlaintextKey(generatedKeyIncludePlaintextKey)
  *             .keyId(testKey.id())

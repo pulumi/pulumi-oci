@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Analytics.Inputs
     public sealed class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Description of private source scan host zone.
+        /// (Updatable) Description of private source dns zone.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

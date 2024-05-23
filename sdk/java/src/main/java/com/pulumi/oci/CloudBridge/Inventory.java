@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInventory = new Inventory("testInventory", InventoryArgs.builder()        
+ *         var testInventory = new Inventory("testInventory", InventoryArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(inventoryDisplayName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

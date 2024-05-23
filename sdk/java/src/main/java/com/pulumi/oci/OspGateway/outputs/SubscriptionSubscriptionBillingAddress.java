@@ -47,12 +47,12 @@ public final class SubscriptionSubscriptionBillingAddress {
      */
     private @Nullable String departmentName;
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return (Updatable) Contact person email address.
      * 
      */
     private @Nullable String emailAddress;
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return (Updatable) First name of the contact person.
      * 
      */
     private @Nullable String firstName;
@@ -67,7 +67,7 @@ public final class SubscriptionSubscriptionBillingAddress {
      */
     private @Nullable String jobTitle;
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return (Updatable) Last name of the contact person.
      * 
      */
     private @Nullable String lastName;
@@ -193,14 +193,14 @@ public final class SubscriptionSubscriptionBillingAddress {
         return Optional.ofNullable(this.departmentName);
     }
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return (Updatable) Contact person email address.
      * 
      */
     public Optional<String> emailAddress() {
         return Optional.ofNullable(this.emailAddress);
     }
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return (Updatable) First name of the contact person.
      * 
      */
     public Optional<String> firstName() {
@@ -221,7 +221,7 @@ public final class SubscriptionSubscriptionBillingAddress {
         return Optional.ofNullable(this.jobTitle);
     }
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return (Updatable) Last name of the contact person.
      * 
      */
     public Optional<String> lastName() {

@@ -13,25 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppTermsOfUse {
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Terms Of Use name
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the TermsOfUse.
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -45,33 +46,13 @@ public final class DomainsAppTermsOfUse {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the TermsOfUse
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
-    private String value;
-
-    private DomainsAppTermsOfUse() {}
-    /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -80,11 +61,32 @@ public final class DomainsAppTermsOfUse {
      * * uniqueness: none
      * 
      */
+    private String value;
+
+    private DomainsAppTermsOfUse() {}
+    /**
+     * @return (Updatable) Terms Of Use name
+     * 
+     * **Added In:** 18.2.6
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the TermsOfUse.
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -100,19 +102,19 @@ public final class DomainsAppTermsOfUse {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the TermsOfUse
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

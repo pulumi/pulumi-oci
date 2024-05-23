@@ -356,16 +356,18 @@ class DomainsSettingArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Locale
+        :param pulumi.Input[str] locale: (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
                
                **SCIM++ Properties:**
-               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+               * caseExact: false
+               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
                * idcsCanonicalValueSourceResourceType: AllowedValue
                * multiValued: false
                * mutability: readWrite
-               * required: true
+               * required: false
                * returned: default
                * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
@@ -1293,16 +1295,18 @@ class DomainsSettingArgs:
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Locale
+        (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
         **SCIM++ Properties:**
-        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        * caseExact: false
+        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         * idcsCanonicalValueSourceResourceType: AllowedValue
         * multiValued: false
         * mutability: readWrite
-        * required: true
+        * required: false
         * returned: default
         * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "locale")
 
@@ -2180,16 +2184,18 @@ class _DomainsSettingState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Locale
+        :param pulumi.Input[str] locale: (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
                
                **SCIM++ Properties:**
-               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+               * caseExact: false
+               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
                * idcsCanonicalValueSourceResourceType: AllowedValue
                * multiValued: false
                * mutability: readWrite
-               * required: true
+               * required: false
                * returned: default
                * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsSettingLoginTextArgs']]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
@@ -3437,16 +3443,18 @@ class _DomainsSettingState:
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Locale
+        (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
         **SCIM++ Properties:**
-        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        * caseExact: false
+        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         * idcsCanonicalValueSourceResourceType: AllowedValue
         * multiValued: false
         * mutability: readWrite
-        * required: true
+        * required: false
         * returned: default
         * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "locale")
 
@@ -4320,16 +4328,18 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Locale
+        :param pulumi.Input[str] locale: (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
                
                **SCIM++ Properties:**
-               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+               * caseExact: false
+               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
                * idcsCanonicalValueSourceResourceType: AllowedValue
                * multiValued: false
                * mutability: readWrite
-               * required: true
+               * required: false
                * returned: default
                * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsSettingLoginTextArgs']]]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
@@ -5195,16 +5205,18 @@ class DomainsSetting(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Locale
+        :param pulumi.Input[str] locale: (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
                
                **SCIM++ Properties:**
-               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+               * caseExact: false
+               * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
                * idcsCanonicalValueSourceResourceType: AllowedValue
                * multiValued: false
                * mutability: readWrite
-               * required: true
+               * required: false
                * returned: default
                * type: string
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsSettingLoginTextArgs']]]] login_texts: (Updatable) Login text in different locales
                
                **SCIM++ Properties:**
@@ -6227,16 +6239,18 @@ class DomainsSetting(pulumi.CustomResource):
     @pulumi.getter
     def locale(self) -> pulumi.Output[str]:
         """
-        (Updatable) Locale
+        (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
         **SCIM++ Properties:**
-        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        * caseExact: false
+        * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         * idcsCanonicalValueSourceResourceType: AllowedValue
         * multiValued: false
         * mutability: readWrite
-        * required: true
+        * required: false
         * returned: default
         * type: string
+        * uniqueness: none
         """
         return pulumi.get(self, "locale")
 

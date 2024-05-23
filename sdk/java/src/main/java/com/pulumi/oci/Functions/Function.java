@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFunction = new Function("testFunction", FunctionArgs.builder()        
+ *         var testFunction = new Function("testFunction", FunctionArgs.builder()
  *             .applicationId(testApplication.id())
  *             .displayName(functionDisplayName)
  *             .memoryInMbs(functionMemoryInMbs)

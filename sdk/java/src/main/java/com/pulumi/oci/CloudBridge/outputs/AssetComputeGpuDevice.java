@@ -18,7 +18,7 @@ public final class AssetComputeGpuDevice {
      */
     private @Nullable Integer coresCount;
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) GPU device description.
      * 
      */
     private @Nullable String description;
@@ -28,12 +28,12 @@ public final class AssetComputeGpuDevice {
      */
     private @Nullable String manufacturer;
     /**
-     * @return (Updatable) Memory size in MBs.
+     * @return (Updatable) GPU memory size in MBs.
      * 
      */
     private @Nullable String memoryInMbs;
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) GPU device name.
      * 
      */
     private @Nullable String name;
@@ -47,7 +47,7 @@ public final class AssetComputeGpuDevice {
         return Optional.ofNullable(this.coresCount);
     }
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) GPU device description.
      * 
      */
     public Optional<String> description() {
@@ -61,14 +61,14 @@ public final class AssetComputeGpuDevice {
         return Optional.ofNullable(this.manufacturer);
     }
     /**
-     * @return (Updatable) Memory size in MBs.
+     * @return (Updatable) GPU memory size in MBs.
      * 
      */
     public Optional<String> memoryInMbs() {
         return Optional.ofNullable(this.memoryInMbs);
     }
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) GPU device name.
      * 
      */
     public Optional<String> name() {

@@ -16,14 +16,14 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
     public static final ManagedDatabasesChangeDatabaseParameterCredentialsArgs Empty = new ManagedDatabasesChangeDatabaseParameterCredentialsArgs();
 
     /**
-     * The database user&#39;s password encoded using BASE64 scheme.
+     * The password for the database user name.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return The database user&#39;s password encoded using BASE64 scheme.
+     * @return The password for the database user name.
      * 
      */
     public Optional<Output<String>> password() {
@@ -31,14 +31,14 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
     }
 
     /**
-     * The role of the database user.
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The role of the database user.
+     * @return The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * 
      */
     public Optional<Output<String>> role() {
@@ -103,7 +103,7 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
         }
 
         /**
-         * @param password The database user&#39;s password encoded using BASE64 scheme.
+         * @param password The password for the database user name.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
         }
 
         /**
-         * @param password The database user&#39;s password encoded using BASE64 scheme.
+         * @param password The password for the database user name.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
         }
 
         /**
-         * @param role The role of the database user.
+         * @param role The role of the database user. Indicates whether the database user is a normal user or sysdba.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentialsArgs extend
         }
 
         /**
-         * @param role The role of the database user.
+         * @param role The role of the database user. Indicates whether the database user is a normal user or sysdba.
          * 
          * @return builder
          * 

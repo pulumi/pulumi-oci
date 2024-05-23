@@ -18,14 +18,14 @@ public final class PolicyOriginGroupOriginGroupArgs extends com.pulumi.resources
     public static final PolicyOriginGroupOriginGroupArgs Empty = new PolicyOriginGroupOriginGroupArgs();
 
     /**
-     * (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+     * The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
     @Import(name="origin", required=true)
     private Output<String> origin;
 
     /**
-     * @return (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+     * @return The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
      * 
      */
     public Output<String> origin() {
@@ -65,7 +65,7 @@ public final class PolicyOriginGroupOriginGroupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param origin (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+         * @param origin The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class PolicyOriginGroupOriginGroupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param origin (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+         * @param origin The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
          * 
          * @return builder
          * 

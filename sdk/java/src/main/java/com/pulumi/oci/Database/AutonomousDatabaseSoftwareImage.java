@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseSoftwareImage = new AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage", AutonomousDatabaseSoftwareImageArgs.builder()        
+ *         var testAutonomousDatabaseSoftwareImage = new AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage", AutonomousDatabaseSoftwareImageArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
  *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)

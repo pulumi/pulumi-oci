@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalExadataInfrastructure = new ExternalExadataInfrastructure("testExternalExadataInfrastructure", ExternalExadataInfrastructureArgs.builder()        
+ *         var testExternalExadataInfrastructure = new ExternalExadataInfrastructure("testExternalExadataInfrastructure", ExternalExadataInfrastructureArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbSystemIds(externalExadataInfrastructureDbSystemIds)
  *             .displayName(externalExadataInfrastructureDisplayName)

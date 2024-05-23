@@ -17,14 +17,14 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
     public static final ScriptParameterScriptParameterArgs Empty = new ScriptParameterScriptParameterArgs();
 
     /**
-     * (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+     * If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
     @Import(name="isSecret")
     private @Nullable Output<Boolean> isSecret;
 
     /**
-     * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+     * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
     public Optional<Output<Boolean>> isSecret() {
@@ -32,14 +32,14 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Name of the parameter.
+     * Name of the parameter.
      * 
      */
     @Import(name="paramName")
     private @Nullable Output<String> paramName;
 
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     public Optional<Output<String>> paramName() {
@@ -47,20 +47,14 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Value of the parameter.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Value of the parameter.
      * 
      */
     @Import(name="paramValue")
     private @Nullable Output<String> paramValue;
 
     /**
-     * @return (Updatable) Value of the parameter.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Value of the parameter.
      * 
      */
     public Optional<Output<String>> paramValue() {
@@ -94,7 +88,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isSecret (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+         * @param isSecret If the parameter value is secret and should be kept confidential, then set isSecret to true.
          * 
          * @return builder
          * 
@@ -105,7 +99,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isSecret (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+         * @param isSecret If the parameter value is secret and should be kept confidential, then set isSecret to true.
          * 
          * @return builder
          * 
@@ -115,7 +109,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName Name of the parameter.
          * 
          * @return builder
          * 
@@ -126,7 +120,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param paramName (Updatable) Name of the parameter.
+         * @param paramName Name of the parameter.
          * 
          * @return builder
          * 
@@ -136,10 +130,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param paramValue Value of the parameter.
          * 
          * @return builder
          * 
@@ -150,10 +141,7 @@ public final class ScriptParameterScriptParameterArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param paramValue (Updatable) Value of the parameter.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param paramValue Value of the parameter.
          * 
          * @return builder
          * 

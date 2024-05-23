@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails? LaunchCreateVolumeDetails;
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type of volume. Currently, the only supported value is "iscsi".
         /// </summary>
         public readonly string Type;
         /// <summary>

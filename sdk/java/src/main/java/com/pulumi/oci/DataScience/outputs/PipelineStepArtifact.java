@@ -18,7 +18,7 @@ public final class PipelineStepArtifact {
     private @Nullable String artifactLastModified;
     private String pipelineStepArtifact;
     /**
-     * @return (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+     * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
     private String stepName;
@@ -40,7 +40,7 @@ public final class PipelineStepArtifact {
         return this.pipelineStepArtifact;
     }
     /**
-     * @return (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+     * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
     public String stepName() {

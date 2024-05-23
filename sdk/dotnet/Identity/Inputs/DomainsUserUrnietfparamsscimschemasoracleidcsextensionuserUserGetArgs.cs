@@ -448,17 +448,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? UserFlowControlledByExternalClient { get; set; }
 
         /// <summary>
-        /// (Updatable) User Support Account Provider
-        /// 
-        /// **Added In:** 2103141444
+        /// (Updatable) Registration provider
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: false
-        /// * returned: always
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>

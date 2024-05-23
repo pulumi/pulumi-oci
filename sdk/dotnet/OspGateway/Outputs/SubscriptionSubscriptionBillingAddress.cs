@@ -42,11 +42,11 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string? DepartmentName;
         /// <summary>
-        /// (Updatable) The email address of the paypal user.
+        /// (Updatable) Contact person email address.
         /// </summary>
         public readonly string? EmailAddress;
         /// <summary>
-        /// (Updatable) First name of the paypal user.
+        /// (Updatable) First name of the contact person.
         /// </summary>
         public readonly string? FirstName;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string? JobTitle;
         /// <summary>
-        /// (Updatable) Last name of the paypal user.
+        /// (Updatable) Last name of the contact person.
         /// </summary>
         public readonly string? LastName;
         /// <summary>

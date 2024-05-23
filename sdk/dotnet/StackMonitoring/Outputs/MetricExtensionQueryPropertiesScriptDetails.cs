@@ -14,7 +14,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MetricExtensionQueryPropertiesScriptDetails
     {
         /// <summary>
-        /// (Updatable) Sql statement or script file content as base64 encoded string
+        /// (Updatable) Content of the script file as base64 encoded string
         /// </summary>
         public readonly string Content;
         /// <summary>

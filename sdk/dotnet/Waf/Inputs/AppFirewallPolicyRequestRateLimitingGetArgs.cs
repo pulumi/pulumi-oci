@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Waf.Inputs
         private InputList<Inputs.AppFirewallPolicyRequestRateLimitingRuleGetArgs>? _rules;
 
         /// <summary>
-        /// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        /// (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
         /// </summary>
         public InputList<Inputs.AppFirewallPolicyRequestRateLimitingRuleGetArgs> Rules
         {

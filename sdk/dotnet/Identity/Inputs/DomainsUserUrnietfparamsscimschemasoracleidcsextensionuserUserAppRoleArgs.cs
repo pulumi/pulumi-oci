@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? AdminRole { get; set; }
 
         /// <summary>
-        /// (Updatable) The ID of the App in this Grant.
+        /// (Updatable) The ID of the App that defines this AppRole.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -59,12 +59,12 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? AppName { get; set; }
 
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) The display name of the AppRole assigned to the User.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -89,9 +89,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? LegacyGroupName { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI of the AppRole assigned to the User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -106,14 +104,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) The kind of membership this User has in the AppRole. A value of 'direct' indicates that the User is a member of the AppRole.  A value of  'indirect' indicates that the User is a member of a Group that is a member of the AppRole.  A value of 'implicit' indicates that the AppRole is public.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -121,20 +120,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The Id of the AppRole assigned to the User.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

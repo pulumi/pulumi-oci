@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string? RrsetVersion;
         /// <summary>
-        /// The type of the target RRSet within the target zone.
+        /// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// </summary>
         public readonly string Rtype;
         /// <summary>

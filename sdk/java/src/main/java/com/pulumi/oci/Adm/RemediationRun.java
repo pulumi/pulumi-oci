@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRemediationRun = new RemediationRun("testRemediationRun", RemediationRunArgs.builder()        
+ *         var testRemediationRun = new RemediationRun("testRemediationRun", RemediationRunArgs.builder()
  *             .remediationRecipeId(testRemediationRecipe.id())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(remediationRunDisplayName)

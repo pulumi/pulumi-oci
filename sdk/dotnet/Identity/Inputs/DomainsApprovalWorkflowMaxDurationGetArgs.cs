@@ -30,16 +30,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Unit { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The value of the max duration.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * idcsMaxValue: 1488
+        /// * idcsMinValue: 1
+        /// * idcsDefaultValue: 14
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: string
+        /// * type: integer
         /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]

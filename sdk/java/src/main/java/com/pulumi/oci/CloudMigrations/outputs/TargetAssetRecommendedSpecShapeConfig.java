@@ -13,42 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetRecommendedSpecShapeConfig {
     /**
-     * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-     * 
-     * The following values are supported:
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
     private @Nullable String baselineOcpuUtilization;
     /**
-     * @return (Updatable) The total amount of memory in gigabytes that is available to the instance.
+     * @return The total amount of memory in gigabytes that is available to the instance.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return (Updatable) The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the instance.
      * 
      */
     private @Nullable Double ocpus;
 
     private TargetAssetRecommendedSpecShapeConfig() {}
     /**
-     * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-     * 
-     * The following values are supported:
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
     public Optional<String> baselineOcpuUtilization() {
         return Optional.ofNullable(this.baselineOcpuUtilization);
     }
     /**
-     * @return (Updatable) The total amount of memory in gigabytes that is available to the instance.
+     * @return The total amount of memory in gigabytes that is available to the instance.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return (Updatable) The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the instance.
      * 
      */
     public Optional<Double> ocpus() {

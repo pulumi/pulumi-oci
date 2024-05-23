@@ -31,7 +31,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Identifies state for ResponderRule
+        /// Identifies state for ResponderRule
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

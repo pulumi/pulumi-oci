@@ -20,22 +20,22 @@ public final class ReportDefinitionColumnInfo {
      */
     private @Nullable String dataType;
     /**
-     * @return (Updatable) Specifies the name of the report definition.
+     * @return (Updatable) Name of the column displayed on UI.
      * 
      */
     private String displayName;
     /**
-     * @return (Updatable) Specifies the order in which the summary must be displayed.
+     * @return (Updatable) Specifies the display order of the column.
      * 
      */
     private Integer displayOrder;
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Specifies the corresponding field name in the data source.
      * 
      */
     private String fieldName;
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     private Boolean isHidden;
@@ -49,28 +49,28 @@ public final class ReportDefinitionColumnInfo {
         return Optional.ofNullable(this.dataType);
     }
     /**
-     * @return (Updatable) Specifies the name of the report definition.
+     * @return (Updatable) Name of the column displayed on UI.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return (Updatable) Specifies the order in which the summary must be displayed.
+     * @return (Updatable) Specifies the display order of the column.
      * 
      */
     public Integer displayOrder() {
         return this.displayOrder;
     }
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Specifies the corresponding field name in the data source.
      * 
      */
     public String fieldName() {
         return this.fieldName;
     }
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Boolean isHidden() {

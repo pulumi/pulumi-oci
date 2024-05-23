@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class VmClusterNetworkScanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The node host name.
+        /// (Updatable) The SCAN hostname.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;

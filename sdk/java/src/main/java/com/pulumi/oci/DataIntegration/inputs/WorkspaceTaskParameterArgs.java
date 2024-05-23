@@ -36,14 +36,14 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) A default value for the vairable.
+     * (Updatable) The default value of the parameter.
      * 
      */
     @Import(name="defaultValue")
     private @Nullable Output<String> defaultValue;
 
     /**
-     * @return (Updatable) A default value for the vairable.
+     * @return (Updatable) The default value of the parameter.
      * 
      */
     public Optional<Output<String>> defaultValue() {
@@ -201,14 +201,14 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) A base class for all model types, including First Class and its contained objects.
+     * (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
      * 
      */
     @Import(name="rootObjectDefaultValue")
     private @Nullable Output<String> rootObjectDefaultValue;
 
     /**
-     * @return (Updatable) A base class for all model types, including First Class and its contained objects.
+     * @return (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
      * 
      */
     public Optional<Output<String>> rootObjectDefaultValue() {
@@ -216,14 +216,14 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The object type.
+     * (Updatable) This can either be a string value referencing the type or a BaseType object.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The object type.
+     * @return (Updatable) This can either be a string value referencing the type or a BaseType object.
      * 
      */
     public Optional<Output<String>> type() {
@@ -321,7 +321,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param defaultValue (Updatable) A default value for the vairable.
+         * @param defaultValue (Updatable) The default value of the parameter.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param defaultValue (Updatable) A default value for the vairable.
+         * @param defaultValue (Updatable) The default value of the parameter.
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param rootObjectDefaultValue (Updatable) A base class for all model types, including First Class and its contained objects.
+         * @param rootObjectDefaultValue (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param rootObjectDefaultValue (Updatable) A base class for all model types, including First Class and its contained objects.
+         * @param rootObjectDefaultValue (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) The object type.
+         * @param type (Updatable) This can either be a string value referencing the type or a BaseType object.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class WorkspaceTaskParameterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) The object type.
+         * @param type (Updatable) This can either be a string value referencing the type or a BaseType object.
          * 
          * @return builder
          * 

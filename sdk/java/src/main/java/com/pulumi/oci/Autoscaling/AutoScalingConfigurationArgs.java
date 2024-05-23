@@ -91,9 +91,17 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.definedTags);
     }
 
+    /**
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
+    /**
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -114,14 +122,14 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Whether the autoscaling policy is enabled.
+     * (Updatable) Whether the autoscaling configuration is enabled.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Whether the autoscaling policy is enabled.
+     * @return (Updatable) Whether the autoscaling configuration is enabled.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -266,11 +274,23 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
             return definedTags(Output.of(definedTags));
         }
 
+        /**
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
@@ -297,7 +317,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isEnabled Whether the autoscaling policy is enabled.
+         * @param isEnabled (Updatable) Whether the autoscaling configuration is enabled.
          * 
          * @return builder
          * 
@@ -308,7 +328,7 @@ public final class AutoScalingConfigurationArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isEnabled Whether the autoscaling policy is enabled.
+         * @param isEnabled (Updatable) Whether the autoscaling configuration is enabled.
          * 
          * @return builder
          * 

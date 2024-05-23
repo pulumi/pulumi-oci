@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Opsi.Inputs
     public sealed class ExadataInsightMemberVmClusterDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of database
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

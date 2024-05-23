@@ -48,14 +48,14 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
     }
 
     /**
-     * (Updatable) The details for creating a file system mount.
+     * (Updatable) The details for creating a mount for a file system on a block volume.
      * 
      */
     @Import(name="mountDetails")
     private @Nullable Output<DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs> mountDetails;
 
     /**
-     * @return (Updatable) The details for creating a file system mount.
+     * @return (Updatable) The details for creating a mount for a file system on a block volume.
      * 
      */
     public Optional<Output<DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs>> mountDetails() {
@@ -131,7 +131,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
         }
 
         /**
-         * @param mountDetails (Updatable) The details for creating a file system mount.
+         * @param mountDetails (Updatable) The details for creating a mount for a file system on a block volume.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationArgs extends com.p
         }
 
         /**
-         * @param mountDetails (Updatable) The details for creating a file system mount.
+         * @param mountDetails (Updatable) The details for creating a mount for a file system on a block volume.
          * 
          * @return builder
          * 

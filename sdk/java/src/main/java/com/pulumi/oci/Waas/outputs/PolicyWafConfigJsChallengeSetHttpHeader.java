@@ -11,10 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class PolicyWafConfigJsChallengeSetHttpHeader {
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the header.
      * 
      */
     private String name;
@@ -26,10 +23,7 @@ public final class PolicyWafConfigJsChallengeSetHttpHeader {
 
     private PolicyWafConfigJsChallengeSetHttpHeader() {}
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the header.
      * 
      */
     public String name() {

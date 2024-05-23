@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigConfigurationClientCertificateDetailsClientCertificate
     {
         /// <summary>
-        /// (Updatable) Content of the private key file.
+        /// (Updatable) Content of the client certificate file.
         /// </summary>
         public readonly string? Content;
         /// <summary>
-        /// (Updatable) Name of the private key file.
+        /// (Updatable) Name of the certificate file. The name should not contain any confidential information.
         /// </summary>
         public readonly string? FileName;
 

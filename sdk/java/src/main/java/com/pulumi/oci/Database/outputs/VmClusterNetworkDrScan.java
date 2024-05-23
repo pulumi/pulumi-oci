@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class VmClusterNetworkDrScan {
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The Disaster recovery SCAN hostname.
      * 
      */
     private String hostname;
     /**
-     * @return (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+     * @return (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
      * 
      */
     private List<String> ips;
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
      * 
      */
     private Integer scanListenerPortTcp;
 
     private VmClusterNetworkDrScan() {}
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The Disaster recovery SCAN hostname.
      * 
      */
     public String hostname() {
         return this.hostname;
     }
     /**
-     * @return (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+     * @return (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
      * 
      */
     public List<String> ips() {
         return this.ips;
     }
     /**
-     * @return (Updatable) The SCAN TCPIP port. Default is 1521.
+     * @return (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
      * 
      */
     public Integer scanListenerPortTcp() {

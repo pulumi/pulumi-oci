@@ -246,7 +246,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<string> AgentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        /// (Updatable) OCID of the compartment
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -466,7 +466,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string>? AgentId { get; set; }
 
         /// <summary>
-        /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        /// (Updatable) OCID of the compartment
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -618,7 +618,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<string>? AgentId { get; set; }
 
         /// <summary>
-        /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        /// (Updatable) OCID of the compartment
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

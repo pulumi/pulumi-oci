@@ -15,17 +15,16 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainsGroupTagArgs Empty = new DomainsGroupTagArgs();
 
     /**
-     * (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -33,17 +32,16 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> key;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -52,15 +50,13 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -71,15 +67,13 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -116,17 +110,16 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key (Updatable) Oracle Cloud Infrastructure Tag key
-         * 
-         * **Added In:** 2011192329
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * type: string
-         * * required: true
-         * * mutability: readWrite
-         * * returned: default
          * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder
@@ -138,17 +131,16 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key (Updatable) Oracle Cloud Infrastructure Tag key
-         * 
-         * **Added In:** 2011192329
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * type: string
-         * * required: true
-         * * mutability: readWrite
-         * * returned: default
          * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder
@@ -159,15 +151,13 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
@@ -182,15 +172,13 @@ public final class DomainsGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string

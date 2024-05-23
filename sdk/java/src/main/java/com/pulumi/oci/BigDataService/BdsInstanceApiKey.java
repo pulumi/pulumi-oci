@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstanceApiKey = new BdsInstanceApiKey("testBdsInstanceApiKey", BdsInstanceApiKeyArgs.builder()        
+ *         var testBdsInstanceApiKey = new BdsInstanceApiKey("testBdsInstanceApiKey", BdsInstanceApiKeyArgs.builder()
  *             .bdsInstanceId(testBdsInstance.id())
  *             .keyAlias(bdsInstanceApiKeyKeyAlias)
  *             .passphrase(bdsInstanceApiKeyPassphrase)

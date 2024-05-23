@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class DatasetDatasetSourceDetails
     {
         /// <summary>
-        /// Bucket name
+        /// The object storage bucket that contains the dataset data source.
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// Bucket namespace name
+        /// The namespace of the bucket that contains the dataset data source.
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// </summary>
         public readonly string? Prefix;
         /// <summary>
-        /// The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+        /// The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
         /// </summary>
         public readonly string SourceType;
 

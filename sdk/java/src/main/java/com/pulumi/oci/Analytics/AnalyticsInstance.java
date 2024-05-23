@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnalyticsInstance = new AnalyticsInstance("testAnalyticsInstance", AnalyticsInstanceArgs.builder()        
+ *         var testAnalyticsInstance = new AnalyticsInstance("testAnalyticsInstance", AnalyticsInstanceArgs.builder()
  *             .capacity(AnalyticsInstanceCapacityArgs.builder()
  *                 .capacityType(analyticsInstanceCapacityCapacityType)
  *                 .capacityValue(analyticsInstanceCapacityCapacityValue)

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class NodePoolNodeSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the image used to boot the node.
+        /// The OCID of the image used to boot the node.
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? SourceName { get; set; }
 
         /// <summary>
-        /// (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        /// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class DatasetDatasetFormatDetails
     {
         /// <summary>
-        /// It defines the format type of text files.
+        /// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         /// </summary>
         public readonly string FormatType;
         /// <summary>

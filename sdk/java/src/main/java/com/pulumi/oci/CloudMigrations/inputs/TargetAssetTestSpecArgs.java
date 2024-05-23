@@ -26,14 +26,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     public static final TargetAssetTestSpecArgs Empty = new TargetAssetTestSpecArgs();
 
     /**
-     * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+     * Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
     @Import(name="agentConfigs")
     private @Nullable Output<List<TargetAssetTestSpecAgentConfigArgs>> agentConfigs;
 
     /**
-     * @return (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+     * @return Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecAgentConfigArgs>>> agentConfigs() {
@@ -41,14 +41,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -56,14 +56,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
     @Import(name="capacityReservationId")
     private @Nullable Output<String> capacityReservationId;
 
     /**
-     * @return (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * @return The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
     public Optional<Output<String>> capacityReservationId() {
@@ -71,14 +71,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -86,14 +86,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
     @Import(name="createVnicDetails")
     private @Nullable Output<List<TargetAssetTestSpecCreateVnicDetailArgs>> createVnicDetails;
 
     /**
-     * @return (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * @return Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecCreateVnicDetailArgs>>> createVnicDetails() {
@@ -101,14 +101,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The OCID of the dedicated VM host.
+     * The OCID of the dedicated VM host.
      * 
      */
     @Import(name="dedicatedVmHostId")
     private @Nullable Output<String> dedicatedVmHostId;
 
     /**
-     * @return (Updatable) The OCID of the dedicated VM host.
+     * @return The OCID of the dedicated VM host.
      * 
      */
     public Optional<Output<String>> dedicatedVmHostId() {
@@ -116,14 +116,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -131,14 +131,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -146,26 +146,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-     * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
+     * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
     @Import(name="faultDomain")
     private @Nullable Output<String> faultDomain;
 
     /**
-     * @return (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-     * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
+     * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
     public Optional<Output<String>> faultDomain() {
@@ -173,14 +161,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -188,14 +176,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+     * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
     @Import(name="hostnameLabel")
     private @Nullable Output<String> hostnameLabel;
 
     /**
-     * @return (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+     * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
     public Optional<Output<String>> hostnameLabel() {
@@ -203,14 +191,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Optional mutable instance options
+     * Optional mutable instance options
      * 
      */
     @Import(name="instanceOptions")
     private @Nullable Output<List<TargetAssetTestSpecInstanceOptionArgs>> instanceOptions;
 
     /**
-     * @return (Updatable) Optional mutable instance options
+     * @return Optional mutable instance options
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecInstanceOptionArgs>>> instanceOptions() {
@@ -218,38 +206,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) This is an advanced option.
-     * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-     * 
-     * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
+     * This is an advanced option.
      * 
      */
     @Import(name="ipxeScript")
     private @Nullable Output<String> ipxeScript;
 
     /**
-     * @return (Updatable) This is an advanced option.
-     * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-     * 
-     * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
+     * @return This is an advanced option.
      * 
      */
     public Optional<Output<String>> ipxeScript() {
@@ -257,14 +221,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -272,14 +236,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Configuration options for preemptible instances.
+     * Configuration options for preemptible instances.
      * 
      */
     @Import(name="preemptibleInstanceConfigs")
     private @Nullable Output<List<TargetAssetTestSpecPreemptibleInstanceConfigArgs>> preemptibleInstanceConfigs;
 
     /**
-     * @return (Updatable) Configuration options for preemptible instances.
+     * @return Configuration options for preemptible instances.
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecPreemptibleInstanceConfigArgs>>> preemptibleInstanceConfigs() {
@@ -287,18 +251,14 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-     * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-     * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+     * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -306,39 +266,23 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * The shape configuration requested for the instance.
      * 
      */
     @Import(name="shapeConfigs")
     private @Nullable Output<List<TargetAssetTestSpecShapeConfigArgs>> shapeConfigs;
 
     /**
-     * @return (Updatable) The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * @return The shape configuration requested for the instance.
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecShapeConfigArgs>>> shapeConfigs() {
         return Optional.ofNullable(this.shapeConfigs);
     }
 
-    /**
-     * (Updatable)
-     * 
-     */
     @Import(name="sourceDetails")
     private @Nullable Output<List<TargetAssetTestSpecSourceDetailArgs>> sourceDetails;
 
-    /**
-     * @return (Updatable)
-     * 
-     */
     public Optional<Output<List<TargetAssetTestSpecSourceDetailArgs>>> sourceDetails() {
         return Optional.ofNullable(this.sourceDetails);
     }
@@ -385,7 +329,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param agentConfigs (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+         * @param agentConfigs Configuration options for the Oracle Cloud Agent software running on the instance.
          * 
          * @return builder
          * 
@@ -396,7 +340,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param agentConfigs (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+         * @param agentConfigs Configuration options for the Oracle Cloud Agent software running on the instance.
          * 
          * @return builder
          * 
@@ -406,7 +350,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param agentConfigs (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+         * @param agentConfigs Configuration options for the Oracle Cloud Agent software running on the instance.
          * 
          * @return builder
          * 
@@ -416,7 +360,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -427,7 +371,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -437,7 +381,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param capacityReservationId (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * @param capacityReservationId The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          * 
          * @return builder
          * 
@@ -448,7 +392,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param capacityReservationId (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * @param capacityReservationId The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          * 
          * @return builder
          * 
@@ -458,7 +402,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -469,7 +413,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId The OCID of the compartment.
          * 
          * @return builder
          * 
@@ -479,7 +423,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param createVnicDetails (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * @param createVnicDetails Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          * 
          * @return builder
          * 
@@ -490,7 +434,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param createVnicDetails (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * @param createVnicDetails Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          * 
          * @return builder
          * 
@@ -500,7 +444,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param createVnicDetails (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * @param createVnicDetails Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          * 
          * @return builder
          * 
@@ -510,7 +454,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param dedicatedVmHostId (Updatable) The OCID of the dedicated VM host.
+         * @param dedicatedVmHostId The OCID of the dedicated VM host.
          * 
          * @return builder
          * 
@@ -521,7 +465,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param dedicatedVmHostId (Updatable) The OCID of the dedicated VM host.
+         * @param dedicatedVmHostId The OCID of the dedicated VM host.
          * 
          * @return builder
          * 
@@ -531,7 +475,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -542,7 +486,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -552,7 +496,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -563,7 +507,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -573,13 +517,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param faultDomain (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-         * 
-         * If you do not specify the fault domain, the system selects one for you.
-         * 
-         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-         * 
-         * Example: `FAULT-DOMAIN-1`
+         * @param faultDomain A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
          * 
          * @return builder
          * 
@@ -590,13 +528,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param faultDomain (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-         * 
-         * If you do not specify the fault domain, the system selects one for you.
-         * 
-         * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-         * 
-         * Example: `FAULT-DOMAIN-1`
+         * @param faultDomain A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
          * 
          * @return builder
          * 
@@ -606,7 +538,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -617,7 +549,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -627,7 +559,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param hostnameLabel (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+         * @param hostnameLabel Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          * 
          * @return builder
          * 
@@ -638,7 +570,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param hostnameLabel (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+         * @param hostnameLabel Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          * 
          * @return builder
          * 
@@ -648,7 +580,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param instanceOptions (Updatable) Optional mutable instance options
+         * @param instanceOptions Optional mutable instance options
          * 
          * @return builder
          * 
@@ -659,7 +591,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param instanceOptions (Updatable) Optional mutable instance options
+         * @param instanceOptions Optional mutable instance options
          * 
          * @return builder
          * 
@@ -669,7 +601,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param instanceOptions (Updatable) Optional mutable instance options
+         * @param instanceOptions Optional mutable instance options
          * 
          * @return builder
          * 
@@ -679,19 +611,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ipxeScript (Updatable) This is an advanced option.
-         * 
-         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-         * 
-         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-         * 
-         * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-         * 
-         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-         * 
-         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         * 
-         * For more information about iPXE, see http://ipxe.org.
+         * @param ipxeScript This is an advanced option.
          * 
          * @return builder
          * 
@@ -702,19 +622,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ipxeScript (Updatable) This is an advanced option.
-         * 
-         * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-         * 
-         * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-         * 
-         * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-         * 
-         * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-         * 
-         * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         * 
-         * For more information about iPXE, see http://ipxe.org.
+         * @param ipxeScript This is an advanced option.
          * 
          * @return builder
          * 
@@ -724,7 +632,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
          * 
          * @return builder
          * 
@@ -735,7 +643,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
          * 
          * @return builder
          * 
@@ -745,7 +653,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param preemptibleInstanceConfigs (Updatable) Configuration options for preemptible instances.
+         * @param preemptibleInstanceConfigs Configuration options for preemptible instances.
          * 
          * @return builder
          * 
@@ -756,7 +664,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param preemptibleInstanceConfigs (Updatable) Configuration options for preemptible instances.
+         * @param preemptibleInstanceConfigs Configuration options for preemptible instances.
          * 
          * @return builder
          * 
@@ -766,7 +674,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param preemptibleInstanceConfigs (Updatable) Configuration options for preemptible instances.
+         * @param preemptibleInstanceConfigs Configuration options for preemptible instances.
          * 
          * @return builder
          * 
@@ -776,9 +684,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shape (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-         * 
-         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         * @param shape The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
          * 
          * @return builder
          * 
@@ -789,9 +695,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shape (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-         * 
-         * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+         * @param shape The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
          * 
          * @return builder
          * 
@@ -801,11 +705,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shapeConfigs (Updatable) The shape configuration requested for the instance.
-         * 
-         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-         * 
-         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         * @param shapeConfigs The shape configuration requested for the instance.
          * 
          * @return builder
          * 
@@ -816,11 +716,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shapeConfigs (Updatable) The shape configuration requested for the instance.
-         * 
-         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-         * 
-         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         * @param shapeConfigs The shape configuration requested for the instance.
          * 
          * @return builder
          * 
@@ -830,11 +726,7 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param shapeConfigs (Updatable) The shape configuration requested for the instance.
-         * 
-         * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-         * 
-         * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+         * @param shapeConfigs The shape configuration requested for the instance.
          * 
          * @return builder
          * 
@@ -843,33 +735,15 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
             return shapeConfigs(List.of(shapeConfigs));
         }
 
-        /**
-         * @param sourceDetails (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder sourceDetails(@Nullable Output<List<TargetAssetTestSpecSourceDetailArgs>> sourceDetails) {
             $.sourceDetails = sourceDetails;
             return this;
         }
 
-        /**
-         * @param sourceDetails (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder sourceDetails(List<TargetAssetTestSpecSourceDetailArgs> sourceDetails) {
             return sourceDetails(Output.of(sourceDetails));
         }
 
-        /**
-         * @param sourceDetails (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder sourceDetails(TargetAssetTestSpecSourceDetailArgs... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }

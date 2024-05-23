@@ -28,9 +28,7 @@ public final class DomainsCloudGateMappingGatewayApp {
      */
     private String name;
     /**
-     * @return (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI to the gateway application protected by this Cloud Gate
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -45,22 +43,17 @@ public final class DomainsCloudGateMappingGatewayApp {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the gateway application protected by this Cloud Gate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -84,9 +77,7 @@ public final class DomainsCloudGateMappingGatewayApp {
         return this.name;
     }
     /**
-     * @return (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI to the gateway application protected by this Cloud Gate
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -103,22 +94,17 @@ public final class DomainsCloudGateMappingGatewayApp {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the gateway application protected by this Cloud Gate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

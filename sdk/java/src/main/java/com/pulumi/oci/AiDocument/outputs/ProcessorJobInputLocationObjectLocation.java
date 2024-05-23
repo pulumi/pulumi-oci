@@ -17,7 +17,7 @@ public final class ProcessorJobInputLocationObjectLocation {
      */
     private @Nullable String bucket;
     /**
-     * @return The Object Storage namespace.
+     * @return The Object Storage namespace name.
      * 
      */
     private @Nullable String namespace;
@@ -36,7 +36,7 @@ public final class ProcessorJobInputLocationObjectLocation {
         return Optional.ofNullable(this.bucket);
     }
     /**
-     * @return The Object Storage namespace.
+     * @return The Object Storage namespace name.
      * 
      */
     public Optional<String> namespace() {

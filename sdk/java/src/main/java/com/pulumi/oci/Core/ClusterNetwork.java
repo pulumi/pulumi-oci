@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterNetwork = new ClusterNetwork("testClusterNetwork", ClusterNetworkArgs.builder()        
+ *         var testClusterNetwork = new ClusterNetwork("testClusterNetwork", ClusterNetworkArgs.builder()
  *             .compartmentId(compartmentId)
  *             .instancePools(ClusterNetworkInstancePoolArgs.builder()
  *                 .instanceConfigurationId(testInstanceConfiguration.id())
@@ -139,14 +139,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.clusterConfiguration;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      * 
      */
     public Output<String> compartmentId() {
@@ -167,14 +167,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -195,14 +195,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     @Export(name="hpcIslandId", refs={String.class}, tree="[0]")
     private Output<String> hpcIslandId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      * 
      */
     public Output<String> hpcIslandId() {
@@ -227,14 +227,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.instancePools;
     }
     /**
-     * The list of network block OCIDs.
+     * The list of network block OCIDs of the HPC island.
      * 
      */
     @Export(name="networkBlockIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkBlockIds;
 
     /**
-     * @return The list of network block OCIDs.
+     * @return The list of network block OCIDs of the HPC island.
      * 
      */
     public Output<List<String>> networkBlockIds() {

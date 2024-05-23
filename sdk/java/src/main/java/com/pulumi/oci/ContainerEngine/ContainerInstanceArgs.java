@@ -86,14 +86,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -101,14 +101,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -146,14 +146,14 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -409,7 +409,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 

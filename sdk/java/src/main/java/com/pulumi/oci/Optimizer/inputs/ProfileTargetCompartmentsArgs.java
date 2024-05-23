@@ -16,14 +16,14 @@ public final class ProfileTargetCompartmentsArgs extends com.pulumi.resources.Re
     public static final ProfileTargetCompartmentsArgs Empty = new ProfileTargetCompartmentsArgs();
 
     /**
-     * (Updatable) The list of tags specified in the current profile override.
+     * (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<String>> items;
 
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
      * 
      */
     public Output<List<String>> items() {
@@ -55,7 +55,7 @@ public final class ProfileTargetCompartmentsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ProfileTargetCompartmentsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class ProfileTargetCompartmentsArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
          * 
          * @return builder
          * 

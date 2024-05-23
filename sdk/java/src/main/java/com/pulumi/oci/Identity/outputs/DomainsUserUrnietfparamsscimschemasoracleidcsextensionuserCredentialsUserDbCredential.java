@@ -12,9 +12,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential {
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The user&#39;s database credential OCID.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -29,9 +29,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding UserDbCredential resource to which the user belongs.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -45,28 +45,28 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s database credential identifier.
+     * 
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential() {}
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The user&#39;s database credential OCID.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -83,9 +83,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding UserDbCredential resource to which the user belongs.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -101,19 +101,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s database credential identifier.
+     * 
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

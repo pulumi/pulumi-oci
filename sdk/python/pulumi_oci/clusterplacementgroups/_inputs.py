@@ -44,7 +44,7 @@ class ClusterPlacementGroupCapabilitiesItemArgs:
                  name: pulumi.Input[str],
                  service: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] name: The friendly name of the cluster placement group.
+        :param pulumi.Input[str] name: The type of resource.
         :param pulumi.Input[str] service: The service that the resource is part of.
         """
         pulumi.set(__self__, "name", name)
@@ -54,7 +54,7 @@ class ClusterPlacementGroupCapabilitiesItemArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        The friendly name of the cluster placement group.
+        The type of resource.
         """
         return pulumi.get(self, "name")
 

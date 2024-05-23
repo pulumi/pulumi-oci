@@ -69,7 +69,7 @@ import (
 type MediaWorkflowConfiguration struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -91,7 +91,7 @@ type MediaWorkflowConfiguration struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -136,7 +136,7 @@ func GetMediaWorkflowConfiguration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MediaWorkflowConfiguration resources.
 type mediaWorkflowConfigurationState struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -158,14 +158,14 @@ type mediaWorkflowConfigurationState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type MediaWorkflowConfigurationState struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -187,7 +187,7 @@ type MediaWorkflowConfigurationState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -198,7 +198,7 @@ func (MediaWorkflowConfigurationState) ElementType() reflect.Type {
 }
 
 type mediaWorkflowConfigurationArgs struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -218,7 +218,7 @@ type mediaWorkflowConfigurationArgs struct {
 
 // The set of arguments for constructing a MediaWorkflowConfiguration resource.
 type MediaWorkflowConfigurationArgs struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -323,7 +323,7 @@ func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutputWith
 	return o
 }
 
-// (Updatable) The compartment ID of the lock.
+// (Updatable) Compartment Identifier.
 func (o MediaWorkflowConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -375,7 +375,7 @@ func (o MediaWorkflowConfigurationOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 func (o MediaWorkflowConfigurationOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

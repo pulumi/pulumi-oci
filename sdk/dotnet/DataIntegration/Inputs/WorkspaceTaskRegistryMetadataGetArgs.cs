@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<bool>? IsFavorite { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) The identifying key for the object.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCrossConnectGroup = new CrossConnectGroup("testCrossConnectGroup", CrossConnectGroupArgs.builder()        
+ *         var testCrossConnectGroup = new CrossConnectGroup("testCrossConnectGroup", CrossConnectGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .customerReferenceName(crossConnectGroupCustomerReferenceName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -209,20 +209,14 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
         return this.ociPhysicalDeviceName;
     }
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The cross-connect group&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The cross-connect group&#39;s current state.
      * 
      */
     public Output<String> state() {

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCccUpgradeSchedule = new AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule", AtCustomerCccUpgradeScheduleArgs.builder()        
+ *         var testCccUpgradeSchedule = new AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule", AtCustomerCccUpgradeScheduleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(cccUpgradeScheduleDisplayName)
  *             .events(AtCustomerCccUpgradeScheduleEventArgs.builder()
@@ -108,14 +108,14 @@ public class AtCustomerCccUpgradeSchedule extends com.pulumi.resources.CustomRes
         return this.definedTags;
     }
     /**
-     * (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+     * (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A description of the Compute Cloud{@literal @}Customer upgrade schedule time block.
+     * @return (Updatable) An optional description of the Compute Cloud{@literal @}Customer upgrade schedule. Avoid entering confidential information.
      * 
      */
     public Output<String> description() {

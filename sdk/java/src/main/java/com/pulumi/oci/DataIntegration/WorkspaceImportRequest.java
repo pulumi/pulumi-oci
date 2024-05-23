@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceImportRequest = new WorkspaceImportRequest("testWorkspaceImportRequest", WorkspaceImportRequestArgs.builder()        
+ *         var testWorkspaceImportRequest = new WorkspaceImportRequest("testWorkspaceImportRequest", WorkspaceImportRequestArgs.builder()
  *             .bucket(workspaceImportRequestBucket)
  *             .fileName(workspaceImportRequestFileName)
  *             .workspaceId(testWorkspace.id())

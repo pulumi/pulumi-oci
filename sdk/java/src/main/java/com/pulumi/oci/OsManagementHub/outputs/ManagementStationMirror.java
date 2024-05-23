@@ -18,7 +18,7 @@ public final class ManagementStationMirror {
      */
     private String directory;
     /**
-     * @return (Updatable) Listening port used for the proxy.
+     * @return (Updatable) Default mirror listening port for http.
      * 
      */
     private String port;
@@ -42,7 +42,7 @@ public final class ManagementStationMirror {
         return this.directory;
     }
     /**
-     * @return (Updatable) Listening port used for the proxy.
+     * @return (Updatable) Default mirror listening port for http.
      * 
      */
     public String port() {

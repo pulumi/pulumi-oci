@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Nosql.Inputs
     public sealed class TableReplicaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        /// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         /// </summary>
         [Input("capacityMode")]
         public Input<string>? CapacityMode { get; set; }
@@ -25,11 +25,7 @@ namespace Pulumi.Oci.Nosql.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Maximum sustained write throughput limit for the table.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Maximum sustained write throughput limit for the table.
         /// </summary>
         [Input("maxWriteUnits")]
         public Input<int>? MaxWriteUnits { get; set; }

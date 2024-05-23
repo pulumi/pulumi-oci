@@ -35,14 +35,14 @@ public final class DeploymentSpecificationArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Behavior applied to any requests received by the API on this route.
+     * (Updatable) Global behavior applied to all requests received by the API.
      * 
      */
     @Import(name="requestPolicies")
     private @Nullable Output<DeploymentSpecificationRequestPoliciesArgs> requestPolicies;
 
     /**
-     * @return (Updatable) Behavior applied to any requests received by the API on this route.
+     * @return (Updatable) Global behavior applied to all requests received by the API.
      * 
      */
     public Optional<Output<DeploymentSpecificationRequestPoliciesArgs>> requestPolicies() {
@@ -112,7 +112,7 @@ public final class DeploymentSpecificationArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param requestPolicies (Updatable) Behavior applied to any requests received by the API on this route.
+         * @param requestPolicies (Updatable) Global behavior applied to all requests received by the API.
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class DeploymentSpecificationArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param requestPolicies (Updatable) Behavior applied to any requests received by the API on this route.
+         * @param requestPolicies (Updatable) Global behavior applied to all requests received by the API.
          * 
          * @return builder
          * 

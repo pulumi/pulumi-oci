@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUiPassword = new UiPassword("testUiPassword", UiPasswordArgs.builder()        
+ *         var testUiPassword = new UiPassword("testUiPassword", UiPasswordArgs.builder()
  *             .userId(testUser.id())
  *             .build());
  * 

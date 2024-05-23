@@ -42,9 +42,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
      */
     private @Nullable String realmName;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -58,19 +56,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -110,9 +106,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         return Optional.ofNullable(this.realmName);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -128,19 +122,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

@@ -13,15 +13,15 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsApprovalWorkflowAssignmentApprovalWorkflowGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) Display name of the approval workflow
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -29,31 +29,30 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// Unique Oracle Cloud Infrastructure Identifier of the approval workflow
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) URI of the approval workflow
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: reference
         /// * uniqueness: none
         /// </summary>
@@ -61,15 +60,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// Indicates type of the entity that is associated with this assignment (for ARM validation)
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * idcsDefaultValue: ApprovalWorkflow
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -77,15 +77,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Value of the tag.
+        /// Identifier of the approval workflow
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

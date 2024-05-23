@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigConfigurationRequestQueryParamGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Name of the parameter.
+        /// (Updatable) Name of request query parameter.
         /// </summary>
         [Input("paramName")]
         public Input<string>? ParamName { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the parameter.
+        /// (Updatable) Value of request query parameter.
         /// </summary>
         [Input("paramValue")]
         public Input<string>? ParamValue { get; set; }

@@ -31,7 +31,9 @@ class DetectorRecipeArgs:
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -100,7 +102,9 @@ class DetectorRecipeArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Description for DetectorRecipeDetectorRule.
+        (Updatable) Detector recipe description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -185,7 +189,9 @@ class _DetectorRecipeState:
         Input properties used for looking up and filtering DetectorRecipe resources.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
@@ -266,7 +272,9 @@ class _DetectorRecipeState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Description for DetectorRecipeDetectorRule.
+        (Updatable) Detector recipe description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -458,7 +466,9 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
@@ -577,7 +587,9 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description for DetectorRecipeDetectorRule.
+        :param pulumi.Input[str] description: (Updatable) Detector recipe description.
+               
+               Avoid entering confidential information.
         :param pulumi.Input[str] detector: detector for the rule
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DetectorRecipeDetectorRuleArgs']]]] detector_rules: (Updatable) Detector Rules to override from source detector recipe
         :param pulumi.Input[str] display_name: (Updatable) Detector recipe display name.
@@ -640,7 +652,9 @@ class DetectorRecipe(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) Description for DetectorRecipeDetectorRule.
+        (Updatable) Detector recipe description.
+
+        Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 

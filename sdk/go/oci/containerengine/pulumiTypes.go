@@ -787,7 +787,7 @@ func (o ClusterImagePolicyConfigPtrOutput) KeyDetails() ClusterImagePolicyConfig
 }
 
 type ClusterImagePolicyConfigKeyDetail struct {
-	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+	// (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
@@ -803,7 +803,7 @@ type ClusterImagePolicyConfigKeyDetailInput interface {
 }
 
 type ClusterImagePolicyConfigKeyDetailArgs struct {
-	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+	// (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
 	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
@@ -858,7 +858,7 @@ func (o ClusterImagePolicyConfigKeyDetailOutput) ToClusterImagePolicyConfigKeyDe
 	return o
 }
 
-// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+// (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
 func (o ClusterImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterImagePolicyConfigKeyDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
@@ -2063,7 +2063,7 @@ type ContainerInstanceContainer struct {
 	Arguments []string `pulumi:"arguments"`
 	// The availability domain where the container instance runs.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The list of strings that will be simplified to a single command for checking the status of the container.
+	// An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
 	Commands []string `pulumi:"commands"`
 	// (Updatable) The compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -2072,7 +2072,7 @@ type ContainerInstanceContainer struct {
 	ContainerInstanceId *string `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
@@ -2139,7 +2139,7 @@ type ContainerInstanceContainerArgs struct {
 	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
 	// The availability domain where the container instance runs.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// The list of strings that will be simplified to a single command for checking the status of the container.
+	// An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
 	Commands pulumi.StringArrayInput `pulumi:"commands"`
 	// (Updatable) The compartment OCID.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
@@ -2148,7 +2148,7 @@ type ContainerInstanceContainerArgs struct {
 	ContainerInstanceId pulumi.StringPtrInput `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
@@ -2260,7 +2260,7 @@ func (o ContainerInstanceContainerOutput) AvailabilityDomain() pulumi.StringPtrO
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// The list of strings that will be simplified to a single command for checking the status of the container.
+// An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
 func (o ContainerInstanceContainerOutput) Commands() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) []string { return v.Commands }).(pulumi.StringArrayOutput)
 }
@@ -2284,7 +2284,7 @@ func (o ContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 func (o ContainerInstanceContainerOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainer) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2420,9 +2420,9 @@ type ContainerInstanceContainerHealthCheck struct {
 	InitialDelayInSeconds *int `pulumi:"initialDelayInSeconds"`
 	// Number of seconds between two consecutive runs for checking container health.
 	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
-	// The name of the volume. This must be unique within a single container instance.
+	// Health check name.
 	Name *string `pulumi:"name"`
-	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	// Container health check HTTP path.
 	Path *string `pulumi:"path"`
 	// Container health check HTTP port.
 	Port          *int    `pulumi:"port"`
@@ -2460,9 +2460,9 @@ type ContainerInstanceContainerHealthCheckArgs struct {
 	InitialDelayInSeconds pulumi.IntPtrInput `pulumi:"initialDelayInSeconds"`
 	// Number of seconds between two consecutive runs for checking container health.
 	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
-	// The name of the volume. This must be unique within a single container instance.
+	// Health check name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+	// Container health check HTTP path.
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Container health check HTTP port.
 	Port          pulumi.IntPtrInput    `pulumi:"port"`
@@ -2562,12 +2562,12 @@ func (o ContainerInstanceContainerHealthCheckOutput) IntervalInSeconds() pulumi.
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
-// The name of the volume. This must be unique within a single container instance.
+// Health check name.
 func (o ContainerInstanceContainerHealthCheckOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+// Container health check HTTP path.
 func (o ContainerInstanceContainerHealthCheckOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheck) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
@@ -2616,7 +2616,7 @@ func (o ContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInpu
 }
 
 type ContainerInstanceContainerHealthCheckHeader struct {
-	// The name of the volume. This must be unique within a single container instance.
+	// Container HTTP header Key.
 	Name *string `pulumi:"name"`
 	// Container HTTP header value.
 	Value *string `pulumi:"value"`
@@ -2634,7 +2634,7 @@ type ContainerInstanceContainerHealthCheckHeaderInput interface {
 }
 
 type ContainerInstanceContainerHealthCheckHeaderArgs struct {
-	// The name of the volume. This must be unique within a single container instance.
+	// Container HTTP header Key.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Container HTTP header value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -2691,7 +2691,7 @@ func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceCo
 	return o
 }
 
-// The name of the volume. This must be unique within a single container instance.
+// Container HTTP header Key.
 func (o ContainerInstanceContainerHealthCheckHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ContainerInstanceContainerHealthCheckHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -4458,7 +4458,7 @@ func (o NodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) NodePoolIn
 }
 
 type NodePoolNode struct {
-	// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -4484,7 +4484,7 @@ type NodePoolNode struct {
 	PublicIp *string `pulumi:"publicIp"`
 	// The state of the nodepool.
 	State *string `pulumi:"state"`
-	// (Updatable) The OCID of the subnet in which to place nodes.
+	// The OCID of the subnet in which this node is placed.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -4500,7 +4500,7 @@ type NodePoolNodeInput interface {
 }
 
 type NodePoolNodeArgs struct {
-	// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -4526,7 +4526,7 @@ type NodePoolNodeArgs struct {
 	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
 	// The state of the nodepool.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// (Updatable) The OCID of the subnet in which to place nodes.
+	// The OCID of the subnet in which this node is placed.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -4581,7 +4581,7 @@ func (o NodePoolNodeOutput) ToNodePoolNodeOutputWithContext(ctx context.Context)
 	return o
 }
 
-// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+// The name of the availability domain in which this node is placed.
 func (o NodePoolNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -4646,7 +4646,7 @@ func (o NodePoolNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the subnet in which to place nodes.
+// The OCID of the subnet in which this node is placed.
 func (o NodePoolNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -6184,11 +6184,11 @@ func (o NodePoolNodeShapeConfigPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 }
 
 type NodePoolNodeSource struct {
-	// (Updatable) The OCID of the image used to boot the node.
+	// The OCID of the image used to boot the node.
 	ImageId *string `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
 	SourceName *string `pulumi:"sourceName"`
-	// (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
 	SourceType *string `pulumi:"sourceType"`
 }
 
@@ -6204,11 +6204,11 @@ type NodePoolNodeSourceInput interface {
 }
 
 type NodePoolNodeSourceArgs struct {
-	// (Updatable) The OCID of the image used to boot the node.
+	// The OCID of the image used to boot the node.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
 	SourceName pulumi.StringPtrInput `pulumi:"sourceName"`
-	// (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
 	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
@@ -6263,7 +6263,7 @@ func (o NodePoolNodeSourceOutput) ToNodePoolNodeSourceOutputWithContext(ctx cont
 	return o
 }
 
-// (Updatable) The OCID of the image used to boot the node.
+// The OCID of the image used to boot the node.
 func (o NodePoolNodeSourceOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeSource) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
@@ -6273,7 +6273,7 @@ func (o NodePoolNodeSourceOutput) SourceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeSource) *string { return v.SourceName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
 func (o NodePoolNodeSourceOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
@@ -6584,7 +6584,7 @@ type VirtualNodePoolPlacementConfiguration struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// (Updatable) The fault domain of this virtual node.
 	FaultDomains []string `pulumi:"faultDomains"`
-	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	// (Updatable) The OCID of the subnet in which to place virtual nodes.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -6604,7 +6604,7 @@ type VirtualNodePoolPlacementConfigurationArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// (Updatable) The fault domain of this virtual node.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
-	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	// (Updatable) The OCID of the subnet in which to place virtual nodes.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -6669,7 +6669,7 @@ func (o VirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.Strin
 	return o.ApplyT(func(v VirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The regional subnet where pods' VNIC will be placed.
+// (Updatable) The OCID of the subnet in which to place virtual nodes.
 func (o VirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v VirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }

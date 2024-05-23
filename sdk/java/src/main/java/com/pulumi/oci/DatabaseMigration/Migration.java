@@ -89,7 +89,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMigration = new Migration("testMigration", MigrationArgs.builder()        
+ *         var testMigration = new Migration("testMigration", MigrationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceDatabaseConnectionId(testConnection.id())
  *             .targetDatabaseConnectionId(testConnection.id())
@@ -280,14 +280,14 @@ public class Migration extends com.pulumi.resources.CustomResource {
         return this.agentId;
     }
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) OCID of the compartment
      * 
      */
     public Output<String> compartmentId() {

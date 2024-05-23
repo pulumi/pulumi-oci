@@ -13,38 +13,36 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The user's API key value.
+        /// (Updatable) Oracle Cloud Infrastructure Tag key
         /// 
-        /// **Added In:** 2106240046
+        /// **Added In:** 2011192329
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: always
+        /// * caseExact: false
         /// * type: string
+        /// * required: true
+        /// * mutability: readWrite
+        /// * returned: default
+        /// * idcsSearchable: true
         /// * uniqueness: none
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readWrite
+        /// * caseExact: false
         /// * required: true
+        /// * idcsReturnEmptyWhenNull: true
+        /// * mutability: readWrite
         /// * returned: default
-        /// * type: binary
+        /// * type: string
+        /// * idcsSearchable: true
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.AiLanguage.Inputs
         public Input<string> ClassificationMode { get; set; } = null!;
 
         /// <summary>
-        /// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        /// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

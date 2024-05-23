@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// (Updatable) The details required to establish a TLS enabled connection.
+        /// The details required to establish a TLS enabled connection.
         /// </summary>
         public readonly Outputs.TargetDatabasePeerTargetDatabaseDetailTlsConfig? TlsConfig;
 

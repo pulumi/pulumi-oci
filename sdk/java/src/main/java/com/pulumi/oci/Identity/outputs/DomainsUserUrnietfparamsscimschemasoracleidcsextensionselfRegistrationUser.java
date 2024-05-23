@@ -44,17 +44,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
      */
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile selfRegistrationProfile;
     /**
-     * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) User token used for auto-login.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: complex
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -95,17 +93,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         return this.selfRegistrationProfile;
     }
     /**
-     * @return (Updatable) User token returned if userFlowControlledByExternalClient is true
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) User token used for auto-login.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: complex
+     * * type: string
      * * uniqueness: none
      * 
      */

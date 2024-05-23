@@ -56,7 +56,9 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     *
+     * Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -186,7 +188,9 @@ export interface DetectorRecipeState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
@@ -260,7 +264,9 @@ export interface DetectorRecipeArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     *
+     * Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**

@@ -58,15 +58,16 @@ public final class DomainsAppRoleMember {
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return ID of the member of this AppRole
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -126,15 +127,16 @@ public final class DomainsAppRoleMember {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return ID of the member of this AppRole
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

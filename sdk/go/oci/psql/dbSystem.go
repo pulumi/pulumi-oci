@@ -131,9 +131,9 @@ type DbSystem struct {
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -238,9 +238,9 @@ type dbSystemState struct {
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description *string `pulumi:"description"`
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -298,9 +298,9 @@ type DbSystemState struct {
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringPtrInput
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -360,9 +360,9 @@ type dbSystemArgs struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description *string `pulumi:"description"`
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -407,9 +407,9 @@ type DbSystemArgs struct {
 	DbVersion pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringPtrInput
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -562,12 +562,12 @@ func (o DbSystemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A user-provided description of the database instance node.
+// (Updatable) A user-provided description of a database system.
 func (o DbSystemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// Display name of the database instance node. Avoid entering confidential information.
+// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 func (o DbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

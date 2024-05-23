@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeploymentDeployArtifactOverrideArguments
     {
         /// <summary>
-        /// List of arguments provided at the time of deployment.
+        /// List of artifact override arguments at the time of deployment.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentDeployArtifactOverrideArgumentsItem> Items;
 

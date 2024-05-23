@@ -352,7 +352,7 @@ class ClusterImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+        :param pulumi.Input[str] kms_key_id: (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
         """
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -361,7 +361,7 @@ class ClusterImagePolicyConfigKeyDetailArgs:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+        (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -859,11 +859,11 @@ class ContainerInstanceContainerArgs:
                
                The total size of all arguments combined must be 64 KB or smaller.
         :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] commands: The list of strings that will be simplified to a single command for checking the status of the container.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] commands: An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[str] container_id: The OCID of the container.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         :param pulumi.Input[Mapping[str, Any]] environment_variables: A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
                
                The total size of all environment variables combined, name and values, must be 64 KB or smaller.
@@ -985,7 +985,7 @@ class ContainerInstanceContainerArgs:
     @pulumi.getter
     def commands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of strings that will be simplified to a single command for checking the status of the container.
+        An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
         """
         return pulumi.get(self, "commands")
 
@@ -1042,7 +1042,7 @@ class ContainerInstanceContainerArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         """
         return pulumi.get(self, "display_name")
 
@@ -1270,8 +1270,8 @@ class ContainerInstanceContainerHealthCheckArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]] headers: Container health check HTTP headers.
         :param pulumi.Input[int] initial_delay_in_seconds: The initial delay in seconds before start checking container health status.
         :param pulumi.Input[int] interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
-        :param pulumi.Input[str] name: The name of the volume. This must be unique within a single container instance.
-        :param pulumi.Input[str] path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+        :param pulumi.Input[str] name: Health check name.
+        :param pulumi.Input[str] path: Container health check HTTP path.
         :param pulumi.Input[int] port: Container health check HTTP port.
         :param pulumi.Input[int] success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param pulumi.Input[int] timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
@@ -1392,7 +1392,7 @@ class ContainerInstanceContainerHealthCheckArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the volume. This must be unique within a single container instance.
+        Health check name.
         """
         return pulumi.get(self, "name")
 
@@ -1404,7 +1404,7 @@ class ContainerInstanceContainerHealthCheckArgs:
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+        Container health check HTTP path.
         """
         return pulumi.get(self, "path")
 
@@ -1473,7 +1473,7 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: The name of the volume. This must be unique within a single container instance.
+        :param pulumi.Input[str] name: Container HTTP header Key.
         :param pulumi.Input[str] value: Container HTTP header value.
         """
         if name is not None:
@@ -1485,7 +1485,7 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the volume. This must be unique within a single container instance.
+        Container HTTP header Key.
         """
         return pulumi.get(self, "name")
 
@@ -2345,7 +2345,7 @@ class NodePoolNodeArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[str] availability_domain: The name of the availability domain in which this node is placed.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]] errors: An error that may be associated with the node.
         :param pulumi.Input[str] fault_domain: The fault domain of this node.
@@ -2358,7 +2358,7 @@ class NodePoolNodeArgs:
         :param pulumi.Input[str] private_ip: The private IP address of this node.
         :param pulumi.Input[str] public_ip: The public IP address of this node.
         :param pulumi.Input[str] state: The state of the nodepool.
-        :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
+        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which this node is placed.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -2393,7 +2393,7 @@ class NodePoolNodeArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+        The name of the availability domain in which this node is placed.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -2549,7 +2549,7 @@ class NodePoolNodeArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the subnet in which to place nodes.
+        The OCID of the subnet in which this node is placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3105,9 +3105,9 @@ class NodePoolNodeSourceArgs:
                  source_name: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] image_id: (Updatable) The OCID of the image used to boot the node.
+        :param pulumi.Input[str] image_id: The OCID of the image used to boot the node.
         :param pulumi.Input[str] source_name: The user-friendly name of the entity corresponding to the OCID.
-        :param pulumi.Input[str] source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        :param pulumi.Input[str] source_type: The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
         if image_id is not None:
             pulumi.set(__self__, "image_id", image_id)
@@ -3120,7 +3120,7 @@ class NodePoolNodeSourceArgs:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the image used to boot the node.
+        The OCID of the image used to boot the node.
         """
         return pulumi.get(self, "image_id")
 
@@ -3144,7 +3144,7 @@ class NodePoolNodeSourceArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
         return pulumi.get(self, "source_type")
 
@@ -3254,7 +3254,7 @@ class VirtualNodePoolPlacementConfigurationArgs:
         """
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) The fault domain of this virtual node.
-        :param pulumi.Input[str] subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
+        :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place virtual nodes.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "fault_domains", fault_domains)
@@ -3288,7 +3288,7 @@ class VirtualNodePoolPlacementConfigurationArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The regional subnet where pods' VNIC will be placed.
+        (Updatable) The OCID of the subnet in which to place virtual nodes.
         """
         return pulumi.get(self, "subnet_id")
 

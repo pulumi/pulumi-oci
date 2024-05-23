@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Outputs
     public sealed class ClusterPlacementGroupCapabilitiesItem
     {
         /// <summary>
-        /// The friendly name of the cluster placement group.
+        /// The type of resource.
         /// </summary>
         public readonly string Name;
         /// <summary>

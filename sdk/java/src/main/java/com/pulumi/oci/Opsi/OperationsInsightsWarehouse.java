@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsWarehouse = new OperationsInsightsWarehouse("testOperationsInsightsWarehouse", OperationsInsightsWarehouseArgs.builder()        
+ *         var testOperationsInsightsWarehouse = new OperationsInsightsWarehouse("testOperationsInsightsWarehouse", OperationsInsightsWarehouseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .cpuAllocated(operationsInsightsWarehouseCpuAllocated)
  *             .displayName(operationsInsightsWarehouseDisplayName)

@@ -78,14 +78,14 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A short description of the step.
+     * (Updatable) A short description of the pipeline.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the step.
+     * @return (Updatable) A short description of the pipeline.
      * 
      */
     public Optional<Output<String>> description() {
@@ -297,7 +297,7 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the step.
+         * @param description (Updatable) A short description of the pipeline.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class PipelineArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the step.
+         * @param description (Updatable) A short description of the pipeline.
          * 
          * @return builder
          * 

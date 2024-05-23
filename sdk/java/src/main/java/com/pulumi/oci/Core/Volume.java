@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolume = new Volume("testVolume", VolumeArgs.builder()        
+ *         var testVolume = new Volume("testVolume", VolumeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .autotunePolicies(VolumeAutotunePolicyArgs.builder()
  *                 .autotuneType(volumeAutotunePoliciesAutotuneType)
@@ -141,14 +141,14 @@ public class Volume extends com.pulumi.resources.CustomResource {
         return this.autotunePolicies;
     }
     /**
-     * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {

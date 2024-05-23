@@ -4407,25 +4407,29 @@ func (o MysqlConfigurationVariablesPtrOutput) WaitTimeout() pulumi.IntPtrOutput 
 }
 
 type MysqlDbSystemBackupPolicy struct {
-	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+	//
+	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+	//
+	// Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+	//
+	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+	//
+	// Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Specifies if PITR is enabled or disabled.
+	// (Updatable) Specifies if automatic backups are enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) The PITR policy for the DB System.
 	PitrPolicy *MysqlDbSystemBackupPolicyPitrPolicy `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
-	// (Updatable) The start of the 2 hour maintenance window.
+	// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 	//
-	// This string is of the format: "{day-of-week} {time-of-day}".
+	// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	//
-	// "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-	//
-	// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-	//
-	// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+	// At some point in the window, the system may incur a brief service disruption as the backup is performed.
 	WindowStartTime *string `pulumi:"windowStartTime"`
 }
 
@@ -4441,25 +4445,29 @@ type MysqlDbSystemBackupPolicyInput interface {
 }
 
 type MysqlDbSystemBackupPolicyArgs struct {
-	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+	//
+	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+	//
+	// Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+	//
+	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+	//
+	// Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// (Updatable) Specifies if PITR is enabled or disabled.
+	// (Updatable) Specifies if automatic backups are enabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) The PITR policy for the DB System.
 	PitrPolicy MysqlDbSystemBackupPolicyPitrPolicyPtrInput `pulumi:"pitrPolicy"`
 	// (Updatable) Number of days to retain an automatic backup.
 	RetentionInDays pulumi.IntPtrInput `pulumi:"retentionInDays"`
-	// (Updatable) The start of the 2 hour maintenance window.
+	// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 	//
-	// This string is of the format: "{day-of-week} {time-of-day}".
+	// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	//
-	// "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-	//
-	// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-	//
-	// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+	// At some point in the window, the system may incur a brief service disruption as the backup is performed.
 	WindowStartTime pulumi.StringPtrInput `pulumi:"windowStartTime"`
 }
 
@@ -4540,17 +4548,25 @@ func (o MysqlDbSystemBackupPolicyOutput) ToMysqlDbSystemBackupPolicyPtrOutputWit
 	}).(MysqlDbSystemBackupPolicyPtrOutput)
 }
 
-// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+//
+// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+//
+// Example: `{"foo-namespace.bar-key": "value"}`
 func (o MysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+//
+// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+//
+// Example: `{"bar-key": "value"}`
 func (o MysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies if PITR is enabled or disabled.
+// (Updatable) Specifies if automatic backups are enabled.
 func (o MysqlDbSystemBackupPolicyOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -4565,15 +4581,11 @@ func (o MysqlDbSystemBackupPolicyOutput) RetentionInDays() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The start of the 2 hour maintenance window.
+// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 //
-// This string is of the format: "{day-of-week} {time-of-day}".
+// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 //
-// "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-//
-// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-//
-// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+// At some point in the window, the system may incur a brief service disruption as the backup is performed.
 func (o MysqlDbSystemBackupPolicyOutput) WindowStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) *string { return v.WindowStartTime }).(pulumi.StringPtrOutput)
 }
@@ -4602,7 +4614,11 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyOutp
 	}).(MysqlDbSystemBackupPolicyOutput)
 }
 
-// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+//
+// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+//
+// Example: `{"foo-namespace.bar-key": "value"}`
 func (o MysqlDbSystemBackupPolicyPtrOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]interface{} {
 		if v == nil {
@@ -4612,7 +4628,11 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) DefinedTags() pulumi.MapOutput {
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+//
+// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+//
+// Example: `{"bar-key": "value"}`
 func (o MysqlDbSystemBackupPolicyPtrOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]interface{} {
 		if v == nil {
@@ -4622,7 +4642,7 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) FreeformTags() pulumi.MapOutput {
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies if PITR is enabled or disabled.
+// (Updatable) Specifies if automatic backups are enabled.
 func (o MysqlDbSystemBackupPolicyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) *bool {
 		if v == nil {
@@ -4652,15 +4672,11 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) RetentionInDays() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The start of the 2 hour maintenance window.
+// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 //
-// This string is of the format: "{day-of-week} {time-of-day}".
+// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 //
-// "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-//
-// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-//
-// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+// At some point in the window, the system may incur a brief service disruption as the backup is performed.
 func (o MysqlDbSystemBackupPolicyPtrOutput) WindowStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) *string {
 		if v == nil {
@@ -4818,7 +4834,7 @@ type MysqlDbSystemChannel struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id *string `pulumi:"id"`
-	// (Updatable) Specifies if PITR is enabled or disabled.
+	// Whether the Channel has been enabled by the user.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -4856,7 +4872,7 @@ type MysqlDbSystemChannelArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// (Updatable) Specifies if PITR is enabled or disabled.
+	// Whether the Channel has been enabled by the user.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
@@ -4948,7 +4964,7 @@ func (o MysqlDbSystemChannelOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies if PITR is enabled or disabled.
+// Whether the Channel has been enabled by the user.
 func (o MysqlDbSystemChannelOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannel) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }

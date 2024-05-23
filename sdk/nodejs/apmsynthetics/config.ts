@@ -173,7 +173,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -356,7 +356,7 @@ export interface ConfigState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -458,7 +458,7 @@ export interface ConfigArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
     displayName: pulumi.Input<string>;
     /**

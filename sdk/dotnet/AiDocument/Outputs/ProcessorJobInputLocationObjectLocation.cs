@@ -18,7 +18,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
-        /// The Object Storage namespace.
+        /// The Object Storage namespace name.
         /// </summary>
         public readonly string? Namespace;
         /// <summary>

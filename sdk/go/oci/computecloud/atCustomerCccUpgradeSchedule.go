@@ -72,7 +72,7 @@ type AtCustomerCccUpgradeSchedule struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -140,7 +140,7 @@ type atCustomerCccUpgradeScheduleState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -170,7 +170,7 @@ type AtCustomerCccUpgradeScheduleState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -204,7 +204,7 @@ type atCustomerCccUpgradeScheduleArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
@@ -223,7 +223,7 @@ type AtCustomerCccUpgradeScheduleArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
@@ -333,7 +333,7 @@ func (o AtCustomerCccUpgradeScheduleOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 func (o AtCustomerCccUpgradeScheduleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }

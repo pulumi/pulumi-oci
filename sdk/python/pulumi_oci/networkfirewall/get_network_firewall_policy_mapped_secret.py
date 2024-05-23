@@ -86,6 +86,8 @@ class GetNetworkFirewallPolicyMappedSecretResult:
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
+        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<int>? AdditionalEntitiesCount { get; set; }
 
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
         /// </summary>
         [Input("dataSourceFeedProvider", required: true)]
         public Input<string> DataSourceFeedProvider { get; set; } = null!;
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// (Updatable) Time when the query can start, if not specified it can start immediately.
+        /// (Updatable) Continuous query start policy object
         /// </summary>
         [Input("queryStartTime")]
         public Input<Inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs>? QueryStartTime { get; set; }

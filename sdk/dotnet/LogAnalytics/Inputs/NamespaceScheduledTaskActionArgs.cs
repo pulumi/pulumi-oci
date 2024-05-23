@@ -49,13 +49,13 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? QueryString { get; set; }
 
         /// <summary>
-        /// The ManagementSavedSearch id [OCID] to be accelerated.
+        /// The ManagementSavedSearch id [OCID] utilized in the action.
         /// </summary>
         [Input("savedSearchId")]
         public Input<string>? SavedSearchId { get; set; }
 
         /// <summary>
-        /// (Updatable) Schedule type discriminator.
+        /// Action type discriminator.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

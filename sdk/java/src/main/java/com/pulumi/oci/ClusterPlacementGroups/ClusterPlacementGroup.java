@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterPlacementGroup = new ClusterPlacementGroup("testClusterPlacementGroup", ClusterPlacementGroupArgs.builder()        
+ *         var testClusterPlacementGroup = new ClusterPlacementGroup("testClusterPlacementGroup", ClusterPlacementGroupArgs.builder()
  *             .availabilityDomain(clusterPlacementGroupAvailabilityDomain)
  *             .clusterPlacementGroupType(clusterPlacementGroupClusterPlacementGroupType)
  *             .compartmentId(compartmentId)

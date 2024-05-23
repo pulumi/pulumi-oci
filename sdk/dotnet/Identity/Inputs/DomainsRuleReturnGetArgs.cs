@@ -43,11 +43,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? ReturnGroovy { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Attribute value of some attribute to be returned.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true

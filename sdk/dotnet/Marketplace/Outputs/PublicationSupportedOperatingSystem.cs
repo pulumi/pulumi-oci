@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
     public sealed class PublicationSupportedOperatingSystem
     {
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// (Updatable) The name of the publication, which is also used in the listing.
         /// </summary>
         public readonly string? Name;
 

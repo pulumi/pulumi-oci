@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeployArtifact = new DeployArtifact("testDeployArtifact", DeployArtifactArgs.builder()        
+ *         var testDeployArtifact = new DeployArtifact("testDeployArtifact", DeployArtifactArgs.builder()
  *             .argumentSubstitutionMode(deployArtifactArgumentSubstitutionMode)
  *             .deployArtifactSource(DeployArtifactDeployArtifactSourceArgs.builder()
  *                 .deployArtifactSourceType(deployArtifactDeployArtifactSourceDeployArtifactSourceType)

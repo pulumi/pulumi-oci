@@ -146,14 +146,14 @@ public final class WorkspaceApplicationState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The identifying key for the object.
+     * (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return The identifying key for the object.
+     * @return (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     public Optional<Output<String>> key() {
@@ -633,7 +633,7 @@ public final class WorkspaceApplicationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key (Updatable) Currently not used on application creation. Reserved for future.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class WorkspaceApplicationState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key (Updatable) Currently not used on application creation. Reserved for future.
          * 
          * @return builder
          * 

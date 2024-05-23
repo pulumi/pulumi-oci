@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader
     {
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) Parameter name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) Determines if the parameter is required in the request.
+        /// (Updatable) Determines if the header is required in the request.
         /// </summary>
         public readonly bool? Required;
 

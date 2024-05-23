@@ -19,14 +19,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     public static final DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs Empty = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs();
 
     /**
-     * (Updatable) String describing the expression with wildcards.
+     * (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      * 
      */
     @Import(name="expression")
     private @Nullable Output<String> expression;
 
     /**
-     * @return (Updatable) String describing the expression with wildcards.
+     * @return (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      * 
      */
     public Optional<Output<String>> expression() {
@@ -34,14 +34,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Information regarding whether this is the default branch.
+     * (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
-     * @return (Updatable) Information regarding whether this is the default branch.
+     * @return (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      * 
      */
     public Optional<Output<Boolean>> isDefault() {
@@ -49,14 +49,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * (Updatable) Name assigned to the branch.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     public Output<String> name() {
@@ -64,20 +64,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the selection key.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the selection key.
      * 
      */
     public Optional<Output<String>> type() {
@@ -85,14 +79,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -128,7 +122,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param expression (Updatable) String describing the expression with wildcards.
+         * @param expression (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
          * 
          * @return builder
          * 
@@ -139,7 +133,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param expression (Updatable) String describing the expression with wildcards.
+         * @param expression (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
          * 
          * @return builder
          * 
@@ -149,7 +143,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param isDefault (Updatable) Information regarding whether this is the default branch.
+         * @param isDefault (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 
@@ -160,7 +154,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param isDefault (Updatable) Information regarding whether this is the default branch.
+         * @param isDefault (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 
@@ -170,7 +164,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name assigned to the branch.
          * 
          * @return builder
          * 
@@ -181,7 +175,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name assigned to the branch.
          * 
          * @return builder
          * 
@@ -191,10 +185,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the selection key.
          * 
          * @return builder
          * 
@@ -205,10 +196,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the selection key.
          * 
          * @return builder
          * 
@@ -218,7 +206,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
          * 
          * @return builder
          * 
@@ -229,7 +217,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
          * 
          * @return builder
          * 
@@ -239,7 +227,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
          * 
          * @return builder
          * 

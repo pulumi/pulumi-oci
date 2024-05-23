@@ -21,7 +21,7 @@ public final class AutoScalingConfigurationPolicyRule {
     private @Nullable AutoScalingConfigurationPolicyRuleAction action;
     private String displayName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * @return ID of the condition that is assigned after creation.
      * 
      */
     private @Nullable String id;
@@ -43,7 +43,7 @@ public final class AutoScalingConfigurationPolicyRule {
         return this.displayName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * @return ID of the condition that is assigned after creation.
      * 
      */
     public Optional<String> id() {

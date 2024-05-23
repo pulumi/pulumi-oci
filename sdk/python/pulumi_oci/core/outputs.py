@@ -970,7 +970,7 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
                  tcp_options: Optional['outputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptions'] = None,
                  udp_options: Optional['outputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptions'] = None):
         """
-        :param str destination_cidr: (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        :param str destination_cidr: (Updatable) Traffic to this CIDR will be captured in the flow log.
         :param str flow_log_type: (Updatable) Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
         :param 'CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -979,13 +979,10 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
                If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param bool is_enabled: (Updatable) Indicates whether a flow log capture filter rule is enabled.
         :param int priority: (Updatable) A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
-        :param str protocol: (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-               * 1 = ICMP
-               * 6 = TCP
-               * 17 = UDP
-        :param str rule_action: (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        :param str protocol: (Updatable) The transport protocol the filter uses.
+        :param str rule_action: (Updatable) Include or exclude a ruleAction object.
         :param int sampling_rate: (Updatable) Sampling interval as 1 of X, where X is an integer not greater than 100000.
-        :param str source_cidr: (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        :param str source_cidr: (Updatable) Traffic from this CIDR will be captured in the flow log.
         :param 'CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
@@ -1016,7 +1013,7 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
     @pulumi.getter(name="destinationCidr")
     def destination_cidr(self) -> Optional[str]:
         """
-        (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        (Updatable) Traffic to this CIDR will be captured in the flow log.
         """
         return pulumi.get(self, "destination_cidr")
 
@@ -1060,10 +1057,7 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
     @pulumi.getter
     def protocol(self) -> Optional[str]:
         """
-        (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-        * 1 = ICMP
-        * 6 = TCP
-        * 17 = UDP
+        (Updatable) The transport protocol the filter uses.
         """
         return pulumi.get(self, "protocol")
 
@@ -1071,7 +1065,7 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[str]:
         """
-        (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        (Updatable) Include or exclude a ruleAction object.
         """
         return pulumi.get(self, "rule_action")
 
@@ -1087,7 +1081,7 @@ class CaptureFilterFlowLogCaptureFilterRule(dict):
     @pulumi.getter(name="sourceCidr")
     def source_cidr(self) -> Optional[str]:
         """
-        (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        (Updatable) Traffic from this CIDR will be captured in the flow log.
         """
         return pulumi.get(self, "source_cidr")
 
@@ -1195,11 +1189,7 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1216,11 +1206,7 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1232,11 +1218,7 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1253,11 +1235,7 @@ class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1319,11 +1297,7 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1340,11 +1314,7 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1356,11 +1326,7 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1377,11 +1343,7 @@ class CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1618,11 +1580,7 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1639,11 +1597,7 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1655,11 +1609,7 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1676,11 +1626,7 @@ class CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1742,11 +1688,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -1763,11 +1705,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -1914,7 +1852,7 @@ class ClusterNetworkInstancePool(dict):
         :param int size: (Updatable) The number of instances that should be in the instance pool.
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param Sequence['ClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
@@ -1983,7 +1921,7 @@ class ClusterNetworkInstancePool(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2283,10 +2221,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet(dict):
         :param Sequence['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param bool is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if ipv6address_ipv6subnet_cidr_pair_details is not None:
             pulumi.set(__self__, "ipv6address_ipv6subnet_cidr_pair_details", ipv6address_ipv6subnet_cidr_pair_details)
@@ -2316,10 +2250,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet(dict):
     def subnet_id(self) -> Optional[str]:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2391,14 +2321,10 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(dict):
                  is_assign_ipv6ip: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Sequence['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param bool is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -2413,7 +2339,7 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2438,10 +2364,6 @@ class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet(dict):
     def subnet_id(self) -> Optional[str]:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2598,10 +2520,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnets(dict):
                  is_assign_ipv6ip: Optional[bool] = None):
         """
         :param str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence['ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param bool is_assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
@@ -2616,10 +2534,6 @@ class ClusterNetworkPlacementConfigurationPrimaryVnicSubnets(dict):
     def subnet_id(self) -> str:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3223,7 +3137,7 @@ class ComputeCapacityTopologyCapacitySource(dict):
                  compartment_id: Optional[str] = None):
         """
         :param str capacity_type: (Updatable) The capacity type of bare metal hosts.
-        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         if compartment_id is not None:
@@ -3241,7 +3155,7 @@ class ComputeCapacityTopologyCapacitySource(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -3519,8 +3433,12 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
                  connectivity_association_key_secret_version: Optional[str] = None,
                  connectivity_association_name_secret_version: Optional[str] = None):
         """
-        :param str connectivity_association_key_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        :param str connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        :param str connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
+        :param str connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+               
+               NOTE: Only the latest secret version will be used.
         :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param str connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
@@ -3535,7 +3453,9 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> str:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -3543,7 +3463,9 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> str:
         """
-        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
+
+        NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
@@ -4389,12 +4311,11 @@ class DrgAttachmentNetworkDetails(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         :param Sequence[str] ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target IPSec tunnel attachment.
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param str route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+        :param str route_table_id: (Updatable) This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
                
-               If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+               For information about why you would associate a route table with a DRG attachment, see [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm). For information about why you would associate a route table with a DRG attachment, see:
                * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
                * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-               This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         :param str transport_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit's DRG attachment.
         :param bool transport_only_mode: Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
         :param str vcn_route_type: (Updatable) Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment. Routes from the VCN ingress route table are always imported.
@@ -4451,12 +4372,11 @@ class DrgAttachmentNetworkDetails(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
+        (Updatable) This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that is used to route the traffic as it enters a VCN through this attachment.
 
-        If you don't specify a route table here, the DRG attachment is created without an associated route table. The Networking service does NOT automatically associate the attached VCN's default route table with the DRG attachment. For information about why you would associate a route table with a DRG attachment, see:
+        For information about why you would associate a route table with a DRG attachment, see [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm). For information about why you would associate a route table with a DRG attachment, see:
         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
         * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
-        This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -4744,6 +4664,8 @@ class ImageImageSourceDetails(dict):
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         :param str source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+               * `QCOW2`
+               * `VMDK`
         :param str source_uri: The Object Storage URL for the image.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -4815,6 +4737,8 @@ class ImageImageSourceDetails(dict):
     def source_image_type(self) -> Optional[str]:
         """
         The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
+        * `QCOW2`
+        * `VMDK`
         """
         return pulumi.get(self, "source_image_type")
 
@@ -4863,11 +4787,26 @@ class ImageLaunchOption(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -4887,6 +4826,11 @@ class ImageLaunchOption(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -4895,6 +4839,8 @@ class ImageLaunchOption(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -4919,6 +4865,9 @@ class ImageLaunchOption(dict):
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -4927,6 +4876,11 @@ class ImageLaunchOption(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -5114,6 +5068,8 @@ class InstanceAvailabilityConfig(dict):
         """
         :param bool is_live_migration_preferred: (Updatable) Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -5133,6 +5089,8 @@ class InstanceAvailabilityConfig(dict):
     def recovery_action(self) -> Optional[str]:
         """
         (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -5330,10 +5288,10 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
                  is_shareable: Optional[bool] = None,
                  use_chap: Optional[bool] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
         :param str device: The device name.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        :param bool is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param bool is_read_only: Whether the attachment should be created in read-only mode.
         :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param bool use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
@@ -5356,7 +5314,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type of volume. The only supported values are "iscsi" and "paravirtualized".
         """
         return pulumi.get(self, "type")
 
@@ -5380,7 +5338,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails(dict):
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[bool]:
         """
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
@@ -5471,11 +5429,11 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  vpus_per_gb: Optional[str] = None):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
-        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str availability_domain: The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param 'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: The OCID of the compartment that contains the volume.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -5527,7 +5485,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5559,7 +5517,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        The OCID of the compartment that contains the volume.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -5701,8 +5659,8 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
                  availability_domain: str,
                  display_name: Optional[str] = None):
         """
-        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str availability_domain: The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+        :param str display_name: The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
@@ -5712,7 +5670,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
         """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5720,7 +5678,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeRep
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
         """
         return pulumi.get(self, "display_name")
 
@@ -5731,7 +5689,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails(
                  type: str,
                  id: Optional[str] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type can be one of these values: `volume`, `volumeBackup`
         :param str id: The OCID of the volume backup.
         """
         pulumi.set(__self__, "type", type)
@@ -5742,7 +5700,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails(
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type can be one of these values: `volume`, `volumeBackup`
         """
         return pulumi.get(self, "type")
 
@@ -5850,81 +5808,31 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-               
-               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-               
-               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-               
-               If you do not specify the fault domain, the system selects one for you.
-               
-               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-               
-               Example: `FAULT-DOMAIN-1`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
-               
-               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-               
-               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-               
-               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-               
-               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-               
-               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-               
-               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-               
-               **Providing Cloud-Init Metadata**
-               
-               You can use the following metadata key names to provide information to Cloud-Init:
-               
-               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-               
-               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-               
-               **Metadata Example**
-               
-               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-               
-               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-               
-               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-               
-               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
-               
-               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-               
-               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs' shape_config: The shape configuration requested for the instance.
-               
-               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
@@ -6021,7 +5929,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -6038,8 +5946,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def dedicated_vm_host_id(self) -> Optional[str]:
         """
         The OCID of the dedicated virtual machine host to place the instance on.
-
-        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -6047,7 +5953,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6055,7 +5961,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -6064,10 +5970,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-
-        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "extended_metadata")
 
@@ -6076,12 +5978,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def fault_domain(self) -> Optional[str]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-
-        If you do not specify the fault domain, the system selects one for you.
-
-        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-
-        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -6089,7 +5985,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6106,16 +6002,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         This is an advanced option.
-
-        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-
-        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-
-        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-
-        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-
-        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -6132,6 +6018,10 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def launch_mode(self) -> Optional[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -6148,30 +6038,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-
-        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-
-        **Providing Cloud-Init Metadata**
-
-        You can use the following metadata key names to provide information to Cloud-Init:
-
-        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-
-        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-
-        **Metadata Example**
-
-        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-
-        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-
-        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-
-        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
 
@@ -6180,10 +6046,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def platform_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig']:
         """
         The platform configuration requested for the instance.
-
-        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "platform_config")
 
@@ -6200,6 +6062,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def preferred_maintenance_action(self) -> Optional[str]:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -6208,8 +6072,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def shape(self) -> Optional[str]:
         """
         The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -6218,10 +6080,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
     def shape_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig']:
         """
         The shape configuration requested for the instance.
-
-        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_config")
 
@@ -6361,7 +6219,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
                  name: Optional[str] = None):
         """
         :param str desired_state: Whether the plugin should be enabled or disabled.
-               
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
@@ -6375,7 +6232,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig(
     def desired_state(self) -> Optional[str]:
         """
         Whether the plugin should be enabled or disabled.
-
         To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
@@ -6416,6 +6272,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -6435,6 +6293,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig(dict):
     def recovery_action(self) -> Optional[str]:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -6494,14 +6354,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Sequence['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -6535,16 +6393,13 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -6560,7 +6415,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -6568,7 +6423,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -6576,7 +6431,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -6591,9 +6446,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -6651,10 +6503,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
-        """
-        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -6663,17 +6511,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -6749,11 +6591,26 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -6773,6 +6630,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -6781,6 +6643,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -6805,6 +6669,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -6813,6 +6680,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -6878,9 +6750,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param bool is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-               
-               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
@@ -6979,9 +6849,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
-        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-
-        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -7124,8 +6992,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
                  vcpus: Optional[int] = None):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-               
-               The following values are supported:
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -7147,8 +7013,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-
-        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -7229,8 +7093,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         :param str image_id: The OCID of the image used to boot the instance.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs' instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -7278,8 +7140,6 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails(dict):
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -7339,7 +7199,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
@@ -7357,7 +7217,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -7416,8 +7276,6 @@ class InstanceConfigurationInstanceDetailsOption(dict):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs'] block_volumes: Block volume parameters.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs' launch_details: Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-               
-               See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         :param Sequence['InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs'] secondary_vnics: Secondary VNIC parameters.
         """
         if block_volumes is not None:
@@ -7440,8 +7298,6 @@ class InstanceConfigurationInstanceDetailsOption(dict):
     def launch_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetails']:
         """
         Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-
-        See [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) for more information.
         """
         return pulumi.get(self, "launch_details")
 
@@ -7556,7 +7412,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
         """
         :param str type: The type of action to run when the instance is interrupted for eviction.
         :param str device: The device name.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param bool is_read_only: Whether the attachment should be created in read-only mode.
         :param bool is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
@@ -7596,7 +7452,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -7699,16 +7555,14 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param 'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         """
         if autotune_policies is not None:
             pulumi.set(__self__, "autotune_policies", autotune_policies)
@@ -7783,7 +7637,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -7791,7 +7645,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -7799,7 +7653,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -7807,7 +7661,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -7845,8 +7699,6 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     def vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
         """
         return pulumi.get(self, "vpus_per_gb")
 
@@ -7926,7 +7778,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
                  display_name: Optional[str] = None):
         """
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
@@ -7944,7 +7796,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVol
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -8074,81 +7926,31 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-               
-               Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-               
-               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-               
-               If you do not specify the fault domain, the system selects one for you.
-               
-               To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-               
-               Example: `FAULT-DOMAIN-1`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
-               
-               When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-               
-               If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-               
-               The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-               
-               For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-               
-               For more information about iPXE, see http://ipxe.org.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-               
-               A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-               * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-               * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-               
-               **Providing Cloud-Init Metadata**
-               
-               You can use the following metadata key names to provide information to Cloud-Init:
-               
-               **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-               
-               **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-               
-               **Metadata Example**
-               
-               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-               
-               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-               
-               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-               
-               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-               
-               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
-               
-               If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-               
-               You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs' shape_config: The shape configuration requested for the instance.
-               
-               If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-               
-               Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         if agent_config is not None:
             pulumi.set(__self__, "agent_config", agent_config)
@@ -8245,7 +8047,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -8262,8 +8064,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def dedicated_vm_host_id(self) -> Optional[str]:
         """
         The OCID of the dedicated virtual machine host to place the instance on.
-
-        Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
         """
         return pulumi.get(self, "dedicated_vm_host_id")
 
@@ -8271,7 +8071,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -8279,7 +8079,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -8288,10 +8088,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-
-        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "extended_metadata")
 
@@ -8300,12 +8096,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def fault_domain(self) -> Optional[str]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-
-        If you do not specify the fault domain, the system selects one for you.
-
-        To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-
-        Example: `FAULT-DOMAIN-1`
         """
         return pulumi.get(self, "fault_domain")
 
@@ -8313,7 +8103,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -8330,16 +8120,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def ipxe_script(self) -> Optional[str]:
         """
         This is an advanced option.
-
-        When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-
-        If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-
-        The default iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-
-        For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-
-        For more information about iPXE, see http://ipxe.org.
         """
         return pulumi.get(self, "ipxe_script")
 
@@ -8356,6 +8136,10 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def launch_mode(self) -> Optional[str]:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -8372,30 +8156,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def metadata(self) -> Optional[Mapping[str, Any]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
-
-        A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-        * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-        * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-
-        **Providing Cloud-Init Metadata**
-
-        You can use the following metadata key names to provide information to Cloud-Init:
-
-        **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-
-        **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-
-        **Metadata Example**
-
-        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" } **Getting Metadata on the Instance**
-
-        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-
-        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/ curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
-
-        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-
-        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
 
@@ -8404,10 +8164,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def platform_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig']:
         """
         The platform configuration requested for the instance.
-
-        If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "platform_config")
 
@@ -8424,6 +8180,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def preferred_maintenance_action(self) -> Optional[str]:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -8432,8 +8190,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def shape(self) -> Optional[str]:
         """
         The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-
-        You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         """
         return pulumi.get(self, "shape")
 
@@ -8442,10 +8198,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
     def shape_config(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig']:
         """
         The shape configuration requested for the instance.
-
-        If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-
-        Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         """
         return pulumi.get(self, "shape_config")
 
@@ -8487,22 +8239,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
                  plugins_configs: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfig']] = None):
         """
         :param bool are_all_plugins_disabled: Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-               
-               To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param bool is_management_disabled: Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-               
-               These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-               
-               The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-               * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         :param bool is_monitoring_disabled: Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-               
-               These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-               
-               The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-               * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-               * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param Sequence['InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs'] plugins_configs: The configuration of plugins associated with this instance.
         """
         if are_all_plugins_disabled is not None:
@@ -8519,8 +8257,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def are_all_plugins_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-
-        To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         return pulumi.get(self, "are_all_plugins_disabled")
 
@@ -8529,12 +8265,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def is_management_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
-
-        These are the management plugins: OS Management Service Agent and Compute Instance Run Command.
-
-        The management plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isManagementDisabled` is true, all of the management plugins are disabled, regardless of the per-plugin configuration.
-        * If `isManagementDisabled` is false, all of the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_management_disabled")
 
@@ -8543,12 +8273,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfig(dict):
     def is_monitoring_disabled(self) -> Optional[bool]:
         """
         Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
-
-        These are the monitoring plugins: Compute Instance Monitoring and Custom Logs Monitoring.
-
-        The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        * If `isMonitoringDisabled` is true, all of the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        * If `isMonitoringDisabled` is false, all of the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         """
         return pulumi.get(self, "is_monitoring_disabled")
 
@@ -8585,8 +8309,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
                  name: Optional[str] = None):
         """
         :param str desired_state: Whether the plugin should be enabled or disabled.
-               
-               To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
         if desired_state is not None:
@@ -8599,8 +8321,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsC
     def desired_state(self) -> Optional[str]:
         """
         Whether the plugin should be enabled or disabled.
-
-        To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         """
         return pulumi.get(self, "desired_state")
 
@@ -8640,6 +8360,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig(
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         if is_live_migration_preferred is not None:
             pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
@@ -8659,6 +8381,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfig(
     def recovery_action(self) -> Optional[str]:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -8718,14 +8442,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Sequence['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -8759,16 +8481,13 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -8784,7 +8503,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -8792,7 +8511,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -8800,7 +8519,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -8815,9 +8534,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -8875,10 +8591,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
-        """
-        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -8887,17 +8599,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIp
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -8973,11 +8679,26 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -8997,6 +8718,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def boot_volume_type(self) -> Optional[str]:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -9005,6 +8731,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -9029,6 +8757,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def network_type(self) -> Optional[str]:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -9037,6 +8768,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions(dict)
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -9098,9 +8834,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
         :param bool is_memory_encryption_enabled: Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
         :param bool is_secure_boot_enabled: Whether Secure Boot is enabled on the instance.
-        :param bool is_symmetric_multi_threading_enabled: (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-               
-               Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        :param bool is_symmetric_multi_threading_enabled: Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         :param bool is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param str numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
         :param int percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
@@ -9189,9 +8923,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig(dict
     @pulumi.getter(name="isSymmetricMultiThreadingEnabled")
     def is_symmetric_multi_threading_enabled(self) -> Optional[bool]:
         """
-        (Updatable only for AMD_VM and INTEL_VM) Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-
-        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
         """
         return pulumi.get(self, "is_symmetric_multi_threading_enabled")
 
@@ -9334,8 +9066,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
                  vcpus: Optional[int] = None):
         """
         :param str baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-               
-               The following values are supported:
         :param float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param float ocpus: The total number of OCPUs available to the instance.
@@ -9357,8 +9087,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig(dict):
     def baseline_ocpu_utilization(self) -> Optional[str]:
         """
         The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-
-        The following values are supported:
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -9439,8 +9167,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails(dict)
         :param str boot_volume_id: The OCID of the boot volume used to boot the instance.
         :param str boot_volume_size_in_gbs: The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         :param str boot_volume_vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         :param str image_id: The OCID of the image used to boot the instance.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs' instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
@@ -9488,8 +9214,6 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails(dict)
     def boot_volume_vpus_per_gb(self) -> Optional[str]:
         """
         The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
         """
         return pulumi.get(self, "boot_volume_vpus_per_gb")
 
@@ -9549,7 +9273,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
@@ -9567,7 +9291,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -9625,7 +9349,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnic(dict):
                  nic_index: Optional[int] = None):
         """
         :param 'InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param int nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         if create_vnic_details is not None:
@@ -9647,7 +9371,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnic(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9715,14 +9439,12 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Sequence['InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -9756,16 +9478,13 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -9781,7 +9500,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -9789,7 +9508,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -9797,7 +9516,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -9812,9 +9531,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -9872,10 +9588,6 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
-        """
-        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -9884,17 +9596,11 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIp
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -9927,7 +9633,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnic(dict):
                  nic_index: Optional[int] = None):
         """
         :param 'InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param int nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         """
         if create_vnic_details is not None:
@@ -9949,7 +9655,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnic(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -10017,14 +9723,12 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
                  skip_source_dest_check: Optional[bool] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Sequence['InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -10058,16 +9762,13 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="assignIpv6ip")
     def assign_ipv6ip(self) -> Optional[bool]:
-        """
-        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-        """
         return pulumi.get(self, "assign_ipv6ip")
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
     def assign_private_dns_record(self) -> Optional[bool]:
         """
-        Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         """
         return pulumi.get(self, "assign_private_dns_record")
 
@@ -10083,7 +9784,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -10091,7 +9792,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -10099,7 +9800,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -10114,9 +9815,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
     @property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
     def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']]:
-        """
-        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-        """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @property
@@ -10174,10 +9872,6 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
     def __init__(__self__, *,
                  ipv6address: Optional[str] = None,
                  ipv6subnet_cidr: Optional[str] = None):
-        """
-        :param str ipv6address: Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        :param str ipv6subnet_cidr: Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         if ipv6address is not None:
             pulumi.set(__self__, "ipv6address", ipv6address)
         if ipv6subnet_cidr is not None:
@@ -10186,17 +9880,11 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addr
     @property
     @pulumi.getter
     def ipv6address(self) -> Optional[str]:
-        """
-        Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-        """
         return pulumi.get(self, "ipv6address")
 
     @property
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[str]:
-        """
-        Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-        """
         return pulumi.get(self, "ipv6subnet_cidr")
 
 
@@ -10271,9 +9959,17 @@ class InstanceCreateVnicDetails(dict):
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+               
+               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+               
+               When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+               
+               Example: `bminstance1`
+               
+               If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Sequence['InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges from which Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
                
@@ -10288,7 +9984,9 @@ class InstanceCreateVnicDetails(dict):
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `true`
-        :param str subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+               
+               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         :param str vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -10365,7 +10063,7 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -10381,7 +10079,15 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[str]:
         """
-        Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
+
+        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+
+        When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
+
+        Example: `bminstance1`
+
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN can not be assigned a hostname. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         """
         return pulumi.get(self, "hostname_label")
 
@@ -10431,7 +10137,9 @@ class InstanceCreateVnicDetails(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
         """
-        Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -10556,11 +10264,26 @@ class InstanceLaunchOptions(dict):
                  remote_data_volume_type: Optional[str] = None):
         """
         :param str boot_volume_type: (Updatable) Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
         :param str network_type: (Updatable) Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         if boot_volume_type is not None:
             pulumi.set(__self__, "boot_volume_type", boot_volume_type)
@@ -10580,6 +10303,11 @@ class InstanceLaunchOptions(dict):
     def boot_volume_type(self) -> Optional[str]:
         """
         (Updatable) Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -10588,6 +10316,8 @@ class InstanceLaunchOptions(dict):
     def firmware(self) -> Optional[str]:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -10612,6 +10342,9 @@ class InstanceLaunchOptions(dict):
     def network_type(self) -> Optional[str]:
         """
         (Updatable) Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -10620,6 +10353,11 @@ class InstanceLaunchOptions(dict):
     def remote_data_volume_type(self) -> Optional[str]:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -10669,7 +10407,7 @@ class InstanceLaunchVolumeAttachment(dict):
                  use_chap: Optional[bool] = None,
                  volume_id: Optional[str] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type of volume. Currently, the only supported value is "iscsi".
         :param str device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
@@ -10704,7 +10442,7 @@ class InstanceLaunchVolumeAttachment(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type of volume. Currently, the only supported value is "iscsi".
         """
         return pulumi.get(self, "type")
 
@@ -10820,9 +10558,9 @@ class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails(dict):
         """
         :param str size_in_gbs: The size of the volume in GBs.
         :param str volume_creation_type: Specifies the method for volume creation.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
                
                Allowed values:
@@ -10858,7 +10596,7 @@ class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -10874,7 +10612,7 @@ class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails(dict):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        The OCID of the Vault service key to assign as the master encryption key for the volume.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -10942,7 +10680,7 @@ class InstancePlatformConfig(dict):
                  numa_nodes_per_socket: Optional[str] = None,
                  percentage_of_cores_enabled: Optional[int] = None):
         """
-        :param str type: The type of action to run when the instance is interrupted for eviction.
+        :param str type: The type of platform being configured.
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
         :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
@@ -10987,7 +10725,7 @@ class InstancePlatformConfig(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        The type of platform being configured.
         """
         return pulumi.get(self, "type")
 
@@ -11426,6 +11164,8 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnets(dict):
                  is_assign_ipv6ip: Optional[bool] = None):
         """
         :param str subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+               =======
+               Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         :param Sequence['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param bool is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
@@ -11440,6 +11180,8 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnets(dict):
     def subnet_id(self) -> str:
         """
         (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+        =======
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "subnet_id")
 
@@ -11744,6 +11486,9 @@ class InstanceShapeConfig(dict):
         :param str baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
                
                The following values are supported:
+               * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+               * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+               * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param str gpu_description: A short description of the instance's graphics processing unit (GPU).
         :param int gpus: The number of GPUs available to the instance.
         :param str local_disk_description: A short description of the local disks available to this instance.
@@ -11791,6 +11536,9 @@ class InstanceShapeConfig(dict):
         (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
 
         The following values are supported:
+        * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
+        * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
+        * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         """
         return pulumi.get(self, "baseline_ocpu_utilization")
 
@@ -12871,11 +12619,7 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -12892,11 +12636,7 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -12908,11 +12648,7 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -12929,11 +12665,7 @@ class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -12985,11 +12717,7 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -13006,11 +12734,7 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13022,11 +12746,7 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange(dict):
                  min: int):
         """
         :param int max: The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: The minimum port number, which must not be greater than the maximum port number. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int min: The minimum port number, which must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -13043,11 +12763,7 @@ class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        The minimum port number, which must not be greater than the maximum port number. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The minimum port number, which must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13100,6 +12816,8 @@ class RouteTableRouteRule(dict):
                * IP address range in CIDR notation. Can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`. If you set this to an IPv6 prefix, the route rule's target can only be a DRG or internet gateway. IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
                * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a route rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
         :param str destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param str route_type: (Updatable) A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
         pulumi.set(__self__, "network_entity_id", network_entity_id)
@@ -13164,6 +12882,8 @@ class RouteTableRouteRule(dict):
     def destination_type(self) -> Optional[str]:
         """
         (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -13221,12 +12941,14 @@ class SecurityListEgressSecurityRule(dict):
         :param str destination_type: (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
                
                Allowed values:
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param 'SecurityListEgressSecurityRuleIcmpOptionsArgs' icmp_options: (Updatable) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
                
                If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
-        :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+        :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListEgressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'SecurityListEgressSecurityRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
@@ -13280,6 +13002,8 @@ class SecurityListEgressSecurityRule(dict):
         (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
 
         Allowed values:
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -13299,7 +13023,7 @@ class SecurityListEgressSecurityRule(dict):
     @pulumi.getter
     def stateless(self) -> Optional[bool]:
         """
-        (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+        (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         """
         return pulumi.get(self, "stateless")
 
@@ -13374,8 +13098,8 @@ class SecurityListEgressSecurityRuleTcpOptions(dict):
                  min: Optional[int] = None,
                  source_port_range: Optional['outputs.SecurityListEgressSecurityRuleTcpOptionsSourcePortRange'] = None):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number. Must not be greater than the maximum port number.
         :param 'SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
         """
         if max is not None:
@@ -13389,7 +13113,7 @@ class SecurityListEgressSecurityRuleTcpOptions(dict):
     @pulumi.getter
     def max(self) -> Optional[int]:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13397,7 +13121,7 @@ class SecurityListEgressSecurityRuleTcpOptions(dict):
     @pulumi.getter
     def min(self) -> Optional[int]:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13416,8 +13140,8 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRange(dict):
                  max: int,
                  min: int):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -13426,7 +13150,7 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def max(self) -> int:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13434,7 +13158,7 @@ class SecurityListEgressSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13463,8 +13187,8 @@ class SecurityListEgressSecurityRuleUdpOptions(dict):
                  min: Optional[int] = None,
                  source_port_range: Optional['outputs.SecurityListEgressSecurityRuleUdpOptionsSourcePortRange'] = None):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number. Must not be greater than the maximum port number.
         :param 'SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
         """
         if max is not None:
@@ -13478,7 +13202,7 @@ class SecurityListEgressSecurityRuleUdpOptions(dict):
     @pulumi.getter
     def max(self) -> Optional[int]:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13486,7 +13210,7 @@ class SecurityListEgressSecurityRuleUdpOptions(dict):
     @pulumi.getter
     def min(self) -> Optional[int]:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13505,8 +13229,8 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRange(dict):
                  max: int,
                  min: int):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -13515,7 +13239,7 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def max(self) -> int:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13523,7 +13247,7 @@ class SecurityListEgressSecurityRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13576,6 +13300,8 @@ class SecurityListIngressSecurityRule(dict):
                
                If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
         :param str source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListIngressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'SecurityListIngressSecurityRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -13640,6 +13366,8 @@ class SecurityListIngressSecurityRule(dict):
     def source_type(self) -> Optional[str]:
         """
         (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 
@@ -13722,8 +13450,8 @@ class SecurityListIngressSecurityRuleTcpOptions(dict):
                  min: Optional[int] = None,
                  source_port_range: Optional['outputs.SecurityListIngressSecurityRuleTcpOptionsSourcePortRange'] = None):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number. Must not be greater than the maximum port number.
         :param 'SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
         """
         if max is not None:
@@ -13737,7 +13465,7 @@ class SecurityListIngressSecurityRuleTcpOptions(dict):
     @pulumi.getter
     def max(self) -> Optional[int]:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13745,7 +13473,7 @@ class SecurityListIngressSecurityRuleTcpOptions(dict):
     @pulumi.getter
     def min(self) -> Optional[int]:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13764,8 +13492,8 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRange(dict):
                  max: int,
                  min: int):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         pulumi.set(__self__, "max", max)
         pulumi.set(__self__, "min", min)
@@ -13774,7 +13502,7 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def max(self) -> int:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13782,7 +13510,7 @@ class SecurityListIngressSecurityRuleTcpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        (Updatable) The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -13811,8 +13539,8 @@ class SecurityListIngressSecurityRuleUdpOptions(dict):
                  min: Optional[int] = None,
                  source_port_range: Optional['outputs.SecurityListIngressSecurityRuleUdpOptionsSourcePortRange'] = None):
         """
-        :param int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        :param int max: The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        :param int min: The minimum port number. Must not be greater than the maximum port number.
         :param 'SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs' source_port_range: (Updatable)
         """
         if max is not None:
@@ -13826,7 +13554,7 @@ class SecurityListIngressSecurityRuleUdpOptions(dict):
     @pulumi.getter
     def max(self) -> Optional[int]:
         """
-        (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+        The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
         """
         return pulumi.get(self, "max")
 
@@ -13834,7 +13562,7 @@ class SecurityListIngressSecurityRuleUdpOptions(dict):
     @pulumi.getter
     def min(self) -> Optional[int]:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number.
+        The minimum port number. Must not be greater than the maximum port number.
         """
         return pulumi.get(self, "min")
 
@@ -14276,7 +14004,7 @@ class VnicAttachmentCreateVnicDetails(dict):
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
                
@@ -14381,7 +14109,7 @@ class VnicAttachmentCreateVnicDetails(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -14674,6 +14402,12 @@ class VolumeBackupPolicySchedule(dict):
                For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
         :param str time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
+               - `UTC`
+               - `REGIONAL_DATA_CENTER_TIME`
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "period", period)
@@ -14785,6 +14519,12 @@ class VolumeBackupPolicySchedule(dict):
         """
         (Updatable) Specifies what time zone is the schedule in
         enum:
+        - `UTC`
+        - `REGIONAL_DATA_CENTER_TIME`
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
@@ -15026,10 +14766,7 @@ class VolumeGroupSourceDetails(dict):
         :param str volume_group_backup_id: The OCID of the volume group backup to restore from.
         :param str volume_group_id: The OCID of the volume group to clone from.
         :param str volume_group_replica_id: The OCID of the volume group replica.
-        :param Sequence[str] volume_ids: (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param Sequence[str] volume_ids: OCIDs for the volumes used to create this volume group.
         """
         pulumi.set(__self__, "type", type)
         if volume_group_backup_id is not None:
@@ -15077,10 +14814,7 @@ class VolumeGroupSourceDetails(dict):
     @pulumi.getter(name="volumeIds")
     def volume_ids(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        OCIDs for the volumes used to create this volume group.
         """
         return pulumi.get(self, "volume_ids")
 
@@ -15115,7 +14849,7 @@ class VolumeGroupVolumeGroupReplica(dict):
         """
         :param str availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str volume_group_replica_id: The OCID of the volume group replica.
+        :param str volume_group_replica_id: The volume group replica's Oracle ID (OCID).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         if display_name is not None:
@@ -15143,7 +14877,7 @@ class VolumeGroupVolumeGroupReplica(dict):
     @pulumi.getter(name="volumeGroupReplicaId")
     def volume_group_replica_id(self) -> Optional[str]:
         """
-        The OCID of the volume group replica.
+        The volume group replica's Oracle ID (OCID).
         """
         return pulumi.get(self, "volume_group_replica_id")
 
@@ -25259,11 +24993,26 @@ class GetImageLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -25277,6 +25026,11 @@ class GetImageLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -25285,6 +25039,8 @@ class GetImageLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -25309,6 +25065,9 @@ class GetImageLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -25317,6 +25076,11 @@ class GetImageLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -25575,6 +25339,10 @@ class GetImagesImageResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the image.
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetImagesImageLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param str listing_type: The listing type of the image. The default value is "NONE".
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
@@ -25690,6 +25458,10 @@ class GetImagesImageResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -25861,11 +25633,26 @@ class GetImagesImageLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -25879,6 +25666,11 @@ class GetImagesImageLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -25887,6 +25679,8 @@ class GetImagesImageLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -25911,6 +25705,9 @@ class GetImagesImageLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -25919,6 +25716,11 @@ class GetImagesImageLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -26011,6 +25813,8 @@ class GetInstanceAvailabilityConfigResult(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -26028,6 +25832,8 @@ class GetInstanceAvailabilityConfigResult(dict):
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -26508,11 +26314,17 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -26675,6 +26487,10 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -26715,6 +26531,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -26828,6 +26646,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -26845,6 +26665,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfigResult
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -27046,11 +26868,26 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -27064,6 +26901,11 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -27072,6 +26914,8 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -27096,6 +26940,9 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -27104,6 +26951,11 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -27945,11 +27797,17 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -28112,6 +27970,10 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -28152,6 +28014,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -28265,6 +28129,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -28282,6 +28148,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -28483,11 +28351,26 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -28501,6 +28384,11 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -28509,6 +28397,8 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -28533,6 +28423,9 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -28541,6 +28434,11 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -29947,11 +29845,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -30114,6 +30018,10 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -30154,6 +30062,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -30267,6 +30177,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAv
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -30284,6 +30196,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAv
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -30485,11 +30399,26 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -30503,6 +30432,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -30511,6 +30445,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -30535,6 +30471,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -30543,6 +30482,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -31384,11 +31328,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+               * `LIVE_MIGRATE` - Run maintenance using a live migration.
+               * `REBOOT` - Run maintenance using a reboot.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
         """
@@ -31551,6 +31501,10 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -31591,6 +31545,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def preferred_maintenance_action(self) -> str:
         """
         The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
         """
         return pulumi.get(self, "preferred_maintenance_action")
 
@@ -31704,6 +31660,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -31721,6 +31679,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -31922,11 +31882,26 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -31940,6 +31915,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -31948,6 +31928,8 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -31972,6 +31954,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -31980,6 +31965,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -33151,11 +33141,26 @@ class GetInstanceLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -33169,6 +33174,11 @@ class GetInstanceLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -33177,6 +33187,8 @@ class GetInstanceLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -33201,6 +33213,9 @@ class GetInstanceLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -33209,6 +33224,11 @@ class GetInstanceLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -35005,6 +35025,10 @@ class GetInstancesInstanceResult(dict):
         :param bool is_cross_numa_node: Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+               * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+               * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+               * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Mapping[str, Any] metadata: Custom metadata that you provide.
         :param Sequence['GetInstancesInstancePlatformConfigArgs'] platform_configs: The platform configuration for the instance.
@@ -35257,6 +35281,10 @@ class GetInstancesInstanceResult(dict):
     def launch_mode(self) -> str:
         """
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         """
         return pulumi.get(self, "launch_mode")
 
@@ -35483,6 +35511,8 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
         """
         :param bool is_live_migration_preferred: Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         :param str recovery_action: The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+               * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+               * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         pulumi.set(__self__, "is_live_migration_preferred", is_live_migration_preferred)
         pulumi.set(__self__, "recovery_action", recovery_action)
@@ -35500,6 +35530,8 @@ class GetInstancesInstanceAvailabilityConfigResult(dict):
     def recovery_action(self) -> str:
         """
         The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
         """
         return pulumi.get(self, "recovery_action")
 
@@ -35662,11 +35694,26 @@ class GetInstancesInstanceLaunchOptionResult(dict):
                  remote_data_volume_type: str):
         """
         :param str boot_volume_type: Emulation type for the boot volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         :param str firmware: Firmware used to boot VM. Select the option that matches your operating system.
+               * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+               * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         :param bool is_consistent_volume_naming_enabled: Whether to enable consistent volume naming feature. Defaults to false.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         :param str network_type: Emulation type for the physical network interface card (NIC).
+               * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+               * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+               * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         :param str remote_data_volume_type: Emulation type for volume.
+               * `ISCSI` - ISCSI attached block storage device.
+               * `SCSI` - Emulated SCSI disk.
+               * `IDE` - Emulated IDE disk.
+               * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+               * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         pulumi.set(__self__, "boot_volume_type", boot_volume_type)
         pulumi.set(__self__, "firmware", firmware)
@@ -35680,6 +35727,11 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def boot_volume_type(self) -> str:
         """
         Emulation type for the boot volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "boot_volume_type")
 
@@ -35688,6 +35740,8 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def firmware(self) -> str:
         """
         Firmware used to boot VM. Select the option that matches your operating system.
+        * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+        * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
         """
         return pulumi.get(self, "firmware")
 
@@ -35712,6 +35766,9 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def network_type(self) -> str:
         """
         Emulation type for the physical network interface card (NIC).
+        * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+        * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         """
         return pulumi.get(self, "network_type")
 
@@ -35720,6 +35777,11 @@ class GetInstancesInstanceLaunchOptionResult(dict):
     def remote_data_volume_type(self) -> str:
         """
         Emulation type for volume.
+        * `ISCSI` - ISCSI attached block storage device.
+        * `SCSI` - Emulated SCSI disk.
+        * `IDE` - Emulated IDE disk.
+        * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
         """
         return pulumi.get(self, "remote_data_volume_type")
 
@@ -39152,6 +39214,9 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. Required if `direction` = `INGRESS`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+               * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param str time_created: The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -39251,6 +39316,9 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. Required if `direction` = `INGRESS`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "source_type")
 
@@ -40091,6 +40159,8 @@ class GetPublicIpsPublicIpResult(dict):
         :param str private_ip_id: Deprecated. Use `assignedEntityId` instead.
         :param str public_ip_pool_id: A filter to return only resources that belong to the given public IP pool.
         :param str scope: Whether the public IP is regional or specific to a particular availability domain.
+               * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+               * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         :param str state: The public IP's current state.
         :param str time_created: The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -40211,6 +40281,8 @@ class GetPublicIpsPublicIpResult(dict):
     def scope(self) -> str:
         """
         Whether the public IP is regional or specific to a particular availability domain.
+        * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         """
         return pulumi.get(self, "scope")
 
@@ -40555,6 +40627,8 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         :param str description: An optional description of your choice for the rule.
         :param str destination: Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         :param str destination_type: Type of destination for the rule. Required if you provide a `destination`.
+               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param str network_entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         :param str route_type: A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
         """
@@ -40597,6 +40671,8 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
     def destination_type(self) -> str:
         """
         Type of destination for the rule. Required if you provide a `destination`.
+        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -41042,6 +41118,8 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. The default is `CIDR_BLOCK`.
+               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
@@ -41096,6 +41174,8 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. The default is `CIDR_BLOCK`.
+        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 

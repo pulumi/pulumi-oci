@@ -163,34 +163,28 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The username.
+     * Name
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The username.
+     * @return Name
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * 
      */
     public Optional<Output<String>> name() {
@@ -198,7 +192,7 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
     }
 
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -206,16 +200,16 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -223,9 +217,9 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -632,17 +626,14 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) The username.
+         * @param name Name
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * 
          * @return builder
          * 
@@ -653,17 +644,14 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) The username.
+         * @param name Name
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * 
          * @return builder
          * 
@@ -673,7 +661,7 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -681,9 +669,9 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -694,7 +682,7 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -702,9 +690,9 @@ public final class DomainsMyOauth2clientCredentialArgs extends com.pulumi.resour
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

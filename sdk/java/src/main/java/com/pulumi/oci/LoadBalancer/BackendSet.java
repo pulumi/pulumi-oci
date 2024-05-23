@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBackendSet = new BackendSet("testBackendSet", BackendSetArgs.builder()        
+ *         var testBackendSet = new BackendSet("testBackendSet", BackendSetArgs.builder()
  *             .healthChecker(BackendSetHealthCheckerArgs.builder()
  *                 .protocol(backendSetHealthCheckerProtocol)
  *                 .intervalMs(backendSetHealthCheckerIntervalMs)

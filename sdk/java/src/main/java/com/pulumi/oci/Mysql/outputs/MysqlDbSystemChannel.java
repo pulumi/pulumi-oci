@@ -43,7 +43,7 @@ public final class MysqlDbSystemChannel {
      */
     private @Nullable String id;
     /**
-     * @return (Updatable) Specifies if PITR is enabled or disabled.
+     * @return Whether the Channel has been enabled by the user.
      * 
      */
     private @Nullable Boolean isEnabled;
@@ -115,7 +115,7 @@ public final class MysqlDbSystemChannel {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return (Updatable) Specifies if PITR is enabled or disabled.
+     * @return Whether the Channel has been enabled by the user.
      * 
      */
     public Optional<Boolean> isEnabled() {

@@ -34,14 +34,14 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatArgs extends com.pul
     }
 
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the masking format.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the format entry.
+     * @return (Updatable) The description of the masking format.
      * 
      */
     public Optional<Output<String>> description() {
@@ -111,7 +111,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatArgs extends com.pul
         }
 
         /**
-         * @param description (Updatable) The description of the format entry.
+         * @param description (Updatable) The description of the masking format.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatArgs extends com.pul
         }
 
         /**
-         * @param description (Updatable) The description of the format entry.
+         * @param description (Updatable) The description of the masking format.
          * 
          * @return builder
          * 

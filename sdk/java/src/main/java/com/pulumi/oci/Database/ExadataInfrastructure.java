@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataInfrastructure = new ExadataInfrastructure("testExadataInfrastructure", ExadataInfrastructureArgs.builder()        
+ *         var testExadataInfrastructure = new ExadataInfrastructure("testExadataInfrastructure", ExadataInfrastructureArgs.builder()
  *             .adminNetworkCidr(exadataInfrastructureAdminNetworkCidr)
  *             .cloudControlPlaneServer1(exadataInfrastructureCloudControlPlaneServer1)
  *             .cloudControlPlaneServer2(exadataInfrastructureCloudControlPlaneServer2)

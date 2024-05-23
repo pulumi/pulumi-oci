@@ -18,14 +18,14 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
     public static final DatasetDatasetFormatDetailsArgs Empty = new DatasetDatasetFormatDetailsArgs();
 
     /**
-     * It defines the format type of text files.
+     * The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
      * 
      */
     @Import(name="formatType", required=true)
     private Output<String> formatType;
 
     /**
-     * @return It defines the format type of text files.
+     * @return The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
      * 
      */
     public Output<String> formatType() {
@@ -73,7 +73,7 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param formatType It defines the format type of text files.
+         * @param formatType The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param formatType It defines the format type of text files.
+         * @param formatType The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
          * 
          * @return builder
          * 

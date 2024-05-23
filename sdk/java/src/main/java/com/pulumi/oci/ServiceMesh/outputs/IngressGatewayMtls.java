@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IngressGatewayMtls {
     /**
-     * @return (Updatable) The OCID of the leaf certificate resource.
+     * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
     private @Nullable String certificateId;
@@ -25,7 +25,7 @@ public final class IngressGatewayMtls {
 
     private IngressGatewayMtls() {}
     /**
-     * @return (Updatable) The OCID of the leaf certificate resource.
+     * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
     public Optional<String> certificateId() {

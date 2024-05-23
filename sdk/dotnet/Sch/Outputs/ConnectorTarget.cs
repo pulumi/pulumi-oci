@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int? BatchRolloverTimeInMs;
         /// <summary>
-        /// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+        /// (Updatable) The batch rollover size in kilobytes.
         /// </summary>
         public readonly int? BatchSizeInKbs;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly int? BatchSizeInNum;
         /// <summary>
-        /// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+        /// (Updatable) The batch rollover time in seconds.
         /// </summary>
         public readonly int? BatchTimeInSec;
         /// <summary>
@@ -50,11 +50,11 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly bool? EnableFormattedMessaging;
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
         /// </summary>
         public readonly string? FunctionId;
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         public readonly string Kind;
         /// <summary>

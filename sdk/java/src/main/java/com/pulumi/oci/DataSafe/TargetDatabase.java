@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetDatabase = new TargetDatabase("testTargetDatabase", TargetDatabaseArgs.builder()        
+ *         var testTargetDatabase = new TargetDatabase("testTargetDatabase", TargetDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .databaseDetails(TargetDatabaseDatabaseDetailsArgs.builder()
  *                 .databaseType(targetDatabaseDatabaseDetailsDatabaseType)
@@ -191,14 +191,14 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.credentials;
     }
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     @Export(name="databaseDetails", refs={TargetDatabaseDatabaseDetails.class}, tree="[0]")
     private Output<TargetDatabaseDatabaseDetails> databaseDetails;
 
     /**
-     * @return Details of the database for the registration in Data Safe.
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public Output<TargetDatabaseDatabaseDetails> databaseDetails() {
@@ -219,28 +219,28 @@ public class TargetDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The description of the peer target database in Data Safe.
+     * @return (Updatable) The description of the target database in Data Safe.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Output<String> displayName() {

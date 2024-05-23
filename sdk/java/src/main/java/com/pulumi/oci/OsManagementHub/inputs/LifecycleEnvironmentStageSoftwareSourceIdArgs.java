@@ -32,14 +32,14 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
     }
 
     /**
-     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -141,7 +141,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceIdArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * 
          * @return builder
          * 

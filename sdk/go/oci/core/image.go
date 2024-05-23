@@ -178,6 +178,13 @@ type Image struct {
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrOutput `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LaunchMode pulumi.StringOutput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions ImageLaunchOptionArrayOutput `pulumi:"launchOptions"`
@@ -252,6 +259,13 @@ type imageState struct {
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId *string `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LaunchMode *string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions []ImageLaunchOption `pulumi:"launchOptions"`
@@ -294,6 +308,13 @@ type ImageState struct {
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrInput
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LaunchMode pulumi.StringPtrInput
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions ImageLaunchOptionArrayInput
@@ -332,6 +353,13 @@ type imageArgs struct {
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId *string `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LaunchMode *string `pulumi:"launchMode"`
 }
 
@@ -353,6 +381,13 @@ type ImageArgs struct {
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrInput
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LaunchMode pulumi.StringPtrInput
 }
 
@@ -497,6 +532,13 @@ func (o ImageOutput) InstanceId() pulumi.StringPtrOutput {
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ImageOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.LaunchMode }).(pulumi.StringOutput)
 }

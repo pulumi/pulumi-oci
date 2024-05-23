@@ -114,7 +114,7 @@ type MaskingPoliciesMaskingColumn struct {
 
 	// An array of child columns that are in referential relationship with the masking column.
 	ChildColumns pulumi.StringArrayOutput `pulumi:"childColumns"`
-	// (Updatable) The name of the substitution column.
+	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName pulumi.StringOutput `pulumi:"columnName"`
 	// The data type of the masking column.
 	DataType pulumi.StringOutput `pulumi:"dataType"`
@@ -193,7 +193,7 @@ func GetMaskingPoliciesMaskingColumn(ctx *pulumi.Context,
 type maskingPoliciesMaskingColumnState struct {
 	// An array of child columns that are in referential relationship with the masking column.
 	ChildColumns []string `pulumi:"childColumns"`
-	// (Updatable) The name of the substitution column.
+	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName *string `pulumi:"columnName"`
 	// The data type of the masking column.
 	DataType *string `pulumi:"dataType"`
@@ -231,7 +231,7 @@ type maskingPoliciesMaskingColumnState struct {
 type MaskingPoliciesMaskingColumnState struct {
 	// An array of child columns that are in referential relationship with the masking column.
 	ChildColumns pulumi.StringArrayInput
-	// (Updatable) The name of the substitution column.
+	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName pulumi.StringPtrInput
 	// The data type of the masking column.
 	DataType pulumi.StringPtrInput
@@ -271,7 +271,7 @@ func (MaskingPoliciesMaskingColumnState) ElementType() reflect.Type {
 }
 
 type maskingPoliciesMaskingColumnArgs struct {
-	// (Updatable) The name of the substitution column.
+	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName string `pulumi:"columnName"`
 	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
@@ -296,7 +296,7 @@ type maskingPoliciesMaskingColumnArgs struct {
 
 // The set of arguments for constructing a MaskingPoliciesMaskingColumn resource.
 type MaskingPoliciesMaskingColumnArgs struct {
-	// (Updatable) The name of the substitution column.
+	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName pulumi.StringInput
 	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled pulumi.BoolPtrInput
@@ -411,7 +411,7 @@ func (o MaskingPoliciesMaskingColumnOutput) ChildColumns() pulumi.StringArrayOut
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringArrayOutput { return v.ChildColumns }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The name of the substitution column.
+// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 func (o MaskingPoliciesMaskingColumnOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.ColumnName }).(pulumi.StringOutput)
 }

@@ -45,9 +45,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable String grantMechanism;
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -61,16 +59,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -117,9 +113,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.grantMechanism);
     }
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -135,16 +129,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none

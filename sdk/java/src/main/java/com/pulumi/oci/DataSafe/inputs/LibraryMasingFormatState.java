@@ -50,14 +50,14 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The description of the format entry.
+     * (Updatable) The description of the library masking format.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the format entry.
+     * @return (Updatable) The description of the library masking format.
      * 
      */
     public Optional<Output<String>> description() {
@@ -267,7 +267,7 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) The description of the format entry.
+         * @param description (Updatable) The description of the library masking format.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class LibraryMasingFormatState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description (Updatable) The description of the format entry.
+         * @param description (Updatable) The description of the library masking format.
          * 
          * @return builder
          * 

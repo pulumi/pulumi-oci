@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class LogAnalyticsEntityMetadataItem
     {
         /// <summary>
-        /// (Updatable) Log analytics entity name.
+        /// (Updatable) The metadata name.
         /// </summary>
         public readonly string? Name;
         /// <summary>

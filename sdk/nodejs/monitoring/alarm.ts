@@ -139,6 +139,9 @@ export class Alarm extends pulumi.CustomResource {
     public readonly isNotificationsPerMetricDimensionEnabled!: pulumi.Output<boolean>;
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      */
     public readonly messageFormat!: pulumi.Output<string>;
     /**
@@ -373,6 +376,9 @@ export interface AlarmState {
     isNotificationsPerMetricDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      */
     messageFormat?: pulumi.Input<string>;
     /**
@@ -513,6 +519,9 @@ export interface AlarmArgs {
     isNotificationsPerMetricDimensionEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      */
     messageFormat?: pulumi.Input<string>;
     /**

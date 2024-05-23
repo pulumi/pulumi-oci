@@ -22,6 +22,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
      * 
      * The following values are supported:
+     * * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+     * * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
      * 
      */
     @Import(name="metricExpressionRuleType", required=true)
@@ -31,6 +33,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
      * 
      * The following values are supported:
+     * * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+     * * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
      * 
      */
     public Output<String> metricExpressionRuleType() {
@@ -113,6 +117,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          * @param metricExpressionRuleType (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
          * 
          * The following values are supported:
+         * * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+         * * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
          * 
          * @return builder
          * 
@@ -126,6 +132,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          * @param metricExpressionRuleType (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
          * 
          * The following values are supported:
+         * * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+         * * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
          * 
          * @return builder
          * 

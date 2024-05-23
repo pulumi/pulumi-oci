@@ -49,7 +49,7 @@ class ClusterPlacementGroupCapabilitiesItem(dict):
                  name: str,
                  service: str):
         """
-        :param str name: The friendly name of the cluster placement group.
+        :param str name: The type of resource.
         :param str service: The service that the resource is part of.
         """
         pulumi.set(__self__, "name", name)
@@ -59,7 +59,7 @@ class ClusterPlacementGroupCapabilitiesItem(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        The friendly name of the cluster placement group.
+        The type of resource.
         """
         return pulumi.get(self, "name")
 

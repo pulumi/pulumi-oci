@@ -134,6 +134,9 @@ namespace Pulumi.Oci.Autoscaling
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
@@ -144,7 +147,7 @@ namespace Pulumi.Oci.Autoscaling
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Whether the autoscaling policy is enabled.
+        /// (Updatable) Whether the autoscaling configuration is enabled.
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
@@ -253,6 +256,9 @@ namespace Pulumi.Oci.Autoscaling
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
@@ -269,7 +275,7 @@ namespace Pulumi.Oci.Autoscaling
         }
 
         /// <summary>
-        /// Whether the autoscaling policy is enabled.
+        /// (Updatable) Whether the autoscaling configuration is enabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
@@ -328,6 +334,9 @@ namespace Pulumi.Oci.Autoscaling
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
@@ -344,7 +353,7 @@ namespace Pulumi.Oci.Autoscaling
         }
 
         /// <summary>
-        /// Whether the autoscaling policy is enabled.
+        /// (Updatable) Whether the autoscaling configuration is enabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

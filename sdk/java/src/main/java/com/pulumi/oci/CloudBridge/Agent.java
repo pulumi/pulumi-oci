@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAgent = new Agent("testAgent", AgentArgs.builder()        
+ *         var testAgent = new Agent("testAgent", AgentArgs.builder()
  *             .agentType(agentAgentType)
  *             .agentVersion(agentAgentVersion)
  *             .compartmentId(compartmentId)

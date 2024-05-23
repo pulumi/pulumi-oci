@@ -77,14 +77,14 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      * 
      */
     @Import(name="configProviderDelegate")
     private @Nullable Output<WorkspaceTaskConfigProviderDelegateArgs> configProviderDelegate;
 
     /**
-     * @return (Updatable) The information about the configuration provider.
+     * @return (Updatable) The type to create a config provider.
      * 
      */
     public Optional<Output<WorkspaceTaskConfigProviderDelegateArgs>> configProviderDelegate() {
@@ -167,14 +167,14 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -182,14 +182,14 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Output<String> modelType() {
@@ -197,14 +197,14 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object&#39;s model version.
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -302,14 +302,14 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<List<WorkspaceTaskParameterArgs>> parameters;
 
     /**
-     * @return (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * @return (Updatable) An array of parameters.
      * 
      */
     public Optional<Output<List<WorkspaceTaskParameterArgs>>> parameters() {
@@ -508,7 +508,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configProviderDelegate (Updatable) The information about the configuration provider.
+         * @param configProviderDelegate (Updatable) The type to create a config provider.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configProviderDelegate (Updatable) The information about the configuration provider.
+         * @param configProviderDelegate (Updatable) The type to create a config provider.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 
@@ -843,7 +843,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 
@@ -864,7 +864,7 @@ public final class WorkspaceTaskArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 

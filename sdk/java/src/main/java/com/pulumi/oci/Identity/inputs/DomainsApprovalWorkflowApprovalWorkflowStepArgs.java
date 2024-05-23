@@ -18,34 +18,34 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     public static final DomainsApprovalWorkflowApprovalWorkflowStepArgs Empty = new DomainsApprovalWorkflowApprovalWorkflowStepArgs();
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -88,10 +88,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) ApprovalWorkflowSteps URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -105,10 +104,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) ApprovalWorkflowSteps URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -123,14 +121,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     }
 
     /**
-     * (Updatable) The type of resource, User or App, that modified this Resource
+     * (Updatable) The type of the ApprovalWorkflowSteps.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -140,14 +138,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) The type of the ApprovalWorkflowSteps.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -158,10 +156,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The unique identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -175,10 +173,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The unique identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -221,17 +219,17 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -242,17 +240,17 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -303,10 +301,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) ApprovalWorkflowSteps URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -324,10 +321,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) ApprovalWorkflowSteps URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -344,14 +340,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param type (Updatable) The type of resource, User or App, that modified this Resource
+         * @param type (Updatable) The type of the ApprovalWorkflowSteps.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -365,14 +361,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param type (Updatable) The type of resource, User or App, that modified this Resource
+         * @param type (Updatable) The type of the ApprovalWorkflowSteps.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -385,10 +381,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The unique identifier of the ApprovalWorkflowStep.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
@@ -406,10 +402,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStepArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The unique identifier of the ApprovalWorkflowStep.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite

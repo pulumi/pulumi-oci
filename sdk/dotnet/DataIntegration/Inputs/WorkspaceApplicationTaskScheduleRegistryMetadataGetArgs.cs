@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceApplicationTaskScheduleRegistryMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The owning object key for this object.
+        /// (Updatable) The owning object's key for this object.
         /// </summary>
         [Input("aggregatorKey")]
         public Input<string>? AggregatorKey { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<bool>? IsFavorite { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) The identifying key for the object.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         /// </summary>
         public InputList<string> Labels
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The registry version of the object.
+        /// (Updatable) The registry version.
         /// </summary>
         [Input("registryVersion")]
         public Input<int>? RegistryVersion { get; set; }

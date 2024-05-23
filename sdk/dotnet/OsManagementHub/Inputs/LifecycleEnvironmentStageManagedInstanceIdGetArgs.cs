@@ -13,7 +13,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
     public sealed class LifecycleEnvironmentStageManagedInstanceIdGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

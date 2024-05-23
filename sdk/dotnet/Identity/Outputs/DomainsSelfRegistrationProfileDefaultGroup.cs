@@ -14,10 +14,9 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsSelfRegistrationProfileDefaultGroup
     {
         /// <summary>
-        /// (Updatable) The displayName of the User or App who modified this Resource
+        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -28,10 +27,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) URI of the Default Group
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) name of the attribute
+        /// (Updatable) Identifier of the Default Group.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -53,10 +51,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

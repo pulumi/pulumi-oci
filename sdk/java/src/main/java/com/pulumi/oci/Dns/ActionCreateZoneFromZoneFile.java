@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testActionCreateZoneFromZoneFile = new ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile", ActionCreateZoneFromZoneFileArgs.builder()        
+ *         var testActionCreateZoneFromZoneFile = new ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile", ActionCreateZoneFromZoneFileArgs.builder()
  *             .createZoneFromZoneFileDetails(actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails)
  *             .compartmentId(compartmentId)
  *             .scope(actionCreateZoneFromZoneFileScope)

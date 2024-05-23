@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
     /**
-     * @return (Updatable) A list of filtering rules to include logs
+     * @return (Updatable) List of metrics regex to be allowed.
      * 
      */
     private @Nullable List<String> allowLists;
     /**
-     * @return (Updatable) A list of filtering rules to reject logs
+     * @return (Updatable) List of metrics regex to be denied.
      * 
      */
     private @Nullable List<String> denyLists;
@@ -28,21 +28,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      */
     private @Nullable String filterType;
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     private @Nullable String name;
 
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter() {}
     /**
-     * @return (Updatable) A list of filtering rules to include logs
+     * @return (Updatable) List of metrics regex to be allowed.
      * 
      */
     public List<String> allowLists() {
         return this.allowLists == null ? List.of() : this.allowLists;
     }
     /**
-     * @return (Updatable) A list of filtering rules to reject logs
+     * @return (Updatable) List of metrics regex to be denied.
      * 
      */
     public List<String> denyLists() {
@@ -56,7 +56,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         return Optional.ofNullable(this.filterType);
     }
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     public Optional<String> name() {

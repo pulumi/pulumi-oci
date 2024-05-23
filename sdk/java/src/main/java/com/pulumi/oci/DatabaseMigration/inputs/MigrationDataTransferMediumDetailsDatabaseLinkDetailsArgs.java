@@ -17,14 +17,14 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs ext
     public static final MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs Empty = new MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs();
 
     /**
-     * (Updatable) Name of directory object in database
+     * (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     public Optional<Output<String>> name() {
@@ -72,7 +72,7 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of directory object in database
+         * @param name (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of directory object in database
+         * @param name (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
          * 
          * @return builder
          * 

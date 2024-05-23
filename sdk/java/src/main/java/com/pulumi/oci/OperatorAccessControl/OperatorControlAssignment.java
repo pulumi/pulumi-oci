@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperatorControlAssignment = new OperatorControlAssignment("testOperatorControlAssignment", OperatorControlAssignmentArgs.builder()        
+ *         var testOperatorControlAssignment = new OperatorControlAssignment("testOperatorControlAssignment", OperatorControlAssignmentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .isEnforcedAlways(operatorControlAssignmentIsEnforcedAlways)
  *             .operatorControlId(testOperatorControl.id())

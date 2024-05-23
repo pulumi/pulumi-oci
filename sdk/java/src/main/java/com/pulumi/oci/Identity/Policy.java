@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPolicy = new Policy("testPolicy", PolicyArgs.builder()        
+ *         var testPolicy = new Policy("testPolicy", PolicyArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(policyDescription)
  *             .name(policyName)

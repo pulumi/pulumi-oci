@@ -25,20 +25,17 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKey {
      */
     private @Nullable Boolean isDefault;
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     private String name;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Information regarding type of the selection key.
      * 
      */
     private String type;
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) Information regarding the set of values of selector for which this branch should be selected.
      * 
      */
     private @Nullable List<String> values;
@@ -59,24 +56,21 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKey {
         return Optional.ofNullable(this.isDefault);
     }
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Information regarding type of the selection key.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) Information regarding the set of values of selector for which this branch should be selected.
      * 
      */
     public List<String> values() {

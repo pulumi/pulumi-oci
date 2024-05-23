@@ -83,34 +83,34 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Key or name of the tag.
+     * Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
-     * @return Key or name of the tag.
+     * @return Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -118,7 +118,7 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -126,16 +126,16 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -143,9 +143,9 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -386,17 +386,17 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key Key or name of the tag.
+         * @param key Key
+         * 
+         * **Added In:** 2010242156
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
+         * * caseExact: true
+         * * idcsPii: true
+         * * type: string
+         * * mutability: immutable
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -407,17 +407,17 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key Key or name of the tag.
+         * @param key Key
+         * 
+         * **Added In:** 2010242156
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
+         * * caseExact: true
+         * * idcsPii: true
+         * * type: string
+         * * mutability: immutable
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -435,9 +435,9 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -456,9 +456,9 @@ public final class DomainsMyApiKeyArgs extends com.pulumi.resources.ResourceArgs
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

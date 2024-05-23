@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class CaptureFilterFlowLogCaptureFilterRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+        /// (Updatable) Traffic to this CIDR will be captured in the flow log.
         /// </summary>
         [Input("destinationCidr")]
         public Input<string>? DestinationCidr { get; set; }
@@ -47,16 +47,13 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-        /// * 1 = ICMP
-        /// * 6 = TCP
-        /// * 17 = UDP
+        /// (Updatable) The transport protocol the filter uses.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+        /// (Updatable) Include or exclude a ruleAction object.
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
@@ -68,7 +65,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? SamplingRate { get; set; }
 
         /// <summary>
-        /// (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+        /// (Updatable) Traffic from this CIDR will be captured in the flow log.
         /// </summary>
         [Input("sourceCidr")]
         public Input<string>? SourceCidr { get; set; }

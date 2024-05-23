@@ -29,21 +29,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// The user's identifier.
+        /// Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: true
-        /// * returned: always
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

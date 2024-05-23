@@ -30,10 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? VolumeGroupReplicaId;
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// OCIDs for the volumes used to create this volume group.
         /// </summary>
         public readonly ImmutableArray<string> VolumeIds;
 

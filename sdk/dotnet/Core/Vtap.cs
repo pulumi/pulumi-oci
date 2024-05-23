@@ -112,6 +112,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Used to start or stop a `Vtap` resource.
+        /// * `TRUE` directs the VTAP to start mirroring traffic.
+        /// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         /// </summary>
         [Output("isVtapEnabled")]
         public Output<bool> IsVtapEnabled { get; private set; } = null!;
@@ -300,6 +302,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Used to start or stop a `Vtap` resource.
+        /// * `TRUE` directs the VTAP to start mirroring traffic.
+        /// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         /// </summary>
         [Input("isVtapEnabled")]
         public Input<bool>? IsVtapEnabled { get; set; }
@@ -432,6 +436,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) Used to start or stop a `Vtap` resource.
+        /// * `TRUE` directs the VTAP to start mirroring traffic.
+        /// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         /// </summary>
         [Input("isVtapEnabled")]
         public Input<bool>? IsVtapEnabled { get; set; }

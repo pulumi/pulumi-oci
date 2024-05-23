@@ -15,13 +15,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifierArgs();
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) Type of database password verifier (for example, MR-SHA512 or SSHA).
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
+     * * mutability: readOnly
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -31,13 +34,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) Type of database password verifier (for example, MR-SHA512 or SSHA).
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
+     * * mutability: readOnly
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -48,38 +54,40 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) Hash value of database password verifier.
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
+     * * idcsSensitive: none
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Hash value of database password verifier.
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
+     * * idcsSensitive: none
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -112,13 +120,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) Type of database password verifier (for example, MR-SHA512 or SSHA).
+         * 
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: false
+         * * mutability: readOnly
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -132,13 +143,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) Type of database password verifier (for example, MR-SHA512 or SSHA).
+         * 
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: false
+         * * mutability: readOnly
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -151,19 +165,20 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Hash value of database password verifier.
+         * 
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
+         * * idcsSensitive: none
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -174,19 +189,20 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Hash value of database password verifier.
+         * 
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
+         * * idcsSensitive: none
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

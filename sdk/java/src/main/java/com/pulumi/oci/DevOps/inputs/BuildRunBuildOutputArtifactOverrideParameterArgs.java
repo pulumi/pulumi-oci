@@ -17,14 +17,14 @@ public final class BuildRunBuildOutputArtifactOverrideParameterArgs extends com.
     public static final BuildRunBuildOutputArtifactOverrideParameterArgs Empty = new BuildRunBuildOutputArtifactOverrideParameterArgs();
 
     /**
-     * List of arguments provided at the time of running the build.
+     * List of exported variables.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<BuildRunBuildOutputArtifactOverrideParameterItemArgs>> items;
 
     /**
-     * @return List of arguments provided at the time of running the build.
+     * @return List of exported variables.
      * 
      */
     public Optional<Output<List<BuildRunBuildOutputArtifactOverrideParameterItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterArgs extends com.
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterArgs extends com.
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterArgs extends com.
         }
 
         /**
-         * @param items List of arguments provided at the time of running the build.
+         * @param items List of exported variables.
          * 
          * @return builder
          * 

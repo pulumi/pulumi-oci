@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicyServiceList = new NetworkFirewallPolicyServiceList("testNetworkFirewallPolicyServiceList", NetworkFirewallPolicyServiceListArgs.builder()        
+ *         var testNetworkFirewallPolicyServiceList = new NetworkFirewallPolicyServiceList("testNetworkFirewallPolicyServiceList", NetworkFirewallPolicyServiceListArgs.builder()
  *             .name(networkFirewallPolicyServiceListName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .services(networkFirewallPolicyServiceListServices)

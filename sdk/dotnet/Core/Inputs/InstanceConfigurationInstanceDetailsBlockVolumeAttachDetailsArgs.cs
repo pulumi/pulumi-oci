@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsShareable { get; set; }
 
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type of volume. The only supported values are "iscsi" and "paravirtualized".
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

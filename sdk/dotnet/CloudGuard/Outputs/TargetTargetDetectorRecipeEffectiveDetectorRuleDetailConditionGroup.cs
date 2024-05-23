@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// (Updatable) Base condition object
+        /// Base condition object
         /// </summary>
         public readonly string? Condition;
 

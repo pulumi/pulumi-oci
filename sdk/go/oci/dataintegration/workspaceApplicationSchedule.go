@@ -93,11 +93,11 @@ type WorkspaceApplicationSchedule struct {
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
 	IsDaylightAdjustmentEnabled pulumi.BoolOutput `pulumi:"isDaylightAdjustmentEnabled"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationScheduleMetadataArrayOutput `pulumi:"metadatas"`
-	// (Updatable) The type of the model
+	// The type of the object.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
@@ -169,11 +169,11 @@ type workspaceApplicationScheduleState struct {
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
 	IsDaylightAdjustmentEnabled *bool `pulumi:"isDaylightAdjustmentEnabled"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceApplicationScheduleMetadata `pulumi:"metadatas"`
-	// (Updatable) The type of the model
+	// The type of the object.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -207,11 +207,11 @@ type WorkspaceApplicationScheduleState struct {
 	Identifier pulumi.StringPtrInput
 	// (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
 	IsDaylightAdjustmentEnabled pulumi.BoolPtrInput
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationScheduleMetadataArrayInput
-	// (Updatable) The type of the model
+	// The type of the object.
 	ModelType pulumi.StringPtrInput
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringPtrInput
@@ -249,7 +249,7 @@ type workspaceApplicationScheduleArgs struct {
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
 	IsDaylightAdjustmentEnabled *bool `pulumi:"isDaylightAdjustmentEnabled"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -282,7 +282,7 @@ type WorkspaceApplicationScheduleArgs struct {
 	Identifier pulumi.StringInput
 	// (Updatable) A flag to indicate whether daylight adjustment should be considered or not.
 	IsDaylightAdjustmentEnabled pulumi.BoolPtrInput
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringPtrInput
@@ -417,7 +417,7 @@ func (o WorkspaceApplicationScheduleOutput) IsDaylightAdjustmentEnabled() pulumi
 	return o.ApplyT(func(v *WorkspaceApplicationSchedule) pulumi.BoolOutput { return v.IsDaylightAdjustmentEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The identifying key for the object.
+// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationScheduleOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationSchedule) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
@@ -429,7 +429,7 @@ func (o WorkspaceApplicationScheduleOutput) Metadatas() WorkspaceApplicationSche
 	}).(WorkspaceApplicationScheduleMetadataArrayOutput)
 }
 
-// (Updatable) The type of the model
+// The type of the object.
 func (o WorkspaceApplicationScheduleOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationSchedule) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }

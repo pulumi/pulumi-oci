@@ -14,15 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetails
     {
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the Uri detail.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+        /// (Updatable) The discovery URI for the auth server.
         /// </summary>
         public readonly string? Uri;
 

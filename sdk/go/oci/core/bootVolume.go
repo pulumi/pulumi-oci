@@ -90,7 +90,7 @@ type BootVolume struct {
 	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies BootVolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
-	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
@@ -179,7 +179,7 @@ type bootVolumeState struct {
 	AutoTunedVpusPerGb *string `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
-	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
@@ -230,7 +230,7 @@ type BootVolumeState struct {
 	AutoTunedVpusPerGb pulumi.StringPtrInput
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies BootVolumeAutotunePolicyArrayInput
-	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
@@ -283,7 +283,7 @@ func (BootVolumeState) ElementType() reflect.Type {
 type bootVolumeArgs struct {
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`
-	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
@@ -319,7 +319,7 @@ type bootVolumeArgs struct {
 type BootVolumeArgs struct {
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies BootVolumeAutotunePolicyArrayInput
-	// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
 	// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
 	//
@@ -448,7 +448,7 @@ func (o BootVolumeOutput) AutotunePolicies() BootVolumeAutotunePolicyArrayOutput
 	return o.ApplyT(func(v *BootVolume) BootVolumeAutotunePolicyArrayOutput { return v.AutotunePolicies }).(BootVolumeAutotunePolicyArrayOutput)
 }
 
-// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
 func (o BootVolumeOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousDatabaseLongTermBackupSchedule
     {
         /// <summary>
-        /// (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        /// Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
         /// </summary>
         public readonly bool? IsDisabled;
         /// <summary>

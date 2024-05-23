@@ -88,40 +88,34 @@ public final class DomainsSelfRegistrationProfileConsentTextArgs extends com.pul
     }
 
     /**
-     * (Updatable) name of the attribute
+     * (Updatable) Localized value of consent text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Localized value of consent text in corresponding locale
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -237,20 +231,17 @@ public final class DomainsSelfRegistrationProfileConsentTextArgs extends com.pul
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Localized value of consent text in corresponding locale
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -261,20 +252,17 @@ public final class DomainsSelfRegistrationProfileConsentTextArgs extends com.pul
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Localized value of consent text in corresponding locale
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Kms.Inputs
     public sealed class VaultExternalKeyManagerMetadataSummaryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// URI of the vault on external key manager.
+        /// URL of the vault on external key manager.
         /// </summary>
         [Input("externalVaultEndpointUrl")]
         public Input<string>? ExternalVaultEndpointUrl { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Kms.Inputs
         }
 
         /// <summary>
-        /// OCID of private endpoint created by customer.
+        /// OCID of the private endpoint.
         /// </summary>
         [Input("privateEndpointId")]
         public Input<string>? PrivateEndpointId { get; set; }

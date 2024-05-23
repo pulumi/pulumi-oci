@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     {
         /// <summary>
-        /// (Updatable) Condition group corresponding to each compartment
+        /// Condition group corresponding to each compartment
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> ConditionGroups;
         /// <summary>
-        /// (Updatable) Configurations associated with the ResponderRule
+        /// ResponderRule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> Configurations;
         /// <summary>

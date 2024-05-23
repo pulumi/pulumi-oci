@@ -40,14 +40,14 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Number of GPU cores.
+     * (Updatable) Number of CPUs.
      * 
      */
     @Import(name="coresCount")
     private @Nullable Output<Integer> coresCount;
 
     /**
-     * @return (Updatable) Number of GPU cores.
+     * @return (Updatable) Number of CPUs.
      * 
      */
     public Optional<Output<Integer>> coresCount() {
@@ -70,14 +70,14 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The tag description.
+     * (Updatable) Information about the asset.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) Information about the asset.
      * 
      */
     public Optional<Output<String>> description() {
@@ -533,7 +533,7 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coresCount (Updatable) Number of GPU cores.
+         * @param coresCount (Updatable) Number of CPUs.
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param coresCount (Updatable) Number of GPU cores.
+         * @param coresCount (Updatable) Number of CPUs.
          * 
          * @return builder
          * 
@@ -575,7 +575,7 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The tag description.
+         * @param description (Updatable) Information about the asset.
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class AssetComputeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The tag description.
+         * @param description (Updatable) Information about the asset.
          * 
          * @return builder
          * 

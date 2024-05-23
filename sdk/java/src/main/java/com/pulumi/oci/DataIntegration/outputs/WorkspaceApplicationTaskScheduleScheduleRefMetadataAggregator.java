@@ -27,7 +27,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) The name of the aggregator.
      * 
      */
     private @Nullable String name;
@@ -60,7 +60,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) The name of the aggregator.
      * 
      */
     public Optional<String> name() {

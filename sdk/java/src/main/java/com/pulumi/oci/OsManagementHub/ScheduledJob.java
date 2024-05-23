@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testScheduledJob = new ScheduledJob("testScheduledJob", ScheduledJobArgs.builder()        
+ *         var testScheduledJob = new ScheduledJob("testScheduledJob", ScheduledJobArgs.builder()
  *             .compartmentId(compartmentId)
  *             .operations(ScheduledJobOperationArgs.builder()
  *                 .operationType(scheduledJobOperationsOperationType)

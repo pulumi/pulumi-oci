@@ -51,6 +51,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
      * The type of wallet to generate.
      * 
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * 
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      * 
      */
     @Import(name="generateType")
@@ -60,6 +64,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
      * @return The type of wallet to generate.
      * 
      * **Serverless instance usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * 
+     * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      * 
      */
     public Optional<Output<String>> generateType() {
@@ -150,6 +158,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
          * @param generateType The type of wallet to generate.
          * 
          * **Serverless instance usage:**
+         * * `SINGLE` - used to generate a wallet for a single database
+         * * `ALL` - used to generate wallet for all databases in the region
+         * 
+         * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
          * 
          * @return builder
          * 
@@ -163,6 +175,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
          * @param generateType The type of wallet to generate.
          * 
          * **Serverless instance usage:**
+         * * `SINGLE` - used to generate a wallet for a single database
+         * * `ALL` - used to generate wallet for all databases in the region
+         * 
+         * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
          * 
          * @return builder
          * 

@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTagNamespace = new TagNamespace("testTagNamespace", TagNamespaceArgs.builder()        
+ *         var testTagNamespace = new TagNamespace("testTagNamespace", TagNamespaceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .description(tagNamespaceDescription)
  *             .name(tagNamespaceName)

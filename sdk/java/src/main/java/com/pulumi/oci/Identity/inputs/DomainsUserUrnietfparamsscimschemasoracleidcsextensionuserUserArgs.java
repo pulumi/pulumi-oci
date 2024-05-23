@@ -894,17 +894,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) User Support Account Provider
-     * 
-     * **Added In:** 2103141444
+     * (Updatable) Registration provider
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -913,17 +911,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> userProvider;
 
     /**
-     * @return (Updatable) User Support Account Provider
-     * 
-     * **Added In:** 2103141444
+     * @return (Updatable) Registration provider
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -2145,17 +2141,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param userProvider (Updatable) User Support Account Provider
-         * 
-         * **Added In:** 2103141444
+         * @param userProvider (Updatable) Registration provider
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -2168,17 +2162,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param userProvider (Updatable) User Support Account Provider
-         * 
-         * **Added In:** 2103141444
+         * @param userProvider (Updatable) Registration provider
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 

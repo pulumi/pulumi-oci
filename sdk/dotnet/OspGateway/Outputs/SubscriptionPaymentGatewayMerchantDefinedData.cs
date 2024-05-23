@@ -14,11 +14,11 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionPaymentGatewayMerchantDefinedData
     {
         /// <summary>
-        /// (Updatable) Cloud account name.
+        /// Cloud account name.
         /// </summary>
         public readonly string? CloudAccountName;
         /// <summary>
-        /// (Updatable) Promotion type code.
+        /// Promotion type code.
         /// </summary>
         public readonly string? PromoType;
 

@@ -16,14 +16,22 @@ public final class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs exte
     public static final DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs Empty = new DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs();
 
     /**
-     * (Updatable) Whether this policy is currently enabled.
+     * (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;access&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Whether this policy is currently enabled.
+     * @return (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;access&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -55,7 +63,11 @@ public final class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs exte
         }
 
         /**
-         * @param isEnabled (Updatable) Whether this policy is currently enabled.
+         * @param isEnabled (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+         * 
+         * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;access&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+         * 
+         * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
          * 
          * @return builder
          * 
@@ -66,7 +78,11 @@ public final class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs exte
         }
 
         /**
-         * @param isEnabled (Updatable) Whether this policy is currently enabled.
+         * @param isEnabled (Updatable) Enables pushing of access logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+         * 
+         * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query access logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;access&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+         * 
+         * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
          * 
          * @return builder
          * 

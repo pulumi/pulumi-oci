@@ -66,14 +66,14 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of the metric.
+     * @return (Updatable) Metric Extension display name.
      * 
      */
     public Output<String> displayName() {
@@ -96,14 +96,14 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of the script file
+     * @return Metric Extension Resource name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -257,7 +257,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) Display name of the metric.
+         * @param displayName (Updatable) Metric Extension display name.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) Display name of the metric.
+         * @param displayName (Updatable) Metric Extension display name.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name Metric Extension Resource name.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) Name of the script file
+         * @param name Metric Extension Resource name.
          * 
          * @return builder
          * 

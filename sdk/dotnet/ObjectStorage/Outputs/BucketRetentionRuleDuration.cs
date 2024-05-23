@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     public sealed class BucketRetentionRuleDuration
     {
         /// <summary>
-        /// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+        /// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         /// </summary>
         public readonly string TimeAmount;
         /// <summary>
-        /// The unit that should be used to interpret timeAmount.
+        /// (Updatable) The unit that should be used to interpret timeAmount.
         /// </summary>
         public readonly string TimeUnit;
 

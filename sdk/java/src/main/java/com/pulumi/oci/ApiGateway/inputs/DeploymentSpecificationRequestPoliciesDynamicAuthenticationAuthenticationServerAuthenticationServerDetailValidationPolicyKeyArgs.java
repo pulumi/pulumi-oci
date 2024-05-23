@@ -63,14 +63,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * (Updatable) The content of the PEM-encoded public key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) The content of the PEM-encoded public key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -248,7 +248,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) The content of the PEM-encoded public key.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) The content of the PEM-encoded public key.
          * 
          * @return builder
          * 

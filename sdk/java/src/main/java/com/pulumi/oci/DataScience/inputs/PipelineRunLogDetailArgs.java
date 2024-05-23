@@ -16,14 +16,14 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
     public static final PipelineRunLogDetailArgs Empty = new PipelineRunLogDetailArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+     * The log group id for where log objects will be for pipeline runs.
      * 
      */
     @Import(name="logGroupId")
     private @Nullable Output<String> logGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+     * @return The log group id for where log objects will be for pipeline runs.
      * 
      */
     public Optional<Output<String>> logGroupId() {
@@ -31,14 +31,14 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+     * The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
     @Import(name="logId")
     private @Nullable Output<String> logId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+     * @return The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
     public Optional<Output<String>> logId() {
@@ -71,7 +71,7 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         * @param logGroupId The log group id for where log objects will be for pipeline runs.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         * @param logGroupId The log group id for where log objects will be for pipeline runs.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         * @param logId The log id of the log object the pipeline run logs will be shipped to.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class PipelineRunLogDetailArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param logId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         * @param logId The log id of the log object the pipeline run logs will be shipped to.
          * 
          * @return builder
          * 

@@ -81,7 +81,7 @@ export class Rrset extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The fully qualified domain name where the record can be located.
+     * The target fully-qualified domain name (FQDN) within the target zone.
      */
     public readonly domain!: pulumi.Output<string>;
     /**
@@ -164,7 +164,7 @@ export interface RrsetState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The fully qualified domain name where the record can be located.
+     * The target fully-qualified domain name (FQDN) within the target zone.
      */
     domain?: pulumi.Input<string>;
     /**
@@ -204,7 +204,7 @@ export interface RrsetArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The fully qualified domain name where the record can be located.
+     * The target fully-qualified domain name (FQDN) within the target zone.
      */
     domain: pulumi.Input<string>;
     /**

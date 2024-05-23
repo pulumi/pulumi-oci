@@ -29,17 +29,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -61,33 +60,29 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// This indicates if the question is a Custom Question added by the Security Admin.
+        /// The type of resource, User or App, that modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Value of the tag.
+        /// The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

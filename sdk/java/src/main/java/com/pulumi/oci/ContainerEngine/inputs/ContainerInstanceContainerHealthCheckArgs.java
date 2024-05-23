@@ -125,14 +125,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     }
 
     /**
-     * The name of the volume. This must be unique within a single container instance.
+     * Health check name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Health check name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -140,14 +140,14 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
     }
 
     /**
-     * (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+     * Container health check HTTP path.
      * 
      */
     @Import(name="path")
     private @Nullable Output<String> path;
 
     /**
-     * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+     * @return Container health check HTTP path.
      * 
      */
     public Optional<Output<String>> path() {
@@ -418,7 +418,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param name The name of the volume. This must be unique within a single container instance.
+         * @param name Health check name.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param name The name of the volume. This must be unique within a single container instance.
+         * @param name Health check name.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param path (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+         * @param path Container health check HTTP path.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class ContainerInstanceContainerHealthCheckArgs extends com.pulumi.
         }
 
         /**
-         * @param path (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+         * @param path Container health check HTTP path.
          * 
          * @return builder
          * 

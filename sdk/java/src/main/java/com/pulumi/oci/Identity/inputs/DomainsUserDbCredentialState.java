@@ -557,34 +557,32 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The username.
+     * (Updatable) Name
+     * 
+     * **Added In:** 2109090424
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The username.
+     * @return (Updatable) Name
+     * 
+     * **Added In:** 2109090424
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> name() {
@@ -592,7 +590,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
     }
 
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -600,16 +598,16 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -617,9 +615,9 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -1649,17 +1647,16 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) The username.
+         * @param name (Updatable) Name
+         * 
+         * **Added In:** 2109090424
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * multiValued: false
+         * * type: string
          * * mutability: readOnly
          * * required: false
          * * returned: default
-         * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1670,17 +1667,16 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) The username.
+         * @param name (Updatable) Name
+         * 
+         * **Added In:** 2109090424
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * multiValued: false
+         * * type: string
          * * mutability: readOnly
          * * required: false
          * * returned: default
-         * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -1690,7 +1686,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1698,9 +1694,9 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -1711,7 +1707,7 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1719,9 +1715,9 @@ public final class DomainsUserDbCredentialState extends com.pulumi.resources.Res
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

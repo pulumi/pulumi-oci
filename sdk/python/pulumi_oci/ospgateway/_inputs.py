@@ -488,32 +488,32 @@ class SubscriptionBillingAddressArgs:
                  street_name: Optional[pulumi.Input[str]] = None,
                  street_number: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] address_key: (Updatable) Address identifier.
-        :param pulumi.Input[str] city: (Updatable) Name of the city.
-        :param pulumi.Input[str] company_name: (Updatable) Name of the customer company.
-        :param pulumi.Input[str] contributor_class: (Updatable) Contributor class of the customer company.
-        :param pulumi.Input[str] country: (Updatable) Country of the address.
-        :param pulumi.Input[str] county: (Updatable) County of the address.
-        :param pulumi.Input[str] department_name: (Updatable) Department name of the customer company.
-        :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
-        :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
-        :param pulumi.Input[str] internal_number: (Updatable) Internal number of the customer company.
-        :param pulumi.Input[str] job_title: (Updatable) Job title of the contact person.
-        :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
-        :param pulumi.Input[str] line1: (Updatable) Address line 1.
-        :param pulumi.Input[str] line2: (Updatable) Address line 2.
-        :param pulumi.Input[str] line3: (Updatable) Address line 3.
-        :param pulumi.Input[str] line4: (Updatable) Address line 4.
-        :param pulumi.Input[str] middle_name: (Updatable) Middle name of the contact person.
-        :param pulumi.Input[str] municipal_inscription: (Updatable) Municipal Inscription.
-        :param pulumi.Input[str] phone_country_code: (Updatable) Phone country code of the contact person.
-        :param pulumi.Input[str] phone_number: (Updatable) Phone number of the contact person.
-        :param pulumi.Input[str] postal_code: (Updatable) Post code of the address.
-        :param pulumi.Input[str] province: (Updatable) Province of the address.
-        :param pulumi.Input[str] state: (Updatable) State of the address.
-        :param pulumi.Input[str] state_inscription: (Updatable) State Inscription.
-        :param pulumi.Input[str] street_name: (Updatable) Street name of the address.
-        :param pulumi.Input[str] street_number: (Updatable) Street number of the address.
+        :param pulumi.Input[str] address_key: Address identifier.
+        :param pulumi.Input[str] city: Name of the city.
+        :param pulumi.Input[str] company_name: Name of the customer company.
+        :param pulumi.Input[str] contributor_class: Contributor class of the customer company.
+        :param pulumi.Input[str] country: Country of the address.
+        :param pulumi.Input[str] county: County of the address.
+        :param pulumi.Input[str] department_name: Department name of the customer company.
+        :param pulumi.Input[str] email_address: The email address of the paypal user.
+        :param pulumi.Input[str] first_name: First name of the paypal user.
+        :param pulumi.Input[str] internal_number: Internal number of the customer company.
+        :param pulumi.Input[str] job_title: Job title of the contact person.
+        :param pulumi.Input[str] last_name: Last name of the paypal user.
+        :param pulumi.Input[str] line1: Address line 1.
+        :param pulumi.Input[str] line2: Address line 2.
+        :param pulumi.Input[str] line3: Address line 3.
+        :param pulumi.Input[str] line4: Address line 4.
+        :param pulumi.Input[str] middle_name: Middle name of the contact person.
+        :param pulumi.Input[str] municipal_inscription: Municipal Inscription.
+        :param pulumi.Input[str] phone_country_code: Phone country code of the contact person.
+        :param pulumi.Input[str] phone_number: Phone number of the contact person.
+        :param pulumi.Input[str] postal_code: Post code of the address.
+        :param pulumi.Input[str] province: Province of the address.
+        :param pulumi.Input[str] state: State of the address.
+        :param pulumi.Input[str] state_inscription: State Inscription.
+        :param pulumi.Input[str] street_name: Street name of the address.
+        :param pulumi.Input[str] street_number: Street number of the address.
         """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
@@ -572,7 +572,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Address identifier.
+        Address identifier.
         """
         return pulumi.get(self, "address_key")
 
@@ -584,7 +584,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the city.
+        Name of the city.
         """
         return pulumi.get(self, "city")
 
@@ -596,7 +596,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the customer company.
+        Name of the customer company.
         """
         return pulumi.get(self, "company_name")
 
@@ -608,7 +608,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Contributor class of the customer company.
+        Contributor class of the customer company.
         """
         return pulumi.get(self, "contributor_class")
 
@@ -620,7 +620,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Country of the address.
+        Country of the address.
         """
         return pulumi.get(self, "country")
 
@@ -632,7 +632,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def county(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) County of the address.
+        County of the address.
         """
         return pulumi.get(self, "county")
 
@@ -644,7 +644,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Department name of the customer company.
+        Department name of the customer company.
         """
         return pulumi.get(self, "department_name")
 
@@ -656,7 +656,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The email address of the paypal user.
+        The email address of the paypal user.
         """
         return pulumi.get(self, "email_address")
 
@@ -668,7 +668,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) First name of the paypal user.
+        First name of the paypal user.
         """
         return pulumi.get(self, "first_name")
 
@@ -680,7 +680,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Internal number of the customer company.
+        Internal number of the customer company.
         """
         return pulumi.get(self, "internal_number")
 
@@ -692,7 +692,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Job title of the contact person.
+        Job title of the contact person.
         """
         return pulumi.get(self, "job_title")
 
@@ -704,7 +704,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Last name of the paypal user.
+        Last name of the paypal user.
         """
         return pulumi.get(self, "last_name")
 
@@ -716,7 +716,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def line1(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Address line 1.
+        Address line 1.
         """
         return pulumi.get(self, "line1")
 
@@ -728,7 +728,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def line2(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Address line 2.
+        Address line 2.
         """
         return pulumi.get(self, "line2")
 
@@ -740,7 +740,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def line3(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Address line 3.
+        Address line 3.
         """
         return pulumi.get(self, "line3")
 
@@ -752,7 +752,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def line4(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Address line 4.
+        Address line 4.
         """
         return pulumi.get(self, "line4")
 
@@ -764,7 +764,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Middle name of the contact person.
+        Middle name of the contact person.
         """
         return pulumi.get(self, "middle_name")
 
@@ -776,7 +776,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Municipal Inscription.
+        Municipal Inscription.
         """
         return pulumi.get(self, "municipal_inscription")
 
@@ -788,7 +788,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Phone country code of the contact person.
+        Phone country code of the contact person.
         """
         return pulumi.get(self, "phone_country_code")
 
@@ -800,7 +800,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Phone number of the contact person.
+        Phone number of the contact person.
         """
         return pulumi.get(self, "phone_number")
 
@@ -812,7 +812,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Post code of the address.
+        Post code of the address.
         """
         return pulumi.get(self, "postal_code")
 
@@ -824,7 +824,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def province(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Province of the address.
+        Province of the address.
         """
         return pulumi.get(self, "province")
 
@@ -836,7 +836,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) State of the address.
+        State of the address.
         """
         return pulumi.get(self, "state")
 
@@ -848,7 +848,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) State Inscription.
+        State Inscription.
         """
         return pulumi.get(self, "state_inscription")
 
@@ -860,7 +860,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Street name of the address.
+        Street name of the address.
         """
         return pulumi.get(self, "street_name")
 
@@ -872,7 +872,7 @@ class SubscriptionBillingAddressArgs:
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Street number of the address.
+        Street number of the address.
         """
         return pulumi.get(self, "street_number")
 
@@ -886,7 +886,7 @@ class SubscriptionPaymentGatewayArgs:
     def __init__(__self__, *,
                  merchant_defined_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]] merchant_defined_datas: (Updatable) Merchant details.
+        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]] merchant_defined_datas: Merchant details.
         """
         if merchant_defined_datas is not None:
             pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
@@ -895,7 +895,7 @@ class SubscriptionPaymentGatewayArgs:
     @pulumi.getter(name="merchantDefinedDatas")
     def merchant_defined_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]]:
         """
-        (Updatable) Merchant details.
+        Merchant details.
         """
         return pulumi.get(self, "merchant_defined_datas")
 
@@ -910,8 +910,8 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
                  cloud_account_name: Optional[pulumi.Input[str]] = None,
                  promo_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] cloud_account_name: (Updatable) Cloud account name.
-        :param pulumi.Input[str] promo_type: (Updatable) Promotion type code.
+        :param pulumi.Input[str] cloud_account_name: Cloud account name.
+        :param pulumi.Input[str] promo_type: Promotion type code.
         """
         if cloud_account_name is not None:
             pulumi.set(__self__, "cloud_account_name", cloud_account_name)
@@ -922,7 +922,7 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
     @pulumi.getter(name="cloudAccountName")
     def cloud_account_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Cloud account name.
+        Cloud account name.
         """
         return pulumi.get(self, "cloud_account_name")
 
@@ -934,7 +934,7 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
     @pulumi.getter(name="promoType")
     def promo_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Promotion type code.
+        Promotion type code.
         """
         return pulumi.get(self, "promo_type")
 
@@ -958,17 +958,17 @@ class SubscriptionPaymentOptionArgs:
                  wallet_instrument_id: Optional[pulumi.Input[str]] = None,
                  wallet_transaction_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] credit_card_type: (Updatable) Credit card type.
-        :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
-        :param pulumi.Input[str] ext_billing_agreement_id: (Updatable) Agreement id for the paypal account.
-        :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
-        :param pulumi.Input[str] last_digits: (Updatable) Last four digits of the card.
-        :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
-        :param pulumi.Input[str] name_on_card: (Updatable) Name on the credit card.
-        :param pulumi.Input[str] payment_method: (Updatable) Payment method
-        :param pulumi.Input[str] time_expiration: (Updatable) Expired date of the credit card.
-        :param pulumi.Input[str] wallet_instrument_id: (Updatable) Wallet instrument internal id.
-        :param pulumi.Input[str] wallet_transaction_id: (Updatable) Wallet transaction id.
+        :param pulumi.Input[str] credit_card_type: Credit card type.
+        :param pulumi.Input[str] email_address: The email address of the paypal user.
+        :param pulumi.Input[str] ext_billing_agreement_id: Agreement id for the paypal account.
+        :param pulumi.Input[str] first_name: First name of the paypal user.
+        :param pulumi.Input[str] last_digits: Last four digits of the card.
+        :param pulumi.Input[str] last_name: Last name of the paypal user.
+        :param pulumi.Input[str] name_on_card: Name on the credit card.
+        :param pulumi.Input[str] payment_method: Payment method
+        :param pulumi.Input[str] time_expiration: Expired date of the credit card.
+        :param pulumi.Input[str] wallet_instrument_id: Wallet instrument internal id.
+        :param pulumi.Input[str] wallet_transaction_id: Wallet transaction id.
         """
         if credit_card_type is not None:
             pulumi.set(__self__, "credit_card_type", credit_card_type)
@@ -997,7 +997,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="creditCardType")
     def credit_card_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Credit card type.
+        Credit card type.
         """
         return pulumi.get(self, "credit_card_type")
 
@@ -1009,7 +1009,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The email address of the paypal user.
+        The email address of the paypal user.
         """
         return pulumi.get(self, "email_address")
 
@@ -1021,7 +1021,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="extBillingAgreementId")
     def ext_billing_agreement_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Agreement id for the paypal account.
+        Agreement id for the paypal account.
         """
         return pulumi.get(self, "ext_billing_agreement_id")
 
@@ -1033,7 +1033,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) First name of the paypal user.
+        First name of the paypal user.
         """
         return pulumi.get(self, "first_name")
 
@@ -1045,7 +1045,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="lastDigits")
     def last_digits(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Last four digits of the card.
+        Last four digits of the card.
         """
         return pulumi.get(self, "last_digits")
 
@@ -1057,7 +1057,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Last name of the paypal user.
+        Last name of the paypal user.
         """
         return pulumi.get(self, "last_name")
 
@@ -1069,7 +1069,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="nameOnCard")
     def name_on_card(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name on the credit card.
+        Name on the credit card.
         """
         return pulumi.get(self, "name_on_card")
 
@@ -1081,7 +1081,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="paymentMethod")
     def payment_method(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Payment method
+        Payment method
         """
         return pulumi.get(self, "payment_method")
 
@@ -1093,7 +1093,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="timeExpiration")
     def time_expiration(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Expired date of the credit card.
+        Expired date of the credit card.
         """
         return pulumi.get(self, "time_expiration")
 
@@ -1105,7 +1105,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="walletInstrumentId")
     def wallet_instrument_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Wallet instrument internal id.
+        Wallet instrument internal id.
         """
         return pulumi.get(self, "wallet_instrument_id")
 
@@ -1117,7 +1117,7 @@ class SubscriptionPaymentOptionArgs:
     @pulumi.getter(name="walletTransactionId")
     def wallet_transaction_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Wallet transaction id.
+        Wallet transaction id.
         """
         return pulumi.get(self, "wallet_transaction_id")
 
@@ -1505,11 +1505,11 @@ class SubscriptionSubscriptionBillingAddressArgs:
         :param pulumi.Input[str] country: (Updatable) Country of the address.
         :param pulumi.Input[str] county: (Updatable) County of the address.
         :param pulumi.Input[str] department_name: (Updatable) Department name of the customer company.
-        :param pulumi.Input[str] email_address: (Updatable) The email address of the paypal user.
-        :param pulumi.Input[str] first_name: (Updatable) First name of the paypal user.
+        :param pulumi.Input[str] email_address: (Updatable) Contact person email address.
+        :param pulumi.Input[str] first_name: (Updatable) First name of the contact person.
         :param pulumi.Input[str] internal_number: (Updatable) Internal number of the customer company.
         :param pulumi.Input[str] job_title: (Updatable) Job title of the contact person.
-        :param pulumi.Input[str] last_name: (Updatable) Last name of the paypal user.
+        :param pulumi.Input[str] last_name: (Updatable) Last name of the contact person.
         :param pulumi.Input[str] line1: (Updatable) Address line 1.
         :param pulumi.Input[str] line2: (Updatable) Address line 2.
         :param pulumi.Input[str] line3: (Updatable) Address line 3.
@@ -1666,7 +1666,7 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The email address of the paypal user.
+        (Updatable) Contact person email address.
         """
         return pulumi.get(self, "email_address")
 
@@ -1678,7 +1678,7 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) First name of the paypal user.
+        (Updatable) First name of the contact person.
         """
         return pulumi.get(self, "first_name")
 
@@ -1714,7 +1714,7 @@ class SubscriptionSubscriptionBillingAddressArgs:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Last name of the paypal user.
+        (Updatable) Last name of the contact person.
         """
         return pulumi.get(self, "last_name")
 
@@ -2233,11 +2233,11 @@ class SubscriptionTaxInfoArgs:
                  tax_reg_number: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] giro: Companies' GIRO code
-        :param pulumi.Input[str] no_tax_reason_code: (Updatable) Tax exemption reason code.
-        :param pulumi.Input[str] no_tax_reason_code_details: (Updatable) Tax exemption reason description.
-        :param pulumi.Input[str] tax_cnpj: (Updatable) Brazilian companies' CNPJ number.
-        :param pulumi.Input[str] tax_payer_id: (Updatable) Tay payer identifier.
-        :param pulumi.Input[str] tax_reg_number: (Updatable) Tax registration number.
+        :param pulumi.Input[str] no_tax_reason_code: Tax exemption reason code.
+        :param pulumi.Input[str] no_tax_reason_code_details: Tax exemption reason description.
+        :param pulumi.Input[str] tax_cnpj: Brazilian companies' CNPJ number.
+        :param pulumi.Input[str] tax_payer_id: Tay payer identifier.
+        :param pulumi.Input[str] tax_reg_number: Tax registration number.
         """
         if giro is not None:
             pulumi.set(__self__, "giro", giro)
@@ -2268,7 +2268,7 @@ class SubscriptionTaxInfoArgs:
     @pulumi.getter(name="noTaxReasonCode")
     def no_tax_reason_code(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Tax exemption reason code.
+        Tax exemption reason code.
         """
         return pulumi.get(self, "no_tax_reason_code")
 
@@ -2280,7 +2280,7 @@ class SubscriptionTaxInfoArgs:
     @pulumi.getter(name="noTaxReasonCodeDetails")
     def no_tax_reason_code_details(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Tax exemption reason description.
+        Tax exemption reason description.
         """
         return pulumi.get(self, "no_tax_reason_code_details")
 
@@ -2292,7 +2292,7 @@ class SubscriptionTaxInfoArgs:
     @pulumi.getter(name="taxCnpj")
     def tax_cnpj(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Brazilian companies' CNPJ number.
+        Brazilian companies' CNPJ number.
         """
         return pulumi.get(self, "tax_cnpj")
 
@@ -2304,7 +2304,7 @@ class SubscriptionTaxInfoArgs:
     @pulumi.getter(name="taxPayerId")
     def tax_payer_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Tay payer identifier.
+        Tay payer identifier.
         """
         return pulumi.get(self, "tax_payer_id")
 
@@ -2316,7 +2316,7 @@ class SubscriptionTaxInfoArgs:
     @pulumi.getter(name="taxRegNumber")
     def tax_reg_number(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Tax registration number.
+        Tax registration number.
         """
         return pulumi.get(self, "tax_reg_number")
 

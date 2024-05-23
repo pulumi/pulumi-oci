@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Marketplace.Inputs
     public sealed class PublicationPackageDetailsOperatingSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// The name of the operating system.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

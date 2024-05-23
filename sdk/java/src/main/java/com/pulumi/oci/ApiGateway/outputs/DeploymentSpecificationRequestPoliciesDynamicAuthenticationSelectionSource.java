@@ -16,10 +16,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSe
      */
     private String selector;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Selection source to use.
      * 
      */
     private String type;
@@ -33,10 +30,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSe
         return this.selector;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Selection source to use.
      * 
      */
     public String type() {

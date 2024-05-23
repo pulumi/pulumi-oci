@@ -34,14 +34,14 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -64,14 +64,14 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -143,7 +143,7 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class WorkspaceTaskCancelRestCallConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 

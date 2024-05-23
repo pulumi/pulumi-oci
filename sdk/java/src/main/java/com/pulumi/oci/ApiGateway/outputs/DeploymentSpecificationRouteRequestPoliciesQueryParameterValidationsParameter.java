@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter {
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Parameter name.
      * 
      */
     private String name;
@@ -26,7 +26,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter() {}
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Parameter name.
      * 
      */
     public String name() {

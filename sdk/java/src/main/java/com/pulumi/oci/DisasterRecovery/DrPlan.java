@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrPlan = new DrPlan("testDrPlan", DrPlanArgs.builder()        
+ *         var testDrPlan = new DrPlan("testDrPlan", DrPlanArgs.builder()
  *             .displayName(drPlanDisplayName)
  *             .drProtectionGroupId(testDrProtectionGroup.id())
  *             .type(drPlanType)

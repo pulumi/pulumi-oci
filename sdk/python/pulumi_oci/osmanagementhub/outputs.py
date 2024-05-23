@@ -534,6 +534,14 @@ class EventDataContent(dict):
         :param str exploit_object_store_location: The location of the exploit detection log within object storage.
         :param int size: Size of the event content.
         :param str type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         if content_availability is not None:
             pulumi.set(__self__, "content_availability", content_availability)
@@ -598,6 +606,14 @@ class EventDataContent(dict):
     def type(self) -> Optional[str]:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 
@@ -743,7 +759,7 @@ class LifecycleEnvironmentManagedInstanceId(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -755,7 +771,7 @@ class LifecycleEnvironmentManagedInstanceId(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1049,7 +1065,7 @@ class LifecycleEnvironmentStageManagedInstanceId(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
         """
-        :param str display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -1061,7 +1077,7 @@ class LifecycleEnvironmentStageManagedInstanceId(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1105,7 +1121,7 @@ class LifecycleEnvironmentStageSoftwareSourceId(dict):
                  software_source_type: Optional[str] = None):
         """
         :param str description: (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
-        :param str display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param str display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param bool is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param str software_source_type: Type of the software source.
@@ -1133,7 +1149,7 @@ class LifecycleEnvironmentStageSoftwareSourceId(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2722,7 +2738,7 @@ class ManagementStationMirror(dict):
                  sslcert: Optional[str] = None):
         """
         :param str directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
-        :param str port: (Updatable) Listening port used for the proxy.
+        :param str port: (Updatable) Default mirror listening port for http.
         :param str sslport: (Updatable) Default mirror listening port for https.
         :param str sslcert: (Updatable) Path to the SSL cerfificate.
         """
@@ -2744,7 +2760,7 @@ class ManagementStationMirror(dict):
     @pulumi.getter
     def port(self) -> str:
         """
-        (Updatable) Listening port used for the proxy.
+        (Updatable) Default mirror listening port for http.
         """
         return pulumi.get(self, "port")
 
@@ -4904,6 +4920,14 @@ class GetEventDataContentResult(dict):
         :param str exploit_object_store_location: The location of the exploit detection log within object storage.
         :param int size: Size of the event content.
         :param str type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         pulumi.set(__self__, "content_availability", content_availability)
         pulumi.set(__self__, "content_location", content_location)
@@ -4962,6 +4986,14 @@ class GetEventDataContentResult(dict):
     def type(self) -> str:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 

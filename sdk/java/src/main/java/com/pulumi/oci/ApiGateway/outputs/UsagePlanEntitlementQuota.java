@@ -22,7 +22,7 @@ public final class UsagePlanEntitlementQuota {
      */
     private String resetPolicy;
     /**
-     * @return (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+     * @return (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
      * 
      */
     private String unit;
@@ -48,7 +48,7 @@ public final class UsagePlanEntitlementQuota {
         return this.resetPolicy;
     }
     /**
-     * @return (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+     * @return (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
      * 
      */
     public String unit() {

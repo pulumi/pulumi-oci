@@ -14,17 +14,9 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
 
     public static final AutoScalingConfigurationPolicyResourceActionArgs Empty = new AutoScalingConfigurationPolicyResourceActionArgs();
 
-    /**
-     * The action to take when autoscaling is triggered.
-     * 
-     */
     @Import(name="action", required=true)
     private Output<String> action;
 
-    /**
-     * @return The action to take when autoscaling is triggered.
-     * 
-     */
     public Output<String> action() {
         return this.action;
     }
@@ -69,23 +61,11 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
             $ = new AutoScalingConfigurationPolicyResourceActionArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param action The action to take when autoscaling is triggered.
-         * 
-         * @return builder
-         * 
-         */
         public Builder action(Output<String> action) {
             $.action = action;
             return this;
         }
 
-        /**
-         * @param action The action to take when autoscaling is triggered.
-         * 
-         * @return builder
-         * 
-         */
         public Builder action(String action) {
             return action(Output.of(action));
         }

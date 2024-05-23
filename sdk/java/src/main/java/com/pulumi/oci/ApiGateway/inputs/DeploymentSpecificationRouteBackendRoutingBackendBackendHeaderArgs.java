@@ -16,14 +16,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
     public static final DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs Empty = new DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs();
 
     /**
-     * (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
     }
 
     /**
-     * (Updatable) Value of the header.
+     * Value of the header.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) Value of the header.
+     * @return Value of the header.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name The case-insensitive name of the header.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name The case-insensitive name of the header.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
         }
 
         /**
-         * @param value (Updatable) Value of the header.
+         * @param value Value of the header.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendHeade
         }
 
         /**
-         * @param value (Updatable) Value of the header.
+         * @param value Value of the header.
          * 
          * @return builder
          * 

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// (Updatable) Migration type.
+        /// (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         /// </summary>
         public readonly string? Type;
 

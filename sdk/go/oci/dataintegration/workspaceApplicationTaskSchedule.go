@@ -148,7 +148,7 @@ type WorkspaceApplicationTaskSchedule struct {
 	AuthMode pulumi.StringOutput `pulumi:"authMode"`
 	// (Updatable) The information about the configuration provider.
 	ConfigProviderDelegate pulumi.StringOutput `pulumi:"configProviderDelegate"`
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The end time in milliseconds.
 	EndTimeMillis pulumi.StringOutput `pulumi:"endTimeMillis"`
@@ -156,7 +156,7 @@ type WorkspaceApplicationTaskSchedule struct {
 	ExpectedDuration pulumi.Float64Output `pulumi:"expectedDuration"`
 	// (Updatable) The expected duration unit of the task execution.
 	ExpectedDurationUnit pulumi.StringOutput `pulumi:"expectedDurationUnit"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) Whether the backfill is enabled.
 	IsBackfillEnabled pulumi.BoolOutput `pulumi:"isBackfillEnabled"`
@@ -164,13 +164,13 @@ type WorkspaceApplicationTaskSchedule struct {
 	IsConcurrentAllowed pulumi.BoolOutput `pulumi:"isConcurrentAllowed"`
 	// (Updatable) Whether the task schedule is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// The last run details for the task run.
 	LastRunDetails WorkspaceApplicationTaskScheduleLastRunDetailArrayOutput `pulumi:"lastRunDetails"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationTaskScheduleMetadataArrayOutput `pulumi:"metadatas"`
-	// (Updatable) The type of the object.
+	// The type of the object.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
@@ -249,7 +249,7 @@ type workspaceApplicationTaskScheduleState struct {
 	AuthMode *string `pulumi:"authMode"`
 	// (Updatable) The information about the configuration provider.
 	ConfigProviderDelegate *string `pulumi:"configProviderDelegate"`
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The end time in milliseconds.
 	EndTimeMillis *string `pulumi:"endTimeMillis"`
@@ -257,7 +257,7 @@ type workspaceApplicationTaskScheduleState struct {
 	ExpectedDuration *float64 `pulumi:"expectedDuration"`
 	// (Updatable) The expected duration unit of the task execution.
 	ExpectedDurationUnit *string `pulumi:"expectedDurationUnit"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) Whether the backfill is enabled.
 	IsBackfillEnabled *bool `pulumi:"isBackfillEnabled"`
@@ -265,13 +265,13 @@ type workspaceApplicationTaskScheduleState struct {
 	IsConcurrentAllowed *bool `pulumi:"isConcurrentAllowed"`
 	// (Updatable) Whether the task schedule is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// The last run details for the task run.
 	LastRunDetails []WorkspaceApplicationTaskScheduleLastRunDetail `pulumi:"lastRunDetails"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceApplicationTaskScheduleMetadata `pulumi:"metadatas"`
-	// (Updatable) The type of the object.
+	// The type of the object.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -312,7 +312,7 @@ type WorkspaceApplicationTaskScheduleState struct {
 	AuthMode pulumi.StringPtrInput
 	// (Updatable) The information about the configuration provider.
 	ConfigProviderDelegate pulumi.StringPtrInput
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput
 	// (Updatable) The end time in milliseconds.
 	EndTimeMillis pulumi.StringPtrInput
@@ -320,7 +320,7 @@ type WorkspaceApplicationTaskScheduleState struct {
 	ExpectedDuration pulumi.Float64PtrInput
 	// (Updatable) The expected duration unit of the task execution.
 	ExpectedDurationUnit pulumi.StringPtrInput
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
 	// (Updatable) Whether the backfill is enabled.
 	IsBackfillEnabled pulumi.BoolPtrInput
@@ -328,13 +328,13 @@ type WorkspaceApplicationTaskScheduleState struct {
 	IsConcurrentAllowed pulumi.BoolPtrInput
 	// (Updatable) Whether the task schedule is enabled.
 	IsEnabled pulumi.BoolPtrInput
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// The last run details for the task run.
 	LastRunDetails WorkspaceApplicationTaskScheduleLastRunDetailArrayInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationTaskScheduleMetadataArrayInput
-	// (Updatable) The type of the object.
+	// The type of the object.
 	ModelType pulumi.StringPtrInput
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringPtrInput
@@ -379,7 +379,7 @@ type workspaceApplicationTaskScheduleArgs struct {
 	AuthMode *string `pulumi:"authMode"`
 	// (Updatable) The information about the configuration provider.
 	ConfigProviderDelegate *string `pulumi:"configProviderDelegate"`
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The end time in milliseconds.
 	EndTimeMillis *string `pulumi:"endTimeMillis"`
@@ -387,7 +387,7 @@ type workspaceApplicationTaskScheduleArgs struct {
 	ExpectedDuration *float64 `pulumi:"expectedDuration"`
 	// (Updatable) The expected duration unit of the task execution.
 	ExpectedDurationUnit *string `pulumi:"expectedDurationUnit"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) Whether the backfill is enabled.
 	IsBackfillEnabled *bool `pulumi:"isBackfillEnabled"`
@@ -395,7 +395,7 @@ type workspaceApplicationTaskScheduleArgs struct {
 	IsConcurrentAllowed *bool `pulumi:"isConcurrentAllowed"`
 	// (Updatable) Whether the task schedule is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -435,7 +435,7 @@ type WorkspaceApplicationTaskScheduleArgs struct {
 	AuthMode pulumi.StringPtrInput
 	// (Updatable) The information about the configuration provider.
 	ConfigProviderDelegate pulumi.StringPtrInput
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput
 	// (Updatable) The end time in milliseconds.
 	EndTimeMillis pulumi.StringPtrInput
@@ -443,7 +443,7 @@ type WorkspaceApplicationTaskScheduleArgs struct {
 	ExpectedDuration pulumi.Float64PtrInput
 	// (Updatable) The expected duration unit of the task execution.
 	ExpectedDurationUnit pulumi.StringPtrInput
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
 	// (Updatable) Whether the backfill is enabled.
 	IsBackfillEnabled pulumi.BoolPtrInput
@@ -451,7 +451,7 @@ type WorkspaceApplicationTaskScheduleArgs struct {
 	IsConcurrentAllowed pulumi.BoolPtrInput
 	// (Updatable) Whether the task schedule is enabled.
 	IsEnabled pulumi.BoolPtrInput
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringPtrInput
@@ -585,7 +585,7 @@ func (o WorkspaceApplicationTaskScheduleOutput) ConfigProviderDelegate() pulumi.
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.ConfigProviderDelegate }).(pulumi.StringOutput)
 }
 
-// (Updatable) The description of the aggregator.
+// (Updatable) Detailed description for the object.
 func (o WorkspaceApplicationTaskScheduleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -605,7 +605,7 @@ func (o WorkspaceApplicationTaskScheduleOutput) ExpectedDurationUnit() pulumi.St
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.ExpectedDurationUnit }).(pulumi.StringOutput)
 }
 
-// (Updatable) The identifier of the aggregator.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 func (o WorkspaceApplicationTaskScheduleOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
@@ -625,7 +625,7 @@ func (o WorkspaceApplicationTaskScheduleOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationTaskScheduleOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
@@ -637,14 +637,14 @@ func (o WorkspaceApplicationTaskScheduleOutput) LastRunDetails() WorkspaceApplic
 	}).(WorkspaceApplicationTaskScheduleLastRunDetailArrayOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name and when/who created/updated it.
 func (o WorkspaceApplicationTaskScheduleOutput) Metadatas() WorkspaceApplicationTaskScheduleMetadataArrayOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) WorkspaceApplicationTaskScheduleMetadataArrayOutput {
 		return v.Metadatas
 	}).(WorkspaceApplicationTaskScheduleMetadataArrayOutput)
 }
 
-// (Updatable) The type of the object.
+// The type of the object.
 func (o WorkspaceApplicationTaskScheduleOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskSchedule) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }

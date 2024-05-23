@@ -201,14 +201,14 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
     }
 
     /**
-     * When the lock was created.
+     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -524,7 +524,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class StreamPackagingConfigState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

@@ -27,7 +27,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -40,20 +40,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? Primary;
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
-        /// 
-        /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: false
-        /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
-        /// </summary>
-        public readonly string Type;
-        /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) A label indicating the attribute's function; e.g., 'photo' or 'thumbnail'.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -61,12 +48,21 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
+        /// </summary>
+        public readonly string Type;
+        /// <summary>
+        /// (Updatable) URL of a photo for the User
         /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

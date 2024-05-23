@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLifecycleStageDetachManagedInstancesManagement = new LifecycleStageDetachManagedInstancesManagement("testLifecycleStageDetachManagedInstancesManagement", LifecycleStageDetachManagedInstancesManagementArgs.builder()        
+ *         var testLifecycleStageDetachManagedInstancesManagement = new LifecycleStageDetachManagedInstancesManagement("testLifecycleStageDetachManagedInstancesManagement", LifecycleStageDetachManagedInstancesManagementArgs.builder()
  *             .lifecycleStageId(testLifecycleStage.id())
  *             .managedInstanceDetails(LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs.builder()
  *                 .managedInstances(lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances)

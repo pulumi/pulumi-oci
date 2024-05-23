@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
     public sealed class ConnectionPrivateEndpointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

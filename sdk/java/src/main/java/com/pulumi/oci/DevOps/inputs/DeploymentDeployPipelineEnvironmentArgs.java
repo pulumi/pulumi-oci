@@ -17,14 +17,14 @@ public final class DeploymentDeployPipelineEnvironmentArgs extends com.pulumi.re
     public static final DeploymentDeployPipelineEnvironmentArgs Empty = new DeploymentDeployPipelineEnvironmentArgs();
 
     /**
-     * List of arguments provided at the time of deployment.
+     * A list of stage predecessors for a stage.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeploymentDeployPipelineEnvironmentItemArgs>> items;
 
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return A list of stage predecessors for a stage.
      * 
      */
     public Optional<Output<List<DeploymentDeployPipelineEnvironmentItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeploymentDeployPipelineEnvironmentArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items A list of stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeploymentDeployPipelineEnvironmentArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items A list of stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeploymentDeployPipelineEnvironmentArgs extends com.pulumi.re
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items A list of stage predecessors for a stage.
          * 
          * @return builder
          * 

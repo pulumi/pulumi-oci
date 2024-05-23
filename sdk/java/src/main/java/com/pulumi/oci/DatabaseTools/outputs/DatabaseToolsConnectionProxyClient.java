@@ -25,7 +25,7 @@ public final class DatabaseToolsConnectionProxyClient {
      */
     private @Nullable List<String> roles;
     /**
-     * @return (Updatable) The database user name.
+     * @return (Updatable) The user name.
      * 
      */
     private @Nullable String userName;
@@ -51,7 +51,7 @@ public final class DatabaseToolsConnectionProxyClient {
         return this.roles == null ? List.of() : this.roles;
     }
     /**
-     * @return (Updatable) The database user name.
+     * @return (Updatable) The user name.
      * 
      */
     public Optional<String> userName() {

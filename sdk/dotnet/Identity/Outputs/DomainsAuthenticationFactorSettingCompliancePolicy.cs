@@ -40,11 +40,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The value of the attribute to be evaluated
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudExadataInfrastructure = new CloudExadataInfrastructure("testCloudExadataInfrastructure", CloudExadataInfrastructureArgs.builder()        
+ *         var testCloudExadataInfrastructure = new CloudExadataInfrastructure("testCloudExadataInfrastructure", CloudExadataInfrastructureArgs.builder()
  *             .availabilityDomain(cloudExadataInfrastructureAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .displayName(cloudExadataInfrastructureDisplayName)

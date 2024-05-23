@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
     public sealed class NodePoolNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+        /// The name of the availability domain in which this node is placed.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the subnet in which to place nodes.
+        /// The OCID of the subnet in which this node is placed.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

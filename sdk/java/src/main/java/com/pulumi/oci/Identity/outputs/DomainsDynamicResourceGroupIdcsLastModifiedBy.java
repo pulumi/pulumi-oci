@@ -28,17 +28,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
@@ -73,18 +72,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedBy {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
      * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -109,17 +106,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -160,18 +156,16 @@ public final class DomainsDynamicResourceGroupIdcsLastModifiedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
      * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */

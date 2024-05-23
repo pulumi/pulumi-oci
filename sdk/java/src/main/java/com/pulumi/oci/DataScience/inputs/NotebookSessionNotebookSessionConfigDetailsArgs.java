@@ -19,14 +19,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
     public static final NotebookSessionNotebookSessionConfigDetailsArgs Empty = new NotebookSessionNotebookSessionConfigDetailsArgs();
 
     /**
-     * (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+     * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
      */
     @Import(name="blockStorageSizeInGbs")
     private @Nullable Output<Integer> blockStorageSizeInGbs;
 
     /**
-     * @return (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+     * @return A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
      * 
      */
     public Optional<Output<Integer>> blockStorageSizeInGbs() {
@@ -34,14 +34,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) Details for the notebook session shape configuration.
+     * Details for the notebook session shape configuration.
      * 
      */
     @Import(name="notebookSessionShapeConfigDetails")
     private @Nullable Output<NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs> notebookSessionShapeConfigDetails;
 
     /**
-     * @return (Updatable) Details for the notebook session shape configuration.
+     * @return Details for the notebook session shape configuration.
      * 
      */
     public Optional<Output<NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs>> notebookSessionShapeConfigDetails() {
@@ -49,14 +49,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) The OCID of a Data Science private endpoint.
+     * The OCID of a Data Science private endpoint.
      * 
      */
     @Import(name="privateEndpointId")
     private @Nullable Output<String> privateEndpointId;
 
     /**
-     * @return (Updatable) The OCID of a Data Science private endpoint.
+     * @return The OCID of a Data Science private endpoint.
      * 
      */
     public Optional<Output<String>> privateEndpointId() {
@@ -64,14 +64,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
-     * @return (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+     * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
     public Output<String> shape() {
@@ -79,14 +79,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
     }
 
     /**
-     * (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+     * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+     * @return A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -122,7 +122,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param blockStorageSizeInGbs (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+         * @param blockStorageSizeInGbs A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param blockStorageSizeInGbs (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+         * @param blockStorageSizeInGbs A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param notebookSessionShapeConfigDetails (Updatable) Details for the notebook session shape configuration.
+         * @param notebookSessionShapeConfigDetails Details for the notebook session shape configuration.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param notebookSessionShapeConfigDetails (Updatable) Details for the notebook session shape configuration.
+         * @param notebookSessionShapeConfigDetails Details for the notebook session shape configuration.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * @param privateEndpointId The OCID of a Data Science private endpoint.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * @param privateEndpointId The OCID of a Data Science private endpoint.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param shape (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+         * @param shape The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param shape (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+         * @param shape The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param subnetId (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+         * @param subnetId A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         /**
-         * @param subnetId (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+         * @param subnetId A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
          * 
          * @return builder
          * 

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigScriptParameterMonitorScriptParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Name of the parameter.
+        /// Name of the parameter.
         /// </summary>
         [Input("paramName")]
         public Input<string>? ParamName { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the parameter.
+        /// Value of the parameter.
         /// </summary>
         [Input("paramValue")]
         public Input<string>? ParamValue { get; set; }

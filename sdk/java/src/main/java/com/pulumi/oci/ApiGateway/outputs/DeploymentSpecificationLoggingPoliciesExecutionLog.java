@@ -13,7 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationLoggingPoliciesExecutionLog {
     /**
-     * @return (Updatable) Whether this policy is currently enabled.
+     * @return (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;execution&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
      * 
      */
     private @Nullable Boolean isEnabled;
@@ -25,7 +29,11 @@ public final class DeploymentSpecificationLoggingPoliciesExecutionLog {
 
     private DeploymentSpecificationLoggingPoliciesExecutionLog() {}
     /**
-     * @return (Updatable) Whether this policy is currently enabled.
+     * @return (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to &#39;execution&#39; in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+     * 
+     * Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
      * 
      */
     public Optional<Boolean> isEnabled() {

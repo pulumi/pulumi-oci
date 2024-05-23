@@ -75,6 +75,11 @@ public final class VolumeBackupPolicySchedule {
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
+     * - `UTC`
+     * - `REGIONAL_DATA_CENTER_TIME`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String timeZone;
@@ -160,6 +165,11 @@ public final class VolumeBackupPolicySchedule {
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
+     * - `UTC`
+     * - `REGIONAL_DATA_CENTER_TIME`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> timeZone() {

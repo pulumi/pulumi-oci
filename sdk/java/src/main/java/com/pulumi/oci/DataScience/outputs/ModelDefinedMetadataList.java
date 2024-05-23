@@ -17,7 +17,7 @@ public final class ModelDefinedMetadataList {
      */
     private @Nullable String category;
     /**
-     * @return (Updatable) A short description of the model.
+     * @return (Updatable) Description of model metadata
      * 
      */
     private @Nullable String description;
@@ -49,7 +49,7 @@ public final class ModelDefinedMetadataList {
         return Optional.ofNullable(this.category);
     }
     /**
-     * @return (Updatable) A short description of the model.
+     * @return (Updatable) Description of model metadata
      * 
      */
     public Optional<String> description() {

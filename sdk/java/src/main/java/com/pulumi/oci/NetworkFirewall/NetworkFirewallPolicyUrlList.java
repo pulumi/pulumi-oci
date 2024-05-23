@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkFirewallPolicyUrlList = new NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList", NetworkFirewallPolicyUrlListArgs.builder()        
+ *         var testNetworkFirewallPolicyUrlList = new NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList", NetworkFirewallPolicyUrlListArgs.builder()
  *             .name(networkFirewallPolicyUrlListName)
  *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .urls(NetworkFirewallPolicyUrlListUrlArgs.builder()

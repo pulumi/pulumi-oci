@@ -1442,7 +1442,7 @@ class DrProtectionGroupMemberBlockVolumeOperationArgs:
         """
         :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs'] attachment_details: (Updatable) The details for creating a block volume attachment.
         :param pulumi.Input[str] block_volume_id: (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
-        :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs'] mount_details: (Updatable) The details for creating a file system mount.
+        :param pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs'] mount_details: (Updatable) The details for creating a mount for a file system on a block volume.
         """
         if attachment_details is not None:
             pulumi.set(__self__, "attachment_details", attachment_details)
@@ -1479,7 +1479,7 @@ class DrProtectionGroupMemberBlockVolumeOperationArgs:
     @pulumi.getter(name="mountDetails")
     def mount_details(self) -> Optional[pulumi.Input['DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs']]:
         """
-        (Updatable) The details for creating a file system mount.
+        (Updatable) The details for creating a mount for a file system on a block volume.
         """
         return pulumi.get(self, "mount_details")
 
@@ -1516,7 +1516,7 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
     def __init__(__self__, *,
                  mount_point: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] mount_point: (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        :param pulumi.Input[str] mount_point: (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
         """
         if mount_point is not None:
             pulumi.set(__self__, "mount_point", mount_point)
@@ -1525,7 +1525,7 @@ class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs:
     @pulumi.getter(name="mountPoint")
     def mount_point(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+        (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
         """
         return pulumi.get(self, "mount_point")
 
@@ -1665,7 +1665,7 @@ class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
     def __init__(__self__, *,
                  mount_target_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        :param pulumi.Input[str] mount_target_id: (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         """
         if mount_target_id is not None:
             pulumi.set(__self__, "mount_target_id", mount_target_id)
@@ -1674,7 +1674,7 @@ class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs:
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+        (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         """
         return pulumi.get(self, "mount_target_id")
 

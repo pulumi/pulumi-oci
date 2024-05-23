@@ -27,7 +27,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      */
     private @Nullable List<String> audiences;
     /**
-     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
     private @Nullable List<String> cacheKeys;
@@ -52,7 +52,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      */
     private @Nullable Double maxClockSkewInSeconds;
     /**
-     * @return (Updatable)
+     * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
     private @Nullable Map<String,Object> parameters;
@@ -77,10 +77,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      */
     private @Nullable String tokenQueryParam;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the authentication policy to use.
      * 
      */
     private String type;
@@ -109,7 +106,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         return this.audiences == null ? List.of() : this.audiences;
     }
     /**
-     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
     public List<String> cacheKeys() {
@@ -144,7 +141,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         return Optional.ofNullable(this.maxClockSkewInSeconds);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
     public Map<String,Object> parameters() {
@@ -179,10 +176,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         return Optional.ofNullable(this.tokenQueryParam);
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the authentication policy to use.
      * 
      */
     public String type() {

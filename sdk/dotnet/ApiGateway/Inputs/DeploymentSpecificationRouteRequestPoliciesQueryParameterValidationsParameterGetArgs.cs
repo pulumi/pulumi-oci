@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) Parameter name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

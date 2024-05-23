@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         private InputList<Inputs.TargetDatabasePeerTargetDatabaseDatabaseDetailArgs>? _databaseDetails;
 
         /// <summary>
-        /// Details of the database for the registration in Data Safe.
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         public InputList<Inputs.TargetDatabasePeerTargetDatabaseDatabaseDetailArgs> DatabaseDetails
         {
@@ -31,19 +31,19 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? DatabaseUniqueName { get; set; }
 
         /// <summary>
-        /// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        /// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
         /// </summary>
         [Input("dataguardAssociationId")]
         public Input<string>? DataguardAssociationId { get; set; }
 
         /// <summary>
-        /// The description of the peer target database in Data Safe.
+        /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

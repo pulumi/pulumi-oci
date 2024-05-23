@@ -26,10 +26,10 @@ public final class DomainsSelfRegistrationProfileTag {
      */
     private String key;
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -37,9 +37,6 @@ public final class DomainsSelfRegistrationProfileTag {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -63,10 +60,10 @@ public final class DomainsSelfRegistrationProfileTag {
         return this.key;
     }
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -74,9 +71,6 @@ public final class DomainsSelfRegistrationProfileTag {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

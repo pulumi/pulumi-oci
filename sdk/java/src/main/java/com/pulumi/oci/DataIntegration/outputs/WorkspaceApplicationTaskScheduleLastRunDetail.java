@@ -15,17 +15,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleLastRunDetail {
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -35,7 +35,7 @@ public final class WorkspaceApplicationTaskScheduleLastRunDetail {
      */
     private @Nullable String lastRunTimeMillis;
     /**
-     * @return (Updatable) The type of the object.
+     * @return The type of the object.
      * 
      */
     private @Nullable String modelType;
@@ -67,21 +67,21 @@ public final class WorkspaceApplicationTaskScheduleLastRunDetail {
 
     private WorkspaceApplicationTaskScheduleLastRunDetail() {}
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -95,7 +95,7 @@ public final class WorkspaceApplicationTaskScheduleLastRunDetail {
         return Optional.ofNullable(this.lastRunTimeMillis);
     }
     /**
-     * @return (Updatable) The type of the object.
+     * @return The type of the object.
      * 
      */
     public Optional<String> modelType() {

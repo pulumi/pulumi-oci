@@ -69,20 +69,14 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
      * 
      */
     public Optional<Output<String>> name() {
@@ -186,10 +180,7 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
          * 
          * @return builder
          * 
@@ -200,10 +191,7 @@ public final class PolicyPolicyConfigLoadBalancingMethodArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
          * 
          * @return builder
          * 

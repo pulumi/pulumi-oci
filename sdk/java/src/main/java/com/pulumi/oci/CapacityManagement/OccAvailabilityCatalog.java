@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOccAvailabilityCatalog = new OccAvailabilityCatalog("testOccAvailabilityCatalog", OccAvailabilityCatalogArgs.builder()        
+ *         var testOccAvailabilityCatalog = new OccAvailabilityCatalog("testOccAvailabilityCatalog", OccAvailabilityCatalogArgs.builder()
  *             .base64encodedCatalogDetails(occAvailabilityCatalogBase64encodedCatalogDetails)
  *             .compartmentId(compartmentId)
  *             .displayName(occAvailabilityCatalogDisplayName)

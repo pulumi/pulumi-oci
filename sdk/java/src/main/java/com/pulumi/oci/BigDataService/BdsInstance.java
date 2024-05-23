@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()        
+ *         var testBdsInstance = new BdsInstance("testBdsInstance", BdsInstanceArgs.builder()
  *             .clusterAdminPassword(bdsInstanceClusterAdminPassword)
  *             .clusterPublicKey(bdsInstanceClusterPublicKey)
  *             .clusterVersion(bdsInstanceClusterVersion)
@@ -510,14 +510,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.nodes;
     }
     /**
-     * The amount of worker nodes should be created
+     * Number of nodes that forming the cluster
      * 
      */
     @Export(name="numberOfNodes", refs={Integer.class}, tree="[0]")
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return The amount of worker nodes should be created
+     * @return Number of nodes that forming the cluster
      * 
      */
     public Output<Integer> numberOfNodes() {

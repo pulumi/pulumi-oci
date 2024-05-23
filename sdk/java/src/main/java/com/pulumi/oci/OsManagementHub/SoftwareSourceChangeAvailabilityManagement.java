@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSoftwareSourceChangeAvailabilityManagement = new SoftwareSourceChangeAvailabilityManagement("testSoftwareSourceChangeAvailabilityManagement", SoftwareSourceChangeAvailabilityManagementArgs.builder()        
+ *         var testSoftwareSourceChangeAvailabilityManagement = new SoftwareSourceChangeAvailabilityManagement("testSoftwareSourceChangeAvailabilityManagement", SoftwareSourceChangeAvailabilityManagementArgs.builder()
  *             .softwareSourceAvailabilities(SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs.builder()
  *                 .softwareSourceId(testSoftwareSource.id())
  *                 .availability(softwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesAvailability)

@@ -471,16 +471,18 @@ type DomainsSetting struct {
 	// * type: string
 	// * uniqueness: none
 	Issuer pulumi.StringOutput `pulumi:"issuer"`
-	// (Updatable) Locale
+	// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	//
 	// **SCIM++ Properties:**
-	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+	// * caseExact: false
+	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 	// * idcsCanonicalValueSourceResourceType: AllowedValue
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: true
+	// * required: false
 	// * returned: default
 	// * type: string
+	// * uniqueness: none
 	Locale pulumi.StringOutput `pulumi:"locale"`
 	// (Updatable) Login text in different locales
 	//
@@ -1255,16 +1257,18 @@ type domainsSettingState struct {
 	// * type: string
 	// * uniqueness: none
 	Issuer *string `pulumi:"issuer"`
-	// (Updatable) Locale
+	// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	//
 	// **SCIM++ Properties:**
-	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+	// * caseExact: false
+	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 	// * idcsCanonicalValueSourceResourceType: AllowedValue
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: true
+	// * required: false
 	// * returned: default
 	// * type: string
+	// * uniqueness: none
 	Locale *string `pulumi:"locale"`
 	// (Updatable) Login text in different locales
 	//
@@ -1991,16 +1995,18 @@ type DomainsSettingState struct {
 	// * type: string
 	// * uniqueness: none
 	Issuer pulumi.StringPtrInput
-	// (Updatable) Locale
+	// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	//
 	// **SCIM++ Properties:**
-	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+	// * caseExact: false
+	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 	// * idcsCanonicalValueSourceResourceType: AllowedValue
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: true
+	// * required: false
 	// * returned: default
 	// * type: string
+	// * uniqueness: none
 	Locale pulumi.StringPtrInput
 	// (Updatable) Login text in different locales
 	//
@@ -2591,16 +2597,18 @@ type domainsSettingArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Issuer *string `pulumi:"issuer"`
-	// (Updatable) Locale
+	// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	//
 	// **SCIM++ Properties:**
-	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+	// * caseExact: false
+	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 	// * idcsCanonicalValueSourceResourceType: AllowedValue
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: true
+	// * required: false
 	// * returned: default
 	// * type: string
+	// * uniqueness: none
 	Locale *string `pulumi:"locale"`
 	// (Updatable) Login text in different locales
 	//
@@ -3138,16 +3146,18 @@ type DomainsSettingArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Issuer pulumi.StringPtrInput
-	// (Updatable) Locale
+	// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 	//
 	// **SCIM++ Properties:**
-	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+	// * caseExact: false
+	// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 	// * idcsCanonicalValueSourceResourceType: AllowedValue
 	// * multiValued: false
 	// * mutability: readWrite
-	// * required: true
+	// * required: false
 	// * returned: default
 	// * type: string
+	// * uniqueness: none
 	Locale pulumi.StringPtrInput
 	// (Updatable) Login text in different locales
 	//
@@ -4035,16 +4045,18 @@ func (o DomainsSettingOutput) Issuer() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSetting) pulumi.StringOutput { return v.Issuer }).(pulumi.StringOutput)
 }
 
-// (Updatable) Locale
+// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 //
 // **SCIM++ Properties:**
-// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+// * caseExact: false
+// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
 // * idcsCanonicalValueSourceResourceType: AllowedValue
 // * multiValued: false
 // * mutability: readWrite
-// * required: true
+// * required: false
 // * returned: default
 // * type: string
+// * uniqueness: none
 func (o DomainsSettingOutput) Locale() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsSetting) pulumi.StringOutput { return v.Locale }).(pulumi.StringOutput)
 }

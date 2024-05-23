@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class VmClusterNetworkScan
     {
         /// <summary>
-        /// (Updatable) The node host name.
+        /// (Updatable) The SCAN hostname.
         /// </summary>
         public readonly string Hostname;
         /// <summary>

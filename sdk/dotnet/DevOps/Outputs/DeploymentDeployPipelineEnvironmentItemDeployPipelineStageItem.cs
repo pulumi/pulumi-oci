@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem
     {
         /// <summary>
-        /// The OCID of the stage.
+        /// Specifies the OCID of the stage to be redeployed.
         /// </summary>
         public readonly string? DeployStageId;
         /// <summary>

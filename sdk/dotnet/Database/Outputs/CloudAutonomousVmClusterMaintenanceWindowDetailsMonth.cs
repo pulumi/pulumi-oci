@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class CloudAutonomousVmClusterMaintenanceWindowDetailsMonth
     {
         /// <summary>
-        /// Name of the month of the year.
+        /// (Updatable) Name of the month of the year.
         /// </summary>
         public readonly string Name;
 

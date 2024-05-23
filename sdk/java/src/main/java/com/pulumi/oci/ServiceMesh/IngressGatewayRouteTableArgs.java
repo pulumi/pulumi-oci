@@ -97,14 +97,14 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Name of the ingress gateway host that this route should apply to.
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of the ingress gateway host that this route should apply to.
+     * @return A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
     public Optional<Output<String>> name() {
@@ -278,7 +278,7 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) Name of the ingress gateway host that this route should apply to.
+         * @param name A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class IngressGatewayRouteTableArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) Name of the ingress gateway host that this route should apply to.
+         * @param name A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
          * 
          * @return builder
          * 

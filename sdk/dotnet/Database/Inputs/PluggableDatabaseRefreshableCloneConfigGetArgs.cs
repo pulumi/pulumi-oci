@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class PluggableDatabaseRefreshableCloneConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Indicates whether Pluggable Database is a refreshable clone.
+        /// Indicates whether the Pluggable Database is a refreshable clone.
         /// </summary>
         [Input("isRefreshableClone")]
         public Input<bool>? IsRefreshableClone { get; set; }

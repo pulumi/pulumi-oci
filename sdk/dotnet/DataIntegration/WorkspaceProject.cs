@@ -70,7 +70,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify project.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify project.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify project.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

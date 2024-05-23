@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPingMonitor = new PingMonitor("testPingMonitor", PingMonitorArgs.builder()        
+ *         var testPingMonitor = new PingMonitor("testPingMonitor", PingMonitorArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(pingMonitorDisplayName)
  *             .intervalInSeconds(pingMonitorIntervalInSeconds)

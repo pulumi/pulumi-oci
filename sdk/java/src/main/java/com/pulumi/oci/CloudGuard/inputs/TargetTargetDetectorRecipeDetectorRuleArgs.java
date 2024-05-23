@@ -54,14 +54,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Details of ResponderRule.
+     * (Updatable) Overriden settings of a Detector Rule applied on target
      * 
      */
     @Import(name="details", required=true)
     private Output<TargetTargetDetectorRecipeDetectorRuleDetailsArgs> details;
 
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Overriden settings of a Detector Rule applied on target
      * 
      */
     public Output<TargetTargetDetectorRecipeDetectorRuleDetailsArgs> details() {
@@ -337,7 +337,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details (Updatable) Overriden settings of a Detector Rule applied on target
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details (Updatable) Overriden settings of a Detector Rule applied on target
          * 
          * @return builder
          * 

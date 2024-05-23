@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsWarehouseRotateWarehouseWallet = new OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", OperationsInsightsWarehouseRotateWarehouseWalletArgs.builder()        
+ *         var testOperationsInsightsWarehouseRotateWarehouseWallet = new OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", OperationsInsightsWarehouseRotateWarehouseWalletArgs.builder()
  *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
  *             .build());
  * 

@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? KeyName;
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) Unique name for the filter.
         /// </summary>
         public readonly string Name;
         /// <summary>

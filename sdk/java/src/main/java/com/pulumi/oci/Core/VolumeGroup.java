@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeGroup = new VolumeGroup("testVolumeGroup", VolumeGroupArgs.builder()        
+ *         var testVolumeGroup = new VolumeGroup("testVolumeGroup", VolumeGroupArgs.builder()
  *             .availabilityDomain(volumeGroupAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .sourceDetails(VolumeGroupSourceDetailsArgs.builder()
@@ -85,14 +85,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/volumeGroup:VolumeGroup")
 public class VolumeGroup extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume group.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume group.
      * 
      */
     public Output<String> availabilityDomain() {

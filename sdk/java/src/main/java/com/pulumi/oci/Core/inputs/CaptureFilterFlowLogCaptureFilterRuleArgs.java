@@ -21,14 +21,14 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
     public static final CaptureFilterFlowLogCaptureFilterRuleArgs Empty = new CaptureFilterFlowLogCaptureFilterRuleArgs();
 
     /**
-     * (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+     * (Updatable) Traffic to this CIDR will be captured in the flow log.
      * 
      */
     @Import(name="destinationCidr")
     private @Nullable Output<String> destinationCidr;
 
     /**
-     * @return (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic to this CIDR will be captured in the flow log.
      * 
      */
     public Optional<Output<String>> destinationCidr() {
@@ -104,20 +104,14 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-     * * 1 = ICMP
-     * * 6 = TCP
-     * * 17 = UDP
+     * (Updatable) The transport protocol the filter uses.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-     * * 1 = ICMP
-     * * 6 = TCP
-     * * 17 = UDP
+     * @return (Updatable) The transport protocol the filter uses.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -125,14 +119,14 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+     * (Updatable) Include or exclude a ruleAction object.
      * 
      */
     @Import(name="ruleAction")
     private @Nullable Output<String> ruleAction;
 
     /**
-     * @return (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+     * @return (Updatable) Include or exclude a ruleAction object.
      * 
      */
     public Optional<Output<String>> ruleAction() {
@@ -155,14 +149,14 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     * (Updatable) Traffic from this CIDR will be captured in the flow log.
      * 
      */
     @Import(name="sourceCidr")
     private @Nullable Output<String> sourceCidr;
 
     /**
-     * @return (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic from this CIDR will be captured in the flow log.
      * 
      */
     public Optional<Output<String>> sourceCidr() {
@@ -234,7 +228,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param destinationCidr (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         * @param destinationCidr (Updatable) Traffic to this CIDR will be captured in the flow log.
          * 
          * @return builder
          * 
@@ -245,7 +239,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param destinationCidr (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         * @param destinationCidr (Updatable) Traffic to this CIDR will be captured in the flow log.
          * 
          * @return builder
          * 
@@ -347,10 +341,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param protocol (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-         * * 1 = ICMP
-         * * 6 = TCP
-         * * 17 = UDP
+         * @param protocol (Updatable) The transport protocol the filter uses.
          * 
          * @return builder
          * 
@@ -361,10 +352,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param protocol (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-         * * 1 = ICMP
-         * * 6 = TCP
-         * * 17 = UDP
+         * @param protocol (Updatable) The transport protocol the filter uses.
          * 
          * @return builder
          * 
@@ -374,7 +362,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param ruleAction (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+         * @param ruleAction (Updatable) Include or exclude a ruleAction object.
          * 
          * @return builder
          * 
@@ -385,7 +373,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param ruleAction (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+         * @param ruleAction (Updatable) Include or exclude a ruleAction object.
          * 
          * @return builder
          * 
@@ -416,7 +404,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param sourceCidr (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         * @param sourceCidr (Updatable) Traffic from this CIDR will be captured in the flow log.
          * 
          * @return builder
          * 
@@ -427,7 +415,7 @@ public final class CaptureFilterFlowLogCaptureFilterRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param sourceCidr (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         * @param sourceCidr (Updatable) Traffic from this CIDR will be captured in the flow log.
          * 
          * @return builder
          * 

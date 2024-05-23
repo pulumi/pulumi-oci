@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousVmCluster = new AutonomousVmCluster("testAutonomousVmCluster", AutonomousVmClusterArgs.builder()        
+ *         var testAutonomousVmCluster = new AutonomousVmCluster("testAutonomousVmCluster", AutonomousVmClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(autonomousVmClusterDisplayName)
  *             .exadataInfrastructureId(testExadataInfrastructure.id())

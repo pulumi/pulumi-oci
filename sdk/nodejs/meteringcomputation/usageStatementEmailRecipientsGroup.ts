@@ -75,7 +75,7 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
      */
     public readonly recipientsLists!: pulumi.Output<outputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList[]>;
     /**
-     * (Updatable) The email recipient lifecycle state.
+     * The email recipient group lifecycle state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -141,7 +141,7 @@ export interface UsageStatementEmailRecipientsGroupState {
      */
     recipientsLists?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[]>;
     /**
-     * (Updatable) The email recipient lifecycle state.
+     * The email recipient group lifecycle state.
      */
     state?: pulumi.Input<string>;
     /**

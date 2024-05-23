@@ -17,14 +17,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -33,14 +33,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -50,9 +50,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) URI of the profile.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -68,9 +66,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) URI of the profile.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -87,38 +83,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) Self Registration Profile Id
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Self Registration Profile Id
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -152,14 +144,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -172,14 +164,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -191,9 +183,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) URI of the profile.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -213,9 +203,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) URI of the profile.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -234,19 +222,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Self Registration Profile Id
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -257,19 +243,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Self Registration Profile Id
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        /// Type of the lock.
         /// </summary>
         public readonly string Type;
 

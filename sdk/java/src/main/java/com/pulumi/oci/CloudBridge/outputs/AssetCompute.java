@@ -26,7 +26,7 @@ public final class AssetCompute {
      */
     private @Nullable Integer connectedNetworks;
     /**
-     * @return (Updatable) Number of GPU cores.
+     * @return (Updatable) Number of CPUs.
      * 
      */
     private @Nullable Integer coresCount;
@@ -36,7 +36,7 @@ public final class AssetCompute {
      */
     private @Nullable String cpuModel;
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) Information about the asset.
      * 
      */
     private @Nullable String description;
@@ -175,7 +175,7 @@ public final class AssetCompute {
         return Optional.ofNullable(this.connectedNetworks);
     }
     /**
-     * @return (Updatable) Number of GPU cores.
+     * @return (Updatable) Number of CPUs.
      * 
      */
     public Optional<Integer> coresCount() {
@@ -189,7 +189,7 @@ public final class AssetCompute {
         return Optional.ofNullable(this.cpuModel);
     }
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) Information about the asset.
      * 
      */
     public Optional<String> description() {

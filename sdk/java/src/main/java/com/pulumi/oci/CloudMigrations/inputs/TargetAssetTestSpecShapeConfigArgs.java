@@ -17,18 +17,14 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
     public static final TargetAssetTestSpecShapeConfigArgs Empty = new TargetAssetTestSpecShapeConfigArgs();
 
     /**
-     * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-     * 
-     * The following values are supported:
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
     @Import(name="baselineOcpuUtilization")
     private @Nullable Output<String> baselineOcpuUtilization;
 
     /**
-     * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-     * 
-     * The following values are supported:
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
      * 
      */
     public Optional<Output<String>> baselineOcpuUtilization() {
@@ -36,14 +32,14 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) The total amount of memory in gigabytes that is available to the instance.
+     * The total amount of memory in gigabytes that is available to the instance.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return (Updatable) The total amount of memory in gigabytes that is available to the instance.
+     * @return The total amount of memory in gigabytes that is available to the instance.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -51,14 +47,14 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) The total number of OCPUs available to the instance.
+     * The total number of OCPUs available to the instance.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return (Updatable) The total number of OCPUs available to the instance.
+     * @return The total number of OCPUs available to the instance.
      * 
      */
     public Optional<Output<Double>> ocpus() {
@@ -92,9 +88,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param baselineOcpuUtilization (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-         * 
-         * The following values are supported:
+         * @param baselineOcpuUtilization The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          * 
          * @return builder
          * 
@@ -105,9 +99,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param baselineOcpuUtilization (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-         * 
-         * The following values are supported:
+         * @param baselineOcpuUtilization The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
          * 
          * @return builder
          * 
@@ -117,7 +109,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param memoryInGbs (Updatable) The total amount of memory in gigabytes that is available to the instance.
+         * @param memoryInGbs The total amount of memory in gigabytes that is available to the instance.
          * 
          * @return builder
          * 
@@ -128,7 +120,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param memoryInGbs (Updatable) The total amount of memory in gigabytes that is available to the instance.
+         * @param memoryInGbs The total amount of memory in gigabytes that is available to the instance.
          * 
          * @return builder
          * 
@@ -138,7 +130,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param ocpus (Updatable) The total number of OCPUs available to the instance.
+         * @param ocpus The total number of OCPUs available to the instance.
          * 
          * @return builder
          * 
@@ -149,7 +141,7 @@ public final class TargetAssetTestSpecShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param ocpus (Updatable) The total number of OCPUs available to the instance.
+         * @param ocpus The total number of OCPUs available to the instance.
          * 
          * @return builder
          * 

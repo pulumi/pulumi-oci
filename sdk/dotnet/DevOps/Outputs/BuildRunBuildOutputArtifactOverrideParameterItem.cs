@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string? DeployArtifactId;
         /// <summary>
-        /// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        /// Name of the step.
         /// </summary>
         public readonly string? Name;
         /// <summary>

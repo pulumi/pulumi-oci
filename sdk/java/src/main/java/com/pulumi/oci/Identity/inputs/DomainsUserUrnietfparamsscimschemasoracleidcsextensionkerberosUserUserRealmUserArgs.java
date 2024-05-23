@@ -85,9 +85,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -103,9 +101,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -122,38 +118,34 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -268,9 +260,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -290,9 +280,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -311,19 +299,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -334,19 +320,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

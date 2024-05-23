@@ -17,12 +17,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) App Display Name
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,12 +36,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) App Display Name
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -50,9 +56,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) App URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -68,9 +74,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) App URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -87,13 +93,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) A label that indicates whether this is an App or IdentitySource.
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
+     * * idcsDefaultValue: IdentitySource
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -103,13 +112,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label that indicates whether this is an App or IdentitySource.
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
+     * * idcsDefaultValue: IdentitySource
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -120,38 +132,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) App identifier
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) App identifier
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -186,12 +198,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) App Display Name
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -206,12 +221,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) App Display Name
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -225,9 +243,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) App URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -247,9 +265,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) App URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -268,13 +286,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates whether this is an App or IdentitySource.
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
+         * * idcsDefaultValue: IdentitySource
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -288,13 +309,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates whether this is an App or IdentitySource.
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
+         * * idcsDefaultValue: IdentitySource
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -307,19 +331,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) App identifier
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -330,19 +354,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) App identifier
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

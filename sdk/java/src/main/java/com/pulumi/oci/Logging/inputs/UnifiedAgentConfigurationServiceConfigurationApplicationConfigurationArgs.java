@@ -21,14 +21,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     public static final UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs Empty = new UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs();
 
     /**
-     * (Updatable) Unified monitoring agent operational metrics destination object.
+     * (Updatable) Kubernetes destination object.
      * 
      */
     @Import(name="destination", required=true)
     private Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs> destination;
 
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics destination object.
+     * @return (Updatable) Kubernetes destination object.
      * 
      */
     public Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs> destination() {
@@ -36,14 +36,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) Unified monitoring agent operational metrics source object.
+     * (Updatable) Kubernetes source object.
      * 
      */
     @Import(name="source")
     private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs> source;
 
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics source object.
+     * @return (Updatable) Kubernetes source object.
      * 
      */
     public Optional<Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs>> source() {
@@ -51,14 +51,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) Unified schema logging source type.
+     * (Updatable) Type of source of metrics
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return (Updatable) Unified schema logging source type.
+     * @return (Updatable) Type of source of metrics
      * 
      */
     public Output<String> sourceType() {
@@ -66,14 +66,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) Logging source object.
+     * (Updatable) Tail log source objects.
      * 
      */
     @Import(name="sources")
     private @Nullable Output<List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs>> sources;
 
     /**
-     * @return (Updatable) Logging source object.
+     * @return (Updatable) Tail log source objects.
      * 
      */
     public Optional<Output<List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs>>> sources() {
@@ -81,14 +81,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) Logging filter object.
+     * (Updatable) Kubernetes filter object
      * 
      */
     @Import(name="unifiedAgentConfigurationFilter")
     private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs> unifiedAgentConfigurationFilter;
 
     /**
-     * @return (Updatable) Logging filter object.
+     * @return (Updatable) Kubernetes filter object
      * 
      */
     public Optional<Output<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs>> unifiedAgentConfigurationFilter() {
@@ -124,7 +124,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param destination (Updatable) Unified monitoring agent operational metrics destination object.
+         * @param destination (Updatable) Kubernetes destination object.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param destination (Updatable) Unified monitoring agent operational metrics destination object.
+         * @param destination (Updatable) Kubernetes destination object.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param source (Updatable) Unified monitoring agent operational metrics source object.
+         * @param source (Updatable) Kubernetes source object.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param source (Updatable) Unified monitoring agent operational metrics source object.
+         * @param source (Updatable) Kubernetes source object.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param sourceType (Updatable) Unified schema logging source type.
+         * @param sourceType (Updatable) Type of source of metrics
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param sourceType (Updatable) Unified schema logging source type.
+         * @param sourceType (Updatable) Type of source of metrics
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param sources (Updatable) Logging source object.
+         * @param sources (Updatable) Tail log source objects.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param sources (Updatable) Logging source object.
+         * @param sources (Updatable) Tail log source objects.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param sources (Updatable) Logging source object.
+         * @param sources (Updatable) Tail log source objects.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param unifiedAgentConfigurationFilter (Updatable) Logging filter object.
+         * @param unifiedAgentConfigurationFilter (Updatable) Kubernetes filter object
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param unifiedAgentConfigurationFilter (Updatable) Logging filter object.
+         * @param unifiedAgentConfigurationFilter (Updatable) Kubernetes filter object
          * 
          * @return builder
          * 

@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Core
     public partial class VolumeGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume group.
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume group.
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
@@ -318,7 +318,7 @@ namespace Pulumi.Oci.Core
     public sealed class VolumeGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume group.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }

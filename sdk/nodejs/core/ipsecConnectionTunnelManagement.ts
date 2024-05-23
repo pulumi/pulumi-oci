@@ -102,11 +102,11 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     public readonly displayName!: pulumi.Output<string>;
     public readonly dpdConfigs!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementDpdConfig[] | undefined>;
     /**
-     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      */
     public /*out*/ readonly dpdMode!: pulumi.Output<string>;
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * DPD timeout in seconds.
      */
     public /*out*/ readonly dpdTimeoutInSec!: pulumi.Output<number>;
     /**
@@ -281,11 +281,11 @@ export interface IpsecConnectionTunnelManagementState {
     displayName?: pulumi.Input<string>;
     dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[]>;
     /**
-     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      */
     dpdMode?: pulumi.Input<string>;
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * DPD timeout in seconds.
      */
     dpdTimeoutInSec?: pulumi.Input<number>;
     /**

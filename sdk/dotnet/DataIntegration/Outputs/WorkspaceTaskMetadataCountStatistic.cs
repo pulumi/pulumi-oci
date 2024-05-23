@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskMetadataCountStatistic
     {
         /// <summary>
-        /// (Updatable) The array of statistics.
+        /// The array of statistics.
         /// </summary>
         public readonly ImmutableArray<Outputs.WorkspaceTaskMetadataCountStatisticObjectTypeCountList> ObjectTypeCountLists;
 

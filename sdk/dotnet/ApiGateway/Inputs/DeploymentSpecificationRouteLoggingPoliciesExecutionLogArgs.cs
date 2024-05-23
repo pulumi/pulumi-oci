@@ -13,7 +13,11 @@ namespace Pulumi.Oci.ApiGateway.Inputs
     public sealed class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether this policy is currently enabled.
+        /// (Updatable) Enables pushing of execution logs to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+        /// 
+        /// Oracle recommends using the Oracle Cloud Infrastructure Logging service to enable, retrieve, and query execution logs for an API Deployment. If there is an active log object for the API Deployment and its category is set to 'execution' in Oracle Cloud Infrastructure Logging service, the logs will not be uploaded to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket.
+        /// 
+        /// Please note that the functionality to push to the legacy Oracle Cloud Infrastructure Object Storage log archival bucket has been deprecated and will be removed in the future.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

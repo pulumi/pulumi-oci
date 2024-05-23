@@ -15,9 +15,11 @@ namespace Pulumi.Oci.Identity.Inputs
         /// <summary>
         /// (Updatable) A human-readable name, primarily used for display purposes
         /// 
+        /// **Added In:** 18.2.2
+        /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -28,9 +30,11 @@ namespace Pulumi.Oci.Identity.Inputs
         /// <summary>
         /// (Updatable) Indicates the image type
         /// 
+        /// **Added In:** 18.2.2
+        /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
@@ -39,17 +43,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Custom claim value
+        /// (Updatable) Image URI
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
+        /// * type: reference
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

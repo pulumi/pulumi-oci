@@ -13,13 +13,15 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsRuleConditionGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Attribute name of an individual value to be returned.
+        /// (Updatable) Condition or ConditionGroup name
+        /// 
+        /// **Added In:** 17.4.2
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -28,7 +30,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) PolicyType URI
+        /// (Updatable) ConditionGroup URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,14 +45,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of resource, User or App, that modified this Resource
+        /// (Updatable) A label that indicates whether this is Condition or ConditionGroup.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * idcsDefaultValue: Condition
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
+        /// * mutability: readWrite
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -59,14 +61,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Condition or ConditionGroup identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none

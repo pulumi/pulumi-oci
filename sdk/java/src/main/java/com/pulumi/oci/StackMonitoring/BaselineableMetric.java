@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBaselineableMetric = new BaselineableMetric("testBaselineableMetric", BaselineableMetricArgs.builder()        
+ *         var testBaselineableMetric = new BaselineableMetric("testBaselineableMetric", BaselineableMetricArgs.builder()
  *             .column(baselineableMetricColumn)
  *             .compartmentId(compartmentId)
  *             .name(baselineableMetricName)

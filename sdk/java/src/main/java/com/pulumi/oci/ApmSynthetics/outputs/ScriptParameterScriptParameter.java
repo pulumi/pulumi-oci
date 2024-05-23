@@ -13,44 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ScriptParameterScriptParameter {
     /**
-     * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+     * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
     private @Nullable Boolean isSecret;
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     private @Nullable String paramName;
     /**
-     * @return (Updatable) Value of the parameter.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Value of the parameter.
      * 
      */
     private @Nullable String paramValue;
 
     private ScriptParameterScriptParameter() {}
     /**
-     * @return (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+     * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
     public Optional<Boolean> isSecret() {
         return Optional.ofNullable(this.isSecret);
     }
     /**
-     * @return (Updatable) Name of the parameter.
+     * @return Name of the parameter.
      * 
      */
     public Optional<String> paramName() {
         return Optional.ofNullable(this.paramName);
     }
     /**
-     * @return (Updatable) Value of the parameter.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Value of the parameter.
      * 
      */
     public Optional<String> paramValue() {

@@ -17,14 +17,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs ex
     public static final WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs Empty = new WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs();
 
     /**
-     * (Updatable) The array of statistics.
+     * The array of statistics.
      * 
      */
     @Import(name="objectTypeCountLists")
     private @Nullable Output<List<WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs>> objectTypeCountLists;
 
     /**
-     * @return (Updatable) The array of statistics.
+     * @return The array of statistics.
      * 
      */
     public Optional<Output<List<WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs>>> objectTypeCountLists() {
@@ -56,7 +56,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs ex
         }
 
         /**
-         * @param objectTypeCountLists (Updatable) The array of statistics.
+         * @param objectTypeCountLists The array of statistics.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs ex
         }
 
         /**
-         * @param objectTypeCountLists (Updatable) The array of statistics.
+         * @param objectTypeCountLists The array of statistics.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs ex
         }
 
         /**
-         * @param objectTypeCountLists (Updatable) The array of statistics.
+         * @param objectTypeCountLists The array of statistics.
          * 
          * @return builder
          * 

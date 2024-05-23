@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter
     {
         /// <summary>
-        /// (Updatable) A list of filtering rules to include logs
+        /// (Updatable) List of metrics regex to be allowed.
         /// </summary>
         public readonly ImmutableArray<string> AllowLists;
         /// <summary>
-        /// (Updatable) A list of filtering rules to reject logs
+        /// (Updatable) List of metrics regex to be denied.
         /// </summary>
         public readonly ImmutableArray<string> DenyLists;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? FilterType;
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) Unique name for the filter.
         /// </summary>
         public readonly string? Name;
 

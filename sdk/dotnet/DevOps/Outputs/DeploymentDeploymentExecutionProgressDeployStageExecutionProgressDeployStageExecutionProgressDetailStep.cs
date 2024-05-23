@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep
     {
         /// <summary>
-        /// Name of the parameter (case-sensitive).
+        /// Name of the step.
         /// </summary>
         public readonly string? Name;
         /// <summary>

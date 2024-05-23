@@ -17,15 +17,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     public static final DomainsGrantGranteeArgs Empty = new DomainsGrantGranteeArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * (Updatable) Grantee display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -34,15 +33,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Grantee display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -52,10 +50,9 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) Grantee URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -69,10 +66,9 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grantee URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -87,14 +83,16 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The type of resource, User or App, that modified this Resource
+     * Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member Type
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: immutable
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -104,14 +102,16 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     private Output<String> type;
 
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member Type
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: immutable
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -122,13 +122,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * Value of the tag.
+     * Grantee identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -139,13 +140,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return Grantee identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -184,15 +186,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Grantee display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -205,15 +206,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Grantee display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -225,10 +225,9 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Grantee URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -246,10 +245,9 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Grantee URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -266,14 +264,16 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member Type
+         * * idcsDefaultValue: User
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
+         * * mutability: immutable
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -287,14 +287,16 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member Type
+         * * idcsDefaultValue: User
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
+         * * mutability: immutable
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -307,13 +309,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Grantee identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -328,13 +331,14 @@ public final class DomainsGrantGranteeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Grantee identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

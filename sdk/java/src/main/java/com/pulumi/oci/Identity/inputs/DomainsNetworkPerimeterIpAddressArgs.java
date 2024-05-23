@@ -52,11 +52,10 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -69,11 +68,10 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -87,13 +85,13 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -104,13 +102,13 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
     private @Nullable Output<String> version;
 
     /**
-     * @return (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * @return (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -189,11 +187,10 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -210,11 +207,10 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -230,13 +226,13 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
         }
 
         /**
-         * @param version (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         * @param version (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -251,13 +247,13 @@ public final class DomainsNetworkPerimeterIpAddressArgs extends com.pulumi.resou
         }
 
         /**
-         * @param version (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         * @param version (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string

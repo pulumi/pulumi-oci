@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskAuthConfig {
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify this object.
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The specific authentication configuration to be used for Generic REST invocation.
      * 
      */
     private @Nullable String modelType;
@@ -40,14 +40,14 @@ public final class WorkspaceTaskAuthConfig {
 
     private WorkspaceTaskAuthConfig() {}
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify this object.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The specific authentication configuration to be used for Generic REST invocation.
      * 
      */
     public Optional<String> modelType() {

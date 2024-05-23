@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskMetadataCountStatisticObjectTypeCountList
     {
         /// <summary>
-        /// (Updatable) The value for the count statistic object.
+        /// The value for the count statistic object.
         /// </summary>
         public readonly string? ObjectCount;
         /// <summary>
-        /// (Updatable) The type of object for the count statistic object.
+        /// The type of object for the count statistic object.
         /// </summary>
         public readonly string? ObjectType;
 

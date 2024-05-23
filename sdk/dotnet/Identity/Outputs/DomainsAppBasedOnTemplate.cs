@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppBasedOnTemplate
     {
         /// <summary>
-        /// (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+        /// (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? LastModified;
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) URI of the application template.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -41,26 +41,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// Identifier of the application template.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
         /// <summary>
-        /// (Updatable) Unique well-known identifier used to reference connector bundle.
+        /// (Updatable) Unique Well-known identifier used to reference app template.
         /// 
-        /// **Added In:** 19.1.4
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false

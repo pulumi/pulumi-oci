@@ -32,23 +32,27 @@ namespace Pulumi.Oci.Identity.Inputs
         /// <summary>
         /// (Updatable) Group URI
         /// 
-        /// **Added In:** 2205120021
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Group identifier
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

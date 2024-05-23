@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testResolverEndpoint = new ResolverEndpoint("testResolverEndpoint", ResolverEndpointArgs.builder()        
+ *         var testResolverEndpoint = new ResolverEndpoint("testResolverEndpoint", ResolverEndpointArgs.builder()
  *             .isForwarding(resolverEndpointIsForwarding)
  *             .isListening(resolverEndpointIsListening)
  *             .name(resolverEndpointName)

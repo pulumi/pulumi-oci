@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) The name of the custom section
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) Parameters of the custom filter
+     * @return (Updatable) Parameters in the custom section
      * 
      */
     private @Nullable Map<String,Object> params;
 
     private UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection() {}
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) The name of the custom section
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Parameters of the custom filter
+     * @return (Updatable) Parameters in the custom section
      * 
      */
     public Map<String,Object> params() {

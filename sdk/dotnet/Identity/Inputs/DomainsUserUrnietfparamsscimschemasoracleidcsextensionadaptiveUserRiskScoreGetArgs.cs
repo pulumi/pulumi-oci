@@ -31,16 +31,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> LastUpdateTimestamp { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: reference
         /// * uniqueness: none
         /// </summary>
@@ -103,7 +104,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// (Updatable) A supplemental status indicating the reason why a user is disabled
+        /// (Updatable) Risk Provider Profile status
+        /// 
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -111,7 +114,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: request
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -119,20 +122,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+        /// 
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

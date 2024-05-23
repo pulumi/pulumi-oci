@@ -56,7 +56,7 @@ type DatabaseToolsConnection struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -145,7 +145,7 @@ type databaseToolsConnectionState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -190,7 +190,7 @@ type DatabaseToolsConnectionState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -443,7 +443,7 @@ func (o DatabaseToolsConnectionOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 func (o DatabaseToolsConnectionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

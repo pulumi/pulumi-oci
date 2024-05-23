@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) PolicyType URI
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -69,13 +69,13 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

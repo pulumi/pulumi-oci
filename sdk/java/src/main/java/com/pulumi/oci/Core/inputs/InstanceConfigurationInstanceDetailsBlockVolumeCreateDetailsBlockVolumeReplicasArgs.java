@@ -17,14 +17,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
     public static final InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs Empty = new InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs();
 
     /**
-     * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain", required=true)
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {
@@ -32,14 +32,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -72,7 +72,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
         }
 
         /**
-         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
         }
 
         /**
-         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsB
         }
 
         /**
-         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * @param displayName The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
          * 
          * @return builder
          * 

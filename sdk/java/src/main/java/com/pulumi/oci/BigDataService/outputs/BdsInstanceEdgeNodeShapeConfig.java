@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BdsInstanceEdgeNodeShapeConfig {
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     private @Nullable Integer memoryInGbs;
@@ -29,7 +29,7 @@ public final class BdsInstanceEdgeNodeShapeConfig {
 
     private BdsInstanceEdgeNodeShapeConfig() {}
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Integer> memoryInGbs() {

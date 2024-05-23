@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Dns.Outputs
     public sealed class ZoneZoneTransferServer
     {
         /// <summary>
-        /// (Updatable) The server's IP address (IPv4 or IPv6).
+        /// The server's IP address (IPv4 or IPv6).
         /// </summary>
         public readonly string? Address;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly bool? IsTransferSource;
         /// <summary>
-        /// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        /// The server's port.
         /// </summary>
         public readonly int? Port;
 

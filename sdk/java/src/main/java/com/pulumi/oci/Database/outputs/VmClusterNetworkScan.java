@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VmClusterNetworkScan {
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The SCAN hostname.
      * 
      */
     private String hostname;
@@ -42,7 +42,7 @@ public final class VmClusterNetworkScan {
 
     private VmClusterNetworkScan() {}
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The SCAN hostname.
      * 
      */
     public String hostname() {

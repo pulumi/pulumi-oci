@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppSamlServiceProvider
     {
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) The URI of the App that acts as a Service Provider.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -27,20 +27,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) The id of the App that acts as a Service Provider.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

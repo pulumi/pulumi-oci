@@ -37,7 +37,7 @@ namespace Pulumi.Oci.MediaServices.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        /// Type of the lock.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

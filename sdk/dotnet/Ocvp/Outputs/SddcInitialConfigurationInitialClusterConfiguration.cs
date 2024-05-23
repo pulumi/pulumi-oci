@@ -44,21 +44,21 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string? InitialCommitment;
         /// <summary>
-        /// (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+        /// The initial OCPU count of the Cluster's ESXi hosts.
         /// </summary>
         public readonly double? InitialHostOcpuCount;
         /// <summary>
-        /// (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+        /// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
         public readonly string? InitialHostShapeName;
         /// <summary>
-        /// (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix. 
+        /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
         /// 
-        /// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+        /// For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
         /// </summary>
         public readonly string? InstanceDisplayNamePrefix;
         /// <summary>
-        /// (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+        /// Indicates whether shielded instance is enabled for this Cluster.
         /// </summary>
         public readonly bool? IsShieldedInstanceEnabled;
         /// <summary>
@@ -70,11 +70,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string VsphereType;
         /// <summary>
-        /// (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
         /// </summary>
         public readonly string? WorkloadNetworkCidr;
 

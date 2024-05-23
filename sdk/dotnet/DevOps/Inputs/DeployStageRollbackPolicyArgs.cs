@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeployStageRollbackPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of policy used for rolling out a deployment stage.
+        /// (Updatable) Specifies type of the deployment stage rollback policy.
         /// </summary>
         [Input("policyType")]
         public Input<string>? PolicyType { get; set; }

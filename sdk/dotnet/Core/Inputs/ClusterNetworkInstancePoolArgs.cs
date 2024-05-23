@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

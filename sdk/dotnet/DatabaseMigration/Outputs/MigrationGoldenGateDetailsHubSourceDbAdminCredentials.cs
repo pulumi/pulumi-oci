@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class MigrationGoldenGateDetailsHubSourceDbAdminCredentials
     {
         /// <summary>
-        /// (Updatable) Database  password
+        /// (Updatable) Administrator password
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// (Updatable) Database username
+        /// (Updatable) Administrator username
         /// </summary>
         public readonly string Username;
 

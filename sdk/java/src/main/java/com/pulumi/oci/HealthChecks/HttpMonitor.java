@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHttpMonitor = new HttpMonitor("testHttpMonitor", HttpMonitorArgs.builder()        
+ *         var testHttpMonitor = new HttpMonitor("testHttpMonitor", HttpMonitorArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(httpMonitorDisplayName)
  *             .intervalInSeconds(httpMonitorIntervalInSeconds)

@@ -72,6 +72,7 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     public readonly destination!: pulumi.Output<string>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
      */
     public readonly destinationType!: pulumi.Output<string>;
     /**
@@ -173,6 +174,7 @@ export interface DrgRouteTableRouteRuleState {
     destination?: pulumi.Input<string>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
      */
     destinationType?: pulumi.Input<string>;
     /**
@@ -220,6 +222,7 @@ export interface DrgRouteTableRouteRuleArgs {
     destination: pulumi.Input<string>;
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
      */
     destinationType: pulumi.Input<string>;
     /**

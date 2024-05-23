@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationSchedule = new WorkspaceApplicationSchedule("testWorkspaceApplicationSchedule", WorkspaceApplicationScheduleArgs.builder()        
+ *         var testWorkspaceApplicationSchedule = new WorkspaceApplicationSchedule("testWorkspaceApplicationSchedule", WorkspaceApplicationScheduleArgs.builder()
  *             .applicationKey(workspaceApplicationScheduleApplicationKey)
  *             .identifier(workspaceApplicationScheduleIdentifier)
  *             .name(workspaceApplicationScheduleName)
@@ -176,14 +176,14 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
         return this.isDaylightAdjustmentEnabled;
     }
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Output<String> key() {
@@ -204,14 +204,14 @@ public class WorkspaceApplicationSchedule extends com.pulumi.resources.CustomRes
         return this.metadatas;
     }
     /**
-     * (Updatable) The type of the model
+     * The type of the object.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the model
+     * @return The type of the object.
      * 
      */
     public Output<String> modelType() {

@@ -30,6 +30,15 @@ class SubscriptionArgs:
         :param pulumi.Input[str] protocol: The protocol used for the subscription.
                
                Allowed values:
+               * `CUSTOM_HTTPS`
+               * `EMAIL`
+               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+               * `ORACLE_FUNCTIONS`
+               * `PAGERDUTY`
+               * `SLACK`
+               * `SMS`
+               
+               For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         :param pulumi.Input[str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
                
                
@@ -83,6 +92,15 @@ class SubscriptionArgs:
         The protocol used for the subscription.
 
         Allowed values:
+        * `CUSTOM_HTTPS`
+        * `EMAIL`
+        * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        * `ORACLE_FUNCTIONS`
+        * `PAGERDUTY`
+        * `SLACK`
+        * `SMS`
+
+        For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         """
         return pulumi.get(self, "protocol")
 
@@ -170,6 +188,15 @@ class _SubscriptionState:
         :param pulumi.Input[str] protocol: The protocol used for the subscription.
                
                Allowed values:
+               * `CUSTOM_HTTPS`
+               * `EMAIL`
+               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+               * `ORACLE_FUNCTIONS`
+               * `PAGERDUTY`
+               * `SLACK`
+               * `SMS`
+               
+               For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         :param pulumi.Input[str] state: The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
         :param pulumi.Input[str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
                
@@ -291,6 +318,15 @@ class _SubscriptionState:
         The protocol used for the subscription.
 
         Allowed values:
+        * `CUSTOM_HTTPS`
+        * `EMAIL`
+        * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        * `ORACLE_FUNCTIONS`
+        * `PAGERDUTY`
+        * `SLACK`
+        * `SMS`
+
+        For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         """
         return pulumi.get(self, "protocol")
 
@@ -388,6 +424,15 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] protocol: The protocol used for the subscription.
                
                Allowed values:
+               * `CUSTOM_HTTPS`
+               * `EMAIL`
+               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+               * `ORACLE_FUNCTIONS`
+               * `PAGERDUTY`
+               * `SLACK`
+               * `SMS`
+               
+               For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         :param pulumi.Input[str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
                
                
@@ -524,6 +569,15 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[str] protocol: The protocol used for the subscription.
                
                Allowed values:
+               * `CUSTOM_HTTPS`
+               * `EMAIL`
+               * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+               * `ORACLE_FUNCTIONS`
+               * `PAGERDUTY`
+               * `SLACK`
+               * `SMS`
+               
+               For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         :param pulumi.Input[str] state: The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
         :param pulumi.Input[str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic for the subscription. 
                
@@ -612,6 +666,15 @@ class Subscription(pulumi.CustomResource):
         The protocol used for the subscription.
 
         Allowed values:
+        * `CUSTOM_HTTPS`
+        * `EMAIL`
+        * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        * `ORACLE_FUNCTIONS`
+        * `PAGERDUTY`
+        * `SLACK`
+        * `SMS`
+
+        For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         """
         return pulumi.get(self, "protocol")
 

@@ -13,9 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode {
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding BypassCode resource which belongs to user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -29,28 +29,28 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s bypass code identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode() {}
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding BypassCode resource which belongs to user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -66,19 +66,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s bypass code identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

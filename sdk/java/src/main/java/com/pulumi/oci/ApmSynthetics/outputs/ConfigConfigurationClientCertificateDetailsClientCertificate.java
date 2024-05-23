@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConfigConfigurationClientCertificateDetailsClientCertificate {
     /**
-     * @return (Updatable) Content of the private key file.
+     * @return (Updatable) Content of the client certificate file.
      * 
      */
     private @Nullable String content;
     /**
-     * @return (Updatable) Name of the private key file.
+     * @return (Updatable) Name of the certificate file. The name should not contain any confidential information.
      * 
      */
     private @Nullable String fileName;
 
     private ConfigConfigurationClientCertificateDetailsClientCertificate() {}
     /**
-     * @return (Updatable) Content of the private key file.
+     * @return (Updatable) Content of the client certificate file.
      * 
      */
     public Optional<String> content() {
         return Optional.ofNullable(this.content);
     }
     /**
-     * @return (Updatable) Name of the private key file.
+     * @return (Updatable) Name of the certificate file. The name should not contain any confidential information.
      * 
      */
     public Optional<String> fileName() {

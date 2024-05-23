@@ -36,17 +36,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Image URI
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
+        /// * type: reference
         /// </summary>
         public readonly string Value;
 

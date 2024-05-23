@@ -22,7 +22,7 @@ public final class VirtualNodePoolPlacementConfiguration {
      */
     private List<String> faultDomains;
     /**
-     * @return (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * @return (Updatable) The OCID of the subnet in which to place virtual nodes.
      * 
      */
     private String subnetId;
@@ -43,7 +43,7 @@ public final class VirtualNodePoolPlacementConfiguration {
         return this.faultDomains;
     }
     /**
-     * @return (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * @return (Updatable) The OCID of the subnet in which to place virtual nodes.
      * 
      */
     public String subnetId() {

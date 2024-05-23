@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Reference to the parameter by its key.
+        /// Reference to the parameter by its key.
         /// </summary>
         [Input("parameterValue")]
         public Input<string>? ParameterValue { get; set; }
 
         /// <summary>
-        /// (Updatable) The root object reference value.
+        /// The root object reference value.
         /// </summary>
         [Input("refValue")]
         public Input<Inputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueGetArgs>? RefValue { get; set; }

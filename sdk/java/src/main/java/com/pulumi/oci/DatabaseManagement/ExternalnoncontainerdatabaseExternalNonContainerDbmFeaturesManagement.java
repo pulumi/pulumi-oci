@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs.builder()        
+ *         var testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement("testExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs.builder()
  *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
  *             .enableExternalNonContainerDbmFeature(enableExternalNonContainerDbmFeature)
  *             .featureDetails(ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs.builder()

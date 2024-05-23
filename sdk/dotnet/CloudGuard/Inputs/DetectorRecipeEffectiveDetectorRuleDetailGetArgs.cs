@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeEffectiveDetectorRuleDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Base condition object
+        /// Base condition object
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// (Updatable) Configuration details
+        /// Configuration details
         /// </summary>
         public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs> Configurations
         {
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<bool>? IsConfigurationAllowed { get; set; }
 
         /// <summary>
-        /// (Updatable) Enables the control
+        /// Enables the control
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// (Updatable) user defined labels for a detector rule
+        /// user defined labels for a detector rule
         /// </summary>
         public InputList<string> Labels
         {
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The Risk Level
+        /// The Risk Level
         /// </summary>
         [Input("riskLevel")]
         public Input<string>? RiskLevel { get; set; }

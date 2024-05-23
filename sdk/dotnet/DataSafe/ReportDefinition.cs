@@ -158,7 +158,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies the order in which the summary must be displayed.
+        /// Specifies the order in which the summary must be displayed.
         /// </summary>
         [Output("displayOrder")]
         public Output<int> DisplayOrder { get; private set; } = null!;
@@ -218,11 +218,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<int> ScheduledReportRowLimit { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Additional scim filters used to get the specific summary.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Additional scim filters used to get the specific summary.
         /// </summary>
         [Output("scimFilter")]
         public Output<string> ScimFilter { get; private set; } = null!;
@@ -498,7 +494,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the order in which the summary must be displayed.
+        /// Specifies the order in which the summary must be displayed.
         /// </summary>
         [Input("displayOrder")]
         public Input<int>? DisplayOrder { get; set; }
@@ -564,11 +560,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<int>? ScheduledReportRowLimit { get; set; }
 
         /// <summary>
-        /// (Updatable) Additional scim filters used to get the specific summary.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Additional scim filters used to get the specific summary.
         /// </summary>
         [Input("scimFilter")]
         public Input<string>? ScimFilter { get; set; }

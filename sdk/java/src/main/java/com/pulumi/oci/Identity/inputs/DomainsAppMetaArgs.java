@@ -121,9 +121,10 @@ public final class DomainsAppMetaArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Object class resource type
+     * (Updatable) Name of the resource type of the resource--for example, Users or Groups
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -137,9 +138,10 @@ public final class DomainsAppMetaArgs extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return (Updatable) Object class resource type
+     * @return (Updatable) Name of the resource type of the resource--for example, Users or Groups
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -340,9 +342,10 @@ public final class DomainsAppMetaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param resourceType (Updatable) Object class resource type
+         * @param resourceType (Updatable) Name of the resource type of the resource--for example, Users or Groups
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -360,9 +363,10 @@ public final class DomainsAppMetaArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param resourceType (Updatable) Object class resource type
+         * @param resourceType (Updatable) Name of the resource type of the resource--for example, Users or Groups
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly

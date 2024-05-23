@@ -26,64 +26,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.AiAnomalyDetection.DetectAnomalyJob;
- * import com.pulumi.oci.AiAnomalyDetection.DetectAnomalyJobArgs;
- * import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobInputDetailsArgs;
- * import com.pulumi.oci.AiAnomalyDetection.inputs.DetectAnomalyJobOutputDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDetectAnomalyJob = new DetectAnomalyJob("testDetectAnomalyJob", DetectAnomalyJobArgs.builder()        
- *             .compartmentId(compartmentId)
- *             .inputDetails(DetectAnomalyJobInputDetailsArgs.builder()
- *                 .inputType(detectAnomalyJobInputDetailsInputType)
- *                 .content(detectAnomalyJobInputDetailsContent)
- *                 .contentType(detectAnomalyJobInputDetailsContentType)
- *                 .datas(DetectAnomalyJobInputDetailsDataArgs.builder()
- *                     .timestamp(detectAnomalyJobInputDetailsDataTimestamp)
- *                     .values(detectAnomalyJobInputDetailsDataValues)
- *                     .build())
- *                 .objectLocations(DetectAnomalyJobInputDetailsObjectLocationArgs.builder()
- *                     .bucket(detectAnomalyJobInputDetailsObjectLocationsBucket)
- *                     .namespace(detectAnomalyJobInputDetailsObjectLocationsNamespace)
- *                     .object(detectAnomalyJobInputDetailsObjectLocationsObject)
- *                     .build())
- *                 .signalNames(detectAnomalyJobInputDetailsSignalNames)
- *                 .build())
- *             .modelId(testModel.id())
- *             .outputDetails(DetectAnomalyJobOutputDetailsArgs.builder()
- *                 .bucket(detectAnomalyJobOutputDetailsBucket)
- *                 .namespace(detectAnomalyJobOutputDetailsNamespace)
- *                 .outputType(detectAnomalyJobOutputDetailsOutputType)
- *                 .prefix(detectAnomalyJobOutputDetailsPrefix)
- *                 .build())
- *             .areAllEstimatesRequired(detectAnomalyJobAreAllEstimatesRequired)
- *             .description(detectAnomalyJobDescription)
- *             .displayName(detectAnomalyJobDisplayName)
- *             .sensitivity(detectAnomalyJobSensitivity)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

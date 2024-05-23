@@ -13,10 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MediaAssetMediaAssetTag {
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the tag.
      * 
      */
     private @Nullable String type;
@@ -28,10 +25,7 @@ public final class MediaAssetMediaAssetTag {
 
     private MediaAssetMediaAssetTag() {}
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the tag.
      * 
      */
     public Optional<String> type() {

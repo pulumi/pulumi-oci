@@ -33,14 +33,14 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Name of directory object in database
+     * (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of directory object in database
+     * @return (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
      * 
      */
     public Optional<Output<String>> name() {
@@ -93,14 +93,14 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Migration type.
+     * (Updatable) Type of the data transfer medium to use for the datapump
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of the data transfer medium to use for the datapump
      * 
      */
     public Output<String> type() {
@@ -158,7 +158,7 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) Name of directory object in database
+         * @param name (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         }
 
         /**
-         * @param name (Updatable) Name of directory object in database
+         * @param name (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of the data transfer medium to use for the datapump
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of the data transfer medium to use for the datapump
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) An integer value of the parameter.
+        /// An integer value of the parameter.
         /// </summary>
         [Input("intValue")]
         public Input<int>? IntValue { get; set; }

@@ -46,14 +46,14 @@ public final class WorkspaceApplicationScheduleMetadataAggregatorArgs extends co
     }
 
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -161,7 +161,7 @@ public final class WorkspaceApplicationScheduleMetadataAggregatorArgs extends co
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class WorkspaceApplicationScheduleMetadataAggregatorArgs extends co
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 

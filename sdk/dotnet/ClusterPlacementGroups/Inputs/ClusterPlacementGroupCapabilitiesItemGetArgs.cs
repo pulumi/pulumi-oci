@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups.Inputs
     public sealed class ClusterPlacementGroupCapabilitiesItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The friendly name of the cluster placement group.
+        /// The type of resource.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

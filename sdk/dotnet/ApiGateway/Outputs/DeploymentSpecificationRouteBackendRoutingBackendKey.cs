@@ -22,19 +22,15 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly bool? IsDefault;
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) Name assigned to the branch.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Information regarding type of the selection key.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+        /// (Updatable) Information regarding the set of values of selector for which this branch should be selected.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

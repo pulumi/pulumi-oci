@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAwrHub = new AwrHub("testAwrHub", AwrHubArgs.builder()        
+ *         var testAwrHub = new AwrHub("testAwrHub", AwrHubArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(awrHubDisplayName)
  *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())

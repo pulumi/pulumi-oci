@@ -51,12 +51,12 @@ public final class AlarmOverride {
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
      * 
      */
     private @Nullable String ruleName;
     /**
-     * @return (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
+     * @return (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
      * 
      */
     private @Nullable String severity;
@@ -108,14 +108,14 @@ public final class AlarmOverride {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
      * 
      */
     public Optional<String> ruleName() {
         return Optional.ofNullable(this.ruleName);
     }
     /**
-     * @return (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
+     * @return (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
      * 
      */
     public Optional<String> severity() {

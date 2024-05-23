@@ -118,14 +118,14 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Rule name. Must be unique within the module.
+     * (Updatable) Action name. Can be used to reference the action.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) Action name. Can be used to reference the action.
      * 
      */
     public Output<String> name() {
@@ -133,14 +133,20 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Type of WebAppFirewallPolicyRule.
+     * (Updatable)
+     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+     * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+     * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable)
+     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+     * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+     * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
      * 
      */
     public Output<String> type() {
@@ -311,7 +317,7 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name (Updatable) Rule name. Must be unique within the module.
+         * @param name (Updatable) Action name. Can be used to reference the action.
          * 
          * @return builder
          * 
@@ -322,7 +328,7 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name (Updatable) Rule name. Must be unique within the module.
+         * @param name (Updatable) Action name. Can be used to reference the action.
          * 
          * @return builder
          * 
@@ -332,7 +338,10 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type (Updatable) Type of WebAppFirewallPolicyRule.
+         * @param type (Updatable)
+         * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+         * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+         * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
          * 
          * @return builder
          * 
@@ -343,7 +352,10 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type (Updatable) Type of WebAppFirewallPolicyRule.
+         * @param type (Updatable)
+         * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+         * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+         * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
          * 
          * @return builder
          * 

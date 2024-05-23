@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly int? BodyInspectionSizeLimitInBytes;
         /// <summary>
-        /// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        /// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
         /// </summary>
         public readonly ImmutableArray<Outputs.AppFirewallPolicyRequestProtectionRule> Rules;
 

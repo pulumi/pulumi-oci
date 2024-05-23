@@ -18,28 +18,12 @@ public final class LoadBalancerIpAddressDetailReservedIpArgs extends com.pulumi.
     /**
      * Ocid of the Reserved IP/Public Ip created with VCN.
      * 
-     * Reserved IPs are IPs which already registered using VCN API.
-     * 
-     * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
-     * 
-     * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
-     * 
-     * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
-     * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
      * @return Ocid of the Reserved IP/Public Ip created with VCN.
-     * 
-     * Reserved IPs are IPs which already registered using VCN API.
-     * 
-     * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
-     * 
-     * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
-     * 
-     * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
      * 
      */
     public Optional<Output<String>> id() {
@@ -73,14 +57,6 @@ public final class LoadBalancerIpAddressDetailReservedIpArgs extends com.pulumi.
         /**
          * @param id Ocid of the Reserved IP/Public Ip created with VCN.
          * 
-         * Reserved IPs are IPs which already registered using VCN API.
-         * 
-         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
-         * 
-         * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
-         * 
-         * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
-         * 
          * @return builder
          * 
          */
@@ -91,14 +67,6 @@ public final class LoadBalancerIpAddressDetailReservedIpArgs extends com.pulumi.
 
         /**
          * @param id Ocid of the Reserved IP/Public Ip created with VCN.
-         * 
-         * Reserved IPs are IPs which already registered using VCN API.
-         * 
-         * Create a reserved Public IP and then while creating the load balancer pass the ocid of the reserved IP in this field reservedIp to attach the Ip to Load balancer. Load balancer will be configured to listen to traffic on this IP.
-         * 
-         * Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
-         * 
-         * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
          * 
          * @return builder
          * 

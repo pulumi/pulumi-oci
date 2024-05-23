@@ -65,18 +65,12 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     /**
      * Type of the database system.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="systemType", required=true)
     private Output<String> systemType;
 
     /**
      * @return Type of the database system.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> systemType() {
@@ -176,9 +170,6 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         /**
          * @param systemType Type of the database system.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -189,9 +180,6 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
 
         /**
          * @param systemType Type of the database system.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -30,11 +30,7 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// </summary>
         public readonly int? SourcePort;
         /// <summary>
-        /// The type of the `PathAnalysis` query.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The type of the `ProtocolParameters` object.
         /// </summary>
         public readonly string Type;
 

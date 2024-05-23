@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppAccelerationPolicy = new AppAccelerationPolicy("testWebAppAccelerationPolicy", AppAccelerationPolicyArgs.builder()        
+ *         var testWebAppAccelerationPolicy = new AppAccelerationPolicy("testWebAppAccelerationPolicy", AppAccelerationPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(webAppAccelerationPolicyDisplayName)

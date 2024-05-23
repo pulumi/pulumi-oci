@@ -13,9 +13,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppIdcsCreatedBy {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -27,24 +28,24 @@ public final class DomainsAppIdcsCreatedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -56,17 +57,14 @@ public final class DomainsAppIdcsCreatedBy {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -74,10 +72,11 @@ public final class DomainsAppIdcsCreatedBy {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
@@ -85,17 +84,15 @@ public final class DomainsAppIdcsCreatedBy {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
     private DomainsAppIdcsCreatedBy() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -109,26 +106,26 @@ public final class DomainsAppIdcsCreatedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -142,17 +139,14 @@ public final class DomainsAppIdcsCreatedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -162,19 +156,17 @@ public final class DomainsAppIdcsCreatedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

@@ -146,6 +146,8 @@ type IntegrationInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType *string `pulumi:"targetServiceType"`
@@ -171,6 +173,8 @@ type IntegrationInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
@@ -244,6 +248,8 @@ func (o IntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPt
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o IntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IntegrationInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
@@ -1154,6 +1160,8 @@ type GetIntegrationInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -1179,6 +1187,8 @@ type GetIntegrationInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -1252,6 +1262,8 @@ func (o GetIntegrationInstanceAttachmentOutput) TargetInstanceUrl() pulumi.Strin
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }
@@ -2463,6 +2475,8 @@ type GetIntegrationInstancesIntegrationInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -2488,6 +2502,8 @@ type GetIntegrationInstancesIntegrationInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -2561,6 +2577,8 @@ func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetInstan
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetIntegrationInstancesIntegrationInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }

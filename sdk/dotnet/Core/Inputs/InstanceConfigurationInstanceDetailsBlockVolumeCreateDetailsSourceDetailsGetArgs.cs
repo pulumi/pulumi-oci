@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type can be one of these values: `volume`, `volumeBackup`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

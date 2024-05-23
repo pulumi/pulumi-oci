@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string DefaultActionName;
         /// <summary>
-        /// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+        /// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
         /// </summary>
         public readonly ImmutableArray<Outputs.AppFirewallPolicyRequestAccessControlRule> Rules;
 

@@ -18,6 +18,8 @@ public final class GetDetectAnomalyJobInputDetail {
     private List<GetDetectAnomalyJobInputDetailData> datas;
     /**
      * @return The type of input location Allowed values are:
+     * * `INLINE`: Inline input data.
+     * * `OBJECT_LIST`: Object store output location.
      * 
      */
     private String inputType;
@@ -45,6 +47,8 @@ public final class GetDetectAnomalyJobInputDetail {
     }
     /**
      * @return The type of input location Allowed values are:
+     * * `INLINE`: Inline input data.
+     * * `OBJECT_LIST`: Object store output location.
      * 
      */
     public String inputType() {

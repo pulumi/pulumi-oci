@@ -87,9 +87,6 @@ namespace Pulumi.Oci.Database
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
-        /// <summary>
-        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        /// </summary>
         [Output("enableDatabaseDelete")]
         public Output<bool?> EnableDatabaseDelete { get; private set; } = null!;
 
@@ -255,9 +252,6 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
-        /// <summary>
-        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        /// </summary>
         [Input("enableDatabaseDelete")]
         public Input<bool>? EnableDatabaseDelete { get; set; }
 
@@ -379,9 +373,6 @@ namespace Pulumi.Oci.Database
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
-        /// <summary>
-        /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        /// </summary>
         [Input("enableDatabaseDelete")]
         public Input<bool>? EnableDatabaseDelete { get; set; }
 

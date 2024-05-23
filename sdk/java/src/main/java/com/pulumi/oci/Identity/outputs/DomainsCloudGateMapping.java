@@ -60,12 +60,10 @@ public final class DomainsCloudGateMapping {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -107,12 +105,10 @@ public final class DomainsCloudGateMapping {
      */
     private @Nullable String proxyPass;
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) URI of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -139,14 +135,14 @@ public final class DomainsCloudGateMapping {
      */
     private String resourcePrefix;
     /**
-     * @return (Updatable) Server Name for the Server Block
+     * @return (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -171,22 +167,17 @@ public final class DomainsCloudGateMapping {
      */
     private @Nullable String upstreamServerGroupId;
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
@@ -246,12 +237,10 @@ public final class DomainsCloudGateMapping {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -299,12 +288,10 @@ public final class DomainsCloudGateMapping {
         return Optional.ofNullable(this.proxyPass);
     }
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) URI of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -335,14 +322,14 @@ public final class DomainsCloudGateMapping {
         return this.resourcePrefix;
     }
     /**
-     * @return (Updatable) Server Name for the Server Block
+     * @return (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -371,22 +358,17 @@ public final class DomainsCloudGateMapping {
         return Optional.ofNullable(this.upstreamServerGroupId);
     }
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the App being mapped to
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

@@ -17,14 +17,14 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
     public static final TableReplicaArgs Empty = new TableReplicaArgs();
 
     /**
-     * (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+     * The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
     @Import(name="capacityMode")
     private @Nullable Output<String> capacityMode;
 
     /**
-     * @return (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+     * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
     public Optional<Output<String>> capacityMode() {
@@ -47,20 +47,14 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Maximum sustained write throughput limit for the table.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Maximum sustained write throughput limit for the table.
      * 
      */
     @Import(name="maxWriteUnits")
     private @Nullable Output<Integer> maxWriteUnits;
 
     /**
-     * @return (Updatable) Maximum sustained write throughput limit for the table.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Maximum sustained write throughput limit for the table.
      * 
      */
     public Optional<Output<Integer>> maxWriteUnits() {
@@ -142,7 +136,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacityMode (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+         * @param capacityMode The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
          * 
          * @return builder
          * 
@@ -153,7 +147,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacityMode (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+         * @param capacityMode The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
          * 
          * @return builder
          * 
@@ -184,10 +178,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxWriteUnits (Updatable) Maximum sustained write throughput limit for the table.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param maxWriteUnits Maximum sustained write throughput limit for the table.
          * 
          * @return builder
          * 
@@ -198,10 +189,7 @@ public final class TableReplicaArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxWriteUnits (Updatable) Maximum sustained write throughput limit for the table.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param maxWriteUnits Maximum sustained write throughput limit for the table.
          * 
          * @return builder
          * 

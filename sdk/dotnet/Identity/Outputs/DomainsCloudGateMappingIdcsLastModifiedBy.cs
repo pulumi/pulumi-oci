@@ -28,26 +28,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) The URI to the upstream block entry
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -72,23 +69,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) The id of the upstream block entry.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: false
+        /// * mutability: readOnly
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

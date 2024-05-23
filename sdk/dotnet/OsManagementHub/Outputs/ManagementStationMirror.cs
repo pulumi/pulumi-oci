@@ -18,7 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string Directory;
         /// <summary>
-        /// (Updatable) Listening port used for the proxy.
+        /// (Updatable) Default mirror listening port for http.
         /// </summary>
         public readonly string Port;
         /// <summary>

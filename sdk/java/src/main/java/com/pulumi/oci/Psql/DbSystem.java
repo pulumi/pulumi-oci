@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()        
+ *         var testDbSystem = new DbSystem("testDbSystem", DbSystemArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbVersion(dbSystemDbVersion)
  *             .displayName(dbSystemDisplayName)
@@ -242,28 +242,28 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * A user-provided description of the database instance node.
+     * (Updatable) A user-provided description of a database system.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return A user-provided description of the database instance node.
+     * @return (Updatable) A user-provided description of a database system.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Display name of the database instance node. Avoid entering confidential information.
+     * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return Display name of the database instance node. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {

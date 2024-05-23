@@ -33,18 +33,12 @@ public final class ManagedInstanceManagementChildSoftwareSourceArgs extends com.
     /**
      * software source name
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return software source name
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> name() {
@@ -100,9 +94,6 @@ public final class ManagedInstanceManagementChildSoftwareSourceArgs extends com.
         /**
          * @param name software source name
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -113,9 +104,6 @@ public final class ManagedInstanceManagementChildSoftwareSourceArgs extends com.
 
         /**
          * @param name software source name
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

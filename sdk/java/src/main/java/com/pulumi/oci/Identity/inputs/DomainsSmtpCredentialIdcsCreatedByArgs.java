@@ -17,11 +17,11 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     public static final DomainsSmtpCredentialIdcsCreatedByArgs Empty = new DomainsSmtpCredentialIdcsCreatedByArgs();
 
     /**
-     * (Updatable) User display name
+     * The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -34,11 +34,11 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) User display name
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -52,15 +52,14 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     }
 
     /**
-     * User&#39;s ocid
+     * The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -69,15 +68,14 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -87,7 +85,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The URI that corresponds to the user linked to this credential
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -122,7 +120,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     }
 
     /**
-     * The type of resource, User or App, that modified this Resource
+     * The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -139,7 +137,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -157,15 +155,15 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     }
 
     /**
-     * User&#39;s id
+     * The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -174,15 +172,15 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
     private Output<String> value;
 
     /**
-     * @return User&#39;s id
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -220,11 +218,11 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -241,11 +239,11 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param display (Updatable) User display name
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -261,15 +259,14 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -282,15 +279,14 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -302,7 +298,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -323,7 +319,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -343,7 +339,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -364,7 +360,7 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -384,15 +380,15 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -405,15 +401,15 @@ public final class DomainsSmtpCredentialIdcsCreatedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param value User&#39;s id
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 

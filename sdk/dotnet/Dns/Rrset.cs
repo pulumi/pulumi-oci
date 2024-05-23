@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The fully qualified domain name where the record can be located.
+        /// The target fully-qualified domain name (FQDN) within the target zone.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The fully qualified domain name where the record can be located.
+        /// The target fully-qualified domain name (FQDN) within the target zone.
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The fully qualified domain name where the record can be located.
+        /// The target fully-qualified domain name (FQDN) within the target zone.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }

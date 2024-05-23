@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Waas.Inputs
     public sealed class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+        /// (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<string> Header { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of the header.
+        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
-        /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

@@ -17,14 +17,14 @@ public final class IngressGatewayMtlsArgs extends com.pulumi.resources.ResourceA
     public static final IngressGatewayMtlsArgs Empty = new IngressGatewayMtlsArgs();
 
     /**
-     * (Updatable) The OCID of the leaf certificate resource.
+     * The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return (Updatable) The OCID of the leaf certificate resource.
+     * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -72,7 +72,7 @@ public final class IngressGatewayMtlsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param certificateId (Updatable) The OCID of the leaf certificate resource.
+         * @param certificateId The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class IngressGatewayMtlsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param certificateId (Updatable) The OCID of the leaf certificate resource.
+         * @param certificateId The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
          * 
          * @return builder
          * 

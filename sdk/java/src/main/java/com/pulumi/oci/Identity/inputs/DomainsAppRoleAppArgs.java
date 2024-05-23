@@ -17,14 +17,14 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     public static final DomainsAppRoleAppArgs Empty = new DomainsAppRoleAppArgs();
 
     /**
-     * Member display name
+     * (Updatable) App display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -33,14 +33,14 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> display;
 
     /**
-     * @return Member display name
+     * @return (Updatable) App display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -85,7 +85,7 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The URI corresponding to the member Resource of this Group
+     * (Updatable) App URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -101,7 +101,7 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI corresponding to the member Resource of this Group
+     * @return (Updatable) App URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -151,15 +151,15 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Value of the tag.
+     * App identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -168,15 +168,15 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return App identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -214,14 +214,14 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param display Member display name
+         * @param display (Updatable) App display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -234,14 +234,14 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param display Member display name
+         * @param display (Updatable) App display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -294,7 +294,7 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ref (Updatable) The URI corresponding to the member Resource of this Group
+         * @param ref (Updatable) App URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -314,7 +314,7 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ref (Updatable) The URI corresponding to the member Resource of this Group
+         * @param ref (Updatable) App URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -372,15 +372,15 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value App identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -393,15 +393,15 @@ public final class DomainsAppRoleAppArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value App identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

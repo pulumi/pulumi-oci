@@ -117,17 +117,9 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.displayName);
     }
 
-    /**
-     * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     * 
-     */
     @Import(name="enableDatabaseDelete")
     private @Nullable Output<Boolean> enableDatabaseDelete;
 
-    /**
-     * @return Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-     * 
-     */
     public Optional<Output<Boolean>> enableDatabaseDelete() {
         return Optional.ofNullable(this.enableDatabaseDelete);
     }
@@ -414,23 +406,11 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
-        /**
-         * @param enableDatabaseDelete Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enableDatabaseDelete(@Nullable Output<Boolean> enableDatabaseDelete) {
             $.enableDatabaseDelete = enableDatabaseDelete;
             return this;
         }
 
-        /**
-         * @param enableDatabaseDelete Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enableDatabaseDelete(Boolean enableDatabaseDelete) {
             return enableDatabaseDelete(Output.of(enableDatabaseDelete));
         }

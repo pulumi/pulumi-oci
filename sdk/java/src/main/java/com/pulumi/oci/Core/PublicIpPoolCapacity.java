@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublicIpPoolCapacity = new PublicIpPoolCapacity("testPublicIpPoolCapacity", PublicIpPoolCapacityArgs.builder()        
+ *         var testPublicIpPoolCapacity = new PublicIpPoolCapacity("testPublicIpPoolCapacity", PublicIpPoolCapacityArgs.builder()
  *             .publicIpPoolId(publicIpPoolId)
  *             .byoipId(byoipId)
  *             .cidrBlock(cidrBlock)

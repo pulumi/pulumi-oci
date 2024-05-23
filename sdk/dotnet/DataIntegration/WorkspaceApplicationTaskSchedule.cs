@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<string> ConfigProviderDelegate { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<string> ExpectedDurationUnit { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         [Output("identifier")]
         public Output<string> Identifier { get; private set; } = null!;
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -223,13 +223,13 @@ namespace Pulumi.Oci.DataIntegration
         public Output<ImmutableArray<Outputs.WorkspaceApplicationTaskScheduleLastRunDetail>> LastRunDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
         [Output("metadatas")]
         public Output<ImmutableArray<Outputs.WorkspaceApplicationTaskScheduleMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of the object.
+        /// The type of the object.
         /// </summary>
         [Output("modelType")]
         public Output<string> ModelType { get; private set; } = null!;
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? ConfigProviderDelegate { get; set; }
 
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -408,7 +408,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? ExpectedDurationUnit { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
@@ -432,7 +432,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -543,7 +543,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? ConfigProviderDelegate { get; set; }
 
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -567,7 +567,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? ExpectedDurationUnit { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
@@ -591,7 +591,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -612,7 +612,7 @@ namespace Pulumi.Oci.DataIntegration
         private InputList<Inputs.WorkspaceApplicationTaskScheduleMetadataGetArgs>? _metadatas;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
         public InputList<Inputs.WorkspaceApplicationTaskScheduleMetadataGetArgs> Metadatas
         {
@@ -621,7 +621,7 @@ namespace Pulumi.Oci.DataIntegration
         }
 
         /// <summary>
-        /// (Updatable) The type of the object.
+        /// The type of the object.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }

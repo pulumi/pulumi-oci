@@ -14,7 +14,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionPaymentGateway
     {
         /// <summary>
-        /// (Updatable) Merchant details.
+        /// Merchant details.
         /// </summary>
         public readonly ImmutableArray<Outputs.SubscriptionPaymentGatewayMerchantDefinedData> MerchantDefinedDatas;
 

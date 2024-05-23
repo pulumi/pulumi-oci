@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class ConfigDimension
     {
         /// <summary>
-        /// (Updatable) The name of the metric. This must be a known metric name.
+        /// (Updatable) The name of the dimension.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) This must not be set.
+        /// (Updatable) The source to populate the dimension. This must not be specified.
         /// </summary>
         public readonly string? ValueSource;
 

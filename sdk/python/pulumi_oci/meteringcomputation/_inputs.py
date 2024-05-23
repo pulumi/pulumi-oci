@@ -825,7 +825,7 @@ class ScheduleQueryPropertiesGroupByTagArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] key: The tag key.
-        :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
+        :param pulumi.Input[str] namespace: The tag namespace.
         :param pulumi.Input[str] value: The tag value.
         """
         if key is not None:
@@ -851,7 +851,7 @@ class ScheduleQueryPropertiesGroupByTagArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The namespace needed to determine the object storage bucket.
+        The tag namespace.
         """
         return pulumi.get(self, "namespace")
 

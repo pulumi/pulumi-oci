@@ -19,170 +19,170 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskMetadata {
     /**
-     * @return (Updatable) The owning object&#39;s key for this object.
+     * @return The owning object&#39;s key for this object.
      * 
      */
     private @Nullable String aggregatorKey;
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
     private @Nullable List<WorkspaceTaskMetadataAggregator> aggregators;
     /**
-     * @return (Updatable) A count statistics.
+     * @return A count statistics.
      * 
      */
     private @Nullable List<WorkspaceTaskMetadataCountStatistic> countStatistics;
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     private @Nullable String createdBy;
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     private @Nullable String createdByName;
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return The full path to identify this object.
      * 
      */
     private @Nullable String identifierPath;
     /**
-     * @return (Updatable) Information property fields.
+     * @return Information property fields.
      * 
      */
     private @Nullable Map<String,Object> infoFields;
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return Specifies whether this object is a favorite or not.
      * 
      */
     private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return (Updatable) The registry version.
+     * @return The registry version.
      * 
      */
     private @Nullable Integer registryVersion;
     /**
-     * @return (Updatable) The date and time that the object was created.
+     * @return The date and time that the object was created.
      * 
      */
     private @Nullable String timeCreated;
     /**
-     * @return (Updatable) The date and time that the object was updated.
+     * @return The date and time that the object was updated.
      * 
      */
     private @Nullable String timeUpdated;
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     private @Nullable String updatedBy;
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     private @Nullable String updatedByName;
 
     private WorkspaceTaskMetadata() {}
     /**
-     * @return (Updatable) The owning object&#39;s key for this object.
+     * @return The owning object&#39;s key for this object.
      * 
      */
     public Optional<String> aggregatorKey() {
         return Optional.ofNullable(this.aggregatorKey);
     }
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
     public List<WorkspaceTaskMetadataAggregator> aggregators() {
         return this.aggregators == null ? List.of() : this.aggregators;
     }
     /**
-     * @return (Updatable) A count statistics.
+     * @return A count statistics.
      * 
      */
     public List<WorkspaceTaskMetadataCountStatistic> countStatistics() {
         return this.countStatistics == null ? List.of() : this.countStatistics;
     }
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     public Optional<String> createdBy() {
         return Optional.ofNullable(this.createdBy);
     }
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     public Optional<String> createdByName() {
         return Optional.ofNullable(this.createdByName);
     }
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return The full path to identify this object.
      * 
      */
     public Optional<String> identifierPath() {
         return Optional.ofNullable(this.identifierPath);
     }
     /**
-     * @return (Updatable) Information property fields.
+     * @return Information property fields.
      * 
      */
     public Map<String,Object> infoFields() {
         return this.infoFields == null ? Map.of() : this.infoFields;
     }
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return Specifies whether this object is a favorite or not.
      * 
      */
     public Optional<Boolean> isFavorite() {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return (Updatable) The registry version.
+     * @return The registry version.
      * 
      */
     public Optional<Integer> registryVersion() {
         return Optional.ofNullable(this.registryVersion);
     }
     /**
-     * @return (Updatable) The date and time that the object was created.
+     * @return The date and time that the object was created.
      * 
      */
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return (Updatable) The date and time that the object was updated.
+     * @return The date and time that the object was updated.
      * 
      */
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     public Optional<String> updatedBy() {
         return Optional.ofNullable(this.updatedBy);
     }
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     public Optional<String> updatedByName() {

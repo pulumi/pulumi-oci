@@ -17,14 +17,14 @@ public final class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStag
     public static final DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs Empty = new DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs();
 
     /**
-     * (Updatable) List of parameters defined for a deployment pipeline.
+     * List of parameters defined for a deployment pipeline.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs>> items;
 
     /**
-     * @return (Updatable) List of parameters defined for a deployment pipeline.
+     * @return List of parameters defined for a deployment pipeline.
      * 
      */
     public Optional<Output<List<DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStag
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStag
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStag
         }
 
         /**
-         * @param items (Updatable) List of parameters defined for a deployment pipeline.
+         * @param items List of parameters defined for a deployment pipeline.
          * 
          * @return builder
          * 

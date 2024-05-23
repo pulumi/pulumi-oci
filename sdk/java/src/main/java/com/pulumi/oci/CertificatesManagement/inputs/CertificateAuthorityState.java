@@ -84,14 +84,14 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) The origin of the CA.
+     * The origin of the CA.
      * 
      */
     @Import(name="configType")
     private @Nullable Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the CA.
+     * @return The origin of the CA.
      * 
      */
     public Optional<Output<String>> configType() {
@@ -159,14 +159,14 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of the private CA.
+     * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
     @Import(name="issuerCertificateAuthorityId")
     private @Nullable Output<String> issuerCertificateAuthorityId;
 
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
     public Optional<Output<String>> issuerCertificateAuthorityId() {
@@ -435,7 +435,7 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param configType (Updatable) The origin of the CA.
+         * @param configType The origin of the CA.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param configType (Updatable) The origin of the CA.
+         * @param configType The origin of the CA.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
          * 
          * @return builder
          * 

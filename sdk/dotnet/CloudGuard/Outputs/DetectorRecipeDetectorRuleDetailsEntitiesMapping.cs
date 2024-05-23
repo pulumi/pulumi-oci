@@ -14,9 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeDetectorRuleDetailsEntitiesMapping
     {
         /// <summary>
-        /// (Updatable) Detector recipe display name.
-        /// 
-        /// Avoid entering confidential information.
+        /// (Updatable) The display name of entity
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

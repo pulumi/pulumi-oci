@@ -18,7 +18,7 @@ type WorkspaceApplicationDependentObjectMetadata struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -46,7 +46,7 @@ type WorkspaceApplicationDependentObjectMetadataArgs struct {
 	Action pulumi.StringPtrInput `pulumi:"action"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -119,7 +119,7 @@ func (o WorkspaceApplicationDependentObjectMetadataOutput) Identifier() pulumi.S
 	return o.ApplyT(func(v WorkspaceApplicationDependentObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// (Updatable) Currently not used on application creation. Reserved for future.
 func (o WorkspaceApplicationDependentObjectMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationDependentObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -165,7 +165,7 @@ func (o WorkspaceApplicationDependentObjectMetadataArrayOutput) Index(i pulumi.I
 }
 
 type WorkspaceApplicationMetadata struct {
-	// The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceApplicationMetadataAggregator `pulumi:"aggregators"`
@@ -181,9 +181,9 @@ type WorkspaceApplicationMetadata struct {
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// The registry version.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -207,7 +207,7 @@ type WorkspaceApplicationMetadataInput interface {
 }
 
 type WorkspaceApplicationMetadataArgs struct {
-	// The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceApplicationMetadataAggregatorArrayInput `pulumi:"aggregators"`
@@ -223,9 +223,9 @@ type WorkspaceApplicationMetadataArgs struct {
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// The registry version.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -288,7 +288,7 @@ func (o WorkspaceApplicationMetadataOutput) ToWorkspaceApplicationMetadataOutput
 	return o
 }
 
-// The owning object's key for this object.
+// The owning object key for this object.
 func (o WorkspaceApplicationMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -330,12 +330,12 @@ func (o WorkspaceApplicationMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// The registry version.
+// The registry version of the object.
 func (o WorkspaceApplicationMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -385,7 +385,7 @@ type WorkspaceApplicationMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -409,7 +409,7 @@ type WorkspaceApplicationMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -478,7 +478,7 @@ func (o WorkspaceApplicationMetadataAggregatorOutput) Identifier() pulumi.String
 	return o.ApplyT(func(v WorkspaceApplicationMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// (Updatable) Currently not used on application creation. Reserved for future.
 func (o WorkspaceApplicationMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -829,7 +829,7 @@ type WorkspaceApplicationPatchDependentObjectMetadata struct {
 	Action *string `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -857,7 +857,7 @@ type WorkspaceApplicationPatchDependentObjectMetadataArgs struct {
 	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -930,7 +930,7 @@ func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Identifier() pul
 	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// The object's key.
 func (o WorkspaceApplicationPatchDependentObjectMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchDependentObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -976,7 +976,7 @@ func (o WorkspaceApplicationPatchDependentObjectMetadataArrayOutput) Index(i pul
 }
 
 type WorkspaceApplicationPatchMetadata struct {
-	// The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceApplicationPatchMetadataAggregator `pulumi:"aggregators"`
@@ -992,9 +992,9 @@ type WorkspaceApplicationPatchMetadata struct {
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// The registry version.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -1018,7 +1018,7 @@ type WorkspaceApplicationPatchMetadataInput interface {
 }
 
 type WorkspaceApplicationPatchMetadataArgs struct {
-	// The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceApplicationPatchMetadataAggregatorArrayInput `pulumi:"aggregators"`
@@ -1034,9 +1034,9 @@ type WorkspaceApplicationPatchMetadataArgs struct {
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// The registry version.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -1099,7 +1099,7 @@ func (o WorkspaceApplicationPatchMetadataOutput) ToWorkspaceApplicationPatchMeta
 	return o
 }
 
-// The owning object's key for this object.
+// The owning object key for this object.
 func (o WorkspaceApplicationPatchMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -1143,12 +1143,12 @@ func (o WorkspaceApplicationPatchMetadataOutput) IsFavorite() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationPatchMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// The registry version.
+// The registry version of the object.
 func (o WorkspaceApplicationPatchMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -1198,7 +1198,7 @@ type WorkspaceApplicationPatchMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -1222,7 +1222,7 @@ type WorkspaceApplicationPatchMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1291,7 +1291,7 @@ func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Identifier() pulumi.S
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// The object's key.
 func (o WorkspaceApplicationPatchMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -1646,7 +1646,7 @@ type WorkspaceApplicationPatchPatchObjectMetadata struct {
 	Action *string `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -1674,7 +1674,7 @@ type WorkspaceApplicationPatchPatchObjectMetadataArgs struct {
 	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// The object's key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -1747,7 +1747,7 @@ func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Identifier() pulumi.
 	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// The object's key.
 func (o WorkspaceApplicationPatchPatchObjectMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPatchPatchObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -2010,7 +2010,7 @@ type WorkspaceApplicationPublishedObjectMetadata struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -2038,7 +2038,7 @@ type WorkspaceApplicationPublishedObjectMetadataArgs struct {
 	Action pulumi.StringPtrInput `pulumi:"action"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -2111,7 +2111,7 @@ func (o WorkspaceApplicationPublishedObjectMetadataOutput) Identifier() pulumi.S
 	return o.ApplyT(func(v WorkspaceApplicationPublishedObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// The identifying key for the object.
+// (Updatable) Currently not used on application creation. Reserved for future.
 func (o WorkspaceApplicationPublishedObjectMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationPublishedObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -2817,7 +2817,7 @@ func (o WorkspaceApplicationScheduleFrequencyDetailsTimePtrOutput) Second() pulu
 }
 
 type WorkspaceApplicationScheduleMetadata struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceApplicationScheduleMetadataAggregator `pulumi:"aggregators"`
@@ -2831,11 +2831,11 @@ type WorkspaceApplicationScheduleMetadata struct {
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -2859,7 +2859,7 @@ type WorkspaceApplicationScheduleMetadataInput interface {
 }
 
 type WorkspaceApplicationScheduleMetadataArgs struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceApplicationScheduleMetadataAggregatorArrayInput `pulumi:"aggregators"`
@@ -2873,11 +2873,11 @@ type WorkspaceApplicationScheduleMetadataArgs struct {
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -2940,7 +2940,7 @@ func (o WorkspaceApplicationScheduleMetadataOutput) ToWorkspaceApplicationSchedu
 	return o
 }
 
-// (Updatable) The owning object's key for this object.
+// The owning object key for this object.
 func (o WorkspaceApplicationScheduleMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -2979,17 +2979,17 @@ func (o WorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.MapOutpu
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// Specifies whether this object is a favorite or not.
 func (o WorkspaceApplicationScheduleMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationScheduleMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version.
+// The registry version of the object.
 func (o WorkspaceApplicationScheduleMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -3039,7 +3039,7 @@ type WorkspaceApplicationScheduleMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -3063,7 +3063,7 @@ type WorkspaceApplicationScheduleMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -3132,7 +3132,7 @@ func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Identifier() pulum
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The identifying key for the object.
+// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationScheduleMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -3704,10 +3704,7 @@ type WorkspaceApplicationSourceApplicationInfo struct {
 	CopyType *string `pulumi:"copyType"`
 	// The last patch key for the application.
 	LastPatchKey *string `pulumi:"lastPatchKey"`
-	// The workspace ID.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
 	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
@@ -3731,10 +3728,7 @@ type WorkspaceApplicationSourceApplicationInfoArgs struct {
 	CopyType pulumi.StringPtrInput `pulumi:"copyType"`
 	// The last patch key for the application.
 	LastPatchKey pulumi.StringPtrInput `pulumi:"lastPatchKey"`
-	// The workspace ID.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
 	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
@@ -3835,10 +3829,7 @@ func (o WorkspaceApplicationSourceApplicationInfoOutput) LastPatchKey() pulumi.S
 	return o.ApplyT(func(v WorkspaceApplicationSourceApplicationInfo) *string { return v.LastPatchKey }).(pulumi.StringPtrOutput)
 }
 
-// The workspace ID.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
 func (o WorkspaceApplicationSourceApplicationInfoOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationSourceApplicationInfo) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
 }
@@ -3907,10 +3898,7 @@ func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) LastPatchKey() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// The workspace ID.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
 func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationSourceApplicationInfo) *string {
 		if v == nil {
@@ -3921,15 +3909,15 @@ func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) WorkspaceId() pulumi
 }
 
 type WorkspaceApplicationTaskScheduleLastRunDetail struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// Time in milliseconds for the pervious schedule.
 	LastRunTimeMillis *string `pulumi:"lastRunTimeMillis"`
-	// (Updatable) The type of the object.
+	// The type of the object.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -3955,15 +3943,15 @@ type WorkspaceApplicationTaskScheduleLastRunDetailInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleLastRunDetailArgs struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Time in milliseconds for the pervious schedule.
 	LastRunTimeMillis pulumi.StringPtrInput `pulumi:"lastRunTimeMillis"`
-	// (Updatable) The type of the object.
+	// The type of the object.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
@@ -4028,17 +4016,17 @@ func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) ToWorkspaceApplicat
 	return o
 }
 
-// (Updatable) The description of the aggregator.
+// (Updatable) Detailed description for the object.
 func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleLastRunDetail) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The identifier of the aggregator.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleLastRunDetail) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleLastRunDetail) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -4048,7 +4036,7 @@ func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) LastRunTimeMillis()
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleLastRunDetail) *string { return v.LastRunTimeMillis }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the object.
+// The type of the object.
 func (o WorkspaceApplicationTaskScheduleLastRunDetailOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleLastRunDetail) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -4207,33 +4195,33 @@ func (o WorkspaceApplicationTaskScheduleLastRunDetailParentRefArrayOutput) Index
 }
 
 type WorkspaceApplicationTaskScheduleMetadata struct {
-	// (Updatable) The owning object key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceApplicationTaskScheduleMetadataAggregator `pulumi:"aggregators"`
-	// (Updatable) A count statistics.
+	// A count statistics.
 	CountStatistics []WorkspaceApplicationTaskScheduleMetadataCountStatistic `pulumi:"countStatistics"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedBy *string `pulumi:"createdBy"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
-	// (Updatable) Information property fields.
+	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version of the object.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
-	// (Updatable) The date and time that the object was created.
+	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) The date and time that the object was updated.
+	// The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedBy *string `pulumi:"updatedBy"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
@@ -4249,33 +4237,33 @@ type WorkspaceApplicationTaskScheduleMetadataInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleMetadataArgs struct {
-	// (Updatable) The owning object key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceApplicationTaskScheduleMetadataAggregatorArrayInput `pulumi:"aggregators"`
-	// (Updatable) A count statistics.
+	// A count statistics.
 	CountStatistics WorkspaceApplicationTaskScheduleMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
-	// (Updatable) Information property fields.
+	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version of the object.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
-	// (Updatable) The date and time that the object was created.
+	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// (Updatable) The date and time that the object was updated.
+	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
@@ -4330,76 +4318,76 @@ func (o WorkspaceApplicationTaskScheduleMetadataOutput) ToWorkspaceApplicationTa
 	return o
 }
 
-// (Updatable) The owning object key for this object.
+// The owning object key for this object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name and description.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) Aggregators() WorkspaceApplicationTaskScheduleMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) []WorkspaceApplicationTaskScheduleMetadataAggregator {
 		return v.Aggregators
 	}).(WorkspaceApplicationTaskScheduleMetadataAggregatorArrayOutput)
 }
 
-// (Updatable) A count statistics.
+// A count statistics.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) CountStatistics() WorkspaceApplicationTaskScheduleMetadataCountStatisticArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) []WorkspaceApplicationTaskScheduleMetadataCountStatistic {
 		return v.CountStatistics
 	}).(WorkspaceApplicationTaskScheduleMetadataCountStatisticArrayOutput)
 }
 
-// (Updatable) The user that created the object.
+// The user that created the object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that created the object.
+// The user that created the object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// The full path to identify this object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Information property fields.
+// Information property fields.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// Specifies whether this object is a favorite or not.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version of the object.
+// The registry version of the object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The date and time that the object was created.
+// The date and time that the object was created.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The date and time that the object was updated.
+// The date and time that the object was updated.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that updated the object.
+// The user that updated the object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that updated the object.
+// The user that updated the object.
 func (o WorkspaceApplicationTaskScheduleMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
@@ -4425,15 +4413,15 @@ func (o WorkspaceApplicationTaskScheduleMetadataArrayOutput) Index(i pulumi.IntI
 }
 
 type WorkspaceApplicationTaskScheduleMetadataAggregator struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
-	// (Updatable) The type of the aggregator.
+	// The type of the aggregator.
 	Type *string `pulumi:"type"`
 }
 
@@ -4449,15 +4437,15 @@ type WorkspaceApplicationTaskScheduleMetadataAggregatorInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleMetadataAggregatorArgs struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The type of the aggregator.
+	// The type of the aggregator.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -4512,17 +4500,17 @@ func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) ToWorkspaceApp
 	return o
 }
 
-// (Updatable) The description of the aggregator.
+// (Updatable) Detailed description for the object.
 func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The identifier of the aggregator.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -4532,7 +4520,7 @@ func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) Name() pulumi.
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the aggregator.
+// The type of the aggregator.
 func (o WorkspaceApplicationTaskScheduleMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -4558,7 +4546,7 @@ func (o WorkspaceApplicationTaskScheduleMetadataAggregatorArrayOutput) Index(i p
 }
 
 type WorkspaceApplicationTaskScheduleMetadataCountStatistic struct {
-	// (Updatable) The array of statistics.
+	// The array of statistics.
 	ObjectTypeCountLists []WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
 }
 
@@ -4574,7 +4562,7 @@ type WorkspaceApplicationTaskScheduleMetadataCountStatisticInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs struct {
-	// (Updatable) The array of statistics.
+	// The array of statistics.
 	ObjectTypeCountLists WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
 }
 
@@ -4629,7 +4617,7 @@ func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticOutput) ToWorkspac
 	return o
 }
 
-// (Updatable) The array of statistics.
+// The array of statistics.
 func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataCountStatistic) []WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList {
 		return v.ObjectTypeCountLists
@@ -4657,9 +4645,9 @@ func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticArrayOutput) Index
 }
 
 type WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList struct {
-	// (Updatable) The value for the count statistic object.
+	// The value for the count statistic object.
 	ObjectCount *string `pulumi:"objectCount"`
-	// (Updatable) The type of object for the count statistic object.
+	// The type of object for the count statistic object.
 	ObjectType *string `pulumi:"objectType"`
 }
 
@@ -4675,9 +4663,9 @@ type WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListIn
 }
 
 type WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs struct {
-	// (Updatable) The value for the count statistic object.
+	// The value for the count statistic object.
 	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
-	// (Updatable) The type of object for the count statistic object.
+	// The type of object for the count statistic object.
 	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
@@ -4732,14 +4720,14 @@ func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountLis
 	return o
 }
 
-// (Updatable) The value for the count statistic object.
+// The value for the count statistic object.
 func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectCount
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of object for the count statistic object.
+// The type of object for the count statistic object.
 func (o WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectType
@@ -4923,15 +4911,15 @@ func (o WorkspaceApplicationTaskScheduleParentRefPtrOutput) RootDocId() pulumi.S
 }
 
 type WorkspaceApplicationTaskScheduleRegistryMetadata struct {
-	// (Updatable) The owning object key for this object.
+	// (Updatable) The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version of the object.
+	// (Updatable) The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
@@ -4947,15 +4935,15 @@ type WorkspaceApplicationTaskScheduleRegistryMetadataInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleRegistryMetadataArgs struct {
-	// (Updatable) The owning object key for this object.
+	// (Updatable) The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version of the object.
+	// (Updatable) The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
@@ -5036,7 +5024,7 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) ToWorkspaceAppli
 	}).(WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput)
 }
 
-// (Updatable) The owning object key for this object.
+// (Updatable) The owning object's key for this object.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -5046,17 +5034,17 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) IsFavorite() pul
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) The identifying key for the object.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version of the object.
+// (Updatable) The registry version.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -5085,7 +5073,7 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) Elem() Worksp
 	}).(WorkspaceApplicationTaskScheduleRegistryMetadataOutput)
 }
 
-// (Updatable) The owning object key for this object.
+// (Updatable) The owning object's key for this object.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleRegistryMetadata) *string {
 		if v == nil {
@@ -5105,7 +5093,7 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) IsFavorite() 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) The identifying key for the object.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleRegistryMetadata) *string {
 		if v == nil {
@@ -5115,7 +5103,7 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) Key() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleRegistryMetadata) []string {
 		if v == nil {
@@ -5125,7 +5113,7 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) Labels() pulu
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version of the object.
+// (Updatable) The registry version.
 func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleRegistryMetadata) *int {
 		if v == nil {
@@ -5136,15 +5124,15 @@ func (o WorkspaceApplicationTaskScheduleRegistryMetadataPtrOutput) RegistryVersi
 }
 
 type WorkspaceApplicationTaskScheduleScheduleRef struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) The model that holds the frequency details.
 	FrequencyDetails *WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails `pulumi:"frequencyDetails"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) A flag to indicate daylight saving.
 	IsDaylightAdjustmentEnabled *bool `pulumi:"isDaylightAdjustmentEnabled"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadata *WorkspaceApplicationTaskScheduleScheduleRefMetadata `pulumi:"metadata"`
@@ -5176,15 +5164,15 @@ type WorkspaceApplicationTaskScheduleScheduleRefInput interface {
 }
 
 type WorkspaceApplicationTaskScheduleScheduleRefArgs struct {
-	// (Updatable) The description of the aggregator.
+	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The model that holds the frequency details.
 	FrequencyDetails WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsPtrInput `pulumi:"frequencyDetails"`
-	// (Updatable) The identifier of the aggregator.
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) A flag to indicate daylight saving.
 	IsDaylightAdjustmentEnabled pulumi.BoolPtrInput `pulumi:"isDaylightAdjustmentEnabled"`
-	// (Updatable) The key of the aggregator object.
+	// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadata WorkspaceApplicationTaskScheduleScheduleRefMetadataPtrInput `pulumi:"metadata"`
@@ -5281,7 +5269,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) ToWorkspaceApplicatio
 	}).(WorkspaceApplicationTaskScheduleScheduleRefPtrOutput)
 }
 
-// (Updatable) The description of the aggregator.
+// (Updatable) Detailed description for the object.
 func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRef) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -5293,7 +5281,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) FrequencyDetails() Wo
 	}).(WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsPtrOutput)
 }
 
-// (Updatable) The identifier of the aggregator.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRef) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
@@ -5303,7 +5291,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) IsDaylightAdjustmentE
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRef) *bool { return v.IsDaylightAdjustmentEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationTaskScheduleScheduleRefOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRef) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -5376,7 +5364,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) Elem() WorkspaceAp
 	}).(WorkspaceApplicationTaskScheduleScheduleRefOutput)
 }
 
-// (Updatable) The description of the aggregator.
+// (Updatable) Detailed description for the object.
 func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRef) *string {
 		if v == nil {
@@ -5396,7 +5384,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) FrequencyDetails()
 	}).(WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsPtrOutput)
 }
 
-// (Updatable) The identifier of the aggregator.
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) Identifier() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRef) *string {
 		if v == nil {
@@ -5416,7 +5404,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) IsDaylightAdjustme
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the aggregator object.
+// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
 func (o WorkspaceApplicationTaskScheduleScheduleRefPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRef) *string {
 		if v == nil {
@@ -5517,7 +5505,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails struct {
 	Frequency *string `pulumi:"frequency"`
 	// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
 	Interval *int `pulumi:"interval"`
-	// (Updatable) The type of the object.
+	// (Updatable) The type of the model
 	ModelType string `pulumi:"modelType"`
 	// (Updatable) A model to hold time in hour:minute:second format.
 	Time *WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime `pulumi:"time"`
@@ -5547,7 +5535,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs struct {
 	Frequency pulumi.StringPtrInput `pulumi:"frequency"`
 	// (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
 	Interval pulumi.IntPtrInput `pulumi:"interval"`
-	// (Updatable) The type of the object.
+	// (Updatable) The type of the model
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// (Updatable) A model to hold time in hour:minute:second format.
 	Time WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimePtrInput `pulumi:"time"`
@@ -5657,7 +5645,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsOutput) Inter
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails) *int { return v.Interval }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The type of the object.
+// (Updatable) The type of the model
 func (o WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails) string { return v.ModelType }).(pulumi.StringOutput)
 }
@@ -5748,7 +5736,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsPtrOutput) In
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The type of the object.
+// (Updatable) The type of the model
 func (o WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails) *string {
 		if v == nil {
@@ -6350,7 +6338,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator struct {
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) The key of the aggregator object.
 	Key *string `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) The name of the aggregator.
 	Name *string `pulumi:"name"`
 	// (Updatable) The type of the aggregator.
 	Type *string `pulumi:"type"`
@@ -6374,7 +6362,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs struct {
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// (Updatable) The key of the aggregator object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	// (Updatable) The name of the aggregator.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The type of the aggregator.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -6472,7 +6460,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorOutput) Key
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) The name of the aggregator.
 func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -6536,7 +6524,7 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorPtrOutput) 
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+// (Updatable) The name of the aggregator.
 func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator) *string {
 		if v == nil {
@@ -7122,7 +7110,7 @@ func (o WorkspaceExportRequestExportedItemArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type WorkspaceFolderMetadata struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceFolderMetadataAggregator `pulumi:"aggregators"`
@@ -7136,11 +7124,11 @@ type WorkspaceFolderMetadata struct {
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -7164,7 +7152,7 @@ type WorkspaceFolderMetadataInput interface {
 }
 
 type WorkspaceFolderMetadataArgs struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceFolderMetadataAggregatorArrayInput `pulumi:"aggregators"`
@@ -7178,11 +7166,11 @@ type WorkspaceFolderMetadataArgs struct {
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -7245,7 +7233,7 @@ func (o WorkspaceFolderMetadataOutput) ToWorkspaceFolderMetadataOutputWithContex
 	return o
 }
 
-// (Updatable) The owning object's key for this object.
+// The owning object key for this object.
 func (o WorkspaceFolderMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -7280,17 +7268,17 @@ func (o WorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// Specifies whether this object is a favorite or not.
 func (o WorkspaceFolderMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceFolderMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version.
+// The registry version of the object.
 func (o WorkspaceFolderMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -7340,7 +7328,7 @@ type WorkspaceFolderMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Currently not used on folder creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -7364,7 +7352,7 @@ type WorkspaceFolderMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Currently not used on folder creation. Reserved for future.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -7433,7 +7421,7 @@ func (o WorkspaceFolderMetadataAggregatorOutput) Identifier() pulumi.StringPtrOu
 	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The identifying key for the object.
+// (Updatable) Currently not used on folder creation. Reserved for future.
 func (o WorkspaceFolderMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -8346,7 +8334,7 @@ func (o WorkspaceImportRequestImportedObjectArrayOutput) Index(i pulumi.IntInput
 }
 
 type WorkspaceProjectMetadata struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceProjectMetadataAggregator `pulumi:"aggregators"`
@@ -8360,11 +8348,11 @@ type WorkspaceProjectMetadata struct {
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -8388,7 +8376,7 @@ type WorkspaceProjectMetadataInput interface {
 }
 
 type WorkspaceProjectMetadataArgs struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceProjectMetadataAggregatorArrayInput `pulumi:"aggregators"`
@@ -8402,11 +8390,11 @@ type WorkspaceProjectMetadataArgs struct {
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version of the object.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -8469,7 +8457,7 @@ func (o WorkspaceProjectMetadataOutput) ToWorkspaceProjectMetadataOutputWithCont
 	return o
 }
 
-// (Updatable) The owning object's key for this object.
+// The owning object key for this object.
 func (o WorkspaceProjectMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
@@ -8504,17 +8492,17 @@ func (o WorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// Specifies whether this object is a favorite or not.
 func (o WorkspaceProjectMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 func (o WorkspaceProjectMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version.
+// The registry version of the object.
 func (o WorkspaceProjectMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
@@ -8564,7 +8552,7 @@ type WorkspaceProjectMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -8588,7 +8576,7 @@ type WorkspaceProjectMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The identifying key for the object.
+	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -8657,7 +8645,7 @@ func (o WorkspaceProjectMetadataAggregatorOutput) Identifier() pulumi.StringPtrO
 	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The identifying key for the object.
+// (Updatable) Generated key that can be used in API calls to identify project.
 func (o WorkspaceProjectMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -9217,9 +9205,9 @@ func (o WorkspaceProjectRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntP
 }
 
 type WorkspaceTaskAuthConfig struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify this object.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion *string `pulumi:"modelVersion"`
@@ -9241,9 +9229,9 @@ type WorkspaceTaskAuthConfigInput interface {
 }
 
 type WorkspaceTaskAuthConfigArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify this object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The model version of an object.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
@@ -9330,12 +9318,12 @@ func (o WorkspaceTaskAuthConfigOutput) ToWorkspaceTaskAuthConfigPtrOutputWithCon
 	}).(WorkspaceTaskAuthConfigPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify this object.
 func (o WorkspaceTaskAuthConfigOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskAuthConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
 func (o WorkspaceTaskAuthConfigOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskAuthConfig) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -9379,7 +9367,7 @@ func (o WorkspaceTaskAuthConfigPtrOutput) Elem() WorkspaceTaskAuthConfigOutput {
 	}).(WorkspaceTaskAuthConfigOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify this object.
 func (o WorkspaceTaskAuthConfigPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskAuthConfig) *string {
 		if v == nil {
@@ -9389,7 +9377,7 @@ func (o WorkspaceTaskAuthConfigPtrOutput) Key() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
 func (o WorkspaceTaskAuthConfigPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskAuthConfig) *string {
 		if v == nil {
@@ -9588,11 +9576,11 @@ func (o WorkspaceTaskAuthConfigParentRefPtrOutput) RootDocId() pulumi.StringPtrO
 type WorkspaceTaskCancelRestCallConfig struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskCancelRestCallConfigConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType *string `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
@@ -9612,11 +9600,11 @@ type WorkspaceTaskCancelRestCallConfigInput interface {
 type WorkspaceTaskCancelRestCallConfigArgs struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskCancelRestCallConfigConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType pulumi.StringPtrInput `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
@@ -9706,7 +9694,7 @@ func (o WorkspaceTaskCancelRestCallConfigOutput) ConfigValues() WorkspaceTaskCan
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskCancelRestCallConfigOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -9716,7 +9704,7 @@ func (o WorkspaceTaskCancelRestCallConfigOutput) MethodType() pulumi.StringPtrOu
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfig) *string { return v.MethodType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskCancelRestCallConfigOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfig) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -9760,7 +9748,7 @@ func (o WorkspaceTaskCancelRestCallConfigPtrOutput) ConfigValues() WorkspaceTask
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskCancelRestCallConfigPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfig) *string {
 		if v == nil {
@@ -9780,7 +9768,7 @@ func (o WorkspaceTaskCancelRestCallConfigPtrOutput) MethodType() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskCancelRestCallConfigPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfig) *string {
 		if v == nil {
@@ -10113,9 +10101,9 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesPtrOutput)
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue `pulumi:"refValue"`
 }
 
@@ -10131,9 +10119,9 @@ type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloa
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrInput `pulumi:"refValue"`
 }
 
@@ -10214,14 +10202,14 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		return v.ParameterValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) RefValue() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		return v.RefValue
@@ -10252,7 +10240,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		if v == nil {
@@ -10262,7 +10250,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) RefValue() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		if v == nil {
@@ -10273,11 +10261,11 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 }
 
@@ -10293,11 +10281,11 @@ type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloa
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 }
 
@@ -10378,21 +10366,21 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ConfigValues() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		return v.ConfigValues
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.ModelType
@@ -10423,7 +10411,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ConfigValues() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		if v == nil {
@@ -10433,7 +10421,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -10443,7 +10431,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -10454,7 +10442,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues `pulumi:"configParamValues"`
 }
 
@@ -10470,7 +10458,7 @@ type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloa
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrInput `pulumi:"configParamValues"`
 }
 
@@ -10551,7 +10539,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput) ConfigParamValues() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		return v.ConfigParamValues
@@ -10582,7 +10570,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput) ConfigParamValues() WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		if v == nil {
@@ -10728,7 +10716,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -10744,7 +10732,7 @@ type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloa
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -10825,7 +10813,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		return v.StringValue
@@ -10856,7 +10844,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		if v == nil {
@@ -10867,7 +10855,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPay
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -10883,7 +10871,7 @@ type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlInp
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -10964,7 +10952,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		return v.StringValue
@@ -10995,7 +10983,7 @@ func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl
 	}).(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		if v == nil {
@@ -11301,7 +11289,7 @@ func (o WorkspaceTaskConfigProviderDelegatePtrOutput) Bindings() WorkspaceTaskCo
 }
 
 type WorkspaceTaskConfigProviderDelegateBinding struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key             *string                                                    `pulumi:"key"`
 	ParameterValues *WorkspaceTaskConfigProviderDelegateBindingParameterValues `pulumi:"parameterValues"`
 }
@@ -11318,7 +11306,7 @@ type WorkspaceTaskConfigProviderDelegateBindingInput interface {
 }
 
 type WorkspaceTaskConfigProviderDelegateBindingArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key             pulumi.StringPtrInput                                             `pulumi:"key"`
 	ParameterValues WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrInput `pulumi:"parameterValues"`
 }
@@ -11374,7 +11362,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingOutput) ToWorkspaceTaskConfigP
 	return o
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskConfigProviderDelegateBindingOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBinding) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -11406,10 +11394,9 @@ func (o WorkspaceTaskConfigProviderDelegateBindingArrayOutput) Index(i pulumi.In
 }
 
 type WorkspaceTaskConfigProviderDelegateBindingParameterValues struct {
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue `pulumi:"rootObjectValue"`
-	// A simple value for the parameter.
-	SimpleValue *string `pulumi:"simpleValue"`
+	SimpleValue     *string                                                                   `pulumi:"simpleValue"`
 }
 
 // WorkspaceTaskConfigProviderDelegateBindingParameterValuesInput is an input type that accepts WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs and WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput values.
@@ -11424,10 +11411,9 @@ type WorkspaceTaskConfigProviderDelegateBindingParameterValuesInput interface {
 }
 
 type WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs struct {
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrInput `pulumi:"rootObjectValue"`
-	// A simple value for the parameter.
-	SimpleValue pulumi.StringPtrInput `pulumi:"simpleValue"`
+	SimpleValue     pulumi.StringPtrInput                                                            `pulumi:"simpleValue"`
 }
 
 func (WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs) ElementType() reflect.Type {
@@ -11507,14 +11493,13 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput) ToWorks
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput) RootObjectValue() WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValues) *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue {
 		return v.RootObjectValue
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput)
 }
 
-// A simple value for the parameter.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput) SimpleValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValues) *string { return v.SimpleValue }).(pulumi.StringPtrOutput)
 }
@@ -11543,7 +11528,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) Elem
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) RootObjectValue() WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValues) *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue {
 		if v == nil {
@@ -11553,7 +11538,6 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) Root
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput)
 }
 
-// A simple value for the parameter.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) SimpleValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValues) *string {
 		if v == nil {
@@ -11564,11 +11548,11 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) Simp
 }
 
 type WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -11586,11 +11570,11 @@ type WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueInp
 }
 
 type WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
@@ -11673,19 +11657,19 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string {
 		return v.ModelType
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string {
 		return v.ModelVersion
@@ -11723,7 +11707,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string {
 		if v == nil {
@@ -11733,7 +11717,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string {
 		if v == nil {
@@ -11743,7 +11727,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue) *string {
 		if v == nil {
@@ -11766,11 +11750,11 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue
 type WorkspaceTaskExecuteRestCallConfig struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskExecuteRestCallConfigConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType *string `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
@@ -11790,11 +11774,11 @@ type WorkspaceTaskExecuteRestCallConfigInput interface {
 type WorkspaceTaskExecuteRestCallConfigArgs struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskExecuteRestCallConfigConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType pulumi.StringPtrInput `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
@@ -11884,7 +11868,7 @@ func (o WorkspaceTaskExecuteRestCallConfigOutput) ConfigValues() WorkspaceTaskEx
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskExecuteRestCallConfigOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -11894,7 +11878,7 @@ func (o WorkspaceTaskExecuteRestCallConfigOutput) MethodType() pulumi.StringPtrO
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfig) *string { return v.MethodType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskExecuteRestCallConfigOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfig) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -11938,7 +11922,7 @@ func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) ConfigValues() WorkspaceTas
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfig) *string {
 		if v == nil {
@@ -11958,7 +11942,7 @@ func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) MethodType() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfig) *string {
 		if v == nil {
@@ -12291,9 +12275,9 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesPtrOutput
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue `pulumi:"refValue"`
 }
 
@@ -12309,9 +12293,9 @@ type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrInput `pulumi:"refValue"`
 }
 
@@ -12392,14 +12376,14 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		return v.ParameterValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) RefValue() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		return v.RefValue
@@ -12430,7 +12414,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		if v == nil {
@@ -12440,7 +12424,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) RefValue() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		if v == nil {
@@ -12451,11 +12435,11 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 }
 
@@ -12471,11 +12455,11 @@ type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 }
 
@@ -12556,21 +12540,21 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ConfigValues() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		return v.ConfigValues
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.ModelType
@@ -12601,7 +12585,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ConfigValues() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		if v == nil {
@@ -12611,7 +12595,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -12621,7 +12605,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -12632,7 +12616,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues `pulumi:"configParamValues"`
 }
 
@@ -12648,7 +12632,7 @@ type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrInput `pulumi:"configParamValues"`
 }
 
@@ -12729,7 +12713,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput) ConfigParamValues() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		return v.ConfigParamValues
@@ -12760,7 +12744,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput) ConfigParamValues() WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		if v == nil {
@@ -12906,7 +12890,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -12922,7 +12906,7 @@ type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -13003,7 +12987,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		return v.StringValue
@@ -13034,7 +13018,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		if v == nil {
@@ -13045,7 +13029,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPa
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -13061,7 +13045,7 @@ type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlIn
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -13142,7 +13126,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUr
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		return v.StringValue
@@ -13173,7 +13157,7 @@ func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUr
 	}).(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		if v == nil {
@@ -14222,33 +14206,33 @@ func (o WorkspaceTaskInputPortParentRefPtrOutput) RootDocId() pulumi.StringPtrOu
 }
 
 type WorkspaceTaskMetadata struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object's key for this object.
 	AggregatorKey *string `pulumi:"aggregatorKey"`
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []WorkspaceTaskMetadataAggregator `pulumi:"aggregators"`
-	// (Updatable) A count statistics.
+	// A count statistics.
 	CountStatistics []WorkspaceTaskMetadataCountStatistic `pulumi:"countStatistics"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedBy *string `pulumi:"createdBy"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedByName *string `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
-	// (Updatable) Information property fields.
+	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version.
 	RegistryVersion *int `pulumi:"registryVersion"`
-	// (Updatable) The date and time that the object was created.
+	// The date and time that the object was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) The date and time that the object was updated.
+	// The date and time that the object was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedBy *string `pulumi:"updatedBy"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
@@ -14264,33 +14248,33 @@ type WorkspaceTaskMetadataInput interface {
 }
 
 type WorkspaceTaskMetadataArgs struct {
-	// (Updatable) The owning object's key for this object.
+	// The owning object's key for this object.
 	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
-	// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators WorkspaceTaskMetadataAggregatorArrayInput `pulumi:"aggregators"`
-	// (Updatable) A count statistics.
+	// A count statistics.
 	CountStatistics WorkspaceTaskMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
-	// (Updatable) The user that created the object.
+	// The user that created the object.
 	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
-	// (Updatable) The full path to identify this object.
+	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
-	// (Updatable) Information property fields.
+	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
-	// (Updatable) Specifies whether this object is a favorite or not.
+	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The registry version.
+	// The registry version.
 	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
-	// (Updatable) The date and time that the object was created.
+	// The date and time that the object was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// (Updatable) The date and time that the object was updated.
+	// The date and time that the object was updated.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
-	// (Updatable) The user that updated the object.
+	// The user that updated the object.
 	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
@@ -14345,72 +14329,72 @@ func (o WorkspaceTaskMetadataOutput) ToWorkspaceTaskMetadataOutputWithContext(ct
 	return o
 }
 
-// (Updatable) The owning object's key for this object.
+// The owning object's key for this object.
 func (o WorkspaceTaskMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+// A summary type containing information about the object's aggregator including its type, key, name and description.
 func (o WorkspaceTaskMetadataOutput) Aggregators() WorkspaceTaskMetadataAggregatorArrayOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) []WorkspaceTaskMetadataAggregator { return v.Aggregators }).(WorkspaceTaskMetadataAggregatorArrayOutput)
 }
 
-// (Updatable) A count statistics.
+// A count statistics.
 func (o WorkspaceTaskMetadataOutput) CountStatistics() WorkspaceTaskMetadataCountStatisticArrayOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) []WorkspaceTaskMetadataCountStatistic { return v.CountStatistics }).(WorkspaceTaskMetadataCountStatisticArrayOutput)
 }
 
-// (Updatable) The user that created the object.
+// The user that created the object.
 func (o WorkspaceTaskMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that created the object.
+// The user that created the object.
 func (o WorkspaceTaskMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The full path to identify this object.
+// The full path to identify this object.
 func (o WorkspaceTaskMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Information property fields.
+// Information property fields.
 func (o WorkspaceTaskMetadataOutput) InfoFields() pulumi.MapOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
 }
 
-// (Updatable) Specifies whether this object is a favorite or not.
+// Specifies whether this object is a favorite or not.
 func (o WorkspaceTaskMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 func (o WorkspaceTaskMetadataOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The registry version.
+// The registry version.
 func (o WorkspaceTaskMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The date and time that the object was created.
+// The date and time that the object was created.
 func (o WorkspaceTaskMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The date and time that the object was updated.
+// The date and time that the object was updated.
 func (o WorkspaceTaskMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that updated the object.
+// The user that updated the object.
 func (o WorkspaceTaskMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The user that updated the object.
+// The user that updated the object.
 func (o WorkspaceTaskMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
@@ -14440,11 +14424,11 @@ type WorkspaceTaskMetadataAggregator struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
-	// (Updatable) The object type.
+	// The object type.
 	Type *string `pulumi:"type"`
 }
 
@@ -14464,11 +14448,11 @@ type WorkspaceTaskMetadataAggregatorArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The object type.
+	// The object type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -14533,7 +14517,7 @@ func (o WorkspaceTaskMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutp
 	return o.ApplyT(func(v WorkspaceTaskMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -14543,7 +14527,7 @@ func (o WorkspaceTaskMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The object type.
+// The object type.
 func (o WorkspaceTaskMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -14569,7 +14553,7 @@ func (o WorkspaceTaskMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) Wor
 }
 
 type WorkspaceTaskMetadataCountStatistic struct {
-	// (Updatable) The array of statistics.
+	// The array of statistics.
 	ObjectTypeCountLists []WorkspaceTaskMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
 }
 
@@ -14585,7 +14569,7 @@ type WorkspaceTaskMetadataCountStatisticInput interface {
 }
 
 type WorkspaceTaskMetadataCountStatisticArgs struct {
-	// (Updatable) The array of statistics.
+	// The array of statistics.
 	ObjectTypeCountLists WorkspaceTaskMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
 }
 
@@ -14640,7 +14624,7 @@ func (o WorkspaceTaskMetadataCountStatisticOutput) ToWorkspaceTaskMetadataCountS
 	return o
 }
 
-// (Updatable) The array of statistics.
+// The array of statistics.
 func (o WorkspaceTaskMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceTaskMetadataCountStatisticObjectTypeCountListArrayOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataCountStatistic) []WorkspaceTaskMetadataCountStatisticObjectTypeCountList {
 		return v.ObjectTypeCountLists
@@ -14668,9 +14652,9 @@ func (o WorkspaceTaskMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput)
 }
 
 type WorkspaceTaskMetadataCountStatisticObjectTypeCountList struct {
-	// (Updatable) The value for the count statistic object.
+	// The value for the count statistic object.
 	ObjectCount *string `pulumi:"objectCount"`
-	// (Updatable) The type of object for the count statistic object.
+	// The type of object for the count statistic object.
 	ObjectType *string `pulumi:"objectType"`
 }
 
@@ -14686,9 +14670,9 @@ type WorkspaceTaskMetadataCountStatisticObjectTypeCountListInput interface {
 }
 
 type WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs struct {
-	// (Updatable) The value for the count statistic object.
+	// The value for the count statistic object.
 	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
-	// (Updatable) The type of object for the count statistic object.
+	// The type of object for the count statistic object.
 	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
@@ -14743,12 +14727,12 @@ func (o WorkspaceTaskMetadataCountStatisticObjectTypeCountListOutput) ToWorkspac
 	return o
 }
 
-// (Updatable) The value for the count statistic object.
+// The value for the count statistic object.
 func (o WorkspaceTaskMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of object for the count statistic object.
+// The type of object for the count statistic object.
 func (o WorkspaceTaskMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
@@ -14933,7 +14917,7 @@ func (o WorkspaceTaskOpConfigValuesPtrOutput) ParentRef() WorkspaceTaskOpConfigV
 
 type WorkspaceTaskOpConfigValuesConfigParamValues struct {
 	ConfigParamValue *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue `pulumi:"configParamValue"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 }
 
@@ -14950,7 +14934,7 @@ type WorkspaceTaskOpConfigValuesConfigParamValuesInput interface {
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesArgs struct {
 	ConfigParamValue WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrInput `pulumi:"configParamValue"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
@@ -15037,7 +15021,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesOutput) ConfigParamValue() W
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValues) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -15075,7 +15059,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesPtrOutput) ConfigParamValue(
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValues) *string {
 		if v == nil {
@@ -15086,17 +15070,17 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesPtrOutput) Key() pulumi.Stri
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue *int `pulumi:"intValue"`
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue *string `pulumi:"objectValue"`
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue `pulumi:"refValue"`
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue `pulumi:"rootObjectValue"`
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -15112,17 +15096,17 @@ type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueInput interface
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue pulumi.StringPtrInput `pulumi:"objectValue"`
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrInput `pulumi:"refValue"`
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrInput `pulumi:"rootObjectValue"`
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -15203,36 +15187,36 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) ToWo
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *int { return v.IntValue }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) ObjectValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string { return v.ObjectValue }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string { return v.ParameterValue }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) RefValue() WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue {
 		return v.RefValue
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) RootObjectValue() WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
 		return v.RootObjectValue
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string { return v.StringValue }).(pulumi.StringPtrOutput)
 }
@@ -15261,7 +15245,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) E
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *int {
 		if v == nil {
@@ -15271,7 +15255,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) I
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) ObjectValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -15281,7 +15265,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) O
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -15291,7 +15275,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) P
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) RefValue() WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue {
 		if v == nil {
@@ -15301,7 +15285,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) R
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) RootObjectValue() WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
 		if v == nil {
@@ -15311,7 +15295,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) R
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -15322,11 +15306,11 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValuePtrOutput) S
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -15346,11 +15330,11 @@ type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueInput i
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -15435,19 +15419,19 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutp
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		return v.ModelType
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		return v.ModelVersion
@@ -15490,7 +15474,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrO
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -15500,7 +15484,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -15510,7 +15494,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -15541,11 +15525,11 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValuePtrO
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -15563,11 +15547,11 @@ type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue
 }
 
 type WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
@@ -15650,21 +15634,21 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectVa
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.ModelType
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.ModelVersion
@@ -15702,7 +15686,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectVa
 	}).(WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -15712,7 +15696,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectVa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -15722,7 +15706,7 @@ func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectVa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -16783,7 +16767,7 @@ func (o WorkspaceTaskOutputPortParentRefPtrOutput) RootDocId() pulumi.StringPtrO
 type WorkspaceTaskParameter struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskParameterConfigValues `pulumi:"configValues"`
-	// (Updatable) A default value for the vairable.
+	// (Updatable) The default value of the parameter.
 	DefaultValue *string `pulumi:"defaultValue"`
 	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
@@ -16805,9 +16789,9 @@ type WorkspaceTaskParameter struct {
 	OutputAggregationType *string `pulumi:"outputAggregationType"`
 	// (Updatable) A reference to the object's parent.
 	ParentRef *WorkspaceTaskParameterParentRef `pulumi:"parentRef"`
-	// (Updatable) A base class for all model types, including First Class and its contained objects.
+	// (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
 	RootObjectDefaultValue *string `pulumi:"rootObjectDefaultValue"`
-	// (Updatable) The object type.
+	// (Updatable) This can either be a string value referencing the type or a BaseType object.
 	Type *string `pulumi:"type"`
 	// (Updatable) The type of value the parameter was created for.
 	TypeName *string `pulumi:"typeName"`
@@ -16829,7 +16813,7 @@ type WorkspaceTaskParameterInput interface {
 type WorkspaceTaskParameterArgs struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskParameterConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) A default value for the vairable.
+	// (Updatable) The default value of the parameter.
 	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
 	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput `pulumi:"description"`
@@ -16851,9 +16835,9 @@ type WorkspaceTaskParameterArgs struct {
 	OutputAggregationType pulumi.StringPtrInput `pulumi:"outputAggregationType"`
 	// (Updatable) A reference to the object's parent.
 	ParentRef WorkspaceTaskParameterParentRefPtrInput `pulumi:"parentRef"`
-	// (Updatable) A base class for all model types, including First Class and its contained objects.
+	// (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
 	RootObjectDefaultValue pulumi.StringPtrInput `pulumi:"rootObjectDefaultValue"`
-	// (Updatable) The object type.
+	// (Updatable) This can either be a string value referencing the type or a BaseType object.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 	// (Updatable) The type of value the parameter was created for.
 	TypeName pulumi.StringPtrInput `pulumi:"typeName"`
@@ -16917,7 +16901,7 @@ func (o WorkspaceTaskParameterOutput) ConfigValues() WorkspaceTaskParameterConfi
 	return o.ApplyT(func(v WorkspaceTaskParameter) *WorkspaceTaskParameterConfigValues { return v.ConfigValues }).(WorkspaceTaskParameterConfigValuesPtrOutput)
 }
 
-// (Updatable) A default value for the vairable.
+// (Updatable) The default value of the parameter.
 func (o WorkspaceTaskParameterOutput) DefaultValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameter) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
@@ -16972,12 +16956,12 @@ func (o WorkspaceTaskParameterOutput) ParentRef() WorkspaceTaskParameterParentRe
 	return o.ApplyT(func(v WorkspaceTaskParameter) *WorkspaceTaskParameterParentRef { return v.ParentRef }).(WorkspaceTaskParameterParentRefPtrOutput)
 }
 
-// (Updatable) A base class for all model types, including First Class and its contained objects.
+// (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
 func (o WorkspaceTaskParameterOutput) RootObjectDefaultValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameter) *string { return v.RootObjectDefaultValue }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The object type.
+// (Updatable) This can either be a string value referencing the type or a BaseType object.
 func (o WorkspaceTaskParameterOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -17174,7 +17158,7 @@ func (o WorkspaceTaskParameterConfigValuesPtrOutput) ParentRef() WorkspaceTaskPa
 
 type WorkspaceTaskParameterConfigValuesConfigParamValues struct {
 	ConfigParamValue *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue `pulumi:"configParamValue"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 }
 
@@ -17191,7 +17175,7 @@ type WorkspaceTaskParameterConfigValuesConfigParamValuesInput interface {
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesArgs struct {
 	ConfigParamValue WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrInput `pulumi:"configParamValue"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
@@ -17278,7 +17262,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesOutput) ConfigParamVa
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValues) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -17316,7 +17300,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesPtrOutput) ConfigPara
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValues) *string {
 		if v == nil {
@@ -17327,17 +17311,17 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesPtrOutput) Key() pulu
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue *int `pulumi:"intValue"`
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue *string `pulumi:"objectValue"`
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue `pulumi:"refValue"`
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue `pulumi:"rootObjectValue"`
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -17353,17 +17337,17 @@ type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueInput in
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue pulumi.StringPtrInput `pulumi:"objectValue"`
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrInput `pulumi:"refValue"`
-	// (Updatable) The root object value, used in custom parameters.
+	// The root object value, used in custom parameters.
 	RootObjectValue WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrInput `pulumi:"rootObjectValue"`
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -17444,40 +17428,40 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutpu
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *int { return v.IntValue }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) ObjectValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		return v.ObjectValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		return v.ParameterValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) RefValue() WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue {
 		return v.RefValue
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) RootObjectValue() WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
 		return v.RootObjectValue
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		return v.StringValue
@@ -17508,7 +17492,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *int {
 		if v == nil {
@@ -17518,7 +17502,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) ObjectValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -17528,7 +17512,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -17538,7 +17522,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) RefValue() WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue {
 		if v == nil {
@@ -17548,7 +17532,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The root object value, used in custom parameters.
+// The root object value, used in custom parameters.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) RootObjectValue() WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
 		if v == nil {
@@ -17558,7 +17542,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue) *string {
 		if v == nil {
@@ -17569,11 +17553,11 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValuePtrOu
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -17593,11 +17577,11 @@ type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -17682,21 +17666,21 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefVa
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		return v.ModelType
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		return v.ModelVersion
@@ -17741,7 +17725,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefVa
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -17751,7 +17735,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefVa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -17761,7 +17745,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefVa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValuePtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue) *string {
 		if v == nil {
@@ -17792,11 +17776,11 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefVa
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
@@ -17814,11 +17798,11 @@ type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObje
 }
 
 type WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs struct {
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
@@ -17901,21 +17885,21 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootO
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.ModelType
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		return v.ModelVersion
@@ -17953,7 +17937,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootO
 	}).(WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -17963,7 +17947,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -17973,7 +17957,7 @@ func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValuePtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue) *string {
 		if v == nil {
@@ -18464,11 +18448,11 @@ func (o WorkspaceTaskParentRefPtrOutput) RootDocId() pulumi.StringPtrOutput {
 type WorkspaceTaskPollRestCallConfig struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskPollRestCallConfigConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType *string `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
@@ -18488,11 +18472,11 @@ type WorkspaceTaskPollRestCallConfigInput interface {
 type WorkspaceTaskPollRestCallConfigArgs struct {
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskPollRestCallConfigConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) The REST method to use.
 	MethodType pulumi.StringPtrInput `pulumi:"methodType"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
 	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
@@ -18582,7 +18566,7 @@ func (o WorkspaceTaskPollRestCallConfigOutput) ConfigValues() WorkspaceTaskPollR
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -18592,7 +18576,7 @@ func (o WorkspaceTaskPollRestCallConfigOutput) MethodType() pulumi.StringPtrOutp
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfig) *string { return v.MethodType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfig) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
@@ -18636,7 +18620,7 @@ func (o WorkspaceTaskPollRestCallConfigPtrOutput) ConfigValues() WorkspaceTaskPo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfig) *string {
 		if v == nil {
@@ -18656,7 +18640,7 @@ func (o WorkspaceTaskPollRestCallConfigPtrOutput) MethodType() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigPtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfig) *string {
 		if v == nil {
@@ -19074,9 +19058,9 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPtrOutput) R
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue `pulumi:"refValue"`
 }
 
@@ -19092,9 +19076,9 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionIn
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgs struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrInput `pulumi:"refValue"`
 }
 
@@ -19175,14 +19159,14 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition) *string {
 		return v.ParameterValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionOutput) RefValue() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue {
 		return v.RefValue
@@ -19213,7 +19197,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionPtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition) *string {
 		if v == nil {
@@ -19223,7 +19207,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionPtrOutput) RefValue() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue {
 		if v == nil {
@@ -19234,11 +19218,11 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue struct {
-	// (Updatable) The expression string for the object.
+	// The expression string for the object.
 	ExprString *string `pulumi:"exprString"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -19256,11 +19240,11 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRe
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs struct {
-	// (Updatable) The expression string for the object.
+	// The expression string for the object.
 	ExprString pulumi.StringPtrInput `pulumi:"exprString"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -19343,21 +19327,21 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput)
 }
 
-// (Updatable) The expression string for the object.
+// The expression string for the object.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutput) ExprString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		return v.ExprString
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		return v.ModelType
@@ -19395,7 +19379,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutput)
 }
 
-// (Updatable) The expression string for the object.
+// The expression string for the object.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput) ExprString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		if v == nil {
@@ -19405,7 +19389,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		if v == nil {
@@ -19415,7 +19399,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue) *string {
 		if v == nil {
@@ -19436,7 +19420,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditio
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval struct {
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue *float64 `pulumi:"objectValue"`
 }
 
@@ -19452,7 +19436,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalInp
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgs struct {
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue pulumi.Float64PtrInput `pulumi:"objectValue"`
 }
 
@@ -19533,7 +19517,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalOutput) ObjectValue() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval) *float64 {
 		return v.ObjectValue
@@ -19564,7 +19548,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalPtrOutput) ObjectValue() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval) *float64 {
 		if v == nil {
@@ -19575,7 +19559,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -19591,7 +19575,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUni
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -19672,7 +19656,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit) *string {
 		return v.StringValue
@@ -19703,7 +19687,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit) *string {
 		if v == nil {
@@ -19714,7 +19698,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration struct {
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue *float64 `pulumi:"objectValue"`
 }
 
@@ -19730,7 +19714,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgs struct {
-	// (Updatable) An object value of the parameter.
+	// An object value of the parameter.
 	ObjectValue pulumi.Float64PtrInput `pulumi:"objectValue"`
 }
 
@@ -19811,7 +19795,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationPtrOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationOutput) ObjectValue() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration) *float64 {
 		return v.ObjectValue
@@ -19842,7 +19826,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationOutput)
 }
 
-// (Updatable) An object value of the parameter.
+// An object value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationPtrOutput) ObjectValue() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration) *float64 {
 		if v == nil {
@@ -19853,7 +19837,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -19869,7 +19853,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -19950,7 +19934,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit) *string {
 		return v.StringValue
@@ -19981,7 +19965,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit) *string {
 		if v == nil {
@@ -19992,9 +19976,9 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurat
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue *string `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue `pulumi:"refValue"`
 }
 
@@ -20010,9 +19994,9 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadI
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs struct {
-	// (Updatable) Reference to the parameter by its key.
+	// Reference to the parameter by its key.
 	ParameterValue pulumi.StringPtrInput `pulumi:"parameterValue"`
-	// (Updatable) The root object reference value.
+	// The root object reference value.
 	RefValue WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrInput `pulumi:"refValue"`
 }
 
@@ -20093,14 +20077,14 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		return v.ParameterValue
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput) RefValue() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		return v.RefValue
@@ -20131,7 +20115,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutput)
 }
 
-// (Updatable) Reference to the parameter by its key.
+// Reference to the parameter by its key.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) ParameterValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload) *string {
 		if v == nil {
@@ -20141,7 +20125,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The root object reference value.
+// The root object reference value.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadPtrOutput) RefValue() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
 		if v == nil {
@@ -20152,11 +20136,11 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -20174,11 +20158,11 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadR
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs struct {
-	// (Updatable) Configuration values can be string, objects, or parameters.
+	// Configuration values can be string, objects, or parameters.
 	ConfigValues WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrInput `pulumi:"configValues"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -20261,21 +20245,21 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ConfigValues() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		return v.ConfigValues
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.Key
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		return v.ModelType
@@ -20313,7 +20297,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutput)
 }
 
-// (Updatable) Configuration values can be string, objects, or parameters.
+// Configuration values can be string, objects, or parameters.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ConfigValues() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
 		if v == nil {
@@ -20323,7 +20307,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -20333,7 +20317,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValuePtrOutput) ModelType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue) *string {
 		if v == nil {
@@ -20354,7 +20338,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues `pulumi:"configParamValues"`
 }
 
@@ -20370,7 +20354,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadR
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs struct {
-	// (Updatable) The configuration parameter values.
+	// The configuration parameter values.
 	ConfigParamValues WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrInput `pulumi:"configParamValues"`
 }
 
@@ -20451,7 +20435,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput) ConfigParamValues() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		return v.ConfigParamValues
@@ -20482,7 +20466,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutput)
 }
 
-// (Updatable) The configuration parameter values.
+// The configuration parameter values.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesPtrOutput) ConfigParamValues() WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues) *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
 		if v == nil {
@@ -20628,7 +20612,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -20644,7 +20628,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadR
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -20725,7 +20709,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		return v.StringValue
@@ -20756,7 +20740,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam) *string {
 		if v == nil {
@@ -20767,7 +20751,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPaylo
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue *string `pulumi:"stringValue"`
 }
 
@@ -20783,7 +20767,7 @@ type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlInput
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs struct {
-	// (Updatable) A string value of the parameter.
+	// A string value of the parameter.
 	StringValue pulumi.StringPtrInput `pulumi:"stringValue"`
 }
 
@@ -20864,7 +20848,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlOu
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		return v.StringValue
@@ -20895,7 +20879,7 @@ func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlPt
 	}).(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlOutput)
 }
 
-// (Updatable) A string value of the parameter.
+// A string value of the parameter.
 func (o WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlPtrOutput) StringValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl) *string {
 		if v == nil {
@@ -21066,7 +21050,7 @@ type WorkspaceTaskRegistryMetadata struct {
 	AggregatorKey string `pulumi:"aggregatorKey"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
-	// (Updatable) The key of the object.
+	// (Updatable) The identifying key for the object.
 	Key *string `pulumi:"key"`
 	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
@@ -21090,7 +21074,7 @@ type WorkspaceTaskRegistryMetadataArgs struct {
 	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
-	// (Updatable) The key of the object.
+	// (Updatable) The identifying key for the object.
 	Key pulumi.StringPtrInput `pulumi:"key"`
 	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
@@ -21185,7 +21169,7 @@ func (o WorkspaceTaskRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) The identifying key for the object.
 func (o WorkspaceTaskRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -21244,7 +21228,7 @@ func (o WorkspaceTaskRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) The identifying key for the object.
 func (o WorkspaceTaskRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskRegistryMetadata) *string {
 		if v == nil {
@@ -21765,7 +21749,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesPtrOutput) Scal
 }
 
 type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue *int `pulumi:"intValue"`
 }
 
@@ -21781,7 +21765,7 @@ type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthInput interf
 }
 
 type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
 }
 
@@ -21862,7 +21846,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthOutput) T
 	}).(WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthPtrOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength) *int { return v.IntValue }).(pulumi.IntPtrOutput)
 }
@@ -21891,7 +21875,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthPtrOutput
 	}).(WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthPtrOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength) *int {
 		if v == nil {
@@ -21902,7 +21886,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthPtrOutput
 }
 
 type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue *int `pulumi:"intValue"`
 }
 
@@ -21918,7 +21902,7 @@ type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleInput interfa
 }
 
 type WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs struct {
-	// (Updatable) An integer value of the parameter.
+	// An integer value of the parameter.
 	IntValue pulumi.IntPtrInput `pulumi:"intValue"`
 }
 
@@ -21999,7 +21983,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleOutput) To
 	}).(WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScalePtrOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale) *int { return v.IntValue }).(pulumi.IntPtrOutput)
 }
@@ -22028,7 +22012,7 @@ func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScalePtrOutput)
 	}).(WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleOutput)
 }
 
-// (Updatable) An integer value of the parameter.
+// An integer value of the parameter.
 func (o WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScalePtrOutput) IntValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale) *int {
 		if v == nil {

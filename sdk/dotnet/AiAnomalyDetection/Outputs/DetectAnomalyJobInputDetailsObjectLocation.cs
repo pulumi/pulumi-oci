@@ -18,7 +18,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
-        /// Object Storage namespace.
+        /// Object Storage namespace name.
         /// </summary>
         public readonly string? Namespace;
         /// <summary>

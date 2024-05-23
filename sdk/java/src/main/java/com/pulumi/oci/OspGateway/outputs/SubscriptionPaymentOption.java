@@ -12,134 +12,134 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionPaymentOption {
     /**
-     * @return (Updatable) Credit card type.
+     * @return Credit card type.
      * 
      */
     private @Nullable String creditCardType;
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     private @Nullable String emailAddress;
     /**
-     * @return (Updatable) Agreement id for the paypal account.
+     * @return Agreement id for the paypal account.
      * 
      */
     private @Nullable String extBillingAgreementId;
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     private @Nullable String firstName;
     /**
-     * @return (Updatable) Last four digits of the card.
+     * @return Last four digits of the card.
      * 
      */
     private @Nullable String lastDigits;
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     private @Nullable String lastName;
     /**
-     * @return (Updatable) Name on the credit card.
+     * @return Name on the credit card.
      * 
      */
     private @Nullable String nameOnCard;
     /**
-     * @return (Updatable) Payment method
+     * @return Payment method
      * 
      */
     private @Nullable String paymentMethod;
     /**
-     * @return (Updatable) Expired date of the credit card.
+     * @return Expired date of the credit card.
      * 
      */
     private @Nullable String timeExpiration;
     /**
-     * @return (Updatable) Wallet instrument internal id.
+     * @return Wallet instrument internal id.
      * 
      */
     private @Nullable String walletInstrumentId;
     /**
-     * @return (Updatable) Wallet transaction id.
+     * @return Wallet transaction id.
      * 
      */
     private @Nullable String walletTransactionId;
 
     private SubscriptionPaymentOption() {}
     /**
-     * @return (Updatable) Credit card type.
+     * @return Credit card type.
      * 
      */
     public Optional<String> creditCardType() {
         return Optional.ofNullable(this.creditCardType);
     }
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     public Optional<String> emailAddress() {
         return Optional.ofNullable(this.emailAddress);
     }
     /**
-     * @return (Updatable) Agreement id for the paypal account.
+     * @return Agreement id for the paypal account.
      * 
      */
     public Optional<String> extBillingAgreementId() {
         return Optional.ofNullable(this.extBillingAgreementId);
     }
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     public Optional<String> firstName() {
         return Optional.ofNullable(this.firstName);
     }
     /**
-     * @return (Updatable) Last four digits of the card.
+     * @return Last four digits of the card.
      * 
      */
     public Optional<String> lastDigits() {
         return Optional.ofNullable(this.lastDigits);
     }
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     public Optional<String> lastName() {
         return Optional.ofNullable(this.lastName);
     }
     /**
-     * @return (Updatable) Name on the credit card.
+     * @return Name on the credit card.
      * 
      */
     public Optional<String> nameOnCard() {
         return Optional.ofNullable(this.nameOnCard);
     }
     /**
-     * @return (Updatable) Payment method
+     * @return Payment method
      * 
      */
     public Optional<String> paymentMethod() {
         return Optional.ofNullable(this.paymentMethod);
     }
     /**
-     * @return (Updatable) Expired date of the credit card.
+     * @return Expired date of the credit card.
      * 
      */
     public Optional<String> timeExpiration() {
         return Optional.ofNullable(this.timeExpiration);
     }
     /**
-     * @return (Updatable) Wallet instrument internal id.
+     * @return Wallet instrument internal id.
      * 
      */
     public Optional<String> walletInstrumentId() {
         return Optional.ofNullable(this.walletInstrumentId);
     }
     /**
-     * @return (Updatable) Wallet transaction id.
+     * @return Wallet transaction id.
      * 
      */
     public Optional<String> walletTransactionId() {

@@ -18,7 +18,7 @@ public final class BuildPipelineBuildPipelineParametersItem {
      */
     private String defaultValue;
     /**
-     * @return (Updatable) Optional description about the build pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     private @Nullable String description;
@@ -37,7 +37,7 @@ public final class BuildPipelineBuildPipelineParametersItem {
         return this.defaultValue;
     }
     /**
-     * @return (Updatable) Optional description about the build pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     public Optional<String> description() {

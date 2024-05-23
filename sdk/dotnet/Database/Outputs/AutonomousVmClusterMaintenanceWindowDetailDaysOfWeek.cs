@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeek
     {
         /// <summary>
-        /// (Updatable) Name of the month of the year.
+        /// (Updatable) Name of the day of the week.
         /// </summary>
         public readonly string Name;
 

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) The name of the aggregator.
         /// </summary>
         public readonly string? Name;
         /// <summary>

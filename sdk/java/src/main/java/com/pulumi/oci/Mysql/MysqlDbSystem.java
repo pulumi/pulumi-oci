@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMysqlDbSystem = new MysqlDbSystem("testMysqlDbSystem", MysqlDbSystemArgs.builder()        
+ *         var testMysqlDbSystem = new MysqlDbSystem("testMysqlDbSystem", MysqlDbSystemArgs.builder()
  *             .availabilityDomain(mysqlDbSystemAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shapeName(mysqlShapeName)

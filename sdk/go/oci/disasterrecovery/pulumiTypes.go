@@ -2101,7 +2101,7 @@ type DrProtectionGroupMemberBlockVolumeOperation struct {
 	AttachmentDetails *DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails `pulumi:"attachmentDetails"`
 	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId *string `pulumi:"blockVolumeId"`
-	// (Updatable) The details for creating a file system mount.
+	// (Updatable) The details for creating a mount for a file system on a block volume.
 	MountDetails *DrProtectionGroupMemberBlockVolumeOperationMountDetails `pulumi:"mountDetails"`
 }
 
@@ -2121,7 +2121,7 @@ type DrProtectionGroupMemberBlockVolumeOperationArgs struct {
 	AttachmentDetails DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrInput `pulumi:"attachmentDetails"`
 	// (Updatable) The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
 	BlockVolumeId pulumi.StringPtrInput `pulumi:"blockVolumeId"`
-	// (Updatable) The details for creating a file system mount.
+	// (Updatable) The details for creating a mount for a file system on a block volume.
 	MountDetails DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput `pulumi:"mountDetails"`
 }
 
@@ -2188,7 +2188,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationOutput) BlockVolumeId() pulum
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *string { return v.BlockVolumeId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The details for creating a file system mount.
+// (Updatable) The details for creating a mount for a file system on a block volume.
 func (o DrProtectionGroupMemberBlockVolumeOperationOutput) MountDetails() DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperation) *DrProtectionGroupMemberBlockVolumeOperationMountDetails {
 		return v.MountDetails
@@ -2355,7 +2355,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsPtrOutput) V
 }
 
 type DrProtectionGroupMemberBlockVolumeOperationMountDetails struct {
-	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	// (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
 	MountPoint *string `pulumi:"mountPoint"`
 }
 
@@ -2371,7 +2371,7 @@ type DrProtectionGroupMemberBlockVolumeOperationMountDetailsInput interface {
 }
 
 type DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs struct {
-	// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+	// (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
 	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
 }
 
@@ -2452,7 +2452,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) ToDrProte
 	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput)
 }
 
-// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+// (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
@@ -2481,7 +2481,7 @@ func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) Elem()
 	}).(DrProtectionGroupMemberBlockVolumeOperationMountDetailsOutput)
 }
 
-// (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+// (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
 func (o DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput) MountPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBlockVolumeOperationMountDetails) *string {
 		if v == nil {
@@ -2735,7 +2735,7 @@ func (o DrProtectionGroupMemberFileSystemOperationArrayOutput) Index(i pulumi.In
 }
 
 type DrProtectionGroupMemberFileSystemOperationMountDetails struct {
-	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
 	MountTargetId *string `pulumi:"mountTargetId"`
 }
 
@@ -2751,7 +2751,7 @@ type DrProtectionGroupMemberFileSystemOperationMountDetailsInput interface {
 }
 
 type DrProtectionGroupMemberFileSystemOperationMountDetailsArgs struct {
-	// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+	// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
 	MountTargetId pulumi.StringPtrInput `pulumi:"mountTargetId"`
 }
 
@@ -2832,7 +2832,7 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) ToDrProtec
 	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberFileSystemOperationMountDetails) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
 }
@@ -2861,7 +2861,7 @@ func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) Elem() 
 	}).(DrProtectionGroupMemberFileSystemOperationMountDetailsOutput)
 }
 
-// (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+// (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
 func (o DrProtectionGroupMemberFileSystemOperationMountDetailsPtrOutput) MountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberFileSystemOperationMountDetails) *string {
 		if v == nil {

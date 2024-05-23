@@ -31,7 +31,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
      */
     private @Nullable String customPlugin;
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the source.
      * 
      */
     private @Nullable String name;
@@ -74,7 +74,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
         return Optional.ofNullable(this.customPlugin);
     }
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the source.
      * 
      */
     public Optional<String> name() {

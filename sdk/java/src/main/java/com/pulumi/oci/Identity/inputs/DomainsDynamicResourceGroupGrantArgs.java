@@ -96,10 +96,10 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -113,10 +113,10 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -131,18 +131,17 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -150,18 +149,17 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -289,10 +287,10 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -310,10 +308,10 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -330,18 +328,17 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
-         * 
-         * **Added In:** 2011192329
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * required: true
-         * * idcsReturnEmptyWhenNull: true
-         * * mutability: readWrite
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
-         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder
@@ -353,18 +350,17 @@ public final class DomainsDynamicResourceGroupGrantArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
-         * 
-         * **Added In:** 2011192329
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * required: true
-         * * idcsReturnEmptyWhenNull: true
-         * * mutability: readWrite
+         * * caseExact: true
+         * * idcsAddedSinceVersion: 3
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
-         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder

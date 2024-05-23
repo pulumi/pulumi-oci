@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstanceConsoleConnection = new InstanceConsoleConnection("testInstanceConsoleConnection", InstanceConsoleConnectionArgs.builder()        
+ *         var testInstanceConsoleConnection = new InstanceConsoleConnection("testInstanceConsoleConnection", InstanceConsoleConnectionArgs.builder()
  *             .instanceId(testInstance.id())
  *             .publicKey(instanceConsoleConnectionPublicKey)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

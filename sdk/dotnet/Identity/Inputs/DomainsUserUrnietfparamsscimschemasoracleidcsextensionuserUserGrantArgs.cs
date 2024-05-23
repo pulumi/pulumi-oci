@@ -66,9 +66,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? GrantorId { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI of this Grant to this User.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -83,20 +81,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The ID of this Grant to this User.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

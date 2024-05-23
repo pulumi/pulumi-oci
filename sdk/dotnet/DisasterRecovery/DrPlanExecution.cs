@@ -131,7 +131,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> PeerRegion { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the plan execution.
+        /// The type of the DR plan executed.
         /// </summary>
         [Output("planExecutionType")]
         public Output<string> PlanExecutionType { get; private set; } = null!;
@@ -379,7 +379,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? PeerRegion { get; set; }
 
         /// <summary>
-        /// The type of the plan execution.
+        /// The type of the DR plan executed.
         /// </summary>
         [Input("planExecutionType")]
         public Input<string>? PlanExecutionType { get; set; }

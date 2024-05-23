@@ -29,9 +29,7 @@ public final class DomainsCloudGateOauthClient {
      */
     private @Nullable String clientId;
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -46,22 +44,17 @@ public final class DomainsCloudGateOauthClient {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
@@ -87,9 +80,7 @@ public final class DomainsCloudGateOauthClient {
         return Optional.ofNullable(this.clientId);
     }
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -106,22 +97,17 @@ public final class DomainsCloudGateOauthClient {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

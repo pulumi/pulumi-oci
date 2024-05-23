@@ -52,34 +52,32 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -122,13 +120,14 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The token type.
+     * (Updatable) The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -138,13 +137,14 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The token type.
+     * @return (Updatable) The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -155,13 +155,13 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -172,13 +172,13 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -259,17 +259,16 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -280,17 +279,16 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -341,13 +339,14 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param type (Updatable) The token type.
+         * @param type (Updatable) The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -361,13 +360,14 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param type (Updatable) The token type.
+         * @param type (Updatable) The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -380,13 +380,13 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -401,13 +401,13 @@ public final class DomainsIdentitySettingIdcsLastModifiedByArgs extends com.pulu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

@@ -99,14 +99,14 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Import(name="databaseSoftwareImageId")
     private @Nullable Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Optional<Output<String>> databaseSoftwareImageId() {
@@ -674,7 +674,7 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -685,7 +685,7 @@ public final class DatabaseUpgradeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 

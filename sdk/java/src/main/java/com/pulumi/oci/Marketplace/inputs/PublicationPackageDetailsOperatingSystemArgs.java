@@ -16,14 +16,14 @@ public final class PublicationPackageDetailsOperatingSystemArgs extends com.pulu
     public static final PublicationPackageDetailsOperatingSystemArgs Empty = new PublicationPackageDetailsOperatingSystemArgs();
 
     /**
-     * (Updatable) The name of the contact.
+     * The name of the operating system.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name of the contact.
+     * @return The name of the operating system.
      * 
      */
     public Optional<Output<String>> name() {
@@ -55,7 +55,7 @@ public final class PublicationPackageDetailsOperatingSystemArgs extends com.pulu
         }
 
         /**
-         * @param name (Updatable) The name of the contact.
+         * @param name The name of the operating system.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class PublicationPackageDetailsOperatingSystemArgs extends com.pulu
         }
 
         /**
-         * @param name (Updatable) The name of the contact.
+         * @param name The name of the operating system.
          * 
          * @return builder
          * 

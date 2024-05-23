@@ -106,7 +106,7 @@ type StreamCdnConfig struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -174,7 +174,7 @@ type streamCdnConfigState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -204,7 +204,7 @@ type StreamCdnConfigState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -397,7 +397,7 @@ func (o StreamCdnConfigOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 func (o StreamCdnConfigOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

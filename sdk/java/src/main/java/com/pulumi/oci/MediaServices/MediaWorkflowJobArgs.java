@@ -22,14 +22,14 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
     public static final MediaWorkflowJobArgs Empty = new MediaWorkflowJobArgs();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     public Output<String> compartmentId() {
@@ -219,7 +219,7 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class MediaWorkflowJobArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
          * 
          * @return builder
          * 

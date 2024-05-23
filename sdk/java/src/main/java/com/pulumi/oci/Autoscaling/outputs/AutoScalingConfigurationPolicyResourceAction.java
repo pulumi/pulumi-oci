@@ -10,10 +10,6 @@ import java.util.Objects;
 
 @CustomType
 public final class AutoScalingConfigurationPolicyResourceAction {
-    /**
-     * @return The action to take when autoscaling is triggered.
-     * 
-     */
     private String action;
     /**
      * @return The type of resource action.
@@ -22,10 +18,6 @@ public final class AutoScalingConfigurationPolicyResourceAction {
     private String actionType;
 
     private AutoScalingConfigurationPolicyResourceAction() {}
-    /**
-     * @return The action to take when autoscaling is triggered.
-     * 
-     */
     public String action() {
         return this.action;
     }

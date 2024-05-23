@@ -28,11 +28,10 @@ public final class DomainsNetworkPerimeterIpAddress {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -43,13 +42,13 @@ public final class DomainsNetworkPerimeterIpAddress {
      */
     private String value;
     /**
-     * @return (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * @return (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -77,11 +76,10 @@ public final class DomainsNetworkPerimeterIpAddress {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of exact ipaddress or the range in CIDR or the range with start and end ip addresses
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -94,13 +92,13 @@ public final class DomainsNetworkPerimeterIpAddress {
         return this.value;
     }
     /**
-     * @return (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+     * @return (Updatable) Indicates the type of Ip Address example, IPV4 or IPV6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string

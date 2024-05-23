@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
     public sealed class TargetAssetMigrationAssetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

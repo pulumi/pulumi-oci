@@ -25,6 +25,8 @@ class NetworkFirewallPolicyMappedSecretArgs:
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
         :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
+               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
@@ -70,6 +72,8 @@ class NetworkFirewallPolicyMappedSecretArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Type of the secrets mapped based on the policy.
+        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -135,6 +139,8 @@ class _NetworkFirewallPolicyMappedSecretState:
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
         :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
         :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
+               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
@@ -210,6 +216,8 @@ class _NetworkFirewallPolicyMappedSecretState:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         Type of the secrets mapped based on the policy.
+        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -292,6 +300,8 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
         :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
+               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
@@ -409,6 +419,8 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this Mapped Secret belongs to.
         :param pulumi.Input[str] source: Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
         :param pulumi.Input[str] type: Type of the secrets mapped based on the policy.
+               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
                
@@ -466,6 +478,8 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def type(self) -> pulumi.Output[str]:
         """
         Type of the secrets mapped based on the policy.
+        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 

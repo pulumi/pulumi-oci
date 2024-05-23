@@ -35,14 +35,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsArgs extends com
     }
 
     /**
-     * (Updatable) Configurations associated with the ResponderRule
+     * ResponderRule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs>>> configurations() {
@@ -170,7 +170,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsArgs extends com
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsArgs extends com
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsArgs extends com
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 

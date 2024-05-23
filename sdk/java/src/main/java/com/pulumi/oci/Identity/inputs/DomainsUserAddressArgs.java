@@ -57,7 +57,7 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Full name
+     * (Updatable) The full mailing address, formatted for display or use with a mailing label. This attribute MAY contain newlines.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -74,7 +74,7 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> formatted;
 
     /**
-     * @return (Updatable) Full name
+     * @return (Updatable) The full mailing address, formatted for display or use with a mailing label. This attribute MAY contain newlines.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -165,7 +165,8 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
      * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -181,7 +182,8 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
      * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -265,13 +267,14 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;work&#39; or &#39;home&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -281,13 +284,14 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;work&#39; or &#39;home&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -374,7 +378,7 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param formatted (Updatable) Full name
+         * @param formatted (Updatable) The full mailing address, formatted for display or use with a mailing label. This attribute MAY contain newlines.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -395,7 +399,7 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param formatted (Updatable) Full name
+         * @param formatted (Updatable) The full mailing address, formatted for display or use with a mailing label. This attribute MAY contain newlines.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -500,7 +504,8 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -520,7 +525,8 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
          * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -618,13 +624,14 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;work&#39; or &#39;home&#39;.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -638,13 +645,14 @@ public final class DomainsUserAddressArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;work&#39; or &#39;home&#39;.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none

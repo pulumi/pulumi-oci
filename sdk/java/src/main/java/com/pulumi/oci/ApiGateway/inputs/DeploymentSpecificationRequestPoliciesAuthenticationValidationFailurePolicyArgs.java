@@ -173,20 +173,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the Validation failure Policy.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Validation failure Policy.
      * 
      */
     public Output<String> type() {
@@ -496,10 +490,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the Validation failure Policy.
          * 
          * @return builder
          * 
@@ -510,10 +501,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the Validation failure Policy.
          * 
          * @return builder
          * 

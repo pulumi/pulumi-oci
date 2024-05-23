@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnectionAssignment = new ConnectionAssignment("testConnectionAssignment", ConnectionAssignmentArgs.builder()        
+ *         var testConnectionAssignment = new ConnectionAssignment("testConnectionAssignment", ConnectionAssignmentArgs.builder()
  *             .connectionId(testConnection.id())
  *             .deploymentId(testDeployment.id())
  *             .build());

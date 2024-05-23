@@ -80,7 +80,7 @@ export class Policy extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * The web application domain that the WAAS policy protects.
      */
     public readonly domain!: pulumi.Output<string>;
     /**
@@ -190,7 +190,7 @@ export interface PolicyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * The web application domain that the WAAS policy protects.
      */
     domain?: pulumi.Input<string>;
     /**
@@ -244,7 +244,7 @@ export interface PolicyArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * The web application domain that the WAAS policy protects.
      */
     domain: pulumi.Input<string>;
     /**

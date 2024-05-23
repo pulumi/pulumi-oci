@@ -219,7 +219,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
                  description: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        :param pulumi.Input[str] description: (Updatable) Description of private source scan host zone.
+        :param pulumi.Input[str] description: (Updatable) Description of private source dns zone.
         """
         pulumi.set(__self__, "dns_zone", dns_zone)
         if description is not None:
@@ -241,7 +241,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Description of private source scan host zone.
+        (Updatable) Description of private source dns zone.
         """
         return pulumi.get(self, "description")
 

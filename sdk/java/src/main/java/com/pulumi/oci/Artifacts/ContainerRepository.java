@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testContainerRepository = new ContainerRepository("testContainerRepository", ContainerRepositoryArgs.builder()        
+ *         var testContainerRepository = new ContainerRepository("testContainerRepository", ContainerRepositoryArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(containerRepositoryDisplayName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue
     {
         /// <summary>
-        /// (Updatable) Configuration values can be string, objects, or parameters.
+        /// Configuration values can be string, objects, or parameters.
         /// </summary>
         public readonly Outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues? ConfigValues;
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The type of the task.
         /// </summary>
         public readonly string? ModelType;
 

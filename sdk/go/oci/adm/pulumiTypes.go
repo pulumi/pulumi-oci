@@ -393,13 +393,13 @@ type RemediationRecipeScmConfiguration struct {
 	IsAutomergeEnabled bool `pulumi:"isAutomergeEnabled"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
 	OciCodeRepositoryId *string `pulumi:"ociCodeRepositoryId"`
-	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 	PatSecretId *string `pulumi:"patSecretId"`
-	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
 	RepositoryUrl *string `pulumi:"repositoryUrl"`
 	// (Updatable) The type of Source Code Management.
 	ScmType string `pulumi:"scmType"`
-	// (Updatable) The username that will be used to authenticate with Jenkins.
+	// (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
 	Username *string `pulumi:"username"`
 }
 
@@ -425,13 +425,13 @@ type RemediationRecipeScmConfigurationArgs struct {
 	IsAutomergeEnabled pulumi.BoolInput `pulumi:"isAutomergeEnabled"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
 	OciCodeRepositoryId pulumi.StringPtrInput `pulumi:"ociCodeRepositoryId"`
-	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 	PatSecretId pulumi.StringPtrInput `pulumi:"patSecretId"`
-	// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+	// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
 	RepositoryUrl pulumi.StringPtrInput `pulumi:"repositoryUrl"`
 	// (Updatable) The type of Source Code Management.
 	ScmType pulumi.StringInput `pulumi:"scmType"`
-	// (Updatable) The username that will be used to authenticate with Jenkins.
+	// (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
 	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
@@ -537,12 +537,12 @@ func (o RemediationRecipeScmConfigurationOutput) OciCodeRepositoryId() pulumi.St
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.OciCodeRepositoryId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 func (o RemediationRecipeScmConfigurationOutput) PatSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.PatSecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
 func (o RemediationRecipeScmConfigurationOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
 }
@@ -552,7 +552,7 @@ func (o RemediationRecipeScmConfigurationOutput) ScmType() pulumi.StringOutput {
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) string { return v.ScmType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The username that will be used to authenticate with Jenkins.
+// (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
 func (o RemediationRecipeScmConfigurationOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RemediationRecipeScmConfiguration) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -631,7 +631,7 @@ func (o RemediationRecipeScmConfigurationPtrOutput) OciCodeRepositoryId() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
 func (o RemediationRecipeScmConfigurationPtrOutput) PatSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
 		if v == nil {
@@ -641,7 +641,7 @@ func (o RemediationRecipeScmConfigurationPtrOutput) PatSecretId() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+// (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
 func (o RemediationRecipeScmConfigurationPtrOutput) RepositoryUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
 		if v == nil {
@@ -661,7 +661,7 @@ func (o RemediationRecipeScmConfigurationPtrOutput) ScmType() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The username that will be used to authenticate with Jenkins.
+// (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
 func (o RemediationRecipeScmConfigurationPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RemediationRecipeScmConfiguration) *string {
 		if v == nil {

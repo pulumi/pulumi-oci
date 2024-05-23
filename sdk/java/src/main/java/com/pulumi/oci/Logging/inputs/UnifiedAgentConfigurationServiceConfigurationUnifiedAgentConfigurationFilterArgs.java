@@ -221,14 +221,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     }
 
     /**
-     * (Updatable) The name key to tag this Grok pattern.
+     * (Updatable) Unique name for the filter.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the filter.
      * 
      */
     public Output<String> name() {
@@ -736,7 +736,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the filter.
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the filter.
          * 
          * @return builder
          * 

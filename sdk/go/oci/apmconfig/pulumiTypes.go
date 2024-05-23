@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ConfigDimension struct {
-	// (Updatable) The name of the metric. This must be a known metric name.
+	// (Updatable) The name of the dimension.
 	Name *string `pulumi:"name"`
-	// (Updatable) This must not be set.
+	// (Updatable) The source to populate the dimension. This must not be specified.
 	ValueSource *string `pulumi:"valueSource"`
 }
 
@@ -32,9 +32,9 @@ type ConfigDimensionInput interface {
 }
 
 type ConfigDimensionArgs struct {
-	// (Updatable) The name of the metric. This must be a known metric name.
+	// (Updatable) The name of the dimension.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) This must not be set.
+	// (Updatable) The source to populate the dimension. This must not be specified.
 	ValueSource pulumi.StringPtrInput `pulumi:"valueSource"`
 }
 
@@ -89,12 +89,12 @@ func (o ConfigDimensionOutput) ToConfigDimensionOutputWithContext(ctx context.Co
 	return o
 }
 
-// (Updatable) The name of the metric. This must be a known metric name.
+// (Updatable) The name of the dimension.
 func (o ConfigDimensionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) This must not be set.
+// (Updatable) The source to populate the dimension. This must not be specified.
 func (o ConfigDimensionOutput) ValueSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigDimension) *string { return v.ValueSource }).(pulumi.StringPtrOutput)
 }

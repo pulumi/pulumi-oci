@@ -124,14 +124,14 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+     * An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     @Import(name="validities")
     private @Nullable Output<List<CertificateAuthorityCurrentVersionValidityArgs>> validities;
 
     /**
-     * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+     * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     public Optional<Output<List<CertificateAuthorityCurrentVersionValidityArgs>>> validities() {
@@ -139,14 +139,14 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     * The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
     @Import(name="versionName")
     private @Nullable Output<String> versionName;
 
     /**
-     * @return (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
     public Optional<Output<String>> versionName() {
@@ -369,7 +369,7 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
         }
 
         /**
-         * @param validities (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+         * @param validities An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
         }
 
         /**
-         * @param validities (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+         * @param validities An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
         }
 
         /**
-         * @param validities (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+         * @param validities An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
         }
 
         /**
-         * @param versionName (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+         * @param versionName The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class CertificateAuthorityCurrentVersionArgs extends com.pulumi.res
         }
 
         /**
-         * @param versionName (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+         * @param versionName The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
          * 
          * @return builder
          * 

@@ -50,6 +50,8 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
 
     /**
      * The type of input location. The allowed values are:
+     * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+     * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
      * 
      */
     @Import(name="sourceType", required=true)
@@ -57,6 +59,8 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
 
     /**
      * @return The type of input location. The allowed values are:
+     * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+     * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
      * 
      */
     public Output<String> sourceType() {
@@ -143,6 +147,8 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
 
         /**
          * @param sourceType The type of input location. The allowed values are:
+         * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+         * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
          * 
          * @return builder
          * 
@@ -154,6 +160,8 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
 
         /**
          * @param sourceType The type of input location. The allowed values are:
+         * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+         * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
          * 
          * @return builder
          * 

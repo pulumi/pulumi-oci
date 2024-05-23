@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string NamespaceB;
         /// <summary>
-        /// Canary strategy type.
+        /// Blue Green strategy type
         /// </summary>
         public readonly string StrategyType;
 

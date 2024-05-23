@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMetastore = new Metastore("testMetastore", MetastoreArgs.builder()        
+ *         var testMetastore = new Metastore("testMetastore", MetastoreArgs.builder()
  *             .compartmentId(compartmentId)
  *             .defaultExternalTableLocation(metastoreDefaultExternalTableLocation)
  *             .defaultManagedTableLocation(metastoreDefaultManagedTableLocation)

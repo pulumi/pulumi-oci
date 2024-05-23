@@ -63,6 +63,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         /// </summary>
         [Output("destinationType")]
         public Output<string> DestinationType { get; private set; } = null!;
@@ -166,6 +167,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         /// </summary>
         [Input("destinationType", required: true)]
         public Input<string> DestinationType { get; set; } = null!;
@@ -219,6 +221,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }

@@ -56,7 +56,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The origin of the certificate.
+        /// The origin of the certificate.
         /// </summary>
         [Output("configType")]
         public Output<string> ConfigType { get; private set; } = null!;
@@ -86,13 +86,13 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the certificate authority (CA) that issued the certificate.
         /// </summary>
         [Output("issuerCertificateAuthorityId")]
         public Output<string> IssuerCertificateAuthorityId { get; private set; } = null!;
 
         /// <summary>
-        /// The algorithm to use to create key pairs.
+        /// The algorithm used to create key pairs.
         /// </summary>
         [Output("keyAlgorithm")]
         public Output<string> KeyAlgorithm { get; private set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The algorithm to use to sign the public key certificate.
+        /// The algorithm used to sign the public key certificate.
         /// </summary>
         [Output("signatureAlgorithm")]
         public Output<string> SignatureAlgorithm { get; private set; } = null!;
@@ -304,7 +304,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The origin of the certificate.
+        /// The origin of the certificate.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
@@ -352,13 +352,13 @@ namespace Pulumi.Oci.CertificatesManagement
         }
 
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the certificate authority (CA) that issued the certificate.
         /// </summary>
         [Input("issuerCertificateAuthorityId")]
         public Input<string>? IssuerCertificateAuthorityId { get; set; }
 
         /// <summary>
-        /// The algorithm to use to create key pairs.
+        /// The algorithm used to create key pairs.
         /// </summary>
         [Input("keyAlgorithm")]
         public Input<string>? KeyAlgorithm { get; set; }
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The algorithm to use to sign the public key certificate.
+        /// The algorithm used to sign the public key certificate.
         /// </summary>
         [Input("signatureAlgorithm")]
         public Input<string>? SignatureAlgorithm { get; set; }

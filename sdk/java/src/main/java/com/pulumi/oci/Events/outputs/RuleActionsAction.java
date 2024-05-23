@@ -22,7 +22,7 @@ public final class RuleActionsAction {
      */
     private String actionType;
     /**
-     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     private @Nullable String description;
@@ -37,10 +37,7 @@ public final class RuleActionsAction {
      */
     private @Nullable String id;
     /**
-     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
      * 
      */
     private Boolean isEnabled;
@@ -77,7 +74,7 @@ public final class RuleActionsAction {
         return this.actionType;
     }
     /**
-     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     public Optional<String> description() {
@@ -98,10 +95,7 @@ public final class RuleActionsAction {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
      * 
      */
     public Boolean isEnabled() {

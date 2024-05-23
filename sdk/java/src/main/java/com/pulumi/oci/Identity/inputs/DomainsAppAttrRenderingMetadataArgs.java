@@ -250,14 +250,11 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * (Updatable) Name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -270,14 +267,11 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     private Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return (Updatable) Name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -291,10 +285,9 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Display sequence of the bundle configuration property.
+     * (Updatable) Data type of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
@@ -308,10 +301,9 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     private @Nullable Output<Integer> order;
 
     /**
-     * @return (Updatable) Display sequence of the bundle configuration property.
+     * @return (Updatable) Data type of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
@@ -326,16 +318,14 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) If true, indicates that this value must be protected.
-     * 
-     * **Added In:** 18.2.2
+     * (Updatable) Is the attribute readOnly.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 
@@ -344,16 +334,14 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     private @Nullable Output<Boolean> readOnly;
 
     /**
-     * @return (Updatable) If true, indicates that this value must be protected.
-     * 
-     * **Added In:** 18.2.2
+     * @return (Updatable) Is the attribute readOnly.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 
@@ -396,13 +384,13 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * (Updatable) Attribute is required or optional.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: boolean
      * * uniqueness: none
@@ -412,13 +400,13 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
     private @Nullable Output<Boolean> required;
 
     /**
-     * @return (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Attribute is required or optional.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: boolean
      * * uniqueness: none
@@ -839,14 +827,11 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) Name of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -863,14 +848,11 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) Name of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -886,10 +868,9 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param order (Updatable) Display sequence of the bundle configuration property.
+         * @param order (Updatable) Data type of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
@@ -907,10 +888,9 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param order (Updatable) Display sequence of the bundle configuration property.
+         * @param order (Updatable) Data type of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
@@ -927,16 +907,14 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param readOnly (Updatable) If true, indicates that this value must be protected.
-         * 
-         * **Added In:** 18.2.2
+         * @param readOnly (Updatable) Is the attribute readOnly.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
-         * * returned: request
+         * * returned: default
          * * type: boolean
          * * uniqueness: none
          * 
@@ -949,16 +927,14 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param readOnly (Updatable) If true, indicates that this value must be protected.
-         * 
-         * **Added In:** 18.2.2
+         * @param readOnly (Updatable) Is the attribute readOnly.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
-         * * returned: request
+         * * returned: default
          * * type: boolean
          * * uniqueness: none
          * 
@@ -1009,13 +985,13 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param required (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param required (Updatable) Attribute is required or optional.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: boolean
          * * uniqueness: none
@@ -1029,13 +1005,13 @@ public final class DomainsAppAttrRenderingMetadataArgs extends com.pulumi.resour
         }
 
         /**
-         * @param required (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param required (Updatable) Attribute is required or optional.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: boolean
          * * uniqueness: none

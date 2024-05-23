@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Waf.Inputs
     public sealed class AppFirewallPolicyRequestProtectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        /// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         /// </summary>
         [Input("actionName", required: true)]
         public Input<string> ActionName { get; set; } = null!;

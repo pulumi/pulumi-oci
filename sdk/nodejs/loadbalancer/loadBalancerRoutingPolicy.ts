@@ -78,11 +78,7 @@ export class LoadBalancerRoutingPolicy extends pulumi.CustomResource {
      */
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -144,11 +140,7 @@ export interface LoadBalancerRoutingPolicyState {
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
     name?: pulumi.Input<string>;
     /**
@@ -171,11 +163,7 @@ export interface LoadBalancerRoutingPolicyArgs {
      */
     loadBalancerId: pulumi.Input<string>;
     /**
-     * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      */
     name?: pulumi.Input<string>;
     /**

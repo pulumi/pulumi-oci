@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataset = new Dataset("testDataset", DatasetArgs.builder()        
+ *         var testDataset = new Dataset("testDataset", DatasetArgs.builder()
  *             .annotationFormat(datasetAnnotationFormat)
  *             .compartmentId(compartmentId)
  *             .datasetFormatDetails(DatasetDatasetFormatDetailsArgs.builder()

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs>? _items;
 
         /// <summary>
-        /// (Updatable) List of parameters defined for a deployment pipeline.
+        /// List of parameters defined for a deployment pipeline.
         /// </summary>
         public InputList<Inputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemGetArgs> Items
         {

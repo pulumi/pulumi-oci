@@ -18,130 +18,108 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
     /**
-     * @return (Updatable) The body of the stock response from the mock backend.
+     * @return The body of the stock response from the mock backend.
      * 
      */
     private @Nullable String body;
     /**
-     * @return (Updatable) Defines a timeout for establishing a connection with a proxied server.
+     * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
     private @Nullable Double connectTimeoutInSeconds;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
     private @Nullable String functionId;
-    /**
-     * @return (Updatable)
-     * 
-     */
     private @Nullable List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers;
     /**
-     * @return (Updatable) Defines whether or not to uphold SSL verification.
+     * @return Defines whether or not to uphold SSL verification.
      * 
      */
     private @Nullable Boolean isSslVerifyDisabled;
     /**
-     * @return (Updatable) Defines a timeout for reading a response from the proxied server.
+     * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
     private @Nullable Double readTimeoutInSeconds;
     /**
-     * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
+     * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
     private @Nullable Double sendTimeoutInSeconds;
     /**
-     * @return (Updatable) The status code of the stock response from the mock backend.
+     * @return The status code of the stock response from the mock backend.
      * 
      */
     private @Nullable Integer status;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the Response Cache Store Policy.
      * 
      */
     private String type;
-    /**
-     * @return (Updatable)
-     * 
-     */
     private @Nullable String url;
 
     private DeploymentSpecificationRouteBackendRoutingBackendBackend() {}
     /**
-     * @return (Updatable) The body of the stock response from the mock backend.
+     * @return The body of the stock response from the mock backend.
      * 
      */
     public Optional<String> body() {
         return Optional.ofNullable(this.body);
     }
     /**
-     * @return (Updatable) Defines a timeout for establishing a connection with a proxied server.
+     * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
     public Optional<Double> connectTimeoutInSeconds() {
         return Optional.ofNullable(this.connectTimeoutInSeconds);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
     public Optional<String> functionId() {
         return Optional.ofNullable(this.functionId);
     }
-    /**
-     * @return (Updatable)
-     * 
-     */
     public List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> headers() {
         return this.headers == null ? List.of() : this.headers;
     }
     /**
-     * @return (Updatable) Defines whether or not to uphold SSL verification.
+     * @return Defines whether or not to uphold SSL verification.
      * 
      */
     public Optional<Boolean> isSslVerifyDisabled() {
         return Optional.ofNullable(this.isSslVerifyDisabled);
     }
     /**
-     * @return (Updatable) Defines a timeout for reading a response from the proxied server.
+     * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
     public Optional<Double> readTimeoutInSeconds() {
         return Optional.ofNullable(this.readTimeoutInSeconds);
     }
     /**
-     * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
+     * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
     public Optional<Double> sendTimeoutInSeconds() {
         return Optional.ofNullable(this.sendTimeoutInSeconds);
     }
     /**
-     * @return (Updatable) The status code of the stock response from the mock backend.
+     * @return The status code of the stock response from the mock backend.
      * 
      */
     public Optional<Integer> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the Response Cache Store Policy.
      * 
      */
     public String type() {
         return this.type;
     }
-    /**
-     * @return (Updatable)
-     * 
-     */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);
     }

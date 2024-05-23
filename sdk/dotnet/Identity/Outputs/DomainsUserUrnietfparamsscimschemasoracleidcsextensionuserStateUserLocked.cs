@@ -32,8 +32,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// (Updatable) The date and time that the current resource was locked.
         /// 
-        /// **Added In:** 19.1.4
-        /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
@@ -46,9 +44,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? LockDate;
         /// <summary>
-        /// (Updatable) Indicates that the recovery is locked.
-        /// 
-        /// **Added In:** 19.1.4
+        /// (Updatable) Indicates that the account is locked.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -56,6 +52,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * multiValued: false
         /// * mutability: readWrite
         /// * idcsRequiresWriteForAccessFlows: true
+        /// * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
         /// * required: false
         /// * returned: default
         /// * type: boolean

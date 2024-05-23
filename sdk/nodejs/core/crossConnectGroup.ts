@@ -122,11 +122,7 @@ export class CrossConnectGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The cross-connect group's current state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -215,11 +211,7 @@ export interface CrossConnectGroupState {
      */
     ociPhysicalDeviceName?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The cross-connect group's current state.
      */
     state?: pulumi.Input<string>;
     /**

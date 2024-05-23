@@ -18,10 +18,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainsUserImArgs Empty = new DomainsUserImArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) A human-readable name, primarily used for display purposes
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -34,10 +35,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human-readable name, primarily used for display purposes
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -51,10 +53,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred messenger or primary messenger. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -67,10 +70,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Boolean> primary;
 
     /**
-     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * @return (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred messenger or primary messenger. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -84,13 +88,14 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) A label that indicates the attribute&#39;s function--for example, &#39;aim&#39;, &#39;gtalk&#39;, or &#39;mobile&#39;
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -100,13 +105,14 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label that indicates the attribute&#39;s function--for example, &#39;aim&#39;, &#39;gtalk&#39;, or &#39;mobile&#39;
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -117,38 +123,34 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) User&#39;s instant messaging address
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) User&#39;s instant messaging address
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -183,10 +185,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable name, primarily used for display purposes
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -203,10 +206,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable name, primarily used for display purposes
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -222,10 +226,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred messenger or primary messenger. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -242,10 +247,11 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred messenger or primary messenger. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -261,13 +267,14 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates the attribute&#39;s function--for example, &#39;aim&#39;, &#39;gtalk&#39;, or &#39;mobile&#39;
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -281,13 +288,14 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates the attribute&#39;s function--for example, &#39;aim&#39;, &#39;gtalk&#39;, or &#39;mobile&#39;
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -300,19 +308,17 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) User&#39;s instant messaging address
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -323,19 +329,17 @@ public final class DomainsUserImArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) User&#39;s instant messaging address
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

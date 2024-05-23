@@ -118,7 +118,7 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * User&#39;s ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -126,16 +126,16 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -143,9 +143,9 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -467,7 +467,7 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -475,9 +475,9 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ocid User&#39;s ocid
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -496,9 +496,9 @@ public final class DomainsMySmtpCredentialArgs extends com.pulumi.resources.Reso
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

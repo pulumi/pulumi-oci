@@ -14,9 +14,9 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent
     {
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -29,20 +29,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
-        /// 
-        /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: default
-        /// * type: binary
-        /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable)
         /// </summary>
         public readonly string Value;
 

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeEffectiveDetectorRuleDetail
     {
         /// <summary>
-        /// (Updatable) Base condition object
+        /// Base condition object
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// (Updatable) Configuration details
+        /// Configuration details
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration> Configurations;
         /// <summary>
@@ -26,15 +26,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly bool? IsConfigurationAllowed;
         /// <summary>
-        /// (Updatable) Enables the control
+        /// Enables the control
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
-        /// (Updatable) user defined labels for a detector rule
+        /// user defined labels for a detector rule
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// (Updatable) The Risk Level
+        /// The Risk Level
         /// </summary>
         public readonly string? RiskLevel;
 

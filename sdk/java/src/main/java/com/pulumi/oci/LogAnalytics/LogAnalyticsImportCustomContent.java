@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsImportCustomContent = new LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", LogAnalyticsImportCustomContentArgs.builder()        
+ *         var testLogAnalyticsImportCustomContent = new LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", LogAnalyticsImportCustomContentArgs.builder()
  *             .importCustomContentFile(logAnalyticsImportCustomContentImportCustomContentFile)
  *             .namespace(logAnalyticsImportCustomContentNamespace)
  *             .expect(logAnalyticsImportCustomContentExpect)

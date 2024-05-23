@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHeatWaveCluster = new HeatWaveCluster("testHeatWaveCluster", HeatWaveClusterArgs.builder()        
+ *         var testHeatWaveCluster = new HeatWaveCluster("testHeatWaveCluster", HeatWaveClusterArgs.builder()
  *             .dbSystemId(testDbSystem.id())
  *             .clusterSize(heatWaveClusterClusterSize)
  *             .isLakehouseEnabled(heatWaveClusterIsLakehouseEnabled)

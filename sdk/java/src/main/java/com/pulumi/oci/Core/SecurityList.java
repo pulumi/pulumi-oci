@@ -76,7 +76,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSecurityList = new SecurityList("testSecurityList", SecurityListArgs.builder()        
+ *         var testSecurityList = new SecurityList("testSecurityList", SecurityListArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

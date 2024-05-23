@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAccessPolicy = new AccessPolicy("testAccessPolicy", AccessPolicyArgs.builder()        
+ *         var testAccessPolicy = new AccessPolicy("testAccessPolicy", AccessPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .meshId(testMesh.id())
  *             .name(accessPolicyName)

@@ -13,11 +13,7 @@ namespace Pulumi.Oci.Waas.Inputs
     public sealed class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The unique name of the whitelist.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The name of the header.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

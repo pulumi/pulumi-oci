@@ -38,7 +38,7 @@ class MediaAssetArgs:
                  source_media_workflow_version: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MediaAsset resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
                
@@ -52,7 +52,7 @@ class MediaAssetArgs:
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]] metadatas: (Updatable) JSON string containing the technial metadata for the media asset.
+        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[str] object_etag: eTag of the underlying object storage object.
@@ -105,7 +105,7 @@ class MediaAssetArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -238,7 +238,7 @@ class MediaAssetArgs:
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]]]:
         """
-        (Updatable) JSON string containing the technial metadata for the media asset.
+        (Updatable) List of Metadata.
         """
         return pulumi.get(self, "metadatas")
 
@@ -373,7 +373,7 @@ class _MediaAssetState:
         """
         Input properties used for looking up and filtering MediaAsset resources.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -381,7 +381,7 @@ class _MediaAssetState:
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMediaAssetTagArgs']]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]] metadatas: (Updatable) JSON string containing the technial metadata for the media asset.
+        :param pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[str] object_etag: eTag of the underlying object storage object.
@@ -392,7 +392,7 @@ class _MediaAssetState:
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] state: The current state of the MediaAsset.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
@@ -465,7 +465,7 @@ class _MediaAssetState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -570,7 +570,7 @@ class _MediaAssetState:
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MediaAssetMetadataArgs']]]]:
         """
-        (Updatable) JSON string containing the technial metadata for the media asset.
+        (Updatable) List of Metadata.
         """
         return pulumi.get(self, "metadatas")
 
@@ -702,7 +702,7 @@ class _MediaAssetState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -781,7 +781,7 @@ class MediaAsset(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -789,7 +789,7 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMetadataArgs']]]] metadatas: (Updatable) JSON string containing the technial metadata for the media asset.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMetadataArgs']]]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[str] object_etag: eTag of the underlying object storage object.
@@ -937,7 +937,7 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bucket: The name of the object storage bucket where this asset is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -945,7 +945,7 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] master_media_asset_id: (Updatable) The ID of the senior most asset from which this asset is derived.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMediaAssetTagArgs']]]] media_asset_tags: (Updatable) list of tags for the MediaAsset.
         :param pulumi.Input[str] media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMetadataArgs']]]] metadatas: (Updatable) JSON string containing the technial metadata for the media asset.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MediaAssetMetadataArgs']]]] metadatas: (Updatable) List of Metadata.
         :param pulumi.Input[str] namespace: The object storage namespace where this asset is located.
         :param pulumi.Input[str] object: The object storage object name that identifies this asset.
         :param pulumi.Input[str] object_etag: eTag of the underlying object storage object.
@@ -956,7 +956,7 @@ class MediaAsset(pulumi.CustomResource):
         :param pulumi.Input[str] source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param pulumi.Input[str] state: The current state of the MediaAsset.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of the media asset.
                
@@ -1006,7 +1006,7 @@ class MediaAsset(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1075,7 +1075,7 @@ class MediaAsset(pulumi.CustomResource):
     @pulumi.getter
     def metadatas(self) -> pulumi.Output[Sequence['outputs.MediaAssetMetadata']]:
         """
-        (Updatable) JSON string containing the technial metadata for the media asset.
+        (Updatable) List of Metadata.
         """
         return pulumi.get(self, "metadatas")
 
@@ -1163,7 +1163,7 @@ class MediaAsset(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

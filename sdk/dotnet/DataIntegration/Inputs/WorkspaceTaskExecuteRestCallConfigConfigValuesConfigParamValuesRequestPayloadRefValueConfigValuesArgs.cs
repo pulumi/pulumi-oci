@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The configuration parameter values.
+        /// The configuration parameter values.
         /// </summary>
         [Input("configParamValues")]
         public Input<Inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs>? ConfigParamValues { get; set; }

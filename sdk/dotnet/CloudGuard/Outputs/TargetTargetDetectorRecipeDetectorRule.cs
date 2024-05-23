@@ -24,7 +24,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// (Updatable) Overriden settings of a Detector Rule applied on target
         /// </summary>
         public readonly Outputs.TargetTargetDetectorRecipeDetectorRuleDetails Details;
         /// <summary>

@@ -32,14 +32,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAr
     }
 
     /**
-     * (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
      * 
      */
     @Import(name="selectionSource", required=true)
     private Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs> selectionSource;
 
     /**
-     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * @return (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
      * 
      */
     public Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs> selectionSource() {
@@ -103,7 +103,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAr
         }
 
         /**
-         * @param selectionSource (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+         * @param selectionSource (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAr
         }
 
         /**
-         * @param selectionSource (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+         * @param selectionSource (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 

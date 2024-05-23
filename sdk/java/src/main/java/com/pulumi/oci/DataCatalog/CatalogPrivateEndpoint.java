@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCatalogPrivateEndpoint = new CatalogPrivateEndpoint("testCatalogPrivateEndpoint", CatalogPrivateEndpointArgs.builder()        
+ *         var testCatalogPrivateEndpoint = new CatalogPrivateEndpoint("testCatalogPrivateEndpoint", CatalogPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dnsZones(catalogPrivateEndpointDnsZones)
  *             .subnetId(testSubnet.id())

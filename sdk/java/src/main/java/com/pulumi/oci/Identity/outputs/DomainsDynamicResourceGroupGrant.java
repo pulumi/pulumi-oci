@@ -47,10 +47,10 @@ public final class DomainsDynamicResourceGroupGrant {
      */
     private @Nullable String grantMechanism;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -62,18 +62,17 @@ public final class DomainsDynamicResourceGroupGrant {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -120,10 +119,10 @@ public final class DomainsDynamicResourceGroupGrant {
         return Optional.ofNullable(this.grantMechanism);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -137,18 +136,17 @@ public final class DomainsDynamicResourceGroupGrant {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag value
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * required: true
-     * * idcsReturnEmptyWhenNull: true
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsAddedSinceVersion: 3
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */

@@ -94,14 +94,14 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of the target RRSet within the target zone.
+     * The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     @Import(name="rtype", required=true)
     private Output<String> rtype;
 
     /**
-     * @return The type of the target RRSet within the target zone.
+     * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
      */
     public Output<String> rtype() {
@@ -259,7 +259,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rtype The type of the target RRSet within the target zone.
+         * @param rtype The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class RrsetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rtype The type of the target RRSet within the target zone.
+         * @param rtype The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          * 
          * @return builder
          * 

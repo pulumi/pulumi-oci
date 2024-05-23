@@ -33,8 +33,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) The date and time that the current resource was locked.
      * 
-     * **Added In:** 19.1.4
-     * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
@@ -48,9 +46,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      */
     private @Nullable String lockDate;
     /**
-     * @return (Updatable) Indicates that the recovery is locked.
-     * 
-     * **Added In:** 19.1.4
+     * @return (Updatable) Indicates that the account is locked.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -58,6 +54,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * multiValued: false
      * * mutability: readWrite
      * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -105,8 +102,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) The date and time that the current resource was locked.
      * 
-     * **Added In:** 19.1.4
-     * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
@@ -122,9 +117,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         return Optional.ofNullable(this.lockDate);
     }
     /**
-     * @return (Updatable) Indicates that the recovery is locked.
-     * 
-     * **Added In:** 19.1.4
+     * @return (Updatable) Indicates that the account is locked.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -132,6 +125,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * multiValued: false
      * * mutability: readWrite
      * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean

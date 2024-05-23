@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Waf.Outputs
     public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight
     {
         /// <summary>
-        /// (Updatable) Unique key of referenced protection capability.
+        /// (Updatable) Unique key of collaborative capability for which weight will be overridden.
         /// </summary>
         public readonly string Key;
         /// <summary>

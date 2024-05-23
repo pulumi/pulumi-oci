@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
     public sealed class ProfileLevelsConfiguration
     {
         /// <summary>
-        /// (Updatable) The list of tags specified in the current profile override.
+        /// (Updatable) The array of configuration levels.
         /// </summary>
         public readonly ImmutableArray<Outputs.ProfileLevelsConfigurationItem> Items;
 

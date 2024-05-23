@@ -67,7 +67,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// The total amount of memory available to the node, in gigabytes
+        /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<int>? MemoryInGbs { get; set; }
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<int>? Ocpus { get; set; }
 
         /// <summary>
-        /// Shape of the node
+        /// (Updatable) Shape of the node.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet in which the node should be created
+        /// The OCID of the subnet in which the node will be created.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

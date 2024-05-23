@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PolicyWafConfigDeviceFingerprintChallenge {
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
     private @Nullable String action;
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     private @Nullable Integer actionExpirationInSeconds;
@@ -31,17 +31,17 @@ public final class PolicyWafConfigDeviceFingerprintChallenge {
      */
     private @Nullable PolicyWafConfigDeviceFingerprintChallengeChallengeSettings challengeSettings;
     /**
-     * @return (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * @return (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
      * 
      */
     private @Nullable Integer failureThreshold;
     /**
-     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
      * 
      */
     private @Nullable Integer failureThresholdExpirationInSeconds;
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
      * 
      */
     private Boolean isEnabled;
@@ -58,14 +58,14 @@ public final class PolicyWafConfigDeviceFingerprintChallenge {
 
     private PolicyWafConfigDeviceFingerprintChallenge() {}
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Integer> actionExpirationInSeconds() {
@@ -79,21 +79,21 @@ public final class PolicyWafConfigDeviceFingerprintChallenge {
         return Optional.ofNullable(this.challengeSettings);
     }
     /**
-     * @return (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * @return (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
      * 
      */
     public Optional<Integer> failureThreshold() {
         return Optional.ofNullable(this.failureThreshold);
     }
     /**
-     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Integer> failureThresholdExpirationInSeconds() {
         return Optional.ofNullable(this.failureThresholdExpirationInSeconds);
     }
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
      * 
      */
     public Boolean isEnabled() {

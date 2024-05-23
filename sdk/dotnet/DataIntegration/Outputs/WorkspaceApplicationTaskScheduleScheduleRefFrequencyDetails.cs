@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly int? Interval;
         /// <summary>
-        /// (Updatable) The type of the object.
+        /// (Updatable) The type of the model
         /// </summary>
         public readonly string ModelType;
         /// <summary>

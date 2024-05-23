@@ -249,14 +249,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * When the lock was created.
+     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -718,7 +718,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

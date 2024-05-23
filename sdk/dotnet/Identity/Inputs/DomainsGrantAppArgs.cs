@@ -13,15 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsGrantAppArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) Application display name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -29,10 +28,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) Application URI
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -45,13 +43,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// Value of the tag.
+        /// Application identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

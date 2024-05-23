@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFilesystemSnapshotPolicy = new FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy", FilesystemSnapshotPolicyArgs.builder()        
+ *         var testFilesystemSnapshotPolicy = new FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy", FilesystemSnapshotPolicyArgs.builder()
  *             .availabilityDomain(filesystemSnapshotPolicyAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

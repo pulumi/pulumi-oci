@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", ManagedDatabasesChangeDatabaseParameterArgs.builder()        
+ *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", ManagedDatabasesChangeDatabaseParameterArgs.builder()
  *             .managedDatabaseId(testManagedDatabase.id())
  *             .parameters(ManagedDatabasesChangeDatabaseParameterParameterArgs.builder()
  *                 .name(managedDatabasesChangeDatabaseParameterParametersName)

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A new key
+        /// (Updatable) The field name to which the regular expression is applied
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The Grok pattern.
+        /// (Updatable) The regular expression
         /// </summary>
         [Input("pattern")]
         public Input<string>? Pattern { get; set; }

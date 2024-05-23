@@ -121,14 +121,14 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The email address of the paypal user.
+     * (Updatable) Contact person email address.
      * 
      */
     @Import(name="emailAddress")
     private @Nullable Output<String> emailAddress;
 
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return (Updatable) Contact person email address.
      * 
      */
     public Optional<Output<String>> emailAddress() {
@@ -136,14 +136,14 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) First name of the paypal user.
+     * (Updatable) First name of the contact person.
      * 
      */
     @Import(name="firstName")
     private @Nullable Output<String> firstName;
 
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return (Updatable) First name of the contact person.
      * 
      */
     public Optional<Output<String>> firstName() {
@@ -181,14 +181,14 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Last name of the paypal user.
+     * (Updatable) Last name of the contact person.
      * 
      */
     @Import(name="lastName")
     private @Nullable Output<String> lastName;
 
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return (Updatable) Last name of the contact person.
      * 
      */
     public Optional<Output<String>> lastName() {
@@ -602,7 +602,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress (Updatable) Contact person email address.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress (Updatable) Contact person email address.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName (Updatable) First name of the contact person.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName (Updatable) First name of the contact person.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName (Updatable) Last name of the contact person.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class SubscriptionSubscriptionBillingAddressArgs extends com.pulumi
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName (Updatable) Last name of the contact person.
          * 
          * @return builder
          * 

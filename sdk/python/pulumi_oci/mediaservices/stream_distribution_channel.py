@@ -24,7 +24,7 @@ class StreamDistributionChannelArgs:
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]]] = None):
         """
         The set of arguments for constructing a StreamDistributionChannel resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -45,7 +45,7 @@ class StreamDistributionChannelArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -127,7 +127,7 @@ class _StreamDistributionChannelState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering StreamDistributionChannel resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name: Unique domain name of the Distribution Channel.
@@ -135,7 +135,7 @@ class _StreamDistributionChannelState:
         :param pulumi.Input[Sequence[pulumi.Input['StreamDistributionChannelLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the Stream Distribution Channel.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
@@ -165,7 +165,7 @@ class _StreamDistributionChannelState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -270,7 +270,7 @@ class _StreamDistributionChannelState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -342,7 +342,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -464,7 +464,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Stream Distribution Channel display name. Avoid entering confidential information.
         :param pulumi.Input[str] domain_name: Unique domain name of the Distribution Channel.
@@ -472,7 +472,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StreamDistributionChannelLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] state: The current state of the Stream Distribution Channel.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -496,7 +496,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The compartment ID of the lock.
+        (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -565,7 +565,7 @@ class StreamDistributionChannel(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

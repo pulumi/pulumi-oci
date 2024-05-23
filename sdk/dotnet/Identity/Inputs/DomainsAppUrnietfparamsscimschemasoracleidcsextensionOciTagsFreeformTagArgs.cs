@@ -30,20 +30,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Oracle Cloud Infrastructure Tag value
+        /// 
+        /// **Added In:** 2011192329
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readOnly
+        /// * caseExact: false
         /// * required: true
+        /// * idcsReturnEmptyWhenNull: true
+        /// * mutability: readWrite
         /// * returned: default
         /// * type: string
+        /// * idcsSearchable: true
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

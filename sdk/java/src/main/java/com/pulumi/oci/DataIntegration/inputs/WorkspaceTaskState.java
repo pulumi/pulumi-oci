@@ -79,14 +79,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      * 
      */
     @Import(name="configProviderDelegate")
     private @Nullable Output<WorkspaceTaskConfigProviderDelegateArgs> configProviderDelegate;
 
     /**
-     * @return (Updatable) The information about the configuration provider.
+     * @return (Updatable) The type to create a config provider.
      * 
      */
     public Optional<Output<WorkspaceTaskConfigProviderDelegateArgs>> configProviderDelegate() {
@@ -169,14 +169,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -184,14 +184,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     @Import(name="keyMap")
     private @Nullable Output<Map<String,Object>> keyMap;
 
     /**
-     * @return (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     public Optional<Output<Map<String,Object>>> keyMap() {
@@ -199,14 +199,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Import(name="metadatas")
     private @Nullable Output<List<WorkspaceTaskMetadataArgs>> metadatas;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public Optional<Output<List<WorkspaceTaskMetadataArgs>>> metadatas() {
@@ -214,14 +214,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -229,14 +229,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object&#39;s model version.
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -274,14 +274,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      * 
      */
     @Import(name="objectVersion")
     private @Nullable Output<Integer> objectVersion;
 
     /**
-     * @return (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * @return This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      * 
      */
     public Optional<Output<Integer>> objectVersion() {
@@ -349,14 +349,14 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<List<WorkspaceTaskParameterArgs>> parameters;
 
     /**
-     * @return (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * @return (Updatable) An array of parameters.
      * 
      */
     public Optional<Output<List<WorkspaceTaskParameterArgs>>> parameters() {
@@ -558,7 +558,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configProviderDelegate (Updatable) The information about the configuration provider.
+         * @param configProviderDelegate (Updatable) The type to create a config provider.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configProviderDelegate (Updatable) The information about the configuration provider.
+         * @param configProviderDelegate (Updatable) The type to create a config provider.
          * 
          * @return builder
          * 
@@ -694,7 +694,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -705,7 +705,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param keyMap (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+         * @param keyMap A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param keyMap (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+         * @param keyMap A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 
@@ -799,7 +799,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param objectVersion (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         * @param objectVersion This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
          * 
          * @return builder
          * 
@@ -862,7 +862,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param objectVersion (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         * @param objectVersion This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
          * 
          * @return builder
          * 
@@ -966,7 +966,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 
@@ -977,7 +977,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 
@@ -987,7 +987,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param parameters (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+         * @param parameters (Updatable) An array of parameters.
          * 
          * @return builder
          * 

@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", PluggableDatabasesLocalCloneArgs.builder()        
+ *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", PluggableDatabasesLocalCloneArgs.builder()
  *             .clonedPdbName(pluggableDatabasesLocalCloneClonedPdbName)
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .pdbAdminPassword(pluggableDatabasesLocalClonePdbAdminPassword)

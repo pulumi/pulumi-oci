@@ -17,14 +17,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
     public static final WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs Empty = new WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs();
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -32,14 +32,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
     }
 
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -47,14 +47,14 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
     }
 
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object&#39;s model version.
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -120,7 +120,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param modelType (Updatable) The type of the types object.
+         * @param modelType (Updatable) The type of the task.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueR
         }
 
         /**
-         * @param modelVersion (Updatable) The model version of an object.
+         * @param modelVersion (Updatable) The object&#39;s model version.
          * 
          * @return builder
          * 

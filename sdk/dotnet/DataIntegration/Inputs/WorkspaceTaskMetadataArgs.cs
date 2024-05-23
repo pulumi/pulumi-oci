@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskMetadataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The owning object's key for this object.
+        /// The owning object's key for this object.
         /// </summary>
         [Input("aggregatorKey")]
         public Input<string>? AggregatorKey { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<Inputs.WorkspaceTaskMetadataAggregatorArgs>? _aggregators;
 
         /// <summary>
-        /// (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        /// A summary type containing information about the object's aggregator including its type, key, name and description.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskMetadataAggregatorArgs> Aggregators
         {
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<Inputs.WorkspaceTaskMetadataCountStatisticArgs>? _countStatistics;
 
         /// <summary>
-        /// (Updatable) A count statistics.
+        /// A count statistics.
         /// </summary>
         public InputList<Inputs.WorkspaceTaskMetadataCountStatisticArgs> CountStatistics
         {
@@ -43,19 +43,19 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The user that created the object.
+        /// The user that created the object.
         /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
 
         /// <summary>
-        /// (Updatable) The user that created the object.
+        /// The user that created the object.
         /// </summary>
         [Input("createdByName")]
         public Input<string>? CreatedByName { get; set; }
 
         /// <summary>
-        /// (Updatable) The full path to identify this object.
+        /// The full path to identify this object.
         /// </summary>
         [Input("identifierPath")]
         public Input<string>? IdentifierPath { get; set; }
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputMap<object>? _infoFields;
 
         /// <summary>
-        /// (Updatable) Information property fields.
+        /// Information property fields.
         /// </summary>
         public InputMap<object> InfoFields
         {
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Specifies whether this object is a favorite or not.
+        /// Specifies whether this object is a favorite or not.
         /// </summary>
         [Input("isFavorite")]
         public Input<bool>? IsFavorite { get; set; }
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         /// </summary>
         public InputList<string> Labels
         {
@@ -91,31 +91,31 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The registry version.
+        /// The registry version.
         /// </summary>
         [Input("registryVersion")]
         public Input<int>? RegistryVersion { get; set; }
 
         /// <summary>
-        /// (Updatable) The date and time that the object was created.
+        /// The date and time that the object was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The date and time that the object was updated.
+        /// The date and time that the object was updated.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The user that updated the object.
+        /// The user that updated the object.
         /// </summary>
         [Input("updatedBy")]
         public Input<string>? UpdatedBy { get; set; }
 
         /// <summary>
-        /// (Updatable) The user that updated the object.
+        /// The user that updated the object.
         /// </summary>
         [Input("updatedByName")]
         public Input<string>? UpdatedByName { get; set; }

@@ -52,14 +52,14 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Details of UpdateResponderRuleDetails.
+     * Details of ResponderRule.
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<ResponderRecipeEffectiveResponderRuleDetailArgs>> details;
 
     /**
-     * @return (Updatable) Details of UpdateResponderRuleDetails.
+     * @return Details of ResponderRule.
      * 
      */
     public Optional<Output<List<ResponderRecipeEffectiveResponderRuleDetailArgs>>> details() {
@@ -116,14 +116,14 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) ResponderRecipeRule Identifier
+     * Identifier for ResponderRule.
      * 
      */
     @Import(name="responderRuleId")
     private @Nullable Output<String> responderRuleId;
 
     /**
-     * @return (Updatable) ResponderRecipeRule Identifier
+     * @return Identifier for ResponderRule.
      * 
      */
     public Optional<Output<String>> responderRuleId() {
@@ -287,7 +287,7 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param details (Updatable) Details of UpdateResponderRuleDetails.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param details (Updatable) Details of UpdateResponderRuleDetails.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param details (Updatable) Details of UpdateResponderRuleDetails.
+         * @param details Details of ResponderRule.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param responderRuleId (Updatable) ResponderRecipeRule Identifier
+         * @param responderRuleId Identifier for ResponderRule.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class ResponderRecipeEffectiveResponderRuleArgs extends com.pulumi.
         }
 
         /**
-         * @param responderRuleId (Updatable) ResponderRecipeRule Identifier
+         * @param responderRuleId Identifier for ResponderRule.
          * 
          * @return builder
          * 

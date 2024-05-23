@@ -16,14 +16,14 @@ public final class ClusterImagePolicyConfigKeyDetailArgs extends com.pulumi.reso
     public static final ClusterImagePolicyConfigKeyDetailArgs Empty = new ClusterImagePolicyConfigKeyDetailArgs();
 
     /**
-     * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+     * (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+     * @return (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -55,7 +55,7 @@ public final class ClusterImagePolicyConfigKeyDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param kmsKeyId The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+         * @param kmsKeyId (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterImagePolicyConfigKeyDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param kmsKeyId The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+         * @param kmsKeyId (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
          * 
          * @return builder
          * 

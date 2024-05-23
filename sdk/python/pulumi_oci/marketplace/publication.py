@@ -37,7 +37,7 @@ class PublicationArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
@@ -166,7 +166,7 @@ class PublicationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
@@ -203,9 +203,9 @@ class _PublicationState:
         :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         :param pulumi.Input['PublicationPackageDetailsArgs'] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] package_type: The package's type.
+        :param pulumi.Input[str] package_type: The listing's package type.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
         :param pulumi.Input[str] state: The lifecycle state of the publication.
         :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
@@ -334,7 +334,7 @@ class _PublicationState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
@@ -358,7 +358,7 @@ class _PublicationState:
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The package's type.
+        The listing's package type.
         """
         return pulumi.get(self, "package_type")
 
@@ -515,7 +515,7 @@ class Publication(pulumi.CustomResource):
         :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
@@ -680,9 +680,9 @@ class Publication(pulumi.CustomResource):
         :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
         :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] package_type: The package's type.
+        :param pulumi.Input[str] package_type: The listing's package type.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
         :param pulumi.Input[str] state: The lifecycle state of the publication.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
@@ -772,7 +772,7 @@ class Publication(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
@@ -788,7 +788,7 @@ class Publication(pulumi.CustomResource):
     @pulumi.getter(name="packageType")
     def package_type(self) -> pulumi.Output[str]:
         """
-        The package's type.
+        The listing's package type.
         """
         return pulumi.get(self, "package_type")
 

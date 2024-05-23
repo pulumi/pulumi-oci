@@ -31,14 +31,14 @@ public final class DetectAnomalyJobInputDetailsObjectLocationArgs extends com.pu
     }
 
     /**
-     * Object Storage namespace.
+     * Object Storage namespace name.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return Object Storage namespace.
+     * @return Object Storage namespace name.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -108,7 +108,7 @@ public final class DetectAnomalyJobInputDetailsObjectLocationArgs extends com.pu
         }
 
         /**
-         * @param namespace Object Storage namespace.
+         * @param namespace Object Storage namespace name.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DetectAnomalyJobInputDetailsObjectLocationArgs extends com.pu
         }
 
         /**
-         * @param namespace Object Storage namespace.
+         * @param namespace Object Storage namespace name.
          * 
          * @return builder
          * 

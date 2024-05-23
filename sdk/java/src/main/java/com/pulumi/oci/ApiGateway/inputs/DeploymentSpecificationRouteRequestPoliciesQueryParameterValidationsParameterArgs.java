@@ -18,14 +18,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
     public static final DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs Empty = new DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs();
 
     /**
-     * (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * (Updatable) Parameter name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Parameter name.
      * 
      */
     public Output<String> name() {
@@ -73,7 +73,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Parameter name.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Parameter name.
          * 
          * @return builder
          * 

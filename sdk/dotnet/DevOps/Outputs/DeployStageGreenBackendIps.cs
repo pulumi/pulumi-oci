@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeployStageGreenBackendIps
     {
         /// <summary>
-        /// (Updatable) List of parameters defined to set helm value.
+        /// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         /// </summary>
         public readonly ImmutableArray<string> Items;
 

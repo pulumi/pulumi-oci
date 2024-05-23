@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ResponderRecipeEffectiveResponderRuleDetailConfiguration> Configurations;
         /// <summary>
-        /// (Updatable) Identifies state for ResponderRule
+        /// Identifies state for ResponderRule
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>

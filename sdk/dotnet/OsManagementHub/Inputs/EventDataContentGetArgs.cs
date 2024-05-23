@@ -49,6 +49,14 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
 
         /// <summary>
         /// Event type:
+        /// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        /// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        /// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        /// * `SOFTWARE_UPDATE` - Software updates - Packages
+        /// * `KSPLICE_UPDATE` - Ksplice updates
+        /// * `SOFTWARE_SOURCE` - Software source
+        /// * `AGENT` - Agent
+        /// * `MANAGEMENT_STATION` - Management Station
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

@@ -127,11 +127,7 @@ namespace Pulumi.Oci.Core
         public Output<string> OciPhysicalDeviceName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The cross-connect group's current state.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -305,11 +301,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? OciPhysicalDeviceName { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The cross-connect group's current state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

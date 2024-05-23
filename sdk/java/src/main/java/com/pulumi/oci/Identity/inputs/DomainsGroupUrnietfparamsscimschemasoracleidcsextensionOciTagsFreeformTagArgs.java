@@ -52,18 +52,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
     }
 
     /**
-     * (Updatable) The ID of the App.
+     * (Updatable) Oracle Cloud Infrastructure Tag value
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -71,18 +71,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
+     * @return (Updatable) Oracle Cloud Infrastructure Tag value
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
      * 
      */
@@ -159,18 +159,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
+         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 2011192329
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readOnly
+         * * caseExact: false
          * * required: true
+         * * idcsReturnEmptyWhenNull: true
+         * * mutability: readWrite
          * * returned: default
          * * type: string
+         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder
@@ -182,18 +182,18 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
+         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 2011192329
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readOnly
+         * * caseExact: false
          * * required: true
+         * * idcsReturnEmptyWhenNull: true
+         * * mutability: readWrite
          * * returned: default
          * * type: string
+         * * idcsSearchable: true
          * * uniqueness: none
          * 
          * @return builder

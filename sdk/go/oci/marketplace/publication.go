@@ -99,11 +99,11 @@ type Publication struct {
 	ListingType pulumi.StringOutput `pulumi:"listingType"`
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription pulumi.StringOutput `pulumi:"longDescription"`
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetailsOutput `pulumi:"packageDetails"`
-	// The package's type.
+	// The listing's package type.
 	PackageType pulumi.StringOutput `pulumi:"packageType"`
 	// (Updatable) A short description of the publication to use in the listing.
 	ShortDescription pulumi.StringOutput `pulumi:"shortDescription"`
@@ -181,11 +181,11 @@ type publicationState struct {
 	ListingType *string `pulumi:"listingType"`
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription *string `pulumi:"longDescription"`
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name *string `pulumi:"name"`
 	// A base object for creating a publication package.
 	PackageDetails *PublicationPackageDetails `pulumi:"packageDetails"`
-	// The package's type.
+	// The listing's package type.
 	PackageType *string `pulumi:"packageType"`
 	// (Updatable) A short description of the publication to use in the listing.
 	ShortDescription *string `pulumi:"shortDescription"`
@@ -216,11 +216,11 @@ type PublicationState struct {
 	ListingType pulumi.StringPtrInput
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription pulumi.StringPtrInput
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name pulumi.StringPtrInput
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetailsPtrInput
-	// The package's type.
+	// The listing's package type.
 	PackageType pulumi.StringPtrInput
 	// (Updatable) A short description of the publication to use in the listing.
 	ShortDescription pulumi.StringPtrInput
@@ -253,7 +253,7 @@ type publicationArgs struct {
 	ListingType string `pulumi:"listingType"`
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription *string `pulumi:"longDescription"`
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name *string `pulumi:"name"`
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetails `pulumi:"packageDetails"`
@@ -277,7 +277,7 @@ type PublicationArgs struct {
 	ListingType pulumi.StringInput
 	// (Updatable) A long description of the publication to use in the listing.
 	LongDescription pulumi.StringPtrInput
-	// (Updatable) The name of the contact.
+	// (Updatable) The name of the publication, which is also used in the listing.
 	Name pulumi.StringPtrInput
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetailsInput
@@ -409,7 +409,7 @@ func (o PublicationOutput) LongDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.LongDescription }).(pulumi.StringOutput)
 }
 
-// (Updatable) The name of the contact.
+// (Updatable) The name of the publication, which is also used in the listing.
 func (o PublicationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -419,7 +419,7 @@ func (o PublicationOutput) PackageDetails() PublicationPackageDetailsOutput {
 	return o.ApplyT(func(v *Publication) PublicationPackageDetailsOutput { return v.PackageDetails }).(PublicationPackageDetailsOutput)
 }
 
-// The package's type.
+// The listing's package type.
 func (o PublicationOutput) PackageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.PackageType }).(pulumi.StringOutput)
 }

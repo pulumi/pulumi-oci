@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader {
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Parameter name.
      * 
      */
     private String name;
     /**
-     * @return (Updatable) Determines if the parameter is required in the request.
+     * @return (Updatable) Determines if the header is required in the request.
      * 
      */
     private @Nullable Boolean required;
 
     private DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader() {}
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Parameter name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) Determines if the parameter is required in the request.
+     * @return (Updatable) Determines if the header is required in the request.
      * 
      */
     public Optional<Boolean> required() {

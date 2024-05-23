@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
     public sealed class ModelModelDetails
     {
         /// <summary>
-        /// classification Modes
+        /// possible text classification modes
         /// </summary>
         public readonly Outputs.ModelModelDetailsClassificationMode? ClassificationMode;
         /// <summary>

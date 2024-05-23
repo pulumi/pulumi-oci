@@ -95,7 +95,7 @@ type WorkspaceApplication struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
@@ -189,7 +189,7 @@ type workspaceApplicationState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
@@ -245,7 +245,7 @@ type WorkspaceApplicationState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput
@@ -299,7 +299,7 @@ type workspaceApplicationArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// (Updatable) The type of the application.
 	ModelType string `pulumi:"modelType"`
@@ -334,7 +334,7 @@ type WorkspaceApplicationArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
-	// The identifying key for the object.
+	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput
 	// (Updatable) The type of the application.
 	ModelType pulumi.StringInput
@@ -486,7 +486,7 @@ func (o WorkspaceApplicationOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }
 
-// The identifying key for the object.
+// (Updatable) Currently not used on application creation. Reserved for future.
 func (o WorkspaceApplicationOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }

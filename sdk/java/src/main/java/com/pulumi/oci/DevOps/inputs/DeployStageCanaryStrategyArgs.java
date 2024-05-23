@@ -30,14 +30,14 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * Canary namespace to be used for Kubernetes canary deployment.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * @return Canary namespace to be used for Kubernetes canary deployment.
      * 
      */
     public Output<String> namespace() {
@@ -107,7 +107,7 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param namespace (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         * @param namespace Canary namespace to be used for Kubernetes canary deployment.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param namespace (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         * @param namespace Canary namespace to be used for Kubernetes canary deployment.
          * 
          * @return builder
          * 

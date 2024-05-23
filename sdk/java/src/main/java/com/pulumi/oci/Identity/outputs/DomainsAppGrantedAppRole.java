@@ -57,9 +57,10 @@ public final class DomainsAppGrantedAppRole {
      */
     private @Nullable String appName;
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The display-name of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -101,9 +102,10 @@ public final class DomainsAppGrantedAppRole {
      */
     private @Nullable Boolean readOnly;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -115,17 +117,13 @@ public final class DomainsAppGrantedAppRole {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -133,19 +131,17 @@ public final class DomainsAppGrantedAppRole {
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -201,9 +197,10 @@ public final class DomainsAppGrantedAppRole {
         return Optional.ofNullable(this.appName);
     }
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The display-name of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -251,9 +248,10 @@ public final class DomainsAppGrantedAppRole {
         return Optional.ofNullable(this.readOnly);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -267,17 +265,13 @@ public final class DomainsAppGrantedAppRole {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) A label that indicates whether this AppRole was granted directly to the App (or indirectly through a Group). For an App, the value of this attribute will always be &#39;direct&#39; (because an App cannot be a member of a Group).
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -287,19 +281,17 @@ public final class DomainsAppGrantedAppRole {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of an AppRole that is granted to this App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

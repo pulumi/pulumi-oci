@@ -22,8 +22,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
-     * * returned: always
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -57,8 +57,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
-     * * returned: always
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 

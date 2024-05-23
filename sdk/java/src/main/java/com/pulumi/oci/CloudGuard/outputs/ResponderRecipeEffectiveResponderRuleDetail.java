@@ -25,7 +25,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
      */
     private @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
     /**
-     * @return (Updatable) Identifies state for ResponderRule
+     * @return Identifies state for ResponderRule
      * 
      */
     private @Nullable Boolean isEnabled;
@@ -51,7 +51,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetail {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return (Updatable) Identifies state for ResponderRule
+     * @return Identifies state for ResponderRule
      * 
      */
     public Optional<Boolean> isEnabled() {

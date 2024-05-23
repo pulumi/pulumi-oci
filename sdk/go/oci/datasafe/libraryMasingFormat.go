@@ -34,7 +34,7 @@ type LibraryMasingFormat struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the library masking format.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -97,7 +97,7 @@ type libraryMasingFormatState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
@@ -125,7 +125,7 @@ type LibraryMasingFormatState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
@@ -157,7 +157,7 @@ type libraryMasingFormatArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
@@ -178,7 +178,7 @@ type LibraryMasingFormatArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
@@ -290,7 +290,7 @@ func (o LibraryMasingFormatOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) The description of the format entry.
+// (Updatable) The description of the library masking format.
 func (o LibraryMasingFormatOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }

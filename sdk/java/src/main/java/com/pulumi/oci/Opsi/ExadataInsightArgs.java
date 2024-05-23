@@ -22,14 +22,14 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
     public static final ExadataInsightArgs Empty = new ExadataInsightArgs();
 
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) Compartment Identifier of Exadata insight
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of database
+     * @return (Updatable) Compartment Identifier of Exadata insight
      * 
      */
     public Output<String> compartmentId() {
@@ -37,14 +37,14 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -97,14 +97,14 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Source of the database entity.
+     * (Updatable) Source of the Exadata system.
      * 
      */
     @Import(name="entitySource", required=true)
     private Output<String> entitySource;
 
     /**
-     * @return Source of the database entity.
+     * @return (Updatable) Source of the Exadata system.
      * 
      */
     public Output<String> entitySource() {
@@ -119,14 +119,14 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -211,7 +211,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of database
+         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of database
+         * @param compartmentId (Updatable) Compartment Identifier of Exadata insight
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param entitySource Source of the database entity.
+         * @param entitySource (Updatable) Source of the Exadata system.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param entitySource Source of the database entity.
+         * @param entitySource (Updatable) Source of the Exadata system.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 

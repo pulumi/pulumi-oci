@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.BootVolumeAutotunePolicy>> AutotunePolicies { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
@@ -401,7 +401,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }

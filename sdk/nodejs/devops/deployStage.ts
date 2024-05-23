@@ -72,7 +72,7 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly commandSpecDeployArtifactId!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * The OCID of the compartment where the ContainerInstance will be created.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -527,7 +527,7 @@ export interface DeployStageState {
      */
     commandSpecDeployArtifactId?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * The OCID of the compartment where the ContainerInstance will be created.
      */
     compartmentId?: pulumi.Input<string>;
     /**

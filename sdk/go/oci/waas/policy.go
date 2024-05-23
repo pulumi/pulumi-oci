@@ -48,7 +48,7 @@ type Policy struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+	// The web application domain that the WAAS policy protects.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -112,7 +112,7 @@ type policyState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+	// The web application domain that the WAAS policy protects.
 	Domain *string `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -141,7 +141,7 @@ type PolicyState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+	// The web application domain that the WAAS policy protects.
 	Domain pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -172,7 +172,7 @@ type policyArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+	// The web application domain that the WAAS policy protects.
 	Domain string `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -196,7 +196,7 @@ type PolicyArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+	// The web application domain that the WAAS policy protects.
 	Domain pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -322,7 +322,7 @@ func (o PolicyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+// The web application domain that the WAAS policy protects.
 func (o PolicyOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// </summary>
         public readonly int? SourcePort;
         /// <summary>
-        /// (Updatable) The type of the `Endpoint`.
+        /// (Updatable) The type of the `ProtocolParameters` object.
         /// </summary>
         public readonly string Type;
 

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs>? _items;
 
         /// <summary>
-        /// (Updatable) The list of headers.
+        /// (Updatable) The list of query parameters.
         /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs> Items
         {
@@ -25,11 +25,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

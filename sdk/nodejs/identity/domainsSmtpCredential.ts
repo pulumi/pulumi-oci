@@ -198,7 +198,7 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsSmtpCredentialMeta[]>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -206,9 +206,9 @@ export class DomainsSmtpCredential extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -535,7 +535,7 @@ export interface DomainsSmtpCredentialState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSmtpCredentialMeta>[]>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -543,9 +543,9 @@ export interface DomainsSmtpCredentialState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -693,7 +693,7 @@ export interface DomainsSmtpCredentialArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -701,9 +701,9 @@ export interface DomainsSmtpCredentialArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

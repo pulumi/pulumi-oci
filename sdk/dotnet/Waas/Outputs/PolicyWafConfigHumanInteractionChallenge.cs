@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string? Action;
         /// <summary>
-        /// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+        /// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
         /// </summary>
         public readonly int? ActionExpirationInSeconds;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly int? InteractionThreshold;
         /// <summary>
-        /// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+        /// (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

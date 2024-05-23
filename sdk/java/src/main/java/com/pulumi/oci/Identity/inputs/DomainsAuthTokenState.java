@@ -426,7 +426,7 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -434,16 +434,16 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -451,9 +451,9 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -1286,7 +1286,7 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1294,9 +1294,9 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -1307,7 +1307,7 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -1315,9 +1315,9 @@ public final class DomainsAuthTokenState extends com.pulumi.resources.ResourceAr
          * * multiValued: false
          * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

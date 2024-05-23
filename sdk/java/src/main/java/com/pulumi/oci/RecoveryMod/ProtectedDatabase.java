@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProtectedDatabase = new ProtectedDatabase("testProtectedDatabase", ProtectedDatabaseArgs.builder()        
+ *         var testProtectedDatabase = new ProtectedDatabase("testProtectedDatabase", ProtectedDatabaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbUniqueName(protectedDatabaseDbUniqueName)
  *             .displayName(protectedDatabaseDisplayName)

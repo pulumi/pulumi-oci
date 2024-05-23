@@ -28,23 +28,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) The id of the upstream block entry.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

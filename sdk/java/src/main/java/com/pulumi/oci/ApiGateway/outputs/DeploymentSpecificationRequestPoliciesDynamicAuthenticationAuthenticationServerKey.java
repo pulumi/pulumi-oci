@@ -15,68 +15,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey {
     /**
-     * @return (Updatable) String describing the expression with wildcards.
+     * @return (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      * 
      */
     private @Nullable String expression;
     /**
-     * @return (Updatable) Information regarding whether this is the default branch.
+     * @return (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      * 
      */
     private @Nullable Boolean isDefault;
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     private String name;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the selection key.
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
      * 
      */
     private @Nullable List<String> values;
 
     private DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey() {}
     /**
-     * @return (Updatable) String describing the expression with wildcards.
+     * @return (Updatable) A selection key string containing a wildcard to match with the context variable in an incoming request. If the context variable matches the string, the request is sent to the route or authentication server associated with the selection key. Valid wildcards are &#39;*&#39; (zero or more characters) and &#39;+&#39; (one or more characters). The string can only contain one wildcard, and the wildcard must be at the start or the end of the string.
      * 
      */
     public Optional<String> expression() {
         return Optional.ofNullable(this.expression);
     }
     /**
-     * @return (Updatable) Information regarding whether this is the default branch.
+     * @return (Updatable) Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
      * 
      */
     public Optional<Boolean> isDefault() {
         return Optional.ofNullable(this.isDefault);
     }
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the selection key.
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
      * 
      */
     public List<String> values() {

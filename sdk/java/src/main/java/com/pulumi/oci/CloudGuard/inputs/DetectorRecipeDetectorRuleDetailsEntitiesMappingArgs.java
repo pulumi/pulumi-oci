@@ -17,18 +17,14 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
     public static final DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs Empty = new DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs();
 
     /**
-     * (Updatable) Detector recipe display name.
-     * 
-     * Avoid entering confidential information.
+     * (Updatable) The display name of entity
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Detector recipe display name.
-     * 
-     * Avoid entering confidential information.
+     * @return (Updatable) The display name of entity
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -92,9 +88,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) Detector recipe display name.
-         * 
-         * Avoid entering confidential information.
+         * @param displayName (Updatable) The display name of entity
          * 
          * @return builder
          * 
@@ -105,9 +99,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) Detector recipe display name.
-         * 
-         * Avoid entering confidential information.
+         * @param displayName (Updatable) The display name of entity
          * 
          * @return builder
          * 

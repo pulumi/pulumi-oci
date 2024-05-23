@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMemberFileSystemOperationMountDetails {
     /**
-     * @return (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+     * @return (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
     private @Nullable String mountTargetId;
 
     private DrProtectionGroupMemberFileSystemOperationMountDetails() {}
     /**
-     * @return (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+     * @return (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
     public Optional<String> mountTargetId() {

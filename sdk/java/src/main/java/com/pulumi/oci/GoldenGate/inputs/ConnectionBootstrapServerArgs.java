@@ -17,16 +17,14 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
     public static final ConnectionBootstrapServerArgs Empty = new ConnectionBootstrapServerArgs();
 
     /**
-     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
-     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
+     * (Updatable) The name or address of a host.
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
-     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
+     * @return (Updatable) The name or address of a host.
      * 
      */
     public Optional<Output<String>> host() {
@@ -92,8 +90,7 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
-         * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
+         * @param host (Updatable) The name or address of a host.
          * 
          * @return builder
          * 
@@ -104,8 +101,7 @@ public final class ConnectionBootstrapServerArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
-         * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
+         * @param host (Updatable) The name or address of a host.
          * 
          * @return builder
          * 

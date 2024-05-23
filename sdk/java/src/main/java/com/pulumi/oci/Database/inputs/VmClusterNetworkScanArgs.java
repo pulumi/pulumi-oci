@@ -19,14 +19,14 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
     public static final VmClusterNetworkScanArgs Empty = new VmClusterNetworkScanArgs();
 
     /**
-     * (Updatable) The node host name.
+     * (Updatable) The SCAN hostname.
      * 
      */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
     /**
-     * @return (Updatable) The node host name.
+     * @return (Updatable) The SCAN hostname.
      * 
      */
     public Output<String> hostname() {
@@ -122,7 +122,7 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname (Updatable) The SCAN hostname.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class VmClusterNetworkScanArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostname (Updatable) The node host name.
+         * @param hostname (Updatable) The SCAN hostname.
          * 
          * @return builder
          * 

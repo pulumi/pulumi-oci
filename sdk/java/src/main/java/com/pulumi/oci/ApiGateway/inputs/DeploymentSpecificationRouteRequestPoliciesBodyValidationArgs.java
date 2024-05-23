@@ -34,14 +34,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
     }
 
     /**
-     * (Updatable) Determines if the parameter is required in the request.
+     * (Updatable) Determines if the request body is required in the request.
      * 
      */
     @Import(name="required")
     private @Nullable Output<Boolean> required;
 
     /**
-     * @return (Updatable) Determines if the parameter is required in the request.
+     * @return (Updatable) Determines if the request body is required in the request.
      * 
      */
     public Optional<Output<Boolean>> required() {
@@ -133,7 +133,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
         }
 
         /**
-         * @param required (Updatable) Determines if the parameter is required in the request.
+         * @param required (Updatable) Determines if the request body is required in the request.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
         }
 
         /**
-         * @param required (Updatable) Determines if the parameter is required in the request.
+         * @param required (Updatable) Determines if the request body is required in the request.
          * 
          * @return builder
          * 

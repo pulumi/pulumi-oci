@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VaultExternalKeyManagerMetadataSummary {
     /**
-     * @return URI of the vault on external key manager.
+     * @return URL of the vault on external key manager.
      * 
      */
     private @Nullable String externalVaultEndpointUrl;
@@ -24,7 +24,7 @@ public final class VaultExternalKeyManagerMetadataSummary {
      */
     private @Nullable List<VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries;
     /**
-     * @return OCID of private endpoint created by customer.
+     * @return OCID of the private endpoint.
      * 
      */
     private @Nullable String privateEndpointId;
@@ -36,7 +36,7 @@ public final class VaultExternalKeyManagerMetadataSummary {
 
     private VaultExternalKeyManagerMetadataSummary() {}
     /**
-     * @return URI of the vault on external key manager.
+     * @return URL of the vault on external key manager.
      * 
      */
     public Optional<String> externalVaultEndpointUrl() {
@@ -50,7 +50,7 @@ public final class VaultExternalKeyManagerMetadataSummary {
         return this.oauthMetadataSummaries == null ? List.of() : this.oauthMetadataSummaries;
     }
     /**
-     * @return OCID of private endpoint created by customer.
+     * @return OCID of the private endpoint.
      * 
      */
     public Optional<String> privateEndpointId() {

@@ -17,14 +17,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     public static final UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs Empty = new UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs();
 
     /**
-     * (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     @Import(name="fieldTimeKey")
     private @Nullable Output<String> fieldTimeKey;
 
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     public Optional<Output<String>> fieldTimeKey() {
@@ -32,14 +32,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     }
 
     /**
-     * (Updatable) If true, keep the time field in the record.
+     * If true, keep the time field in the record.
      * 
      */
     @Import(name="isKeepTimeKey")
     private @Nullable Output<Boolean> isKeepTimeKey;
 
     /**
-     * @return (Updatable) If true, keep the time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     public Optional<Output<Boolean>> isKeepTimeKey() {
@@ -136,7 +136,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param fieldTimeKey (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+         * @param fieldTimeKey Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param fieldTimeKey (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+         * @param fieldTimeKey Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
+         * @param isKeepTimeKey If true, keep the time field in the record.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         }
 
         /**
-         * @param isKeepTimeKey (Updatable) If true, keep the time field in the record.
+         * @param isKeepTimeKey If true, keep the time field in the record.
          * 
          * @return builder
          * 

@@ -17,7 +17,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
     public static final DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs Empty = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs();
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +35,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,7 +54,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) The URI of the corresponding Group resource to which the user belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -66,7 +72,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the corresponding Group resource to which the user belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -83,38 +91,38 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The identifier of the User&#39;s group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The identifier of the User&#39;s group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -148,7 +156,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -168,7 +178,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -187,7 +199,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the corresponding Group resource to which the user belongs
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -207,7 +221,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the corresponding Group resource to which the user belongs
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -226,19 +242,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The identifier of the User&#39;s group.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -249,19 +265,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The identifier of the User&#39;s group.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

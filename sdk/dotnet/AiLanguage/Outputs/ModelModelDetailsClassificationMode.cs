@@ -18,7 +18,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// </summary>
         public readonly string ClassificationMode;
         /// <summary>
-        /// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        /// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
         /// </summary>
         public readonly string? Version;
 

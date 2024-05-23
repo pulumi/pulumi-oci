@@ -15,13 +15,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     {
         public readonly bool? IsDaemonSet;
         public readonly string? Key;
-        /// <summary>
-        /// Name of the property
-        /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// The type of the DataSource.
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

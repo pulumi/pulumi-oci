@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemMaintenanceWindowDetailsDaysOfWeek {
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     private @Nullable String name;
 
     private DbSystemMaintenanceWindowDetailsDaysOfWeek() {}
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     public Optional<String> name() {

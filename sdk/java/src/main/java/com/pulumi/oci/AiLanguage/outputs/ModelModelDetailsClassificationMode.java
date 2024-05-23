@@ -18,7 +18,7 @@ public final class ModelModelDetailsClassificationMode {
      */
     private String classificationMode;
     /**
-     * @return Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * @return Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
      * 
      */
     private @Nullable String version;
@@ -32,7 +32,7 @@ public final class ModelModelDetailsClassificationMode {
         return this.classificationMode;
     }
     /**
-     * @return Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+     * @return Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
      * 
      */
     public Optional<String> version() {

@@ -13,25 +13,23 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsGrantGrantee {
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Grantee display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grantee URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -43,14 +41,16 @@ public final class DomainsGrantGrantee {
      */
     private @Nullable String ref;
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member Type
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: immutable
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -58,13 +58,14 @@ public final class DomainsGrantGrantee {
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return Grantee identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -75,15 +76,14 @@ public final class DomainsGrantGrantee {
 
     private DomainsGrantGrantee() {}
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Grantee display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -92,10 +92,9 @@ public final class DomainsGrantGrantee {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Grantee URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -109,14 +108,16 @@ public final class DomainsGrantGrantee {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member Type
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: immutable
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -126,13 +127,14 @@ public final class DomainsGrantGrantee {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return Grantee identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

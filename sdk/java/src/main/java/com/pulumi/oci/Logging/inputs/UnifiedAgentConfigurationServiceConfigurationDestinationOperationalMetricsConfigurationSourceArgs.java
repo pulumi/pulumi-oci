@@ -34,14 +34,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
     }
 
     /**
-     * (Updatable) record section of openmetrics parser.
+     * (Updatable) Record section of OperationalMetricsSource object.
      * 
      */
     @Import(name="recordInput", required=true)
     private Output<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs> recordInput;
 
     /**
-     * @return (Updatable) record section of openmetrics parser.
+     * @return (Updatable) Record section of OperationalMetricsSource object.
      * 
      */
     public Output<UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs> recordInput() {
@@ -121,7 +121,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param recordInput (Updatable) record section of openmetrics parser.
+         * @param recordInput (Updatable) Record section of OperationalMetricsSource object.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
         }
 
         /**
-         * @param recordInput (Updatable) record section of openmetrics parser.
+         * @param recordInput (Updatable) Record section of OperationalMetricsSource object.
          * 
          * @return builder
          * 

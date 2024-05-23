@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Optimizer.Inputs
         private InputList<Inputs.ProfileLevelsConfigurationItemArgs>? _items;
 
         /// <summary>
-        /// (Updatable) The list of tags specified in the current profile override.
+        /// (Updatable) The array of configuration levels.
         /// </summary>
         public InputList<Inputs.ProfileLevelsConfigurationItemArgs> Items
         {

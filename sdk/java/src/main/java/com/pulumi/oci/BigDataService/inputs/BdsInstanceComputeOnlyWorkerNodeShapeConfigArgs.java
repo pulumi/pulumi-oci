@@ -16,14 +16,14 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
     public static final BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs Empty = new BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs();
 
     /**
-     * The total amount of memory available to the node, in gigabytes
+     * The total amount of memory available to the node, in gigabytes.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Integer> memoryInGbs;
 
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> memoryInGbs() {
@@ -87,7 +87,7 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs extends com.p
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 

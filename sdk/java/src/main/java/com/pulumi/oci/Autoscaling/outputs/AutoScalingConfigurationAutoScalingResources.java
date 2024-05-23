@@ -16,7 +16,7 @@ public final class AutoScalingConfigurationAutoScalingResources {
      */
     private String id;
     /**
-     * @return The type of action to take.
+     * @return The type of resource.
      * 
      */
     private String type;
@@ -30,7 +30,7 @@ public final class AutoScalingConfigurationAutoScalingResources {
         return this.id;
     }
     /**
-     * @return The type of action to take.
+     * @return The type of resource.
      * 
      */
     public String type() {

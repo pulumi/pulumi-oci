@@ -14,11 +14,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
     public sealed class MediaAssetMediaAssetTag
     {
         /// <summary>
-        /// (Updatable) The type of the media asset.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the tag.
         /// </summary>
         public readonly string? Type;
         /// <summary>

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails {
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     private @Nullable String compartmentId;
@@ -36,7 +36,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
 
     private InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails() {}
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     public Optional<String> compartmentId() {

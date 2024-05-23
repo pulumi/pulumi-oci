@@ -13,13 +13,13 @@ namespace Pulumi.Oci.OspGateway.Inputs
     public sealed class SubscriptionPaymentGatewayMerchantDefinedDataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Cloud account name.
+        /// Cloud account name.
         /// </summary>
         [Input("cloudAccountName")]
         public Input<string>? CloudAccountName { get; set; }
 
         /// <summary>
-        /// (Updatable) Promotion type code.
+        /// Promotion type code.
         /// </summary>
         [Input("promoType")]
         public Input<string>? PromoType { get; set; }

@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceGateway = new ServiceGateway("testServiceGateway", ServiceGatewayArgs.builder()        
+ *         var testServiceGateway = new ServiceGateway("testServiceGateway", ServiceGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .services(ServiceGatewayServiceArgs.builder()
  *                 .serviceId(testServices.services()[0].id())

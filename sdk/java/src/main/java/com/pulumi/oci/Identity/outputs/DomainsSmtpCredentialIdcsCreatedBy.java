@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsSmtpCredentialIdcsCreatedBy {
     /**
-     * @return (Updatable) User display name
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -28,22 +28,21 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
      */
     private @Nullable String display;
     /**
-     * @return User&#39;s ocid
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -58,7 +57,7 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
      */
     private @Nullable String ref;
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -73,15 +72,15 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
      */
     private @Nullable String type;
     /**
-     * @return User&#39;s id
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -90,11 +89,11 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
 
     private DomainsSmtpCredentialIdcsCreatedBy() {}
     /**
-     * @return (Updatable) User display name
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -107,15 +106,14 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return User&#39;s ocid
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -124,7 +122,7 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -141,7 +139,7 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -158,15 +156,15 @@ public final class DomainsSmtpCredentialIdcsCreatedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return User&#39;s id
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 

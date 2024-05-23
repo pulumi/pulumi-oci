@@ -18,12 +18,13 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainsAppScopeArgs Empty = new DomainsAppScopeArgs();
 
     /**
-     * (Updatable) The description of the AppRole.
+     * (Updatable) OAuth scope description
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -34,12 +35,13 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) OAuth scope description
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -51,7 +53,9 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * (Updatable) OAuth scope display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -68,7 +72,9 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) OAuth scope display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -193,38 +199,34 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) OAuth scope.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) OAuth scope.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -261,12 +263,13 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) OAuth scope description
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -281,12 +284,13 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) OAuth scope description
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -300,7 +304,9 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param displayName (Updatable) OAuth scope display name
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -321,7 +327,9 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param displayName (Updatable) OAuth scope display name
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -466,19 +474,17 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) OAuth scope.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -489,19 +495,17 @@ public final class DomainsAppScopeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) OAuth scope.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

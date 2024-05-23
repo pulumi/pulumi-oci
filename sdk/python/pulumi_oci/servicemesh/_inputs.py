@@ -112,10 +112,6 @@ class AccessPolicyRuleDestinationArgs:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] ports: (Updatable) Ports exposed by an external service. If left empty all ports will be allowed.
         :param pulumi.Input[str] protocol: (Updatable) Protocol of the external service
         :param pulumi.Input[str] virtual_service_id: (Updatable) The OCID of the virtual service resource.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "type", type)
         if hostnames is not None:
@@ -208,10 +204,6 @@ class AccessPolicyRuleDestinationArgs:
     def virtual_service_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The OCID of the virtual service resource.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "virtual_service_id")
 
@@ -377,11 +369,7 @@ class IngressGatewayHostArgs:
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['IngressGatewayHostListenerArgs']]] listeners: (Updatable) The listeners for the ingress gateway.
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] name: (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
         """
         pulumi.set(__self__, "listeners", listeners)
@@ -405,11 +393,7 @@ class IngressGatewayHostArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
         """
         return pulumi.get(self, "name")
 
@@ -585,7 +569,7 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs:
         """
         :param pulumi.Input[str] type: (Updatable) Type of certificate.
         :param pulumi.Input[str] ca_bundle_id: (Updatable) The OCID of the CA Bundle resource.
-        :param pulumi.Input[str] secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+        :param pulumi.Input[str] secret_name: (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
         """
         pulumi.set(__self__, "type", type)
         if ca_bundle_id is not None:
@@ -621,7 +605,7 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs:
     @pulumi.getter(name="secretName")
     def secret_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+        (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
         """
         return pulumi.get(self, "secret_name")
 
@@ -690,7 +674,7 @@ class IngressGatewayMtlsArgs:
                  certificate_id: Optional[pulumi.Input[str]] = None,
                  maximum_validity: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] certificate_id: (Updatable) The OCID of the leaf certificate resource.
+        :param pulumi.Input[str] certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param pulumi.Input[int] maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
         if certificate_id is not None:
@@ -702,7 +686,7 @@ class IngressGatewayMtlsArgs:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the leaf certificate resource.
+        The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -888,7 +872,7 @@ class IngressGatewayRouteTableRouteRuleDestinationArgs:
                  weight: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[str] virtual_service_id: (Updatable) The OCID of the virtual service where the request will be routed.
-        :param pulumi.Input[int] port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+        :param pulumi.Input[int] port: (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
         :param pulumi.Input[int] weight: (Updatable) Weight of traffic target.
         """
         pulumi.set(__self__, "virtual_service_id", virtual_service_id)
@@ -913,7 +897,7 @@ class IngressGatewayRouteTableRouteRuleDestinationArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+        (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
         """
         return pulumi.get(self, "port")
 

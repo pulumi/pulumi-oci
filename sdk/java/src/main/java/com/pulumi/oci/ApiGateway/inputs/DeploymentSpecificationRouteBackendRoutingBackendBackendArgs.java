@@ -22,14 +22,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     public static final DeploymentSpecificationRouteBackendRoutingBackendBackendArgs Empty = new DeploymentSpecificationRouteBackendRoutingBackendBackendArgs();
 
     /**
-     * (Updatable) The body of the stock response from the mock backend.
+     * The body of the stock response from the mock backend.
      * 
      */
     @Import(name="body")
     private @Nullable Output<String> body;
 
     /**
-     * @return (Updatable) The body of the stock response from the mock backend.
+     * @return The body of the stock response from the mock backend.
      * 
      */
     public Optional<Output<String>> body() {
@@ -37,14 +37,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) Defines a timeout for establishing a connection with a proxied server.
+     * Defines a timeout for establishing a connection with a proxied server.
      * 
      */
     @Import(name="connectTimeoutInSeconds")
     private @Nullable Output<Double> connectTimeoutInSeconds;
 
     /**
-     * @return (Updatable) Defines a timeout for establishing a connection with a proxied server.
+     * @return Defines a timeout for establishing a connection with a proxied server.
      * 
      */
     public Optional<Output<Double>> connectTimeoutInSeconds() {
@@ -52,44 +52,36 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
     public Optional<Output<String>> functionId() {
         return Optional.ofNullable(this.functionId);
     }
 
-    /**
-     * (Updatable)
-     * 
-     */
     @Import(name="headers")
     private @Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>> headers;
 
-    /**
-     * @return (Updatable)
-     * 
-     */
     public Optional<Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>>> headers() {
         return Optional.ofNullable(this.headers);
     }
 
     /**
-     * (Updatable) Defines whether or not to uphold SSL verification.
+     * Defines whether or not to uphold SSL verification.
      * 
      */
     @Import(name="isSslVerifyDisabled")
     private @Nullable Output<Boolean> isSslVerifyDisabled;
 
     /**
-     * @return (Updatable) Defines whether or not to uphold SSL verification.
+     * @return Defines whether or not to uphold SSL verification.
      * 
      */
     public Optional<Output<Boolean>> isSslVerifyDisabled() {
@@ -97,14 +89,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) Defines a timeout for reading a response from the proxied server.
+     * Defines a timeout for reading a response from the proxied server.
      * 
      */
     @Import(name="readTimeoutInSeconds")
     private @Nullable Output<Double> readTimeoutInSeconds;
 
     /**
-     * @return (Updatable) Defines a timeout for reading a response from the proxied server.
+     * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
     public Optional<Output<Double>> readTimeoutInSeconds() {
@@ -112,14 +104,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) Defines a timeout for transmitting a request to the proxied server.
+     * Defines a timeout for transmitting a request to the proxied server.
      * 
      */
     @Import(name="sendTimeoutInSeconds")
     private @Nullable Output<Double> sendTimeoutInSeconds;
 
     /**
-     * @return (Updatable) Defines a timeout for transmitting a request to the proxied server.
+     * @return Defines a timeout for transmitting a request to the proxied server.
      * 
      */
     public Optional<Output<Double>> sendTimeoutInSeconds() {
@@ -127,14 +119,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) The status code of the stock response from the mock backend.
+     * The status code of the stock response from the mock backend.
      * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return (Updatable) The status code of the stock response from the mock backend.
+     * @return The status code of the stock response from the mock backend.
      * 
      */
     public Optional<Output<Integer>> status() {
@@ -142,37 +134,23 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Type of the Response Cache Store Policy.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the Response Cache Store Policy.
      * 
      */
     public Output<String> type() {
         return this.type;
     }
 
-    /**
-     * (Updatable)
-     * 
-     */
     @Import(name="url")
     private @Nullable Output<String> url;
 
-    /**
-     * @return (Updatable)
-     * 
-     */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
     }
@@ -211,7 +189,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param body (Updatable) The body of the stock response from the mock backend.
+         * @param body The body of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -222,7 +200,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param body (Updatable) The body of the stock response from the mock backend.
+         * @param body The body of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -232,7 +210,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param connectTimeoutInSeconds (Updatable) Defines a timeout for establishing a connection with a proxied server.
+         * @param connectTimeoutInSeconds Defines a timeout for establishing a connection with a proxied server.
          * 
          * @return builder
          * 
@@ -243,7 +221,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param connectTimeoutInSeconds (Updatable) Defines a timeout for establishing a connection with a proxied server.
+         * @param connectTimeoutInSeconds Defines a timeout for establishing a connection with a proxied server.
          * 
          * @return builder
          * 
@@ -253,7 +231,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+         * @param functionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
          * 
          * @return builder
          * 
@@ -264,7 +242,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+         * @param functionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
          * 
          * @return builder
          * 
@@ -273,39 +251,21 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
             return functionId(Output.of(functionId));
         }
 
-        /**
-         * @param headers (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder headers(@Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>> headers) {
             $.headers = headers;
             return this;
         }
 
-        /**
-         * @param headers (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder headers(List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs> headers) {
             return headers(Output.of(headers));
         }
 
-        /**
-         * @param headers (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder headers(DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs... headers) {
             return headers(List.of(headers));
         }
 
         /**
-         * @param isSslVerifyDisabled (Updatable) Defines whether or not to uphold SSL verification.
+         * @param isSslVerifyDisabled Defines whether or not to uphold SSL verification.
          * 
          * @return builder
          * 
@@ -316,7 +276,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param isSslVerifyDisabled (Updatable) Defines whether or not to uphold SSL verification.
+         * @param isSslVerifyDisabled Defines whether or not to uphold SSL verification.
          * 
          * @return builder
          * 
@@ -326,7 +286,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param readTimeoutInSeconds (Updatable) Defines a timeout for reading a response from the proxied server.
+         * @param readTimeoutInSeconds Defines a timeout for reading a response from the proxied server.
          * 
          * @return builder
          * 
@@ -337,7 +297,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param readTimeoutInSeconds (Updatable) Defines a timeout for reading a response from the proxied server.
+         * @param readTimeoutInSeconds Defines a timeout for reading a response from the proxied server.
          * 
          * @return builder
          * 
@@ -347,7 +307,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param sendTimeoutInSeconds (Updatable) Defines a timeout for transmitting a request to the proxied server.
+         * @param sendTimeoutInSeconds Defines a timeout for transmitting a request to the proxied server.
          * 
          * @return builder
          * 
@@ -358,7 +318,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param sendTimeoutInSeconds (Updatable) Defines a timeout for transmitting a request to the proxied server.
+         * @param sendTimeoutInSeconds Defines a timeout for transmitting a request to the proxied server.
          * 
          * @return builder
          * 
@@ -368,7 +328,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param status (Updatable) The status code of the stock response from the mock backend.
+         * @param status The status code of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -379,7 +339,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param status (Updatable) The status code of the stock response from the mock backend.
+         * @param status The status code of the stock response from the mock backend.
          * 
          * @return builder
          * 
@@ -389,10 +349,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type Type of the Response Cache Store Policy.
          * 
          * @return builder
          * 
@@ -403,10 +360,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type Type of the Response Cache Store Policy.
          * 
          * @return builder
          * 
@@ -415,23 +369,11 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
             return type(Output.of(type));
         }
 
-        /**
-         * @param url (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
             return this;
         }
 
-        /**
-         * @param url (Updatable)
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(String url) {
             return url(Output.of(url));
         }

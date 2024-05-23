@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfig = new Config("testConfig", ConfigArgs.builder()        
+ *         var testConfig = new Config("testConfig", ConfigArgs.builder()
  *             .compartmentId(compartmentId)
  *             .configType(configConfigType)
  *             .isEnabled(configIsEnabled)

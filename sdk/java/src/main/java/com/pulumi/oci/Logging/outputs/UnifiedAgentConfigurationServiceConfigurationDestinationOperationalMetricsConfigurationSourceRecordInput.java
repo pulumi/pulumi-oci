@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
     /**
-     * @return (Updatable) Namespace to emit metrics.
+     * @return (Updatable) Namespace to emit the operational metrics.
      * 
      */
     private String namespace;
     /**
-     * @return (Updatable) Resource group to emit metrics.
+     * @return (Updatable) Resource group to emit the operational metrics.
      * 
      */
     private @Nullable String resourceGroup;
 
     private UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput() {}
     /**
-     * @return (Updatable) Namespace to emit metrics.
+     * @return (Updatable) Namespace to emit the operational metrics.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return (Updatable) Resource group to emit metrics.
+     * @return (Updatable) Resource group to emit the operational metrics.
      * 
      */
     public Optional<String> resourceGroup() {

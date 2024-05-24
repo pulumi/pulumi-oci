@@ -14,17 +14,17 @@ public final class GetCloudGuardConfigurationResult {
     private String compartmentId;
     private String id;
     /**
-     * @return The reporting region value
+     * @return The reporting region
      * 
      */
     private String reportingRegion;
     /**
-     * @return Identifies if Oracle managed resources were created by customers
+     * @return Were Oracle-managed resources created by customer?
      * 
      */
     private Boolean selfManageResources;
     /**
-     * @return Status of Cloud Guard Tenant
+     * @return Status of the Cloud Guard tenant
      * 
      */
     private String status;
@@ -37,21 +37,21 @@ public final class GetCloudGuardConfigurationResult {
         return this.id;
     }
     /**
-     * @return The reporting region value
+     * @return The reporting region
      * 
      */
     public String reportingRegion() {
         return this.reportingRegion;
     }
     /**
-     * @return Identifies if Oracle managed resources were created by customers
+     * @return Were Oracle-managed resources created by customer?
      * 
      */
     public Boolean selfManageResources() {
         return this.selfManageResources;
     }
     /**
-     * @return Status of Cloud Guard Tenant
+     * @return Status of the Cloud Guard tenant
      * 
      */
     public String status() {

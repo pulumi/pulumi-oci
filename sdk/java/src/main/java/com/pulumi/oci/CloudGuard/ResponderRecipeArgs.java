@@ -21,14 +21,14 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     public static final ResponderRecipeArgs Empty = new ResponderRecipeArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -108,14 +108,14 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     @Import(name="responderRules")
     private @Nullable Output<List<ResponderRecipeResponderRuleArgs>> responderRules;
 
     /**
-     * @return (Updatable) Responder Rules to override from source responder recipe
+     * @return (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     public Optional<Output<List<ResponderRecipeResponderRuleArgs>>> responderRules() {
@@ -123,7 +123,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +133,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
     private Output<String> sourceResponderRecipeId;
 
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,7 +174,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceResponderRecipeId The id of the source responder recipe.
+         * @param sourceResponderRecipeId The unique identifier of the source responder recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -336,7 +336,7 @@ public final class ResponderRecipeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceResponderRecipeId The id of the source responder recipe.
+         * @param sourceResponderRecipeId The unique identifier of the source responder recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

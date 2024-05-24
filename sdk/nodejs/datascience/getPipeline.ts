@@ -60,6 +60,9 @@ export interface GetPipelineResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
+    /**
+     * If set to true will delete pipeline runs which are in a terminal state.
+     */
     readonly deleteRelatedPipelineRuns: boolean;
     /**
      * A short description of the step.

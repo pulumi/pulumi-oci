@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of security zone policies. Specify any compartment.
+// Returns a list of security zone policies (SecurityPolicySummary resources),
+// identified by compartmentId.
 //
 // ## Example Usage
 //
@@ -55,29 +56,29 @@ func GetSecurityPolicies(ctx *pulumi.Context, args *GetSecurityPoliciesArgs, opt
 
 // A collection of arguments for invoking getSecurityPolicies.
 type GetSecurityPoliciesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetSecurityPoliciesFilter `pulumi:"filters"`
-	// The unique identifier of the security zone policy (`SecurityPolicy`)
+	// The unique identifier of the security zone policy. (`SecurityPolicy`)
 	Id *string `pulumi:"id"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getSecurityPolicies.
 type GetSecurityPoliciesResult struct {
-	// The id of the security policy's compartment
+	// The OCID of the security policy's compartment
 	CompartmentId string `pulumi:"compartmentId"`
-	// The security policy's full name
+	// The security policy's display name
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetSecurityPoliciesFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can’t be changed after creation
 	Id *string `pulumi:"id"`
 	// The list of security_policy_collection.
 	SecurityPolicyCollections []GetSecurityPoliciesSecurityPolicyCollection `pulumi:"securityPolicyCollections"`
-	// The current state of the security policy
+	// The current lifecycle state of the security policy
 	State *string `pulumi:"state"`
 }
 
@@ -96,14 +97,14 @@ func GetSecurityPoliciesOutput(ctx *pulumi.Context, args GetSecurityPoliciesOutp
 
 // A collection of arguments for invoking getSecurityPolicies.
 type GetSecurityPoliciesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetSecurityPoliciesFilterArrayInput `pulumi:"filters"`
-	// The unique identifier of the security zone policy (`SecurityPolicy`)
+	// The unique identifier of the security zone policy. (`SecurityPolicy`)
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -126,12 +127,12 @@ func (o GetSecurityPoliciesResultOutput) ToGetSecurityPoliciesResultOutputWithCo
 	return o
 }
 
-// The id of the security policy's compartment
+// The OCID of the security policy's compartment
 func (o GetSecurityPoliciesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The security policy's full name
+// The security policy's display name
 func (o GetSecurityPoliciesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -140,7 +141,7 @@ func (o GetSecurityPoliciesResultOutput) Filters() GetSecurityPoliciesFilterArra
 	return o.ApplyT(func(v GetSecurityPoliciesResult) []GetSecurityPoliciesFilter { return v.Filters }).(GetSecurityPoliciesFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can’t be changed after creation
 func (o GetSecurityPoliciesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -152,7 +153,7 @@ func (o GetSecurityPoliciesResultOutput) SecurityPolicyCollections() GetSecurity
 	}).(GetSecurityPoliciesSecurityPolicyCollectionArrayOutput)
 }
 
-// The current state of the security policy
+// The current lifecycle state of the security policy
 func (o GetSecurityPoliciesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityPoliciesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -19,7 +19,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
      */
     private @Nullable String displayName;
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     private @Nullable String entityType;
@@ -40,7 +40,7 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public Optional<String> entityType() {

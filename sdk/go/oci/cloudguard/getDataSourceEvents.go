@@ -13,7 +13,9 @@ import (
 
 // This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Returns a list of events from CloudGuard DataSource
+// Returns a list of data source events
+// (DataSourceEventCollection  resource) from the data source
+// (DataSource resource) identified by dataSourceId.
 //
 // ## Example Usage
 //
@@ -53,10 +55,10 @@ func GetDataSourceEvents(ctx *pulumi.Context, args *GetDataSourceEventsArgs, opt
 
 // A collection of arguments for invoking getDataSourceEvents.
 type GetDataSourceEventsArgs struct {
-	// DataSource OCID
+	// Data source OCID.
 	DataSourceId string                      `pulumi:"dataSourceId"`
 	Filters      []GetDataSourceEventsFilter `pulumi:"filters"`
-	// A filter to return only resource their region matches the given region.
+	// A filter to return only resource where their region matches the given region.
 	Region *string `pulumi:"region"`
 }
 
@@ -64,7 +66,7 @@ type GetDataSourceEventsArgs struct {
 type GetDataSourceEventsResult struct {
 	// The list of data_source_event_collection.
 	DataSourceEventCollections []GetDataSourceEventsDataSourceEventCollection `pulumi:"dataSourceEventCollections"`
-	// Attached data Source
+	// Unique identifier of data source.
 	DataSourceId string                      `pulumi:"dataSourceId"`
 	Filters      []GetDataSourceEventsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -88,10 +90,10 @@ func GetDataSourceEventsOutput(ctx *pulumi.Context, args GetDataSourceEventsOutp
 
 // A collection of arguments for invoking getDataSourceEvents.
 type GetDataSourceEventsOutputArgs struct {
-	// DataSource OCID
+	// Data source OCID.
 	DataSourceId pulumi.StringInput                  `pulumi:"dataSourceId"`
 	Filters      GetDataSourceEventsFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resource their region matches the given region.
+	// A filter to return only resource where their region matches the given region.
 	Region pulumi.StringPtrInput `pulumi:"region"`
 }
 
@@ -121,7 +123,7 @@ func (o GetDataSourceEventsResultOutput) DataSourceEventCollections() GetDataSou
 	}).(GetDataSourceEventsDataSourceEventCollectionArrayOutput)
 }
 
-// Attached data Source
+// Unique identifier of data source.
 func (o GetDataSourceEventsResultOutput) DataSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceEventsResult) string { return v.DataSourceId }).(pulumi.StringOutput)
 }

@@ -61,7 +61,7 @@ class GetResponderRecipesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -74,7 +74,7 @@ class GetResponderRecipesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ResponderRule display name.
+        Responder rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -108,7 +108,7 @@ class GetResponderRecipesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the Example.
+        The current lifecycle state of the example
         """
         return pulumi.get(self, "state")
 
@@ -141,7 +141,8 @@ def get_responder_recipes(access_level: Optional[str] = None,
     """
     This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all ResponderRecipes in a compartment
+    Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+    of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
     The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
     The list does not include any subcompartments of the compartmentId passed.
 
@@ -172,11 +173,11 @@ def get_responder_recipes(access_level: Optional[str] = None,
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -213,7 +214,8 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[st
     """
     This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all ResponderRecipes in a compartment
+    Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+    of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
     The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
     The list does not include any subcompartments of the compartmentId passed.
 
@@ -244,10 +246,10 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[st
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

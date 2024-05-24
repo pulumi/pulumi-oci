@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 public final class GetDetectorRecipesResult {
     private @Nullable String accessLevel;
     /**
-     * @return compartmentId of detector recipe
+     * @return Compartment OCID of detector recipe
      * 
      */
     private String compartmentId;
@@ -29,7 +29,7 @@ public final class GetDetectorRecipesResult {
      */
     private List<GetDetectorRecipesDetectorRecipeCollection> detectorRecipeCollections;
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     private @Nullable String displayName;
@@ -41,7 +41,7 @@ public final class GetDetectorRecipesResult {
     private String id;
     private @Nullable Boolean resourceMetadataOnly;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private @Nullable String state;
@@ -51,7 +51,7 @@ public final class GetDetectorRecipesResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return compartmentId of detector recipe
+     * @return Compartment OCID of detector recipe
      * 
      */
     public String compartmentId() {
@@ -68,7 +68,7 @@ public final class GetDetectorRecipesResult {
         return this.detectorRecipeCollections;
     }
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     public Optional<String> displayName() {
@@ -88,7 +88,7 @@ public final class GetDetectorRecipesResult {
         return Optional.ofNullable(this.resourceMetadataOnly);
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<String> state() {

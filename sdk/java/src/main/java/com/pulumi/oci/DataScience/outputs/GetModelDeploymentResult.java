@@ -77,6 +77,7 @@ public final class GetModelDeploymentResult {
      * 
      */
     private String modelDeploymentUrl;
+    private String opcParentRptUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      * 
@@ -181,6 +182,9 @@ public final class GetModelDeploymentResult {
     public String modelDeploymentUrl() {
         return this.modelDeploymentUrl;
     }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      * 
@@ -225,6 +229,7 @@ public final class GetModelDeploymentResult {
         private String modelDeploymentId;
         private List<GetModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
         private String modelDeploymentUrl;
+        private String opcParentRptUrl;
         private String projectId;
         private String state;
         private String timeCreated;
@@ -244,6 +249,7 @@ public final class GetModelDeploymentResult {
     	      this.modelDeploymentId = defaults.modelDeploymentId;
     	      this.modelDeploymentSystemDatas = defaults.modelDeploymentSystemDatas;
     	      this.modelDeploymentUrl = defaults.modelDeploymentUrl;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -363,6 +369,14 @@ public final class GetModelDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentResult", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentResult", "projectId");
@@ -401,6 +415,7 @@ public final class GetModelDeploymentResult {
             _resultValue.modelDeploymentId = modelDeploymentId;
             _resultValue.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
             _resultValue.modelDeploymentUrl = modelDeploymentUrl;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

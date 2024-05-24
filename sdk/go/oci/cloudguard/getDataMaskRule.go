@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a DataMaskRule object, identified by DataMaskRuleId.
+// Returns a DataMaskRule resource, identified by dataMaskRuleId.
 //
 // ## Example Usage
 //
@@ -52,38 +52,38 @@ func LookupDataMaskRule(ctx *pulumi.Context, args *LookupDataMaskRuleArgs, opts 
 
 // A collection of arguments for invoking getDataMaskRule.
 type LookupDataMaskRuleArgs struct {
-	// OCID of dataMaskRule
+	// OCID of the data mask rule
 	DataMaskRuleId string `pulumi:"dataMaskRuleId"`
 }
 
 // A collection of values returned by getDataMaskRule.
 type LookupDataMaskRuleResult struct {
-	// Compartment Identifier where the resource is created.
+	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
-	// Data Mask Categories
+	// List of data mask rule categories
 	DataMaskCategories []string `pulumi:"dataMaskCategories"`
 	DataMaskRuleId     string   `pulumi:"dataMaskRuleId"`
-	// The status of the dataMaskRule.
+	// The current status of the data mask rule
 	DataMaskRuleStatus string `pulumi:"dataMaskRuleStatus"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The data mask rule description.
+	// The data mask rule description
 	Description string `pulumi:"description"`
-	// Data Mask Rule Identifier, can be renamed.
+	// Data mask rule display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// IAM Group id associated with the data mask rule
+	// IAM Group ID associated with the data mask rule
 	IamGroupId string `pulumi:"iamGroupId"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can't be changed after creation
 	Id string `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Additional details on the substate of the lifecycle state [DEPRECATE]
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelecteds []GetDataMaskRuleTargetSelected `pulumi:"targetSelecteds"`
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -106,7 +106,7 @@ func LookupDataMaskRuleOutput(ctx *pulumi.Context, args LookupDataMaskRuleOutput
 
 // A collection of arguments for invoking getDataMaskRule.
 type LookupDataMaskRuleOutputArgs struct {
-	// OCID of dataMaskRule
+	// OCID of the data mask rule
 	DataMaskRuleId pulumi.StringInput `pulumi:"dataMaskRuleId"`
 }
 
@@ -129,12 +129,12 @@ func (o LookupDataMaskRuleResultOutput) ToLookupDataMaskRuleResultOutputWithCont
 	return o
 }
 
-// Compartment Identifier where the resource is created.
+// Compartment OCID where the resource is created
 func (o LookupDataMaskRuleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Data Mask Categories
+// List of data mask rule categories
 func (o LookupDataMaskRuleResultOutput) DataMaskCategories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) []string { return v.DataMaskCategories }).(pulumi.StringArrayOutput)
 }
@@ -143,7 +143,7 @@ func (o LookupDataMaskRuleResultOutput) DataMaskRuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DataMaskRuleId }).(pulumi.StringOutput)
 }
 
-// The status of the dataMaskRule.
+// The current status of the data mask rule
 func (o LookupDataMaskRuleResultOutput) DataMaskRuleStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DataMaskRuleStatus }).(pulumi.StringOutput)
 }
@@ -153,12 +153,12 @@ func (o LookupDataMaskRuleResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The data mask rule description.
+// The data mask rule description
 func (o LookupDataMaskRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Data Mask Rule Identifier, can be renamed.
+// Data mask rule display name
 func (o LookupDataMaskRuleResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -168,22 +168,22 @@ func (o LookupDataMaskRuleResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// IAM Group id associated with the data mask rule
+// IAM Group ID associated with the data mask rule
 func (o LookupDataMaskRuleResultOutput) IamGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.IamGroupId }).(pulumi.StringOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can't be changed after creation
 func (o LookupDataMaskRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// Additional details on the substate of the lifecycle state [DEPRECATE]
 func (o LookupDataMaskRuleResultOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the DataMaskRule.
+// The current lifecycle state of the data mask rule
 func (o LookupDataMaskRuleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -193,7 +193,7 @@ func (o LookupDataMaskRuleResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+// Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 func (o LookupDataMaskRuleResultOutput) TargetSelecteds() GetDataMaskRuleTargetSelectedArrayOutput {
 	return o.ApplyT(func(v LookupDataMaskRuleResult) []GetDataMaskRuleTargetSelected { return v.TargetSelecteds }).(GetDataMaskRuleTargetSelectedArrayOutput)
 }

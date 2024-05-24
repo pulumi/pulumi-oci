@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+// Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 //
 // ## Example Usage
 //
@@ -52,44 +52,46 @@ func LookupDetectorRecipe(ctx *pulumi.Context, args *LookupDetectorRecipeArgs, o
 
 // A collection of arguments for invoking getDetectorRecipe.
 type LookupDetectorRecipeArgs struct {
-	// DetectorRecipe OCID
+	// Detector recipe OCID
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
 }
 
 // A collection of values returned by getDetectorRecipe.
 type LookupDetectorRecipeResult struct {
-	// compartmentId of detector recipe
+	// Compartment OCID of detector recipe
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Description for DetectorRecipeDetectorRule.
+	// Description for detector recipe detector rule
 	Description string `pulumi:"description"`
-	// detector for the rule
+	// Detector recipe for the rule
 	Detector         string `pulumi:"detector"`
 	DetectorRecipeId string `pulumi:"detectorRecipeId"`
+	// Recipe type ( STANDARD, ENTERPRISE )
+	DetectorRecipeType string `pulumi:"detectorRecipeType"`
 	// List of detector rules for the detector type for recipe - user input
 	DetectorRules []GetDetectorRecipeDetectorRule `pulumi:"detectorRules"`
-	// The display name of entity
+	// Display name of the entity
 	DisplayName string `pulumi:"displayName"`
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Ocid for detector recipe
+	// OCID for detector recipe
 	Id string `pulumi:"id"`
 	// Owner of detector recipe
 	Owner string `pulumi:"owner"`
-	// Recipe Ocid of the Source Recipe to be cloned
+	// Recipe OCID of the source recipe to be cloned
 	SourceDetectorRecipeId string `pulumi:"sourceDetectorRecipeId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The recipe attached to targets
+	// List of target IDs to which the recipe is attached
 	TargetIds []string `pulumi:"targetIds"`
-	// The date and time the detector recipe was created. Format defined by RFC3339.
+	// The date and time the detector recipe was created Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the detector recipe was updated. Format defined by RFC3339.
+	// The date and time the detector recipe was last updated Format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -108,7 +110,7 @@ func LookupDetectorRecipeOutput(ctx *pulumi.Context, args LookupDetectorRecipeOu
 
 // A collection of arguments for invoking getDetectorRecipe.
 type LookupDetectorRecipeOutputArgs struct {
-	// DetectorRecipe OCID
+	// Detector recipe OCID
 	DetectorRecipeId pulumi.StringInput `pulumi:"detectorRecipeId"`
 }
 
@@ -131,7 +133,7 @@ func (o LookupDetectorRecipeResultOutput) ToLookupDetectorRecipeResultOutputWith
 	return o
 }
 
-// compartmentId of detector recipe
+// Compartment OCID of detector recipe
 func (o LookupDetectorRecipeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -141,12 +143,12 @@ func (o LookupDetectorRecipeResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Description for DetectorRecipeDetectorRule.
+// Description for detector recipe detector rule
 func (o LookupDetectorRecipeResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// detector for the rule
+// Detector recipe for the rule
 func (o LookupDetectorRecipeResultOutput) Detector() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.Detector }).(pulumi.StringOutput)
 }
@@ -155,12 +157,17 @@ func (o LookupDetectorRecipeResultOutput) DetectorRecipeId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.DetectorRecipeId }).(pulumi.StringOutput)
 }
 
+// Recipe type ( STANDARD, ENTERPRISE )
+func (o LookupDetectorRecipeResultOutput) DetectorRecipeType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.DetectorRecipeType }).(pulumi.StringOutput)
+}
+
 // List of detector rules for the detector type for recipe - user input
 func (o LookupDetectorRecipeResultOutput) DetectorRules() GetDetectorRecipeDetectorRuleArrayOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) []GetDetectorRecipeDetectorRule { return v.DetectorRules }).(GetDetectorRecipeDetectorRuleArrayOutput)
 }
 
-// The display name of entity
+// Display name of the entity
 func (o LookupDetectorRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -177,7 +184,7 @@ func (o LookupDetectorRecipeResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Ocid for detector recipe
+// OCID for detector recipe
 func (o LookupDetectorRecipeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -187,12 +194,12 @@ func (o LookupDetectorRecipeResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// Recipe Ocid of the Source Recipe to be cloned
+// Recipe OCID of the source recipe to be cloned
 func (o LookupDetectorRecipeResultOutput) SourceDetectorRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.SourceDetectorRecipeId }).(pulumi.StringOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource
 func (o LookupDetectorRecipeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -202,17 +209,17 @@ func (o LookupDetectorRecipeResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The recipe attached to targets
+// List of target IDs to which the recipe is attached
 func (o LookupDetectorRecipeResultOutput) TargetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
-// The date and time the detector recipe was created. Format defined by RFC3339.
+// The date and time the detector recipe was created Format defined by RFC3339.
 func (o LookupDetectorRecipeResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the detector recipe was updated. Format defined by RFC3339.
+// The date and time the detector recipe was last updated Format defined by RFC3339.
 func (o LookupDetectorRecipeResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDetectorRecipeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

@@ -155,6 +155,7 @@ namespace Pulumi.Oci.DataScience
         /// Customer logging details for job run.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunLogDetailResult> LogDetails;
+        public readonly string OpcParentRptUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         /// </summary>
@@ -210,6 +211,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetJobRunLogDetailResult> logDetails,
 
+            string opcParentRptUrl,
+
             string projectId,
 
             string state,
@@ -236,6 +239,7 @@ namespace Pulumi.Oci.DataScience
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             LifecycleDetails = lifecycleDetails;
             LogDetails = logDetails;
+            OpcParentRptUrl = opcParentRptUrl;
             ProjectId = projectId;
             State = state;
             TimeAccepted = timeAccepted;

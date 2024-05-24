@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetailLoggingQueryDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetailQueryStartTime;
+import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetailScheduledQueryScopeDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourceDataSourceDetail {
     /**
-     * @return The additional entities count used for data source query.
+     * @return The additional entities count used for data source query
      * 
      */
     private Integer additionalEntitiesCount;
@@ -25,22 +26,32 @@ public final class GetDataSourceDataSourceDetail {
      */
     private String dataSourceFeedProvider;
     /**
+     * @return Description text for the query
+     * 
+     */
+    private String description;
+    /**
      * @return Interval in minutes that query is run periodically.
      * 
      */
     private Integer intervalInMinutes;
     /**
-     * @return Additional details specific to the data source type (Sighting/Insight).
+     * @return Interval in minutes which query is run periodically.
+     * 
+     */
+    private Integer intervalInSeconds;
+    /**
+     * @return Details for a logging query for a data source.
      * 
      */
     private List<GetDataSourceDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     private String loggingQueryType;
     /**
-     * @return Operator used in Data Soruce
+     * @return Operator used in data source
      * 
      */
     private String operator;
@@ -50,24 +61,29 @@ public final class GetDataSourceDataSourceDetail {
      */
     private String query;
     /**
-     * @return Time when the query can start, if not specified it can start immediately.
+     * @return Time when the query can start. If not specified it can start immediately
      * 
      */
     private List<GetDataSourceDataSourceDetailQueryStartTime> queryStartTimes;
     /**
-     * @return Logging Query regions
+     * @return List of logging query regions
      * 
      */
     private List<String> regions;
     /**
-     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * @return Target information in which scheduled query will be run
+     * 
+     */
+    private List<GetDataSourceDataSourceDetailScheduledQueryScopeDetail> scheduledQueryScopeDetails;
+    /**
+     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     private Integer threshold;
 
     private GetDataSourceDataSourceDetail() {}
     /**
-     * @return The additional entities count used for data source query.
+     * @return The additional entities count used for data source query
      * 
      */
     public Integer additionalEntitiesCount() {
@@ -81,6 +97,13 @@ public final class GetDataSourceDataSourceDetail {
         return this.dataSourceFeedProvider;
     }
     /**
+     * @return Description text for the query
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
+    /**
      * @return Interval in minutes that query is run periodically.
      * 
      */
@@ -88,21 +111,28 @@ public final class GetDataSourceDataSourceDetail {
         return this.intervalInMinutes;
     }
     /**
-     * @return Additional details specific to the data source type (Sighting/Insight).
+     * @return Interval in minutes which query is run periodically.
+     * 
+     */
+    public Integer intervalInSeconds() {
+        return this.intervalInSeconds;
+    }
+    /**
+     * @return Details for a logging query for a data source.
      * 
      */
     public List<GetDataSourceDataSourceDetailLoggingQueryDetail> loggingQueryDetails() {
         return this.loggingQueryDetails;
     }
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     public String loggingQueryType() {
         return this.loggingQueryType;
     }
     /**
-     * @return Operator used in Data Soruce
+     * @return Operator used in data source
      * 
      */
     public String operator() {
@@ -116,21 +146,28 @@ public final class GetDataSourceDataSourceDetail {
         return this.query;
     }
     /**
-     * @return Time when the query can start, if not specified it can start immediately.
+     * @return Time when the query can start. If not specified it can start immediately
      * 
      */
     public List<GetDataSourceDataSourceDetailQueryStartTime> queryStartTimes() {
         return this.queryStartTimes;
     }
     /**
-     * @return Logging Query regions
+     * @return List of logging query regions
      * 
      */
     public List<String> regions() {
         return this.regions;
     }
     /**
-     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * @return Target information in which scheduled query will be run
+     * 
+     */
+    public List<GetDataSourceDataSourceDetailScheduledQueryScopeDetail> scheduledQueryScopeDetails() {
+        return this.scheduledQueryScopeDetails;
+    }
+    /**
+     * @return The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Integer threshold() {
@@ -148,26 +185,32 @@ public final class GetDataSourceDataSourceDetail {
     public static final class Builder {
         private Integer additionalEntitiesCount;
         private String dataSourceFeedProvider;
+        private String description;
         private Integer intervalInMinutes;
+        private Integer intervalInSeconds;
         private List<GetDataSourceDataSourceDetailLoggingQueryDetail> loggingQueryDetails;
         private String loggingQueryType;
         private String operator;
         private String query;
         private List<GetDataSourceDataSourceDetailQueryStartTime> queryStartTimes;
         private List<String> regions;
+        private List<GetDataSourceDataSourceDetailScheduledQueryScopeDetail> scheduledQueryScopeDetails;
         private Integer threshold;
         public Builder() {}
         public Builder(GetDataSourceDataSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalEntitiesCount = defaults.additionalEntitiesCount;
     	      this.dataSourceFeedProvider = defaults.dataSourceFeedProvider;
+    	      this.description = defaults.description;
     	      this.intervalInMinutes = defaults.intervalInMinutes;
+    	      this.intervalInSeconds = defaults.intervalInSeconds;
     	      this.loggingQueryDetails = defaults.loggingQueryDetails;
     	      this.loggingQueryType = defaults.loggingQueryType;
     	      this.operator = defaults.operator;
     	      this.query = defaults.query;
     	      this.queryStartTimes = defaults.queryStartTimes;
     	      this.regions = defaults.regions;
+    	      this.scheduledQueryScopeDetails = defaults.scheduledQueryScopeDetails;
     	      this.threshold = defaults.threshold;
         }
 
@@ -188,11 +231,27 @@ public final class GetDataSourceDataSourceDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder description(String description) {
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "description");
+            }
+            this.description = description;
+            return this;
+        }
+        @CustomType.Setter
         public Builder intervalInMinutes(Integer intervalInMinutes) {
             if (intervalInMinutes == null) {
               throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "intervalInMinutes");
             }
             this.intervalInMinutes = intervalInMinutes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder intervalInSeconds(Integer intervalInSeconds) {
+            if (intervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "intervalInSeconds");
+            }
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
@@ -253,6 +312,17 @@ public final class GetDataSourceDataSourceDetail {
             return regions(List.of(regions));
         }
         @CustomType.Setter
+        public Builder scheduledQueryScopeDetails(List<GetDataSourceDataSourceDetailScheduledQueryScopeDetail> scheduledQueryScopeDetails) {
+            if (scheduledQueryScopeDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "scheduledQueryScopeDetails");
+            }
+            this.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
+            return this;
+        }
+        public Builder scheduledQueryScopeDetails(GetDataSourceDataSourceDetailScheduledQueryScopeDetail... scheduledQueryScopeDetails) {
+            return scheduledQueryScopeDetails(List.of(scheduledQueryScopeDetails));
+        }
+        @CustomType.Setter
         public Builder threshold(Integer threshold) {
             if (threshold == null) {
               throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "threshold");
@@ -264,13 +334,16 @@ public final class GetDataSourceDataSourceDetail {
             final var _resultValue = new GetDataSourceDataSourceDetail();
             _resultValue.additionalEntitiesCount = additionalEntitiesCount;
             _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.description = description;
             _resultValue.intervalInMinutes = intervalInMinutes;
+            _resultValue.intervalInSeconds = intervalInSeconds;
             _resultValue.loggingQueryDetails = loggingQueryDetails;
             _resultValue.loggingQueryType = loggingQueryType;
             _resultValue.operator = operator;
             _resultValue.query = query;
             _resultValue.queryStartTimes = queryStartTimes;
             _resultValue.regions = regions;
+            _resultValue.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
             _resultValue.threshold = threshold;
             return _resultValue;
         }

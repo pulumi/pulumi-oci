@@ -16,14 +16,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -31,14 +31,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
     }
 
     /**
-     * Base condition object
+     * The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -71,7 +71,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 

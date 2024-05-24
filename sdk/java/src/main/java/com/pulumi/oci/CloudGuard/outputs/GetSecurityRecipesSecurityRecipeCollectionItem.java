@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityRecipesSecurityRecipeCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -39,7 +39,7 @@ public final class GetSecurityRecipesSecurityRecipeCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * @return The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     private String id;
@@ -54,12 +54,12 @@ public final class GetSecurityRecipesSecurityRecipeCollectionItem {
      */
     private String owner;
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     private List<String> securityPolicies;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -76,7 +76,7 @@ public final class GetSecurityRecipesSecurityRecipeCollectionItem {
 
     private GetSecurityRecipesSecurityRecipeCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -111,7 +111,7 @@ public final class GetSecurityRecipesSecurityRecipeCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * @return The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     public String id() {
@@ -132,14 +132,14 @@ public final class GetSecurityRecipesSecurityRecipeCollectionItem {
         return this.owner;
     }
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public List<String> securityPolicies() {
         return this.securityPolicies;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {

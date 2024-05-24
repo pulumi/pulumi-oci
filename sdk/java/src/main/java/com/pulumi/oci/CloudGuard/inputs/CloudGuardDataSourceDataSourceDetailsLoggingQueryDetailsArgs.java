@@ -33,14 +33,14 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs 
     }
 
     /**
-     * (Updatable) Logging query type for data source (Sighting/Insight)
+     * (Updatable) Logging query type for data source
      * 
      */
     @Import(name="loggingQueryType", required=true)
     private Output<String> loggingQueryType;
 
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Logging query type for data source
      * 
      */
     public Output<String> loggingQueryType() {
@@ -94,7 +94,7 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs 
         }
 
         /**
-         * @param loggingQueryType (Updatable) Logging query type for data source (Sighting/Insight)
+         * @param loggingQueryType (Updatable) Logging query type for data source
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs 
         }
 
         /**
-         * @param loggingQueryType (Updatable) Logging query type for data source (Sighting/Insight)
+         * @param loggingQueryType (Updatable) Logging query type for data source
          * 
          * @return builder
          * 

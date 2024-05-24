@@ -24,6 +24,7 @@ class ModelDeploymentArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ModelDeployment resource.
@@ -35,6 +36,7 @@ class ModelDeploymentArgs:
         :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
@@ -54,6 +56,8 @@ class ModelDeploymentArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if state is not None:
             pulumi.set(__self__, "state", state)
 
@@ -154,6 +158,18 @@ class ModelDeploymentArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -184,6 +200,7 @@ class _ModelDeploymentState:
                  model_deployment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] = None,
                  model_deployment_system_datas: Optional[pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]]] = None,
                  model_deployment_url: Optional[pulumi.Input[str]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
@@ -200,6 +217,7 @@ class _ModelDeploymentState:
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[Sequence[pulumi.Input['ModelDeploymentModelDeploymentSystemDataArgs']]] model_deployment_system_datas: Model deployment system data.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -230,6 +248,8 @@ class _ModelDeploymentState:
             pulumi.set(__self__, "model_deployment_system_datas", model_deployment_system_datas)
         if model_deployment_url is not None:
             pulumi.set(__self__, "model_deployment_url", model_deployment_url)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
@@ -370,6 +390,18 @@ class _ModelDeploymentState:
         pulumi.set(self, "model_deployment_url", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -422,6 +454,7 @@ class ModelDeployment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -513,7 +546,8 @@ class ModelDeployment(pulumi.CustomResource):
             display_name=model_deployment_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            opc_parent_rpt_url=model_deployment_opc_parent_rpt_url)
         ```
 
         ## Import
@@ -533,6 +567,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -634,7 +669,8 @@ class ModelDeployment(pulumi.CustomResource):
             display_name=model_deployment_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            opc_parent_rpt_url=model_deployment_opc_parent_rpt_url)
         ```
 
         ## Import
@@ -667,6 +703,7 @@ class ModelDeployment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -689,6 +726,7 @@ class ModelDeployment(pulumi.CustomResource):
             if model_deployment_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'model_deployment_configuration_details'")
             __props__.__dict__["model_deployment_configuration_details"] = model_deployment_configuration_details
+            __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -719,6 +757,7 @@ class ModelDeployment(pulumi.CustomResource):
             model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
             model_deployment_system_datas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentSystemDataArgs']]]]] = None,
             model_deployment_url: Optional[pulumi.Input[str]] = None,
+            opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None) -> 'ModelDeployment':
@@ -740,6 +779,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentSystemDataArgs']]]] model_deployment_system_datas: Model deployment system data.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
                
@@ -763,6 +803,7 @@ class ModelDeployment(pulumi.CustomResource):
         __props__.__dict__["model_deployment_configuration_details"] = model_deployment_configuration_details
         __props__.__dict__["model_deployment_system_datas"] = model_deployment_system_datas
         __props__.__dict__["model_deployment_url"] = model_deployment_url
+        __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -855,6 +896,14 @@ class ModelDeployment(pulumi.CustomResource):
         The URL to interact with the model deployment.
         """
         return pulumi.get(self, "model_deployment_url")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="projectId")

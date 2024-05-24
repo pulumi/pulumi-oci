@@ -93,7 +93,7 @@ class GetSecurityZoneResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The security zone's name
+        The security zone's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -109,7 +109,7 @@ class GetSecurityZoneResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can’t be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -138,7 +138,7 @@ class GetSecurityZoneResult:
     @pulumi.getter(name="securityZoneRecipeId")
     def security_zone_recipe_id(self) -> str:
         """
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
+        The OCID of the recipe (`SecurityRecipe` resource) for the security zone
         """
         return pulumi.get(self, "security_zone_recipe_id")
 
@@ -154,7 +154,7 @@ class GetSecurityZoneResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the security zone
+        The current lifecycle state of the security zone
         """
         return pulumi.get(self, "state")
 
@@ -202,7 +202,7 @@ def get_security_zone(security_zone_id: Optional[str] = None,
     """
     This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+    Returns a security zone (SecurityZone resource) identified by securityZoneId.
 
     ## Example Usage
 
@@ -214,7 +214,7 @@ def get_security_zone(security_zone_id: Optional[str] = None,
     ```
 
 
-    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)
+    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone` resource).
     """
     __args__ = dict()
     __args__['securityZoneId'] = security_zone_id
@@ -244,7 +244,7 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = Non
     """
     This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+    Returns a security zone (SecurityZone resource) identified by securityZoneId.
 
     ## Example Usage
 
@@ -256,6 +256,6 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = Non
     ```
 
 
-    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)
+    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone` resource).
     """
     ...

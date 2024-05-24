@@ -16,14 +16,14 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
     public static final CloudGuardDataSourceRegionStatusDetailArgs Empty = new CloudGuardDataSourceRegionStatusDetailArgs();
 
     /**
-     * Data Source replication region.
+     * Data source replication region
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return Data Source replication region.
+     * @return Data source replication region
      * 
      */
     public Optional<Output<String>> region() {
@@ -31,7 +31,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -41,7 +41,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77,7 +77,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param region Data Source replication region.
+         * @param region Data source replication region
          * 
          * @return builder
          * 
@@ -88,7 +88,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param region Data Source replication region.
+         * @param region Data source replication region
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,7 +112,7 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

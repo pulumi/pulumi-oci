@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+        /// Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
         /// 
         /// The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
         /// The list does not include any subcompartments of the compartmentId passed.
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+        /// Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
         /// 
         /// The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
         /// The list does not include any subcompartments of the compartmentId passed.
@@ -114,13 +114,13 @@ namespace Pulumi.Oci.CloudGuard
         public string? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
@@ -140,13 +140,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+        /// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
         /// </summary>
         [Input("resourceMetadataOnly")]
         public bool? ResourceMetadataOnly { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -166,13 +166,13 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
@@ -192,13 +192,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+        /// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
         /// </summary>
         [Input("resourceMetadataOnly")]
         public Input<bool>? ResourceMetadataOnly { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.CloudGuard
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// compartmentId of detector recipe
+        /// Compartment OCID of detector recipe
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionResult> DetectorRecipeCollections;
         /// <summary>
-        /// The display name of entity
+        /// Display name of the entity
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDetectorRecipesFilterResult> Filters;
@@ -234,7 +234,7 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string Id;
         public readonly bool? ResourceMetadataOnly;
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         public readonly string? State;
 

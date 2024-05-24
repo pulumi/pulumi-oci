@@ -25,15 +25,15 @@ class CloudGuardDataSourceArgs:
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudGuardDataSource resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) CompartmentId of Data Source.
-        :param pulumi.Input[str] data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
-        :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
+        :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
+        :param pulumi.Input[str] display_name: (Updatable) Data source display name
         :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs'] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
+        :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
                
                ** IMPORTANT **
@@ -55,7 +55,7 @@ class CloudGuardDataSourceArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) CompartmentId of Data Source.
+        (Updatable) Compartment OCID of the data source
         """
         return pulumi.get(self, "compartment_id")
 
@@ -67,7 +67,7 @@ class CloudGuardDataSourceArgs:
     @pulumi.getter(name="dataSourceFeedProvider")
     def data_source_feed_provider(self) -> pulumi.Input[str]:
         """
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
         """
         return pulumi.get(self, "data_source_feed_provider")
 
@@ -79,7 +79,7 @@ class CloudGuardDataSourceArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Data Source display name.
+        (Updatable) Data source display name
         """
         return pulumi.get(self, "display_name")
 
@@ -129,7 +129,7 @@ class CloudGuardDataSourceArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Status of DataSource. Default value is DISABLED.
+        (Updatable) Enablement status of data source.
 
 
         ** IMPORTANT **
@@ -160,25 +160,25 @@ class _CloudGuardDataSourceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudGuardDataSource resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) CompartmentId of Data Source.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
         :param pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs'] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
-        :param pulumi.Input[str] data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
+        :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
+        :param pulumi.Input[str] display_name: (Updatable) Data source display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]] region_status_details: Information about the region and status of query replication
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
+        :param pulumi.Input[str] state: The current lifecycle state of the resource.
+        :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Data source was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the Data source was updated. Format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The date and time the data source was updated. Format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -211,7 +211,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) CompartmentId of Data Source.
+        (Updatable) Compartment OCID of the data source
         """
         return pulumi.get(self, "compartment_id")
 
@@ -247,7 +247,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter(name="dataSourceFeedProvider")
     def data_source_feed_provider(self) -> Optional[pulumi.Input[str]]:
         """
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
         """
         return pulumi.get(self, "data_source_feed_provider")
 
@@ -271,7 +271,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Data Source display name.
+        (Updatable) Data source display name
         """
         return pulumi.get(self, "display_name")
 
@@ -309,7 +309,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
@@ -321,7 +321,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Status of DataSource. Default value is DISABLED.
+        (Updatable) Enablement status of data source.
 
 
         ** IMPORTANT **
@@ -361,7 +361,7 @@ class _CloudGuardDataSourceState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the Data source was updated. Format defined by RFC3339.
+        The date and time the data source was updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -386,7 +386,8 @@ class CloudGuardDataSource(pulumi.CustomResource):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a DataSource
+        Creates a data source (DataSource resource), using parameters passed
+        through a CreateDataSourceDetails resource.
 
         ## Example Usage
 
@@ -401,7 +402,9 @@ class CloudGuardDataSource(pulumi.CustomResource):
             data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
                 data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
                 additional_entities_count=data_source_data_source_details_additional_entities_count,
+                description=data_source_data_source_details_description,
                 interval_in_minutes=data_source_data_source_details_interval_in_minutes,
+                interval_in_seconds=data_source_data_source_details_interval_in_seconds,
                 logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
                     logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
                     key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
@@ -414,6 +417,11 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     query_start_time=data_source_data_source_details_query_start_time_query_start_time,
                 ),
                 regions=data_source_data_source_details_regions,
+                scheduled_query_scope_details=[oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs(
+                    region=data_source_data_source_details_scheduled_query_scope_details_region,
+                    resource_ids=data_source_data_source_details_scheduled_query_scope_details_resource_ids,
+                    resource_type=data_source_data_source_details_scheduled_query_scope_details_resource_type,
+                )],
                 threshold=data_source_data_source_details_threshold,
             ),
             defined_tags={
@@ -435,15 +443,15 @@ class CloudGuardDataSource(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) CompartmentId of Data Source.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
         :param pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']] data_source_details: (Updatable) Details specific to the data source type.
-        :param pulumi.Input[str] data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
+        :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
+        :param pulumi.Input[str] display_name: (Updatable) Data source display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
+        :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
                
                ** IMPORTANT **
@@ -458,7 +466,8 @@ class CloudGuardDataSource(pulumi.CustomResource):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a DataSource
+        Creates a data source (DataSource resource), using parameters passed
+        through a CreateDataSourceDetails resource.
 
         ## Example Usage
 
@@ -473,7 +482,9 @@ class CloudGuardDataSource(pulumi.CustomResource):
             data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
                 data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
                 additional_entities_count=data_source_data_source_details_additional_entities_count,
+                description=data_source_data_source_details_description,
                 interval_in_minutes=data_source_data_source_details_interval_in_minutes,
+                interval_in_seconds=data_source_data_source_details_interval_in_seconds,
                 logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
                     logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
                     key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
@@ -486,6 +497,11 @@ class CloudGuardDataSource(pulumi.CustomResource):
                     query_start_time=data_source_data_source_details_query_start_time_query_start_time,
                 ),
                 regions=data_source_data_source_details_regions,
+                scheduled_query_scope_details=[oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs(
+                    region=data_source_data_source_details_scheduled_query_scope_details_region,
+                    resource_ids=data_source_data_source_details_scheduled_query_scope_details_resource_ids,
+                    resource_type=data_source_data_source_details_scheduled_query_scope_details_resource_type,
+                )],
                 threshold=data_source_data_source_details_threshold,
             ),
             defined_tags={
@@ -585,25 +601,25 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) CompartmentId of Data Source.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID of the data source
         :param pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetailsArgs']] data_source_details: (Updatable) Details specific to the data source type.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]] data_source_detector_mapping_infos: Information about the detector recipe and rule attached
-        :param pulumi.Input[str] data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
+        :param pulumi.Input[str] data_source_feed_provider: Type of data source feed provider (LoggingQuery)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Data Source display name.
+        :param pulumi.Input[str] display_name: (Updatable) Data source display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]] region_status_details: Information about the region and status of query replication
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
+        :param pulumi.Input[str] state: The current lifecycle state of the resource.
+        :param pulumi.Input[str] status: (Updatable) Enablement status of data source.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Data source was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the Data source was updated. Format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The date and time the data source was updated. Format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -628,7 +644,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) CompartmentId of Data Source.
+        (Updatable) Compartment OCID of the data source
         """
         return pulumi.get(self, "compartment_id")
 
@@ -652,7 +668,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter(name="dataSourceFeedProvider")
     def data_source_feed_provider(self) -> pulumi.Output[str]:
         """
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
         """
         return pulumi.get(self, "data_source_feed_provider")
 
@@ -668,7 +684,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Data Source display name.
+        (Updatable) Data source display name
         """
         return pulumi.get(self, "display_name")
 
@@ -694,7 +710,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
@@ -702,7 +718,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        (Updatable) Status of DataSource. Default value is DISABLED.
+        (Updatable) Enablement status of data source.
 
 
         ** IMPORTANT **
@@ -730,7 +746,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the Data source was updated. Format defined by RFC3339.
+        The date and time the data source was updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 

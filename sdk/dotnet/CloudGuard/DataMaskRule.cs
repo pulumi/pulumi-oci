@@ -12,7 +12,7 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a new DataMaskRule object definition.
+    /// Creates a new DataMaskRule resource definition.
     /// 
     /// ## Example Usage
     /// 
@@ -63,19 +63,19 @@ namespace Pulumi.Oci.CloudGuard
     public partial class DataMaskRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier where the resource is created
+        /// (Updatable) Compartment OCID where the resource is created
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Data Mask Categories
+        /// (Updatable) Data mask rule categories
         /// </summary>
         [Output("dataMaskCategories")]
         public Output<ImmutableArray<string>> DataMaskCategories { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The status of the dataMaskRule.
+        /// (Updatable) The current status of the data mask rule
         /// </summary>
         [Output("dataMaskRuleStatus")]
         public Output<string> DataMaskRuleStatus { get; private set; } = null!;
@@ -87,13 +87,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The data mask rule description. Avoid entering confidential information.
+        /// The data mask rule description Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Data mask rule name.
+        /// (Updatable) Data mask rule display name
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -109,19 +109,19 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) IAM Group id associated with the data mask rule
+        /// (Updatable) IAM group ID associated with the data mask rule
         /// </summary>
         [Output("iamGroupId")]
         public Output<string> IamGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Additional details on the substate of the lifecycle state [DEPRECATE]
         /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the DataMaskRule.
+        /// The current lifecycle state of the data mask rule
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        /// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         /// </summary>
         [Output("targetSelected")]
         public Output<Outputs.DataMaskRuleTargetSelected> TargetSelected { get; private set; } = null!;
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class DataMaskRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier where the resource is created
+        /// (Updatable) Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _dataMaskCategories;
 
         /// <summary>
-        /// (Updatable) Data Mask Categories
+        /// (Updatable) Data mask rule categories
         /// </summary>
         public InputList<string> DataMaskCategories
         {
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) The status of the dataMaskRule.
+        /// (Updatable) The current status of the data mask rule
         /// </summary>
         [Input("dataMaskRuleStatus")]
         public Input<string>? DataMaskRuleStatus { get; set; }
@@ -233,13 +233,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The data mask rule description. Avoid entering confidential information.
+        /// The data mask rule description Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Data mask rule name.
+        /// (Updatable) Data mask rule display name
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -261,19 +261,19 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) IAM Group id associated with the data mask rule
+        /// (Updatable) IAM group ID associated with the data mask rule
         /// </summary>
         [Input("iamGroupId", required: true)]
         public Input<string> IamGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The current state of the DataMaskRule.
+        /// The current lifecycle state of the data mask rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        /// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         /// </summary>
         [Input("targetSelected", required: true)]
         public Input<Inputs.DataMaskRuleTargetSelectedArgs> TargetSelected { get; set; } = null!;
@@ -287,7 +287,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class DataMaskRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier where the resource is created
+        /// (Updatable) Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -296,7 +296,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _dataMaskCategories;
 
         /// <summary>
-        /// (Updatable) Data Mask Categories
+        /// (Updatable) Data mask rule categories
         /// </summary>
         public InputList<string> DataMaskCategories
         {
@@ -305,7 +305,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) The status of the dataMaskRule.
+        /// (Updatable) The current status of the data mask rule
         /// </summary>
         [Input("dataMaskRuleStatus")]
         public Input<string>? DataMaskRuleStatus { get; set; }
@@ -323,13 +323,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The data mask rule description. Avoid entering confidential information.
+        /// The data mask rule description Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Data mask rule name.
+        /// (Updatable) Data mask rule display name
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -351,19 +351,19 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) IAM Group id associated with the data mask rule
+        /// (Updatable) IAM group ID associated with the data mask rule
         /// </summary>
         [Input("iamGroupId")]
         public Input<string>? IamGroupId { get; set; }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Additional details on the substate of the lifecycle state [DEPRECATE]
         /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
 
         /// <summary>
-        /// The current state of the DataMaskRule.
+        /// The current lifecycle state of the data mask rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -381,7 +381,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        /// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         /// </summary>
         [Input("targetSelected")]
         public Input<Inputs.DataMaskRuleTargetSelectedGetArgs>? TargetSelected { get; set; }

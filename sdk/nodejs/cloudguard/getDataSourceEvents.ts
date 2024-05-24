@@ -9,7 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of events from CloudGuard DataSource
+ * Returns a list of data source events
+ * (DataSourceEventCollection  resource) from the data source
+ * (DataSource resource) identified by dataSourceId.
  *
  * ## Example Usage
  *
@@ -38,12 +40,12 @@ export function getDataSourceEvents(args: GetDataSourceEventsArgs, opts?: pulumi
  */
 export interface GetDataSourceEventsArgs {
     /**
-     * DataSource OCID
+     * Data source OCID.
      */
     dataSourceId: string;
     filters?: inputs.CloudGuard.GetDataSourceEventsFilter[];
     /**
-     * A filter to return only resource their region matches the given region.
+     * A filter to return only resource where their region matches the given region.
      */
     region?: string;
 }
@@ -57,7 +59,7 @@ export interface GetDataSourceEventsResult {
      */
     readonly dataSourceEventCollections: outputs.CloudGuard.GetDataSourceEventsDataSourceEventCollection[];
     /**
-     * Attached data Source
+     * Unique identifier of data source.
      */
     readonly dataSourceId: string;
     readonly filters?: outputs.CloudGuard.GetDataSourceEventsFilter[];
@@ -73,7 +75,9 @@ export interface GetDataSourceEventsResult {
 /**
  * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of events from CloudGuard DataSource
+ * Returns a list of data source events
+ * (DataSourceEventCollection  resource) from the data source
+ * (DataSource resource) identified by dataSourceId.
  *
  * ## Example Usage
  *
@@ -96,12 +100,12 @@ export function getDataSourceEventsOutput(args: GetDataSourceEventsOutputArgs, o
  */
 export interface GetDataSourceEventsOutputArgs {
     /**
-     * DataSource OCID
+     * Data source OCID.
      */
     dataSourceId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourceEventsFilterArgs>[]>;
     /**
-     * A filter to return only resource their region matches the given region.
+     * A filter to return only resource where their region matches the given region.
      */
     region?: pulumi.Input<string>;
 }

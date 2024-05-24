@@ -5,7 +5,6 @@ package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -64,7 +63,7 @@ public final class GetQueuesQueueCollectionItem {
      * 
      */
     private String messagesEndpoint;
-    private Boolean purgeQueue;
+    private Integer purgeTrigger;
     private String purgeType;
     /**
      * @return The retention period of the messages in the queue, in seconds.
@@ -173,8 +172,8 @@ public final class GetQueuesQueueCollectionItem {
     public String messagesEndpoint() {
         return this.messagesEndpoint;
     }
-    public Boolean purgeQueue() {
-        return this.purgeQueue;
+    public Integer purgeTrigger() {
+        return this.purgeTrigger;
     }
     public String purgeType() {
         return this.purgeType;
@@ -248,7 +247,7 @@ public final class GetQueuesQueueCollectionItem {
         private String id;
         private String lifecycleDetails;
         private String messagesEndpoint;
-        private Boolean purgeQueue;
+        private Integer purgeTrigger;
         private String purgeType;
         private Integer retentionInSeconds;
         private String state;
@@ -270,7 +269,7 @@ public final class GetQueuesQueueCollectionItem {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.messagesEndpoint = defaults.messagesEndpoint;
-    	      this.purgeQueue = defaults.purgeQueue;
+    	      this.purgeTrigger = defaults.purgeTrigger;
     	      this.purgeType = defaults.purgeType;
     	      this.retentionInSeconds = defaults.retentionInSeconds;
     	      this.state = defaults.state;
@@ -362,11 +361,11 @@ public final class GetQueuesQueueCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder purgeQueue(Boolean purgeQueue) {
-            if (purgeQueue == null) {
-              throw new MissingRequiredPropertyException("GetQueuesQueueCollectionItem", "purgeQueue");
+        public Builder purgeTrigger(Integer purgeTrigger) {
+            if (purgeTrigger == null) {
+              throw new MissingRequiredPropertyException("GetQueuesQueueCollectionItem", "purgeTrigger");
             }
-            this.purgeQueue = purgeQueue;
+            this.purgeTrigger = purgeTrigger;
             return this;
         }
         @CustomType.Setter
@@ -445,7 +444,7 @@ public final class GetQueuesQueueCollectionItem {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.messagesEndpoint = messagesEndpoint;
-            _resultValue.purgeQueue = purgeQueue;
+            _resultValue.purgeTrigger = purgeTrigger;
             _resultValue.purgeType = purgeType;
             _resultValue.retentionInSeconds = retentionInSeconds;
             _resultValue.state = state;

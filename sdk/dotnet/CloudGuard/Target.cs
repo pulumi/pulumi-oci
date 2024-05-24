@@ -12,7 +12,7 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a new Target
+    /// Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
     /// 
     /// ## Example Usage
     /// 
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CloudGuard
     ///     {
     ///         CompartmentId = compartmentId,
     ///         DisplayName = targetDisplayName,
-    ///         TargetResourceId = testTargetResource.Id,
+    ///         TargetResourceId = testResource.Id,
     ///         TargetResourceType = targetTargetResourceType,
     ///         DefinedTags = 
     ///         {
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class Target : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<string>> InheritedByCompartments { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<int> RecipeCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<Outputs.TargetTargetDetail>> TargetDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of detector recipes to associate with target
+        /// (Updatable) List of detector recipes to attach to target
         /// </summary>
         [Output("targetDetectorRecipes")]
         public Output<ImmutableArray<Outputs.TargetTargetDetectorRecipe>> TargetDetectorRecipes { get; private set; } = null!;
@@ -194,13 +194,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TargetResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// possible type of targets(COMPARTMENT/FACLOUD)
+        /// Type of resource that target support (COMPARTMENT/FACLOUD)
         /// </summary>
         [Output("targetResourceType")]
         public Output<string> TargetResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of responder recipes to associate with target
+        /// (Updatable) List of responder recipes to attach to target
         /// </summary>
         [Output("targetResponderRecipes")]
         public Output<ImmutableArray<Outputs.TargetTargetResponderRecipe>> TargetResponderRecipes { get; private set; } = null!;
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class TargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -312,7 +312,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -321,7 +321,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.TargetTargetDetectorRecipeArgs>? _targetDetectorRecipes;
 
         /// <summary>
-        /// (Updatable) List of detector recipes to associate with target
+        /// (Updatable) List of detector recipes to attach to target
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeArgs> TargetDetectorRecipes
         {
@@ -336,7 +336,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string> TargetResourceId { get; set; } = null!;
 
         /// <summary>
-        /// possible type of targets(COMPARTMENT/FACLOUD)
+        /// Type of resource that target support (COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType", required: true)]
         public Input<string> TargetResourceType { get; set; } = null!;
@@ -345,7 +345,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.TargetTargetResponderRecipeArgs>? _targetResponderRecipes;
 
         /// <summary>
-        /// (Updatable) List of responder recipes to associate with target
+        /// (Updatable) List of responder recipes to attach to target
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeArgs> TargetResponderRecipes
         {
@@ -362,7 +362,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class TargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -388,7 +388,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -422,7 +422,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<int>? RecipeCount { get; set; }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -467,7 +467,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.TargetTargetDetectorRecipeGetArgs>? _targetDetectorRecipes;
 
         /// <summary>
-        /// (Updatable) List of detector recipes to associate with target
+        /// (Updatable) List of detector recipes to attach to target
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeGetArgs> TargetDetectorRecipes
         {
@@ -482,7 +482,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TargetResourceId { get; set; }
 
         /// <summary>
-        /// possible type of targets(COMPARTMENT/FACLOUD)
+        /// Type of resource that target support (COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType")]
         public Input<string>? TargetResourceType { get; set; }
@@ -491,7 +491,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.TargetTargetResponderRecipeGetArgs>? _targetResponderRecipes;
 
         /// <summary>
-        /// (Updatable) List of responder recipes to associate with target
+        /// (Updatable) List of responder recipes to attach to target
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeGetArgs> TargetResponderRecipes
         {
@@ -506,7 +506,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

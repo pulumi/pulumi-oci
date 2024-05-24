@@ -14,43 +14,43 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult
     {
         /// <summary>
-        /// Base condition object
+        /// The base condition resource.
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// Configuration details
+        /// List of detector rule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult> Configurations;
         /// <summary>
-        /// The id of the attached DataSource.
+        /// The ID of the attached data source
         /// </summary>
         public readonly string DataSourceId;
         /// <summary>
-        /// Description for DetectorRecipeDetectorRule.
+        /// Description for detector recipe detector rule
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Data Source entities mapping for a Detector Rule
+        /// Data source entities mapping for the detector rule
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult> EntitiesMappings;
         /// <summary>
-        /// configuration allowed or not
+        /// Can the rule be configured?
         /// </summary>
         public readonly bool IsConfigurationAllowed;
         /// <summary>
-        /// Enables the control
+        /// Enablement status for the rule
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// user defined labels for a detector rule
+        /// User-defined labels for a detector rule
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// Recommendation for DetectorRecipeDetectorRule
+        /// Recommendation for DetectorRecipeDetectorRule resource
         /// </summary>
         public readonly string Recommendation;
         /// <summary>
-        /// The Risk Level
+        /// The risk level for the rule
         /// </summary>
         public readonly string RiskLevel;
 

@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     private String entityType;
@@ -28,14 +28,14 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping
 
     private GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping() {}
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public String entityType() {

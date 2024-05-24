@@ -14,27 +14,32 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     private String detector;
     /**
-     * @return Unique identifier for Detector Recipe of which this is an extension
+     * @return Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
      * 
      */
     private String detectorRecipeId;
     /**
-     * @return List of detector rules for the detector type for recipe - user input
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    private String detectorRecipeType;
+    /**
+     * @return List of detector rules for the detector recipe - user input
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule> detectorRules;
@@ -44,22 +49,22 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
      */
     private String displayName;
     /**
-     * @return List of effective detector rules for the detector type for recipe after applying defaults
+     * @return List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private String owner;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -69,42 +74,49 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipe() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public String detector() {
         return this.detector;
     }
     /**
-     * @return Unique identifier for Detector Recipe of which this is an extension
+     * @return Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
      * 
      */
     public String detectorRecipeId() {
         return this.detectorRecipeId;
     }
     /**
-     * @return List of detector rules for the detector type for recipe - user input
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public String detectorRecipeType() {
+        return this.detectorRecipeType;
+    }
+    /**
+     * @return List of detector rules for the detector recipe - user input
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule> detectorRules() {
@@ -118,28 +130,28 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         return this.displayName;
     }
     /**
-     * @return List of effective detector rules for the detector type for recipe after applying defaults
+     * @return List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules() {
         return this.effectiveDetectorRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -153,7 +165,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {
@@ -173,6 +185,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
         private String description;
         private String detector;
         private String detectorRecipeId;
+        private String detectorRecipeType;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule> detectorRules;
         private String displayName;
         private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
@@ -188,6 +201,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
     	      this.description = defaults.description;
     	      this.detector = defaults.detector;
     	      this.detectorRecipeId = defaults.detectorRecipeId;
+    	      this.detectorRecipeType = defaults.detectorRecipeType;
     	      this.detectorRules = defaults.detectorRules;
     	      this.displayName = defaults.displayName;
     	      this.effectiveDetectorRules = defaults.effectiveDetectorRules;
@@ -228,6 +242,14 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
               throw new MissingRequiredPropertyException("GetGuardTargetsTargetCollectionItemTargetDetectorRecipe", "detectorRecipeId");
             }
             this.detectorRecipeId = detectorRecipeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder detectorRecipeType(String detectorRecipeType) {
+            if (detectorRecipeType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetsTargetCollectionItemTargetDetectorRecipe", "detectorRecipeType");
+            }
+            this.detectorRecipeType = detectorRecipeType;
             return this;
         }
         @CustomType.Setter
@@ -306,6 +328,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipe {
             _resultValue.description = description;
             _resultValue.detector = detector;
             _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRecipeType = detectorRecipeType;
             _resultValue.detectorRules = detectorRules;
             _resultValue.displayName = displayName;
             _resultValue.effectiveDetectorRules = effectiveDetectorRules;

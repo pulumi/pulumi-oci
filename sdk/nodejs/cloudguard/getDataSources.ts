@@ -9,9 +9,11 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Data Sources in a compartment
+ * Returns a list of all data sources (DataSource resources) for a compartment
+ * identified by compartmentId. List is returned in a DataSourceCollection resource
+ * with page of DataSourceSummary resources.
  *
- * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+ * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
  * The list does not include any subcompartments of the compartmentId passed.
  *
  * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -20,7 +22,7 @@ import * as utilities from "../utilities";
  * Principal doesn't have access to even one of the child compartments. This is valid only when
  * `compartmentIdInSubtree` is set to `true`.
  *
- * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+ * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
  * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
  * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
  * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -66,15 +68,15 @@ export interface GetDataSourcesArgs {
      */
     accessLevel?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: boolean;
     /**
-     * A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      */
     dataSourceFeedProvider?: string;
     /**
@@ -83,11 +85,11 @@ export interface GetDataSourcesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetDataSourcesFilter[];
     /**
-     * A filter to return only resources their query type matches the given LoggingQueryType.
+     * A filter to return only resources where their query type matches the given LoggingQueryType.
      */
     loggingQueryType?: string;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -98,7 +100,7 @@ export interface GetDataSourcesArgs {
 export interface GetDataSourcesResult {
     readonly accessLevel?: string;
     /**
-     * CompartmentId of Data source.
+     * Compartment OCID of data source
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
@@ -111,7 +113,7 @@ export interface GetDataSourcesResult {
      */
     readonly dataSourceFeedProvider?: string;
     /**
-     * DisplayName of Data source.
+     * Display name of the data source
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetDataSourcesFilter[];
@@ -120,20 +122,22 @@ export interface GetDataSourcesResult {
      */
     readonly id: string;
     /**
-     * Logging query type for data source (Sighting/Insight)
+     * Type of logging query for data source (Sighting/Insight)
      */
     readonly loggingQueryType?: string;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Data Sources in a compartment
+ * Returns a list of all data sources (DataSource resources) for a compartment
+ * identified by compartmentId. List is returned in a DataSourceCollection resource
+ * with page of DataSourceSummary resources.
  *
- * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+ * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
  * The list does not include any subcompartments of the compartmentId passed.
  *
  * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -142,7 +146,7 @@ export interface GetDataSourcesResult {
  * Principal doesn't have access to even one of the child compartments. This is valid only when
  * `compartmentIdInSubtree` is set to `true`.
  *
- * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+ * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
  * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
  * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
  * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -177,15 +181,15 @@ export interface GetDataSourcesOutputArgs {
      */
     accessLevel?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
-     * A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      */
     dataSourceFeedProvider?: pulumi.Input<string>;
     /**
@@ -194,11 +198,11 @@ export interface GetDataSourcesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourcesFilterArgs>[]>;
     /**
-     * A filter to return only resources their query type matches the given LoggingQueryType.
+     * A filter to return only resources where their query type matches the given LoggingQueryType.
      */
     loggingQueryType?: pulumi.Input<string>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

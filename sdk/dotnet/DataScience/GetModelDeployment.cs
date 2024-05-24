@@ -146,6 +146,7 @@ namespace Pulumi.Oci.DataScience
         /// The URL to interact with the model deployment.
         /// </summary>
         public readonly string ModelDeploymentUrl;
+        public readonly string OpcParentRptUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
         /// </summary>
@@ -187,6 +188,8 @@ namespace Pulumi.Oci.DataScience
 
             string modelDeploymentUrl,
 
+            string opcParentRptUrl,
+
             string projectId,
 
             string state,
@@ -206,6 +209,7 @@ namespace Pulumi.Oci.DataScience
             ModelDeploymentId = modelDeploymentId;
             ModelDeploymentSystemDatas = modelDeploymentSystemDatas;
             ModelDeploymentUrl = modelDeploymentUrl;
+            OpcParentRptUrl = opcParentRptUrl;
             ProjectId = projectId;
             State = state;
             TimeCreated = timeCreated;

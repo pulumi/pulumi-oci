@@ -14,9 +14,11 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all Data Sources in a compartment
+        /// Returns a list of all data sources (DataSource resources) for a compartment
+        /// identified by compartmentId. List is returned in a DataSourceCollection resource
+        /// with page of DataSourceSummary resources.
         /// 
-        /// The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+        /// The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
         /// The list does not include any subcompartments of the compartmentId passed.
         /// 
         /// The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -25,7 +27,7 @@ namespace Pulumi.Oci.CloudGuard
         /// Principal doesn't have access to even one of the child compartments. This is valid only when
         /// `compartmentIdInSubtree` is set to `true`.
         /// 
-        /// The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
         /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -61,9 +63,11 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all Data Sources in a compartment
+        /// Returns a list of all data sources (DataSource resources) for a compartment
+        /// identified by compartmentId. List is returned in a DataSourceCollection resource
+        /// with page of DataSourceSummary resources.
         /// 
-        /// The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+        /// The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
         /// The list does not include any subcompartments of the compartmentId passed.
         /// 
         /// The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -72,7 +76,7 @@ namespace Pulumi.Oci.CloudGuard
         /// Principal doesn't have access to even one of the child compartments. This is valid only when
         /// `compartmentIdInSubtree` is set to `true`.
         /// 
-        /// The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+        /// The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
         /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -116,19 +120,19 @@ namespace Pulumi.Oci.CloudGuard
         public string? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+        /// A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
         /// </summary>
         [Input("dataSourceFeedProvider")]
         public string? DataSourceFeedProvider { get; set; }
@@ -148,13 +152,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// A filter to return only resources their query type matches the given LoggingQueryType.
+        /// A filter to return only resources where their query type matches the given LoggingQueryType.
         /// </summary>
         [Input("loggingQueryType")]
         public string? LoggingQueryType { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -174,19 +178,19 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+        /// A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
         /// </summary>
         [Input("dataSourceFeedProvider")]
         public Input<string>? DataSourceFeedProvider { get; set; }
@@ -206,13 +210,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// A filter to return only resources their query type matches the given LoggingQueryType.
+        /// A filter to return only resources where their query type matches the given LoggingQueryType.
         /// </summary>
         [Input("loggingQueryType")]
         public Input<string>? LoggingQueryType { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -229,7 +233,7 @@ namespace Pulumi.Oci.CloudGuard
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// CompartmentId of Data source.
+        /// Compartment OCID of data source
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
@@ -242,7 +246,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string? DataSourceFeedProvider;
         /// <summary>
-        /// DisplayName of Data source.
+        /// Display name of the data source
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDataSourcesFilterResult> Filters;
@@ -251,11 +255,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Logging query type for data source (Sighting/Insight)
+        /// Type of logging query for data source (Sighting/Insight)
         /// </summary>
         public readonly string? LoggingQueryType;
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource.
         /// </summary>
         public readonly string? State;
 

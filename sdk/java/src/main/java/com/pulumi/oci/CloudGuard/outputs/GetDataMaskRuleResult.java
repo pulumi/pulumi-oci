@@ -15,18 +15,18 @@ import java.util.Objects;
 @CustomType
 public final class GetDataMaskRuleResult {
     /**
-     * @return Compartment Identifier where the resource is created.
+     * @return Compartment OCID where the resource is created
      * 
      */
     private String compartmentId;
     /**
-     * @return Data Mask Categories
+     * @return List of data mask rule categories
      * 
      */
     private List<String> dataMaskCategories;
     private String dataMaskRuleId;
     /**
-     * @return The status of the dataMaskRule.
+     * @return The current status of the data mask rule
      * 
      */
     private String dataMaskRuleStatus;
@@ -36,12 +36,12 @@ public final class GetDataMaskRuleResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The data mask rule description.
+     * @return The data mask rule description
      * 
      */
     private String description;
     /**
-     * @return Data Mask Rule Identifier, can be renamed.
+     * @return Data mask rule display name
      * 
      */
     private String displayName;
@@ -51,22 +51,22 @@ public final class GetDataMaskRuleResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return IAM Group id associated with the data mask rule
+     * @return IAM Group ID associated with the data mask rule
      * 
      */
     private String iamGroupId;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
     private String id;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Additional details on the substate of the lifecycle state [DEPRECATE]
      * 
      */
     private String lifecyleDetails;
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     private String state;
@@ -76,7 +76,7 @@ public final class GetDataMaskRuleResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * @return Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     private List<GetDataMaskRuleTargetSelected> targetSelecteds;
@@ -93,14 +93,14 @@ public final class GetDataMaskRuleResult {
 
     private GetDataMaskRuleResult() {}
     /**
-     * @return Compartment Identifier where the resource is created.
+     * @return Compartment OCID where the resource is created
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Data Mask Categories
+     * @return List of data mask rule categories
      * 
      */
     public List<String> dataMaskCategories() {
@@ -110,7 +110,7 @@ public final class GetDataMaskRuleResult {
         return this.dataMaskRuleId;
     }
     /**
-     * @return The status of the dataMaskRule.
+     * @return The current status of the data mask rule
      * 
      */
     public String dataMaskRuleStatus() {
@@ -124,14 +124,14 @@ public final class GetDataMaskRuleResult {
         return this.definedTags;
     }
     /**
-     * @return The data mask rule description.
+     * @return The data mask rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Data Mask Rule Identifier, can be renamed.
+     * @return Data mask rule display name
      * 
      */
     public String displayName() {
@@ -145,28 +145,28 @@ public final class GetDataMaskRuleResult {
         return this.freeformTags;
     }
     /**
-     * @return IAM Group id associated with the data mask rule
+     * @return IAM Group ID associated with the data mask rule
      * 
      */
     public String iamGroupId() {
         return this.iamGroupId;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Additional details on the substate of the lifecycle state [DEPRECATE]
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
     }
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     public String state() {
@@ -180,7 +180,7 @@ public final class GetDataMaskRuleResult {
         return this.systemTags;
     }
     /**
-     * @return Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * @return Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     public List<GetDataMaskRuleTargetSelected> targetSelecteds() {

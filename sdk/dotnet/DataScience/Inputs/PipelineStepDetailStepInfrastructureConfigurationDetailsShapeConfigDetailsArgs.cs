@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        /// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<double>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        /// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         /// </summary>
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }

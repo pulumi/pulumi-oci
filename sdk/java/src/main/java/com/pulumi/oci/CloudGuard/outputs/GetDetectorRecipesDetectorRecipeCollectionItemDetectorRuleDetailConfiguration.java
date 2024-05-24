@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration {
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     private String configKey;
     /**
-     * @return configuration data type
+     * @return Configuration data type
      * 
      */
     private String dataType;
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     private String name;
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     private String value;
@@ -40,28 +40,28 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
 
     private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration() {}
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     public String configKey() {
         return this.configKey;
     }
     /**
-     * @return configuration data type
+     * @return Configuration data type
      * 
      */
     public String dataType() {
         return this.dataType;
     }
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public String value() {

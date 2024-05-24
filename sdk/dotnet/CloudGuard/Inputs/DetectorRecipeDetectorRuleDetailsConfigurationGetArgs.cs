@@ -13,25 +13,25 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeDetectorRuleDetailsConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Unique name of the configuration
+        /// (Updatable) Unique identifier of the configuration
         /// </summary>
         [Input("configKey", required: true)]
         public Input<string> ConfigKey { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) configuration data type
+        /// (Updatable) Configuration data type
         /// </summary>
         [Input("dataType")]
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// (Updatable) configuration name
+        /// (Updatable) Configuration name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) configuration value
+        /// (Updatable) Configuration value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

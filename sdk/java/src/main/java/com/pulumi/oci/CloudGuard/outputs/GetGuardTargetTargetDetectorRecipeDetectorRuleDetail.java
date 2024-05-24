@@ -20,27 +20,27 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
      */
     private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups;
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
     /**
-     * @return configuration allowed or not
+     * @return Configuration allowed or not
      * 
      */
     private Boolean isConfigurationAllowed;
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     private List<String> labels;
     /**
-     * @return The Risk Level
+     * @return The risk level of the detector rule
      * 
      */
     private String riskLevel;
@@ -54,35 +54,35 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
         return this.conditionGroups;
     }
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations() {
         return this.configurations;
     }
     /**
-     * @return configuration allowed or not
+     * @return Configuration allowed or not
      * 
      */
     public Boolean isConfigurationAllowed() {
         return this.isConfigurationAllowed;
     }
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels;
     }
     /**
-     * @return The Risk Level
+     * @return The risk level of the detector rule
      * 
      */
     public String riskLevel() {

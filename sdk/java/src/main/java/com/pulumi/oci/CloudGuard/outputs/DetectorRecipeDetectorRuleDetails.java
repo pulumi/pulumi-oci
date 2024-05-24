@@ -17,122 +17,122 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeDetectorRuleDetails {
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) Configuration details
+     * @return (Updatable) List of detector rule configurations
      * 
      */
     private @Nullable List<DetectorRecipeDetectorRuleDetailsConfiguration> configurations;
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return (Updatable) The unique identifier of the attached data source
      * 
      */
     private @Nullable String dataSourceId;
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Description for the detector rule
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return (Updatable) Data source entities mapping for a detector rule
      * 
      */
     private @Nullable List<DetectorRecipeDetectorRuleDetailsEntitiesMapping> entitiesMappings;
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     private @Nullable Boolean isConfigurationAllowed;
     /**
-     * @return (Updatable) Enables the control
+     * @return (Updatable) Enablement status of the detector rule
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return (Updatable) User-defined labels for a detector rule
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return (Updatable) Recommendation for the detector rule
      * 
      */
     private @Nullable String recommendation;
     /**
-     * @return (Updatable) The Risk Level
+     * @return (Updatable) The risk level of the detector rule
      * 
      */
     private String riskLevel;
 
     private DetectorRecipeDetectorRuleDetails() {}
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) Configuration details
+     * @return (Updatable) List of detector rule configurations
      * 
      */
     public List<DetectorRecipeDetectorRuleDetailsConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return (Updatable) The unique identifier of the attached data source
      * 
      */
     public Optional<String> dataSourceId() {
         return Optional.ofNullable(this.dataSourceId);
     }
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Description for the detector rule
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return (Updatable) Data source entities mapping for a detector rule
      * 
      */
     public List<DetectorRecipeDetectorRuleDetailsEntitiesMapping> entitiesMappings() {
         return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
     }
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     public Optional<Boolean> isConfigurationAllowed() {
         return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
-     * @return (Updatable) Enables the control
+     * @return (Updatable) Enablement status of the detector rule
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return (Updatable) User-defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return (Updatable) Recommendation for the detector rule
      * 
      */
     public Optional<String> recommendation() {
         return Optional.ofNullable(this.recommendation);
     }
     /**
-     * @return (Updatable) The Risk Level
+     * @return (Updatable) The risk level of the detector rule
      * 
      */
     public String riskLevel() {

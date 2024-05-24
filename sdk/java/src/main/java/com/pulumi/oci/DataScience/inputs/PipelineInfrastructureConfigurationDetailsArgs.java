@@ -19,14 +19,14 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
     public static final PipelineInfrastructureConfigurationDetailsArgs Empty = new PipelineInfrastructureConfigurationDetailsArgs();
 
     /**
-     * The size of the block storage volume to attach to the instance.
+     * (Updatable) The size of the block storage volume to attach to the instance.
      * 
      */
     @Import(name="blockStorageSizeInGbs", required=true)
     private Output<Integer> blockStorageSizeInGbs;
 
     /**
-     * @return The size of the block storage volume to attach to the instance.
+     * @return (Updatable) The size of the block storage volume to attach to the instance.
      * 
      */
     public Output<Integer> blockStorageSizeInGbs() {
@@ -34,14 +34,14 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
     }
 
     /**
-     * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+     * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     @Import(name="shapeConfigDetails")
     private @Nullable Output<PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs> shapeConfigDetails;
 
     /**
-     * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+     * @return (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     public Optional<Output<PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs>> shapeConfigDetails() {
@@ -49,18 +49,33 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
     }
 
     /**
-     * The shape used to launch the instance for all step runs in the pipeline.
+     * (Updatable) The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
     @Import(name="shapeName", required=true)
     private Output<String> shapeName;
 
     /**
-     * @return The shape used to launch the instance for all step runs in the pipeline.
+     * @return (Updatable) The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
     public Output<String> shapeName() {
         return this.shapeName;
+    }
+
+    /**
+     * (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     private PipelineInfrastructureConfigurationDetailsArgs() {}
@@ -69,6 +84,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
         this.shapeConfigDetails = $.shapeConfigDetails;
         this.shapeName = $.shapeName;
+        this.subnetId = $.subnetId;
     }
 
     public static Builder builder() {
@@ -90,7 +106,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param blockStorageSizeInGbs The size of the block storage volume to attach to the instance.
+         * @param blockStorageSizeInGbs (Updatable) The size of the block storage volume to attach to the instance.
          * 
          * @return builder
          * 
@@ -101,7 +117,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param blockStorageSizeInGbs The size of the block storage volume to attach to the instance.
+         * @param blockStorageSizeInGbs (Updatable) The size of the block storage volume to attach to the instance.
          * 
          * @return builder
          * 
@@ -111,7 +127,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param shapeConfigDetails Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         * @param shapeConfigDetails (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          * 
          * @return builder
          * 
@@ -122,7 +138,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param shapeConfigDetails Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         * @param shapeConfigDetails (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          * 
          * @return builder
          * 
@@ -132,7 +148,7 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param shapeName The shape used to launch the instance for all step runs in the pipeline.
+         * @param shapeName (Updatable) The shape used to launch the instance for all step runs in the pipeline.
          * 
          * @return builder
          * 
@@ -143,13 +159,34 @@ public final class PipelineInfrastructureConfigurationDetailsArgs extends com.pu
         }
 
         /**
-         * @param shapeName The shape used to launch the instance for all step runs in the pipeline.
+         * @param shapeName (Updatable) The shape used to launch the instance for all step runs in the pipeline.
          * 
          * @return builder
          * 
          */
         public Builder shapeName(String shapeName) {
             return shapeName(Output.of(shapeName));
+        }
+
+        /**
+         * @param subnetId (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         public PipelineInfrastructureConfigurationDetailsArgs build() {

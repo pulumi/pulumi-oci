@@ -18,13 +18,13 @@ import javax.annotation.Nullable;
 public final class GetManagedListsResult {
     private @Nullable String accessLevel;
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ManagedList display name.
+     * @return Managed list display name
      * 
      */
     private @Nullable String displayName;
@@ -35,7 +35,7 @@ public final class GetManagedListsResult {
      */
     private String id;
     /**
-     * @return type of the list
+     * @return Type of information contained in the managed list
      * 
      */
     private @Nullable String listType;
@@ -46,7 +46,7 @@ public final class GetManagedListsResult {
     private List<GetManagedListsManagedListCollection> managedListCollections;
     private @Nullable Boolean resourceMetadataOnly;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private @Nullable String state;
@@ -56,7 +56,7 @@ public final class GetManagedListsResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public String compartmentId() {
@@ -66,7 +66,7 @@ public final class GetManagedListsResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ManagedList display name.
+     * @return Managed list display name
      * 
      */
     public Optional<String> displayName() {
@@ -83,7 +83,7 @@ public final class GetManagedListsResult {
         return this.id;
     }
     /**
-     * @return type of the list
+     * @return Type of information contained in the managed list
      * 
      */
     public Optional<String> listType() {
@@ -100,7 +100,7 @@ public final class GetManagedListsResult {
         return Optional.ofNullable(this.resourceMetadataOnly);
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<String> state() {

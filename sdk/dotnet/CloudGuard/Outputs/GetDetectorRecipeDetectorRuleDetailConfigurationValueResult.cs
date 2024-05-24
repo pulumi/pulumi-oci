@@ -14,15 +14,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult
     {
         /// <summary>
-        /// configuration list item type, either CUSTOM or MANAGED
+        /// Configuration list item type (CUSTOM or MANAGED)
         /// </summary>
         public readonly string ListType;
         /// <summary>
-        /// type of the managed list
+        /// Type of content in the managed list
         /// </summary>
         public readonly string ManagedListType;
         /// <summary>
-        /// configuration value
+        /// Configuration value
         /// </summary>
         public readonly string Value;
 

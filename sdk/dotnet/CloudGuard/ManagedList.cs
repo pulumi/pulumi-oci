@@ -12,7 +12,7 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a new ManagedList object.
+    /// Creates a new ManagedList resource.
     /// 
     /// ## Import
     /// 
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class ManagedList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Managed list description.
+        /// (Updatable) Managed list description
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// provider of the feed
+        /// Provider of the managed list feed
         /// </summary>
         [Output("feedProvider")]
         public Output<string> FeedProvider { get; private set; } = null!;
@@ -68,31 +68,31 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// If this list is editable or not
+        /// Is this list editable?
         /// </summary>
         [Output("isEditable")]
         public Output<bool> IsEditable { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         [Output("lifecyleDetails")]
         public Output<string> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of ManagedListItem
+        /// (Updatable) List of items in the managed list
         /// </summary>
         [Output("listItems")]
         public Output<ImmutableArray<string>> ListItems { get; private set; } = null!;
 
         /// <summary>
-        /// type of the list
+        /// Type of information stored in the list
         /// </summary>
         [Output("listType")]
         public Output<string> ListType { get; private set; } = null!;
 
         /// <summary>
-        /// OCID of the Source ManagedList
+        /// OCID of the source managed list
         /// 
         /// 
         /// ** IMPORTANT **
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> SourceManagedListId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the managed list was updated. Format defined by RFC3339.
+        /// The date and time the managed list was last updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class ManagedListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Managed list description.
+        /// (Updatable) Managed list description
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _listItems;
 
         /// <summary>
-        /// (Updatable) List of ManagedListItem
+        /// (Updatable) List of items in the managed list
         /// </summary>
         public InputList<string> ListItems
         {
@@ -232,13 +232,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// type of the list
+        /// Type of information stored in the list
         /// </summary>
         [Input("listType")]
         public Input<string>? ListType { get; set; }
 
         /// <summary>
-        /// OCID of the Source ManagedList
+        /// OCID of the source managed list
         /// 
         /// 
         /// ** IMPORTANT **
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class ManagedListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Managed list description.
+        /// (Updatable) Managed list description
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// provider of the feed
+        /// Provider of the managed list feed
         /// </summary>
         [Input("feedProvider")]
         public Input<string>? FeedProvider { get; set; }
@@ -310,13 +310,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// If this list is editable or not
+        /// Is this list editable?
         /// </summary>
         [Input("isEditable")]
         public Input<bool>? IsEditable { get; set; }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         [Input("lifecyleDetails")]
         public Input<string>? LifecyleDetails { get; set; }
@@ -325,7 +325,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _listItems;
 
         /// <summary>
-        /// (Updatable) List of ManagedListItem
+        /// (Updatable) List of items in the managed list
         /// </summary>
         public InputList<string> ListItems
         {
@@ -334,13 +334,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// type of the list
+        /// Type of information stored in the list
         /// </summary>
         [Input("listType")]
         public Input<string>? ListType { get; set; }
 
         /// <summary>
-        /// OCID of the Source ManagedList
+        /// OCID of the source managed list
         /// 
         /// 
         /// ** IMPORTANT **
@@ -350,7 +350,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? SourceManagedListId { get; set; }
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the managed list was updated. Format defined by RFC3339.
+        /// The date and time the managed list was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a new Target
+ * Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
  * 
  * ## Example Usage
  * 
@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *         var testTarget = new Target("testTarget", TargetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(targetDisplayName)
- *             .targetResourceId(testTargetResource.id())
+ *             .targetResourceId(testResource.id())
  *             .targetResourceType(targetTargetResourceType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(targetDescription)
@@ -108,14 +108,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/target:Target")
 public class Target extends com.pulumi.resources.CustomResource {
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Output<String> compartmentId() {
@@ -154,7 +154,7 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -163,7 +163,7 @@ public class Target extends com.pulumi.resources.CustomResource {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -204,14 +204,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.inheritedByCompartments;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public Output<String> lifecyleDetails() {
@@ -232,14 +232,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.recipeCount;
     }
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Output<String> state() {
@@ -274,14 +274,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.targetDetails;
     }
     /**
-     * (Updatable) List of detector recipes to associate with target
+     * (Updatable) List of detector recipes to attach to target
      * 
      */
     @Export(name="targetDetectorRecipes", refs={List.class,TargetTargetDetectorRecipe.class}, tree="[0,1]")
     private Output<List<TargetTargetDetectorRecipe>> targetDetectorRecipes;
 
     /**
-     * @return (Updatable) List of detector recipes to associate with target
+     * @return (Updatable) List of detector recipes to attach to target
      * 
      */
     public Output<List<TargetTargetDetectorRecipe>> targetDetectorRecipes() {
@@ -302,28 +302,28 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.targetResourceId;
     }
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     @Export(name="targetResourceType", refs={String.class}, tree="[0]")
     private Output<String> targetResourceType;
 
     /**
-     * @return possible type of targets(COMPARTMENT/FACLOUD)
+     * @return Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     public Output<String> targetResourceType() {
         return this.targetResourceType;
     }
     /**
-     * (Updatable) List of responder recipes to associate with target
+     * (Updatable) List of responder recipes to attach to target
      * 
      */
     @Export(name="targetResponderRecipes", refs={List.class,TargetTargetResponderRecipe.class}, tree="[0,1]")
     private Output<List<TargetTargetResponderRecipe>> targetResponderRecipes;
 
     /**
-     * @return (Updatable) List of responder recipes to associate with target
+     * @return (Updatable) List of responder recipes to attach to target
      * 
      */
     public Output<List<TargetTargetResponderRecipe>> targetResponderRecipes() {
@@ -344,14 +344,14 @@ public class Target extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {

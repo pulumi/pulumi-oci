@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+// Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
 // The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
 // The list does not include any subcompartments of the compartmentId passed.
 //
@@ -73,38 +73,38 @@ func GetManagedLists(ctx *pulumi.Context, args *GetManagedListsArgs, opts ...pul
 type GetManagedListsArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetManagedListsFilter `pulumi:"filters"`
-	// The type of the ManagedList.
+	// The type of managed list.
 	ListType *string `pulumi:"listType"`
-	// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+	// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
 	ResourceMetadataOnly *bool `pulumi:"resourceMetadataOnly"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getManagedLists.
 type GetManagedListsResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ManagedList display name.
+	// Managed list display name
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetManagedListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// type of the list
+	// Type of information contained in the managed list
 	ListType *string `pulumi:"listType"`
 	// The list of managed_list_collection.
 	ManagedListCollections []GetManagedListsManagedListCollection `pulumi:"managedListCollections"`
 	ResourceMetadataOnly   *bool                                  `pulumi:"resourceMetadataOnly"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State *string `pulumi:"state"`
 }
 
@@ -125,18 +125,18 @@ func GetManagedListsOutput(ctx *pulumi.Context, args GetManagedListsOutputArgs, 
 type GetManagedListsOutputArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetManagedListsFilterArrayInput `pulumi:"filters"`
-	// The type of the ManagedList.
+	// The type of managed list.
 	ListType pulumi.StringPtrInput `pulumi:"listType"`
-	// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+	// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
 	ResourceMetadataOnly pulumi.BoolPtrInput `pulumi:"resourceMetadataOnly"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -163,7 +163,7 @@ func (o GetManagedListsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier where the resource is created
+// Compartment OCID where the resource is created
 func (o GetManagedListsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedListsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -172,7 +172,7 @@ func (o GetManagedListsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v GetManagedListsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ManagedList display name.
+// Managed list display name
 func (o GetManagedListsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -186,7 +186,7 @@ func (o GetManagedListsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedListsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// type of the list
+// Type of information contained in the managed list
 func (o GetManagedListsResultOutput) ListType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.ListType }).(pulumi.StringPtrOutput)
 }
@@ -200,7 +200,7 @@ func (o GetManagedListsResultOutput) ResourceMetadataOnly() pulumi.BoolPtrOutput
 	return o.ApplyT(func(v GetManagedListsResult) *bool { return v.ResourceMetadataOnly }).(pulumi.BoolPtrOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource
 func (o GetManagedListsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedListsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

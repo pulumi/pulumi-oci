@@ -21,14 +21,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     public static final ResponderRecipeState Empty = new ResponderRecipeState();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -89,14 +89,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     @Import(name="effectiveResponderRules")
     private @Nullable Output<List<ResponderRecipeEffectiveResponderRuleArgs>> effectiveResponderRules;
 
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     public Optional<Output<List<ResponderRecipeEffectiveResponderRuleArgs>>> effectiveResponderRules() {
@@ -138,14 +138,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     public Optional<Output<String>> owner() {
@@ -153,14 +153,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     @Import(name="responderRules")
     private @Nullable Output<List<ResponderRecipeResponderRuleArgs>> responderRules;
 
     /**
-     * @return (Updatable) Responder Rules to override from source responder recipe
+     * @return (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     public Optional<Output<List<ResponderRecipeResponderRuleArgs>>> responderRules() {
@@ -168,7 +168,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,7 +178,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     private @Nullable Output<String> sourceResponderRecipeId;
 
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,14 +189,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public Optional<Output<String>> state() {
@@ -234,14 +234,14 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -286,7 +286,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type, for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type, for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type, for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of responder recipe
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of responder recipe
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param responderRules (Updatable) Responder Rules to override from source responder recipe
+         * @param responderRules (Updatable) List of responder rules to override from source responder recipe
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceResponderRecipeId The id of the source responder recipe.
+         * @param sourceResponderRecipeId The unique identifier of the source responder recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -521,7 +521,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceResponderRecipeId The id of the source responder recipe.
+         * @param sourceResponderRecipeId The unique identifier of the source responder recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -534,7 +534,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the Example.
+         * @param state The current lifecycle state of the example
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The current state of the Example.
+         * @param state The current lifecycle state of the example
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The date and time the responder recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the responder recipe was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class ResponderRecipeState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeUpdated The date and time the responder recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the responder recipe was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

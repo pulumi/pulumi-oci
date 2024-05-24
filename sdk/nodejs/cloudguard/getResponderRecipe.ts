@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Get a ResponderRecipe by identifier
+ * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getResponderRecipe(args: GetResponderRecipeArgs, opts?: pulumi.I
  */
 export interface GetResponderRecipeArgs {
     /**
-     * OCID of ResponderRecipe
+     * OCID of the responder recipe.
      */
     responderRecipeId: string;
 }
@@ -45,7 +45,7 @@ export interface GetResponderRecipeArgs {
  */
 export interface GetResponderRecipeResult {
     /**
-     * Compartment Identifier
+     * Compartment OCID
      */
     readonly compartmentId: string;
     /**
@@ -53,15 +53,15 @@ export interface GetResponderRecipeResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ResponderRule description.
+     * Responder rule description
      */
     readonly description: string;
     /**
-     * ResponderRule display name.
+     * Responder rule display name
      */
     readonly displayName: string;
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      */
     readonly effectiveResponderRules: outputs.CloudGuard.GetResponderRecipeEffectiveResponderRule[];
     /**
@@ -69,7 +69,7 @@ export interface GetResponderRecipeResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for the responder recip
      */
     readonly id: string;
     /**
@@ -77,7 +77,7 @@ export interface GetResponderRecipeResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      */
     readonly owner: string;
     readonly responderRecipeId: string;
@@ -86,11 +86,11 @@ export interface GetResponderRecipeResult {
      */
     readonly responderRules: outputs.CloudGuard.GetResponderRecipeResponderRule[];
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      */
     readonly sourceResponderRecipeId: string;
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      */
     readonly state: string;
     /**
@@ -102,14 +102,14 @@ export interface GetResponderRecipeResult {
      */
     readonly timeCreated: string;
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Get a ResponderRecipe by identifier
+ * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
  *
  * ## Example Usage
  *
@@ -131,7 +131,7 @@ export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opt
  */
 export interface GetResponderRecipeOutputArgs {
     /**
-     * OCID of ResponderRecipe
+     * OCID of the responder recipe.
      */
     responderRecipeId: pulumi.Input<string>;
 }

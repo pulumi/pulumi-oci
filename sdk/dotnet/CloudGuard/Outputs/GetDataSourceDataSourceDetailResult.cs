@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourceDataSourceDetailResult
     {
         /// <summary>
-        /// The additional entities count used for data source query.
+        /// The additional entities count used for data source query
         /// </summary>
         public readonly int AdditionalEntitiesCount;
         /// <summary>
@@ -22,19 +22,27 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DataSourceFeedProvider;
         /// <summary>
+        /// Description text for the query
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// Interval in minutes that query is run periodically.
         /// </summary>
         public readonly int IntervalInMinutes;
         /// <summary>
-        /// Additional details specific to the data source type (Sighting/Insight).
+        /// Interval in minutes which query is run periodically.
+        /// </summary>
+        public readonly int IntervalInSeconds;
+        /// <summary>
+        /// Details for a logging query for a data source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceDataSourceDetailLoggingQueryDetailResult> LoggingQueryDetails;
         /// <summary>
-        /// Logging query type for data source (Sighting/Insight)
+        /// Type of logging query for data source (Sighting/Insight)
         /// </summary>
         public readonly string LoggingQueryType;
         /// <summary>
-        /// Operator used in Data Soruce
+        /// Operator used in data source
         /// </summary>
         public readonly string Operator;
         /// <summary>
@@ -42,15 +50,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Query;
         /// <summary>
-        /// Time when the query can start, if not specified it can start immediately.
+        /// Time when the query can start. If not specified it can start immediately
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceDataSourceDetailQueryStartTimeResult> QueryStartTimes;
         /// <summary>
-        /// Logging Query regions
+        /// List of logging query regions
         /// </summary>
         public readonly ImmutableArray<string> Regions;
         /// <summary>
-        /// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        /// Target information in which scheduled query will be run
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDataSourceDataSourceDetailScheduledQueryScopeDetailResult> ScheduledQueryScopeDetails;
+        /// <summary>
+        /// The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         /// </summary>
         public readonly int Threshold;
 
@@ -60,7 +72,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             string dataSourceFeedProvider,
 
+            string description,
+
             int intervalInMinutes,
+
+            int intervalInSeconds,
 
             ImmutableArray<Outputs.GetDataSourceDataSourceDetailLoggingQueryDetailResult> loggingQueryDetails,
 
@@ -74,17 +90,22 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<string> regions,
 
+            ImmutableArray<Outputs.GetDataSourceDataSourceDetailScheduledQueryScopeDetailResult> scheduledQueryScopeDetails,
+
             int threshold)
         {
             AdditionalEntitiesCount = additionalEntitiesCount;
             DataSourceFeedProvider = dataSourceFeedProvider;
+            Description = description;
             IntervalInMinutes = intervalInMinutes;
+            IntervalInSeconds = intervalInSeconds;
             LoggingQueryDetails = loggingQueryDetails;
             LoggingQueryType = loggingQueryType;
             Operator = @operator;
             Query = query;
             QueryStartTimes = queryStartTimes;
             Regions = regions;
+            ScheduledQueryScopeDetails = scheduledQueryScopeDetails;
             Threshold = threshold;
         }
     }

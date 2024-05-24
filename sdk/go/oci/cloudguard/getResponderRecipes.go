@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of all ResponderRecipes in a compartment
+// Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+// of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
 // The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
 // The list does not include any subcompartments of the compartmentId passed.
 //
@@ -72,26 +73,26 @@ func GetResponderRecipes(ctx *pulumi.Context, args *GetResponderRecipesArgs, opt
 type GetResponderRecipesArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetResponderRecipesFilter `pulumi:"filters"`
-	// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+	// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
 	ResourceMetadataOnly *bool `pulumi:"resourceMetadataOnly"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getResponderRecipes.
 type GetResponderRecipesResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// Compartment Identifier
+	// Compartment OCID
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ResponderRule display name.
+	// Responder rule display name
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetResponderRecipesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -99,7 +100,7 @@ type GetResponderRecipesResult struct {
 	ResourceMetadataOnly *bool  `pulumi:"resourceMetadataOnly"`
 	// The list of responder_recipe_collection.
 	ResponderRecipeCollections []GetResponderRecipesResponderRecipeCollection `pulumi:"responderRecipeCollections"`
-	// The current state of the Example.
+	// The current lifecycle state of the example
 	State *string `pulumi:"state"`
 }
 
@@ -120,16 +121,16 @@ func GetResponderRecipesOutput(ctx *pulumi.Context, args GetResponderRecipesOutp
 type GetResponderRecipesOutputArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput               `pulumi:"displayName"`
 	Filters     GetResponderRecipesFilterArrayInput `pulumi:"filters"`
-	// Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+	// Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
 	ResourceMetadataOnly pulumi.BoolPtrInput `pulumi:"resourceMetadataOnly"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -156,7 +157,7 @@ func (o GetResponderRecipesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier
+// Compartment OCID
 func (o GetResponderRecipesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,7 +166,7 @@ func (o GetResponderRecipesResultOutput) CompartmentIdInSubtree() pulumi.BoolPtr
 	return o.ApplyT(func(v GetResponderRecipesResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ResponderRule display name.
+// Responder rule display name
 func (o GetResponderRecipesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -190,7 +191,7 @@ func (o GetResponderRecipesResultOutput) ResponderRecipeCollections() GetRespond
 	}).(GetResponderRecipesResponderRecipeCollectionArrayOutput)
 }
 
-// The current state of the Example.
+// The current lifecycle state of the example
 func (o GetResponderRecipesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

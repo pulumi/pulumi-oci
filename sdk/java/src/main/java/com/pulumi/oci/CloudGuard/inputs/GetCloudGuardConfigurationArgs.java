@@ -15,14 +15,14 @@ public final class GetCloudGuardConfigurationArgs extends com.pulumi.resources.I
     public static final GetCloudGuardConfigurationArgs Empty = new GetCloudGuardConfigurationArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -54,7 +54,7 @@ public final class GetCloudGuardConfigurationArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetCloudGuardConfigurationArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 

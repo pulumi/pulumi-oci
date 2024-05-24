@@ -7082,29 +7082,94 @@ export namespace CloudBridge {
 }
 
 export namespace CloudGuard {
+    export interface AdhocQueryAdhocQueryDetails {
+        /**
+         * Target information in which adhoc query will be run
+         */
+        adhocQueryResources: pulumi.Input<pulumi.Input<inputs.CloudGuard.AdhocQueryAdhocQueryDetailsAdhocQueryResource>[]>;
+        /**
+         * The adhoc query expression that is run
+         */
+        query: pulumi.Input<string>;
+    }
+
+    export interface AdhocQueryAdhocQueryDetailsAdhocQueryResource {
+        /**
+         * Region in which adhoc query needs to be run
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * List of OCIDs on which query needs to be run
+         */
+        resourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Type of resource
+         */
+        resourceType?: pulumi.Input<string>;
+    }
+
+    export interface AdhocQueryAdhocQueryRegionalDetail {
+        /**
+         * Expected number of instances on which query should run
+         */
+        expectedCount?: pulumi.Input<string>;
+        /**
+         * Number of instances on which query expired
+         */
+        expiredCount?: pulumi.Input<string>;
+        /**
+         * Number of instances on which query failed
+         */
+        failedCount?: pulumi.Input<string>;
+        /**
+         * Region name
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * error message to show if adhoc query fails in a region
+         */
+        regionalError?: pulumi.Input<string>;
+        /**
+         * adhoc query status of the region
+         */
+        regionalStatus?: pulumi.Input<string>;
+        /**
+         * Number of instances on which query succeeded
+         */
+        succeededCount?: pulumi.Input<string>;
+    }
+
     export interface CloudGuardDataSourceDataSourceDetails {
         /**
-         * (Updatable) The additional entities count used for data source query.
+         * (Updatable) The additional entities count used for data source query
          */
         additionalEntitiesCount?: pulumi.Input<number>;
         /**
-         * (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+         * (Updatable) Type of data source feed provider (LoggingQuery)
          */
         dataSourceFeedProvider: pulumi.Input<string>;
+        /**
+         * (Updatable) Description text for the query
+         */
+        description?: pulumi.Input<string>;
         /**
          * (Updatable) Interval in minutes that query is run periodically.
          */
         intervalInMinutes?: pulumi.Input<number>;
         /**
-         * (Updatable) Additional details specific to the data source type (Sighting/Insight).
+         * (Updatable) Interval in minutes which query is run periodically.
+         */
+        intervalInSeconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) Details for a logging query for a data source.
          */
         loggingQueryDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails>;
         /**
-         * (Updatable) Logging query type for data source (Sighting/Insight)
+         * (Updatable) Type of logging query for data source (Sighting/Insight)
          */
         loggingQueryType?: pulumi.Input<string>;
         /**
-         * (Updatable) Operator used in Data Soruce
+         * (Updatable) Operator used in data source
          */
         operator?: pulumi.Input<string>;
         /**
@@ -7112,15 +7177,19 @@ export namespace CloudGuard {
          */
         query?: pulumi.Input<string>;
         /**
-         * (Updatable) Continuous query start policy object
+         * (Updatable) Start policy for continuous query
          */
         queryStartTime?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsQueryStartTime>;
         /**
-         * (Updatable) Logging Query regions
+         * (Updatable) List of logging query regions
          */
         regions?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         * (Updatable) Target information in which scheduled query will be run
+         */
+        scheduledQueryScopeDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail>[]>;
+        /**
+         * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          */
         threshold?: pulumi.Input<number>;
     }
@@ -7131,40 +7200,55 @@ export namespace CloudGuard {
          */
         keyEntitiesCount?: pulumi.Input<number>;
         /**
-         * (Updatable) Logging query type for data source (Sighting/Insight)
+         * (Updatable) Logging query type for data source
          */
         loggingQueryType: pulumi.Input<string>;
     }
 
     export interface CloudGuardDataSourceDataSourceDetailsQueryStartTime {
         /**
-         * (Updatable) Time when the query can start, if not specified it can start immediately.
+         * (Updatable) Time when the query can start. If not specified it can start immediately
          */
         queryStartTime?: pulumi.Input<string>;
         /**
-         * (Updatable) policy used for deciding the query start time
+         * (Updatable) Start policy delay timing
          */
         startPolicyType: pulumi.Input<string>;
     }
 
+    export interface CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail {
+        /**
+         * (Updatable) region on which scheduled query needs to be run
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of OCIDs on scheduled query needs to run
+         */
+        resourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Type of resource
+         */
+        resourceType?: pulumi.Input<string>;
+    }
+
     export interface CloudGuardDataSourceDataSourceDetectorMappingInfo {
         /**
-         * Id of the attached detectorRecipeId to the Data Source.
+         * ID of the detector recipe attached to the data source
          */
         detectorRecipeId?: pulumi.Input<string>;
         /**
-         * Id of the attached detectorRuleId to the Data Source.
+         * ID of the detector rule attached to the data source
          */
         detectorRuleId?: pulumi.Input<string>;
     }
 
     export interface CloudGuardDataSourceRegionStatusDetail {
         /**
-         * Data Source replication region.
+         * Data source replication region
          */
         region?: pulumi.Input<string>;
         /**
-         * (Updatable) Status of DataSource. Default value is DISABLED.
+         * (Updatable) Enablement status of data source.
          *
          *
          * ** IMPORTANT **
@@ -7175,11 +7259,11 @@ export namespace CloudGuard {
 
     export interface DataMaskRuleTargetSelected {
         /**
-         * (Updatable) Target selection.
+         * (Updatable) Kind of target selection to be used
          */
         kind: pulumi.Input<string>;
         /**
-         * (Updatable) Types of Targets
+         * (Updatable) Types of targets
          *
          *
          * ** IMPORTANT **
@@ -7190,11 +7274,11 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeDetectorRule {
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that can be used to remediate this detector rule
          */
         candidateResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleCandidateResponderRule>[]>;
         /**
-         * The id of the attached DataSource.
+         * The ID of the attached data source
          */
         dataSourceId?: pulumi.Input<string>;
         /**
@@ -7204,15 +7288,15 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+         * (Updatable) Parameters to be updated for a detector rule within a detector recipe.
          */
         details: pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetails>;
         /**
-         * detector for the rule
+         * Detector for the rule
          */
         detector?: pulumi.Input<string>;
         /**
-         * (Updatable) DetectorRecipeRule Identifier
+         * (Updatable) Detector recipe rule ID
          */
         detectorRuleId: pulumi.Input<string>;
         /**
@@ -7222,7 +7306,7 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for the detector rule
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleEntitiesMapping>[]>;
         /**
@@ -7230,31 +7314,31 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * Recommendation for DetectorRecipeDetectorRule resource
          */
         recommendation?: pulumi.Input<string>;
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          */
         resourceType?: pulumi.Input<string>;
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          */
         serviceType?: pulumi.Input<string>;
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          */
         state?: pulumi.Input<string>;
         /**
-         * The date and time the detector recipe was created. Format defined by RFC3339.
+         * The date and time the detector recipe was created Format defined by RFC3339.
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
+         * The date and time the detector recipe was last updated Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
@@ -7267,73 +7351,73 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Ocid for detector recipe
+         * OCID for detector recipe
          */
         id?: pulumi.Input<string>;
         /**
-         * Preferred state
+         * Is this the preferred state?
          */
         isPreferred?: pulumi.Input<boolean>;
     }
 
     export interface DetectorRecipeDetectorRuleDetails {
         /**
-         * (Updatable) Base condition object
+         * (Updatable) The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * (Updatable) Configuration details
+         * (Updatable) List of detector rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfiguration>[]>;
         /**
-         * (Updatable) The id of the attached DataSource.
+         * (Updatable) The unique identifier of the attached data source
          */
         dataSourceId?: pulumi.Input<string>;
         /**
-         * (Updatable) Description for DetectorRecipeDetectorRule.
+         * (Updatable) Description for the detector rule
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Data Source entities mapping for a Detector Rule
+         * (Updatable) Data source entities mapping for a detector rule
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsEntitiesMapping>[]>;
         /**
-         * configuration allowed or not
+         * Can the rule be configured?
          */
         isConfigurationAllowed?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Enables the control
+         * (Updatable) Enablement status of the detector rule
          */
         isEnabled: pulumi.Input<boolean>;
         /**
-         * (Updatable) user defined labels for a detector rule
+         * (Updatable) User-defined labels for a detector rule
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * (Updatable) Recommendation for the detector rule
          */
         recommendation?: pulumi.Input<string>;
         /**
-         * (Updatable) The Risk Level
+         * (Updatable) The risk level of the detector rule
          */
         riskLevel: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeDetectorRuleDetailsConfiguration {
         /**
-         * (Updatable) Unique name of the configuration
+         * (Updatable) Unique identifier of the configuration
          */
         configKey: pulumi.Input<string>;
         /**
-         * (Updatable) configuration data type
+         * (Updatable) Configuration data type
          */
         dataType?: pulumi.Input<string>;
         /**
-         * (Updatable) configuration name
+         * (Updatable) Configuration name
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) configuration value
+         * (Updatable) Configuration value
          */
         value?: pulumi.Input<string>;
         /**
@@ -7344,26 +7428,26 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeDetectorRuleDetailsConfigurationValue {
         /**
-         * (Updatable) configuration list item type, either CUSTOM or MANAGED
+         * (Updatable) Configuration list item type (CUSTOM or MANAGED)
          */
         listType: pulumi.Input<string>;
         /**
-         * (Updatable) type of the managed list
+         * (Updatable) Type of content in the managed list
          */
         managedListType: pulumi.Input<string>;
         /**
-         * (Updatable) configuration value
+         * (Updatable) Configuration value
          */
         value: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeDetectorRuleDetailsEntitiesMapping {
         /**
-         * (Updatable) The display name of entity
+         * (Updatable) Display name of the entity
          */
         displayName?: pulumi.Input<string>;
         /**
-         * (Updatable) Possible type of entity
+         * (Updatable) Type of entity
          */
         entityType?: pulumi.Input<string>;
         /**
@@ -7380,7 +7464,7 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Possible type of entity
+         * Type of entity
          */
         entityType?: pulumi.Input<string>;
         /**
@@ -7391,11 +7475,11 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeEffectiveDetectorRule {
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that can be used to remediate this detector rule
          */
         candidateResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule>[]>;
         /**
-         * The id of the attached DataSource.
+         * The ID of the attached data source
          */
         dataSourceId?: pulumi.Input<string>;
         /**
@@ -7405,11 +7489,11 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * Details of a Detector Rule
+         * Detailed information for a detector.
          */
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetail>[]>;
         /**
-         * detector for the rule
+         * Detector for the rule
          */
         detector?: pulumi.Input<string>;
         /**
@@ -7423,7 +7507,7 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for the detector rule
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
         /**
@@ -7431,31 +7515,31 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for DetectorRecipeDetectorRule
+         * Recommendation for DetectorRecipeDetectorRule resource
          */
         recommendation?: pulumi.Input<string>;
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          */
         resourceType?: pulumi.Input<string>;
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          */
         serviceType?: pulumi.Input<string>;
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          */
         state?: pulumi.Input<string>;
         /**
-         * The date and time the detector recipe was created. Format defined by RFC3339.
+         * The date and time the detector recipe was created Format defined by RFC3339.
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
+         * The date and time the detector recipe was last updated Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
@@ -7468,57 +7552,75 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Ocid for detector recipe
+         * OCID for detector recipe
          */
         id?: pulumi.Input<string>;
         /**
-         * Preferred state
+         * Is this the preferred state?
          */
         isPreferred?: pulumi.Input<boolean>;
     }
 
     export interface DetectorRecipeEffectiveDetectorRuleDetail {
         /**
-         * Base condition object
+         * The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * Configuration details
+         * List of detector rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetailConfiguration>[]>;
         /**
-         * configuration allowed or not
+         * The ID of the attached data source
+         */
+        dataSourceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Detector recipe description.
+         *
+         * Avoid entering confidential information.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * Data source entities mapping for the detector rule
+         */
+        entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping>[]>;
+        /**
+         * Can the rule be configured?
          */
         isConfigurationAllowed?: pulumi.Input<boolean>;
         /**
-         * Enables the control
+         * Enablement status for the rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * The Risk Level
+         * Recommendation for DetectorRecipeDetectorRule resource
+         */
+        recommendation?: pulumi.Input<string>;
+        /**
+         * The risk level for the rule
          */
         riskLevel?: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration data type
+         * Configuration data type
          */
         dataType?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
         /**
@@ -7529,17 +7631,34 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          */
         listType?: pulumi.Input<string>;
         /**
-         * type of the managed list
+         * Type of content in the managed list
          */
         managedListType?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping {
+        /**
+         * (Updatable) Detector recipe display name.
+         *
+         * Avoid entering confidential information.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * Type of entity
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * The entity value mapped to a data source query
+         */
+        queryField?: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
@@ -7550,7 +7669,7 @@ export namespace CloudGuard {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Possible type of entity
+         * Type of entity
          */
         entityType?: pulumi.Input<string>;
         /**
@@ -7559,11 +7678,23 @@ export namespace CloudGuard {
         queryField?: pulumi.Input<string>;
     }
 
+    export interface GetAdhocQueriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAdhocQueriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDataMaskRulesFilter {
         name: string;
         regex?: boolean;
         /**
-         * Types of Targets
+         * Types of targets
          */
         values: string[];
     }
@@ -7572,7 +7703,7 @@ export namespace CloudGuard {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         /**
-         * Types of Targets
+         * Types of targets
          */
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -7603,7 +7734,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipesFilter {
         /**
-         * configuration name
+         * Configuration name
          */
         name: string;
         regex?: boolean;
@@ -7615,7 +7746,7 @@ export namespace CloudGuard {
 
     export interface GetDetectorRecipesFilterArgs {
         /**
-         * configuration name
+         * Configuration name
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -7627,7 +7758,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetsFilter {
         /**
-         * configuration name
+         * Configuration name
          */
         name: string;
         regex?: boolean;
@@ -7639,7 +7770,7 @@ export namespace CloudGuard {
 
     export interface GetGuardTargetsFilterArgs {
         /**
-         * configuration name
+         * Configuration name
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -7675,7 +7806,7 @@ export namespace CloudGuard {
 
     export interface GetResponderRecipesFilter {
         /**
-         * configuration name
+         * Configuration name
          */
         name: string;
         regex?: boolean;
@@ -7684,8 +7815,20 @@ export namespace CloudGuard {
 
     export interface GetResponderRecipesFilterArgs {
         /**
-         * configuration name
+         * Configuration name
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSavedQueriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSavedQueriesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -7727,9 +7870,21 @@ export namespace CloudGuard {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWlpAgentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWlpAgentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ResponderRecipeEffectiveResponderRule {
         /**
-         * (Updatable) Compartment Identifier
+         * (Updatable) Compartment OCID
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -7739,7 +7894,7 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * Details of ResponderRule.
+         * Detailed information for a responder rule
          */
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRuleDetail>[]>;
         /**
@@ -7753,19 +7908,19 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of Policy
+         * List of policies
          */
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Identifier for ResponderRule.
+         * Unique identifier for the responder rule
          */
         responderRuleId?: pulumi.Input<string>;
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          */
         state?: pulumi.Input<string>;
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          */
         supportedModes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -7773,52 +7928,52 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the responder recipe was updated. Format defined by RFC3339.
+         * The date and time the responder recipe was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * Type of Responder
+         * Type of responder
          */
         type?: pulumi.Input<string>;
     }
 
     export interface ResponderRecipeEffectiveResponderRuleDetail {
         /**
-         * Base condition object
+         * The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRuleDetailConfiguration>[]>;
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          */
         mode?: pulumi.Input<string>;
     }
 
     export interface ResponderRecipeEffectiveResponderRuleDetailConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface ResponderRecipeResponderRule {
         /**
-         * (Updatable) Compartment Identifier
+         * (Updatable) Compartment OCID
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -7828,7 +7983,7 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Details of UpdateResponderRuleDetails.
+         * (Updatable) Parameters to be updated for a responder rule within a responder recipe.
          */
         details: pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRuleDetails>;
         /**
@@ -7842,19 +7997,19 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of Policy
+         * List of policies
          */
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) ResponderRecipeRule Identifier
+         * (Updatable) Unique identifier for the responder rule
          */
         responderRuleId: pulumi.Input<string>;
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          */
         state?: pulumi.Input<string>;
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          */
         supportedModes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -7862,71 +8017,71 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the responder recipe was updated. Format defined by RFC3339.
+         * The date and time the responder recipe was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * Type of Responder
+         * Type of responder
          */
         type?: pulumi.Input<string>;
     }
 
     export interface ResponderRecipeResponderRuleDetails {
         /**
-         * Base condition object
+         * The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRuleDetailsConfiguration>[]>;
         /**
-         * (Updatable) Identifies state for ResponderRule
+         * (Updatable) Enablement state for the responder rule
          */
         isEnabled: pulumi.Input<boolean>;
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          */
         mode?: pulumi.Input<string>;
     }
 
     export interface ResponderRecipeResponderRuleDetailsConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetail {
         /**
-         * The name of the security zone to associate this compartment with.
+         * The name of the security zone to associate with this compartment.
          */
         securityZoneDisplayName?: pulumi.Input<string>;
         /**
-         * The OCID of the security zone to associate this compartment with.
+         * The OCID of the security zone to associate with this compartment
          */
         securityZoneId?: pulumi.Input<string>;
         /**
-         * possible type of targets(COMPARTMENT/FACLOUD)
+         * Type of resource that target support (COMPARTMENT/FACLOUD)
          */
         targetResourceType?: pulumi.Input<string>;
         /**
-         * The list of security zone recipes to associate this compartment with.
+         * The list of security zone recipes to associate with this compartment
          */
         targetSecurityZoneRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetailTargetSecurityZoneRecipe>[]>;
     }
 
     export interface TargetTargetDetailTargetSecurityZoneRecipe {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -7940,7 +8095,7 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
@@ -7952,7 +8107,7 @@ export namespace CloudGuard {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         * Unique identifier of target responder recipe that can't be changed after creation
          */
         id?: pulumi.Input<string>;
         /**
@@ -7960,15 +8115,15 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * Owner of ResponderRecipe
+         * Owner of target responder recipe
          */
         owner?: pulumi.Input<string>;
         /**
-         * The list of `SecurityPolicy` ids that are included in the recipe
+         * The list of security policy IDs that are included in the recipe
          */
         securityPolicies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
@@ -7980,14 +8135,14 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipe {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -7997,37 +8152,41 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * detector for the rule
+         * Detector type for the rule
          */
         detector?: pulumi.Input<string>;
         /**
-         * Identifier for DetectorRecipe.
+         * Unique identifier for the target detector recipe
          */
         detectorRecipeId: pulumi.Input<string>;
         /**
-         * (Updatable) Overrides to be applied to Detector Rule associated with the target
+         * Recipe type ( STANDARD, ENTERPRISE )
+         */
+        detectorRecipeType?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of overrides to be applied to detector rules associated with the target
          */
         detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRule>[]>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * List of effective detector rules for the detector type for recipe after applying defaults
+         * List of currently enabled detector rules for the detector type for recipe after applying defaults
          */
         effectiveDetectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRule>[]>;
         /**
-         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         * Unique identifier of target responder recipe that can't be changed after creation
          */
         id?: pulumi.Input<string>;
         /**
-         * Owner of ResponderRecipe
+         * Owner of target responder recipe
          */
         owner?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
@@ -8035,14 +8194,14 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeDetectorRule {
         /**
-         * The id of the attached DataSource.
+         * The ID of the attached data source
          */
         dataSourceId?: pulumi.Input<string>;
         /**
@@ -8052,25 +8211,25 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Overriden settings of a Detector Rule applied on target
+         * (Updatable) Parameters to update detector rule configuration details in a detector recipe attached to a target.
          */
         details: pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetails>;
         /**
-         * detector for the rule
+         * Detector type for the rule
          */
         detector?: pulumi.Input<string>;
         /**
-         * (Updatable) Identifier for DetectorRule.
+         * (Updatable) Unique identifier for the detector rule
          */
         detectorRuleId: pulumi.Input<string>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for a detector rule
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping>[]>;
         /**
@@ -8078,23 +8237,23 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for TargetDetectorRecipeDetectorRule
+         * Recommendation for TargetDetectorRecipeDetectorRule resource
          */
         recommendation?: pulumi.Input<string>;
         /**
-         * resource type of the configuration to which the rule is applied
+         * The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          */
         resourceType?: pulumi.Input<string>;
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          */
         serviceType?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
@@ -8102,7 +8261,7 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
@@ -8113,53 +8272,53 @@ export namespace CloudGuard {
          */
         conditionGroups?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup>[]>;
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration>[]>;
         /**
-         * configuration allowed or not
+         * Configuration allowed or not
          */
         isConfigurationAllowed?: pulumi.Input<boolean>;
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * The Risk Level
+         * The risk level of the detector rule
          */
         riskLevel?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup {
         /**
-         * (Updatable) compartment associated with condition
+         * (Updatable) Compartment OCID associated with condition
          */
         compartmentId: pulumi.Input<string>;
         /**
-         * (Updatable) Base condition object
+         * (Updatable) The base condition resource.
          */
         condition: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration data type
+         * Configuration data type
          */
         dataType?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
         /**
@@ -8170,28 +8329,28 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue {
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          */
         listType?: pulumi.Input<string>;
         /**
-         * type of the managed list
+         * Type of content in the managed list
          */
         managedListType?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Possible type of entity
+         * Type of entity
          */
         entityType?: pulumi.Input<string>;
         /**
@@ -8202,7 +8361,7 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRule {
         /**
-         * The id of the attached DataSource.
+         * The ID of the attached data source
          */
         dataSourceId?: pulumi.Input<string>;
         /**
@@ -8212,25 +8371,25 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * Details of ResponderRule.
+         * Detailed information for a responder rule
          */
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetail>[]>;
         /**
-         * detector for the rule
+         * Detector type for the rule
          */
         detector?: pulumi.Input<string>;
         /**
-         * The unique identifier of the detector rule.
+         * The unique identifier of the detector rule
          */
         detectorRuleId?: pulumi.Input<string>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Data Source entities mapping for a Detector Rule
+         * Data source entities mapping for a detector rule
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
         /**
@@ -8238,23 +8397,23 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          */
         managedListTypes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Recommendation for TargetDetectorRecipeDetectorRule
+         * Recommendation for TargetDetectorRecipeDetectorRule resource
          */
         recommendation?: pulumi.Input<string>;
         /**
-         * resource type of the configuration to which the rule is applied
+         * The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          */
         resourceType?: pulumi.Input<string>;
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          */
         serviceType?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
@@ -8262,7 +8421,7 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
@@ -8273,53 +8432,53 @@ export namespace CloudGuard {
          */
         conditionGroups?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup>[]>;
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration>[]>;
         /**
-         * configuration allowed or not
+         * Configuration allowed or not
          */
         isConfigurationAllowed?: pulumi.Input<boolean>;
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          */
         labels?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * The Risk Level
+         * The risk level of the detector rule
          */
         riskLevel?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
-         * Base condition object
+         * The base condition resource.
          */
         condition?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration data type
+         * Configuration data type
          */
         dataType?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
         /**
@@ -8330,28 +8489,28 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          */
         listType?: pulumi.Input<string>;
         /**
-         * type of the managed list
+         * Type of content in the managed list
          */
         managedListType?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * Possible type of entity
+         * Type of entity
          */
         entityType?: pulumi.Input<string>;
         /**
@@ -8362,7 +8521,7 @@ export namespace CloudGuard {
 
     export interface TargetTargetResponderRecipe {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -8372,29 +8531,29 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * List of responder rules associated with the recipe after applying all defaults
+         * List of currently enabled responder rules for the responder type for recipe after applying defaults
          */
         effectiveResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRule>[]>;
         /**
-         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         * Unique identifier of target responder recipe that can't be changed after creation
          */
         id?: pulumi.Input<string>;
         /**
-         * Owner of ResponderRecipe
+         * Owner of target responder recipe
          */
         owner?: pulumi.Input<string>;
         /**
-         * Identifier for ResponderRecipe.
+         * Unique identifier for responder recipe
          */
         responderRecipeId: pulumi.Input<string>;
         /**
-         * (Updatable) Override responder rules associated with reponder recipe in a target.
+         * (Updatable) List of overrides to be applied to responder rules associated with the target
          */
         responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeResponderRule>[]>;
         /**
@@ -8402,14 +8561,14 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeEffectiveResponderRule {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -8419,11 +8578,11 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * Details of ResponderRule.
+         * Detailed information for a responder rule
          */
         details?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRuleDetail>[]>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
@@ -8433,19 +8592,19 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of Policy
+         * List of policies
          */
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * Unique ResponderRule identifier.
+         * Unique identifier for the responder rule
          */
         responderRuleId?: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          */
         supportedModes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -8453,52 +8612,52 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * Type of Responder
+         * Type of responder
          */
         type?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeEffectiveResponderRuleDetail {
         /**
-         * Base condition object
+         * The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration>[]>;
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          */
         mode?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
         /**
-         * configuration name
+         * Configuration name
          */
         name?: pulumi.Input<string>;
         /**
-         * configuration value
+         * Configuration value
          */
         value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeResponderRule {
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -8508,11 +8667,11 @@ export namespace CloudGuard {
          */
         description?: pulumi.Input<string>;
         /**
-         * (Updatable) Details of ResponderRule.
+         * (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
          */
         details: pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeResponderRuleDetails>;
         /**
-         * (Updatable) DetectorTemplate identifier.
+         * (Updatable) Display name for the target.
          *
          * Avoid entering confidential information.
          */
@@ -8522,11 +8681,11 @@ export namespace CloudGuard {
          */
         lifecycleDetails?: pulumi.Input<string>;
         /**
-         * List of Policy
+         * List of policies
          */
         policies?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Identifier for ResponderRule.
+         * (Updatable) Unique identifier for target detector recipe
          *
          *
          * ** IMPORTANT **
@@ -8534,11 +8693,11 @@ export namespace CloudGuard {
          */
         responderRuleId: pulumi.Input<string>;
         /**
-         * (Updatable) The current state of the DetectorRule.
+         * (Updatable) The enablement state of the detector rule
          */
         state?: pulumi.Input<string>;
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          */
         supportedModes?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -8546,45 +8705,45 @@ export namespace CloudGuard {
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          */
         timeUpdated?: pulumi.Input<string>;
         /**
-         * Type of Responder
+         * Type of responder
          */
         type?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeResponderRuleDetails {
         /**
-         * (Updatable) Base condition object
+         * (Updatable) The base condition resource.
          */
         condition?: pulumi.Input<string>;
         /**
-         * (Updatable) Configurations associated with the ResponderRule
+         * (Updatable) List of responder rule configurations
          */
         configurations?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipeResponderRuleDetailsConfiguration>[]>;
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          */
         isEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Execution Mode for ResponderRule
+         * (Updatable) Execution mode for the responder rule
          */
         mode?: pulumi.Input<string>;
     }
 
     export interface TargetTargetResponderRecipeResponderRuleDetailsConfiguration {
         /**
-         * (Updatable) Unique name of the configuration
+         * (Updatable) Unique identifier of the configuration
          */
         configKey: pulumi.Input<string>;
         /**
-         * (Updatable) configuration name
+         * (Updatable) Configuration name
          */
         name: pulumi.Input<string>;
         /**
-         * (Updatable) configuration value
+         * (Updatable) Configuration value
          */
         value: pulumi.Input<string>;
     }
@@ -22596,26 +22755,30 @@ export namespace DataScience {
 
     export interface PipelineInfrastructureConfigurationDetails {
         /**
-         * The size of the block storage volume to attach to the instance.
+         * (Updatable) The size of the block storage volume to attach to the instance.
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
         /**
-         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
         shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetailsShapeConfigDetails>;
         /**
-         * The shape used to launch the instance for all step runs in the pipeline.
+         * (Updatable) The shape used to launch the instance for all step runs in the pipeline.
          */
         shapeName: pulumi.Input<string>;
+        /**
+         * (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         */
+        subnetId?: pulumi.Input<string>;
     }
 
     export interface PipelineInfrastructureConfigurationDetailsShapeConfigDetails {
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -22713,6 +22876,10 @@ export namespace DataScience {
          */
         stepConfigurationDetails: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepConfigurationDetails>;
         /**
+         * Container Details for a step in pipeline.
+         */
+        stepContainerConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepContainerConfigurationDetails>;
+        /**
          * The name of the step.
          */
         stepName: pulumi.Input<string>;
@@ -22731,6 +22898,33 @@ export namespace DataScience {
          * A time bound for the execution of the step.
          */
         maximumRuntimeInMinutes?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepOverrideDetailStepContainerConfigurationDetails {
+        /**
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The type of container.
+         */
+        containerType: pulumi.Input<string>;
+        /**
+         * The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+         */
+        image: pulumi.Input<string>;
+        /**
+         * The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
     }
 
     export interface PipelineRunStepRun {
@@ -22798,7 +22992,11 @@ export namespace DataScience {
          */
         stepConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepConfigurationDetails>;
         /**
-         * The infrastructure configuration details of a pipeline or a step.
+         * Container Details for a step in pipeline.
+         */
+        stepContainerConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepContainerConfigurationDetails>;
+        /**
+         * (Updatable) The infrastructure configuration details of a pipeline or a step.
          */
         stepInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepInfrastructureConfigurationDetails>;
         /**
@@ -22830,28 +23028,59 @@ export namespace DataScience {
         maximumRuntimeInMinutes?: pulumi.Input<string>;
     }
 
+    export interface PipelineStepDetailStepContainerConfigurationDetails {
+        /**
+         * The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+         */
+        cmds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The type of container.
+         */
+        containerType: pulumi.Input<string>;
+        /**
+         * The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+         */
+        entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+         */
+        image: pulumi.Input<string>;
+        /**
+         * The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+         */
+        imageDigest?: pulumi.Input<string>;
+        /**
+         * OCID of the container image signature
+         */
+        imageSignatureId?: pulumi.Input<string>;
+    }
+
     export interface PipelineStepDetailStepInfrastructureConfigurationDetails {
         /**
-         * The size of the block storage volume to attach to the instance.
+         * (Updatable) The size of the block storage volume to attach to the instance.
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
         /**
-         * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+         * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
         shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails>;
         /**
-         * The shape used to launch the instance for all step runs in the pipeline.
+         * (Updatable) The shape used to launch the instance for all step runs in the pipeline.
          */
         shapeName: pulumi.Input<string>;
+        /**
+         * (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         */
+        subnetId?: pulumi.Input<string>;
     }
 
     export interface PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails {
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -31356,7 +31585,7 @@ export namespace DevOps {
         /**
          * Map of stage OCIDs to deploy stage execution progress model.
          */
-        deployStageExecutionProgresses?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress>[]>;
+        deployStageExecutionProgress?: pulumi.Input<{[key: string]: any}>;
         /**
          * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
@@ -31365,102 +31594,6 @@ export namespace DevOps {
          * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
         timeStarted?: pulumi.Input<string>;
-    }
-
-    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
-        /**
-         * Stage display name. Avoid entering confidential information.
-         */
-        deployStageDisplayName?: pulumi.Input<string>;
-        /**
-         * Details about stage execution for all the target environments.
-         */
-        deployStageExecutionProgressDetails?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail>[]>;
-        /**
-         * Specifies the OCID of the stage to be redeployed.
-         */
-        deployStageId?: pulumi.Input<string>;
-        /**
-         * Collection containing the predecessors of a stage.
-         */
-        deployStagePredecessors?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor>[]>;
-        /**
-         * Deployment stage type.
-         */
-        deployStageType?: pulumi.Input<string>;
-        /**
-         * The current state of the stage.
-         */
-        status?: pulumi.Input<string>;
-        /**
-         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeFinished?: pulumi.Input<string>;
-        /**
-         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeStarted?: pulumi.Input<string>;
-    }
-
-    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
-        /**
-         * Details about all the rollback steps for one target environment.
-         */
-        rollbackSteps?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep>[]>;
-        /**
-         * Details about all the steps for one target environment.
-         */
-        steps?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep>[]>;
-        /**
-         * Group for the target environment for example, the batch number for an Instance Group deployment.
-         */
-        targetGroup?: pulumi.Input<string>;
-        /**
-         * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
-         */
-        targetId?: pulumi.Input<string>;
-    }
-
-    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
-        /**
-         * Name of the step.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The current state of the deployment.
-         */
-        state?: pulumi.Input<string>;
-        /**
-         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeFinished?: pulumi.Input<string>;
-        /**
-         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeStarted?: pulumi.Input<string>;
-    }
-
-    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
-        /**
-         * Name of the step.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * The current state of the deployment.
-         */
-        state?: pulumi.Input<string>;
-        /**
-         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeFinished?: pulumi.Input<string>;
-        /**
-         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
-        timeStarted?: pulumi.Input<string>;
-    }
-
-    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
-        deployStagePredecessor?: pulumi.Input<string>;
     }
 
     export interface GetBuildPipelineStagesFilter {

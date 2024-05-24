@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -27,22 +27,28 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// detector for the rule
+        /// Detector type for the rule
         /// </summary>
         [Input("detector")]
         public Input<string>? Detector { get; set; }
 
         /// <summary>
-        /// Identifier for DetectorRecipe.
+        /// Unique identifier for the target detector recipe
         /// </summary>
         [Input("detectorRecipeId", required: true)]
         public Input<string> DetectorRecipeId { get; set; } = null!;
+
+        /// <summary>
+        /// Recipe type ( STANDARD, ENTERPRISE )
+        /// </summary>
+        [Input("detectorRecipeType")]
+        public Input<string>? DetectorRecipeType { get; set; }
 
         [Input("detectorRules")]
         private InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleArgs>? _detectorRules;
 
         /// <summary>
-        /// (Updatable) Overrides to be applied to Detector Rule associated with the target
+        /// (Updatable) List of overrides to be applied to detector rules associated with the target
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleArgs> DetectorRules
         {
@@ -51,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleArgs>? _effectiveDetectorRules;
 
         /// <summary>
-        /// List of effective detector rules for the detector type for recipe after applying defaults
+        /// List of currently enabled detector rules for the detector type for recipe after applying defaults
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleArgs> EffectiveDetectorRules
         {
@@ -71,19 +77,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -95,7 +101,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetProblemEntitiesProblemEntityCollectionItemResult
     {
         /// <summary>
-        /// List of event related to a DataSource
+        /// List of entity details related to a data source
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult> EntityDetails;
         /// <summary>
-        /// OCId of the problem.
+        /// OCID of the problem.
         /// </summary>
         public readonly string ProblemId;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Regions;
         /// <summary>
-        /// Log result query url for a data source query
+        /// Log result query URL for a data source query
         /// </summary>
         public readonly string ResultUrl;
         /// <summary>

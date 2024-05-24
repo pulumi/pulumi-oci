@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeResponderRuleDetails {
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return (Updatable) List of responder rule configurations
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations;
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return (Updatable) Execution mode for the responder rule
      * 
      */
     private @Nullable String mode;
 
     private TargetTargetResponderRecipeResponderRuleDetails() {}
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return (Updatable) List of responder rule configurations
      * 
      */
     public List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return (Updatable) Execution mode for the responder rule
      * 
      */
     public Optional<String> mode() {

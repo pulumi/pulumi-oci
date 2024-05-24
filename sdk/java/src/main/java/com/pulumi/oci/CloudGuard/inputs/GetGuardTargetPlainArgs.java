@@ -14,14 +14,14 @@ public final class GetGuardTargetPlainArgs extends com.pulumi.resources.InvokeAr
     public static final GetGuardTargetPlainArgs Empty = new GetGuardTargetPlainArgs();
 
     /**
-     * OCID of target
+     * OCID of the target
      * 
      */
     @Import(name="targetId", required=true)
     private String targetId;
 
     /**
-     * @return OCID of target
+     * @return OCID of the target
      * 
      */
     public String targetId() {
@@ -53,7 +53,7 @@ public final class GetGuardTargetPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param targetId OCID of target
+         * @param targetId OCID of the target
          * 
          * @return builder
          * 

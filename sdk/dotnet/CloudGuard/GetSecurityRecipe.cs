@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+        /// Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+        /// Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe`)
         /// </summary>
         [Input("securityRecipeId", required: true)]
         public string SecurityRecipeId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe`)
         /// </summary>
         [Input("securityRecipeId", required: true)]
         public Input<string> SecurityRecipeId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipeResult
     {
         /// <summary>
-        /// The id of the compartment that contains the recipe
+        /// The OCID of the compartment that contains the recipe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The recipe's name
+        /// The recipe's display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can’t be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -130,12 +130,12 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// The list of `SecurityPolicy` ids that are included in the recipe
+        /// The list of security policy IDs that are included in the recipe
         /// </summary>
         public readonly ImmutableArray<string> SecurityPolicies;
         public readonly string SecurityRecipeId;
         /// <summary>
-        /// The current state of the recipe
+        /// The current lifecycle state of the recipe
         /// </summary>
         public readonly string State;
         /// <summary>

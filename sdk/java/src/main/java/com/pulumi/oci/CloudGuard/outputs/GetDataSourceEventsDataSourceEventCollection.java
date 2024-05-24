@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourceEventsDataSourceEventCollection {
     /**
-     * @return List of event related to a DataSource
+     * @return List of events related to a data source
      * 
      */
     private List<GetDataSourceEventsDataSourceEventCollectionItem> items;
 
     private GetDataSourceEventsDataSourceEventCollection() {}
     /**
-     * @return List of event related to a DataSource
+     * @return List of events related to a data source
      * 
      */
     public List<GetDataSourceEventsDataSourceEventCollectionItem> items() {

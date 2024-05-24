@@ -82,7 +82,7 @@ export interface GetQueueResult {
      * The endpoint to use to consume or publish messages in the queue.
      */
     readonly messagesEndpoint: string;
-    readonly purgeQueue: boolean;
+    readonly purgeTrigger: number;
     readonly purgeType: string;
     readonly queueId: string;
     /**

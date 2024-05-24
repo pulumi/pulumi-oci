@@ -17,7 +17,7 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
      */
     private Integer keyEntitiesCount;
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     private String loggingQueryType;
@@ -31,7 +31,7 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
         return this.keyEntitiesCount;
     }
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     public String loggingQueryType() {

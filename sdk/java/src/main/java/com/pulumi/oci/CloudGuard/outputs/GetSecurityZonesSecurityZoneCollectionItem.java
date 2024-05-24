@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityZonesSecurityZoneCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -39,7 +39,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The unique identifier of the security zone (`SecurityZone`)
+     * @return The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     private String id;
@@ -54,7 +54,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return The OCID of the recipe (`SecurityRecipe` resource) for the security zone
      * 
      */
     private String securityZoneRecipeId;
@@ -64,7 +64,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      */
     private String securityZoneTargetId;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -81,7 +81,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
 
     private GetSecurityZonesSecurityZoneCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -116,7 +116,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return The unique identifier of the security zone (`SecurityZone`)
+     * @return The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     public String id() {
@@ -137,7 +137,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return The OCID of the recipe (`SecurityRecipe` resource) for the security zone
      * 
      */
     public String securityZoneRecipeId() {
@@ -151,7 +151,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
         return this.securityZoneTargetId;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {

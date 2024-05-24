@@ -21,27 +21,27 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups;
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
     /**
-     * @return configuration allowed or not
+     * @return Configuration allowed or not
      * 
      */
     private @Nullable Boolean isConfigurationAllowed;
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return The Risk Level
+     * @return The risk level of the detector rule
      * 
      */
     private @Nullable String riskLevel;
@@ -55,35 +55,35 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
         return this.conditionGroups == null ? List.of() : this.conditionGroups;
     }
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return configuration allowed or not
+     * @return Configuration allowed or not
      * 
      */
     public Optional<Boolean> isConfigurationAllowed() {
         return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return The Risk Level
+     * @return The risk level of the detector rule
      * 
      */
     public Optional<String> riskLevel() {

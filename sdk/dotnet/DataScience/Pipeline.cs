@@ -44,6 +44,15 @@ namespace Pulumi.Oci.DataScience
     ///                     EnvironmentVariables = pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
     ///                     MaximumRuntimeInMinutes = pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
     ///                 },
+    ///                 StepContainerConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs
+    ///                 {
+    ///                     ContainerType = pipelineStepDetailsStepContainerConfigurationDetailsContainerType,
+    ///                     Image = pipelineStepDetailsStepContainerConfigurationDetailsImage,
+    ///                     Cmds = pipelineStepDetailsStepContainerConfigurationDetailsCmd,
+    ///                     Entrypoints = pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint,
+    ///                     ImageDigest = pipelineStepDetailsStepContainerConfigurationDetailsImageDigest,
+    ///                     ImageSignatureId = testImageSignature.Id,
+    ///                 },
     ///                 StepInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs
     ///                 {
     ///                     BlockStorageSizeInGbs = pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
@@ -53,6 +62,7 @@ namespace Pulumi.Oci.DataScience
     ///                         Ocpus = pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
     ///                     },
     ///                     ShapeName = testShape.Name,
+    ///                     SubnetId = testSubnet.Id,
     ///                 },
     ///             },
     ///         },
@@ -82,6 +92,7 @@ namespace Pulumi.Oci.DataScience
     ///                 MemoryInGbs = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
     ///             },
+    ///             SubnetId = testSubnet.Id,
     ///         },
     ///         LogConfigurationDetails = new Oci.DataScience.Inputs.PipelineLogConfigurationDetailsArgs
     ///         {
@@ -152,7 +163,7 @@ namespace Pulumi.Oci.DataScience
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The infrastructure configuration details of a pipeline or a step.
+        /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Output("infrastructureConfigurationDetails")]
         public Output<Outputs.PipelineInfrastructureConfigurationDetails> InfrastructureConfigurationDetails { get; private set; } = null!;
@@ -306,7 +317,7 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
-        /// The infrastructure configuration details of a pipeline or a step.
+        /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Input("infrastructureConfigurationDetails")]
         public Input<Inputs.PipelineInfrastructureConfigurationDetailsArgs>? InfrastructureConfigurationDetails { get; set; }
@@ -404,7 +415,7 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
-        /// The infrastructure configuration details of a pipeline or a step.
+        /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Input("infrastructureConfigurationDetails")]
         public Input<Inputs.PipelineInfrastructureConfigurationDetailsGetArgs>? InfrastructureConfigurationDetails { get; set; }

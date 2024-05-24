@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class GetPipelineRunStepOverrideDetail {
      * 
      */
     private List<GetPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    private List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
     /**
      * @return The name of the step.
      * 
@@ -30,6 +36,13 @@ public final class GetPipelineRunStepOverrideDetail {
      */
     public List<GetPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails() {
         return this.stepConfigurationDetails;
+    }
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails() {
+        return this.stepContainerConfigurationDetails;
     }
     /**
      * @return The name of the step.
@@ -49,11 +62,13 @@ public final class GetPipelineRunStepOverrideDetail {
     @CustomType.Builder
     public static final class Builder {
         private List<GetPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+        private List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
         private String stepName;
         public Builder() {}
         public Builder(GetPipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
+    	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
     	      this.stepName = defaults.stepName;
         }
 
@@ -69,6 +84,17 @@ public final class GetPipelineRunStepOverrideDetail {
             return stepConfigurationDetails(List.of(stepConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder stepContainerConfigurationDetails(List<GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails) {
+            if (stepContainerConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunStepOverrideDetail", "stepContainerConfigurationDetails");
+            }
+            this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            return this;
+        }
+        public Builder stepContainerConfigurationDetails(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail... stepContainerConfigurationDetails) {
+            return stepContainerConfigurationDetails(List.of(stepContainerConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder stepName(String stepName) {
             if (stepName == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunStepOverrideDetail", "stepName");
@@ -79,6 +105,7 @@ public final class GetPipelineRunStepOverrideDetail {
         public GetPipelineRunStepOverrideDetail build() {
             final var _resultValue = new GetPipelineRunStepOverrideDetail();
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             _resultValue.stepName = stepName;
             return _resultValue;
         }

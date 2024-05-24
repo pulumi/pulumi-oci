@@ -25,7 +25,8 @@ class JobRunArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  job_configuration_override_details: Optional[pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs']] = None,
                  job_environment_configuration_override_details: Optional[pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] = None,
-                 job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None):
+                 job_log_configuration_override_details: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a JobRun resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
@@ -42,6 +43,7 @@ class JobRunArgs:
         :param pulumi.Input['JobRunJobConfigurationOverrideDetailsArgs'] job_configuration_override_details: The job configuration details
         :param pulumi.Input['JobRunJobEnvironmentConfigurationOverrideDetailsArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "job_id", job_id)
@@ -60,6 +62,8 @@ class JobRunArgs:
             pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         if job_log_configuration_override_details is not None:
             pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -185,6 +189,18 @@ class JobRunArgs:
     def job_log_configuration_override_details(self, value: Optional[pulumi.Input['JobRunJobLogConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "job_log_configuration_override_details", value)
 
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
 
 @pulumi.input_type
 class _JobRunState:
@@ -203,6 +219,7 @@ class _JobRunState:
                  job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_accepted: Optional[pulumi.Input[str]] = None,
@@ -224,6 +241,7 @@ class _JobRunState:
         :param pulumi.Input[Sequence[pulumi.Input['JobRunJobStorageMountConfigurationDetailsListArgs']]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: Details of the state of the job run.
         :param pulumi.Input[Sequence[pulumi.Input['JobRunLogDetailArgs']]] log_details: Customer logging details for job run.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
                
                
@@ -262,6 +280,8 @@ class _JobRunState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_details is not None:
             pulumi.set(__self__, "log_details", log_details)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
@@ -442,6 +462,18 @@ class _JobRunState:
         pulumi.set(self, "log_details", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -520,6 +552,7 @@ class JobRun(pulumi.CustomResource):
                  job_environment_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -564,7 +597,8 @@ class JobRun(pulumi.CustomResource):
                 enable_logging=job_run_job_log_configuration_override_details_enable_logging,
                 log_group_id=test_log_group["id"],
                 log_id=test_log["id"],
-            ))
+            ),
+            opc_parent_rpt_url=job_run_opc_parent_rpt_url)
         ```
 
         ## Import
@@ -586,6 +620,7 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param pulumi.Input[str] job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
         :param pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']] job_log_configuration_override_details: Logging configuration for resource.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
                
                
@@ -640,7 +675,8 @@ class JobRun(pulumi.CustomResource):
                 enable_logging=job_run_job_log_configuration_override_details_enable_logging,
                 log_group_id=test_log_group["id"],
                 log_id=test_log["id"],
-            ))
+            ),
+            opc_parent_rpt_url=job_run_opc_parent_rpt_url)
         ```
 
         ## Import
@@ -675,6 +711,7 @@ class JobRun(pulumi.CustomResource):
                  job_environment_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobEnvironmentConfigurationOverrideDetailsArgs']]] = None,
                  job_id: Optional[pulumi.Input[str]] = None,
                  job_log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['JobRunJobLogConfigurationOverrideDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -698,6 +735,7 @@ class JobRun(pulumi.CustomResource):
                 raise TypeError("Missing required property 'job_id'")
             __props__.__dict__["job_id"] = job_id
             __props__.__dict__["job_log_configuration_override_details"] = job_log_configuration_override_details
+            __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
@@ -734,6 +772,7 @@ class JobRun(pulumi.CustomResource):
             job_storage_mount_configuration_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobStorageMountConfigurationDetailsListArgs']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunLogDetailArgs']]]]] = None,
+            opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_accepted: Optional[pulumi.Input[str]] = None,
@@ -760,6 +799,7 @@ class JobRun(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunJobStorageMountConfigurationDetailsListArgs']]]] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param pulumi.Input[str] lifecycle_details: Details of the state of the job run.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['JobRunLogDetailArgs']]]] log_details: Customer logging details for job run.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
                
                
@@ -788,6 +828,7 @@ class JobRun(pulumi.CustomResource):
         __props__.__dict__["job_storage_mount_configuration_details_lists"] = job_storage_mount_configuration_details_lists
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_details"] = log_details
+        __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
         __props__.__dict__["time_accepted"] = time_accepted
@@ -906,6 +947,14 @@ class JobRun(pulumi.CustomResource):
         Customer logging details for job run.
         """
         return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="projectId")

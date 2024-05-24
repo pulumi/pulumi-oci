@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetResponderRecipesResponderRecipeCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// List of responder rules associated with the recipe
+        /// List of currently enabled responder rules for the responder type, for recipe after applying defaults
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult> EffectiveResponderRules;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Identifier for ResponderRecipe.
+        /// Unique identifier for the responder recip
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of responder recipe
         /// </summary>
         public readonly string Owner;
         /// <summary>
@@ -54,11 +54,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult> ResponderRules;
         /// <summary>
-        /// The id of the source responder recipe.
+        /// The unique identifier of the source responder recipe
         /// </summary>
         public readonly string SourceResponderRecipeId;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the responder recipe was updated. Format defined by RFC3339.
+        /// The date and time the responder recipe was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

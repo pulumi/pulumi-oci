@@ -18,14 +18,14 @@ public final class GetDetectorRecipesFilter extends com.pulumi.resources.InvokeA
     public static final GetDetectorRecipesFilter Empty = new GetDetectorRecipesFilter();
 
     /**
-     * configuration name
+     * Configuration name
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {
@@ -81,7 +81,7 @@ public final class GetDetectorRecipesFilter extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 

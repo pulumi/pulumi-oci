@@ -14,14 +14,14 @@ public final class GetDetectorRecipePlainArgs extends com.pulumi.resources.Invok
     public static final GetDetectorRecipePlainArgs Empty = new GetDetectorRecipePlainArgs();
 
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      * 
      */
     @Import(name="detectorRecipeId", required=true)
     private String detectorRecipeId;
 
     /**
-     * @return DetectorRecipe OCID
+     * @return Detector recipe OCID
      * 
      */
     public String detectorRecipeId() {
@@ -53,7 +53,7 @@ public final class GetDetectorRecipePlainArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param detectorRecipeId DetectorRecipe OCID
+         * @param detectorRecipeId Detector recipe OCID
          * 
          * @return builder
          * 

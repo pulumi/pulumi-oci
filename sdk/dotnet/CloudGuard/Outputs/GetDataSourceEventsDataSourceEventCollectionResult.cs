@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourceEventsDataSourceEventCollectionResult
     {
         /// <summary>
-        /// List of event related to a DataSource
+        /// List of events related to a data source
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceEventsDataSourceEventCollectionItemResult> Items;
 

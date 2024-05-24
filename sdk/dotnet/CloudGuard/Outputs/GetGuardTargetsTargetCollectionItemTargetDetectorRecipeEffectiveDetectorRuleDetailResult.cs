@@ -18,23 +18,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult> ConditionGroups;
         /// <summary>
-        /// ResponderRule configurations
+        /// List of responder rule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult> Configurations;
         /// <summary>
-        /// configuration allowed or not
+        /// Configuration allowed or not
         /// </summary>
         public readonly bool IsConfigurationAllowed;
         /// <summary>
-        /// Identifies state for ResponderRule
+        /// Enabled state for the responder rule
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// user defined labels for a detector rule
+        /// User-defined labels for a detector rule
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// The Risk Level
+        /// The risk level of the detector rule
         /// </summary>
         public readonly string RiskLevel;
 

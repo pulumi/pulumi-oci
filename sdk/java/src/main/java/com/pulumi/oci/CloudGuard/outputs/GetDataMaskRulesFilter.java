@@ -17,7 +17,7 @@ public final class GetDataMaskRulesFilter {
     private String name;
     private @Nullable Boolean regex;
     /**
-     * @return Types of Targets
+     * @return Types of targets
      * 
      */
     private List<String> values;
@@ -30,7 +30,7 @@ public final class GetDataMaskRulesFilter {
         return Optional.ofNullable(this.regex);
     }
     /**
-     * @return Types of Targets
+     * @return Types of targets
      * 
      */
     public List<String> values() {

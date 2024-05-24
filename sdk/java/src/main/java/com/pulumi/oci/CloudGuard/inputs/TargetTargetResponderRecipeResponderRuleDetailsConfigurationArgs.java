@@ -15,14 +15,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
     public static final TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs Empty = new TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs();
 
     /**
-     * (Updatable) Unique name of the configuration
+     * (Updatable) Unique identifier of the configuration
      * 
      */
     @Import(name="configKey", required=true)
     private Output<String> configKey;
 
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return (Updatable) Unique identifier of the configuration
      * 
      */
     public Output<String> configKey() {
@@ -30,14 +30,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
     }
 
     /**
-     * (Updatable) configuration name
+     * (Updatable) Configuration name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) configuration name
+     * @return (Updatable) Configuration name
      * 
      */
     public Output<String> name() {
@@ -45,14 +45,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
     }
 
     /**
-     * (Updatable) configuration value
+     * (Updatable) Configuration value
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     public Output<String> value() {
@@ -86,7 +86,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey (Updatable) Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey (Updatable) Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name (Updatable) Configuration name
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name (Updatable) Configuration name
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsConfigurationA
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 

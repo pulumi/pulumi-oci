@@ -14,23 +14,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult
     {
         /// <summary>
-        /// The id of the attached DataSource.
+        /// The ID of the attached data source
         /// </summary>
         public readonly string DataSourceId;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Details of ResponderRule.
+        /// Detailed information for a responder rule
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult> Details;
         /// <summary>
-        /// detector for the rule
+        /// Detector type for the rule
         /// </summary>
         public readonly string Detector;
         /// <summary>
-        /// The unique identifier of the detector rule.
+        /// The unique identifier of the detector rule
         /// </summary>
         public readonly string DetectorRuleId;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Data Source entities mapping for a Detector Rule
+        /// Data source entities mapping for a detector rule
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult> EntitiesMappings;
         /// <summary>
@@ -46,23 +46,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// List of cloudguard managed list types related to this rule
+        /// List of managed list types related to this rule
         /// </summary>
         public readonly ImmutableArray<string> ManagedListTypes;
         /// <summary>
-        /// Recommendation for TargetDetectorRecipeDetectorRule
+        /// Recommendation for TargetDetectorRecipeDetectorRule resource
         /// </summary>
         public readonly string Recommendation;
         /// <summary>
-        /// resource type of the configuration to which the rule is applied
+        /// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         /// </summary>
         public readonly string ResourceType;
         /// <summary>
-        /// service type of the configuration to which the rule is applied
+        /// Service type of the configuration to which the rule is applied
         /// </summary>
         public readonly string ServiceType;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetProblemEntitiesProblemEntityCollectionResult
     {
         /// <summary>
-        /// List of problem entities summaries related to a data source.
+        /// List of entity details related to a data source
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProblemEntitiesProblemEntityCollectionItemResult> Items;
 

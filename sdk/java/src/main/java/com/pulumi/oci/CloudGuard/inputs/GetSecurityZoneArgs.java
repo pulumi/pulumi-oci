@@ -15,14 +15,14 @@ public final class GetSecurityZoneArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetSecurityZoneArgs Empty = new GetSecurityZoneArgs();
 
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     @Import(name="securityZoneId", required=true)
     private Output<String> securityZoneId;
 
     /**
-     * @return The unique identifier of the security zone (`SecurityZone`)
+     * @return The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     public Output<String> securityZoneId() {
@@ -54,7 +54,7 @@ public final class GetSecurityZoneArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param securityZoneId The unique identifier of the security zone (`SecurityZone`)
+         * @param securityZoneId The unique identifier of the security zone (`SecurityZone` resource).
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetSecurityZoneArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param securityZoneId The unique identifier of the security zone (`SecurityZone`)
+         * @param securityZoneId The unique identifier of the security zone (`SecurityZone` resource).
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -24,7 +24,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
@@ -39,7 +39,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
@@ -49,17 +49,17 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
      */
     private String lifecycleDetails;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private String owner;
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     private List<String> securityPolicies;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -74,14 +74,14 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipe() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -95,7 +95,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
@@ -116,7 +116,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
@@ -130,21 +130,21 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
         return this.lifecycleDetails;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public List<String> securityPolicies() {
         return this.securityPolicies;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -165,7 +165,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurity
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

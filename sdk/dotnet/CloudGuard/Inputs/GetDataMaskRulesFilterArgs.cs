@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// Types of Targets
+        /// Types of targets
         /// </summary>
         public InputList<string> Values
         {

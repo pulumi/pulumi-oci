@@ -73,7 +73,7 @@ class GetDataSourceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        CompartmentId of Data source.
+        Compartment OCID of data source
         """
         return pulumi.get(self, "compartment_id")
 
@@ -118,7 +118,7 @@ class GetDataSourceResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        DisplayName of Data source.
+        Display name of the data source
         """
         return pulumi.get(self, "display_name")
 
@@ -134,7 +134,7 @@ class GetDataSourceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Ocid for Data source
+        OCID for the data source
         """
         return pulumi.get(self, "id")
 
@@ -150,7 +150,7 @@ class GetDataSourceResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
@@ -158,7 +158,7 @@ class GetDataSourceResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        Status of data Source
+        Enablement status of the data source
         """
         return pulumi.get(self, "status")
 
@@ -182,7 +182,7 @@ class GetDataSourceResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the Data source was updated. Format defined by RFC3339.
+        The date and time the data source was updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -215,7 +215,7 @@ def get_data_source(data_source_id: Optional[str] = None,
     """
     This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataSource identified by dataSourceId
+    Returns a data source (DataSource resource) identified by dataSourceId.
 
     ## Example Usage
 
@@ -227,7 +227,7 @@ def get_data_source(data_source_id: Optional[str] = None,
     ```
 
 
-    :param str data_source_id: DataSource OCID
+    :param str data_source_id: Data source OCID.
     """
     __args__ = dict()
     __args__['dataSourceId'] = data_source_id
@@ -258,7 +258,7 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataSource identified by dataSourceId
+    Returns a data source (DataSource resource) identified by dataSourceId.
 
     ## Example Usage
 
@@ -270,6 +270,6 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str data_source_id: DataSource OCID
+    :param str data_source_id: Data source OCID.
     """
     ...

@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+ * Returns the configuration details for a Cloud Guard tenancy,
+ * identified by root compartment OCID.
  *
  * ## Example Usage
  *
@@ -33,7 +34,7 @@ export function getCloudGuardConfiguration(args: GetCloudGuardConfigurationArgs,
  */
 export interface GetCloudGuardConfigurationArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
 }
@@ -45,22 +46,23 @@ export interface GetCloudGuardConfigurationResult {
     readonly compartmentId: string;
     readonly id: string;
     /**
-     * The reporting region value
+     * The reporting region
      */
     readonly reportingRegion: string;
     /**
-     * Identifies if Oracle managed resources were created by customers
+     * Were Oracle-managed resources created by customer?
      */
     readonly selfManageResources: boolean;
     /**
-     * Status of Cloud Guard Tenant
+     * Status of the Cloud Guard tenant
      */
     readonly status: string;
 }
 /**
  * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+ * Returns the configuration details for a Cloud Guard tenancy,
+ * identified by root compartment OCID.
  *
  * ## Example Usage
  *
@@ -82,7 +84,7 @@ export function getCloudGuardConfigurationOutput(args: GetCloudGuardConfiguratio
  */
 export interface GetCloudGuardConfigurationOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
 }

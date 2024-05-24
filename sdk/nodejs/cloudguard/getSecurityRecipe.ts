@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+ * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
  *
  * ## Example Usage
  *
@@ -33,7 +33,7 @@ export function getSecurityRecipe(args: GetSecurityRecipeArgs, opts?: pulumi.Inv
  */
 export interface GetSecurityRecipeArgs {
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      */
     securityRecipeId: string;
 }
@@ -43,7 +43,7 @@ export interface GetSecurityRecipeArgs {
  */
 export interface GetSecurityRecipeResult {
     /**
-     * The id of the compartment that contains the recipe
+     * The OCID of the compartment that contains the recipe
      */
     readonly compartmentId: string;
     /**
@@ -55,7 +55,7 @@ export interface GetSecurityRecipeResult {
      */
     readonly description: string;
     /**
-     * The recipe's name
+     * The recipe's display name
      */
     readonly displayName: string;
     /**
@@ -63,7 +63,7 @@ export interface GetSecurityRecipeResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can’t be changed after creation
      */
     readonly id: string;
     /**
@@ -75,12 +75,12 @@ export interface GetSecurityRecipeResult {
      */
     readonly owner: string;
     /**
-     * The list of `SecurityPolicy` ids that are included in the recipe
+     * The list of security policy IDs that are included in the recipe
      */
     readonly securityPolicies: string[];
     readonly securityRecipeId: string;
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      */
     readonly state: string;
     /**
@@ -95,7 +95,7 @@ export interface GetSecurityRecipeResult {
 /**
  * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+ * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
  *
  * ## Example Usage
  *
@@ -117,7 +117,7 @@ export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?
  */
 export interface GetSecurityRecipeOutputArgs {
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      */
     securityRecipeId: pulumi.Input<string>;
 }

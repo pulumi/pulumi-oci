@@ -52,7 +52,7 @@ class GetDataSourceEventsResult:
     @pulumi.getter(name="dataSourceId")
     def data_source_id(self) -> str:
         """
-        Attached data Source
+        Unique identifier of data source.
         """
         return pulumi.get(self, "data_source_id")
 
@@ -98,7 +98,9 @@ def get_data_source_events(data_source_id: Optional[str] = None,
     """
     This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of events from CloudGuard DataSource
+    Returns a list of data source events
+    (DataSourceEventCollection  resource) from the data source
+    (DataSource resource) identified by dataSourceId.
 
     ## Example Usage
 
@@ -111,8 +113,8 @@ def get_data_source_events(data_source_id: Optional[str] = None,
     ```
 
 
-    :param str data_source_id: DataSource OCID
-    :param str region: A filter to return only resource their region matches the given region.
+    :param str data_source_id: Data source OCID.
+    :param str region: A filter to return only resource where their region matches the given region.
     """
     __args__ = dict()
     __args__['dataSourceId'] = data_source_id
@@ -137,7 +139,9 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
     """
     This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of events from CloudGuard DataSource
+    Returns a list of data source events
+    (DataSourceEventCollection  resource) from the data source
+    (DataSource resource) identified by dataSourceId.
 
     ## Example Usage
 
@@ -150,7 +154,7 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
     ```
 
 
-    :param str data_source_id: DataSource OCID
-    :param str region: A filter to return only resource their region matches the given region.
+    :param str data_source_id: Data source OCID.
+    :param str region: A filter to return only resource where their region matches the given region.
     """
     ...

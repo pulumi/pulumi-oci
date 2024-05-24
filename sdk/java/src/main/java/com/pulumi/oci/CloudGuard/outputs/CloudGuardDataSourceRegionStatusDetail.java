@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudGuardDataSourceRegionStatusDetail {
     /**
-     * @return Data Source replication region.
+     * @return Data source replication region
      * 
      */
     private @Nullable String region;
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -27,14 +27,14 @@ public final class CloudGuardDataSourceRegionStatusDetail {
 
     private CloudGuardDataSourceRegionStatusDetail() {}
     /**
-     * @return Data Source replication region.
+     * @return Data source replication region
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

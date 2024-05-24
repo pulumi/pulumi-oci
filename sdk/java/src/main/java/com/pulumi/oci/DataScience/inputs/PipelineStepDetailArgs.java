@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -96,14 +97,29 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * Container Details for a step in pipeline.
+     * 
+     */
+    @Import(name="stepContainerConfigurationDetails")
+    private @Nullable Output<PipelineStepDetailStepContainerConfigurationDetailsArgs> stepContainerConfigurationDetails;
+
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public Optional<Output<PipelineStepDetailStepContainerConfigurationDetailsArgs>> stepContainerConfigurationDetails() {
+        return Optional.ofNullable(this.stepContainerConfigurationDetails);
+    }
+
+    /**
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     @Import(name="stepInfrastructureConfigurationDetails")
     private @Nullable Output<PipelineStepDetailStepInfrastructureConfigurationDetailsArgs> stepInfrastructureConfigurationDetails;
 
     /**
-     * @return The infrastructure configuration details of a pipeline or a step.
+     * @return (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     public Optional<Output<PipelineStepDetailStepInfrastructureConfigurationDetailsArgs>> stepInfrastructureConfigurationDetails() {
@@ -154,6 +170,7 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         this.isArtifactUploaded = $.isArtifactUploaded;
         this.jobId = $.jobId;
         this.stepConfigurationDetails = $.stepConfigurationDetails;
+        this.stepContainerConfigurationDetails = $.stepContainerConfigurationDetails;
         this.stepInfrastructureConfigurationDetails = $.stepInfrastructureConfigurationDetails;
         this.stepName = $.stepName;
         this.stepType = $.stepType;
@@ -293,7 +310,28 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param stepInfrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * @param stepContainerConfigurationDetails Container Details for a step in pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepContainerConfigurationDetails(@Nullable Output<PipelineStepDetailStepContainerConfigurationDetailsArgs> stepContainerConfigurationDetails) {
+            $.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param stepContainerConfigurationDetails Container Details for a step in pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepContainerConfigurationDetails(PipelineStepDetailStepContainerConfigurationDetailsArgs stepContainerConfigurationDetails) {
+            return stepContainerConfigurationDetails(Output.of(stepContainerConfigurationDetails));
+        }
+
+        /**
+         * @param stepInfrastructureConfigurationDetails (Updatable) The infrastructure configuration details of a pipeline or a step.
          * 
          * @return builder
          * 
@@ -304,7 +342,7 @@ public final class PipelineStepDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param stepInfrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * @param stepInfrastructureConfigurationDetails (Updatable) The infrastructure configuration details of a pipeline or a step.
          * 
          * @return builder
          * 

@@ -14,50 +14,18 @@ import (
 
 // This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudGuard"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewCloudGuardConfiguration(ctx, "test_cloud_guard_configuration", &CloudGuard.CloudGuardConfigurationArgs{
-//				CompartmentId:       pulumi.Any(compartmentId),
-//				ReportingRegion:     pulumi.Any(cloudGuardConfigurationReportingRegion),
-//				Status:              pulumi.Any(cloudGuardConfigurationStatus),
-//				SelfManageResources: pulumi.Any(cloudGuardConfigurationSelfManageResources),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Import
-//
-// Import is not supported for this resource.
+// Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+// The reporting region cannot be updated once created.
 type CloudGuardConfiguration struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The ID of the compartment in which to list resources.
+	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The reporting region value
+	// (Updatable) The reporting region
 	ReportingRegion pulumi.StringOutput `pulumi:"reportingRegion"`
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolOutput `pulumi:"selfManageResources"`
-	// (Updatable) Status of Cloud Guard Tenant
+	// (Updatable) Status of Cloud Guard tenant
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,13 +71,13 @@ func GetCloudGuardConfiguration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudGuardConfiguration resources.
 type cloudGuardConfigurationState struct {
-	// (Updatable) The ID of the compartment in which to list resources.
+	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The reporting region value
+	// (Updatable) The reporting region
 	ReportingRegion *string `pulumi:"reportingRegion"`
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources *bool `pulumi:"selfManageResources"`
-	// (Updatable) Status of Cloud Guard Tenant
+	// (Updatable) Status of Cloud Guard tenant
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,13 +85,13 @@ type cloudGuardConfigurationState struct {
 }
 
 type CloudGuardConfigurationState struct {
-	// (Updatable) The ID of the compartment in which to list resources.
+	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The reporting region value
+	// (Updatable) The reporting region
 	ReportingRegion pulumi.StringPtrInput
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolPtrInput
-	// (Updatable) Status of Cloud Guard Tenant
+	// (Updatable) Status of Cloud Guard tenant
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,13 +103,13 @@ func (CloudGuardConfigurationState) ElementType() reflect.Type {
 }
 
 type cloudGuardConfigurationArgs struct {
-	// (Updatable) The ID of the compartment in which to list resources.
+	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) The reporting region value
+	// (Updatable) The reporting region
 	ReportingRegion string `pulumi:"reportingRegion"`
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources *bool `pulumi:"selfManageResources"`
-	// (Updatable) Status of Cloud Guard Tenant
+	// (Updatable) Status of Cloud Guard tenant
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -150,13 +118,13 @@ type cloudGuardConfigurationArgs struct {
 
 // The set of arguments for constructing a CloudGuardConfiguration resource.
 type CloudGuardConfigurationArgs struct {
-	// (Updatable) The ID of the compartment in which to list resources.
+	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput
-	// (Updatable) The reporting region value
+	// (Updatable) The reporting region
 	ReportingRegion pulumi.StringInput
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
 	SelfManageResources pulumi.BoolPtrInput
-	// (Updatable) Status of Cloud Guard Tenant
+	// (Updatable) Status of Cloud Guard tenant
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,12 +218,12 @@ func (o CloudGuardConfigurationOutput) ToCloudGuardConfigurationOutputWithContex
 	return o
 }
 
-// (Updatable) The ID of the compartment in which to list resources.
+// (Updatable) The OCID of the compartment in which to list resources.
 func (o CloudGuardConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The reporting region value
+// (Updatable) The reporting region
 func (o CloudGuardConfigurationOutput) ReportingRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.StringOutput { return v.ReportingRegion }).(pulumi.StringOutput)
 }
@@ -265,7 +233,7 @@ func (o CloudGuardConfigurationOutput) SelfManageResources() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.BoolOutput { return v.SelfManageResources }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Status of Cloud Guard Tenant
+// (Updatable) Status of Cloud Guard tenant
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

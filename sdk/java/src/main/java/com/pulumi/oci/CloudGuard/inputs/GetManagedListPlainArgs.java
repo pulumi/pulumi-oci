@@ -14,14 +14,14 @@ public final class GetManagedListPlainArgs extends com.pulumi.resources.InvokeAr
     public static final GetManagedListPlainArgs Empty = new GetManagedListPlainArgs();
 
     /**
-     * The cloudguard list OCID to be passed in the request.
+     * The managed list OCID to be passed in the request.
      * 
      */
     @Import(name="managedListId", required=true)
     private String managedListId;
 
     /**
-     * @return The cloudguard list OCID to be passed in the request.
+     * @return The managed list OCID to be passed in the request.
      * 
      */
     public String managedListId() {
@@ -53,7 +53,7 @@ public final class GetManagedListPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param managedListId The cloudguard list OCID to be passed in the request.
+         * @param managedListId The managed list OCID to be passed in the request.
          * 
          * @return builder
          * 

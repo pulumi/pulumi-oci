@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DataMaskRuleTargetSelectedArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Target selection.
+        /// (Updatable) Kind of target selection to be used
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) Types of Targets
+        /// (Updatable) Types of targets
         /// 
         /// 
         /// ** IMPORTANT **

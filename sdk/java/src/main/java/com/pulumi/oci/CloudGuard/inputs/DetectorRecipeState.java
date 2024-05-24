@@ -21,14 +21,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     public static final DetectorRecipeState Empty = new DetectorRecipeState();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -70,14 +70,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * detector for the rule
+     * Detector for the rule
      * 
      */
     @Import(name="detector")
     private @Nullable Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     public Optional<Output<String>> detector() {
@@ -85,14 +85,29 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    @Import(name="detectorRecipeType")
+    private @Nullable Output<String> detectorRecipeType;
+
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public Optional<Output<String>> detectorRecipeType() {
+        return Optional.ofNullable(this.detectorRecipeType);
+    }
+
+    /**
+     * (Updatable) Detector rules to override from source detector recipe
      * 
      */
     @Import(name="detectorRules")
     private @Nullable Output<List<DetectorRecipeDetectorRuleArgs>> detectorRules;
 
     /**
-     * @return (Updatable) Detector Rules to override from source detector recipe
+     * @return (Updatable) Detector rules to override from source detector recipe
      * 
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleArgs>>> detectorRules() {
@@ -168,7 +183,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,7 +193,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<String> sourceDetectorRecipeId;
 
     /**
-     * @return The id of the source detector recipe.
+     * @return The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,14 +204,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<Output<String>> state() {
@@ -219,14 +234,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      * 
      */
     @Import(name="targetIds")
     private @Nullable Output<List<String>> targetIds;
 
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     public Optional<Output<List<String>>> targetIds() {
@@ -234,14 +249,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -249,14 +264,14 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -270,6 +285,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.detector = $.detector;
+        this.detectorRecipeType = $.detectorRecipeType;
         this.detectorRules = $.detectorRules;
         this.displayName = $.displayName;
         this.effectiveDetectorRules = $.effectiveDetectorRules;
@@ -302,7 +318,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -313,7 +329,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -369,7 +385,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -380,7 +396,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -390,7 +406,28 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRecipeType Recipe type ( STANDARD, ENTERPRISE )
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detectorRecipeType(@Nullable Output<String> detectorRecipeType) {
+            $.detectorRecipeType = detectorRecipeType;
+            return this;
+        }
+
+        /**
+         * @param detectorRecipeType Recipe type ( STANDARD, ENTERPRISE )
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detectorRecipeType(String detectorRecipeType) {
+            return detectorRecipeType(Output.of(detectorRecipeType));
+        }
+
+        /**
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -401,7 +438,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -411,7 +448,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -523,7 +560,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceDetectorRecipeId The id of the source detector recipe.
+         * @param sourceDetectorRecipeId The ID of the source detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -537,7 +574,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sourceDetectorRecipeId The id of the source detector recipe.
+         * @param sourceDetectorRecipeId The ID of the source detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -550,7 +587,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -561,7 +598,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -592,7 +629,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetIds The recipe attached to targets
+         * @param targetIds List of target IDs to which the recipe is attached
          * 
          * @return builder
          * 
@@ -603,7 +640,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetIds The recipe attached to targets
+         * @param targetIds List of target IDs to which the recipe is attached
          * 
          * @return builder
          * 
@@ -613,7 +650,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param targetIds The recipe attached to targets
+         * @param targetIds List of target IDs to which the recipe is attached
          * 
          * @return builder
          * 
@@ -623,7 +660,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the detector recipe was created. Format defined by RFC3339.
+         * @param timeCreated The date and time the detector recipe was created Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -634,7 +671,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the detector recipe was created. Format defined by RFC3339.
+         * @param timeCreated The date and time the detector recipe was created Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -644,7 +681,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeUpdated The date and time the detector recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the detector recipe was last updated Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -655,7 +692,7 @@ public final class DetectorRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeUpdated The date and time the detector recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the detector recipe was last updated Format defined by RFC3339.
          * 
          * @return builder
          * 

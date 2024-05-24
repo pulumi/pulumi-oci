@@ -14,23 +14,27 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// detector for the rule
+        /// Detector type for the rule
         /// </summary>
         public readonly string Detector;
         /// <summary>
-        /// Unique identifier for Detector Recipe of which this is an extension
+        /// Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
         /// </summary>
         public readonly string DetectorRecipeId;
         /// <summary>
-        /// List of detector rules for the detector type for recipe - user input
+        /// Recipe type ( STANDARD, ENTERPRISE )
+        /// </summary>
+        public readonly string DetectorRecipeType;
+        /// <summary>
+        /// List of detector rules for the detector recipe - user input
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult> DetectorRules;
         /// <summary>
@@ -38,19 +42,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// List of effective detector rules for the detector type for recipe after applying defaults
+        /// List of currently enabled detector rules for the detector type for recipe after applying defaults
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult> EffectiveDetectorRules;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -58,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -71,6 +75,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string detector,
 
             string detectorRecipeId,
+
+            string detectorRecipeType,
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult> detectorRules,
 
@@ -92,6 +98,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             Description = description;
             Detector = detector;
             DetectorRecipeId = detectorRecipeId;
+            DetectorRecipeType = detectorRecipeType;
             DetectorRules = detectorRules;
             DisplayName = displayName;
             EffectiveDetectorRules = effectiveDetectorRules;

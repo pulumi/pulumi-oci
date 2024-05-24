@@ -25,14 +25,14 @@ public final class GetProblemEntitiesPlainArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * OCId of the problem.
+     * OCID of the problem.
      * 
      */
     @Import(name="problemId", required=true)
     private String problemId;
 
     /**
-     * @return OCId of the problem.
+     * @return OCID of the problem.
      * 
      */
     public String problemId() {
@@ -74,7 +74,7 @@ public final class GetProblemEntitiesPlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param problemId OCId of the problem.
+         * @param problemId OCID of the problem.
          * 
          * @return builder
          * 

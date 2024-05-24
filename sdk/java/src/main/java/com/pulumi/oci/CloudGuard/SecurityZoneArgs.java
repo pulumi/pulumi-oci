@@ -64,14 +64,14 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The security zone&#39;s name
+     * (Updatable) The security zone&#39;s display name
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The security zone&#39;s name
+     * @return (Updatable) The security zone&#39;s display name
      * 
      */
     public Output<String> displayName() {
@@ -98,7 +98,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,7 +108,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> securityZoneRecipeId;
 
     /**
-     * @return (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +211,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The security zone&#39;s name
+         * @param displayName (Updatable) The security zone&#39;s display name
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The security zone&#39;s name
+         * @param displayName (Updatable) The security zone&#39;s display name
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityZoneRecipeId (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+         * @param securityZoneRecipeId (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,7 +271,7 @@ public final class SecurityZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityZoneRecipeId (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+         * @param securityZoneRecipeId (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 public final class GetDataSourcesResult {
     private @Nullable String accessLevel;
     /**
-     * @return CompartmentId of Data source.
+     * @return Compartment OCID of data source
      * 
      */
     private String compartmentId;
@@ -34,7 +34,7 @@ public final class GetDataSourcesResult {
      */
     private @Nullable String dataSourceFeedProvider;
     /**
-     * @return DisplayName of Data source.
+     * @return Display name of the data source
      * 
      */
     private @Nullable String displayName;
@@ -45,12 +45,12 @@ public final class GetDataSourcesResult {
      */
     private String id;
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     private @Nullable String loggingQueryType;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     private @Nullable String state;
@@ -60,7 +60,7 @@ public final class GetDataSourcesResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return CompartmentId of Data source.
+     * @return Compartment OCID of data source
      * 
      */
     public String compartmentId() {
@@ -84,7 +84,7 @@ public final class GetDataSourcesResult {
         return Optional.ofNullable(this.dataSourceFeedProvider);
     }
     /**
-     * @return DisplayName of Data source.
+     * @return Display name of the data source
      * 
      */
     public Optional<String> displayName() {
@@ -101,14 +101,14 @@ public final class GetDataSourcesResult {
         return this.id;
     }
     /**
-     * @return Logging query type for data source (Sighting/Insight)
+     * @return Type of logging query for data source (Sighting/Insight)
      * 
      */
     public Optional<String> loggingQueryType() {
         return Optional.ofNullable(this.loggingQueryType);
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     public Optional<String> state() {

@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedListResult {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private String compartmentId;
@@ -25,17 +25,17 @@ public final class GetManagedListResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ManagedList description.
+     * @return Managed list description
      * 
      */
     private String description;
     /**
-     * @return ManagedList display name.
+     * @return Managed list display name
      * 
      */
     private String displayName;
     /**
-     * @return provider of the feed
+     * @return Provider of the managed list feed
      * 
      */
     private String feedProvider;
@@ -45,38 +45,38 @@ public final class GetManagedListResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
     private String id;
     /**
-     * @return If this list is editable or not
+     * @return Is this list editable?
      * 
      */
     private Boolean isEditable;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     private String lifecyleDetails;
     /**
-     * @return List of ManagedListItem
+     * @return List of items in the managed list
      * 
      */
     private List<String> listItems;
     /**
-     * @return type of the list
+     * @return Type of information contained in the managed list
      * 
      */
     private String listType;
     private String managedListId;
     /**
-     * @return OCID of the Source ManagedList
+     * @return OCID of the source managed list
      * 
      */
     private String sourceManagedListId;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private String state;
@@ -91,14 +91,14 @@ public final class GetManagedListResult {
      */
     private String timeCreated;
     /**
-     * @return The date and time the managed list was updated. Format defined by RFC3339.
+     * @return The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetManagedListResult() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public String compartmentId() {
@@ -112,21 +112,21 @@ public final class GetManagedListResult {
         return this.definedTags;
     }
     /**
-     * @return ManagedList description.
+     * @return Managed list description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ManagedList display name.
+     * @return Managed list display name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return provider of the feed
+     * @return Provider of the managed list feed
      * 
      */
     public String feedProvider() {
@@ -140,35 +140,35 @@ public final class GetManagedListResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return If this list is editable or not
+     * @return Is this list editable?
      * 
      */
     public Boolean isEditable() {
         return this.isEditable;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public String lifecyleDetails() {
         return this.lifecyleDetails;
     }
     /**
-     * @return List of ManagedListItem
+     * @return List of items in the managed list
      * 
      */
     public List<String> listItems() {
         return this.listItems;
     }
     /**
-     * @return type of the list
+     * @return Type of information contained in the managed list
      * 
      */
     public String listType() {
@@ -178,14 +178,14 @@ public final class GetManagedListResult {
         return this.managedListId;
     }
     /**
-     * @return OCID of the Source ManagedList
+     * @return OCID of the source managed list
      * 
      */
     public String sourceManagedListId() {
         return this.sourceManagedListId;
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public String state() {
@@ -206,7 +206,7 @@ public final class GetManagedListResult {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the managed list was updated. Format defined by RFC3339.
+     * @return The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

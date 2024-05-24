@@ -45,6 +45,10 @@ public final class GetPipelineRunResult {
      * 
      */
     private Map<String,Object> definedTags;
+    /**
+     * @return If set to true will delete related job runs.
+     * 
+     */
     private Boolean deleteRelatedJobRuns;
     /**
      * @return A user-friendly display name for the resource.
@@ -76,6 +80,7 @@ public final class GetPipelineRunResult {
      * 
      */
     private List<GetPipelineRunLogDetail> logDetails;
+    private String opcParentRptUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
@@ -164,6 +169,10 @@ public final class GetPipelineRunResult {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return If set to true will delete related job runs.
+     * 
+     */
     public Boolean deleteRelatedJobRuns() {
         return this.deleteRelatedJobRuns;
     }
@@ -208,6 +217,9 @@ public final class GetPipelineRunResult {
      */
     public List<GetPipelineRunLogDetail> logDetails() {
         return this.logDetails;
+    }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
@@ -304,6 +316,7 @@ public final class GetPipelineRunResult {
         private String lifecycleDetails;
         private List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
         private List<GetPipelineRunLogDetail> logDetails;
+        private String opcParentRptUrl;
         private String pipelineId;
         private String pipelineRunId;
         private String projectId;
@@ -330,6 +343,7 @@ public final class GetPipelineRunResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logConfigurationOverrideDetails = defaults.logConfigurationOverrideDetails;
     	      this.logDetails = defaults.logDetails;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.pipelineId = defaults.pipelineId;
     	      this.pipelineRunId = defaults.pipelineRunId;
     	      this.projectId = defaults.projectId;
@@ -452,6 +466,14 @@ public final class GetPipelineRunResult {
             return logDetails(List.of(logDetails));
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
             if (pipelineId == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunResult", "pipelineId");
@@ -559,6 +581,7 @@ public final class GetPipelineRunResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             _resultValue.logDetails = logDetails;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.pipelineId = pipelineId;
             _resultValue.pipelineRunId = pipelineRunId;
             _resultValue.projectId = projectId;

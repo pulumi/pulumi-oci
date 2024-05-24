@@ -16,18 +16,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSecurityPoliciesResult {
     /**
-     * @return The id of the security policy&#39;s compartment
+     * @return The OCID of the security policy&#39;s compartment
      * 
      */
     private String compartmentId;
     /**
-     * @return The security policy&#39;s full name
+     * @return The security policy&#39;s display name
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetSecurityPoliciesFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     private @Nullable String id;
@@ -37,21 +37,21 @@ public final class GetSecurityPoliciesResult {
      */
     private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
     /**
-     * @return The current state of the security policy
+     * @return The current lifecycle state of the security policy
      * 
      */
     private @Nullable String state;
 
     private GetSecurityPoliciesResult() {}
     /**
-     * @return The id of the security policy&#39;s compartment
+     * @return The OCID of the security policy&#39;s compartment
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The security policy&#39;s full name
+     * @return The security policy&#39;s display name
      * 
      */
     public Optional<String> displayName() {
@@ -61,7 +61,7 @@ public final class GetSecurityPoliciesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     public Optional<String> id() {
@@ -75,7 +75,7 @@ public final class GetSecurityPoliciesResult {
         return this.securityPolicyCollections;
     }
     /**
-     * @return The current state of the security policy
+     * @return The current lifecycle state of the security policy
      * 
      */
     public Optional<String> state() {

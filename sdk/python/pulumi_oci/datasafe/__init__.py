@@ -154,7 +154,9 @@ from .sensitive_data_models_apply_discovery_job_results import *
 from .sensitive_data_models_sensitive_column import *
 from .sensitive_type import *
 from .set_security_assessment_baseline import *
+from .set_security_assessment_baseline_management import *
 from .set_user_assessment_baseline import *
+from .set_user_assessment_baseline_management import *
 from .sql_collection import *
 from .sql_firewall_policy import *
 from .sql_firewall_policy_management import *

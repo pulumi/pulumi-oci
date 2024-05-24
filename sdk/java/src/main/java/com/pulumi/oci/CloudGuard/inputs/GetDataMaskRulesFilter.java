@@ -32,14 +32,14 @@ public final class GetDataMaskRulesFilter extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * Types of Targets
+     * Types of targets
      * 
      */
     @Import(name="values", required=true)
     private List<String> values;
 
     /**
-     * @return Types of Targets
+     * @return Types of targets
      * 
      */
     public List<String> values() {
@@ -83,7 +83,7 @@ public final class GetDataMaskRulesFilter extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param values Types of Targets
+         * @param values Types of targets
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class GetDataMaskRulesFilter extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param values Types of Targets
+         * @param values Types of targets
          * 
          * @return builder
          * 

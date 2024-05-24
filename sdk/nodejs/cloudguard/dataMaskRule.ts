@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a new DataMaskRule object definition.
+ * Creates a new DataMaskRule resource definition.
  *
  * ## Example Usage
  *
@@ -75,15 +75,15 @@ export class DataMaskRule extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier where the resource is created
+     * (Updatable) Compartment OCID where the resource is created
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Data Mask Categories
+     * (Updatable) Data mask rule categories
      */
     public readonly dataMaskCategories!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The status of the dataMaskRule.
+     * (Updatable) The current status of the data mask rule
      */
     public readonly dataMaskRuleStatus!: pulumi.Output<string>;
     /**
@@ -91,11 +91,11 @@ export class DataMaskRule extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The data mask rule description. Avoid entering confidential information.
+     * The data mask rule description Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Data mask rule name.
+     * (Updatable) Data mask rule display name
      *
      * Avoid entering confidential information.
      */
@@ -107,15 +107,15 @@ export class DataMaskRule extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) IAM Group id associated with the data mask rule
+     * (Updatable) IAM group ID associated with the data mask rule
      */
     public readonly iamGroupId!: pulumi.Output<string>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -123,7 +123,7 @@ export class DataMaskRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */
     public readonly targetSelected!: pulumi.Output<outputs.CloudGuard.DataMaskRuleTargetSelected>;
     /**
@@ -204,15 +204,15 @@ export class DataMaskRule extends pulumi.CustomResource {
  */
 export interface DataMaskRuleState {
     /**
-     * (Updatable) Compartment Identifier where the resource is created
+     * (Updatable) Compartment OCID where the resource is created
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Data Mask Categories
+     * (Updatable) Data mask rule categories
      */
     dataMaskCategories?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The status of the dataMaskRule.
+     * (Updatable) The current status of the data mask rule
      */
     dataMaskRuleStatus?: pulumi.Input<string>;
     /**
@@ -220,11 +220,11 @@ export interface DataMaskRuleState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The data mask rule description. Avoid entering confidential information.
+     * The data mask rule description Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Data mask rule name.
+     * (Updatable) Data mask rule display name
      *
      * Avoid entering confidential information.
      */
@@ -236,15 +236,15 @@ export interface DataMaskRuleState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) IAM Group id associated with the data mask rule
+     * (Updatable) IAM group ID associated with the data mask rule
      */
     iamGroupId?: pulumi.Input<string>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      */
     lifecyleDetails?: pulumi.Input<string>;
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      */
     state?: pulumi.Input<string>;
     /**
@@ -252,7 +252,7 @@ export interface DataMaskRuleState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */
     targetSelected?: pulumi.Input<inputs.CloudGuard.DataMaskRuleTargetSelected>;
     /**
@@ -270,15 +270,15 @@ export interface DataMaskRuleState {
  */
 export interface DataMaskRuleArgs {
     /**
-     * (Updatable) Compartment Identifier where the resource is created
+     * (Updatable) Compartment OCID where the resource is created
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Data Mask Categories
+     * (Updatable) Data mask rule categories
      */
     dataMaskCategories: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The status of the dataMaskRule.
+     * (Updatable) The current status of the data mask rule
      */
     dataMaskRuleStatus?: pulumi.Input<string>;
     /**
@@ -286,11 +286,11 @@ export interface DataMaskRuleArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The data mask rule description. Avoid entering confidential information.
+     * The data mask rule description Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Data mask rule name.
+     * (Updatable) Data mask rule display name
      *
      * Avoid entering confidential information.
      */
@@ -302,15 +302,15 @@ export interface DataMaskRuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) IAM Group id associated with the data mask rule
+     * (Updatable) IAM group ID associated with the data mask rule
      */
     iamGroupId: pulumi.Input<string>;
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */
     targetSelected: pulumi.Input<inputs.CloudGuard.DataMaskRuleTargetSelected>;
 }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a DataMaskRule object, identified by DataMaskRuleId.
+ * Returns a DataMaskRule resource, identified by dataMaskRuleId.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDataMaskRule(args: GetDataMaskRuleArgs, opts?: pulumi.InvokeO
  */
 export interface GetDataMaskRuleArgs {
     /**
-     * OCID of dataMaskRule
+     * OCID of the data mask rule
      */
     dataMaskRuleId: string;
 }
@@ -45,16 +45,16 @@ export interface GetDataMaskRuleArgs {
  */
 export interface GetDataMaskRuleResult {
     /**
-     * Compartment Identifier where the resource is created.
+     * Compartment OCID where the resource is created
      */
     readonly compartmentId: string;
     /**
-     * Data Mask Categories
+     * List of data mask rule categories
      */
     readonly dataMaskCategories: string[];
     readonly dataMaskRuleId: string;
     /**
-     * The status of the dataMaskRule.
+     * The current status of the data mask rule
      */
     readonly dataMaskRuleStatus: string;
     /**
@@ -62,11 +62,11 @@ export interface GetDataMaskRuleResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The data mask rule description.
+     * The data mask rule description
      */
     readonly description: string;
     /**
-     * Data Mask Rule Identifier, can be renamed.
+     * Data mask rule display name
      */
     readonly displayName: string;
     /**
@@ -74,19 +74,19 @@ export interface GetDataMaskRuleResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM Group ID associated with the data mask rule
      */
     readonly iamGroupId: string;
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      */
     readonly id: string;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      */
     readonly lifecyleDetails: string;
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      */
     readonly state: string;
     /**
@@ -94,7 +94,7 @@ export interface GetDataMaskRuleResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      */
     readonly targetSelecteds: outputs.CloudGuard.GetDataMaskRuleTargetSelected[];
     /**
@@ -109,7 +109,7 @@ export interface GetDataMaskRuleResult {
 /**
  * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a DataMaskRule object, identified by DataMaskRuleId.
+ * Returns a DataMaskRule resource, identified by dataMaskRuleId.
  *
  * ## Example Usage
  *
@@ -131,7 +131,7 @@ export function getDataMaskRuleOutput(args: GetDataMaskRuleOutputArgs, opts?: pu
  */
 export interface GetDataMaskRuleOutputArgs {
     /**
-     * OCID of dataMaskRule
+     * OCID of the data mask rule
      */
     dataMaskRuleId: pulumi.Input<string>;
 }

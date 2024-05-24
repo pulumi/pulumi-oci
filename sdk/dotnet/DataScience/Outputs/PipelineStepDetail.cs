@@ -34,7 +34,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly Outputs.PipelineStepDetailStepConfigurationDetails? StepConfigurationDetails;
         /// <summary>
-        /// The infrastructure configuration details of a pipeline or a step.
+        /// Container Details for a step in pipeline.
+        /// </summary>
+        public readonly Outputs.PipelineStepDetailStepContainerConfigurationDetails? StepContainerConfigurationDetails;
+        /// <summary>
+        /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         public readonly Outputs.PipelineStepDetailStepInfrastructureConfigurationDetails? StepInfrastructureConfigurationDetails;
         /// <summary>
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.PipelineStepDetailStepConfigurationDetails? stepConfigurationDetails,
 
+            Outputs.PipelineStepDetailStepContainerConfigurationDetails? stepContainerConfigurationDetails,
+
             Outputs.PipelineStepDetailStepInfrastructureConfigurationDetails? stepInfrastructureConfigurationDetails,
 
             string stepName,
@@ -73,6 +79,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             IsArtifactUploaded = isArtifactUploaded;
             JobId = jobId;
             StepConfigurationDetails = stepConfigurationDetails;
+            StepContainerConfigurationDetails = stepContainerConfigurationDetails;
             StepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             StepName = stepName;
             StepType = stepType;

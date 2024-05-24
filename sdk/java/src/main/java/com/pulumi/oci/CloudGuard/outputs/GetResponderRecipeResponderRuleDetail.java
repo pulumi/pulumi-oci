@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetResponderRecipeResponderRuleDetail {
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     private String condition;
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     private List<GetResponderRecipeResponderRuleDetailConfiguration> configurations;
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     private String mode;
 
     private GetResponderRecipeResponderRuleDetail() {}
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public String condition() {
         return this.condition;
     }
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public List<GetResponderRecipeResponderRuleDetailConfiguration> configurations() {
         return this.configurations;
     }
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     public String mode() {

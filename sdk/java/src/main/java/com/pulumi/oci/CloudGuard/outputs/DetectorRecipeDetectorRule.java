@@ -17,12 +17,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeDetectorRule {
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     private @Nullable List<DetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private @Nullable String dataSourceId;
@@ -34,17 +34,17 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * @return (Updatable) Parameters to be updated for a detector rule within a detector recipe.
      * 
      */
     private DetectorRecipeDetectorRuleDetails details;
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     private @Nullable String detector;
     /**
-     * @return (Updatable) DetectorRecipeRule Identifier
+     * @return (Updatable) Detector recipe rule ID
      * 
      */
     private String detectorRuleId;
@@ -56,7 +56,7 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable String displayName;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     private @Nullable List<DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
@@ -66,51 +66,51 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     private @Nullable List<String> managedListTypes;
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     private @Nullable String recommendation;
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     private @Nullable String resourceType;
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     private @Nullable String serviceType;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private @Nullable String state;
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
 
     private DetectorRecipeDetectorRule() {}
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     public List<DetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules() {
         return this.candidateResponderRules == null ? List.of() : this.candidateResponderRules;
     }
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public Optional<String> dataSourceId() {
@@ -126,21 +126,21 @@ public final class DetectorRecipeDetectorRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * @return (Updatable) Parameters to be updated for a detector rule within a detector recipe.
      * 
      */
     public DetectorRecipeDetectorRuleDetails details() {
         return this.details;
     }
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     public Optional<String> detector() {
         return Optional.ofNullable(this.detector);
     }
     /**
-     * @return (Updatable) DetectorRecipeRule Identifier
+     * @return (Updatable) Detector recipe rule ID
      * 
      */
     public String detectorRuleId() {
@@ -156,7 +156,7 @@ public final class DetectorRecipeDetectorRule {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     public List<DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -170,49 +170,49 @@ public final class DetectorRecipeDetectorRule {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
         return this.managedListTypes == null ? List.of() : this.managedListTypes;
     }
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     public Optional<String> recommendation() {
         return Optional.ofNullable(this.recommendation);
     }
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public Optional<String> serviceType() {
         return Optional.ofNullable(this.serviceType);
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {

@@ -16,7 +16,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
     public static final TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs Empty = new TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs();
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -25,7 +25,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -35,14 +35,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
     }
 
     /**
-     * Possible type of entity
+     * Type of entity
      * 
      */
     @Import(name="entityType")
     private @Nullable Output<String> entityType;
 
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public Optional<Output<String>> entityType() {
@@ -91,7 +91,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -104,7 +104,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -116,7 +116,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
         }
 
         /**
-         * @param entityType Possible type of entity
+         * @param entityType Type of entity
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs ext
         }
 
         /**
-         * @param entityType Possible type of entity
+         * @param entityType Type of entity
          * 
          * @return builder
          * 

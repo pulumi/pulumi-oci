@@ -14,15 +14,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipeDetectorRuleCandidateResponderRuleResult
     {
         /// <summary>
-        /// The display name of entity
+        /// Display name of the entity
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Ocid for detector recipe
+        /// OCID for detector recipe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Preferred state
+        /// Is this the preferred state?
         /// </summary>
         public readonly bool IsPreferred;
 

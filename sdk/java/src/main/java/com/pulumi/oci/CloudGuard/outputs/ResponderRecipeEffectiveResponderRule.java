@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResponderRecipeEffectiveResponderRule {
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     private @Nullable String compartmentId;
@@ -26,7 +26,7 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private @Nullable List<ResponderRecipeEffectiveResponderRuleDetail> details;
@@ -43,22 +43,22 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     private @Nullable List<String> policies;
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     private @Nullable String responderRuleId;
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     private @Nullable String state;
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     private @Nullable List<String> supportedModes;
@@ -68,19 +68,19 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     private @Nullable String type;
 
     private ResponderRecipeEffectiveResponderRule() {}
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<String> compartmentId() {
@@ -96,7 +96,7 @@ public final class ResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<ResponderRecipeEffectiveResponderRuleDetail> details() {
@@ -119,28 +119,28 @@ public final class ResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public List<String> policies() {
         return this.policies == null ? List.of() : this.policies;
     }
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     public Optional<String> responderRuleId() {
         return Optional.ofNullable(this.responderRuleId);
     }
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public List<String> supportedModes() {
@@ -154,14 +154,14 @@ public final class ResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<String> type() {

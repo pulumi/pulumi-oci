@@ -22,14 +22,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     public static final TargetArgs Empty = new TargetArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Output<String> compartmentId() {
@@ -71,7 +71,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -80,7 +80,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -109,14 +109,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -124,14 +124,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of detector recipes to associate with target
+     * (Updatable) List of detector recipes to attach to target
      * 
      */
     @Import(name="targetDetectorRecipes")
     private @Nullable Output<List<TargetTargetDetectorRecipeArgs>> targetDetectorRecipes;
 
     /**
-     * @return (Updatable) List of detector recipes to associate with target
+     * @return (Updatable) List of detector recipes to attach to target
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeArgs>>> targetDetectorRecipes() {
@@ -154,14 +154,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     @Import(name="targetResourceType", required=true)
     private Output<String> targetResourceType;
 
     /**
-     * @return possible type of targets(COMPARTMENT/FACLOUD)
+     * @return Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     public Output<String> targetResourceType() {
@@ -169,14 +169,14 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of responder recipes to associate with target
+     * (Updatable) List of responder recipes to attach to target
      * 
      */
     @Import(name="targetResponderRecipes")
     private @Nullable Output<List<TargetTargetResponderRecipeArgs>> targetResponderRecipes;
 
     /**
-     * @return (Updatable) List of responder recipes to associate with target
+     * @return (Updatable) List of responder recipes to attach to target
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeArgs>>> targetResponderRecipes() {
@@ -217,7 +217,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -297,7 +297,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -334,7 +334,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetDetectorRecipes (Updatable) List of detector recipes to associate with target
+         * @param targetDetectorRecipes (Updatable) List of detector recipes to attach to target
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetDetectorRecipes (Updatable) List of detector recipes to associate with target
+         * @param targetDetectorRecipes (Updatable) List of detector recipes to attach to target
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetDetectorRecipes (Updatable) List of detector recipes to associate with target
+         * @param targetDetectorRecipes (Updatable) List of detector recipes to attach to target
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
+         * @param targetResourceType Type of resource that target support (COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
+         * @param targetResourceType Type of resource that target support (COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResponderRecipes (Updatable) List of responder recipes to associate with target
+         * @param targetResponderRecipes (Updatable) List of responder recipes to attach to target
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResponderRecipes (Updatable) List of responder recipes to associate with target
+         * @param targetResponderRecipes (Updatable) List of responder recipes to attach to target
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class TargetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetResponderRecipes (Updatable) List of responder recipes to associate with target
+         * @param targetResponderRecipes (Updatable) List of responder recipes to attach to target
          * 
          * @return builder
          * 

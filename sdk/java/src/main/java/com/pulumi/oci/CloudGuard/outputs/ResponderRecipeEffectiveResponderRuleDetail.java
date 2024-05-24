@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResponderRecipeEffectiveResponderRuleDetail {
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     private @Nullable String condition;
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     private @Nullable List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     private @Nullable String mode;
 
     private ResponderRecipeEffectiveResponderRuleDetail() {}
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public List<ResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     public Optional<String> mode() {

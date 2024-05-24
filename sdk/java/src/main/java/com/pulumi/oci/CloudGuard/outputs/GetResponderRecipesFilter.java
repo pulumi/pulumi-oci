@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetResponderRecipesFilter {
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetResponderRecipesFilter {
 
     private GetResponderRecipesFilter() {}
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {

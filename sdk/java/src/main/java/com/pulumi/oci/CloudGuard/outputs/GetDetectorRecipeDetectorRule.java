@@ -15,27 +15,27 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeDetectorRule {
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     private List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private String dataSourceId;
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     private String description;
     /**
-     * @return Details of a Detector Rule
+     * @return Detailed information for a detector.
      * 
      */
     private List<GetDetectorRecipeDetectorRuleDetail> details;
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     private String detector;
@@ -45,12 +45,12 @@ public final class GetDetectorRecipeDetectorRule {
      */
     private String detectorRuleId;
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     private String displayName;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     private List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
@@ -60,72 +60,72 @@ public final class GetDetectorRecipeDetectorRule {
      */
     private String lifecycleDetails;
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     private List<String> managedListTypes;
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     private String recommendation;
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     private String resourceType;
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     private String serviceType;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private String state;
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDetectorRecipeDetectorRule() {}
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     public List<GetDetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules() {
         return this.candidateResponderRules;
     }
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public String dataSourceId() {
         return this.dataSourceId;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Details of a Detector Rule
+     * @return Detailed information for a detector.
      * 
      */
     public List<GetDetectorRecipeDetectorRuleDetail> details() {
         return this.details;
     }
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     public String detector() {
@@ -139,14 +139,14 @@ public final class GetDetectorRecipeDetectorRule {
         return this.detectorRuleId;
     }
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     public List<GetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -160,49 +160,49 @@ public final class GetDetectorRecipeDetectorRule {
         return this.lifecycleDetails;
     }
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
         return this.managedListTypes;
     }
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     public String recommendation() {
         return this.recommendation;
     }
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

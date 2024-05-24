@@ -13,19 +13,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) configuration list item type, either CUSTOM or MANAGED
+        /// (Updatable) Configuration list item type (CUSTOM or MANAGED)
         /// </summary>
         [Input("listType", required: true)]
         public Input<string> ListType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) type of the managed list
+        /// (Updatable) Type of content in the managed list
         /// </summary>
         [Input("managedListType", required: true)]
         public Input<string> ManagedListType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) configuration value
+        /// (Updatable) Configuration value
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

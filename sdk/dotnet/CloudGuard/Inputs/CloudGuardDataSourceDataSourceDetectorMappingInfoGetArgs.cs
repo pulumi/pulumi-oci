@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class CloudGuardDataSourceDataSourceDetectorMappingInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Id of the attached detectorRecipeId to the Data Source.
+        /// ID of the detector recipe attached to the data source
         /// </summary>
         [Input("detectorRecipeId")]
         public Input<string>? DetectorRecipeId { get; set; }
 
         /// <summary>
-        /// Id of the attached detectorRuleId to the Data Source.
+        /// ID of the detector rule attached to the data source
         /// </summary>
         [Input("detectorRuleId")]
         public Input<string>? DetectorRuleId { get; set; }

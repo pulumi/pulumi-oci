@@ -14,15 +14,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Details of ResponderRule.
+        /// Detailed information for a responder rule
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailResult> Details;
         /// <summary>
@@ -34,19 +34,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// List of Policy
+        /// List of policies
         /// </summary>
         public readonly ImmutableArray<string> Policies;
         /// <summary>
-        /// Identifier for ResponderRule.
+        /// Unique identifier for the responder rule
         /// </summary>
         public readonly string ResponderRuleId;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Supported Execution Modes
+        /// Supported execution modes for the responder rule
         /// </summary>
         public readonly ImmutableArray<string> SupportedModes;
         /// <summary>
@@ -54,11 +54,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the responder recipe was updated. Format defined by RFC3339.
+        /// The date and time the responder recipe was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Type of Responder
+        /// Type of responder
         /// </summary>
         public readonly string Type;
 

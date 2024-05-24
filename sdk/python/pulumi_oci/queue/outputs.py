@@ -68,7 +68,7 @@ class GetQueuesQueueCollectionItemResult(dict):
                  id: str,
                  lifecycle_details: str,
                  messages_endpoint: str,
-                 purge_queue: bool,
+                 purge_trigger: int,
                  purge_type: str,
                  retention_in_seconds: int,
                  state: str,
@@ -106,7 +106,7 @@ class GetQueuesQueueCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "messages_endpoint", messages_endpoint)
-        pulumi.set(__self__, "purge_queue", purge_queue)
+        pulumi.set(__self__, "purge_trigger", purge_trigger)
         pulumi.set(__self__, "purge_type", purge_type)
         pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
         pulumi.set(__self__, "state", state)
@@ -197,9 +197,9 @@ class GetQueuesQueueCollectionItemResult(dict):
         return pulumi.get(self, "messages_endpoint")
 
     @property
-    @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> bool:
-        return pulumi.get(self, "purge_queue")
+    @pulumi.getter(name="purgeTrigger")
+    def purge_trigger(self) -> int:
+        return pulumi.get(self, "purge_trigger")
 
     @property
     @pulumi.getter(name="purgeType")

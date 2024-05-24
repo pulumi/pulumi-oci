@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Get a ResponderRecipe by identifier
+        /// Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Get a ResponderRecipe by identifier
+        /// Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetResponderRecipeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of ResponderRecipe
+        /// OCID of the responder recipe.
         /// </summary>
         [Input("responderRecipeId", required: true)]
         public string ResponderRecipeId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetResponderRecipeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of ResponderRecipe
+        /// OCID of the responder recipe.
         /// </summary>
         [Input("responderRecipeId", required: true)]
         public Input<string> ResponderRecipeId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetResponderRecipeResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -106,15 +106,15 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ResponderRule display name.
+        /// Responder rule display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// List of responder rules associated with the recipe
+        /// List of currently enabled responder rules for the responder type, for recipe after applying defaults
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResponderRecipeEffectiveResponderRuleResult> EffectiveResponderRules;
         /// <summary>
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Identifier for ResponderRecipe.
+        /// Unique identifier for the responder recip
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of responder recipe
         /// </summary>
         public readonly string Owner;
         public readonly string ResponderRecipeId;
@@ -139,11 +139,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResponderRecipeResponderRuleResult> ResponderRules;
         /// <summary>
-        /// The id of the source responder recipe.
+        /// The unique identifier of the source responder recipe
         /// </summary>
         public readonly string SourceResponderRecipeId;
         /// <summary>
-        /// The current state of the Example.
+        /// The current lifecycle state of the example
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the responder recipe was updated. Format defined by RFC3339.
+        /// The date and time the responder recipe was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

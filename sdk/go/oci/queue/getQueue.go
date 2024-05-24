@@ -78,7 +78,7 @@ type LookupQueueResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint string `pulumi:"messagesEndpoint"`
-	PurgeQueue       bool   `pulumi:"purgeQueue"`
+	PurgeTrigger     int    `pulumi:"purgeTrigger"`
 	PurgeType        string `pulumi:"purgeType"`
 	QueueId          string `pulumi:"queueId"`
 	// The retention period of the messages in the queue, in seconds.
@@ -185,8 +185,8 @@ func (o LookupQueueResultOutput) MessagesEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupQueueResult) string { return v.MessagesEndpoint }).(pulumi.StringOutput)
 }
 
-func (o LookupQueueResultOutput) PurgeQueue() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupQueueResult) bool { return v.PurgeQueue }).(pulumi.BoolOutput)
+func (o LookupQueueResultOutput) PurgeTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupQueueResult) int { return v.PurgeTrigger }).(pulumi.IntOutput)
 }
 
 func (o LookupQueueResultOutput) PurgeType() pulumi.StringOutput {

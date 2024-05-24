@@ -35,14 +35,14 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -50,14 +50,14 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     @Import(name="compartmentIdInSubtree")
     private @Nullable Output<Boolean> compartmentIdInSubtree;
 
     /**
-     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     public Optional<Output<Boolean>> compartmentIdInSubtree() {
@@ -102,14 +102,14 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<Output<String>> state() {
@@ -168,7 +168,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class GetGuardTargetsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

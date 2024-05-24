@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a DataSource identified by dataSourceId
+ * Returns a data source (DataSource resource) identified by dataSourceId.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDataSource(args: GetDataSourceArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetDataSourceArgs {
     /**
-     * DataSource OCID
+     * Data source OCID.
      */
     dataSourceId: string;
 }
@@ -45,7 +45,7 @@ export interface GetDataSourceArgs {
  */
 export interface GetDataSourceResult {
     /**
-     * CompartmentId of Data source.
+     * Compartment OCID of data source
      */
     readonly compartmentId: string;
     /**
@@ -66,7 +66,7 @@ export interface GetDataSourceResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * DisplayName of Data source.
+     * Display name of the data source
      */
     readonly displayName: string;
     /**
@@ -74,7 +74,7 @@ export interface GetDataSourceResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Ocid for Data source
+     * OCID for the data source
      */
     readonly id: string;
     /**
@@ -82,11 +82,11 @@ export interface GetDataSourceResult {
      */
     readonly regionStatusDetails: outputs.CloudGuard.GetDataSourceRegionStatusDetail[];
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      */
     readonly state: string;
     /**
-     * Status of data Source
+     * Enablement status of the data source
      */
     readonly status: string;
     /**
@@ -98,14 +98,14 @@ export interface GetDataSourceResult {
      */
     readonly timeCreated: string;
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a DataSource identified by dataSourceId
+ * Returns a data source (DataSource resource) identified by dataSourceId.
  *
  * ## Example Usage
  *
@@ -127,7 +127,7 @@ export function getDataSourceOutput(args: GetDataSourceOutputArgs, opts?: pulumi
  */
 export interface GetDataSourceOutputArgs {
     /**
-     * DataSource OCID
+     * Data source OCID.
      */
     dataSourceId: pulumi.Input<string>;
 }

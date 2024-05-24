@@ -20,14 +20,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     public static final TargetTargetDetectorRecipeArgs Empty = new TargetTargetDetectorRecipeArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -54,14 +54,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * detector for the rule
+     * Detector type for the rule
      * 
      */
     @Import(name="detector")
     private @Nullable Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public Optional<Output<String>> detector() {
@@ -69,14 +69,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Identifier for DetectorRecipe.
+     * Unique identifier for the target detector recipe
      * 
      */
     @Import(name="detectorRecipeId", required=true)
     private Output<String> detectorRecipeId;
 
     /**
-     * @return Identifier for DetectorRecipe.
+     * @return Unique identifier for the target detector recipe
      * 
      */
     public Output<String> detectorRecipeId() {
@@ -84,14 +84,29 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Overrides to be applied to Detector Rule associated with the target
+     * Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    @Import(name="detectorRecipeType")
+    private @Nullable Output<String> detectorRecipeType;
+
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public Optional<Output<String>> detectorRecipeType() {
+        return Optional.ofNullable(this.detectorRecipeType);
+    }
+
+    /**
+     * (Updatable) List of overrides to be applied to detector rules associated with the target
      * 
      */
     @Import(name="detectorRules")
     private @Nullable Output<List<TargetTargetDetectorRecipeDetectorRuleArgs>> detectorRules;
 
     /**
-     * @return (Updatable) Overrides to be applied to Detector Rule associated with the target
+     * @return (Updatable) List of overrides to be applied to detector rules associated with the target
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeDetectorRuleArgs>>> detectorRules() {
@@ -99,7 +114,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -108,7 +123,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -118,14 +133,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * List of effective detector rules for the detector type for recipe after applying defaults
+     * List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     @Import(name="effectiveDetectorRules")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleArgs>> effectiveDetectorRules;
 
     /**
-     * @return List of effective detector rules for the detector type for recipe after applying defaults
+     * @return List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleArgs>>> effectiveDetectorRules() {
@@ -133,14 +148,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<Output<String>> id() {
@@ -148,14 +163,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of target responder recipe
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<Output<String>> owner() {
@@ -163,14 +178,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -193,14 +208,14 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -214,6 +229,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         this.description = $.description;
         this.detector = $.detector;
         this.detectorRecipeId = $.detectorRecipeId;
+        this.detectorRecipeType = $.detectorRecipeType;
         this.detectorRules = $.detectorRules;
         this.displayName = $.displayName;
         this.effectiveDetectorRules = $.effectiveDetectorRules;
@@ -243,7 +259,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -254,7 +270,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -289,7 +305,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector type for the rule
          * 
          * @return builder
          * 
@@ -300,7 +316,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector type for the rule
          * 
          * @return builder
          * 
@@ -310,7 +326,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detectorRecipeId Identifier for DetectorRecipe.
+         * @param detectorRecipeId Unique identifier for the target detector recipe
          * 
          * @return builder
          * 
@@ -321,7 +337,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detectorRecipeId Identifier for DetectorRecipe.
+         * @param detectorRecipeId Unique identifier for the target detector recipe
          * 
          * @return builder
          * 
@@ -331,7 +347,28 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detectorRules (Updatable) Overrides to be applied to Detector Rule associated with the target
+         * @param detectorRecipeType Recipe type ( STANDARD, ENTERPRISE )
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detectorRecipeType(@Nullable Output<String> detectorRecipeType) {
+            $.detectorRecipeType = detectorRecipeType;
+            return this;
+        }
+
+        /**
+         * @param detectorRecipeType Recipe type ( STANDARD, ENTERPRISE )
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detectorRecipeType(String detectorRecipeType) {
+            return detectorRecipeType(Output.of(detectorRecipeType));
+        }
+
+        /**
+         * @param detectorRules (Updatable) List of overrides to be applied to detector rules associated with the target
          * 
          * @return builder
          * 
@@ -342,7 +379,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detectorRules (Updatable) Overrides to be applied to Detector Rule associated with the target
+         * @param detectorRules (Updatable) List of overrides to be applied to detector rules associated with the target
          * 
          * @return builder
          * 
@@ -352,7 +389,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param detectorRules (Updatable) Overrides to be applied to Detector Rule associated with the target
+         * @param detectorRules (Updatable) List of overrides to be applied to detector rules associated with the target
          * 
          * @return builder
          * 
@@ -362,7 +399,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -375,7 +412,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -387,7 +424,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param effectiveDetectorRules List of effective detector rules for the detector type for recipe after applying defaults
+         * @param effectiveDetectorRules List of currently enabled detector rules for the detector type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -398,7 +435,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param effectiveDetectorRules List of effective detector rules for the detector type for recipe after applying defaults
+         * @param effectiveDetectorRules List of currently enabled detector rules for the detector type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -408,7 +445,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param effectiveDetectorRules List of effective detector rules for the detector type for recipe after applying defaults
+         * @param effectiveDetectorRules List of currently enabled detector rules for the detector type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -418,7 +455,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -429,7 +466,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -439,7 +476,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -450,7 +487,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -460,7 +497,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -471,7 +508,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -502,7 +539,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -513,7 +550,7 @@ public final class TargetTargetDetectorRecipeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

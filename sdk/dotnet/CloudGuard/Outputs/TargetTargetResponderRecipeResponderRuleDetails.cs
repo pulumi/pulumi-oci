@@ -14,19 +14,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetResponderRecipeResponderRuleDetails
     {
         /// <summary>
-        /// (Updatable) Base condition object
+        /// (Updatable) The base condition resource.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// (Updatable) Configurations associated with the ResponderRule
+        /// (Updatable) List of responder rule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetResponderRecipeResponderRuleDetailsConfiguration> Configurations;
         /// <summary>
-        /// Identifies state for ResponderRule
+        /// Enabled state for the responder rule
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
-        /// (Updatable) Execution Mode for ResponderRule
+        /// (Updatable) Execution mode for the responder rule
         /// </summary>
         public readonly string? Mode;
 

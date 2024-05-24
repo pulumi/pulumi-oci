@@ -13,9 +13,10 @@ import (
 
 // This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of all Targets in a compartment
-// The ListTargets operation returns only the targets in `compartmentId` passed.
-// The list does not include any subcompartments of the compartmentId passed.
+// Returns a list of targets (TargetCollection resource with page of TargetSummary
+// resources) for the target identified by compartmentId. By default, only the target
+// associated with the compartment is returned. Setting compartmentIdInSubtree to true
+// returns the entire hierarchy of targets in subcompartments.
 //
 // The parameter `accessLevel` specifies whether to return only those compartments for which the
 // requestor has INSPECT permissions on at least one resource directly
@@ -25,7 +26,7 @@ import (
 //
 // The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
 // `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+// To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
 // set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 //
 // ## Example Usage
@@ -72,32 +73,32 @@ func GetGuardTargets(ctx *pulumi.Context, args *GetGuardTargetsArgs, opts ...pul
 type GetGuardTargetsArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetGuardTargetsFilter `pulumi:"filters"`
 	// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
 	IsNonSecurityZoneTargetsOnlyQuery *bool `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getGuardTargets.
 type GetGuardTargetsResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// Compartment Identifier
+	// Compartment OCID
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
-	// ResponderRule display name.
+	// Responder rule display name
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetGuardTargetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                                string `pulumi:"id"`
 	IsNonSecurityZoneTargetsOnlyQuery *bool  `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
-	// The current state of the ResponderRule.
+	// The current lifecycle state of the responder rule
 	State *string `pulumi:"state"`
 	// The list of target_collection.
 	TargetCollections []GetGuardTargetsTargetCollection `pulumi:"targetCollections"`
@@ -120,16 +121,16 @@ func GetGuardTargetsOutput(ctx *pulumi.Context, args GetGuardTargetsOutputArgs, 
 type GetGuardTargetsOutputArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetGuardTargetsFilterArrayInput `pulumi:"filters"`
 	// Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
 	IsNonSecurityZoneTargetsOnlyQuery pulumi.BoolPtrInput `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -156,7 +157,7 @@ func (o GetGuardTargetsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier
+// Compartment OCID
 func (o GetGuardTargetsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,7 +166,7 @@ func (o GetGuardTargetsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v GetGuardTargetsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-// ResponderRule display name.
+// Responder rule display name
 func (o GetGuardTargetsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -183,7 +184,7 @@ func (o GetGuardTargetsResultOutput) IsNonSecurityZoneTargetsOnlyQuery() pulumi.
 	return o.ApplyT(func(v GetGuardTargetsResult) *bool { return v.IsNonSecurityZoneTargetsOnlyQuery }).(pulumi.BoolPtrOutput)
 }
 
-// The current state of the ResponderRule.
+// The current lifecycle state of the responder rule
 func (o GetGuardTargetsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

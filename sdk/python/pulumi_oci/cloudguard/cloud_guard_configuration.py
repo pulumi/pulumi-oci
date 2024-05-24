@@ -20,9 +20,9 @@ class CloudGuardConfigurationArgs:
                  self_manage_resources: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a CloudGuardConfiguration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to list resources.
+        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region
+        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard tenant
                
                
                ** IMPORTANT **
@@ -39,7 +39,7 @@ class CloudGuardConfigurationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The ID of the compartment in which to list resources.
+        (Updatable) The OCID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -51,7 +51,7 @@ class CloudGuardConfigurationArgs:
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> pulumi.Input[str]:
         """
-        (Updatable) The reporting region value
+        (Updatable) The reporting region
         """
         return pulumi.get(self, "reporting_region")
 
@@ -63,7 +63,7 @@ class CloudGuardConfigurationArgs:
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
         """
-        (Updatable) Status of Cloud Guard Tenant
+        (Updatable) Status of Cloud Guard tenant
 
 
         ** IMPORTANT **
@@ -97,10 +97,10 @@ class _CloudGuardConfigurationState:
                  status: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudGuardConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to list resources.
+        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard tenant
                
                
                ** IMPORTANT **
@@ -119,7 +119,7 @@ class _CloudGuardConfigurationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The ID of the compartment in which to list resources.
+        (Updatable) The OCID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -131,7 +131,7 @@ class _CloudGuardConfigurationState:
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The reporting region value
+        (Updatable) The reporting region
         """
         return pulumi.get(self, "reporting_region")
 
@@ -155,7 +155,7 @@ class _CloudGuardConfigurationState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Status of Cloud Guard Tenant
+        (Updatable) Status of Cloud Guard tenant
 
 
         ** IMPORTANT **
@@ -181,31 +181,15 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         """
         This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("test_cloud_guard_configuration",
-            compartment_id=compartment_id,
-            reporting_region=cloud_guard_configuration_reporting_region,
-            status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
+        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        The reporting region cannot be updated once created.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to list resources.
+        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard tenant
                
                
                ** IMPORTANT **
@@ -220,24 +204,8 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         """
         This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("test_cloud_guard_configuration",
-            compartment_id=compartment_id,
-            reporting_region=cloud_guard_configuration_reporting_region,
-            status=cloud_guard_configuration_status,
-            self_manage_resources=cloud_guard_configuration_self_manage_resources)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
+        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        The reporting region cannot be updated once created.
 
         :param str resource_name: The name of the resource.
         :param CloudGuardConfigurationArgs args: The arguments to use to populate this resource's properties.
@@ -298,10 +266,10 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to list resources.
+        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
+        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard tenant
                
                
                ** IMPORTANT **
@@ -321,7 +289,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The ID of the compartment in which to list resources.
+        (Updatable) The OCID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -329,7 +297,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> pulumi.Output[str]:
         """
-        (Updatable) The reporting region value
+        (Updatable) The reporting region
         """
         return pulumi.get(self, "reporting_region")
 
@@ -345,7 +313,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        (Updatable) Status of Cloud Guard Tenant
+        (Updatable) Status of Cloud Guard tenant
 
 
         ** IMPORTANT **

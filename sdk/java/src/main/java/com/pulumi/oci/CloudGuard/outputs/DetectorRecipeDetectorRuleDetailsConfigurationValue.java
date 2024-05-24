@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class DetectorRecipeDetectorRuleDetailsConfigurationValue {
     /**
-     * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * @return (Updatable) Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     private String listType;
     /**
-     * @return (Updatable) type of the managed list
+     * @return (Updatable) Type of content in the managed list
      * 
      */
     private String managedListType;
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     private String value;
 
     private DetectorRecipeDetectorRuleDetailsConfigurationValue() {}
     /**
-     * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * @return (Updatable) Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     public String listType() {
         return this.listType;
     }
     /**
-     * @return (Updatable) type of the managed list
+     * @return (Updatable) Type of content in the managed list
      * 
      */
     public String managedListType() {
         return this.managedListType;
     }
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     public String value() {

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
 //
 // ## Example Usage
 //
@@ -61,18 +61,18 @@ func GetDataMaskRules(ctx *pulumi.Context, args *GetDataMaskRulesArgs, opts ...p
 type GetDataMaskRulesArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel *string `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The status of the dataMaskRule.
+	// The status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetDataMaskRulesFilter `pulumi:"filters"`
-	// OCID of iamGroup
+	// OCID of the IAM group
 	IamGroupId *string `pulumi:"iamGroupId"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
-	// OCID of target
+	// OCID of the target
 	TargetId *string `pulumi:"targetId"`
 	// Type of target
 	TargetType *string `pulumi:"targetType"`
@@ -81,20 +81,20 @@ type GetDataMaskRulesArgs struct {
 // A collection of values returned by getDataMaskRules.
 type GetDataMaskRulesResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
-	// Compartment Identifier where the resource is created.
+	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of data_mask_rule_collection.
 	DataMaskRuleCollections []GetDataMaskRulesDataMaskRuleCollection `pulumi:"dataMaskRuleCollections"`
-	// The status of the dataMaskRule.
+	// The current status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
-	// Data Mask Rule Identifier, can be renamed.
+	// Data mask rule display name
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetDataMaskRulesFilter `pulumi:"filters"`
-	// IAM Group id associated with the data mask rule
+	// IAM Group ID associated with the data mask rule
 	IamGroupId *string `pulumi:"iamGroupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State      *string `pulumi:"state"`
 	TargetId   *string `pulumi:"targetId"`
 	TargetType *string `pulumi:"targetType"`
@@ -117,18 +117,18 @@ func GetDataMaskRulesOutput(ctx *pulumi.Context, args GetDataMaskRulesOutputArgs
 type GetDataMaskRulesOutputArgs struct {
 	// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The status of the dataMaskRule.
+	// The status of the data mask rule
 	DataMaskRuleStatus pulumi.StringPtrInput `pulumi:"dataMaskRuleStatus"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetDataMaskRulesFilterArrayInput `pulumi:"filters"`
-	// OCID of iamGroup
+	// OCID of the IAM group
 	IamGroupId pulumi.StringPtrInput `pulumi:"iamGroupId"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// OCID of target
+	// OCID of the target
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// Type of target
 	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
@@ -157,7 +157,7 @@ func (o GetDataMaskRulesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier where the resource is created.
+// Compartment OCID where the resource is created
 func (o GetDataMaskRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -169,12 +169,12 @@ func (o GetDataMaskRulesResultOutput) DataMaskRuleCollections() GetDataMaskRules
 	}).(GetDataMaskRulesDataMaskRuleCollectionArrayOutput)
 }
 
-// The status of the dataMaskRule.
+// The current status of the data mask rule
 func (o GetDataMaskRulesResultOutput) DataMaskRuleStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.DataMaskRuleStatus }).(pulumi.StringPtrOutput)
 }
 
-// Data Mask Rule Identifier, can be renamed.
+// Data mask rule display name
 func (o GetDataMaskRulesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -183,7 +183,7 @@ func (o GetDataMaskRulesResultOutput) Filters() GetDataMaskRulesFilterArrayOutpu
 	return o.ApplyT(func(v GetDataMaskRulesResult) []GetDataMaskRulesFilter { return v.Filters }).(GetDataMaskRulesFilterArrayOutput)
 }
 
-// IAM Group id associated with the data mask rule
+// IAM Group ID associated with the data mask rule
 func (o GetDataMaskRulesResultOutput) IamGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.IamGroupId }).(pulumi.StringPtrOutput)
 }
@@ -193,7 +193,7 @@ func (o GetDataMaskRulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The current state of the DataMaskRule.
+// The current lifecycle state of the data mask rule
 func (o GetDataMaskRulesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

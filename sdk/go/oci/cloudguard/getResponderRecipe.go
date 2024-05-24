@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Get a ResponderRecipe by identifier
+// Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
 //
 // ## Example Usage
 //
@@ -52,42 +52,42 @@ func LookupResponderRecipe(ctx *pulumi.Context, args *LookupResponderRecipeArgs,
 
 // A collection of arguments for invoking getResponderRecipe.
 type LookupResponderRecipeArgs struct {
-	// OCID of ResponderRecipe
+	// OCID of the responder recipe.
 	ResponderRecipeId string `pulumi:"responderRecipeId"`
 }
 
 // A collection of values returned by getResponderRecipe.
 type LookupResponderRecipeResult struct {
-	// Compartment Identifier
+	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ResponderRule description.
+	// Responder rule description
 	Description string `pulumi:"description"`
-	// ResponderRule display name.
+	// Responder rule display name
 	DisplayName string `pulumi:"displayName"`
-	// List of responder rules associated with the recipe
+	// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 	EffectiveResponderRules []GetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Identifier for ResponderRecipe.
+	// Unique identifier for the responder recip
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Owner of ResponderRecipe
+	// Owner of responder recipe
 	Owner             string `pulumi:"owner"`
 	ResponderRecipeId string `pulumi:"responderRecipeId"`
 	// List of responder rules associated with the recipe
 	ResponderRules []GetResponderRecipeResponderRule `pulumi:"responderRules"`
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	SourceResponderRecipeId string `pulumi:"sourceResponderRecipeId"`
-	// The current state of the Example.
+	// The current lifecycle state of the example
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the responder recipe was updated. Format defined by RFC3339.
+	// The date and time the responder recipe was last updated. Format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -106,7 +106,7 @@ func LookupResponderRecipeOutput(ctx *pulumi.Context, args LookupResponderRecipe
 
 // A collection of arguments for invoking getResponderRecipe.
 type LookupResponderRecipeOutputArgs struct {
-	// OCID of ResponderRecipe
+	// OCID of the responder recipe.
 	ResponderRecipeId pulumi.StringInput `pulumi:"responderRecipeId"`
 }
 
@@ -129,7 +129,7 @@ func (o LookupResponderRecipeResultOutput) ToLookupResponderRecipeResultOutputWi
 	return o
 }
 
-// Compartment Identifier
+// Compartment OCID
 func (o LookupResponderRecipeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -139,17 +139,17 @@ func (o LookupResponderRecipeResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ResponderRule description.
+// Responder rule description
 func (o LookupResponderRecipeResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ResponderRule display name.
+// Responder rule display name
 func (o LookupResponderRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// List of responder rules associated with the recipe
+// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 func (o LookupResponderRecipeResultOutput) EffectiveResponderRules() GetResponderRecipeEffectiveResponderRuleArrayOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) []GetResponderRecipeEffectiveResponderRule {
 		return v.EffectiveResponderRules
@@ -161,7 +161,7 @@ func (o LookupResponderRecipeResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Identifier for ResponderRecipe.
+// Unique identifier for the responder recip
 func (o LookupResponderRecipeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -171,7 +171,7 @@ func (o LookupResponderRecipeResultOutput) LifecycleDetails() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Owner of ResponderRecipe
+// Owner of responder recipe
 func (o LookupResponderRecipeResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.Owner }).(pulumi.StringOutput)
 }
@@ -185,12 +185,12 @@ func (o LookupResponderRecipeResultOutput) ResponderRules() GetResponderRecipeRe
 	return o.ApplyT(func(v LookupResponderRecipeResult) []GetResponderRecipeResponderRule { return v.ResponderRules }).(GetResponderRecipeResponderRuleArrayOutput)
 }
 
-// The id of the source responder recipe.
+// The unique identifier of the source responder recipe
 func (o LookupResponderRecipeResultOutput) SourceResponderRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.SourceResponderRecipeId }).(pulumi.StringOutput)
 }
 
-// The current state of the Example.
+// The current lifecycle state of the example
 func (o LookupResponderRecipeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -205,7 +205,7 @@ func (o LookupResponderRecipeResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the responder recipe was updated. Format defined by RFC3339.
+// The date and time the responder recipe was last updated. Format defined by RFC3339.
 func (o LookupResponderRecipeResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResponderRecipeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

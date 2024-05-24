@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a DataSource
+ * Creates a data source (DataSource resource), using parameters passed
+ * through a CreateDataSourceDetails resource.
  *
  * ## Example Usage
  *
@@ -24,7 +25,9 @@ import * as utilities from "../utilities";
  *     dataSourceDetails: {
  *         dataSourceFeedProvider: dataSourceDataSourceDetailsDataSourceFeedProvider,
  *         additionalEntitiesCount: dataSourceDataSourceDetailsAdditionalEntitiesCount,
+ *         description: dataSourceDataSourceDetailsDescription,
  *         intervalInMinutes: dataSourceDataSourceDetailsIntervalInMinutes,
+ *         intervalInSeconds: dataSourceDataSourceDetailsIntervalInSeconds,
  *         loggingQueryDetails: {
  *             loggingQueryType: dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
  *             keyEntitiesCount: dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount,
@@ -37,6 +40,11 @@ import * as utilities from "../utilities";
  *             queryStartTime: dataSourceDataSourceDetailsQueryStartTimeQueryStartTime,
  *         },
  *         regions: dataSourceDataSourceDetailsRegions,
+ *         scheduledQueryScopeDetails: [{
+ *             region: dataSourceDataSourceDetailsScheduledQueryScopeDetailsRegion,
+ *             resourceIds: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds,
+ *             resourceType: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType,
+ *         }],
  *         threshold: dataSourceDataSourceDetailsThreshold,
  *     },
  *     definedTags: {
@@ -86,7 +94,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -98,7 +106,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly dataSourceDetectorMappingInfos!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo[]>;
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      */
     public readonly dataSourceFeedProvider!: pulumi.Output<string>;
     /**
@@ -106,7 +114,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -120,11 +128,11 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly regionStatusDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail[]>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      *
      *
      * ** IMPORTANT **
@@ -140,7 +148,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -205,7 +213,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
  */
 export interface CloudGuardDataSourceState {
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -217,7 +225,7 @@ export interface CloudGuardDataSourceState {
      */
     dataSourceDetectorMappingInfos?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo>[]>;
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      */
     dataSourceFeedProvider?: pulumi.Input<string>;
     /**
@@ -225,7 +233,7 @@ export interface CloudGuardDataSourceState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -239,11 +247,11 @@ export interface CloudGuardDataSourceState {
      */
     regionStatusDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail>[]>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      *
      *
      * ** IMPORTANT **
@@ -259,7 +267,7 @@ export interface CloudGuardDataSourceState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -269,7 +277,7 @@ export interface CloudGuardDataSourceState {
  */
 export interface CloudGuardDataSourceArgs {
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -277,7 +285,7 @@ export interface CloudGuardDataSourceArgs {
      */
     dataSourceDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      */
     dataSourceFeedProvider: pulumi.Input<string>;
     /**
@@ -285,7 +293,7 @@ export interface CloudGuardDataSourceArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      */
     displayName: pulumi.Input<string>;
     /**
@@ -295,7 +303,7 @@ export interface CloudGuardDataSourceArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      *
      *
      * ** IMPORTANT **

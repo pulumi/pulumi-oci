@@ -18,14 +18,14 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
     public static final TargetTargetDetailArgs Empty = new TargetTargetDetailArgs();
 
     /**
-     * The name of the security zone to associate this compartment with.
+     * The name of the security zone to associate with this compartment.
      * 
      */
     @Import(name="securityZoneDisplayName")
     private @Nullable Output<String> securityZoneDisplayName;
 
     /**
-     * @return The name of the security zone to associate this compartment with.
+     * @return The name of the security zone to associate with this compartment.
      * 
      */
     public Optional<Output<String>> securityZoneDisplayName() {
@@ -33,14 +33,14 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The OCID of the security zone to associate this compartment with.
+     * The OCID of the security zone to associate with this compartment
      * 
      */
     @Import(name="securityZoneId")
     private @Nullable Output<String> securityZoneId;
 
     /**
-     * @return The OCID of the security zone to associate this compartment with.
+     * @return The OCID of the security zone to associate with this compartment
      * 
      */
     public Optional<Output<String>> securityZoneId() {
@@ -48,14 +48,14 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     @Import(name="targetResourceType")
     private @Nullable Output<String> targetResourceType;
 
     /**
-     * @return possible type of targets(COMPARTMENT/FACLOUD)
+     * @return Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     public Optional<Output<String>> targetResourceType() {
@@ -63,14 +63,14 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The list of security zone recipes to associate this compartment with.
+     * The list of security zone recipes to associate with this compartment
      * 
      */
     @Import(name="targetSecurityZoneRecipes")
     private @Nullable Output<List<TargetTargetDetailTargetSecurityZoneRecipeArgs>> targetSecurityZoneRecipes;
 
     /**
-     * @return The list of security zone recipes to associate this compartment with.
+     * @return The list of security zone recipes to associate with this compartment
      * 
      */
     public Optional<Output<List<TargetTargetDetailTargetSecurityZoneRecipeArgs>>> targetSecurityZoneRecipes() {
@@ -105,7 +105,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityZoneDisplayName The name of the security zone to associate this compartment with.
+         * @param securityZoneDisplayName The name of the security zone to associate with this compartment.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityZoneDisplayName The name of the security zone to associate this compartment with.
+         * @param securityZoneDisplayName The name of the security zone to associate with this compartment.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityZoneId The OCID of the security zone to associate this compartment with.
+         * @param securityZoneId The OCID of the security zone to associate with this compartment
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityZoneId The OCID of the security zone to associate this compartment with.
+         * @param securityZoneId The OCID of the security zone to associate with this compartment
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
+         * @param targetResourceType Type of resource that target support (COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param targetResourceType possible type of targets(COMPARTMENT/FACLOUD)
+         * @param targetResourceType Type of resource that target support (COMPARTMENT/FACLOUD)
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param targetSecurityZoneRecipes The list of security zone recipes to associate this compartment with.
+         * @param targetSecurityZoneRecipes The list of security zone recipes to associate with this compartment
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param targetSecurityZoneRecipes The list of security zone recipes to associate this compartment with.
+         * @param targetSecurityZoneRecipes The list of security zone recipes to associate with this compartment
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class TargetTargetDetailArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param targetSecurityZoneRecipes The list of security zone recipes to associate this compartment with.
+         * @param targetSecurityZoneRecipes The list of security zone recipes to associate with this compartment
          * 
          * @return builder
          * 

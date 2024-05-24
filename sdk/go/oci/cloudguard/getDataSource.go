@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Returns a DataSource identified by dataSourceId
+// Returns a data source (DataSource resource) identified by dataSourceId.
 //
 // ## Example Usage
 //
@@ -52,13 +52,13 @@ func GetDataSource(ctx *pulumi.Context, args *GetDataSourceArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getDataSource.
 type GetDataSourceArgs struct {
-	// DataSource OCID
+	// Data source OCID.
 	DataSourceId string `pulumi:"dataSourceId"`
 }
 
 // A collection of values returned by getDataSource.
 type GetDataSourceResult struct {
-	// CompartmentId of Data source.
+	// Compartment OCID of data source
 	CompartmentId string `pulumi:"compartmentId"`
 	// Details specific to the data source type.
 	DataSourceDetails []GetDataSourceDataSourceDetail `pulumi:"dataSourceDetails"`
@@ -69,23 +69,23 @@ type GetDataSourceResult struct {
 	DataSourceId           string `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// DisplayName of Data source.
+	// Display name of the data source
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Ocid for Data source
+	// OCID for the data source
 	Id string `pulumi:"id"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []GetDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
-	// Status of data Source
+	// Enablement status of the data source
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the Data source was updated. Format defined by RFC3339.
+	// The date and time the data source was updated. Format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -104,7 +104,7 @@ func GetDataSourceOutput(ctx *pulumi.Context, args GetDataSourceOutputArgs, opts
 
 // A collection of arguments for invoking getDataSource.
 type GetDataSourceOutputArgs struct {
-	// DataSource OCID
+	// Data source OCID.
 	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 }
 
@@ -127,7 +127,7 @@ func (o GetDataSourceResultOutput) ToGetDataSourceResultOutputWithContext(ctx co
 	return o
 }
 
-// CompartmentId of Data source.
+// Compartment OCID of data source
 func (o GetDataSourceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -158,7 +158,7 @@ func (o GetDataSourceResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDataSourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// DisplayName of Data source.
+// Display name of the data source
 func (o GetDataSourceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -168,7 +168,7 @@ func (o GetDataSourceResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDataSourceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Ocid for Data source
+// OCID for the data source
 func (o GetDataSourceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -178,12 +178,12 @@ func (o GetDataSourceResultOutput) RegionStatusDetails() GetDataSourceRegionStat
 	return o.ApplyT(func(v GetDataSourceResult) []GetDataSourceRegionStatusDetail { return v.RegionStatusDetails }).(GetDataSourceRegionStatusDetailArrayOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource.
 func (o GetDataSourceResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Status of data Source
+// Enablement status of the data source
 func (o GetDataSourceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -198,7 +198,7 @@ func (o GetDataSourceResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the Data source was updated. Format defined by RFC3339.
+// The date and time the data source was updated. Format defined by RFC3339.
 func (o GetDataSourceResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataSourceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

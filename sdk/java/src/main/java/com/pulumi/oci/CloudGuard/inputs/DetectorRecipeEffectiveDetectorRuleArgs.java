@@ -20,14 +20,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     public static final DetectorRecipeEffectiveDetectorRuleArgs Empty = new DetectorRecipeEffectiveDetectorRuleArgs();
 
     /**
-     * List of CandidateResponderRule related to this rule
+     * List of responder rules that can be used to remediate this detector rule
      * 
      */
     @Import(name="candidateResponderRules")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs>> candidateResponderRules;
 
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs>>> candidateResponderRules() {
@@ -35,14 +35,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * The id of the attached DataSource.
+     * The ID of the attached data source
      * 
      */
     @Import(name="dataSourceId")
     private @Nullable Output<String> dataSourceId;
 
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public Optional<Output<String>> dataSourceId() {
@@ -69,14 +69,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * Details of a Detector Rule
+     * Detailed information for a detector.
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailArgs>> details;
 
     /**
-     * @return Details of a Detector Rule
+     * @return Detailed information for a detector.
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailArgs>>> details() {
@@ -84,14 +84,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * detector for the rule
+     * Detector for the rule
      * 
      */
     @Import(name="detector")
     private @Nullable Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     public Optional<Output<String>> detector() {
@@ -133,14 +133,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * Data Source entities mapping for a Detector Rule
+     * Data source entities mapping for the detector rule
      * 
      */
     @Import(name="entitiesMappings")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>> entitiesMappings;
 
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
@@ -163,14 +163,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      * 
      */
     @Import(name="managedListTypes")
     private @Nullable Output<List<String>> managedListTypes;
 
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public Optional<Output<List<String>>> managedListTypes() {
@@ -178,14 +178,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * Recommendation for DetectorRecipeDetectorRule
+     * Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -193,14 +193,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * Resource type of the configuration to which the rule is applied
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -208,14 +208,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public Optional<Output<String>> serviceType() {
@@ -223,14 +223,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<Output<String>> state() {
@@ -238,14 +238,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -253,14 +253,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -307,7 +307,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param candidateResponderRules List of CandidateResponderRule related to this rule
+         * @param candidateResponderRules List of responder rules that can be used to remediate this detector rule
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param candidateResponderRules List of CandidateResponderRule related to this rule
+         * @param candidateResponderRules List of responder rules that can be used to remediate this detector rule
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param candidateResponderRules List of CandidateResponderRule related to this rule
+         * @param candidateResponderRules List of responder rules that can be used to remediate this detector rule
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param dataSourceId The id of the attached DataSource.
+         * @param dataSourceId The ID of the attached data source
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param dataSourceId The id of the attached DataSource.
+         * @param dataSourceId The ID of the attached data source
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details Details of a Detector Rule
+         * @param details Detailed information for a detector.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details Details of a Detector Rule
+         * @param details Detailed information for a detector.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details Details of a Detector Rule
+         * @param details Detailed information for a detector.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for the detector rule
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for the detector rule
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for the detector rule
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -565,7 +565,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param recommendation Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule resource
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param recommendation Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule resource
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceType resource type of the configuration to which the rule is applied
+         * @param resourceType Resource type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceType resource type of the configuration to which the rule is applied
+         * @param resourceType Resource type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -607,7 +607,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param serviceType service type of the configuration to which the rule is applied
+         * @param serviceType Service type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param serviceType service type of the configuration to which the rule is applied
+         * @param serviceType Service type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -628,7 +628,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param timeCreated The date and time the detector recipe was created. Format defined by RFC3339.
+         * @param timeCreated The date and time the detector recipe was created Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param timeCreated The date and time the detector recipe was created. Format defined by RFC3339.
+         * @param timeCreated The date and time the detector recipe was created Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -670,7 +670,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param timeUpdated The date and time the detector recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the detector recipe was last updated Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param timeUpdated The date and time the detector recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the detector recipe was last updated Format defined by RFC3339.
          * 
          * @return builder
          * 

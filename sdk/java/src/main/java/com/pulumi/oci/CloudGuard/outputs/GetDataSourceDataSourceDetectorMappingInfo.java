@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourceDataSourceDetectorMappingInfo {
     /**
-     * @return Id of the attached detectorRecipeId to the Data Source.
+     * @return ID of the detector recipe attached to the data source
      * 
      */
     private String detectorRecipeId;
     /**
-     * @return Id of the attached detectorRuleId to the Data Source.
+     * @return ID of the detector rule attached to the data source
      * 
      */
     private String detectorRuleId;
 
     private GetDataSourceDataSourceDetectorMappingInfo() {}
     /**
-     * @return Id of the attached detectorRecipeId to the Data Source.
+     * @return ID of the detector recipe attached to the data source
      * 
      */
     public String detectorRecipeId() {
         return this.detectorRecipeId;
     }
     /**
-     * @return Id of the attached detectorRuleId to the Data Source.
+     * @return ID of the detector rule attached to the data source
      * 
      */
     public String detectorRuleId() {

@@ -28,6 +28,11 @@ public final class GetPipelineStepDetailStepInfrastructureConfigurationDetail {
      * 
      */
     private String shapeName;
+    /**
+     * @return The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    private String subnetId;
 
     private GetPipelineStepDetailStepInfrastructureConfigurationDetail() {}
     /**
@@ -51,6 +56,13 @@ public final class GetPipelineStepDetailStepInfrastructureConfigurationDetail {
     public String shapeName() {
         return this.shapeName;
     }
+    /**
+     * @return The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +76,14 @@ public final class GetPipelineStepDetailStepInfrastructureConfigurationDetail {
         private Integer blockStorageSizeInGbs;
         private List<GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
         private String shapeName;
+        private String subnetId;
         public Builder() {}
         public Builder(GetPipelineStepDetailStepInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
     	      this.shapeConfigDetails = defaults.shapeConfigDetails;
     	      this.shapeName = defaults.shapeName;
+    	      this.subnetId = defaults.subnetId;
         }
 
         @CustomType.Setter
@@ -99,11 +113,20 @@ public final class GetPipelineStepDetailStepInfrastructureConfigurationDetail {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineStepDetailStepInfrastructureConfigurationDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
+            return this;
+        }
         public GetPipelineStepDetailStepInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetPipelineStepDetailStepInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
             _resultValue.shapeConfigDetails = shapeConfigDetails;
             _resultValue.shapeName = shapeName;
+            _resultValue.subnetId = subnetId;
             return _resultValue;
         }
     }

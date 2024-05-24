@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a new DataMaskRule object definition.
+// Creates a new DataMaskRule resource definition.
 //
 // ## Example Usage
 //
@@ -68,17 +68,17 @@ import (
 type DataMaskRule struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier where the resource is created
+	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Data Mask Categories
+	// (Updatable) Data mask rule categories
 	DataMaskCategories pulumi.StringArrayOutput `pulumi:"dataMaskCategories"`
-	// (Updatable) The status of the dataMaskRule.
+	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringOutput `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// The data mask rule description. Avoid entering confidential information.
+	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Data mask rule name.
+	// (Updatable) Data mask rule display name
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -86,15 +86,15 @@ type DataMaskRule struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// (Updatable) IAM Group id associated with the data mask rule
+	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringOutput `pulumi:"iamGroupId"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Additional details on the substate of the lifecycle state [DEPRECATE]
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelectedOutput `pulumi:"targetSelected"`
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -147,17 +147,17 @@ func GetDataMaskRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DataMaskRule resources.
 type dataMaskRuleState struct {
-	// (Updatable) Compartment Identifier where the resource is created
+	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Data Mask Categories
+	// (Updatable) Data mask rule categories
 	DataMaskCategories []string `pulumi:"dataMaskCategories"`
-	// (Updatable) The status of the dataMaskRule.
+	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The data mask rule description. Avoid entering confidential information.
+	// The data mask rule description Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Data mask rule name.
+	// (Updatable) Data mask rule display name
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -165,15 +165,15 @@ type dataMaskRuleState struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) IAM Group id associated with the data mask rule
+	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId *string `pulumi:"iamGroupId"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Additional details on the substate of the lifecycle state [DEPRECATE]
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected *DataMaskRuleTargetSelected `pulumi:"targetSelected"`
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -182,17 +182,17 @@ type dataMaskRuleState struct {
 }
 
 type DataMaskRuleState struct {
-	// (Updatable) Compartment Identifier where the resource is created
+	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Data Mask Categories
+	// (Updatable) Data mask rule categories
 	DataMaskCategories pulumi.StringArrayInput
-	// (Updatable) The status of the dataMaskRule.
+	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The data mask rule description. Avoid entering confidential information.
+	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Data mask rule name.
+	// (Updatable) Data mask rule display name
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -200,15 +200,15 @@ type DataMaskRuleState struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) IAM Group id associated with the data mask rule
+	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringPtrInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Additional details on the substate of the lifecycle state [DEPRECATE]
 	LifecyleDetails pulumi.StringPtrInput
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelectedPtrInput
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
@@ -221,17 +221,17 @@ func (DataMaskRuleState) ElementType() reflect.Type {
 }
 
 type dataMaskRuleArgs struct {
-	// (Updatable) Compartment Identifier where the resource is created
+	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Data Mask Categories
+	// (Updatable) Data mask rule categories
 	DataMaskCategories []string `pulumi:"dataMaskCategories"`
-	// (Updatable) The status of the dataMaskRule.
+	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The data mask rule description. Avoid entering confidential information.
+	// The data mask rule description Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Data mask rule name.
+	// (Updatable) Data mask rule display name
 	//
 	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
@@ -239,27 +239,27 @@ type dataMaskRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) IAM Group id associated with the data mask rule
+	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId string `pulumi:"iamGroupId"`
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State *string `pulumi:"state"`
-	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelected `pulumi:"targetSelected"`
 }
 
 // The set of arguments for constructing a DataMaskRule resource.
 type DataMaskRuleArgs struct {
-	// (Updatable) Compartment Identifier where the resource is created
+	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId pulumi.StringInput
-	// (Updatable) Data Mask Categories
+	// (Updatable) Data mask rule categories
 	DataMaskCategories pulumi.StringArrayInput
-	// (Updatable) The status of the dataMaskRule.
+	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// The data mask rule description. Avoid entering confidential information.
+	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) Data mask rule name.
+	// (Updatable) Data mask rule display name
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
@@ -267,11 +267,11 @@ type DataMaskRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) IAM Group id associated with the data mask rule
+	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringInput
-	// The current state of the DataMaskRule.
+	// The current lifecycle state of the data mask rule
 	State pulumi.StringPtrInput
-	// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelectedInput
 }
 
@@ -362,17 +362,17 @@ func (o DataMaskRuleOutput) ToDataMaskRuleOutputWithContext(ctx context.Context)
 	return o
 }
 
-// (Updatable) Compartment Identifier where the resource is created
+// (Updatable) Compartment OCID where the resource is created
 func (o DataMaskRuleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Data Mask Categories
+// (Updatable) Data mask rule categories
 func (o DataMaskRuleOutput) DataMaskCategories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringArrayOutput { return v.DataMaskCategories }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The status of the dataMaskRule.
+// (Updatable) The current status of the data mask rule
 func (o DataMaskRuleOutput) DataMaskRuleStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.DataMaskRuleStatus }).(pulumi.StringOutput)
 }
@@ -382,12 +382,12 @@ func (o DataMaskRuleOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The data mask rule description. Avoid entering confidential information.
+// The data mask rule description Avoid entering confidential information.
 func (o DataMaskRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Data mask rule name.
+// (Updatable) Data mask rule display name
 //
 // Avoid entering confidential information.
 func (o DataMaskRuleOutput) DisplayName() pulumi.StringOutput {
@@ -401,17 +401,17 @@ func (o DataMaskRuleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) IAM Group id associated with the data mask rule
+// (Updatable) IAM group ID associated with the data mask rule
 func (o DataMaskRuleOutput) IamGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.IamGroupId }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// Additional details on the substate of the lifecycle state [DEPRECATE]
 func (o DataMaskRuleOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the DataMaskRule.
+// The current lifecycle state of the data mask rule
 func (o DataMaskRuleOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -421,7 +421,7 @@ func (o DataMaskRuleOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 func (o DataMaskRuleOutput) TargetSelected() DataMaskRuleTargetSelectedOutput {
 	return o.ApplyT(func(v *DataMaskRule) DataMaskRuleTargetSelectedOutput { return v.TargetSelected }).(DataMaskRuleTargetSelectedOutput)
 }

@@ -17,12 +17,12 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
      */
     private String displayName;
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     private String id;
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     private Boolean isPreferred;
@@ -36,14 +36,14 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
         return this.displayName;
     }
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     public Boolean isPreferred() {

@@ -750,10 +750,20 @@ export type SetSecurityAssessmentBaseline = import("./setSecurityAssessmentBasel
 export const SetSecurityAssessmentBaseline: typeof import("./setSecurityAssessmentBaseline").SetSecurityAssessmentBaseline = null as any;
 utilities.lazyLoad(exports, ["SetSecurityAssessmentBaseline"], () => require("./setSecurityAssessmentBaseline"));
 
+export { SetSecurityAssessmentBaselineManagementArgs, SetSecurityAssessmentBaselineManagementState } from "./setSecurityAssessmentBaselineManagement";
+export type SetSecurityAssessmentBaselineManagement = import("./setSecurityAssessmentBaselineManagement").SetSecurityAssessmentBaselineManagement;
+export const SetSecurityAssessmentBaselineManagement: typeof import("./setSecurityAssessmentBaselineManagement").SetSecurityAssessmentBaselineManagement = null as any;
+utilities.lazyLoad(exports, ["SetSecurityAssessmentBaselineManagement"], () => require("./setSecurityAssessmentBaselineManagement"));
+
 export { SetUserAssessmentBaselineArgs, SetUserAssessmentBaselineState } from "./setUserAssessmentBaseline";
 export type SetUserAssessmentBaseline = import("./setUserAssessmentBaseline").SetUserAssessmentBaseline;
 export const SetUserAssessmentBaseline: typeof import("./setUserAssessmentBaseline").SetUserAssessmentBaseline = null as any;
 utilities.lazyLoad(exports, ["SetUserAssessmentBaseline"], () => require("./setUserAssessmentBaseline"));
+
+export { SetUserAssessmentBaselineManagementArgs, SetUserAssessmentBaselineManagementState } from "./setUserAssessmentBaselineManagement";
+export type SetUserAssessmentBaselineManagement = import("./setUserAssessmentBaselineManagement").SetUserAssessmentBaselineManagement;
+export const SetUserAssessmentBaselineManagement: typeof import("./setUserAssessmentBaselineManagement").SetUserAssessmentBaselineManagement = null as any;
+utilities.lazyLoad(exports, ["SetUserAssessmentBaselineManagement"], () => require("./setUserAssessmentBaselineManagement"));
 
 export { SqlCollectionArgs, SqlCollectionState } from "./sqlCollection";
 export type SqlCollection = import("./sqlCollection").SqlCollection;
@@ -879,8 +889,12 @@ const _module = {
                 return new SensitiveType(name, <any>undefined, { urn })
             case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
                 return new SetSecurityAssessmentBaseline(name, <any>undefined, { urn })
+            case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
+                return new SetSecurityAssessmentBaselineManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
                 return new SetUserAssessmentBaseline(name, <any>undefined, { urn })
+            case "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement":
+                return new SetUserAssessmentBaselineManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/sqlCollection:SqlCollection":
                 return new SqlCollection(name, <any>undefined, { urn })
             case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
@@ -941,7 +955,9 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsApplyD
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveDataModelsSensitiveColumn", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sensitiveType", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaseline", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/setSecurityAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaseline", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/setUserAssessmentBaselineManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlCollection", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicy", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/sqlFirewallPolicyManagement", _module)

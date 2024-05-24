@@ -5,10 +5,13 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .adhoc_query import *
 from .cloud_guard_configuration import *
 from .cloud_guard_data_source import *
 from .data_mask_rule import *
 from .detector_recipe import *
+from .get_adhoc_queries import *
+from .get_adhoc_query import *
 from .get_cloud_guard_configuration import *
 from .get_data_mask_rule import *
 from .get_data_mask_rules import *
@@ -26,16 +29,22 @@ from .get_problem_entities import *
 from .get_problem_entity import *
 from .get_responder_recipe import *
 from .get_responder_recipes import *
+from .get_saved_queries import *
+from .get_saved_query import *
 from .get_security_policies import *
 from .get_security_policy import *
 from .get_security_recipe import *
 from .get_security_recipes import *
 from .get_security_zone import *
 from .get_security_zones import *
+from .get_wlp_agent import *
+from .get_wlp_agents import *
 from .managed_list import *
 from .responder_recipe import *
+from .saved_query import *
 from .security_recipe import *
 from .security_zone import *
 from .target import *
+from .wlp_agent import *
 from ._inputs import *
 from . import outputs

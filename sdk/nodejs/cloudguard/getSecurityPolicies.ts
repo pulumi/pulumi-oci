@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of security zone policies. Specify any compartment.
+ * Returns a list of security zone policies (SecurityPolicySummary resources),
+ * identified by compartmentId.
  *
  * ## Example Usage
  *
@@ -42,7 +43,7 @@ export function getSecurityPolicies(args: GetSecurityPoliciesArgs, opts?: pulumi
  */
 export interface GetSecurityPoliciesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -51,11 +52,11 @@ export interface GetSecurityPoliciesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetSecurityPoliciesFilter[];
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      */
     id?: string;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -65,16 +66,16 @@ export interface GetSecurityPoliciesArgs {
  */
 export interface GetSecurityPoliciesResult {
     /**
-     * The id of the security policy's compartment
+     * The OCID of the security policy's compartment
      */
     readonly compartmentId: string;
     /**
-     * The security policy's full name
+     * The security policy's display name
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetSecurityPoliciesFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can’t be changed after creation
      */
     readonly id?: string;
     /**
@@ -82,14 +83,15 @@ export interface GetSecurityPoliciesResult {
      */
     readonly securityPolicyCollections: outputs.CloudGuard.GetSecurityPoliciesSecurityPolicyCollection[];
     /**
-     * The current state of the security policy
+     * The current lifecycle state of the security policy
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of security zone policies. Specify any compartment.
+ * Returns a list of security zone policies (SecurityPolicySummary resources),
+ * identified by compartmentId.
  *
  * ## Example Usage
  *
@@ -114,7 +116,7 @@ export function getSecurityPoliciesOutput(args: GetSecurityPoliciesOutputArgs, o
  */
 export interface GetSecurityPoliciesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -123,11 +125,11 @@ export interface GetSecurityPoliciesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSecurityPoliciesFilterArgs>[]>;
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      */
     id?: pulumi.Input<string>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

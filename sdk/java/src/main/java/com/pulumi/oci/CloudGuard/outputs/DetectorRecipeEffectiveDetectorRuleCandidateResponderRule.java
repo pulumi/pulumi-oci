@@ -20,12 +20,12 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
      */
     private @Nullable String displayName;
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     private @Nullable String id;
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     private @Nullable Boolean isPreferred;
@@ -41,14 +41,14 @@ public final class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     public Optional<Boolean> isPreferred() {

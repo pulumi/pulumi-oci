@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a new Target
+ * Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
  *
  * ## Example Usage
  *
@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testTarget = new oci.cloudguard.Target("test_target", {
  *     compartmentId: compartmentId,
  *     displayName: targetDisplayName,
- *     targetResourceId: testTargetResource.id,
+ *     targetResourceId: testResource.id,
  *     targetResourceType: targetTargetResourceType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -97,7 +97,7 @@ export class Target extends pulumi.CustomResource {
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -111,7 +111,7 @@ export class Target extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      *
      * Avoid entering confidential information.
      */
@@ -127,7 +127,7 @@ export class Target extends pulumi.CustomResource {
      */
     public /*out*/ readonly inheritedByCompartments!: pulumi.Output<string[]>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
     /**
@@ -135,7 +135,7 @@ export class Target extends pulumi.CustomResource {
      */
     public /*out*/ readonly recipeCount!: pulumi.Output<number>;
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      */
     public readonly state!: pulumi.Output<string>;
     /**
@@ -147,7 +147,7 @@ export class Target extends pulumi.CustomResource {
      */
     public /*out*/ readonly targetDetails!: pulumi.Output<outputs.CloudGuard.TargetTargetDetail[]>;
     /**
-     * (Updatable) List of detector recipes to associate with target
+     * (Updatable) List of detector recipes to attach to target
      */
     public readonly targetDetectorRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetDetectorRecipe[]>;
     /**
@@ -155,11 +155,11 @@ export class Target extends pulumi.CustomResource {
      */
     public readonly targetResourceId!: pulumi.Output<string>;
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      */
     public readonly targetResourceType!: pulumi.Output<string>;
     /**
-     * (Updatable) List of responder recipes to associate with target
+     * (Updatable) List of responder recipes to attach to target
      */
     public readonly targetResponderRecipes!: pulumi.Output<outputs.CloudGuard.TargetTargetResponderRecipe[]>;
     /**
@@ -167,7 +167,7 @@ export class Target extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -243,7 +243,7 @@ export class Target extends pulumi.CustomResource {
  */
 export interface TargetState {
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -257,7 +257,7 @@ export interface TargetState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      *
      * Avoid entering confidential information.
      */
@@ -273,7 +273,7 @@ export interface TargetState {
      */
     inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     lifecyleDetails?: pulumi.Input<string>;
     /**
@@ -281,7 +281,7 @@ export interface TargetState {
      */
     recipeCount?: pulumi.Input<number>;
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      */
     state?: pulumi.Input<string>;
     /**
@@ -293,7 +293,7 @@ export interface TargetState {
      */
     targetDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetail>[]>;
     /**
-     * (Updatable) List of detector recipes to associate with target
+     * (Updatable) List of detector recipes to attach to target
      */
     targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[]>;
     /**
@@ -301,11 +301,11 @@ export interface TargetState {
      */
     targetResourceId?: pulumi.Input<string>;
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      */
     targetResourceType?: pulumi.Input<string>;
     /**
-     * (Updatable) List of responder recipes to associate with target
+     * (Updatable) List of responder recipes to attach to target
      */
     targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[]>;
     /**
@@ -313,7 +313,7 @@ export interface TargetState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -323,7 +323,7 @@ export interface TargetState {
  */
 export interface TargetArgs {
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -337,7 +337,7 @@ export interface TargetArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      *
      * Avoid entering confidential information.
      */
@@ -349,11 +349,11 @@ export interface TargetArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) List of detector recipes to associate with target
+     * (Updatable) List of detector recipes to attach to target
      */
     targetDetectorRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipe>[]>;
     /**
@@ -361,11 +361,11 @@ export interface TargetArgs {
      */
     targetResourceId: pulumi.Input<string>;
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      */
     targetResourceType: pulumi.Input<string>;
     /**
-     * (Updatable) List of responder recipes to associate with target
+     * (Updatable) List of responder recipes to attach to target
      */
     targetResponderRecipes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetResponderRecipe>[]>;
 }

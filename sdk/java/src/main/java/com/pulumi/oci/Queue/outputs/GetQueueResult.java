@@ -5,7 +5,6 @@ package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -64,7 +63,7 @@ public final class GetQueueResult {
      * 
      */
     private String messagesEndpoint;
-    private Boolean purgeQueue;
+    private Integer purgeTrigger;
     private String purgeType;
     private String queueId;
     /**
@@ -174,8 +173,8 @@ public final class GetQueueResult {
     public String messagesEndpoint() {
         return this.messagesEndpoint;
     }
-    public Boolean purgeQueue() {
-        return this.purgeQueue;
+    public Integer purgeTrigger() {
+        return this.purgeTrigger;
     }
     public String purgeType() {
         return this.purgeType;
@@ -252,7 +251,7 @@ public final class GetQueueResult {
         private String id;
         private String lifecycleDetails;
         private String messagesEndpoint;
-        private Boolean purgeQueue;
+        private Integer purgeTrigger;
         private String purgeType;
         private String queueId;
         private Integer retentionInSeconds;
@@ -275,7 +274,7 @@ public final class GetQueueResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.messagesEndpoint = defaults.messagesEndpoint;
-    	      this.purgeQueue = defaults.purgeQueue;
+    	      this.purgeTrigger = defaults.purgeTrigger;
     	      this.purgeType = defaults.purgeType;
     	      this.queueId = defaults.queueId;
     	      this.retentionInSeconds = defaults.retentionInSeconds;
@@ -368,11 +367,11 @@ public final class GetQueueResult {
             return this;
         }
         @CustomType.Setter
-        public Builder purgeQueue(Boolean purgeQueue) {
-            if (purgeQueue == null) {
-              throw new MissingRequiredPropertyException("GetQueueResult", "purgeQueue");
+        public Builder purgeTrigger(Integer purgeTrigger) {
+            if (purgeTrigger == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "purgeTrigger");
             }
-            this.purgeQueue = purgeQueue;
+            this.purgeTrigger = purgeTrigger;
             return this;
         }
         @CustomType.Setter
@@ -459,7 +458,7 @@ public final class GetQueueResult {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.messagesEndpoint = messagesEndpoint;
-            _resultValue.purgeQueue = purgeQueue;
+            _resultValue.purgeTrigger = purgeTrigger;
             _resultValue.purgeType = purgeType;
             _resultValue.queueId = queueId;
             _resultValue.retentionInSeconds = retentionInSeconds;

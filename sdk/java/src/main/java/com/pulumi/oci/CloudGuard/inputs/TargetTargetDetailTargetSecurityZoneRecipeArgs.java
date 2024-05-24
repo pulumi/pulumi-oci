@@ -19,14 +19,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     public static final TargetTargetDetailTargetSecurityZoneRecipeArgs Empty = new TargetTargetDetailTargetSecurityZoneRecipeArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -68,7 +68,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -77,7 +77,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -106,14 +106,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<Output<String>> id() {
@@ -136,14 +136,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of target responder recipe
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<Output<String>> owner() {
@@ -151,14 +151,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * The list of `SecurityPolicy` ids that are included in the recipe
+     * The list of security policy IDs that are included in the recipe
      * 
      */
     @Import(name="securityPolicies")
     private @Nullable Output<List<String>> securityPolicies;
 
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public Optional<Output<List<String>>> securityPolicies() {
@@ -166,14 +166,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -211,14 +211,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -262,7 +262,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -342,7 +342,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -379,7 +379,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param securityPolicies The list of `SecurityPolicy` ids that are included in the recipe
+         * @param securityPolicies The list of security policy IDs that are included in the recipe
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param securityPolicies The list of `SecurityPolicy` ids that are included in the recipe
+         * @param securityPolicies The list of security policy IDs that are included in the recipe
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param securityPolicies The list of `SecurityPolicy` ids that are included in the recipe
+         * @param securityPolicies The list of security policy IDs that are included in the recipe
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipeArgs extends com.pu
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

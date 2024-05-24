@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+ * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
  *
  * ## Example Usage
  *
@@ -54,11 +54,11 @@ export interface GetDataMaskRulesArgs {
      */
     accessLevel?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
-     * The status of the dataMaskRule.
+     * The status of the data mask rule
      */
     dataMaskRuleStatus?: string;
     /**
@@ -67,15 +67,15 @@ export interface GetDataMaskRulesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetDataMaskRulesFilter[];
     /**
-     * OCID of iamGroup
+     * OCID of the IAM group
      */
     iamGroupId?: string;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
     /**
-     * OCID of target
+     * OCID of the target
      */
     targetId?: string;
     /**
@@ -90,7 +90,7 @@ export interface GetDataMaskRulesArgs {
 export interface GetDataMaskRulesResult {
     readonly accessLevel?: string;
     /**
-     * Compartment Identifier where the resource is created.
+     * Compartment OCID where the resource is created
      */
     readonly compartmentId: string;
     /**
@@ -98,16 +98,16 @@ export interface GetDataMaskRulesResult {
      */
     readonly dataMaskRuleCollections: outputs.CloudGuard.GetDataMaskRulesDataMaskRuleCollection[];
     /**
-     * The status of the dataMaskRule.
+     * The current status of the data mask rule
      */
     readonly dataMaskRuleStatus?: string;
     /**
-     * Data Mask Rule Identifier, can be renamed.
+     * Data mask rule display name
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetDataMaskRulesFilter[];
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM Group ID associated with the data mask rule
      */
     readonly iamGroupId?: string;
     /**
@@ -115,7 +115,7 @@ export interface GetDataMaskRulesResult {
      */
     readonly id: string;
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      */
     readonly state?: string;
     readonly targetId?: string;
@@ -124,7 +124,7 @@ export interface GetDataMaskRulesResult {
 /**
  * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+ * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
  *
  * ## Example Usage
  *
@@ -157,11 +157,11 @@ export interface GetDataMaskRulesOutputArgs {
      */
     accessLevel?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The status of the dataMaskRule.
+     * The status of the data mask rule
      */
     dataMaskRuleStatus?: pulumi.Input<string>;
     /**
@@ -170,15 +170,15 @@ export interface GetDataMaskRulesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataMaskRulesFilterArgs>[]>;
     /**
-     * OCID of iamGroup
+     * OCID of the IAM group
      */
     iamGroupId?: pulumi.Input<string>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
     /**
-     * OCID of target
+     * OCID of the target
      */
     targetId?: pulumi.Input<string>;
     /**

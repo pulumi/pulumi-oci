@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Create a ResponderRecipe.
+ * Creates a responder recipe (ResponderRecipe resource), from values passed in a
+ * CreateResponderRecipeDetails resource.
  *
  * ## Import
  *
@@ -48,7 +49,7 @@ export class ResponderRecipe extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -68,7 +69,7 @@ export class ResponderRecipe extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      */
     public /*out*/ readonly effectiveResponderRules!: pulumi.Output<outputs.CloudGuard.ResponderRecipeEffectiveResponderRule[]>;
     /**
@@ -82,15 +83,15 @@ export class ResponderRecipe extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      */
     public readonly responderRules!: pulumi.Output<outputs.CloudGuard.ResponderRecipeResponderRule[]>;
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      *
      *
      * ** IMPORTANT **
@@ -98,7 +99,7 @@ export class ResponderRecipe extends pulumi.CustomResource {
      */
     public readonly sourceResponderRecipeId!: pulumi.Output<string>;
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -110,7 +111,7 @@ export class ResponderRecipe extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -177,7 +178,7 @@ export class ResponderRecipe extends pulumi.CustomResource {
  */
 export interface ResponderRecipeState {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -197,7 +198,7 @@ export interface ResponderRecipeState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      */
     effectiveResponderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeEffectiveResponderRule>[]>;
     /**
@@ -211,15 +212,15 @@ export interface ResponderRecipeState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      */
     owner?: pulumi.Input<string>;
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      */
     responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      *
      *
      * ** IMPORTANT **
@@ -227,7 +228,7 @@ export interface ResponderRecipeState {
      */
     sourceResponderRecipeId?: pulumi.Input<string>;
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      */
     state?: pulumi.Input<string>;
     /**
@@ -239,7 +240,7 @@ export interface ResponderRecipeState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -249,7 +250,7 @@ export interface ResponderRecipeState {
  */
 export interface ResponderRecipeArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -275,11 +276,11 @@ export interface ResponderRecipeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      */
     responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[]>;
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      *
      *
      * ** IMPORTANT **

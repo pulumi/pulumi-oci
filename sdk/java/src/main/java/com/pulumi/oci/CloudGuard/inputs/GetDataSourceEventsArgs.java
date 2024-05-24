@@ -19,14 +19,14 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
     public static final GetDataSourceEventsArgs Empty = new GetDataSourceEventsArgs();
 
     /**
-     * DataSource OCID
+     * Data source OCID.
      * 
      */
     @Import(name="dataSourceId", required=true)
     private Output<String> dataSourceId;
 
     /**
-     * @return DataSource OCID
+     * @return Data source OCID.
      * 
      */
     public Output<String> dataSourceId() {
@@ -41,14 +41,14 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * A filter to return only resource their region matches the given region.
+     * A filter to return only resource where their region matches the given region.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return A filter to return only resource their region matches the given region.
+     * @return A filter to return only resource where their region matches the given region.
      * 
      */
     public Optional<Output<String>> region() {
@@ -82,7 +82,7 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param dataSourceId DataSource OCID
+         * @param dataSourceId Data source OCID.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param dataSourceId DataSource OCID
+         * @param dataSourceId Data source OCID.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param region A filter to return only resource their region matches the given region.
+         * @param region A filter to return only resource where their region matches the given region.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class GetDataSourceEventsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param region A filter to return only resource their region matches the given region.
+         * @param region A filter to return only resource where their region matches the given region.
          * 
          * @return builder
          * 

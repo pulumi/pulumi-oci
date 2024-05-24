@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Queue
         /// The endpoint to use to consume or publish messages in the queue.
         /// </summary>
         public readonly string MessagesEndpoint;
-        public readonly bool PurgeQueue;
+        public readonly int PurgeTrigger;
         public readonly string PurgeType;
         public readonly string QueueId;
         /// <summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Queue
 
             string messagesEndpoint,
 
-            bool purgeQueue,
+            int purgeTrigger,
 
             string purgeType,
 
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.Queue
             Id = id;
             LifecycleDetails = lifecycleDetails;
             MessagesEndpoint = messagesEndpoint;
-            PurgeQueue = purgeQueue;
+            PurgeTrigger = purgeTrigger;
             PurgeType = purgeType;
             QueueId = queueId;
             RetentionInSeconds = retentionInSeconds;

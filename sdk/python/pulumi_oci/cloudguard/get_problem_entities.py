@@ -62,7 +62,7 @@ class GetProblemEntitiesResult:
     @pulumi.getter(name="problemId")
     def problem_id(self) -> str:
         """
-        Attached problem id
+        Attached problem ID
         """
         return pulumi.get(self, "problem_id")
 
@@ -86,6 +86,7 @@ def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblem
     This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
 
     Returns a list of entities for a CloudGuard Problem
+    Returns a list of entities for a problem.
 
     ## Example Usage
 
@@ -97,7 +98,7 @@ def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblem
     ```
 
 
-    :param str problem_id: OCId of the problem.
+    :param str problem_id: OCID of the problem.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -120,6 +121,7 @@ def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence
     This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
 
     Returns a list of entities for a CloudGuard Problem
+    Returns a list of entities for a problem.
 
     ## Example Usage
 
@@ -131,6 +133,6 @@ def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence
     ```
 
 
-    :param str problem_id: OCId of the problem.
+    :param str problem_id: OCID of the problem.
     """
     ...

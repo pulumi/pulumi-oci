@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+ * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getDetectorRecipe(args: GetDetectorRecipeArgs, opts?: pulumi.Inv
  */
 export interface GetDetectorRecipeArgs {
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      */
     detectorRecipeId: string;
 }
@@ -45,7 +45,7 @@ export interface GetDetectorRecipeArgs {
  */
 export interface GetDetectorRecipeResult {
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of detector recipe
      */
     readonly compartmentId: string;
     /**
@@ -53,20 +53,24 @@ export interface GetDetectorRecipeResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Description for DetectorRecipeDetectorRule.
+     * Description for detector recipe detector rule
      */
     readonly description: string;
     /**
-     * detector for the rule
+     * Detector recipe for the rule
      */
     readonly detector: string;
     readonly detectorRecipeId: string;
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     */
+    readonly detectorRecipeType: string;
     /**
      * List of detector rules for the detector type for recipe - user input
      */
     readonly detectorRules: outputs.CloudGuard.GetDetectorRecipeDetectorRule[];
     /**
-     * The display name of entity
+     * Display name of the entity
      */
     readonly displayName: string;
     /**
@@ -78,7 +82,7 @@ export interface GetDetectorRecipeResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Ocid for detector recipe
+     * OCID for detector recipe
      */
     readonly id: string;
     /**
@@ -86,11 +90,11 @@ export interface GetDetectorRecipeResult {
      */
     readonly owner: string;
     /**
-     * Recipe Ocid of the Source Recipe to be cloned
+     * Recipe OCID of the source recipe to be cloned
      */
     readonly sourceDetectorRecipeId: string;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     readonly state: string;
     /**
@@ -98,22 +102,22 @@ export interface GetDetectorRecipeResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      */
     readonly targetIds: string[];
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      */
     readonly timeCreated: string;
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+ * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
  *
  * ## Example Usage
  *
@@ -135,7 +139,7 @@ export function getDetectorRecipeOutput(args: GetDetectorRecipeOutputArgs, opts?
  */
 export interface GetDetectorRecipeOutputArgs {
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      */
     detectorRecipeId: pulumi.Input<string>;
 }

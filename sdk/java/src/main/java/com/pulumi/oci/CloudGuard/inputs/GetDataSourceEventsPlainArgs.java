@@ -18,14 +18,14 @@ public final class GetDataSourceEventsPlainArgs extends com.pulumi.resources.Inv
     public static final GetDataSourceEventsPlainArgs Empty = new GetDataSourceEventsPlainArgs();
 
     /**
-     * DataSource OCID
+     * Data source OCID.
      * 
      */
     @Import(name="dataSourceId", required=true)
     private String dataSourceId;
 
     /**
-     * @return DataSource OCID
+     * @return Data source OCID.
      * 
      */
     public String dataSourceId() {
@@ -40,14 +40,14 @@ public final class GetDataSourceEventsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * A filter to return only resource their region matches the given region.
+     * A filter to return only resource where their region matches the given region.
      * 
      */
     @Import(name="region")
     private @Nullable String region;
 
     /**
-     * @return A filter to return only resource their region matches the given region.
+     * @return A filter to return only resource where their region matches the given region.
      * 
      */
     public Optional<String> region() {
@@ -81,7 +81,7 @@ public final class GetDataSourceEventsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param dataSourceId DataSource OCID
+         * @param dataSourceId Data source OCID.
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class GetDataSourceEventsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param region A filter to return only resource their region matches the given region.
+         * @param region A filter to return only resource where their region matches the given region.
          * 
          * @return builder
          * 

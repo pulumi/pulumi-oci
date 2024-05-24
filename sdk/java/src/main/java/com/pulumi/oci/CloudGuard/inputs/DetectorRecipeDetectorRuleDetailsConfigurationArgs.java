@@ -19,14 +19,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
     public static final DetectorRecipeDetectorRuleDetailsConfigurationArgs Empty = new DetectorRecipeDetectorRuleDetailsConfigurationArgs();
 
     /**
-     * (Updatable) Unique name of the configuration
+     * (Updatable) Unique identifier of the configuration
      * 
      */
     @Import(name="configKey", required=true)
     private Output<String> configKey;
 
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return (Updatable) Unique identifier of the configuration
      * 
      */
     public Output<String> configKey() {
@@ -34,14 +34,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
     }
 
     /**
-     * (Updatable) configuration data type
+     * (Updatable) Configuration data type
      * 
      */
     @Import(name="dataType")
     private @Nullable Output<String> dataType;
 
     /**
-     * @return (Updatable) configuration data type
+     * @return (Updatable) Configuration data type
      * 
      */
     public Optional<Output<String>> dataType() {
@@ -49,14 +49,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
     }
 
     /**
-     * (Updatable) configuration name
+     * (Updatable) Configuration name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) configuration name
+     * @return (Updatable) Configuration name
      * 
      */
     public Output<String> name() {
@@ -64,14 +64,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
     }
 
     /**
-     * (Updatable) configuration value
+     * (Updatable) Configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -122,7 +122,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey (Updatable) Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey (Updatable) Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param dataType (Updatable) configuration data type
+         * @param dataType (Updatable) Configuration data type
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param dataType (Updatable) configuration data type
+         * @param dataType (Updatable) Configuration data type
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name (Updatable) Configuration name
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name (Updatable) Configuration name
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 

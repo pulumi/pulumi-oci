@@ -13,12 +13,12 @@ import java.util.Objects;
 @CustomType
 public final class GetProblemEntitiesProblemEntityCollectionItem {
     /**
-     * @return List of event related to a DataSource
+     * @return List of entity details related to a data source
      * 
      */
     private List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails;
     /**
-     * @return OCId of the problem.
+     * @return OCID of the problem.
      * 
      */
     private String problemId;
@@ -28,7 +28,7 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
      */
     private List<String> regions;
     /**
-     * @return Log result query url for a data source query
+     * @return Log result query URL for a data source query
      * 
      */
     private String resultUrl;
@@ -45,14 +45,14 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
 
     private GetProblemEntitiesProblemEntityCollectionItem() {}
     /**
-     * @return List of event related to a DataSource
+     * @return List of entity details related to a data source
      * 
      */
     public List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails() {
         return this.entityDetails;
     }
     /**
-     * @return OCId of the problem.
+     * @return OCID of the problem.
      * 
      */
     public String problemId() {
@@ -66,7 +66,7 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
         return this.regions;
     }
     /**
-     * @return Log result query url for a data source query
+     * @return Log result query URL for a data source query
      * 
      */
     public String resultUrl() {

@@ -13,19 +13,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the security zone to associate this compartment with.
+        /// The name of the security zone to associate with this compartment.
         /// </summary>
         [Input("securityZoneDisplayName")]
         public Input<string>? SecurityZoneDisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the security zone to associate this compartment with.
+        /// The OCID of the security zone to associate with this compartment
         /// </summary>
         [Input("securityZoneId")]
         public Input<string>? SecurityZoneId { get; set; }
 
         /// <summary>
-        /// possible type of targets(COMPARTMENT/FACLOUD)
+        /// Type of resource that target support (COMPARTMENT/FACLOUD)
         /// </summary>
         [Input("targetResourceType")]
         public Input<string>? TargetResourceType { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetailTargetSecurityZoneRecipeArgs>? _targetSecurityZoneRecipes;
 
         /// <summary>
-        /// The list of security zone recipes to associate this compartment with.
+        /// The list of security zone recipes to associate with this compartment
         /// </summary>
         public InputList<Inputs.TargetTargetDetailTargetSecurityZoneRecipeArgs> TargetSecurityZoneRecipes
         {

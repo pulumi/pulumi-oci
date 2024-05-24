@@ -22,7 +22,7 @@ class GetPipelineRunResult:
     """
     A collection of values returned by getPipelineRun.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -59,6 +59,9 @@ class GetPipelineRunResult:
         if log_details and not isinstance(log_details, list):
             raise TypeError("Expected argument 'log_details' to be a list")
         pulumi.set(__self__, "log_details", log_details)
+        if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
+            raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if pipeline_id and not isinstance(pipeline_id, str):
             raise TypeError("Expected argument 'pipeline_id' to be a str")
         pulumi.set(__self__, "pipeline_id", pipeline_id)
@@ -136,6 +139,9 @@ class GetPipelineRunResult:
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
     def delete_related_job_runs(self) -> bool:
+        """
+        If set to true will delete related job runs.
+        """
         return pulumi.get(self, "delete_related_job_runs")
 
     @property
@@ -185,6 +191,11 @@ class GetPipelineRunResult:
         Customer logging details for pipeline run.
         """
         return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="pipelineId")
@@ -290,6 +301,7 @@ class AwaitableGetPipelineRunResult(GetPipelineRunResult):
             lifecycle_details=self.lifecycle_details,
             log_configuration_override_details=self.log_configuration_override_details,
             log_details=self.log_details,
+            opc_parent_rpt_url=self.opc_parent_rpt_url,
             pipeline_id=self.pipeline_id,
             pipeline_run_id=self.pipeline_run_id,
             project_id=self.project_id,
@@ -340,6 +352,7 @@ def get_pipeline_run(pipeline_run_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_configuration_override_details=pulumi.get(__ret__, 'log_configuration_override_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
+        opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_run_id=pulumi.get(__ret__, 'pipeline_run_id'),
         project_id=pulumi.get(__ret__, 'project_id'),

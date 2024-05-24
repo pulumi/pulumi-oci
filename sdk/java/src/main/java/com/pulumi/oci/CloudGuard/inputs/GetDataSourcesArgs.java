@@ -35,14 +35,14 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -50,14 +50,14 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     @Import(name="compartmentIdInSubtree")
     private @Nullable Output<Boolean> compartmentIdInSubtree;
 
     /**
-     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     public Optional<Output<Boolean>> compartmentIdInSubtree() {
@@ -65,14 +65,14 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      * 
      */
     @Import(name="dataSourceFeedProvider")
     private @Nullable Output<String> dataSourceFeedProvider;
 
     /**
-     * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * @return A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      * 
      */
     public Optional<Output<String>> dataSourceFeedProvider() {
@@ -102,14 +102,14 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their query type matches the given LoggingQueryType.
+     * A filter to return only resources where their query type matches the given LoggingQueryType.
      * 
      */
     @Import(name="loggingQueryType")
     private @Nullable Output<String> loggingQueryType;
 
     /**
-     * @return A filter to return only resources their query type matches the given LoggingQueryType.
+     * @return A filter to return only resources where their query type matches the given LoggingQueryType.
      * 
      */
     public Optional<Output<String>> loggingQueryType() {
@@ -117,14 +117,14 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<Output<String>> state() {
@@ -184,7 +184,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dataSourceFeedProvider A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+         * @param dataSourceFeedProvider A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dataSourceFeedProvider A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+         * @param dataSourceFeedProvider A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param loggingQueryType A filter to return only resources their query type matches the given LoggingQueryType.
+         * @param loggingQueryType A filter to return only resources where their query type matches the given LoggingQueryType.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param loggingQueryType A filter to return only resources their query type matches the given LoggingQueryType.
+         * @param loggingQueryType A filter to return only resources where their query type matches the given LoggingQueryType.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class GetDataSourcesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

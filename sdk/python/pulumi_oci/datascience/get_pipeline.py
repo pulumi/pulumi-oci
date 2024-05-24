@@ -119,6 +119,9 @@ class GetPipelineResult:
     @property
     @pulumi.getter(name="deleteRelatedPipelineRuns")
     def delete_related_pipeline_runs(self) -> bool:
+        """
+        If set to true will delete pipeline runs which are in a terminal state.
+        """
         return pulumi.get(self, "delete_related_pipeline_runs")
 
     @property

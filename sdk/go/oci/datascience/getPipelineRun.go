@@ -67,8 +67,9 @@ type LookupPipelineRunResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedJobRuns bool                   `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// If set to true will delete related job runs.
+	DeleteRelatedJobRuns bool `pulumi:"deleteRelatedJobRuns"`
 	// A user-friendly display name for the resource.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -80,7 +81,8 @@ type LookupPipelineRunResult struct {
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails []GetPipelineRunLogConfigurationOverrideDetail `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
-	LogDetails []GetPipelineRunLogDetail `pulumi:"logDetails"`
+	LogDetails      []GetPipelineRunLogDetail `pulumi:"logDetails"`
+	OpcParentRptUrl string                    `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId    string `pulumi:"pipelineId"`
 	PipelineRunId string `pulumi:"pipelineRunId"`
@@ -169,6 +171,7 @@ func (o LookupPipelineRunResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// If set to true will delete related job runs.
 func (o LookupPipelineRunResultOutput) DeleteRelatedJobRuns() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) bool { return v.DeleteRelatedJobRuns }).(pulumi.BoolOutput)
 }
@@ -203,6 +206,10 @@ func (o LookupPipelineRunResultOutput) LogConfigurationOverrideDetails() GetPipe
 // Customer logging details for pipeline run.
 func (o LookupPipelineRunResultOutput) LogDetails() GetPipelineRunLogDetailArrayOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) []GetPipelineRunLogDetail { return v.LogDetails }).(GetPipelineRunLogDetailArrayOutput)
+}
+
+func (o LookupPipelineRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPipelineRunResult) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.

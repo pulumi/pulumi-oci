@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+ * Creates a security zone recipe (SecurityRecipe resource), using parameters
+ * passed in a CreateSecurityRecipeDetails resource.
  *
  * ## Example Usage
  *
@@ -66,7 +67,7 @@ export class SecurityRecipe extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -78,7 +79,9 @@ export class SecurityRecipe extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The recipe's name
+     * (Updatable) The recipe's display name.
+     *
+     * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -96,7 +99,7 @@ export class SecurityRecipe extends pulumi.CustomResource {
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      *
      *
      * ** IMPORTANT **
@@ -104,7 +107,7 @@ export class SecurityRecipe extends pulumi.CustomResource {
      */
     public readonly securityPolicies!: pulumi.Output<string[]>;
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -173,7 +176,7 @@ export class SecurityRecipe extends pulumi.CustomResource {
  */
 export interface SecurityRecipeState {
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -185,7 +188,9 @@ export interface SecurityRecipeState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The recipe's name
+     * (Updatable) The recipe's display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -203,7 +208,7 @@ export interface SecurityRecipeState {
      */
     owner?: pulumi.Input<string>;
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      *
      *
      * ** IMPORTANT **
@@ -211,7 +216,7 @@ export interface SecurityRecipeState {
      */
     securityPolicies?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      */
     state?: pulumi.Input<string>;
     /**
@@ -229,7 +234,7 @@ export interface SecurityRecipeState {
  */
 export interface SecurityRecipeArgs {
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -241,7 +246,9 @@ export interface SecurityRecipeArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The recipe's name
+     * (Updatable) The recipe's display name.
+     *
+     * Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -251,7 +258,7 @@ export interface SecurityRecipeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      *
      *
      * ** IMPORTANT **

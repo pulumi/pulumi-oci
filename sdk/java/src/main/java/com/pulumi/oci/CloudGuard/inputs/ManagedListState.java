@@ -20,14 +20,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     public static final ManagedListState Empty = new ManagedListState();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -50,7 +50,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -59,7 +59,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Managed list description.
+     * @return (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -88,14 +88,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      * 
      */
     @Import(name="feedProvider")
     private @Nullable Output<String> feedProvider;
 
     /**
-     * @return provider of the feed
+     * @return Provider of the managed list feed
      * 
      */
     public Optional<Output<String>> feedProvider() {
@@ -122,14 +122,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If this list is editable or not
+     * Is this list editable?
      * 
      */
     @Import(name="isEditable")
     private @Nullable Output<Boolean> isEditable;
 
     /**
-     * @return If this list is editable or not
+     * @return Is this list editable?
      * 
      */
     public Optional<Output<Boolean>> isEditable() {
@@ -137,14 +137,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     @Import(name="lifecyleDetails")
     private @Nullable Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public Optional<Output<String>> lifecyleDetails() {
@@ -152,14 +152,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      * 
      */
     @Import(name="listItems")
     private @Nullable Output<List<String>> listItems;
 
     /**
-     * @return (Updatable) List of ManagedListItem
+     * @return (Updatable) List of items in the managed list
      * 
      */
     public Optional<Output<List<String>>> listItems() {
@@ -167,14 +167,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * type of the list
+     * Type of information stored in the list
      * 
      */
     @Import(name="listType")
     private @Nullable Output<String> listType;
 
     /**
-     * @return type of the list
+     * @return Type of information stored in the list
      * 
      */
     public Optional<Output<String>> listType() {
@@ -182,7 +182,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -192,7 +192,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> sourceManagedListId;
 
     /**
-     * @return OCID of the Source ManagedList
+     * @return OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,14 +203,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Optional<Output<String>> state() {
@@ -248,14 +248,14 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the managed list was updated. Format defined by RFC3339.
+     * @return The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -301,7 +301,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Managed list description.
+         * @param description (Updatable) Managed list description
          * 
          * Avoid entering confidential information.
          * 
@@ -356,7 +356,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Managed list description.
+         * @param description (Updatable) Managed list description
          * 
          * Avoid entering confidential information.
          * 
@@ -393,7 +393,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param feedProvider provider of the feed
+         * @param feedProvider Provider of the managed list feed
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param feedProvider provider of the feed
+         * @param feedProvider Provider of the managed list feed
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEditable If this list is editable or not
+         * @param isEditable Is this list editable?
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEditable If this list is editable or not
+         * @param isEditable Is this list editable?
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecyleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecyleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecyleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecyleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -512,7 +512,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listType type of the list
+         * @param listType Type of information stored in the list
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listType type of the list
+         * @param listType Type of information stored in the list
          * 
          * @return builder
          * 
@@ -533,7 +533,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceManagedListId OCID of the Source ManagedList
+         * @param sourceManagedListId OCID of the source managed list
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -547,7 +547,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceManagedListId OCID of the Source ManagedList
+         * @param sourceManagedListId OCID of the source managed list
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -560,7 +560,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the managed list was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the managed list was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The date and time the managed list was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the managed list was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

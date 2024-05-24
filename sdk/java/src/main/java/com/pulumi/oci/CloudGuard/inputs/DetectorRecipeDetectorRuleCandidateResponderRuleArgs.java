@@ -36,14 +36,14 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
     }
 
     /**
-     * Ocid for detector recipe
+     * OCID for detector recipe
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public Optional<Output<String>> id() {
@@ -51,14 +51,14 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
     }
 
     /**
-     * Preferred state
+     * Is this the preferred state?
      * 
      */
     @Import(name="isPreferred")
     private @Nullable Output<Boolean> isPreferred;
 
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     public Optional<Output<Boolean>> isPreferred() {
@@ -117,7 +117,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param id Ocid for detector recipe
+         * @param id OCID for detector recipe
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param id Ocid for detector recipe
+         * @param id OCID for detector recipe
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param isPreferred Preferred state
+         * @param isPreferred Is this the preferred state?
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRuleArgs extends 
         }
 
         /**
-         * @param isPreferred Preferred state
+         * @param isPreferred Is this the preferred state?
          * 
          * @return builder
          * 

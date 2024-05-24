@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeEffectiveResponderRule {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -26,12 +26,12 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -43,22 +43,22 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     private @Nullable List<String> policies;
     /**
-     * @return Unique ResponderRule identifier.
+     * @return Unique identifier for the responder rule
      * 
      */
     private @Nullable String responderRuleId;
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     private @Nullable String state;
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     private @Nullable List<String> supportedModes;
@@ -68,19 +68,19 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     private @Nullable String type;
 
     private TargetTargetResponderRecipeEffectiveResponderRule() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -96,14 +96,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details() {
         return this.details == null ? List.of() : this.details;
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -119,28 +119,28 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public List<String> policies() {
         return this.policies == null ? List.of() : this.policies;
     }
     /**
-     * @return Unique ResponderRule identifier.
+     * @return Unique identifier for the responder rule
      * 
      */
     public Optional<String> responderRuleId() {
         return Optional.ofNullable(this.responderRuleId);
     }
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public List<String> supportedModes() {
@@ -154,14 +154,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<String> type() {

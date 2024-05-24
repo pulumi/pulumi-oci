@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     private String displayName;
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     private String entityType;
@@ -28,14 +28,14 @@ public final class GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 
     private GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping() {}
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public String entityType() {

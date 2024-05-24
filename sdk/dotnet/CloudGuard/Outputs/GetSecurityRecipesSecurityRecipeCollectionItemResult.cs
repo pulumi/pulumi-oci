@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetSecurityRecipesSecurityRecipeCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe`)
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,11 +46,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// The list of `SecurityPolicy` ids that are included in the recipe
+        /// The list of security policy IDs that are included in the recipe
         /// </summary>
         public readonly ImmutableArray<string> SecurityPolicies;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>

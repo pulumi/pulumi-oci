@@ -6,8 +6,11 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.PipelineRunStepOverrideDetailStepConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetails;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class PipelineRunStepOverrideDetail {
@@ -16,6 +19,11 @@ public final class PipelineRunStepOverrideDetail {
      * 
      */
     private PipelineRunStepOverrideDetailStepConfigurationDetails stepConfigurationDetails;
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    private @Nullable PipelineRunStepOverrideDetailStepContainerConfigurationDetails stepContainerConfigurationDetails;
     /**
      * @return The name of the step.
      * 
@@ -29,6 +37,13 @@ public final class PipelineRunStepOverrideDetail {
      */
     public PipelineRunStepOverrideDetailStepConfigurationDetails stepConfigurationDetails() {
         return this.stepConfigurationDetails;
+    }
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public Optional<PipelineRunStepOverrideDetailStepContainerConfigurationDetails> stepContainerConfigurationDetails() {
+        return Optional.ofNullable(this.stepContainerConfigurationDetails);
     }
     /**
      * @return The name of the step.
@@ -48,11 +63,13 @@ public final class PipelineRunStepOverrideDetail {
     @CustomType.Builder
     public static final class Builder {
         private PipelineRunStepOverrideDetailStepConfigurationDetails stepConfigurationDetails;
+        private @Nullable PipelineRunStepOverrideDetailStepContainerConfigurationDetails stepContainerConfigurationDetails;
         private String stepName;
         public Builder() {}
         public Builder(PipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
+    	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
     	      this.stepName = defaults.stepName;
         }
 
@@ -62,6 +79,12 @@ public final class PipelineRunStepOverrideDetail {
               throw new MissingRequiredPropertyException("PipelineRunStepOverrideDetail", "stepConfigurationDetails");
             }
             this.stepConfigurationDetails = stepConfigurationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stepContainerConfigurationDetails(@Nullable PipelineRunStepOverrideDetailStepContainerConfigurationDetails stepContainerConfigurationDetails) {
+
+            this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             return this;
         }
         @CustomType.Setter
@@ -75,6 +98,7 @@ public final class PipelineRunStepOverrideDetail {
         public PipelineRunStepOverrideDetail build() {
             final var _resultValue = new PipelineRunStepOverrideDetail();
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             _resultValue.stepName = stepName;
             return _resultValue;
         }

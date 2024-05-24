@@ -13,7 +13,8 @@ import (
 
 // This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+// Returns the configuration details for a Cloud Guard tenancy,
+// identified by root compartment OCID.
 //
 // ## Example Usage
 //
@@ -52,7 +53,7 @@ func LookupCloudGuardConfiguration(ctx *pulumi.Context, args *LookupCloudGuardCo
 
 // A collection of arguments for invoking getCloudGuardConfiguration.
 type LookupCloudGuardConfigurationArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 }
 
@@ -60,11 +61,11 @@ type LookupCloudGuardConfigurationArgs struct {
 type LookupCloudGuardConfigurationResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	Id            string `pulumi:"id"`
-	// The reporting region value
+	// The reporting region
 	ReportingRegion string `pulumi:"reportingRegion"`
-	// Identifies if Oracle managed resources were created by customers
+	// Were Oracle-managed resources created by customer?
 	SelfManageResources bool `pulumi:"selfManageResources"`
-	// Status of Cloud Guard Tenant
+	// Status of the Cloud Guard tenant
 	Status string `pulumi:"status"`
 }
 
@@ -83,7 +84,7 @@ func LookupCloudGuardConfigurationOutput(ctx *pulumi.Context, args LookupCloudGu
 
 // A collection of arguments for invoking getCloudGuardConfiguration.
 type LookupCloudGuardConfigurationOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 }
 
@@ -114,17 +115,17 @@ func (o LookupCloudGuardConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudGuardConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The reporting region value
+// The reporting region
 func (o LookupCloudGuardConfigurationResultOutput) ReportingRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudGuardConfigurationResult) string { return v.ReportingRegion }).(pulumi.StringOutput)
 }
 
-// Identifies if Oracle managed resources were created by customers
+// Were Oracle-managed resources created by customer?
 func (o LookupCloudGuardConfigurationResultOutput) SelfManageResources() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCloudGuardConfigurationResult) bool { return v.SelfManageResources }).(pulumi.BoolOutput)
 }
 
-// Status of Cloud Guard Tenant
+// Status of the Cloud Guard tenant
 func (o LookupCloudGuardConfigurationResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudGuardConfigurationResult) string { return v.Status }).(pulumi.StringOutput)
 }

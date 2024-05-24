@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -26,19 +26,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// List of responder rules associated with the recipe after applying all defaults
+        /// List of currently enabled responder rules for the responder type for recipe after applying defaults
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult> EffectiveResponderRules;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// Unique identifier for Responder Recipe of which this is an extension.
+        /// Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
         /// </summary>
         public readonly string ResponderRecipeId;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

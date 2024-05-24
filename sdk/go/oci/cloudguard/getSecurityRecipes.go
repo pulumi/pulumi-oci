@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Gets a list of all security zone recipes in a compartment.
+// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+// compartment, identified by compartmentId.
 //
 // ## Example Usage
 //
@@ -55,29 +56,29 @@ func GetSecurityRecipes(ctx *pulumi.Context, args *GetSecurityRecipesArgs, opts 
 
 // A collection of arguments for invoking getSecurityRecipes.
 type GetSecurityRecipesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetSecurityRecipesFilter `pulumi:"filters"`
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe`)
 	Id *string `pulumi:"id"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getSecurityRecipes.
 type GetSecurityRecipesResult struct {
-	// The id of the compartment that contains the recipe
+	// The OCID of the compartment that contains the recipe
 	CompartmentId string `pulumi:"compartmentId"`
-	// The recipe's name
+	// The recipe's display name
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetSecurityRecipesFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can’t be changed after creation
 	Id *string `pulumi:"id"`
 	// The list of security_recipe_collection.
 	SecurityRecipeCollections []GetSecurityRecipesSecurityRecipeCollection `pulumi:"securityRecipeCollections"`
-	// The current state of the recipe
+	// The current lifecycle state of the recipe
 	State *string `pulumi:"state"`
 }
 
@@ -96,14 +97,14 @@ func GetSecurityRecipesOutput(ctx *pulumi.Context, args GetSecurityRecipesOutput
 
 // A collection of arguments for invoking getSecurityRecipes.
 type GetSecurityRecipesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput              `pulumi:"displayName"`
 	Filters     GetSecurityRecipesFilterArrayInput `pulumi:"filters"`
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe`)
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -126,12 +127,12 @@ func (o GetSecurityRecipesResultOutput) ToGetSecurityRecipesResultOutputWithCont
 	return o
 }
 
-// The id of the compartment that contains the recipe
+// The OCID of the compartment that contains the recipe
 func (o GetSecurityRecipesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityRecipesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The recipe's name
+// The recipe's display name
 func (o GetSecurityRecipesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityRecipesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -140,7 +141,7 @@ func (o GetSecurityRecipesResultOutput) Filters() GetSecurityRecipesFilterArrayO
 	return o.ApplyT(func(v GetSecurityRecipesResult) []GetSecurityRecipesFilter { return v.Filters }).(GetSecurityRecipesFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can’t be changed after creation
 func (o GetSecurityRecipesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityRecipesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -152,7 +153,7 @@ func (o GetSecurityRecipesResultOutput) SecurityRecipeCollections() GetSecurityR
 	}).(GetSecurityRecipesSecurityRecipeCollectionArrayOutput)
 }
 
-// The current state of the recipe
+// The current lifecycle state of the recipe
 func (o GetSecurityRecipesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityRecipesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -28,6 +28,11 @@ public final class GetPipelineInfrastructureConfigurationDetail {
      * 
      */
     private String shapeName;
+    /**
+     * @return The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    private String subnetId;
 
     private GetPipelineInfrastructureConfigurationDetail() {}
     /**
@@ -51,6 +56,13 @@ public final class GetPipelineInfrastructureConfigurationDetail {
     public String shapeName() {
         return this.shapeName;
     }
+    /**
+     * @return The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -64,12 +76,14 @@ public final class GetPipelineInfrastructureConfigurationDetail {
         private Integer blockStorageSizeInGbs;
         private List<GetPipelineInfrastructureConfigurationDetailShapeConfigDetail> shapeConfigDetails;
         private String shapeName;
+        private String subnetId;
         public Builder() {}
         public Builder(GetPipelineInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
     	      this.shapeConfigDetails = defaults.shapeConfigDetails;
     	      this.shapeName = defaults.shapeName;
+    	      this.subnetId = defaults.subnetId;
         }
 
         @CustomType.Setter
@@ -99,11 +113,20 @@ public final class GetPipelineInfrastructureConfigurationDetail {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineInfrastructureConfigurationDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
+            return this;
+        }
         public GetPipelineInfrastructureConfigurationDetail build() {
             final var _resultValue = new GetPipelineInfrastructureConfigurationDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
             _resultValue.shapeConfigDetails = shapeConfigDetails;
             _resultValue.shapeName = shapeName;
+            _resultValue.subnetId = subnetId;
             return _resultValue;
         }
     }

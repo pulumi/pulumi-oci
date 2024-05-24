@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class CloudGuardDataSourceRegionStatusDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Data Source replication region.
+        /// Data source replication region
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// (Updatable) Enablement status of data source.
         /// 
         /// 
         /// ** IMPORTANT **

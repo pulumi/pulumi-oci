@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
     /**
-     * @return (Updatable) The display name of entity
+     * @return (Updatable) Display name of the entity
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Possible type of entity
+     * @return (Updatable) Type of entity
      * 
      */
     private @Nullable String entityType;
@@ -30,14 +30,14 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
 
     private DetectorRecipeDetectorRuleDetailsEntitiesMapping() {}
     /**
-     * @return (Updatable) The display name of entity
+     * @return (Updatable) Display name of the entity
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Possible type of entity
+     * @return (Updatable) Type of entity
      * 
      */
     public Optional<String> entityType() {

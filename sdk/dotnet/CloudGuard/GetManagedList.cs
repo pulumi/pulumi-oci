@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetManagedListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The cloudguard list OCID to be passed in the request.
+        /// The managed list OCID to be passed in the request.
         /// </summary>
         [Input("managedListId", required: true)]
         public string ManagedListId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetManagedListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The cloudguard list OCID to be passed in the request.
+        /// The managed list OCID to be passed in the request.
         /// </summary>
         [Input("managedListId", required: true)]
         public Input<string> ManagedListId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetManagedListResult
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -106,15 +106,15 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ManagedList description.
+        /// Managed list description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ManagedList display name.
+        /// Managed list display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// provider of the feed
+        /// Provider of the managed list feed
         /// </summary>
         public readonly string FeedProvider;
         /// <summary>
@@ -122,32 +122,32 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// If this list is editable or not
+        /// Is this list editable?
         /// </summary>
         public readonly bool IsEditable;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
-        /// List of ManagedListItem
+        /// List of items in the managed list
         /// </summary>
         public readonly ImmutableArray<string> ListItems;
         /// <summary>
-        /// type of the list
+        /// Type of information contained in the managed list
         /// </summary>
         public readonly string ListType;
         public readonly string ManagedListId;
         /// <summary>
-        /// OCID of the Source ManagedList
+        /// OCID of the source managed list
         /// </summary>
         public readonly string SourceManagedListId;
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the managed list was updated. Format defined by RFC3339.
+        /// The date and time the managed list was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

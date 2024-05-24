@@ -18,13 +18,13 @@ import javax.annotation.Nullable;
 public final class GetGuardTargetsResult {
     private @Nullable String accessLevel;
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private @Nullable String displayName;
@@ -36,7 +36,7 @@ public final class GetGuardTargetsResult {
     private String id;
     private @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     private @Nullable String state;
@@ -51,7 +51,7 @@ public final class GetGuardTargetsResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
@@ -61,7 +61,7 @@ public final class GetGuardTargetsResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public Optional<String> displayName() {
@@ -81,7 +81,7 @@ public final class GetGuardTargetsResult {
         return Optional.ofNullable(this.isNonSecurityZoneTargetsOnlyQuery);
     }
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     public Optional<String> state() {

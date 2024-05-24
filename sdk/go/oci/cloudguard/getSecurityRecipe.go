@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+// Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
 //
 // ## Example Usage
 //
@@ -52,32 +52,32 @@ func LookupSecurityRecipe(ctx *pulumi.Context, args *LookupSecurityRecipeArgs, o
 
 // A collection of arguments for invoking getSecurityRecipe.
 type LookupSecurityRecipeArgs struct {
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe`)
 	SecurityRecipeId string `pulumi:"securityRecipeId"`
 }
 
 // A collection of values returned by getSecurityRecipe.
 type LookupSecurityRecipeResult struct {
-	// The id of the compartment that contains the recipe
+	// The OCID of the compartment that contains the recipe
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The recipe's description
 	Description string `pulumi:"description"`
-	// The recipe's name
+	// The recipe's display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can’t be changed after creation
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
 	Owner string `pulumi:"owner"`
-	// The list of `SecurityPolicy` ids that are included in the recipe
+	// The list of security policy IDs that are included in the recipe
 	SecurityPolicies []string `pulumi:"securityPolicies"`
 	SecurityRecipeId string   `pulumi:"securityRecipeId"`
-	// The current state of the recipe
+	// The current lifecycle state of the recipe
 	State string `pulumi:"state"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -100,7 +100,7 @@ func LookupSecurityRecipeOutput(ctx *pulumi.Context, args LookupSecurityRecipeOu
 
 // A collection of arguments for invoking getSecurityRecipe.
 type LookupSecurityRecipeOutputArgs struct {
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe`)
 	SecurityRecipeId pulumi.StringInput `pulumi:"securityRecipeId"`
 }
 
@@ -123,7 +123,7 @@ func (o LookupSecurityRecipeResultOutput) ToLookupSecurityRecipeResultOutputWith
 	return o
 }
 
-// The id of the compartment that contains the recipe
+// The OCID of the compartment that contains the recipe
 func (o LookupSecurityRecipeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -138,7 +138,7 @@ func (o LookupSecurityRecipeResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The recipe's name
+// The recipe's display name
 func (o LookupSecurityRecipeResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -148,7 +148,7 @@ func (o LookupSecurityRecipeResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can’t be changed after creation
 func (o LookupSecurityRecipeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -163,7 +163,7 @@ func (o LookupSecurityRecipeResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// The list of `SecurityPolicy` ids that are included in the recipe
+// The list of security policy IDs that are included in the recipe
 func (o LookupSecurityRecipeResultOutput) SecurityPolicies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) []string { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
 }
@@ -172,7 +172,7 @@ func (o LookupSecurityRecipeResultOutput) SecurityRecipeId() pulumi.StringOutput
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.SecurityRecipeId }).(pulumi.StringOutput)
 }
 
-// The current state of the recipe
+// The current lifecycle state of the recipe
 func (o LookupSecurityRecipeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.State }).(pulumi.StringOutput)
 }

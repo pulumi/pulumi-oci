@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Base condition object
+        /// The base condition resource.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

@@ -7,7 +7,9 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+ * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+ * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+ * the zone that attempts to violate that policy is blocked.
  *
  * ## Example Usage
  *
@@ -33,7 +35,7 @@ export function getSecurityPolicy(args: GetSecurityPolicyArgs, opts?: pulumi.Inv
  */
 export interface GetSecurityPolicyArgs {
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      */
     securityPolicyId: string;
 }
@@ -43,11 +45,11 @@ export interface GetSecurityPolicyArgs {
  */
 export interface GetSecurityPolicyResult {
     /**
-     * The category of security policy
+     * The category of the security policy
      */
     readonly category: string;
     /**
-     * The id of the security policy's compartment
+     * The OCID of the security policy's compartment
      */
     readonly compartmentId: string;
     /**
@@ -59,7 +61,7 @@ export interface GetSecurityPolicyResult {
      */
     readonly description: string;
     /**
-     * The security policy's full name
+     * The security policy's display name
      */
     readonly displayName: string;
     /**
@@ -88,7 +90,7 @@ export interface GetSecurityPolicyResult {
      */
     readonly services: string[];
     /**
-     * The current state of the security policy
+     * The current lifecycle state of the security policy
      */
     readonly state: string;
     /**
@@ -103,7 +105,9 @@ export interface GetSecurityPolicyResult {
 /**
  * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+ * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+ * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+ * the zone that attempts to violate that policy is blocked.
  *
  * ## Example Usage
  *
@@ -125,7 +129,7 @@ export function getSecurityPolicyOutput(args: GetSecurityPolicyOutputArgs, opts?
  */
 export interface GetSecurityPolicyOutputArgs {
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      */
     securityPolicyId: pulumi.Input<string>;
 }

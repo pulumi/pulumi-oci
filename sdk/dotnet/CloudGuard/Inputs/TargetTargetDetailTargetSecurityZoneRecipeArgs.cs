@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetailTargetSecurityZoneRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _securityPolicies;
 
         /// <summary>
-        /// The list of `SecurityPolicy` ids that are included in the recipe
+        /// The list of security policy IDs that are included in the recipe
         /// </summary>
         public InputList<string> SecurityPolicies
         {
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

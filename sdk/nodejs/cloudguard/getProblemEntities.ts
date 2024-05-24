@@ -10,6 +10,7 @@ import * as utilities from "../utilities";
  * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
  *
  * Returns a list of entities for a CloudGuard Problem
+ * Returns a list of entities for a problem.
  *
  * ## Example Usage
  *
@@ -37,7 +38,7 @@ export function getProblemEntities(args: GetProblemEntitiesArgs, opts?: pulumi.I
 export interface GetProblemEntitiesArgs {
     filters?: inputs.CloudGuard.GetProblemEntitiesFilter[];
     /**
-     * OCId of the problem.
+     * OCID of the problem.
      */
     problemId: string;
 }
@@ -56,7 +57,7 @@ export interface GetProblemEntitiesResult {
      */
     readonly problemEntityCollections: outputs.CloudGuard.GetProblemEntitiesProblemEntityCollection[];
     /**
-     * Attached problem id
+     * Attached problem ID
      */
     readonly problemId: string;
 }
@@ -64,6 +65,7 @@ export interface GetProblemEntitiesResult {
  * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
  *
  * Returns a list of entities for a CloudGuard Problem
+ * Returns a list of entities for a problem.
  *
  * ## Example Usage
  *
@@ -86,7 +88,7 @@ export function getProblemEntitiesOutput(args: GetProblemEntitiesOutputArgs, opt
 export interface GetProblemEntitiesOutputArgs {
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetProblemEntitiesFilterArgs>[]>;
     /**
-     * OCId of the problem.
+     * OCID of the problem.
      */
     problemId: pulumi.Input<string>;
 }

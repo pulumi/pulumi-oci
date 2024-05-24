@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetailTargetSecurityZoneRecipe {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -32,7 +32,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -46,7 +46,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private @Nullable String id;
@@ -56,17 +56,17 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private @Nullable String owner;
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     private @Nullable List<String> securityPolicies;
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     private @Nullable String state;
@@ -81,14 +81,14 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
 
     private TargetTargetDetailTargetSecurityZoneRecipe() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -111,7 +111,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -129,7 +129,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<String> id() {
@@ -143,21 +143,21 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
     }
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public List<String> securityPolicies() {
         return this.securityPolicies == null ? List.of() : this.securityPolicies;
     }
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<String> state() {
@@ -178,7 +178,7 @@ public final class TargetTargetDetailTargetSecurityZoneRecipe {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {

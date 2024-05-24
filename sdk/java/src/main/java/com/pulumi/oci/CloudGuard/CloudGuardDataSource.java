@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a DataSource
+ * Creates a data source (DataSource resource), using parameters passed
+ * through a CreateDataSourceDetails resource.
  * 
  * ## Example Usage
  * 
@@ -59,7 +60,9 @@ import javax.annotation.Nullable;
  *             .dataSourceDetails(CloudGuardDataSourceDataSourceDetailsArgs.builder()
  *                 .dataSourceFeedProvider(dataSourceDataSourceDetailsDataSourceFeedProvider)
  *                 .additionalEntitiesCount(dataSourceDataSourceDetailsAdditionalEntitiesCount)
+ *                 .description(dataSourceDataSourceDetailsDescription)
  *                 .intervalInMinutes(dataSourceDataSourceDetailsIntervalInMinutes)
+ *                 .intervalInSeconds(dataSourceDataSourceDetailsIntervalInSeconds)
  *                 .loggingQueryDetails(CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs.builder()
  *                     .loggingQueryType(dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType)
  *                     .keyEntitiesCount(dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount)
@@ -72,6 +75,11 @@ import javax.annotation.Nullable;
  *                     .queryStartTime(dataSourceDataSourceDetailsQueryStartTimeQueryStartTime)
  *                     .build())
  *                 .regions(dataSourceDataSourceDetailsRegions)
+ *                 .scheduledQueryScopeDetails(CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs.builder()
+ *                     .region(dataSourceDataSourceDetailsScheduledQueryScopeDetailsRegion)
+ *                     .resourceIds(dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds)
+ *                     .resourceType(dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType)
+ *                     .build())
  *                 .threshold(dataSourceDataSourceDetailsThreshold)
  *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -97,14 +105,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource")
 public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) CompartmentId of Data Source.
+     * @return (Updatable) Compartment OCID of the data source
      * 
      */
     public Output<String> compartmentId() {
@@ -139,14 +147,14 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
         return this.dataSourceDetectorMappingInfos;
     }
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      * 
      */
     @Export(name="dataSourceFeedProvider", refs={String.class}, tree="[0]")
     private Output<String> dataSourceFeedProvider;
 
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return Type of data source feed provider (LoggingQuery)
      * 
      */
     public Output<String> dataSourceFeedProvider() {
@@ -167,14 +175,14 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Source display name.
+     * @return (Updatable) Data source display name
      * 
      */
     public Output<String> displayName() {
@@ -213,21 +221,21 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
         return this.regionStatusDetails;
     }
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,7 +245,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
     private Output<String> status;
 
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,14 +283,14 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {

@@ -12,7 +12,7 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a new DetectorRecipe object.
+    /// Creates a new DetectorRecipe resource.
     /// 
     /// ## Import
     /// 
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class DetectorRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -46,13 +46,19 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// detector for the rule
+        /// Detector for the rule
         /// </summary>
         [Output("detector")]
         public Output<string> Detector { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Detector Rules to override from source detector recipe
+        /// Recipe type ( STANDARD, ENTERPRISE )
+        /// </summary>
+        [Output("detectorRecipeType")]
+        public Output<string> DetectorRecipeType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Detector rules to override from source detector recipe
         /// </summary>
         [Output("detectorRules")]
         public Output<ImmutableArray<Outputs.DetectorRecipeDetectorRule>> DetectorRules { get; private set; } = null!;
@@ -86,7 +92,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// The id of the source detector recipe.
+        /// The ID of the source detector recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -96,7 +102,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> SourceDetectorRecipeId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -108,19 +114,19 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The recipe attached to targets
+        /// List of target IDs to which the recipe is attached
         /// </summary>
         [Output("targetIds")]
         public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the detector recipe was created. Format defined by RFC3339.
+        /// The date and time the detector recipe was created Format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the detector recipe was updated. Format defined by RFC3339.
+        /// The date and time the detector recipe was last updated Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -172,7 +178,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class DetectorRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -198,7 +204,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// detector for the rule
+        /// Detector for the rule
         /// </summary>
         [Input("detector")]
         public Input<string>? Detector { get; set; }
@@ -207,7 +213,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.DetectorRecipeDetectorRuleArgs>? _detectorRules;
 
         /// <summary>
-        /// (Updatable) Detector Rules to override from source detector recipe
+        /// (Updatable) Detector rules to override from source detector recipe
         /// </summary>
         public InputList<Inputs.DetectorRecipeDetectorRuleArgs> DetectorRules
         {
@@ -238,7 +244,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The id of the source detector recipe.
+        /// The ID of the source detector recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -256,7 +262,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class DetectorRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -282,16 +288,22 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// detector for the rule
+        /// Detector for the rule
         /// </summary>
         [Input("detector")]
         public Input<string>? Detector { get; set; }
+
+        /// <summary>
+        /// Recipe type ( STANDARD, ENTERPRISE )
+        /// </summary>
+        [Input("detectorRecipeType")]
+        public Input<string>? DetectorRecipeType { get; set; }
 
         [Input("detectorRules")]
         private InputList<Inputs.DetectorRecipeDetectorRuleGetArgs>? _detectorRules;
 
         /// <summary>
-        /// (Updatable) Detector Rules to override from source detector recipe
+        /// (Updatable) Detector rules to override from source detector recipe
         /// </summary>
         public InputList<Inputs.DetectorRecipeDetectorRuleGetArgs> DetectorRules
         {
@@ -340,7 +352,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// The id of the source detector recipe.
+        /// The ID of the source detector recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -350,7 +362,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? SourceDetectorRecipeId { get; set; }
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -371,7 +383,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _targetIds;
 
         /// <summary>
-        /// The recipe attached to targets
+        /// List of target IDs to which the recipe is attached
         /// </summary>
         public InputList<string> TargetIds
         {
@@ -380,13 +392,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The date and time the detector recipe was created. Format defined by RFC3339.
+        /// The date and time the detector recipe was created Format defined by RFC3339.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the detector recipe was updated. Format defined by RFC3339.
+        /// The date and time the detector recipe was last updated Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

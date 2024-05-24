@@ -20,14 +20,14 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
     public static final ResponderRecipeResponderRuleDetailsArgs Empty = new ResponderRecipeResponderRuleDetailsArgs();
 
     /**
-     * Base condition object
+     * The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -35,14 +35,14 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
     }
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<ResponderRecipeResponderRuleDetailsConfigurationArgs>> configurations;
 
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public Optional<Output<List<ResponderRecipeResponderRuleDetailsConfigurationArgs>>> configurations() {
@@ -50,14 +50,14 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Identifies state for ResponderRule
+     * (Updatable) Enablement state for the responder rule
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Identifies state for ResponderRule
+     * @return (Updatable) Enablement state for the responder rule
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -65,14 +65,14 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
     }
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     public Optional<Output<String>> mode() {
@@ -107,7 +107,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param isEnabled (Updatable) Identifies state for ResponderRule
+         * @param isEnabled (Updatable) Enablement state for the responder rule
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param isEnabled (Updatable) Identifies state for ResponderRule
+         * @param isEnabled (Updatable) Enablement state for the responder rule
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param mode Execution Mode for ResponderRule
+         * @param mode Execution mode for the responder rule
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         /**
-         * @param mode Execution Mode for ResponderRule
+         * @param mode Execution mode for the responder rule
          * 
          * @return builder
          * 

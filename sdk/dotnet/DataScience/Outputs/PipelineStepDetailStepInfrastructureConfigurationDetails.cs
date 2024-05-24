@@ -14,17 +14,21 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineStepDetailStepInfrastructureConfigurationDetails
     {
         /// <summary>
-        /// The size of the block storage volume to attach to the instance.
+        /// (Updatable) The size of the block storage volume to attach to the instance.
         /// </summary>
         public readonly int BlockStorageSizeInGbs;
         /// <summary>
-        /// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        /// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         public readonly Outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails? ShapeConfigDetails;
         /// <summary>
-        /// The shape used to launch the instance for all step runs in the pipeline.
+        /// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
         /// </summary>
         public readonly string ShapeName;
+        /// <summary>
+        /// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        /// </summary>
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private PipelineStepDetailStepInfrastructureConfigurationDetails(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails? shapeConfigDetails,
 
-            string shapeName)
+            string shapeName,
+
+            string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             ShapeConfigDetails = shapeConfigDetails;
             ShapeName = shapeName;
+            SubnetId = subnetId;
         }
     }
 }

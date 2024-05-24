@@ -6,7 +6,6 @@ package com.pulumi.oci.Queue;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -125,16 +124,38 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
-    @Import(name="purgeQueue")
-    private @Nullable Output<Boolean> purgeQueue;
+    /**
+     * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     * 
+     */
+    @Import(name="purgeTrigger")
+    private @Nullable Output<Integer> purgeTrigger;
 
-    public Optional<Output<Boolean>> purgeQueue() {
-        return Optional.ofNullable(this.purgeQueue);
+    /**
+     * @return (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> purgeTrigger() {
+        return Optional.ofNullable(this.purgeTrigger);
     }
 
+    /**
+     * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="purgeType")
     private @Nullable Output<String> purgeType;
 
+    /**
+     * @return (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<String>> purgeType() {
         return Optional.ofNullable(this.purgeType);
     }
@@ -194,7 +215,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
-        this.purgeQueue = $.purgeQueue;
+        this.purgeTrigger = $.purgeTrigger;
         this.purgeType = $.purgeType;
         this.retentionInSeconds = $.retentionInSeconds;
         this.timeoutInSeconds = $.timeoutInSeconds;
@@ -366,20 +387,50 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
-        public Builder purgeQueue(@Nullable Output<Boolean> purgeQueue) {
-            $.purgeQueue = purgeQueue;
+        /**
+         * @param purgeTrigger (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeTrigger(@Nullable Output<Integer> purgeTrigger) {
+            $.purgeTrigger = purgeTrigger;
             return this;
         }
 
-        public Builder purgeQueue(Boolean purgeQueue) {
-            return purgeQueue(Output.of(purgeQueue));
+        /**
+         * @param purgeTrigger (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purgeTrigger(Integer purgeTrigger) {
+            return purgeTrigger(Output.of(purgeTrigger));
         }
 
+        /**
+         * @param purgeType (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder purgeType(@Nullable Output<String> purgeType) {
             $.purgeType = purgeType;
             return this;
         }
 
+        /**
+         * @param purgeType (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder purgeType(String purgeType) {
             return purgeType(Output.of(purgeType));
         }

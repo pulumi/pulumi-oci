@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+ * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
  *
  * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
  * The list does not include any subcompartments of the compartmentId passed.
@@ -64,11 +64,11 @@ export interface GetDetectorRecipesArgs {
      */
     accessLevel?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: boolean;
     /**
@@ -77,11 +77,11 @@ export interface GetDetectorRecipesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetDetectorRecipesFilter[];
     /**
-     * Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+     * Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
      */
     resourceMetadataOnly?: boolean;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -92,7 +92,7 @@ export interface GetDetectorRecipesArgs {
 export interface GetDetectorRecipesResult {
     readonly accessLevel?: string;
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of detector recipe
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
@@ -101,7 +101,7 @@ export interface GetDetectorRecipesResult {
      */
     readonly detectorRecipeCollections: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollection[];
     /**
-     * The display name of entity
+     * Display name of the entity
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetDetectorRecipesFilter[];
@@ -111,14 +111,14 @@ export interface GetDetectorRecipesResult {
     readonly id: string;
     readonly resourceMetadataOnly?: boolean;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+ * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
  *
  * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
  * The list does not include any subcompartments of the compartmentId passed.
@@ -163,11 +163,11 @@ export interface GetDetectorRecipesOutputArgs {
      */
     accessLevel?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
@@ -176,11 +176,11 @@ export interface GetDetectorRecipesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDetectorRecipesFilterArgs>[]>;
     /**
-     * Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+     * Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
      */
     resourceMetadataOnly?: pulumi.Input<boolean>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

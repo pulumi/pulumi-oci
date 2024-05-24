@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
     /**
-     * @return Data Source replication region.
+     * @return Data source replication region
      * 
      */
     private String region;
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     private String status;
 
     private GetDataSourcesDataSourceCollectionItemRegionStatusDetail() {}
     /**
-     * @return Data Source replication region.
+     * @return Data source replication region
      * 
      */
     public String region() {
         return this.region;
     }
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     public String status() {

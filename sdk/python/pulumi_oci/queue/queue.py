@@ -21,7 +21,7 @@ class QueueArgs:
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 purge_queue: Optional[pulumi.Input[bool]] = None,
+                 purge_trigger: Optional[pulumi.Input[int]] = None,
                  purge_type: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -35,6 +35,11 @@ class QueueArgs:
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] purge_trigger: (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        :param pulumi.Input[str] purge_type: (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
         :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
@@ -51,8 +56,8 @@ class QueueArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-        if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+        if purge_trigger is not None:
+            pulumi.set(__self__, "purge_trigger", purge_trigger)
         if purge_type is not None:
             pulumi.set(__self__, "purge_type", purge_type)
         if retention_in_seconds is not None:
@@ -147,17 +152,26 @@ class QueueArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
-    @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "purge_queue")
+    @pulumi.getter(name="purgeTrigger")
+    def purge_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        """
+        return pulumi.get(self, "purge_trigger")
 
-    @purge_queue.setter
-    def purge_queue(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "purge_queue", value)
+    @purge_trigger.setter
+    def purge_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "purge_trigger", value)
 
     @property
     @pulumi.getter(name="purgeType")
     def purge_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "purge_type")
 
     @purge_type.setter
@@ -213,7 +227,7 @@ class _QueueState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  messages_endpoint: Optional[pulumi.Input[str]] = None,
-                 purge_queue: Optional[pulumi.Input[bool]] = None,
+                 purge_trigger: Optional[pulumi.Input[int]] = None,
                  purge_type: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -233,6 +247,11 @@ class _QueueState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the queue.
         :param pulumi.Input[str] messages_endpoint: The endpoint to use to consume or publish messages in the queue.
+        :param pulumi.Input[int] purge_trigger: (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        :param pulumi.Input[str] purge_type: (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[str] state: The current state of the queue.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -259,8 +278,8 @@ class _QueueState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if messages_endpoint is not None:
             pulumi.set(__self__, "messages_endpoint", messages_endpoint)
-        if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+        if purge_trigger is not None:
+            pulumi.set(__self__, "purge_trigger", purge_trigger)
         if purge_type is not None:
             pulumi.set(__self__, "purge_type", purge_type)
         if retention_in_seconds is not None:
@@ -387,17 +406,26 @@ class _QueueState:
         pulumi.set(self, "messages_endpoint", value)
 
     @property
-    @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "purge_queue")
+    @pulumi.getter(name="purgeTrigger")
+    def purge_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        """
+        return pulumi.get(self, "purge_trigger")
 
-    @purge_queue.setter
-    def purge_queue(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "purge_queue", value)
+    @purge_trigger.setter
+    def purge_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "purge_trigger", value)
 
     @property
     @pulumi.getter(name="purgeType")
     def purge_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "purge_type")
 
     @purge_type.setter
@@ -501,7 +529,7 @@ class Queue(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 purge_queue: Optional[pulumi.Input[bool]] = None,
+                 purge_trigger: Optional[pulumi.Input[int]] = None,
                  purge_type: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -524,6 +552,8 @@ class Queue(pulumi.CustomResource):
             channel_consumption_limit=queue_channel_consumption_limit,
             custom_encryption_key_id=test_key["id"],
             dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
+            purge_trigger=purge_trigger,
+            purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -552,6 +582,11 @@ class Queue(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[int] purge_trigger: (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        :param pulumi.Input[str] purge_type: (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
         :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
@@ -579,6 +614,8 @@ class Queue(pulumi.CustomResource):
             channel_consumption_limit=queue_channel_consumption_limit,
             custom_encryption_key_id=test_key["id"],
             dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
+            purge_trigger=purge_trigger,
+            purge_type=purge_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -620,7 +657,7 @@ class Queue(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 purge_queue: Optional[pulumi.Input[bool]] = None,
+                 purge_trigger: Optional[pulumi.Input[int]] = None,
                  purge_type: Optional[pulumi.Input[str]] = None,
                  retention_in_seconds: Optional[pulumi.Input[int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -645,7 +682,7 @@ class Queue(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            __props__.__dict__["purge_queue"] = purge_queue
+            __props__.__dict__["purge_trigger"] = purge_trigger
             __props__.__dict__["purge_type"] = purge_type
             __props__.__dict__["retention_in_seconds"] = retention_in_seconds
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
@@ -675,7 +712,7 @@ class Queue(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             messages_endpoint: Optional[pulumi.Input[str]] = None,
-            purge_queue: Optional[pulumi.Input[bool]] = None,
+            purge_trigger: Optional[pulumi.Input[int]] = None,
             purge_type: Optional[pulumi.Input[str]] = None,
             retention_in_seconds: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -700,6 +737,11 @@ class Queue(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the queue.
         :param pulumi.Input[str] messages_endpoint: The endpoint to use to consume or publish messages in the queue.
+        :param pulumi.Input[int] purge_trigger: (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        :param pulumi.Input[str] purge_type: (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[str] state: The current state of the queue.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -721,7 +763,7 @@ class Queue(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["messages_endpoint"] = messages_endpoint
-        __props__.__dict__["purge_queue"] = purge_queue
+        __props__.__dict__["purge_trigger"] = purge_trigger
         __props__.__dict__["purge_type"] = purge_type
         __props__.__dict__["retention_in_seconds"] = retention_in_seconds
         __props__.__dict__["state"] = state
@@ -805,13 +847,22 @@ class Queue(pulumi.CustomResource):
         return pulumi.get(self, "messages_endpoint")
 
     @property
-    @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> pulumi.Output[Optional[bool]]:
-        return pulumi.get(self, "purge_queue")
+    @pulumi.getter(name="purgeTrigger")
+    def purge_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        """
+        return pulumi.get(self, "purge_trigger")
 
     @property
     @pulumi.getter(name="purgeType")
     def purge_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "purge_type")
 
     @property

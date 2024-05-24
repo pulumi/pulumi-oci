@@ -20,14 +20,14 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
     public static final CloudGuardDataSourceArgs Empty = new CloudGuardDataSourceArgs();
 
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) CompartmentId of Data Source.
+     * @return (Updatable) Compartment OCID of the data source
      * 
      */
     public Output<String> compartmentId() {
@@ -50,14 +50,14 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      * 
      */
     @Import(name="dataSourceFeedProvider", required=true)
     private Output<String> dataSourceFeedProvider;
 
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return Type of data source feed provider (LoggingQuery)
      * 
      */
     public Output<String> dataSourceFeedProvider() {
@@ -80,14 +80,14 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Source display name.
+     * @return (Updatable) Data source display name
      * 
      */
     public Output<String> displayName() {
@@ -114,7 +114,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -124,7 +124,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +165,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId (Updatable) CompartmentId of Data Source.
+         * @param compartmentId (Updatable) Compartment OCID of the data source
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param compartmentId (Updatable) CompartmentId of Data Source.
+         * @param compartmentId (Updatable) Compartment OCID of the data source
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) Data Source display name.
+         * @param displayName (Updatable) Data source display name
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param displayName (Updatable) Data Source display name.
+         * @param displayName (Updatable) Data source display name
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -309,7 +309,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

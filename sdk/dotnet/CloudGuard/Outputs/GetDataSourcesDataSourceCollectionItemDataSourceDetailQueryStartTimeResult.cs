@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult
     {
         /// <summary>
-        /// Time when the query can start, if not specified it can start immediately.
+        /// Time when the query can start. If not specified it can start immediately
         /// </summary>
         public readonly string QueryStartTime;
         /// <summary>
-        /// policy used for deciding the query start time
+        /// Start policy delay timing
         /// </summary>
         public readonly string StartPolicyType;
 

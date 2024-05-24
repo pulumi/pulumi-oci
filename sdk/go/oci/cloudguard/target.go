@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Creates a new Target
+// Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
 //
 // ## Example Usage
 //
@@ -33,7 +33,7 @@ import (
 //			_, err := CloudGuard.NewTarget(ctx, "test_target", &CloudGuard.TargetArgs{
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				DisplayName:        pulumi.Any(targetDisplayName),
-//				TargetResourceId:   pulumi.Any(testTargetResource.Id),
+//				TargetResourceId:   pulumi.Any(testResource.Id),
 //				TargetResourceType: pulumi.Any(targetTargetResourceType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -102,7 +102,7 @@ import (
 type Target struct {
 	pulumi.CustomResourceState
 
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -110,7 +110,7 @@ type Target struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) DetectorTemplate identifier.
+	// (Updatable) Display name for the target.
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -120,27 +120,27 @@ type Target struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
 	// Total number of recipes attached to target
 	RecipeCount pulumi.IntOutput `pulumi:"recipeCount"`
-	// (Updatable) The current state of the DetectorRule.
+	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Details specific to the target type.
 	TargetDetails TargetTargetDetailArrayOutput `pulumi:"targetDetails"`
-	// (Updatable) List of detector recipes to associate with target
+	// (Updatable) List of detector recipes to attach to target
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayOutput `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringOutput `pulumi:"targetResourceId"`
-	// possible type of targets(COMPARTMENT/FACLOUD)
+	// Type of resource that target support (COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringOutput `pulumi:"targetResourceType"`
-	// (Updatable) List of responder recipes to associate with target
+	// (Updatable) List of responder recipes to attach to target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayOutput `pulumi:"targetResponderRecipes"`
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the target was updated. Format defined by RFC3339.
+	// The date and time the target was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -186,7 +186,7 @@ func GetTarget(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Target resources.
 type targetState struct {
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -194,7 +194,7 @@ type targetState struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) DetectorTemplate identifier.
+	// (Updatable) Display name for the target.
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -204,32 +204,32 @@ type targetState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// Total number of recipes attached to target
 	RecipeCount *int `pulumi:"recipeCount"`
-	// (Updatable) The current state of the DetectorRule.
+	// (Updatable) The enablement state of the detector rule
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Details specific to the target type.
 	TargetDetails []TargetTargetDetail `pulumi:"targetDetails"`
-	// (Updatable) List of detector recipes to associate with target
+	// (Updatable) List of detector recipes to attach to target
 	TargetDetectorRecipes []TargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId *string `pulumi:"targetResourceId"`
-	// possible type of targets(COMPARTMENT/FACLOUD)
+	// Type of resource that target support (COMPARTMENT/FACLOUD)
 	TargetResourceType *string `pulumi:"targetResourceType"`
-	// (Updatable) List of responder recipes to associate with target
+	// (Updatable) List of responder recipes to attach to target
 	TargetResponderRecipes []TargetTargetResponderRecipe `pulumi:"targetResponderRecipes"`
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the target was updated. Format defined by RFC3339.
+	// The date and time the target was last updated. Format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type TargetState struct {
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -237,7 +237,7 @@ type TargetState struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) DetectorTemplate identifier.
+	// (Updatable) Display name for the target.
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -247,27 +247,27 @@ type TargetState struct {
 	FreeformTags pulumi.MapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails pulumi.StringPtrInput
 	// Total number of recipes attached to target
 	RecipeCount pulumi.IntPtrInput
-	// (Updatable) The current state of the DetectorRule.
+	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// Details specific to the target type.
 	TargetDetails TargetTargetDetailArrayInput
-	// (Updatable) List of detector recipes to associate with target
+	// (Updatable) List of detector recipes to attach to target
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayInput
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringPtrInput
-	// possible type of targets(COMPARTMENT/FACLOUD)
+	// Type of resource that target support (COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringPtrInput
-	// (Updatable) List of responder recipes to associate with target
+	// (Updatable) List of responder recipes to attach to target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayInput
 	// The date and time the target was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the target was updated. Format defined by RFC3339.
+	// The date and time the target was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -276,7 +276,7 @@ func (TargetState) ElementType() reflect.Type {
 }
 
 type targetArgs struct {
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -284,7 +284,7 @@ type targetArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) DetectorTemplate identifier.
+	// (Updatable) Display name for the target.
 	//
 	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
@@ -292,21 +292,21 @@ type targetArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The current state of the DetectorRule.
+	// (Updatable) The enablement state of the detector rule
 	State *string `pulumi:"state"`
-	// (Updatable) List of detector recipes to associate with target
+	// (Updatable) List of detector recipes to attach to target
 	TargetDetectorRecipes []TargetTargetDetectorRecipe `pulumi:"targetDetectorRecipes"`
 	// Resource ID which the target uses to monitor
 	TargetResourceId string `pulumi:"targetResourceId"`
-	// possible type of targets(COMPARTMENT/FACLOUD)
+	// Type of resource that target support (COMPARTMENT/FACLOUD)
 	TargetResourceType string `pulumi:"targetResourceType"`
-	// (Updatable) List of responder recipes to associate with target
+	// (Updatable) List of responder recipes to attach to target
 	TargetResponderRecipes []TargetTargetResponderRecipe `pulumi:"targetResponderRecipes"`
 }
 
 // The set of arguments for constructing a Target resource.
 type TargetArgs struct {
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -314,7 +314,7 @@ type TargetArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) DetectorTemplate identifier.
+	// (Updatable) Display name for the target.
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
@@ -322,15 +322,15 @@ type TargetArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) The current state of the DetectorRule.
+	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringPtrInput
-	// (Updatable) List of detector recipes to associate with target
+	// (Updatable) List of detector recipes to attach to target
 	TargetDetectorRecipes TargetTargetDetectorRecipeArrayInput
 	// Resource ID which the target uses to monitor
 	TargetResourceId pulumi.StringInput
-	// possible type of targets(COMPARTMENT/FACLOUD)
+	// Type of resource that target support (COMPARTMENT/FACLOUD)
 	TargetResourceType pulumi.StringInput
-	// (Updatable) List of responder recipes to associate with target
+	// (Updatable) List of responder recipes to attach to target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayInput
 }
 
@@ -421,7 +421,7 @@ func (o TargetOutput) ToTargetOutputWithContext(ctx context.Context) TargetOutpu
 	return o
 }
 
-// Compartment Identifier where the resource is created
+// Compartment OCID where the resource is created
 func (o TargetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -438,7 +438,7 @@ func (o TargetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) DetectorTemplate identifier.
+// (Updatable) Display name for the target.
 //
 // Avoid entering confidential information.
 func (o TargetOutput) DisplayName() pulumi.StringOutput {
@@ -457,7 +457,7 @@ func (o TargetOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringArrayOutput { return v.InheritedByCompartments }).(pulumi.StringArrayOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 func (o TargetOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
@@ -467,7 +467,7 @@ func (o TargetOutput) RecipeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Target) pulumi.IntOutput { return v.RecipeCount }).(pulumi.IntOutput)
 }
 
-// (Updatable) The current state of the DetectorRule.
+// (Updatable) The enablement state of the detector rule
 func (o TargetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -482,7 +482,7 @@ func (o TargetOutput) TargetDetails() TargetTargetDetailArrayOutput {
 	return o.ApplyT(func(v *Target) TargetTargetDetailArrayOutput { return v.TargetDetails }).(TargetTargetDetailArrayOutput)
 }
 
-// (Updatable) List of detector recipes to associate with target
+// (Updatable) List of detector recipes to attach to target
 func (o TargetOutput) TargetDetectorRecipes() TargetTargetDetectorRecipeArrayOutput {
 	return o.ApplyT(func(v *Target) TargetTargetDetectorRecipeArrayOutput { return v.TargetDetectorRecipes }).(TargetTargetDetectorRecipeArrayOutput)
 }
@@ -492,12 +492,12 @@ func (o TargetOutput) TargetResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TargetResourceId }).(pulumi.StringOutput)
 }
 
-// possible type of targets(COMPARTMENT/FACLOUD)
+// Type of resource that target support (COMPARTMENT/FACLOUD)
 func (o TargetOutput) TargetResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TargetResourceType }).(pulumi.StringOutput)
 }
 
-// (Updatable) List of responder recipes to associate with target
+// (Updatable) List of responder recipes to attach to target
 func (o TargetOutput) TargetResponderRecipes() TargetTargetResponderRecipeArrayOutput {
 	return o.ApplyT(func(v *Target) TargetTargetResponderRecipeArrayOutput { return v.TargetResponderRecipes }).(TargetTargetResponderRecipeArrayOutput)
 }
@@ -507,7 +507,7 @@ func (o TargetOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the target was updated. Format defined by RFC3339.
+// The date and time the target was last updated. Format defined by RFC3339.
 func (o TargetOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

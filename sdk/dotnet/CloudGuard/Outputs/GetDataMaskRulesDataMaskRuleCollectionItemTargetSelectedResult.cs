@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult
     {
         /// <summary>
-        /// Target selection.
+        /// Kind of target selection to be used
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// Types of Targets
+        /// Types of targets
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

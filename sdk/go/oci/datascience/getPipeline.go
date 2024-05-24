@@ -65,8 +65,9 @@ type LookupPipelineResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns bool                   `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// If set to true will delete pipeline runs which are in a terminal state.
+	DeleteRelatedPipelineRuns bool `pulumi:"deleteRelatedPipelineRuns"`
 	// A short description of the step.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource.
@@ -155,6 +156,7 @@ func (o LookupPipelineResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupPipelineResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+// If set to true will delete pipeline runs which are in a terminal state.
 func (o LookupPipelineResultOutput) DeleteRelatedPipelineRuns() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPipelineResult) bool { return v.DeleteRelatedPipelineRuns }).(pulumi.BoolOutput)
 }

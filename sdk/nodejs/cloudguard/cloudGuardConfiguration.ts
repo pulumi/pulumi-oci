@@ -7,25 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCloudGuardConfiguration = new oci.cloudguard.CloudGuardConfiguration("test_cloud_guard_configuration", {
- *     compartmentId: compartmentId,
- *     reportingRegion: cloudGuardConfigurationReportingRegion,
- *     status: cloudGuardConfigurationStatus,
- *     selfManageResources: cloudGuardConfigurationSelfManageResources,
- * });
- * ```
- *
- * ## Import
- *
- * Import is not supported for this resource.
+ * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+ * The reporting region cannot be updated once created.
  */
 export class CloudGuardConfiguration extends pulumi.CustomResource {
     /**
@@ -56,11 +39,11 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The ID of the compartment in which to list resources.
+     * (Updatable) The OCID of the compartment in which to list resources.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) The reporting region value
+     * (Updatable) The reporting region
      */
     public readonly reportingRegion!: pulumi.Output<string>;
     /**
@@ -68,7 +51,7 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
      */
     public readonly selfManageResources!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Status of Cloud Guard Tenant
+     * (Updatable) Status of Cloud Guard tenant
      *
      *
      * ** IMPORTANT **
@@ -119,11 +102,11 @@ export class CloudGuardConfiguration extends pulumi.CustomResource {
  */
 export interface CloudGuardConfigurationState {
     /**
-     * (Updatable) The ID of the compartment in which to list resources.
+     * (Updatable) The OCID of the compartment in which to list resources.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The reporting region value
+     * (Updatable) The reporting region
      */
     reportingRegion?: pulumi.Input<string>;
     /**
@@ -131,7 +114,7 @@ export interface CloudGuardConfigurationState {
      */
     selfManageResources?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Status of Cloud Guard Tenant
+     * (Updatable) Status of Cloud Guard tenant
      *
      *
      * ** IMPORTANT **
@@ -145,11 +128,11 @@ export interface CloudGuardConfigurationState {
  */
 export interface CloudGuardConfigurationArgs {
     /**
-     * (Updatable) The ID of the compartment in which to list resources.
+     * (Updatable) The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) The reporting region value
+     * (Updatable) The reporting region
      */
     reportingRegion: pulumi.Input<string>;
     /**
@@ -157,7 +140,7 @@ export interface CloudGuardConfigurationArgs {
      */
     selfManageResources?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Status of Cloud Guard Tenant
+     * (Updatable) Status of Cloud Guard tenant
      *
      *
      * ** IMPORTANT **

@@ -22,7 +22,7 @@ class GetDetectorRecipeResult:
     """
     A collection of values returned by getDetectorRecipe.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, detector=None, detector_recipe_id=None, detector_rules=None, display_name=None, effective_detector_rules=None, freeform_tags=None, id=None, owner=None, source_detector_recipe_id=None, state=None, system_tags=None, target_ids=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, detector=None, detector_recipe_id=None, detector_recipe_type=None, detector_rules=None, display_name=None, effective_detector_rules=None, freeform_tags=None, id=None, owner=None, source_detector_recipe_id=None, state=None, system_tags=None, target_ids=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetDetectorRecipeResult:
         if detector_recipe_id and not isinstance(detector_recipe_id, str):
             raise TypeError("Expected argument 'detector_recipe_id' to be a str")
         pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        if detector_recipe_type and not isinstance(detector_recipe_type, str):
+            raise TypeError("Expected argument 'detector_recipe_type' to be a str")
+        pulumi.set(__self__, "detector_recipe_type", detector_recipe_type)
         if detector_rules and not isinstance(detector_rules, list):
             raise TypeError("Expected argument 'detector_rules' to be a list")
         pulumi.set(__self__, "detector_rules", detector_rules)
@@ -79,7 +82,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        compartmentId of detector recipe
+        Compartment OCID of detector recipe
         """
         return pulumi.get(self, "compartment_id")
 
@@ -95,7 +98,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        Description for DetectorRecipeDetectorRule.
+        Description for detector recipe detector rule
         """
         return pulumi.get(self, "description")
 
@@ -103,7 +106,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter
     def detector(self) -> str:
         """
-        detector for the rule
+        Detector recipe for the rule
         """
         return pulumi.get(self, "detector")
 
@@ -111,6 +114,14 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="detectorRecipeId")
     def detector_recipe_id(self) -> str:
         return pulumi.get(self, "detector_recipe_id")
+
+    @property
+    @pulumi.getter(name="detectorRecipeType")
+    def detector_recipe_type(self) -> str:
+        """
+        Recipe type ( STANDARD, ENTERPRISE )
+        """
+        return pulumi.get(self, "detector_recipe_type")
 
     @property
     @pulumi.getter(name="detectorRules")
@@ -124,7 +135,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The display name of entity
+        Display name of the entity
         """
         return pulumi.get(self, "display_name")
 
@@ -148,7 +159,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Ocid for detector recipe
+        OCID for detector recipe
         """
         return pulumi.get(self, "id")
 
@@ -164,7 +175,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="sourceDetectorRecipeId")
     def source_detector_recipe_id(self) -> str:
         """
-        Recipe Ocid of the Source Recipe to be cloned
+        Recipe OCID of the source recipe to be cloned
         """
         return pulumi.get(self, "source_detector_recipe_id")
 
@@ -172,7 +183,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource
         """
         return pulumi.get(self, "state")
 
@@ -188,7 +199,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="targetIds")
     def target_ids(self) -> Sequence[str]:
         """
-        The recipe attached to targets
+        List of target IDs to which the recipe is attached
         """
         return pulumi.get(self, "target_ids")
 
@@ -196,7 +207,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the detector recipe was created. Format defined by RFC3339.
+        The date and time the detector recipe was created Format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
@@ -204,7 +215,7 @@ class GetDetectorRecipeResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the detector recipe was updated. Format defined by RFC3339.
+        The date and time the detector recipe was last updated Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -220,6 +231,7 @@ class AwaitableGetDetectorRecipeResult(GetDetectorRecipeResult):
             description=self.description,
             detector=self.detector,
             detector_recipe_id=self.detector_recipe_id,
+            detector_recipe_type=self.detector_recipe_type,
             detector_rules=self.detector_rules,
             display_name=self.display_name,
             effective_detector_rules=self.effective_detector_rules,
@@ -239,7 +251,7 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
     """
     This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+    Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 
     ## Example Usage
 
@@ -251,7 +263,7 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
     ```
 
 
-    :param str detector_recipe_id: DetectorRecipe OCID
+    :param str detector_recipe_id: Detector recipe OCID
     """
     __args__ = dict()
     __args__['detectorRecipeId'] = detector_recipe_id
@@ -264,6 +276,7 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
         description=pulumi.get(__ret__, 'description'),
         detector=pulumi.get(__ret__, 'detector'),
         detector_recipe_id=pulumi.get(__ret__, 'detector_recipe_id'),
+        detector_recipe_type=pulumi.get(__ret__, 'detector_recipe_type'),
         detector_rules=pulumi.get(__ret__, 'detector_rules'),
         display_name=pulumi.get(__ret__, 'display_name'),
         effective_detector_rules=pulumi.get(__ret__, 'effective_detector_rules'),
@@ -284,7 +297,7 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+    Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 
     ## Example Usage
 
@@ -296,6 +309,6 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str detector_recipe_id: DetectorRecipe OCID
+    :param str detector_recipe_id: Detector recipe OCID
     """
     ...

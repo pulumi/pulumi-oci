@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetsFilterResult
     {
         /// <summary>
-        /// configuration name
+        /// Configuration name
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

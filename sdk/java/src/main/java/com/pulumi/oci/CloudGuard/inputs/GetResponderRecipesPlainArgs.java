@@ -34,14 +34,14 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -49,14 +49,14 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     @Import(name="compartmentIdInSubtree")
     private @Nullable Boolean compartmentIdInSubtree;
 
     /**
-     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * @return Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      * 
      */
     public Optional<Boolean> compartmentIdInSubtree() {
@@ -86,14 +86,14 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+     * Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
      * 
      */
     @Import(name="resourceMetadataOnly")
     private @Nullable Boolean resourceMetadataOnly;
 
     /**
-     * @return Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+     * @return Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
      * 
      */
     public Optional<Boolean> resourceMetadataOnly() {
@@ -101,14 +101,14 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<String> state() {
@@ -157,7 +157,7 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+         * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param resourceMetadataOnly Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
+         * @param resourceMetadataOnly Default is false. When set to true, the list of all Oracle-managed resources metadata supported by Cloud Guard is returned.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class GetResponderRecipesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

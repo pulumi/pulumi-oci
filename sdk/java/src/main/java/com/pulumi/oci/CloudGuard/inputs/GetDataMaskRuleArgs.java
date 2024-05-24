@@ -15,14 +15,14 @@ public final class GetDataMaskRuleArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDataMaskRuleArgs Empty = new GetDataMaskRuleArgs();
 
     /**
-     * OCID of dataMaskRule
+     * OCID of the data mask rule
      * 
      */
     @Import(name="dataMaskRuleId", required=true)
     private Output<String> dataMaskRuleId;
 
     /**
-     * @return OCID of dataMaskRule
+     * @return OCID of the data mask rule
      * 
      */
     public Output<String> dataMaskRuleId() {
@@ -54,7 +54,7 @@ public final class GetDataMaskRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dataMaskRuleId OCID of dataMaskRule
+         * @param dataMaskRuleId OCID of the data mask rule
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDataMaskRuleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param dataMaskRuleId OCID of dataMaskRule
+         * @param dataMaskRuleId OCID of the data mask rule
          * 
          * @return builder
          * 

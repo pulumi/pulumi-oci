@@ -47,7 +47,7 @@ class GetSecurityPoliciesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -55,7 +55,7 @@ class GetSecurityPoliciesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The security policy's full name
+        The security policy's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -68,7 +68,7 @@ class GetSecurityPoliciesResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can’t be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -84,7 +84,7 @@ class GetSecurityPoliciesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the security policy
+        The current lifecycle state of the security policy
         """
         return pulumi.get(self, "state")
 
@@ -112,7 +112,8 @@ def get_security_policies(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of security zone policies. Specify any compartment.
+    Returns a list of security zone policies (SecurityPolicySummary resources),
+    identified by compartmentId.
 
     ## Example Usage
 
@@ -127,10 +128,10 @@ def get_security_policies(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone policy (`SecurityPolicy`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone policy. (`SecurityPolicy`)
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,7 +161,8 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
     """
     This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of security zone policies. Specify any compartment.
+    Returns a list of security zone policies (SecurityPolicySummary resources),
+    identified by compartmentId.
 
     ## Example Usage
 
@@ -175,9 +177,9 @@ def get_security_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone policy (`SecurityPolicy`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone policy. (`SecurityPolicy`)
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

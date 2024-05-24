@@ -14,27 +14,45 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeEffectiveDetectorRuleDetail
     {
         /// <summary>
-        /// Base condition object
+        /// The base condition resource.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// Configuration details
+        /// List of detector rule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration> Configurations;
         /// <summary>
-        /// configuration allowed or not
+        /// The ID of the attached data source
+        /// </summary>
+        public readonly string? DataSourceId;
+        /// <summary>
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
+        /// Data source entities mapping for the detector rule
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> EntitiesMappings;
+        /// <summary>
+        /// Can the rule be configured?
         /// </summary>
         public readonly bool? IsConfigurationAllowed;
         /// <summary>
-        /// Enables the control
+        /// Enablement status for the rule
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
-        /// user defined labels for a detector rule
+        /// User-defined labels for a detector rule
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// The Risk Level
+        /// Recommendation for DetectorRecipeDetectorRule resource
+        /// </summary>
+        public readonly string? Recommendation;
+        /// <summary>
+        /// The risk level for the rule
         /// </summary>
         public readonly string? RiskLevel;
 
@@ -44,19 +62,31 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations,
 
+            string? dataSourceId,
+
+            string? description,
+
+            ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> entitiesMappings,
+
             bool? isConfigurationAllowed,
 
             bool? isEnabled,
 
             ImmutableArray<string> labels,
 
+            string? recommendation,
+
             string? riskLevel)
         {
             Condition = condition;
             Configurations = configurations;
+            DataSourceId = dataSourceId;
+            Description = description;
+            EntitiesMappings = entitiesMappings;
             IsConfigurationAllowed = isConfigurationAllowed;
             IsEnabled = isEnabled;
             Labels = labels;
+            Recommendation = recommendation;
             RiskLevel = riskLevel;
         }
     }

@@ -19,14 +19,14 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
     public static final GetSecurityRecipesArgs Empty = new GetSecurityRecipesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -56,14 +56,14 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * @return The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     public Optional<Output<String>> id() {
@@ -71,14 +71,14 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<Output<String>> state() {
@@ -114,7 +114,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param id The unique identifier of the security zone recipe (`SecurityRecipe`)
+         * @param id The unique identifier of the security zone recipe. (`SecurityRecipe`)
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param id The unique identifier of the security zone recipe (`SecurityRecipe`)
+         * @param id The unique identifier of the security zone recipe. (`SecurityRecipe`)
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GetSecurityRecipesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

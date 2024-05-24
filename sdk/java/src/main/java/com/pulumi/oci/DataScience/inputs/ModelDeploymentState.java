@@ -187,6 +187,21 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Import(name="opcParentRptUrl")
+    private @Nullable Output<String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Optional<Output<String>> opcParentRptUrl() {
+        return Optional.ofNullable(this.opcParentRptUrl);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      * 
      */
@@ -251,6 +266,7 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
         this.modelDeploymentConfigurationDetails = $.modelDeploymentConfigurationDetails;
         this.modelDeploymentSystemDatas = $.modelDeploymentSystemDatas;
         this.modelDeploymentUrl = $.modelDeploymentUrl;
+        this.opcParentRptUrl = $.opcParentRptUrl;
         this.projectId = $.projectId;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -513,6 +529,27 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
          */
         public Builder modelDeploymentUrl(String modelDeploymentUrl) {
             return modelDeploymentUrl(Output.of(modelDeploymentUrl));
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(@Nullable Output<String> opcParentRptUrl) {
+            $.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            return opcParentRptUrl(Output.of(opcParentRptUrl));
         }
 
         /**

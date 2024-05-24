@@ -52,44 +52,44 @@ func LookupManagedList(ctx *pulumi.Context, args *LookupManagedListArgs, opts ..
 
 // A collection of arguments for invoking getManagedList.
 type LookupManagedListArgs struct {
-	// The cloudguard list OCID to be passed in the request.
+	// The managed list OCID to be passed in the request.
 	ManagedListId string `pulumi:"managedListId"`
 }
 
 // A collection of values returned by getManagedList.
 type LookupManagedListResult struct {
-	// Compartment Identifier where the resource is created
+	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// ManagedList description.
+	// Managed list description
 	Description string `pulumi:"description"`
-	// ManagedList display name.
+	// Managed list display name
 	DisplayName string `pulumi:"displayName"`
-	// provider of the feed
+	// Provider of the managed list feed
 	FeedProvider string `pulumi:"feedProvider"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can't be changed after creation
 	Id string `pulumi:"id"`
-	// If this list is editable or not
+	// Is this list editable?
 	IsEditable bool `pulumi:"isEditable"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails string `pulumi:"lifecyleDetails"`
-	// List of ManagedListItem
+	// List of items in the managed list
 	ListItems []string `pulumi:"listItems"`
-	// type of the list
+	// Type of information contained in the managed list
 	ListType      string `pulumi:"listType"`
 	ManagedListId string `pulumi:"managedListId"`
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	SourceManagedListId string `pulumi:"sourceManagedListId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the managed list was updated. Format defined by RFC3339.
+	// The date and time the managed list was last updated. Format defined by RFC3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -108,7 +108,7 @@ func LookupManagedListOutput(ctx *pulumi.Context, args LookupManagedListOutputAr
 
 // A collection of arguments for invoking getManagedList.
 type LookupManagedListOutputArgs struct {
-	// The cloudguard list OCID to be passed in the request.
+	// The managed list OCID to be passed in the request.
 	ManagedListId pulumi.StringInput `pulumi:"managedListId"`
 }
 
@@ -131,7 +131,7 @@ func (o LookupManagedListResultOutput) ToLookupManagedListResultOutputWithContex
 	return o
 }
 
-// Compartment Identifier where the resource is created
+// Compartment OCID where the resource is created
 func (o LookupManagedListResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -141,17 +141,17 @@ func (o LookupManagedListResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagedListResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// ManagedList description.
+// Managed list description
 func (o LookupManagedListResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// ManagedList display name.
+// Managed list display name
 func (o LookupManagedListResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// provider of the feed
+// Provider of the managed list feed
 func (o LookupManagedListResultOutput) FeedProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.FeedProvider }).(pulumi.StringOutput)
 }
@@ -161,27 +161,27 @@ func (o LookupManagedListResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupManagedListResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can't be changed after creation
 func (o LookupManagedListResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// If this list is editable or not
+// Is this list editable?
 func (o LookupManagedListResultOutput) IsEditable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupManagedListResult) bool { return v.IsEditable }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 func (o LookupManagedListResultOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// List of ManagedListItem
+// List of items in the managed list
 func (o LookupManagedListResultOutput) ListItems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupManagedListResult) []string { return v.ListItems }).(pulumi.StringArrayOutput)
 }
 
-// type of the list
+// Type of information contained in the managed list
 func (o LookupManagedListResultOutput) ListType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.ListType }).(pulumi.StringOutput)
 }
@@ -190,12 +190,12 @@ func (o LookupManagedListResultOutput) ManagedListId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.ManagedListId }).(pulumi.StringOutput)
 }
 
-// OCID of the Source ManagedList
+// OCID of the source managed list
 func (o LookupManagedListResultOutput) SourceManagedListId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.SourceManagedListId }).(pulumi.StringOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource
 func (o LookupManagedListResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -210,7 +210,7 @@ func (o LookupManagedListResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the managed list was updated. Format defined by RFC3339.
+// The date and time the managed list was last updated. Format defined by RFC3339.
 func (o LookupManagedListResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedListResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

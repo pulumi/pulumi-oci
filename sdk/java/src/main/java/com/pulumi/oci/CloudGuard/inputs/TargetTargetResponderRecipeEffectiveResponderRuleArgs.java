@@ -18,14 +18,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     public static final TargetTargetResponderRecipeEffectiveResponderRuleArgs Empty = new TargetTargetResponderRecipeEffectiveResponderRuleArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -52,14 +52,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * Details of ResponderRule.
+     * Detailed information for a responder rule
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs>> details;
 
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs>>> details() {
@@ -67,7 +67,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -76,7 +76,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -101,14 +101,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * List of Policy
+     * List of policies
      * 
      */
     @Import(name="policies")
     private @Nullable Output<List<String>> policies;
 
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public Optional<Output<List<String>>> policies() {
@@ -116,14 +116,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * Unique ResponderRule identifier.
+     * Unique identifier for the responder rule
      * 
      */
     @Import(name="responderRuleId")
     private @Nullable Output<String> responderRuleId;
 
     /**
-     * @return Unique ResponderRule identifier.
+     * @return Unique identifier for the responder rule
      * 
      */
     public Optional<Output<String>> responderRuleId() {
@@ -131,14 +131,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -146,14 +146,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      * 
      */
     @Import(name="supportedModes")
     private @Nullable Output<List<String>> supportedModes;
 
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public Optional<Output<List<String>>> supportedModes() {
@@ -176,14 +176,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -191,14 +191,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
     }
 
     /**
-     * Type of Responder
+     * Type of responder
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<Output<String>> type() {
@@ -241,7 +241,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -331,7 +331,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -364,7 +364,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param responderRuleId Unique ResponderRule identifier.
+         * @param responderRuleId Unique identifier for the responder rule
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param responderRuleId Unique ResponderRule identifier.
+         * @param responderRuleId Unique identifier for the responder rule
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleArgs extends
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 

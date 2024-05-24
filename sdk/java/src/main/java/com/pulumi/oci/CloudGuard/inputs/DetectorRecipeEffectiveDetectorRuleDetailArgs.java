@@ -6,6 +6,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs;
+import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -19,14 +20,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     public static final DetectorRecipeEffectiveDetectorRuleDetailArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailArgs();
 
     /**
-     * Base condition object
+     * The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -34,14 +35,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * Configuration details
+     * List of detector rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return Configuration details
+     * @return List of detector rule configurations
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>>> configurations() {
@@ -49,14 +50,63 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * configuration allowed or not
+     * The ID of the attached data source
+     * 
+     */
+    @Import(name="dataSourceId")
+    private @Nullable Output<String> dataSourceId;
+
+    /**
+     * @return The ID of the attached data source
+     * 
+     */
+    public Optional<Output<String>> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
+    }
+
+    /**
+     * (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * Data source entities mapping for the detector rule
+     * 
+     */
+    @Import(name="entitiesMappings")
+    private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs>> entitiesMappings;
+
+    /**
+     * @return Data source entities mapping for the detector rule
+     * 
+     */
+    public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs>>> entitiesMappings() {
+        return Optional.ofNullable(this.entitiesMappings);
+    }
+
+    /**
+     * Can the rule be configured?
      * 
      */
     @Import(name="isConfigurationAllowed")
     private @Nullable Output<Boolean> isConfigurationAllowed;
 
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     public Optional<Output<Boolean>> isConfigurationAllowed() {
@@ -64,14 +114,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * Enables the control
+     * Enablement status for the rule
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Enables the control
+     * @return Enablement status for the rule
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -79,14 +129,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for a detector rule
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -94,14 +144,29 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * The Risk Level
+     * Recommendation for DetectorRecipeDetectorRule resource
+     * 
+     */
+    @Import(name="recommendation")
+    private @Nullable Output<String> recommendation;
+
+    /**
+     * @return Recommendation for DetectorRecipeDetectorRule resource
+     * 
+     */
+    public Optional<Output<String>> recommendation() {
+        return Optional.ofNullable(this.recommendation);
+    }
+
+    /**
+     * The risk level for the rule
      * 
      */
     @Import(name="riskLevel")
     private @Nullable Output<String> riskLevel;
 
     /**
-     * @return The Risk Level
+     * @return The risk level for the rule
      * 
      */
     public Optional<Output<String>> riskLevel() {
@@ -113,9 +178,13 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     private DetectorRecipeEffectiveDetectorRuleDetailArgs(DetectorRecipeEffectiveDetectorRuleDetailArgs $) {
         this.condition = $.condition;
         this.configurations = $.configurations;
+        this.dataSourceId = $.dataSourceId;
+        this.description = $.description;
+        this.entitiesMappings = $.entitiesMappings;
         this.isConfigurationAllowed = $.isConfigurationAllowed;
         this.isEnabled = $.isEnabled;
         this.labels = $.labels;
+        this.recommendation = $.recommendation;
         this.riskLevel = $.riskLevel;
     }
 
@@ -138,7 +207,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -149,7 +218,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -159,7 +228,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations Configuration details
+         * @param configurations List of detector rule configurations
          * 
          * @return builder
          * 
@@ -170,7 +239,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations Configuration details
+         * @param configurations List of detector rule configurations
          * 
          * @return builder
          * 
@@ -180,7 +249,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations Configuration details
+         * @param configurations List of detector rule configurations
          * 
          * @return builder
          * 
@@ -190,7 +259,84 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param dataSourceId The ID of the attached data source
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(@Nullable Output<String> dataSourceId) {
+            $.dataSourceId = dataSourceId;
+            return this;
+        }
+
+        /**
+         * @param dataSourceId The ID of the attached data source
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataSourceId(String dataSourceId) {
+            return dataSourceId(Output.of(dataSourceId));
+        }
+
+        /**
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
+         * @param entitiesMappings Data source entities mapping for the detector rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(@Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs>> entitiesMappings) {
+            $.entitiesMappings = entitiesMappings;
+            return this;
+        }
+
+        /**
+         * @param entitiesMappings Data source entities mapping for the detector rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs> entitiesMappings) {
+            return entitiesMappings(Output.of(entitiesMappings));
+        }
+
+        /**
+         * @param entitiesMappings Data source entities mapping for the detector rule
+         * 
+         * @return builder
+         * 
+         */
+        public Builder entitiesMappings(DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
+        }
+
+        /**
+         * @param isConfigurationAllowed Can the rule be configured?
          * 
          * @return builder
          * 
@@ -201,7 +347,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param isConfigurationAllowed Can the rule be configured?
          * 
          * @return builder
          * 
@@ -211,7 +357,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isEnabled Enables the control
+         * @param isEnabled Enablement status for the rule
          * 
          * @return builder
          * 
@@ -222,7 +368,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isEnabled Enables the control
+         * @param isEnabled Enablement status for the rule
          * 
          * @return builder
          * 
@@ -232,7 +378,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -243,7 +389,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -253,7 +399,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -263,7 +409,28 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param riskLevel The Risk Level
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule resource
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendation(@Nullable Output<String> recommendation) {
+            $.recommendation = recommendation;
+            return this;
+        }
+
+        /**
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule resource
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recommendation(String recommendation) {
+            return recommendation(Output.of(recommendation));
+        }
+
+        /**
+         * @param riskLevel The risk level for the rule
          * 
          * @return builder
          * 
@@ -274,7 +441,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param riskLevel The Risk Level
+         * @param riskLevel The risk level for the rule
          * 
          * @return builder
          * 

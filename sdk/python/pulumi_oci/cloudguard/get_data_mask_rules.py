@@ -67,7 +67,7 @@ class GetDataMaskRulesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier where the resource is created.
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -83,7 +83,7 @@ class GetDataMaskRulesResult:
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> Optional[str]:
         """
-        The status of the dataMaskRule.
+        The current status of the data mask rule
         """
         return pulumi.get(self, "data_mask_rule_status")
 
@@ -91,7 +91,7 @@ class GetDataMaskRulesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        Data Mask Rule Identifier, can be renamed.
+        Data mask rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -104,7 +104,7 @@ class GetDataMaskRulesResult:
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> Optional[str]:
         """
-        IAM Group id associated with the data mask rule
+        IAM Group ID associated with the data mask rule
         """
         return pulumi.get(self, "iam_group_id")
 
@@ -120,7 +120,7 @@ class GetDataMaskRulesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
         """
         return pulumi.get(self, "state")
 
@@ -167,7 +167,7 @@ def get_data_mask_rules(access_level: Optional[str] = None,
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+    Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
 
     ## Example Usage
 
@@ -187,12 +187,12 @@ def get_data_mask_rules(access_level: Optional[str] = None,
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str data_mask_rule_status: The status of the dataMaskRule.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param str data_mask_rule_status: The status of the data mask rule
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str iam_group_id: OCID of iamGroup
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-    :param str target_id: OCID of target
+    :param str iam_group_id: OCID of the IAM group
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str target_id: OCID of the target
     :param str target_type: Type of target
     """
     __args__ = dict()
@@ -236,7 +236,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+    Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
 
     ## Example Usage
 
@@ -256,12 +256,12 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str data_mask_rule_status: The status of the dataMaskRule.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param str data_mask_rule_status: The status of the data mask rule
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str iam_group_id: OCID of iamGroup
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-    :param str target_id: OCID of target
+    :param str iam_group_id: OCID of the IAM group
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str target_id: OCID of the target
     :param str target_type: Type of target
     """
     ...

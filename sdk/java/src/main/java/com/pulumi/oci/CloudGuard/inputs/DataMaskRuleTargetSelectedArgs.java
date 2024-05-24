@@ -18,14 +18,14 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
     public static final DataMaskRuleTargetSelectedArgs Empty = new DataMaskRuleTargetSelectedArgs();
 
     /**
-     * (Updatable) Target selection.
+     * (Updatable) Kind of target selection to be used
      * 
      */
     @Import(name="kind", required=true)
     private Output<String> kind;
 
     /**
-     * @return (Updatable) Target selection.
+     * @return (Updatable) Kind of target selection to be used
      * 
      */
     public Output<String> kind() {
@@ -33,7 +33,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Types of Targets
+     * (Updatable) Types of targets
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -43,7 +43,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) Types of Targets
+     * @return (Updatable) Types of targets
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -79,7 +79,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param kind (Updatable) Target selection.
+         * @param kind (Updatable) Kind of target selection to be used
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param kind (Updatable) Target selection.
+         * @param kind (Updatable) Kind of target selection to be used
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param values (Updatable) Types of Targets
+         * @param values (Updatable) Types of targets
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,7 +114,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param values (Updatable) Types of Targets
+         * @param values (Updatable) Types of targets
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,7 +127,7 @@ public final class DataMaskRuleTargetSelectedArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param values (Updatable) Types of Targets
+         * @param values (Updatable) Types of targets
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

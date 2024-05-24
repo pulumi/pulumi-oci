@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AdhocQueryArgs, AdhocQueryState } from "./adhocQuery";
+export type AdhocQuery = import("./adhocQuery").AdhocQuery;
+export const AdhocQuery: typeof import("./adhocQuery").AdhocQuery = null as any;
+utilities.lazyLoad(exports, ["AdhocQuery"], () => require("./adhocQuery"));
+
 export { CloudGuardConfigurationArgs, CloudGuardConfigurationState } from "./cloudGuardConfiguration";
 export type CloudGuardConfiguration = import("./cloudGuardConfiguration").CloudGuardConfiguration;
 export const CloudGuardConfiguration: typeof import("./cloudGuardConfiguration").CloudGuardConfiguration = null as any;
@@ -24,6 +29,16 @@ export { DetectorRecipeArgs, DetectorRecipeState } from "./detectorRecipe";
 export type DetectorRecipe = import("./detectorRecipe").DetectorRecipe;
 export const DetectorRecipe: typeof import("./detectorRecipe").DetectorRecipe = null as any;
 utilities.lazyLoad(exports, ["DetectorRecipe"], () => require("./detectorRecipe"));
+
+export { GetAdhocQueriesArgs, GetAdhocQueriesResult, GetAdhocQueriesOutputArgs } from "./getAdhocQueries";
+export const getAdhocQueries: typeof import("./getAdhocQueries").getAdhocQueries = null as any;
+export const getAdhocQueriesOutput: typeof import("./getAdhocQueries").getAdhocQueriesOutput = null as any;
+utilities.lazyLoad(exports, ["getAdhocQueries","getAdhocQueriesOutput"], () => require("./getAdhocQueries"));
+
+export { GetAdhocQueryArgs, GetAdhocQueryResult, GetAdhocQueryOutputArgs } from "./getAdhocQuery";
+export const getAdhocQuery: typeof import("./getAdhocQuery").getAdhocQuery = null as any;
+export const getAdhocQueryOutput: typeof import("./getAdhocQuery").getAdhocQueryOutput = null as any;
+utilities.lazyLoad(exports, ["getAdhocQuery","getAdhocQueryOutput"], () => require("./getAdhocQuery"));
 
 export { GetCloudGuardConfigurationArgs, GetCloudGuardConfigurationResult, GetCloudGuardConfigurationOutputArgs } from "./getCloudGuardConfiguration";
 export const getCloudGuardConfiguration: typeof import("./getCloudGuardConfiguration").getCloudGuardConfiguration = null as any;
@@ -110,6 +125,16 @@ export const getResponderRecipes: typeof import("./getResponderRecipes").getResp
 export const getResponderRecipesOutput: typeof import("./getResponderRecipes").getResponderRecipesOutput = null as any;
 utilities.lazyLoad(exports, ["getResponderRecipes","getResponderRecipesOutput"], () => require("./getResponderRecipes"));
 
+export { GetSavedQueriesArgs, GetSavedQueriesResult, GetSavedQueriesOutputArgs } from "./getSavedQueries";
+export const getSavedQueries: typeof import("./getSavedQueries").getSavedQueries = null as any;
+export const getSavedQueriesOutput: typeof import("./getSavedQueries").getSavedQueriesOutput = null as any;
+utilities.lazyLoad(exports, ["getSavedQueries","getSavedQueriesOutput"], () => require("./getSavedQueries"));
+
+export { GetSavedQueryArgs, GetSavedQueryResult, GetSavedQueryOutputArgs } from "./getSavedQuery";
+export const getSavedQuery: typeof import("./getSavedQuery").getSavedQuery = null as any;
+export const getSavedQueryOutput: typeof import("./getSavedQuery").getSavedQueryOutput = null as any;
+utilities.lazyLoad(exports, ["getSavedQuery","getSavedQueryOutput"], () => require("./getSavedQuery"));
+
 export { GetSecurityPoliciesArgs, GetSecurityPoliciesResult, GetSecurityPoliciesOutputArgs } from "./getSecurityPolicies";
 export const getSecurityPolicies: typeof import("./getSecurityPolicies").getSecurityPolicies = null as any;
 export const getSecurityPoliciesOutput: typeof import("./getSecurityPolicies").getSecurityPoliciesOutput = null as any;
@@ -140,6 +165,16 @@ export const getSecurityZones: typeof import("./getSecurityZones").getSecurityZo
 export const getSecurityZonesOutput: typeof import("./getSecurityZones").getSecurityZonesOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityZones","getSecurityZonesOutput"], () => require("./getSecurityZones"));
 
+export { GetWlpAgentArgs, GetWlpAgentResult, GetWlpAgentOutputArgs } from "./getWlpAgent";
+export const getWlpAgent: typeof import("./getWlpAgent").getWlpAgent = null as any;
+export const getWlpAgentOutput: typeof import("./getWlpAgent").getWlpAgentOutput = null as any;
+utilities.lazyLoad(exports, ["getWlpAgent","getWlpAgentOutput"], () => require("./getWlpAgent"));
+
+export { GetWlpAgentsArgs, GetWlpAgentsResult, GetWlpAgentsOutputArgs } from "./getWlpAgents";
+export const getWlpAgents: typeof import("./getWlpAgents").getWlpAgents = null as any;
+export const getWlpAgentsOutput: typeof import("./getWlpAgents").getWlpAgentsOutput = null as any;
+utilities.lazyLoad(exports, ["getWlpAgents","getWlpAgentsOutput"], () => require("./getWlpAgents"));
+
 export { ManagedListArgs, ManagedListState } from "./managedList";
 export type ManagedList = import("./managedList").ManagedList;
 export const ManagedList: typeof import("./managedList").ManagedList = null as any;
@@ -149,6 +184,11 @@ export { ResponderRecipeArgs, ResponderRecipeState } from "./responderRecipe";
 export type ResponderRecipe = import("./responderRecipe").ResponderRecipe;
 export const ResponderRecipe: typeof import("./responderRecipe").ResponderRecipe = null as any;
 utilities.lazyLoad(exports, ["ResponderRecipe"], () => require("./responderRecipe"));
+
+export { SavedQueryArgs, SavedQueryState } from "./savedQuery";
+export type SavedQuery = import("./savedQuery").SavedQuery;
+export const SavedQuery: typeof import("./savedQuery").SavedQuery = null as any;
+utilities.lazyLoad(exports, ["SavedQuery"], () => require("./savedQuery"));
 
 export { SecurityRecipeArgs, SecurityRecipeState } from "./securityRecipe";
 export type SecurityRecipe = import("./securityRecipe").SecurityRecipe;
@@ -165,11 +205,18 @@ export type Target = import("./target").Target;
 export const Target: typeof import("./target").Target = null as any;
 utilities.lazyLoad(exports, ["Target"], () => require("./target"));
 
+export { WlpAgentArgs, WlpAgentState } from "./wlpAgent";
+export type WlpAgent = import("./wlpAgent").WlpAgent;
+export const WlpAgent: typeof import("./wlpAgent").WlpAgent = null as any;
+utilities.lazyLoad(exports, ["WlpAgent"], () => require("./wlpAgent"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:CloudGuard/adhocQuery:AdhocQuery":
+                return new AdhocQuery(name, <any>undefined, { urn })
             case "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration":
                 return new CloudGuardConfiguration(name, <any>undefined, { urn })
             case "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource":
@@ -182,23 +229,30 @@ const _module = {
                 return new ManagedList(name, <any>undefined, { urn })
             case "oci:CloudGuard/responderRecipe:ResponderRecipe":
                 return new ResponderRecipe(name, <any>undefined, { urn })
+            case "oci:CloudGuard/savedQuery:SavedQuery":
+                return new SavedQuery(name, <any>undefined, { urn })
             case "oci:CloudGuard/securityRecipe:SecurityRecipe":
                 return new SecurityRecipe(name, <any>undefined, { urn })
             case "oci:CloudGuard/securityZone:SecurityZone":
                 return new SecurityZone(name, <any>undefined, { urn })
             case "oci:CloudGuard/target:Target":
                 return new Target(name, <any>undefined, { urn })
+            case "oci:CloudGuard/wlpAgent:WlpAgent":
+                return new WlpAgent(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/adhocQuery", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/cloudGuardConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/cloudGuardDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/dataMaskRule", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/detectorRecipe", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/managedList", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/responderRecipe", _module)
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/savedQuery", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/securityRecipe", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/securityZone", _module)
 pulumi.runtime.registerResourceModule("oci", "CloudGuard/target", _module)
+pulumi.runtime.registerResourceModule("oci", "CloudGuard/wlpAgent", _module)

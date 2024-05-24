@@ -19,14 +19,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     public static final TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs Empty = new TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs();
 
     /**
-     * Base condition object
+     * The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -34,14 +34,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     }
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs>>> configurations() {
@@ -49,14 +49,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     }
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -64,14 +64,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     }
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return Execution Mode for ResponderRule
+     * @return Execution mode for the responder rule
      * 
      */
     public Optional<Output<String>> mode() {
@@ -106,7 +106,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param condition Base condition object
+         * @param condition The base condition resource.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param mode Execution Mode for ResponderRule
+         * @param mode Execution mode for the responder rule
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param mode Execution Mode for ResponderRule
+         * @param mode Execution mode for the responder rule
          * 
          * @return builder
          * 

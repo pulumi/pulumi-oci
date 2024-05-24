@@ -19,14 +19,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
     public static final TargetTargetResponderRecipeResponderRuleDetailsArgs Empty = new TargetTargetResponderRecipeResponderRuleDetailsArgs();
 
     /**
-     * (Updatable) Base condition object
+     * (Updatable) The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -34,14 +34,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
     }
 
     /**
-     * (Updatable) Configurations associated with the ResponderRule
+     * (Updatable) List of responder rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return (Updatable) List of responder rule configurations
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs>>> configurations() {
@@ -49,14 +49,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
     }
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -64,14 +64,14 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
     }
 
     /**
-     * (Updatable) Execution Mode for ResponderRule
+     * (Updatable) Execution mode for the responder rule
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return (Updatable) Execution mode for the responder rule
      * 
      */
     public Optional<Output<String>> mode() {
@@ -106,7 +106,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition (Updatable) The base condition resource.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition (Updatable) The base condition resource.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations (Updatable) List of responder rule configurations
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations (Updatable) List of responder rule configurations
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations (Updatable) List of responder rule configurations
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param mode (Updatable) Execution Mode for ResponderRule
+         * @param mode (Updatable) Execution mode for the responder rule
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class TargetTargetResponderRecipeResponderRuleDetailsArgs extends c
         }
 
         /**
-         * @param mode (Updatable) Execution Mode for ResponderRule
+         * @param mode (Updatable) Execution mode for the responder rule
          * 
          * @return builder
          * 

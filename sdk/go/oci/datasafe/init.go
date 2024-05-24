@@ -95,8 +95,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SensitiveType{}
 	case "oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline":
 		r = &SetSecurityAssessmentBaseline{}
+	case "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement":
+		r = &SetSecurityAssessmentBaselineManagement{}
 	case "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline":
 		r = &SetUserAssessmentBaseline{}
+	case "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement":
+		r = &SetUserAssessmentBaselineManagement{}
 	case "oci:DataSafe/sqlCollection:SqlCollection":
 		r = &SqlCollection{}
 	case "oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy":
@@ -315,7 +319,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DataSafe/setSecurityAssessmentBaselineManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DataSafe/setUserAssessmentBaseline",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/setUserAssessmentBaselineManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

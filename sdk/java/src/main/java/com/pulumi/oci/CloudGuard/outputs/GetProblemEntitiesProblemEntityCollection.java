@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetProblemEntitiesProblemEntityCollection {
     /**
-     * @return List of problem entities summaries related to a data source.
+     * @return List of entity details related to a data source
      * 
      */
     private List<GetProblemEntitiesProblemEntityCollectionItem> items;
 
     private GetProblemEntitiesProblemEntityCollection() {}
     /**
-     * @return List of problem entities summaries related to a data source.
+     * @return List of entity details related to a data source
      * 
      */
     public List<GetProblemEntitiesProblemEntityCollectionItem> items() {

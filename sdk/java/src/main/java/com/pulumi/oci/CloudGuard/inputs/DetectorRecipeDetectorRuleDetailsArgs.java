@@ -21,14 +21,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     public static final DetectorRecipeDetectorRuleDetailsArgs Empty = new DetectorRecipeDetectorRuleDetailsArgs();
 
     /**
-     * (Updatable) Base condition object
+     * (Updatable) The base condition resource.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -36,14 +36,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Configuration details
+     * (Updatable) List of detector rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<DetectorRecipeDetectorRuleDetailsConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configuration details
+     * @return (Updatable) List of detector rule configurations
      * 
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleDetailsConfigurationArgs>>> configurations() {
@@ -51,14 +51,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The id of the attached DataSource.
+     * (Updatable) The unique identifier of the attached data source
      * 
      */
     @Import(name="dataSourceId")
     private @Nullable Output<String> dataSourceId;
 
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return (Updatable) The unique identifier of the attached data source
      * 
      */
     public Optional<Output<String>> dataSourceId() {
@@ -66,14 +66,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Description for the detector rule
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Description for the detector rule
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Data Source entities mapping for a Detector Rule
+     * (Updatable) Data source entities mapping for a detector rule
      * 
      */
     @Import(name="entitiesMappings")
     private @Nullable Output<List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>> entitiesMappings;
 
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return (Updatable) Data source entities mapping for a detector rule
      * 
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs>>> entitiesMappings() {
@@ -96,14 +96,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * configuration allowed or not
+     * Can the rule be configured?
      * 
      */
     @Import(name="isConfigurationAllowed")
     private @Nullable Output<Boolean> isConfigurationAllowed;
 
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     public Optional<Output<Boolean>> isConfigurationAllowed() {
@@ -111,14 +111,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Enables the control
+     * (Updatable) Enablement status of the detector rule
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables the control
+     * @return (Updatable) Enablement status of the detector rule
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -126,14 +126,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) user defined labels for a detector rule
+     * (Updatable) User-defined labels for a detector rule
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return (Updatable) User-defined labels for a detector rule
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -141,14 +141,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * (Updatable) Recommendation for the detector rule
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return (Updatable) Recommendation for the detector rule
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -156,14 +156,14 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The Risk Level
+     * (Updatable) The risk level of the detector rule
      * 
      */
     @Import(name="riskLevel", required=true)
     private Output<String> riskLevel;
 
     /**
-     * @return (Updatable) The Risk Level
+     * @return (Updatable) The risk level of the detector rule
      * 
      */
     public Output<String> riskLevel() {
@@ -204,7 +204,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition (Updatable) The base condition resource.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition (Updatable) The base condition resource.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations (Updatable) List of detector rule configurations
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations (Updatable) List of detector rule configurations
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations (Updatable) List of detector rule configurations
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId (Updatable) The unique identifier of the attached data source
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId (Updatable) The unique identifier of the attached data source
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Description for the detector rule
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Description for the detector rule
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings (Updatable) Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings (Updatable) Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings (Updatable) Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param isConfigurationAllowed Can the rule be configured?
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param isConfigurationAllowed Can the rule be configured?
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param isEnabled (Updatable) Enables the control
+         * @param isEnabled (Updatable) Enablement status of the detector rule
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param isEnabled (Updatable) Enables the control
+         * @param isEnabled (Updatable) Enablement status of the detector rule
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels (Updatable) User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels (Updatable) User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels (Updatable) User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation (Updatable) Recommendation for the detector rule
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation (Updatable) Recommendation for the detector rule
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param riskLevel (Updatable) The Risk Level
+         * @param riskLevel (Updatable) The risk level of the detector rule
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param riskLevel (Updatable) The Risk Level
+         * @param riskLevel (Updatable) The risk level of the detector rule
          * 
          * @return builder
          * 

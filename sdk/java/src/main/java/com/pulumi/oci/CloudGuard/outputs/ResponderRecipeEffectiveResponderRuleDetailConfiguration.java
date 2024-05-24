@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResponderRecipeEffectiveResponderRuleDetailConfiguration {
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     private @Nullable String configKey;
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     private @Nullable String name;
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     private @Nullable String value;
 
     private ResponderRecipeEffectiveResponderRuleDetailConfiguration() {}
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     public Optional<String> configKey() {
         return Optional.ofNullable(this.configKey);
     }
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public Optional<String> value() {

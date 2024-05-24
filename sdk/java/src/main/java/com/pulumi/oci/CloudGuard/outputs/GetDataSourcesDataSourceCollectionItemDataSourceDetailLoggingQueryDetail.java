@@ -17,7 +17,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailLogging
      */
     private Integer keyEntitiesCount;
     /**
-     * @return A filter to return only resources their query type matches the given LoggingQueryType.
+     * @return A filter to return only resources where their query type matches the given LoggingQueryType.
      * 
      */
     private String loggingQueryType;
@@ -31,7 +31,7 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailLogging
         return this.keyEntitiesCount;
     }
     /**
-     * @return A filter to return only resources their query type matches the given LoggingQueryType.
+     * @return A filter to return only resources where their query type matches the given LoggingQueryType.
      * 
      */
     public String loggingQueryType() {

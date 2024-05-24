@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourcesDataSourceCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult> DataSourceDetectorMappingInfos;
         /// <summary>
-        /// A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+        /// A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
         /// </summary>
         public readonly string DataSourceFeedProvider;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Ocid for Data source
+        /// OCID for the data source
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -50,11 +50,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult> RegionStatusDetails;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Status of data Source
+        /// Enablement status of the data source
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the Data source was updated. Format defined by RFC3339.
+        /// The date and time the data source was updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

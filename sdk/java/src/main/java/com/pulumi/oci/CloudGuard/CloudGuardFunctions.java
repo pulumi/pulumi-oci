@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
@@ -41,6 +45,10 @@ import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesPlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
@@ -53,6 +61,12 @@ import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonePlainArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
 import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentPlainArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
+import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsPlainArgs;
+import com.pulumi.oci.CloudGuard.outputs.GetAdhocQueriesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetAdhocQueryResult;
 import com.pulumi.oci.CloudGuard.outputs.GetCloudGuardConfigurationResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRuleResult;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesResult;
@@ -70,20 +84,461 @@ import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntityResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResult;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSavedQueriesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetSavedQueryResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityPoliciesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityPolicyResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipeResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipesResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityZoneResult;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityZonesResult;
+import com.pulumi.oci.CloudGuard.outputs.GetWlpAgentResult;
+import com.pulumi.oci.CloudGuard.outputs.GetWlpAgentsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudGuardFunctions {
     /**
+     * This data source provides the list of Adhoc Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * 
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQueries = CloudGuardFunctions.getAdhocQueries(GetAdhocQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(adhocQueryAccessLevel)
+     *             .adhocQueryStatus(adhocQueryAdhocQueryStatus)
+     *             .compartmentIdInSubtree(adhocQueryCompartmentIdInSubtree)
+     *             .timeEndedFilterQueryParam(adhocQueryTimeEndedFilterQueryParam)
+     *             .timeStartedFilterQueryParam(adhocQueryTimeStartedFilterQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAdhocQueriesResult> getAdhocQueries(GetAdhocQueriesArgs args) {
+        return getAdhocQueries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Adhoc Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * 
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQueries = CloudGuardFunctions.getAdhocQueries(GetAdhocQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(adhocQueryAccessLevel)
+     *             .adhocQueryStatus(adhocQueryAdhocQueryStatus)
+     *             .compartmentIdInSubtree(adhocQueryCompartmentIdInSubtree)
+     *             .timeEndedFilterQueryParam(adhocQueryTimeEndedFilterQueryParam)
+     *             .timeStartedFilterQueryParam(adhocQueryTimeStartedFilterQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAdhocQueriesResult> getAdhocQueriesPlain(GetAdhocQueriesPlainArgs args) {
+        return getAdhocQueriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Adhoc Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * 
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQueries = CloudGuardFunctions.getAdhocQueries(GetAdhocQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(adhocQueryAccessLevel)
+     *             .adhocQueryStatus(adhocQueryAdhocQueryStatus)
+     *             .compartmentIdInSubtree(adhocQueryCompartmentIdInSubtree)
+     *             .timeEndedFilterQueryParam(adhocQueryTimeEndedFilterQueryParam)
+     *             .timeStartedFilterQueryParam(adhocQueryTimeStartedFilterQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAdhocQueriesResult> getAdhocQueries(GetAdhocQueriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getAdhocQueries:getAdhocQueries", TypeShape.of(GetAdhocQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Adhoc Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * 
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * 
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * 
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQueries = CloudGuardFunctions.getAdhocQueries(GetAdhocQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(adhocQueryAccessLevel)
+     *             .adhocQueryStatus(adhocQueryAdhocQueryStatus)
+     *             .compartmentIdInSubtree(adhocQueryCompartmentIdInSubtree)
+     *             .timeEndedFilterQueryParam(adhocQueryTimeEndedFilterQueryParam)
+     *             .timeStartedFilterQueryParam(adhocQueryTimeStartedFilterQueryParam)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAdhocQueriesResult> getAdhocQueriesPlain(GetAdhocQueriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getAdhocQueries:getAdhocQueries", TypeShape.of(GetAdhocQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns an adhoc query identified by adhocQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAdhocQueryResult> getAdhocQuery(GetAdhocQueryArgs args) {
+        return getAdhocQuery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns an adhoc query identified by adhocQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAdhocQueryResult> getAdhocQueryPlain(GetAdhocQueryPlainArgs args) {
+        return getAdhocQueryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns an adhoc query identified by adhocQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAdhocQueryResult> getAdhocQuery(GetAdhocQueryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getAdhocQuery:getAdhocQuery", TypeShape.of(GetAdhocQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns an adhoc query identified by adhocQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetAdhocQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAdhocQueryResult> getAdhocQueryPlain(GetAdhocQueryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getAdhocQuery:getAdhocQuery", TypeShape.of(GetAdhocQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -127,7 +582,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -171,7 +627,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -215,7 +672,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -259,7 +717,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule object, identified by DataMaskRuleId.
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -303,7 +761,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule object, identified by DataMaskRuleId.
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -347,7 +805,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule object, identified by DataMaskRuleId.
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -391,7 +849,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule object, identified by DataMaskRuleId.
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -435,7 +893,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -486,7 +944,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -537,7 +995,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -588,7 +1046,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -639,7 +1097,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -683,7 +1141,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -727,7 +1185,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -771,7 +1229,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -995,7 +1453,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -1040,7 +1500,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -1085,7 +1547,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -1130,7 +1594,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
      * 
      * ## Example Usage
      * 
@@ -1175,9 +1641,11 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
      * 
-     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1186,7 +1654,7 @@ public final class CloudGuardFunctions {
      * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      * 
-     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -1239,9 +1707,11 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
      * 
-     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1250,7 +1720,7 @@ public final class CloudGuardFunctions {
      * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      * 
-     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -1303,9 +1773,11 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
      * 
-     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1314,7 +1786,7 @@ public final class CloudGuardFunctions {
      * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      * 
-     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -1367,9 +1839,11 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
      * 
-     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The ListAdhocQueries operation returns only the adhoc queries in &#39;compartmentId&#39; passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1378,7 +1852,7 @@ public final class CloudGuardFunctions {
      * Principal doesn&#39;t have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      * 
-     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -1431,7 +1905,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1475,7 +1949,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1519,7 +1993,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1563,7 +2037,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1607,7 +2081,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1670,7 +2144,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1733,7 +2207,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1796,7 +2270,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1859,7 +2333,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      * 
      * ## Example Usage
      * 
@@ -1903,7 +2377,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      * 
      * ## Example Usage
      * 
@@ -1947,7 +2421,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      * 
      * ## Example Usage
      * 
@@ -1991,7 +2465,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      * 
      * ## Example Usage
      * 
@@ -2035,9 +2509,10 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Targets in a compartment
-     * The ListTargets operation returns only the targets in `compartmentId` passed.
-     * The list does not include any subcompartments of the compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -2047,7 +2522,7 @@ public final class CloudGuardFunctions {
      * 
      * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
@@ -2097,9 +2572,10 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Targets in a compartment
-     * The ListTargets operation returns only the targets in `compartmentId` passed.
-     * The list does not include any subcompartments of the compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -2109,7 +2585,7 @@ public final class CloudGuardFunctions {
      * 
      * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
@@ -2159,9 +2635,10 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Targets in a compartment
-     * The ListTargets operation returns only the targets in `compartmentId` passed.
-     * The list does not include any subcompartments of the compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -2171,7 +2648,7 @@ public final class CloudGuardFunctions {
      * 
      * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
@@ -2221,9 +2698,10 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Targets in a compartment
-     * The ListTargets operation returns only the targets in `compartmentId` passed.
-     * The list does not include any subcompartments of the compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
      * 
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -2233,7 +2711,7 @@ public final class CloudGuardFunctions {
      * 
      * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
@@ -2459,7 +2937,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2522,7 +3000,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2585,7 +3063,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2648,7 +3126,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2712,6 +3190,7 @@ public final class CloudGuardFunctions {
      * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
      * 
      * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      * 
      * ## Example Usage
      * 
@@ -2756,6 +3235,7 @@ public final class CloudGuardFunctions {
      * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
      * 
      * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      * 
      * ## Example Usage
      * 
@@ -2800,6 +3280,7 @@ public final class CloudGuardFunctions {
      * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
      * 
      * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      * 
      * ## Example Usage
      * 
@@ -2844,6 +3325,7 @@ public final class CloudGuardFunctions {
      * This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
      * 
      * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      * 
      * ## Example Usage
      * 
@@ -3063,7 +3545,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3107,7 +3589,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3151,7 +3633,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3195,7 +3677,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3239,7 +3721,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ResponderRecipes in a compartment
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
      * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -3301,7 +3784,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ResponderRecipes in a compartment
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
      * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -3363,7 +3847,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ResponderRecipes in a compartment
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
      * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -3425,7 +3910,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all ResponderRecipes in a compartment
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
      * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -3485,9 +3971,374 @@ public final class CloudGuardFunctions {
         return Deployment.getInstance().invokeAsync("oci:CloudGuard/getResponderRecipes:getResponderRecipes", TypeShape.of(GetResponderRecipesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of saved queries run in a tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQueries = CloudGuardFunctions.getSavedQueries(GetSavedQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(savedQueryAccessLevel)
+     *             .compartmentIdInSubtree(savedQueryCompartmentIdInSubtree)
+     *             .displayName(savedQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSavedQueriesResult> getSavedQueries(GetSavedQueriesArgs args) {
+        return getSavedQueries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of saved queries run in a tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQueries = CloudGuardFunctions.getSavedQueries(GetSavedQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(savedQueryAccessLevel)
+     *             .compartmentIdInSubtree(savedQueryCompartmentIdInSubtree)
+     *             .displayName(savedQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSavedQueriesResult> getSavedQueriesPlain(GetSavedQueriesPlainArgs args) {
+        return getSavedQueriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of saved queries run in a tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQueries = CloudGuardFunctions.getSavedQueries(GetSavedQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(savedQueryAccessLevel)
+     *             .compartmentIdInSubtree(savedQueryCompartmentIdInSubtree)
+     *             .displayName(savedQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSavedQueriesResult> getSavedQueries(GetSavedQueriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSavedQueries:getSavedQueries", TypeShape.of(GetSavedQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Saved Queries in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of saved queries run in a tenancy.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQueries = CloudGuardFunctions.getSavedQueries(GetSavedQueriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(savedQueryAccessLevel)
+     *             .compartmentIdInSubtree(savedQueryCompartmentIdInSubtree)
+     *             .displayName(savedQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSavedQueriesResult> getSavedQueriesPlain(GetSavedQueriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSavedQueries:getSavedQueries", TypeShape.of(GetSavedQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a SavedQuery resource identified by savedQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSavedQueryResult> getSavedQuery(GetSavedQueryArgs args) {
+        return getSavedQuery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a SavedQuery resource identified by savedQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSavedQueryResult> getSavedQueryPlain(GetSavedQueryPlainArgs args) {
+        return getSavedQueryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a SavedQuery resource identified by savedQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSavedQueryResult> getSavedQuery(GetSavedQueryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getSavedQuery:getSavedQuery", TypeShape.of(GetSavedQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a SavedQuery resource identified by savedQueryId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSavedQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSavedQueryResult> getSavedQueryPlain(GetSavedQueryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSavedQuery:getSavedQuery", TypeShape.of(GetSavedQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -3534,7 +4385,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -3581,7 +4433,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -3628,7 +4481,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -3675,7 +4529,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
      * 
      * ## Example Usage
      * 
@@ -3719,7 +4575,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
      * 
      * ## Example Usage
      * 
@@ -3763,7 +4621,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
      * 
      * ## Example Usage
      * 
@@ -3807,7 +4667,9 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
      * 
      * ## Example Usage
      * 
@@ -3851,7 +4713,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3895,7 +4757,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3939,7 +4801,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      * 
      * ## Example Usage
      * 
@@ -3983,7 +4845,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      * 
      * ## Example Usage
      * 
@@ -4027,7 +4889,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -4074,7 +4937,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -4121,7 +4985,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -4168,7 +5033,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
      * 
      * ## Example Usage
      * 
@@ -4215,7 +5081,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      * 
      * ## Example Usage
      * 
@@ -4259,7 +5125,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      * 
      * ## Example Usage
      * 
@@ -4303,7 +5169,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      * 
      * ## Example Usage
      * 
@@ -4347,7 +5213,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      * 
      * ## Example Usage
      * 
@@ -4391,7 +5257,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      * 
      * ## Example Usage
      * 
@@ -4440,7 +5307,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      * 
      * ## Example Usage
      * 
@@ -4489,7 +5357,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      * 
      * ## Example Usage
      * 
@@ -4538,7 +5407,8 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      * 
      * ## Example Usage
      * 
@@ -4583,5 +5453,357 @@ public final class CloudGuardFunctions {
      */
     public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CloudGuard/getSecurityZones:getSecurityZones", TypeShape.of(GetSecurityZonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWlpAgentResult> getWlpAgent(GetWlpAgentArgs args) {
+        return getWlpAgent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWlpAgentResult> getWlpAgentPlain(GetWlpAgentPlainArgs args) {
+        return getWlpAgentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWlpAgentResult> getWlpAgent(GetWlpAgentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getWlpAgent:getWlpAgent", TypeShape.of(GetWlpAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWlpAgentResult> getWlpAgentPlain(GetWlpAgentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getWlpAgent:getWlpAgent", TypeShape.of(GetWlpAgentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of WLP agents in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgents = CloudGuardFunctions.getWlpAgents(GetWlpAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWlpAgentsResult> getWlpAgents(GetWlpAgentsArgs args) {
+        return getWlpAgents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of WLP agents in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgents = CloudGuardFunctions.getWlpAgents(GetWlpAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWlpAgentsResult> getWlpAgentsPlain(GetWlpAgentsPlainArgs args) {
+        return getWlpAgentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of WLP agents in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgents = CloudGuardFunctions.getWlpAgents(GetWlpAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWlpAgentsResult> getWlpAgents(GetWlpAgentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:CloudGuard/getWlpAgents:getWlpAgents", TypeShape.of(GetWlpAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
+     * 
+     * Returns a list of WLP agents in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetWlpAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWlpAgents = CloudGuardFunctions.getWlpAgents(GetWlpAgentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWlpAgentsResult> getWlpAgentsPlain(GetWlpAgentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:CloudGuard/getWlpAgents:getWlpAgents", TypeShape.of(GetWlpAgentsResult.class), args, Utilities.withVersion(options));
     }
 }

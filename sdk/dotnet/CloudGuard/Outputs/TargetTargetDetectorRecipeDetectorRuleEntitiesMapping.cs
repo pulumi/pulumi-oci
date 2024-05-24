@@ -14,13 +14,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping
     {
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// Possible type of entity
+        /// Type of entity
         /// </summary>
         public readonly string? EntityType;
         /// <summary>

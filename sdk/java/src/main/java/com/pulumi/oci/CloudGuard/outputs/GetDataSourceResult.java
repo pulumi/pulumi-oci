@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourceResult {
     /**
-     * @return CompartmentId of Data source.
+     * @return Compartment OCID of data source
      * 
      */
     private String compartmentId;
@@ -43,7 +43,7 @@ public final class GetDataSourceResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return DisplayName of Data source.
+     * @return Display name of the data source
      * 
      */
     private String displayName;
@@ -53,7 +53,7 @@ public final class GetDataSourceResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Ocid for Data source
+     * @return OCID for the data source
      * 
      */
     private String id;
@@ -63,12 +63,12 @@ public final class GetDataSourceResult {
      */
     private List<GetDataSourceRegionStatusDetail> regionStatusDetails;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     private String state;
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     private String status;
@@ -83,14 +83,14 @@ public final class GetDataSourceResult {
      */
     private String timeCreated;
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDataSourceResult() {}
     /**
-     * @return CompartmentId of Data source.
+     * @return Compartment OCID of data source
      * 
      */
     public String compartmentId() {
@@ -128,7 +128,7 @@ public final class GetDataSourceResult {
         return this.definedTags;
     }
     /**
-     * @return DisplayName of Data source.
+     * @return Display name of the data source
      * 
      */
     public String displayName() {
@@ -142,7 +142,7 @@ public final class GetDataSourceResult {
         return this.freeformTags;
     }
     /**
-     * @return Ocid for Data source
+     * @return OCID for the data source
      * 
      */
     public String id() {
@@ -156,14 +156,14 @@ public final class GetDataSourceResult {
         return this.regionStatusDetails;
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     public String status() {
@@ -184,7 +184,7 @@ public final class GetDataSourceResult {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

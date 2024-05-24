@@ -93,6 +93,7 @@ export interface GetModelDeploymentResult {
      * The URL to interact with the model deployment.
      */
     readonly modelDeploymentUrl: string;
+    readonly opcParentRptUrl: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      */

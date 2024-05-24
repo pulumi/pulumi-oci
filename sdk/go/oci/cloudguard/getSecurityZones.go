@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Gets a list of all security zones in a compartment.
+// Returns a list of security zones (SecurityZone resources) in a compartment identified by
+// compartmentId. List is contained in a page of SecurityZoneSummary resources.
 //
 // ## Example Usage
 //
@@ -57,18 +58,18 @@ func GetSecurityZones(ctx *pulumi.Context, args *GetSecurityZonesArgs, opts ...p
 
 // A collection of arguments for invoking getSecurityZones.
 type GetSecurityZonesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetSecurityZonesFilter `pulumi:"filters"`
-	// The unique identifier of the security zone (`SecurityZone`)
+	// The unique identifier of the security zone (`SecurityZone` resource).
 	Id *string `pulumi:"id"`
-	// security zones in the subtree
+	// Is security zones in the subtree?
 	IsRequiredSecurityZonesInSubtree *bool `pulumi:"isRequiredSecurityZonesInSubtree"`
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
 	SecurityRecipeId *string `pulumi:"securityRecipeId"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State *string `pulumi:"state"`
 }
 
@@ -76,16 +77,16 @@ type GetSecurityZonesArgs struct {
 type GetSecurityZonesResult struct {
 	// The OCID of the compartment for the security zone
 	CompartmentId string `pulumi:"compartmentId"`
-	// The security zone's name
+	// The security zone's display name
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetSecurityZonesFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can’t be changed after creation
 	Id                               *string `pulumi:"id"`
 	IsRequiredSecurityZonesInSubtree *bool   `pulumi:"isRequiredSecurityZonesInSubtree"`
 	SecurityRecipeId                 *string `pulumi:"securityRecipeId"`
 	// The list of security_zone_collection.
 	SecurityZoneCollections []GetSecurityZonesSecurityZoneCollection `pulumi:"securityZoneCollections"`
-	// The current state of the security zone
+	// The current lifecycle state of the security zone
 	State *string `pulumi:"state"`
 }
 
@@ -104,18 +105,18 @@ func GetSecurityZonesOutput(ctx *pulumi.Context, args GetSecurityZonesOutputArgs
 
 // A collection of arguments for invoking getSecurityZones.
 type GetSecurityZonesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetSecurityZonesFilterArrayInput `pulumi:"filters"`
-	// The unique identifier of the security zone (`SecurityZone`)
+	// The unique identifier of the security zone (`SecurityZone` resource).
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// security zones in the subtree
+	// Is security zones in the subtree?
 	IsRequiredSecurityZonesInSubtree pulumi.BoolPtrInput `pulumi:"isRequiredSecurityZonesInSubtree"`
-	// The unique identifier of the security zone recipe (`SecurityRecipe`)
+	// The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
 	SecurityRecipeId pulumi.StringPtrInput `pulumi:"securityRecipeId"`
-	// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -143,7 +144,7 @@ func (o GetSecurityZonesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityZonesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The security zone's name
+// The security zone's display name
 func (o GetSecurityZonesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityZonesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -152,7 +153,7 @@ func (o GetSecurityZonesResultOutput) Filters() GetSecurityZonesFilterArrayOutpu
 	return o.ApplyT(func(v GetSecurityZonesResult) []GetSecurityZonesFilter { return v.Filters }).(GetSecurityZonesFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can’t be changed after creation
 func (o GetSecurityZonesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityZonesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -172,7 +173,7 @@ func (o GetSecurityZonesResultOutput) SecurityZoneCollections() GetSecurityZones
 	}).(GetSecurityZonesSecurityZoneCollectionArrayOutput)
 }
 
-// The current state of the security zone
+// The current lifecycle state of the security zone
 func (o GetSecurityZonesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityZonesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

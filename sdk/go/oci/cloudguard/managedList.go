@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a new ManagedList object.
+// Creates a new ManagedList resource.
 //
 // ## Import
 //
@@ -26,11 +26,11 @@ import (
 type ManagedList struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Managed list description.
+	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -38,32 +38,32 @@ type ManagedList struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// provider of the feed
+	// Provider of the managed list feed
 	FeedProvider pulumi.StringOutput `pulumi:"feedProvider"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// If this list is editable or not
+	// Is this list editable?
 	IsEditable pulumi.BoolOutput `pulumi:"isEditable"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
-	// (Updatable) List of ManagedListItem
+	// (Updatable) List of items in the managed list
 	ListItems pulumi.StringArrayOutput `pulumi:"listItems"`
-	// type of the list
+	// Type of information stored in the list
 	ListType pulumi.StringOutput `pulumi:"listType"`
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId pulumi.StringOutput `pulumi:"sourceManagedListId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the managed list was updated. Format defined by RFC3339.
+	// The date and time the managed list was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -103,11 +103,11 @@ func GetManagedList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagedList resources.
 type managedListState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Managed list description.
+	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -115,41 +115,41 @@ type managedListState struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// provider of the feed
+	// Provider of the managed list feed
 	FeedProvider *string `pulumi:"feedProvider"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// If this list is editable or not
+	// Is this list editable?
 	IsEditable *bool `pulumi:"isEditable"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails *string `pulumi:"lifecyleDetails"`
-	// (Updatable) List of ManagedListItem
+	// (Updatable) List of items in the managed list
 	ListItems []string `pulumi:"listItems"`
-	// type of the list
+	// Type of information stored in the list
 	ListType *string `pulumi:"listType"`
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId *string `pulumi:"sourceManagedListId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the managed list was updated. Format defined by RFC3339.
+	// The date and time the managed list was last updated. Format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type ManagedListState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Managed list description.
+	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
@@ -157,32 +157,32 @@ type ManagedListState struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// provider of the feed
+	// Provider of the managed list feed
 	FeedProvider pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// If this list is editable or not
+	// Is this list editable?
 	IsEditable pulumi.BoolPtrInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 	LifecyleDetails pulumi.StringPtrInput
-	// (Updatable) List of ManagedListItem
+	// (Updatable) List of items in the managed list
 	ListItems pulumi.StringArrayInput
-	// type of the list
+	// Type of information stored in the list
 	ListType pulumi.StringPtrInput
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceManagedListId pulumi.StringPtrInput
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the managed list was updated. Format defined by RFC3339.
+	// The date and time the managed list was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -191,11 +191,11 @@ func (ManagedListState) ElementType() reflect.Type {
 }
 
 type managedListArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Managed list description.
+	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
@@ -207,11 +207,11 @@ type managedListArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) List of ManagedListItem
+	// (Updatable) List of items in the managed list
 	ListItems []string `pulumi:"listItems"`
-	// type of the list
+	// Type of information stored in the list
 	ListType *string `pulumi:"listType"`
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,11 +220,11 @@ type managedListArgs struct {
 
 // The set of arguments for constructing a ManagedList resource.
 type ManagedListArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Managed list description.
+	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
@@ -236,11 +236,11 @@ type ManagedListArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) List of ManagedListItem
+	// (Updatable) List of items in the managed list
 	ListItems pulumi.StringArrayInput
-	// type of the list
+	// Type of information stored in the list
 	ListType pulumi.StringPtrInput
-	// OCID of the Source ManagedList
+	// OCID of the source managed list
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -334,7 +334,7 @@ func (o ManagedListOutput) ToManagedListOutputWithContext(ctx context.Context) M
 	return o
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) Compartment OCID
 func (o ManagedListOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -344,7 +344,7 @@ func (o ManagedListOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Managed list description.
+// (Updatable) Managed list description
 //
 // Avoid entering confidential information.
 func (o ManagedListOutput) Description() pulumi.StringOutput {
@@ -358,7 +358,7 @@ func (o ManagedListOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// provider of the feed
+// Provider of the managed list feed
 func (o ManagedListOutput) FeedProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.FeedProvider }).(pulumi.StringOutput)
 }
@@ -370,27 +370,27 @@ func (o ManagedListOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// If this list is editable or not
+// Is this list editable?
 func (o ManagedListOutput) IsEditable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.BoolOutput { return v.IsEditable }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 func (o ManagedListOutput) LifecyleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) List of ManagedListItem
+// (Updatable) List of items in the managed list
 func (o ManagedListOutput) ListItems() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringArrayOutput { return v.ListItems }).(pulumi.StringArrayOutput)
 }
 
-// type of the list
+// Type of information stored in the list
 func (o ManagedListOutput) ListType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.ListType }).(pulumi.StringOutput)
 }
 
-// OCID of the Source ManagedList
+// OCID of the source managed list
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,7 +398,7 @@ func (o ManagedListOutput) SourceManagedListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.SourceManagedListId }).(pulumi.StringOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource
 func (o ManagedListOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -413,7 +413,7 @@ func (o ManagedListOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the managed list was updated. Format defined by RFC3339.
+// The date and time the managed list was last updated. Format defined by RFC3339.
 func (o ManagedListOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

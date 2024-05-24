@@ -14,19 +14,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetail
     {
         /// <summary>
-        /// The name of the security zone to associate this compartment with.
+        /// The name of the security zone to associate with this compartment.
         /// </summary>
         public readonly string? SecurityZoneDisplayName;
         /// <summary>
-        /// The OCID of the security zone to associate this compartment with.
+        /// The OCID of the security zone to associate with this compartment
         /// </summary>
         public readonly string? SecurityZoneId;
         /// <summary>
-        /// possible type of targets(COMPARTMENT/FACLOUD)
+        /// Type of resource that target support (COMPARTMENT/FACLOUD)
         /// </summary>
         public readonly string? TargetResourceType;
         /// <summary>
-        /// The list of security zone recipes to associate this compartment with.
+        /// The list of security zone recipes to associate with this compartment
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetailTargetSecurityZoneRecipe> TargetSecurityZoneRecipes;
 
